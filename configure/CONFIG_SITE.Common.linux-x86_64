@@ -1,0 +1,42 @@
+-include $(TOP)/configure/CONFIG_SITE
+-include $(TOP)/RELEASE_SITE
+
+# For linux-x86_64
+
+#PACKAGE_SITE_TOP=/afs/slac/g/lcls/package
+
+ETHERLAB=$(PACKAGE_SITE_TOP)/linuxKernel_Modules/ethercat/MAIN_TRUNK_linux-x86_64
+
+ETHERCAT_LIB = $(ETHERLAB)/lib/.libs
+ETHERCAT_INCLUDE = -I$(ETHERLAB)/include
+ETHERCAT_LINK = -L$(ETHERLAB)/lib/.libs -Wl,-rpath=$(ETHERLAB)/lib/.libs
+
+XZ_LIB=$(PACKAGE_SITE_TOP)/xz/5.2.2/rhel6-x86_64/lib
+XZ_INCLUDE = -I$(PACKAGE_SITE_TOP)/xz/5.2.2/rhel6-x86_64/include
+
+ZLIB_LIB=$(PACKAGE_SITE_TOP)/zlib/1.2.8/rhel6-x86_64/lib
+ZLIB_INCLUDE = -I$(PACKAGE_SITE_TOP)/zlib/1.2.8/rhel6-x86_64/include
+
+
+LIBXML2_LIB = $(PACKAGE_SITE_TOP)/libxml2/2.9.3/rhel6-x86_64/lib
+LIBXML2_INCLUDE = -I$(PACKAGE_SITE_TOP)/libxml2/2.9.3/rhel6-x86_64/include/libxml2
+
+# =========================================================================
+# Perl-compatible regular expression support
+# =========================================================================
+PCRE_INCLUDE = -I$(PACKAGE_SITE_TOP)/pcre/8.37/linux-x86_64/include
+PCRE_LIB = $(PACKAGE_SITE_TOP)/pcre/8.37/linux-x86_64/lib
+
+# ==================================================================================================
+# Support for MRF and SLAC-based EVRs:
+# ==================================================================================================
+# Kernel Driver header files:
+KERNEL_MODULE_EVRMA=$(PACKAGE_SITE_TOP)/linuxKernel_Modules/evrmaDriver/evrmaDriver-R1-0-p6
+KERNEL_MODULE_EVRMA_INCLUDE = -I$(KERNEL_MODULE_EVRMA)/src
+
+# User Space Library and API:
+EVRMA=$(PACKAGE_SITE_TOP)/evrma/evrma-R1-0-p6/rhel6-linux-x86_64
+EVRMA_LIB     = $(EVRMA)/lib
+EVRMA_INCLUDE = -I$(EVRMA)/include
+# ==================================================================================================
+

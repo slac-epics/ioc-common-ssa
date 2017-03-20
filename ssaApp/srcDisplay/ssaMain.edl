@@ -1,0 +1,361 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 1619
+y 135
+w 500
+h 600
+font "helvetica-medium-r-18.0"
+ctlFont "helvetica-medium-r-18.0"
+btnFont "helvetica-medium-r-18.0"
+fgColor index 8
+bgColor index 3
+textColor index 14
+ctlFgColor1 index 14
+ctlFgColor2 index 14
+ctlBgColor1 index 51
+ctlBgColor2 index 8
+topShadowColor index 50
+botShadowColor index 10
+endScreenProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x -5
+y 1
+w 500
+h 50
+lineColor index 19
+fill
+fillColor index 19
+lineWidth 0
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 356
+y 38
+w 452
+h 20
+font "helvetica-medium-r-18.0"
+fontAlign "center"
+fgColor index 55
+bgColor index 0
+useDisplayBg
+value {
+  "CRYO EDM MENU"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 20
+y 16
+w 452
+h 20
+font "helvetica-medium-r-18.0"
+fontAlign "center"
+fgColor index 55
+bgColor index 0
+useDisplayBg
+value {
+  "SSA RF AMPLIFIERS CONTROL MENU"
+}
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 55
+y 267
+w 110
+h 25
+fgColor index 14
+bgColor index 31
+topShadowColor index 2
+botShadowColor index 12
+font "helvetica-medium-r-12.0"
+noEdit
+buttonLabel "SSA8"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "/a/devuser/yanjx/adl/MODBUS/ssaControl.edl"
+}
+menuLabel {
+  0 "RF AMP 8"
+}
+setPosition {
+  0 "parentWindow"
+}
+allowDups {
+  0 1
+}
+symbols {
+  0 "NAM=SSA8"
+}
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 55
+y 241
+w 110
+h 25
+fgColor index 14
+bgColor index 31
+topShadowColor index 2
+botShadowColor index 12
+font "helvetica-medium-r-12.0"
+noEdit
+buttonLabel "SSA7"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "/a/devuser/yanjx/adl/MODBUS/ssaControl.edl"
+}
+menuLabel {
+  0 "RF AMP 7"
+}
+setPosition {
+  0 "parentWindow"
+}
+allowDups {
+  0 1
+}
+symbols {
+  0 "NAM=SSA7"
+}
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 55
+y 216
+w 110
+h 25
+fgColor index 14
+bgColor index 31
+topShadowColor index 2
+botShadowColor index 12
+font "helvetica-medium-r-12.0"
+noEdit
+buttonLabel "SSA6"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "/a/devuser/yanjx/adl/MODBUS/ssaControl.edl"
+}
+menuLabel {
+  0 "RF AMP 6"
+}
+setPosition {
+  0 "parentWindow"
+}
+allowDups {
+  0 1
+}
+symbols {
+  0 "NAM=SSA6"
+}
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 55
+y 191
+w 110
+h 25
+fgColor index 14
+bgColor index 31
+topShadowColor index 2
+botShadowColor index 12
+font "helvetica-medium-r-12.0"
+noEdit
+buttonLabel "SSA5"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "/a/devuser/yanjx/adl/MODBUS/ssaControl.edl"
+}
+menuLabel {
+  0 "RF AMP 5"
+}
+allowDups {
+  0 1
+}
+symbols {
+  0 "NAM=SSA5"
+}
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 55
+y 165
+w 110
+h 25
+fgColor index 14
+bgColor index 31
+topShadowColor index 2
+botShadowColor index 12
+font "helvetica-medium-r-12.0"
+noEdit
+buttonLabel "SSA4"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "/a/devuser/yanjx/adl/MODBUS/ssaControl.edl"
+}
+menuLabel {
+  0 "RF AMP 4"
+}
+setPosition {
+  0 "parentWindow"
+}
+allowDups {
+  0 1
+}
+symbols {
+  0 "NAM=SSA4"
+}
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 55
+y 139
+w 110
+h 25
+fgColor index 14
+bgColor index 31
+topShadowColor index 2
+botShadowColor index 12
+font "helvetica-medium-r-12.0"
+noEdit
+buttonLabel "SSA3"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "/a/devuser/yanjx/adl/MODBUS/ssaControl.edl"
+}
+menuLabel {
+  0 "RF AMP 3"
+}
+setPosition {
+  0 "parentWindow"
+}
+allowDups {
+  0 1
+}
+symbols {
+  0 "NAM=SSA3"
+}
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 55
+y 114
+w 110
+h 25
+fgColor index 14
+bgColor index 31
+topShadowColor index 2
+botShadowColor index 12
+font "helvetica-medium-r-12.0"
+noEdit
+buttonLabel "SSA2"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "/a/devuser/yanjx/adl/MODBUS/ssaControl.edl"
+}
+menuLabel {
+  0 "RF AMP 2"
+}
+setPosition {
+  0 "parentWindow"
+}
+allowDups {
+  0 1
+}
+symbols {
+  0 "NAM=SSA2"
+}
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 55
+y 89
+w 110
+h 25
+fgColor index 14
+bgColor index 31
+topShadowColor index 2
+botShadowColor index 12
+font "helvetica-medium-r-12.0"
+noEdit
+buttonLabel "SSA1"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "srf/ssaControl.edl"
+}
+menuLabel {
+  0 "RF AMP 1"
+}
+allowDups {
+  0 1
+}
+symbols {
+  0 "NAM=SSA1"
+}
+endObjectProperties
+
