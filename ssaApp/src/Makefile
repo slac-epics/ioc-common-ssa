@@ -77,22 +77,22 @@ ssa_LIBS += asyn
 # NOTE: To build SNL programs, SNCSEQ must be defined
 # in the <top>/configure/RELEASE file
 
-ifneq ($(SNCSEQ),)
-    # This builds sncExample as a component of ssa
-    ssa_SNCFLAGS += +r
-    ssa_DBD += sncExample.dbd
-    ssa_SRCS += sncExample.stt
-    ssa_LIBS += seq pv
+#ifneq ($(SNCSEQ),)
+#    # This builds sncExample as a component of ssa
+#    ssa_SNCFLAGS += +r
+#    ssa_DBD += sncExample.dbd
+#    ssa_SRCS += sncExample.stt
+#    ssa_LIBS += seq pv
 
-    # The following builds sncProgram as a standalone application
-  ifneq ($(T_A),linuxRT-x86)
-    PROD_HOST += sncProgram
-    sncProgram_SNCFLAGS += +m
-    sncProgram_SRCS += sncProgram.st
-    sncProgram_LIBS += seq pv
-    sncProgram_LIBS += $(EPICS_BASE_HOST_LIBS)
-  endif
-endif
+#    # The following builds sncProgram as a standalone application
+#  ifneq ($(T_A),linuxRT-x86)
+#    PROD_HOST += sncProgram
+#    sncProgram_SNCFLAGS += +m
+#    sncProgram_SRCS += sncProgram.st
+#    sncProgram_LIBS += seq pv
+#    sncProgram_LIBS += $(EPICS_BASE_HOST_LIBS)
+#  endif
+#endif
 
 ssa_LIBS += $(EPICS_BASE_IOC_LIBS)
 
