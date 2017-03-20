@@ -12,7 +12,8 @@ include $(TOP)/configure/CONFIG
 CFG +=  CONFIG_EDL
 
 # EDM Screens to install
-EDLS += example.edl
+EDLS += ssaControl.edl
+EDLS += ssaMain.edl
 
 # Install images to be used by EDM (Gif and Png are supported)
 # PNG is better and preferred.
