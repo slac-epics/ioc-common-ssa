@@ -10,7 +10,8 @@ file "bo_word.template"
 {R,        PORT,      OFFSET,   MASK,	ZNAM,  ONAM}
 {OUT1,        RF1_Out_Word,    0,     0x0001,	0, 	1}
 {OUT2,        RF1_Out_Word,    1,     0x0001,	0,	1}
-{OUT4,        RF1_Out_Word,    3,     0x0001,	0,	1}
+{OUT4a,        RF1_Out_Word,    3,     0x0001,	0,	1}
+{OUT4b,        RF1_Out_Word,    3,     0x0002,	0,	1}
 {OUT5,        RF1_Out_Word,    4,     0x0001,	0,	1}
 {OUT6,	RF1_Out_Word,    5,     0x0001,	0,	1}
 }
