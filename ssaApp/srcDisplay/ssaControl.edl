@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 2405
-y 170
+x 2407
+y 196
 w 919
 h 626
 font "helvetica-medium-r-18.0"
@@ -251,8 +251,6 @@ format "decimal"
 font "helvetica-medium-r-14.0"
 fgColor index 14
 bgColor index 51
-topShadowColor index 0
-botShadowColor index 0
 editable
 autoHeight
 motifWidget
@@ -336,10 +334,8 @@ controlPv "$(NAM):IN6"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -364,10 +360,8 @@ controlPv "$(NAM):IN5"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -392,10 +386,8 @@ controlPv "$(NAM):IN4"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -420,10 +412,8 @@ controlPv "$(NAM):IN3"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -448,10 +438,8 @@ controlPv "$(NAM):IN2"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -476,10 +464,8 @@ controlPv "$(NAM):IN1"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -628,10 +614,8 @@ controlPv "$(NAM):IN15"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -656,10 +640,8 @@ controlPv "$(NAM):IN14"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -684,10 +666,8 @@ controlPv "$(NAM):IN13"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -712,10 +692,8 @@ controlPv "$(NAM):IN12"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -740,10 +718,8 @@ controlPv "$(NAM):IN11"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -768,10 +744,8 @@ controlPv "$(NAM):IN10"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -916,10 +890,8 @@ controlPv "$(NAM):IN25"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -944,10 +916,8 @@ controlPv "$(NAM):IN23"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -972,10 +942,8 @@ controlPv "$(NAM):IN22"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -1000,10 +968,8 @@ controlPv "$(NAM):IN18"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -1028,10 +994,8 @@ controlPv "$(NAM):IN17"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -1056,10 +1020,8 @@ controlPv "$(NAM):IN16"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -1204,10 +1166,8 @@ controlPv "$(NAM):IN46"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -1232,10 +1192,8 @@ controlPv "$(NAM):IN45"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -1260,10 +1218,8 @@ controlPv "$(NAM):IN44"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -1288,10 +1244,8 @@ controlPv "$(NAM):IN34"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -1316,10 +1270,8 @@ controlPv "$(NAM):IN32"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -1344,10 +1296,8 @@ controlPv "$(NAM):IN28"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -1492,10 +1442,8 @@ controlPv "$(NAM):IN48"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -1520,10 +1468,8 @@ controlPv "$(NAM):IN47"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -1601,10 +1547,8 @@ controlPv "$(NAM):IN55"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -1649,10 +1593,8 @@ controlPv "$(NAM):IN54"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -1697,10 +1639,8 @@ controlPv "$(NAM):IN53"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -1765,10 +1705,8 @@ controlPv "$(NAM):IN52"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -1793,10 +1731,8 @@ controlPv "$(NAM):IN51"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -1861,10 +1797,8 @@ controlPv "$(NAM):IN50"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -1889,10 +1823,8 @@ controlPv "$(NAM):IN49"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -1941,10 +1873,8 @@ controlPv "$(NAM):IN70"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -1989,10 +1919,8 @@ controlPv "$(NAM):IN69"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -2057,10 +1985,8 @@ controlPv "$(NAM):IN68"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -2085,10 +2011,8 @@ controlPv "$(NAM):IN71"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -2146,10 +2070,8 @@ controlPv "$(NAM):IN67"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -2194,10 +2116,8 @@ controlPv "$(NAM):IN66"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -2242,10 +2162,8 @@ controlPv "$(NAM):IN65"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -2290,10 +2208,8 @@ controlPv "$(NAM):IN64"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -2338,10 +2254,8 @@ controlPv "$(NAM):IN63"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -2386,10 +2300,8 @@ controlPv "$(NAM):IN62"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -2454,10 +2366,8 @@ controlPv "$(NAM):IN61"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -2482,10 +2392,8 @@ controlPv "$(NAM):IN60"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -2550,10 +2458,8 @@ controlPv "$(NAM):IN59"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -2578,10 +2484,8 @@ controlPv "$(NAM):IN58"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -2646,10 +2550,8 @@ controlPv "$(NAM):IN57"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -2674,10 +2576,8 @@ controlPv "$(NAM):IN56"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -2726,10 +2626,8 @@ controlPv "$(NAM):IN83"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -2774,10 +2672,8 @@ controlPv "$(NAM):IN82"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -2822,10 +2718,8 @@ controlPv "$(NAM):IN81"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -2870,10 +2764,8 @@ controlPv "$(NAM):IN80"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -2938,10 +2830,8 @@ controlPv "$(NAM):IN75"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -2966,10 +2856,8 @@ controlPv "$(NAM):IN74"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -3027,10 +2915,8 @@ controlPv "$(NAM):IN73"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -3075,10 +2961,8 @@ controlPv "$(NAM):IN72"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -3127,10 +3011,8 @@ controlPv "$(NAM):IN89"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -3175,10 +3057,8 @@ controlPv "$(NAM):IN88"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -3236,10 +3116,8 @@ controlPv "$(NAM):IN79"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -3284,10 +3162,8 @@ controlPv "$(NAM):IN78"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -3332,10 +3208,8 @@ controlPv "$(NAM):IN77"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -3380,10 +3254,8 @@ controlPv "$(NAM):IN76"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -3432,10 +3304,8 @@ controlPv "$(NAM):IN95"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -3480,10 +3350,8 @@ controlPv "$(NAM):IN94"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -3528,10 +3396,8 @@ controlPv "$(NAM):IN93"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -3576,10 +3442,8 @@ controlPv "$(NAM):IN92"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -3624,10 +3488,8 @@ controlPv "$(NAM):IN101"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -3652,10 +3514,8 @@ controlPv "$(NAM):IN100"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -3680,10 +3540,8 @@ controlPv "$(NAM):IN99"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -3708,10 +3566,8 @@ controlPv "$(NAM):IN98"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -3736,10 +3592,8 @@ controlPv "$(NAM):IN97"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -3764,10 +3618,8 @@ controlPv "$(NAM):IN96"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -3912,10 +3764,8 @@ controlPv "$(NAM):IN105"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -3960,10 +3810,8 @@ controlPv "$(NAM):IN104"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -4008,10 +3856,8 @@ controlPv "$(NAM):IN103"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -4056,10 +3902,8 @@ controlPv "$(NAM):IN102"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -4104,10 +3948,8 @@ controlPv "$(NAM):IN109"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -4152,10 +3994,8 @@ controlPv "$(NAM):IN108"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -4200,10 +4040,8 @@ controlPv "$(NAM):IN107"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -4248,10 +4086,8 @@ controlPv "$(NAM):IN106"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -4296,10 +4132,8 @@ controlPv "$(NAM):IN111"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -4344,10 +4178,8 @@ controlPv "$(NAM):IN110"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -4425,10 +4257,8 @@ controlPv "$(NAM):IN116"
 format "hex"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -4473,10 +4303,8 @@ controlPv "$(NAM):IN115"
 format "hex"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -4521,10 +4349,8 @@ controlPv "$(NAM):IN114"
 format "hex"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -4589,10 +4415,8 @@ controlPv "$(NAM):IN113"
 format "hex"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
@@ -4617,10 +4441,8 @@ controlPv "$(NAM):IN112"
 format "hex"
 font "helvetica-medium-r-12.0"
 fontAlign "right"
-fgColor index 0
-bgColor index 53
-topShadowColor index 0
-botShadowColor index 0
+fgColor index 15
+bgColor index 14
 autoHeight
 nullColor index 32
 smartRefresh
