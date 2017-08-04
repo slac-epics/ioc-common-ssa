@@ -1,4 +1,4 @@
-#!../../bin/linux-x86_64/ssa
+#!../../bin/rhel6-x86_64/ssa
 
 ## You may have to change ssa to something else
 ## everywhere it appears in this file
@@ -21,6 +21,7 @@ epicsEnvSet("ENGINEER","Garth Brown")
 epicsEnvSet("LOCATION","B15 SSA test stand")
 epicsEnvSet("P", "SSA1:B15:")
 epicsEnvSet("IP", "ssa-b15-rf0110")
+epicsEnvSet("IOC_P", "SIOC:B15:SSA1")
 
 # tag log messages with IOC name
 # How to escape the "iocb15-rf01" as the PERL program
@@ -60,19 +61,19 @@ epicsEnvSet("EPICS_IOC_LOG_CLIENT_INET","${IOC}")
 # =====================================================================
 # Load iocAdmin databases to support IOC Health and monitoring
 # =====================================================================
-dbLoadRecords("db/iocAdminSoft.db","IOC=${IOC}")
-dbLoadRecords("db/iocAdminScanMon.db","IOC=${IOC}")
+dbLoadRecords("db/iocAdminSoft.db","IOC=${IOC_P}")
+dbLoadRecords("db/iocAdminScanMon.db","IOC=${IOC_P}")
 
 # The following database is a result of a python parser
 # which looks at RELEASE_SITE and RELEASE to discover
 # versions of software your IOC is referencing
 # The python parser is part of iocAdmin
-dbLoadRecords("db/iocRelease.db","IOC=${IOC}")
+dbLoadRecords("db/iocRelease.db","IOC=${IOC_P}")
 
 # =====================================================================
 # Load database for autosave status
 # =====================================================================
-dbLoadRecords("db/save_restoreStatus.db", "P=${IOC}:")
+dbLoadRecords("db/save_restoreStatus.db", "P=${IOC_P}:")
 
 
 # =====================================================================
@@ -113,7 +114,7 @@ set_savefile_path("${IOC_DATA}/${IOC}/autosave")
 # Prefix that is use to update save/restore status database
 # records
 # ============================================================
-save_restoreSet_status_prefix("${IOC}:")
+save_restoreSet_status_prefix("${IOC_P}:")
 
 ## Restore datasets
 set_pass0_restoreFile("info_settings.sav")

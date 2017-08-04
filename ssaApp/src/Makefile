@@ -21,7 +21,7 @@ DBD += ssa.dbd
 # ssa.dbd will be made up from these files:
 ssa_DBD += base.dbd
 ssa_DBD += devIocStats.dbd
-ssa_DBD += autosaveSupport.dbd
+ssa_DBD += asSupport.dbd
 ssa_DBD += caPutLog.dbd
 ssa_DBD += $(CEXP_DBDS)
 
@@ -37,7 +37,7 @@ ssa_DBD += system.dbd
 
 ssa_DBD += asyn.dbd
 ssa_DBD += drvAsynIPPort.dbd
-ssa_DBD += asynRecord.dbd
+#ssa_DBD += asynRecord.dbd
 ssa_DBD += modbusSupport.dbd
 # ======================================================================
 # <name>_registerRecordDeviceDriver.cpp will be created from <name>.dbd

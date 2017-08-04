@@ -1,4 +1,4 @@
-#!../../bin/linux-x86_64/ssa
+#!../../bin/rhel6-x86_64/ssa
 
 ## You may have to change ssa to something else
 ## everywhere it appears in this file
