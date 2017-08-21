@@ -6,3 +6,6 @@ db/
 dbd/
 iocBoot/*/envPaths
 *~
+build*.log*
+*.swp
+

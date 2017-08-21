@@ -19,9 +19,8 @@ ssa_registerRecordDeviceDriver(pdbbase)
 # Setup environment variables
 epicsEnvSet("ENGINEER","Garth Brown")
 epicsEnvSet("LOCATION","B15 SSA test stand")
-epicsEnvSet("P", "SSA1:B15:")
-epicsEnvSet("IP", "ssa-b15-rf0110")
-epicsEnvSet("IOC_P", "SIOC:B15:SSA1")
+epicsEnvSet("P", "SSA2:B15:")
+epicsEnvSet("IP", "ssa-b15-rf0120")
 
 # tag log messages with IOC name
 # How to escape the "iocb15-rf01" as the PERL program
@@ -49,7 +48,7 @@ epicsEnvSet("EPICS_IOC_LOG_CLIENT_INET","${IOC}")
 #######################################################################
 
 # Uses environment variables $P and $IP, set above, to connect to the ssa
-< iocBoot/startup.modbus_RK_1300.cmd
+< iocBoot/startup.modbus.cmd
 
 # END: Hardware specific configuration
 # =====================================================================
@@ -61,26 +60,26 @@ epicsEnvSet("EPICS_IOC_LOG_CLIENT_INET","${IOC}")
 # =====================================================================
 # Load iocAdmin databases to support IOC Health and monitoring
 # =====================================================================
-dbLoadRecords("db/iocAdminSoft.db","IOC=${IOC_P}")
-dbLoadRecords("db/iocAdminScanMon.db","IOC=${IOC_P}")
+dbLoadRecords("db/iocAdminSoft.db","IOC=${IOC}")
+dbLoadRecords("db/iocAdminScanMon.db","IOC=${IOC}")
 
 # The following database is a result of a python parser
 # which looks at RELEASE_SITE and RELEASE to discover
 # versions of software your IOC is referencing
 # The python parser is part of iocAdmin
-dbLoadRecords("db/iocRelease.db","IOC=${IOC_P}")
+dbLoadRecords("db/iocRelease.db","IOC=${IOC}")
 
 # =====================================================================
 # Load database for autosave status
 # =====================================================================
-dbLoadRecords("db/save_restoreStatus.db", "P=${IOC_P}:")
+dbLoadRecords("db/save_restoreStatus.db", "P=${IOC}:")
 
 
 # =====================================================================
 #Load Additional databases:
 # =====================================================================
 ## Load record instances
-dbLoadRecords("db/ssa_RK_1300.db", "P=$(P)")
+#dbLoadRecords("db/dbExample.db","user=gwbrownHost")
 
 # END: Loading the record databases
 ########################################################################
@@ -114,7 +113,7 @@ set_savefile_path("${IOC_DATA}/${IOC}/autosave")
 # Prefix that is use to update save/restore status database
 # records
 # ============================================================
-save_restoreSet_status_prefix("${IOC_P}:")
+save_restoreSet_status_prefix("${IOC}:")
 
 ## Restore datasets
 set_pass0_restoreFile("info_settings.sav")
@@ -144,8 +143,5 @@ caPutLogShow(2)
 #seq sncExample,"user=gwbrownHost"
 
 ## Start autosave process:
-cd("${IOC_DATA}/${IOC}/autosave-req")
 makeAutosaveFiles()
-create_monitor_set("info_settings.req",20,"")
-
-
+create_monitor_set("info_settings.req",60,"")

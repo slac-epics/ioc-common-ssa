@@ -1,0 +1,229 @@
+# asyn record for the underlying asyn octet port
+#file "ASYN/db/asynRecord.db" { pattern
+#{R,       PORT,      ADDR,   IMAX,    OMAX}
+#{SSA1:    OctetAsyn,   ssa1,        0,      125,      123}
+#}
+
+# These are the binary outputs done with word access.
+file "bo_word.template" {
+pattern
+{     R,         PORT, OFFSET,   MASK,      ZNAM,     ONAM}
+{  OUT1, RF1_Out_Word,      0, 0x0001, "Disable", "Enable"}
+{  OUT2, RF1_Out_Word,      1, 0x0001, "Disable", "Enable"}
+{ OUT4a, RF1_Out_Word,      3, 0x0001,         0,        1}
+{ OUT4b, RF1_Out_Word,      3, 0x0002,         0,        1}
+{  OUT5, RF1_Out_Word,      4, 0x0001,         0, "Reboot"}
+{  OUT6, RF1_Out_Word,      5, 0x0001,         0, "Reboot"}
+}
+
+# There are the binary inputs done with word access.
+file "bi_word.template" {
+pattern
+{    R,         PORT, OFFSET,   MASK,       ZNAM,      ONAM,      ZSV,      OSV,       SCAN}
+{  IN1,  RF1_In_Word,      0, 0x0001, "Disabled", "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{  IN2,  RF1_In_Word,      1, 0x0001, "Disabled", "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{ IN10,  RF1_In_Word,      9, 0x0001, "Disabled", "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{ IN11,  RF1_In_Word,     10, 0x0001, "Disabled", "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{ IN12,  RF1_In_Word,     11, 0x0001, "Disabled", "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{ IN25,  RF1_In_Word,     24, 0x0001,       "OK",   "Alarm", NO_ALARM,    MAJOR, "I/O Intr"}
+{ IN28,  RF1_In_Word,     27, 0x0001,       "OK",   "Alarm", NO_ALARM,    MAJOR, "I/O Intr"}
+}
+# I don't know what this was intended for, but I don't think it works
+#{BIN1, RF1_Out_Word,      0, 0x0001,    0,    1, NO_ALARM, MAJOR, "I/O Intr"}
+
+# These are the integer ouputs done with word access.
+file "longout.template" {
+pattern
+{    R,         PORT, OFFSET}
+{ OUT3, RF1_Out_Word,      2}
+}
+
+# There are the Inputs done with word access
+file "longin.template"
+{ pattern
+{R,        PORT,     OFFSET,       SCAN}
+#{IN1,    RF1_In_Word,     0,      "I/O Intr"} # Moved to bi
+#{IN2,    RF1_In_Word,     1,      "I/O Intr"} # Moved to bi
+{IN4,    RF1_In_Word,     3,      "I/O Intr"}
+#{IN3,    RF1_In_Word,     2,      "I/O Intr"} # Done in ai
+{IN4,    RF1_In_Word,     3,      "I/O Intr"}
+{IN5,    RF1_In_Word,     4,      "I/O Intr"}
+{IN6,    RF1_In_Word,     5,      "I/O Intr"}
+{IN7,    RF1_In_Word,     6,      "I/O Intr"}
+{IN8,    RF1_In_Word,     7,      "I/O Intr"}
+{IN9,    RF1_In_Word,     8,      "I/O Intr"}
+#{IN10,   RF1_In_Word,     9,      "I/O Intr"} # Moved to bi
+#{IN11,   RF1_In_Word,     10,     "I/O Intr"} # Moved to bi
+#{IN12,   RF1_In_Word,     11,     "I/O Intr"} # Moved to bi
+{IN13,   RF1_In_Word,     12,     "I/O Intr"}
+{IN14,   RF1_In_Word,     13,     "I/O Intr"}
+{IN15,   RF1_In_Word,     14,     "I/O Intr"}
+{IN16,   RF1_In_Word,     15,     "I/O Intr"}
+{IN17,   RF1_In_Word,     16,     "I/O Intr"}
+{IN18,   RF1_In_Word,     17,     "I/O Intr"}
+{IN19,   RF1_In_Word,     18,     "I/O Intr"}
+{IN20,   RF1_In_Word,     19,     "I/O Intr"}
+
+{IN21,   RF1_In_Word,     20,     "I/O Intr"}
+# {IN22,   RF1_In_Word,     21,     "I/O Intr"} # Done in ai
+{IN23,   RF1_In_Word,     22,     "I/O Intr"}
+{IN24,   RF1_In_Word,     23,     "I/O Intr"}
+#{IN25,   RF1_In_Word,     24,     "I/O Intr"} # Moved to bi
+{IN26,   RF1_In_Word,     25,     "I/O Intr"}
+{IN27,   RF1_In_Word,     26,     "I/O Intr"}
+#{IN28,   RF1_In_Word,     27,     "I/O Intr"} # Moved to bi
+{IN29,   RF1_In_Word,     28,     "I/O Intr"}
+{IN30,   RF1_In_Word,     29,     "I/O Intr"}
+{IN31,   RF1_In_Word,     30,     "I/O Intr"}
+#{IN32,   RF1_In_Word,     31,     "I/O Intr"} # Done in ai
+{IN33,   RF1_In_Word,     32,     "I/O Intr"}
+#{IN34,   RF1_In_Word,     33,     "I/O Intr"} # Done in ai
+{IN35,   RF1_In_Word,     34,     "I/O Intr"}
+{IN36,   RF1_In_Word,     35,     "I/O Intr"}
+{IN37,   RF1_In_Word,     36,     "I/O Intr"}
+{IN38,   RF1_In_Word,     37,     "I/O Intr"}
+{IN39,   RF1_In_Word,     38,     "I/O Intr"}
+{IN40,   RF1_In_Word,     39,     "I/O Intr"}
+
+{IN41,   RF1_In_Word,     40,     "I/O Intr"}
+{IN42,   RF1_In_Word,     41,     "I/O Intr"}
+{IN43,   RF1_In_Word,     42,     "I/O Intr"}
+#{IN44,   RF1_In_Word,     43,     "I/O Intr"} # Done in ai
+#{IN45,   RF1_In_Word,     44,     "I/O Intr"} # Done in ai
+#{IN46,   RF1_In_Word,     45,     "I/O Intr"} # Done in ai
+{IN47,   RF1_In_Word,     46,     "I/O Intr"}
+#{IN48,   RF1_In_Word,     47,     "I/O Intr"}
+#{IN49,   RF1_In_Word,     48,     "I/O Intr"}
+#{IN50,   RF1_In_Word,     49,     "I/O Intr"}
+#{IN51,   RF1_In_Word,     50,     "I/O Intr"}
+#{IN52,   RF1_In_Word,     51,     "I/O Intr"}
+#{IN53,   RF1_In_Word,     52,     "I/O Intr"}
+#{IN54,   RF1_In_Word,     53,     "I/O Intr"}
+#{IN55,   RF1_In_Word,     54,     "I/O Intr"}
+{IN56,   RF1_In_Word,     55,     "I/O Intr"}
+{IN57,   RF1_In_Word,    56,    "I/O Intr"}
+{IN58,   RF1_In_Word,    57,    "I/O Intr"}
+{IN59,   RF1_In_Word,    58,    "I/O Intr"}
+#{IN60,   RF1_In_Word,     59,     "I/O Intr"}
+
+#{IN61,   RF1_In_Word,     60,     "I/O Intr"}
+#{IN62,   RF1_In_Word,     61,     "I/O Intr"}
+{IN63,   RF1_In_Word,     62,     "I/O Intr"}
+#{IN64,   RF1_In_Word,     63,     "I/O Intr"}
+#{IN65,   RF1_In_Word,     64,     "I/O Intr"}
+#{IN66,   RF1_In_Word,     65,     "I/O Intr"}
+#{IN67,   RF1_In_Word,    66,    "I/O Intr"}
+#{IN68,   RF1_In_Word,    67,    "I/O Intr"}
+#{IN69,   RF1_In_Word,    68,    "I/O Intr"}
+#{IN70,   RF1_In_Word,     69,     "I/O Intr"}
+#{IN71,   RF1_In_Word,     70,     "I/O Intr"}
+{IN72,   RF1_In_Word,     71,     "I/O Intr"}
+{IN73,   RF1_In_Word,     72,     "I/O Intr"}
+{IN74,   RF1_In_Word,     73,     "I/O Intr"}
+{IN75,   RF1_In_Word,     74,     "I/O Intr"}
+#{IN76,   RF1_In_Word,     75,     "I/O Intr"}
+#{IN77,   RF1_In_Word,    76,    "I/O Intr"}
+#{IN78,   RF1_In_Word,    77,    "I/O Intr"}
+{IN79,   RF1_In_Word,    78,    "I/O Intr"}
+#{IN80,   RF1_In_Word,     79,     "I/O Intr"}
+
+#{IN81,   RF1_In_Word,     80,     "I/O Intr"}
+#{IN82,   RF1_In_Word,     81,     "I/O Intr"}
+#{IN83,   RF1_In_Word,     82,     "I/O Intr"}
+{IN84,   RF1_In_Word,     83,     "I/O Intr"}
+{IN85,   RF1_In_Word,     84,     "I/O Intr"}
+{IN86,   RF1_In_Word,     85,     "I/O Intr"}
+{IN87,   RF1_In_Word,    86,    "I/O Intr"}
+{IN88,   RF1_In_Word,    87,    "I/O Intr"}
+{IN89,   RF1_In_Word,    88,    "I/O Intr"}
+{IN90,   RF1_In_Word,     89,     "I/O Intr"}
+{IN91,   RF1_In_Word,     90,     "I/O Intr"}
+#{IN92,   RF1_In_Word,     91,     "I/O Intr"}
+#{IN93,   RF1_In_Word,     92,     "I/O Intr"}
+#{IN94,   RF1_In_Word,     93,     "I/O Intr"}
+{IN95,   RF1_In_Word,     94,     "I/O Intr"}
+{IN96,   RF1_In_Word,     95,     "I/O Intr"}
+{IN97,   RF1_In_Word,    96,    "I/O Intr"}
+#{IN98,   RF1_In_Word,    97,    "I/O Intr"}
+#{IN99,   RF1_In_Word,    98,    "I/O Intr"}
+#{IN100,  RF1_In_Word,    99,    "I/O Intr"}
+
+#{IN101,  RF1_In_Word,    100,    "I/O Intr"}
+#{IN102,  RF1_In_Word,    101,    "I/O Intr"}
+#{IN103,  RF1_In_Word,    102,    "I/O Intr"}
+{IN104,  RF1_In_Word,    103,    "I/O Intr"}
+{IN105,  RF1_In_Word,    104,    "I/O Intr"}
+{IN106,  RF1_In_Word,    105,    "I/O Intr"}
+{IN107,  RF1_In_Word,    106,    "I/O Intr"}
+{IN108,  RF1_In_Word,    107,    "I/O Intr"}
+{IN109,  RF1_In_Word,    108,    "I/O Intr"}
+{IN110,  RF1_In_Word,    109,    "I/O Intr"}
+{IN111,  RF1_In_Word,    110,    "I/O Intr"}
+{IN112,  RF1_In_Word,    111,    "I/O Intr"}
+{IN113,  RF1_In_Word,    112,    "I/O Intr"}
+{IN114,  RF1_In_Word,    113,    "I/O Intr"}
+{IN115,  RF1_In_Word,    114,    "I/O Intr"}
+{IN116,  RF1_In_Word,    115,    "I/O Intr"}
+}
+
+# These are the aiFloat intput done with read
+file "ai.template"
+{ pattern
+{R,        PORT,      OFFSET,    BITS,   EGUL, EGUF, HOPR, LOPR, PREC, SCAN}
+{IN3,      RF1_In_Word,     2,  0xFFFF,  0.0,   2147483647,   1e3,  0,  1,   "I/O Intr"}
+{IN22,     RF1_In_Word,    21,    0xFFFF,  0.0,    214748364.7, 1e3,  0,  1,   "I/O Intr"}
+{IN32,     RF1_In_Word,    31,    0xFFFF,  0.0,    214748364.7, 1e3,  0,  1,   "I/O Intr"}
+{IN34,     RF1_In_Word,    33,    0xFFFF,  0.0,    214748364.7, 1e3,  0,  1,   "I/O Intr"}
+{IN44,     RF1_In_Word,    43,    0xFFFF,  0.0,    214748364.7, 1e3,  0,  1,   "I/O Intr"}
+{IN45,     RF1_In_Word,    44,    0xFFFF,  0.0,    214748364.7, 1e3,  0,  1,   "I/O Intr"}
+{IN46,     RF1_In_Word,    45,    0xFFFF,  0.0,    214748364.7, 1e3,  0,  1,   "I/O Intr"}
+{IN48,     RF1_In_Word,    47,    0xFFFF,  0.0,    214748364.7, 1e3,  0,  1,   "I/O Intr"}
+{IN49,     RF1_In_Word,    48,    0xFFFF,  0.0,    214748364.7, 1e3,  0,  1,   "I/O Intr"}
+{IN50,     RF1_In_Word,    49,    0xFFFF,  0.0,    214748364.7, 1e3,  0,  1,   "I/O Intr"}
+{IN51,     RF1_In_Word,    50,    0xFFFF,  0.0,    214748364.7, 1e3,  0,  1,   "I/O Intr"}
+{IN52,     RF1_In_Word,    51,    0xFFFF,  0.0,    214748364.7, 1e3,  0,  1,   "I/O Intr"}
+{IN53,     RF1_In_Word,    52,    0xFFFF,  0.0,    214748364.7, 1e3,  0,  1,   "I/O Intr"}
+{IN54,     RF1_In_Word,    53,    0xFFFF,  0.0,    214748364.7, 1e3,  0,  1,   "I/O Intr"}
+{IN55,     RF1_In_Word,    54,    0xFFFF,  0.0,    214748364.7, 1e3,  0,  1,   "I/O Intr"}
+{IN60,     RF1_In_Word,    59,    0xFFFF,  0.0,    214748364.7, 1e3,  0,  1,   "I/O Intr"}
+{IN61,     RF1_In_Word,    60,    0xFFFF,  0.0,    214748364.7, 1e3,  0,  1,   "I/O Intr"}
+{IN62,     RF1_In_Word,    61,    0xFFFF,  0.0,    214748364.7, 1e3,  0,  1,   "I/O Intr"}
+{IN64,     RF1_In_Word,    63,    0xFFFF,  0.0,    214748364.7, 1e3,  0,  1,   "I/O Intr"}
+{IN65,     RF1_In_Word,    64,    0xFFFF,  0.0,    214748364.7, 1e3,  0,  1,   "I/O Intr"}
+{IN66,     RF1_In_Word,    65,    0xFFFF,  0.0,    214748364.7, 1e3,  0,  1,   "I/O Intr"}
+{IN67,     RF1_In_Word,    66,    0xFFFF,  0.0,    214748364.7, 1e3,  0,  1,   "I/O Intr"}
+{IN68,     RF1_In_Word,    67,    0xFFFF,  0.0,    214748364.7, 1e3,  0,  1,   "I/O Intr"}
+{IN69,     RF1_In_Word,    68,    0xFFFF,  0.0,    214748364.7, 1e3,  0,  1,   "I/O Intr"}
+{IN70,     RF1_In_Word,    69,    0xFFFF,  0.0,    214748364.7, 1e3,  0,  1,   "I/O Intr"}
+{IN71,     RF1_In_Word,    70,    0xFFFF,  0.0,    214748364.7, 1e3,  0,  1,   "I/O Intr"}
+{IN76,     RF1_In_Word,    75,    0xFFFF,  0.0,    214748364.7, 1e3,  0,  1,   "I/O Intr"}
+{IN77,     RF1_In_Word,    76,    0xFFFF,  0.0,    214748364.7, 1e3,  0,  1,   "I/O Intr"}
+{IN78,     RF1_In_Word,    77,    0xFFFF,  0.0,    214748364.7, 1e3,  0,  1,   "I/O Intr"}
+{IN80,     RF1_In_Word,    79,    0xFFFF,  0.0,    214748364.7, 1e3,  0,  1,   "I/O Intr"}
+{IN81,     RF1_In_Word,    80,    0xFFFF,  0.0,    214748364.7, 1e3,  0,  1,   "I/O Intr"}
+{IN82,     RF1_In_Word,    81,    0xFFFF,  0.0,    214748364.7, 1e3,  0,  1,   "I/O Intr"}
+{IN83,     RF1_In_Word,    82,    0xFFFF,  0.0,    214748364.7, 1e3,  0,  1,   "I/O Intr"}
+
+{IN92,     RF1_In_Word,    91,    0xFFFF,  0.0,    214748364.7, 1e3,  0,  1,   "I/O Intr"}
+{IN93,     RF1_In_Word,    92,    0xFFFF,  0.0,    214748364.7, 1e3,  0,  1,   "I/O Intr"}
+{IN94,     RF1_In_Word,    93,    0xFFFF,  0.0,    214748364.7, 1e3,  0,  1,   "I/O Intr"}
+{IN98,     RF1_In_Word,    97,    0xFFFF,  0.0,    214748364.7, 1e3,  0,  1,   "I/O Intr"}
+{IN99,     RF1_In_Word,    98,    0xFFFF,  0.0,    214748364.7, 1e3,  0,  1,   "I/O Intr"}
+{IN100,     RF1_In_Word,   99,    0xFFFF,  0.0,    214748364.7, 1e3,  0,  1,   "I/O Intr"}
+{IN101,     RF1_In_Word,   100,    0xFFFF,  0.0,    214748364.7, 1e3,  0,  1,   "I/O Intr"}
+{IN102,     RF1_In_Word,   101,    0xFFFF,  0.0,    214748364.7, 1e3,  0,  1,   "I/O Intr"}
+{IN103,     RF1_In_Word,   102,    0xFFFF,  0.0,    214748364.7, 1e3,  0,  1,   "I/O Intr"}
+}
+
+
+# Input as intarray
+#file "intarray_in.template" { pattern
+#{R,        PORT,        NELM,    SCAN}
+#{XnWArray,    RF1_In_Word,    124,    "I/O Intr"}
+#}
+    
+file "ssaRK_1300_extras.template" {
+{none}
+}
+
+

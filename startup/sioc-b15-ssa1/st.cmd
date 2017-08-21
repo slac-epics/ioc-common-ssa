@@ -49,7 +49,7 @@ epicsEnvSet("EPICS_IOC_LOG_CLIENT_INET","${IOC}")
 #######################################################################
 
 # Uses environment variables $P and $IP, set above, to connect to the ssa
-< iocBoot/startup.modbus_RK_1300.cmd
+< iocBoot/startup.modbus.cmd
 
 # END: Hardware specific configuration
 # =====================================================================
@@ -80,7 +80,7 @@ dbLoadRecords("db/save_restoreStatus.db", "P=${IOC_P}:")
 #Load Additional databases:
 # =====================================================================
 ## Load record instances
-dbLoadRecords("db/ssa_RK_1300.db", "P=$(P)")
+#dbLoadRecords("db/dbExample.db","user=gwbrownHost")
 
 # END: Loading the record databases
 ########################################################################
@@ -144,8 +144,5 @@ caPutLogShow(2)
 #seq sncExample,"user=gwbrownHost"
 
 ## Start autosave process:
-cd("${IOC_DATA}/${IOC}/autosave-req")
 makeAutosaveFiles()
-create_monitor_set("info_settings.req",20,"")
-
-
+create_monitor_set("info_settings.req",60,"")

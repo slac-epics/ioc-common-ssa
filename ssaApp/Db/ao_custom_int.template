@@ -1,0 +1,13 @@
+# ao record template for (signed integer) register outputs
+record(ao, "$(P)$(R)") {
+    field(DTYP,"asynInt32")
+    field(OUT,"@asynMask($(PORT) $(OFFSET) $(BITS))INT16")
+    field(LINR,"LINEAR")
+    field(EGUL,"$(EGUL)")
+    field(EGUF,"$(EGUF)")
+    field(HOPR,"$(HOPR)")
+    field(LOPR,"$(LOPR)")
+    field(EGU, "$(EGU)")
+    field(PREC,"$(PREC)")
+}
+

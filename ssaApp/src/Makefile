@@ -23,6 +23,7 @@ ssa_DBD += base.dbd
 ssa_DBD += devIocStats.dbd
 ssa_DBD += asSupport.dbd
 ssa_DBD += caPutLog.dbd
+ssa_DBD += ssaASub.dbd
 ssa_DBD += $(CEXP_DBDS)
 
 # ================================================================================
@@ -42,6 +43,7 @@ ssa_DBD += modbusSupport.dbd
 # ======================================================================
 # <name>_registerRecordDeviceDriver.cpp will be created from <name>.dbd
 ssa_SRCS += ssa_registerRecordDeviceDriver.cpp
+ssa_SRCS += ssaASub.c
 
 ssa_SRCS_DEFAULT += ssaMain.cpp
 

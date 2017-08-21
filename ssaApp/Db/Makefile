@@ -14,11 +14,15 @@ DB_INSTALLS += $(MODBUS)/db/bi_word.template
 DB_INSTALLS += $(MODBUS)/db/longin.template
 DB_INSTALLS += $(MODBUS)/db/ai.template
 DB_INSTALLS += $(MODBUS)/db/intarray_in.template
+DB_INSTALLS += $(MODBUS)/db/statistics.template
+DB_INSTALLS += $(MODBUS)/db/poll_delay.template
 
 #----------------------------------------------------
 # Create and install (or just install)
 # databases, templates, substitutions like this
-DB += ssa.db
+DB += ssa_RK_1300.db
+DB += ssa_RK_186.db
+DB += ssa_BBEF.db
 
 # Install Common databases needed by All IOCs
 # ========================================================

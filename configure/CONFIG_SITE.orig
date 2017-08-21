@@ -19,10 +19,11 @@ CHECK_RELEASE = YES
 # Set this when you only want to compile this application
 #   for a subset of the cross-compiled target architectures
 #   that Base is built for.
+<<<<<<< HEAD
+CROSS_COMPILER_TARGET_ARCHS = linux-x86 linuxRT_glibc-x86_64
+=======
 #CROSS_COMPILER_TARGET_ARCHS = linuxRT_glibc-x86_64 linux-x86_64
-# Temporarily define CROSS_COMPILER_TARGET_ARCHS below 
-#       until modbus is built for RTEMS-svgm
-CROSS_COMPILER_TARGET_ARCHS =
+>>>>>>> base-3-15
 
 
 # To install files into a location other than $(TOP) define
