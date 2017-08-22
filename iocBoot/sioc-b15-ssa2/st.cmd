@@ -17,10 +17,10 @@ ssa_registerRecordDeviceDriver(pdbbase)
 # Setup some additional environment variables
 # ====================================================================
 # Setup environment variables
-epicsEnvSet("ENGINEER","Garth Brown")
-epicsEnvSet("LOCATION","B15 SSA test stand")
-epicsEnvSet("P", "SSA2:B15:")
-epicsEnvSet("IP", "ssa-b15-rf0120")
+epicsEnvSet("ENGINEER", "Garth Brown")
+epicsEnvSet("LOCATION", "B15 SSA test stand")
+epicsEnvSet("P",        "SSA:B15:002:")
+epicsEnvSet("IP",       "ssa-b15-rf0120")
 
 # tag log messages with IOC name
 # How to escape the "iocb15-rf01" as the PERL program
