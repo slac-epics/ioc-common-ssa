@@ -20,8 +20,8 @@ DB_INSTALLS += $(MODBUS)/db/poll_delay.template
 #----------------------------------------------------
 # Create and install (or just install)
 # databases, templates, substitutions like this
-DB += ssa_RK_1300.db
-DB += ssa_RK_186.db
+DB += ssa_RK_CA1300.db
+DB += ssa_RK_CA186.db
 DB += ssa_BBEF.db
 
 # Install Common databases needed by All IOCs
