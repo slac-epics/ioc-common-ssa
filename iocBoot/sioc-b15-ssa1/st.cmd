@@ -17,11 +17,11 @@ ssa_registerRecordDeviceDriver(pdbbase)
 # Setup some additional environment variables
 # ====================================================================
 # Setup environment variables
-epicsEnvSet("ENGINEER","Garth Brown")
-epicsEnvSet("LOCATION","B15 SSA test stand")
-epicsEnvSet("P", "SSA1:B15:")
-epicsEnvSet("IP", "ssa-b15-rf0110")
-epicsEnvSet("IOC_P", "SIOC:B15:SSA1")
+epicsEnvSet("ENGINEER", "Garth Brown")
+epicsEnvSet("LOCATION", "B15 SSA test stand")
+epicsEnvSet("P",        "SSA1:B15:")
+epicsEnvSet("IP",       "ssa-b15-rf0110")
+epicsEnvSet("IOC_P",    "SIOC:B15:SSA1")
 
 # tag log messages with IOC name
 # How to escape the "iocb15-rf01" as the PERL program
@@ -49,7 +49,7 @@ epicsEnvSet("EPICS_IOC_LOG_CLIENT_INET","${IOC}")
 #######################################################################
 
 # Uses environment variables $P and $IP, set above, to connect to the ssa
-< iocBoot/startup.modbus_RK_1300.cmd
+< iocBoot/startup.modbus_RK_CA1300.cmd
 
 # END: Hardware specific configuration
 # =====================================================================
@@ -80,7 +80,7 @@ dbLoadRecords("db/save_restoreStatus.db", "P=${IOC_P}:")
 #Load Additional databases:
 # =====================================================================
 ## Load record instances
-dbLoadRecords("db/ssa_RK_1300.db", "P=$(P)")
+dbLoadRecords("db/ssa_RK_CA1300.db", "P=$(P)")
 
 # END: Loading the record databases
 ########################################################################
