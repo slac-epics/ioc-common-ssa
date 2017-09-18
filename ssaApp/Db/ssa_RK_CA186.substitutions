@@ -1,0 +1,128 @@
+# asyn record for the underlying asyn octet port
+#file "ASYN/db/asynRecord.db" { pattern
+#{R,       PORT,      ADDR,   IMAX,    OMAX}
+#{SSA1:    OctetAsyn,   ssa1,        0,      125,      123}
+#}
+
+#----------------------------------------------------------------------------------
+
+# These are the binary outputs done with word access.
+file "bo_word.template" {
+pattern
+{           R,         PORT, OFFSET,   MASK,      ZNAM,     ONAM}
+{    DCEnable, RF1_Out_Word,      0, 0x0001, "Disable", "Enable"}
+{    RFEnable, RF1_Out_Word,      1, 0x0001, "Disable", "Enable"}
+{  FaultReset, RF1_Out_Word,      3, 0x0001,        "",  "Reset"}
+{ XPortReboot, RF1_Out_Word,      4, 0x0001,        "", "Reboot"}
+{   SysReboot, RF1_Out_Word,      5, 0x0001,        "", "Reboot"}
+}
+
+# These are the integer ouputs done with word access.
+file "longout_custom.template" {
+pattern
+{           R,         PORT, OFFSET, HOPR, LOPR,     EGU}
+{      PSVolt, RF1_Out_Word,      2, 2500,  700,    "mV"}
+{LCWFlwRatLim, RF1_Out_Word,     33,  100,   65, "L/min"}
+}
+
+# These are ao (unsigned integer) outputs 0x0203-0x0210 done with word access
+file "ao_custom.template" {
+pattern
+{           R,         PORT, OFFSET,   BITS, EGUL,        EGUF, HOPR, LOPR, PREC,    EGU}
+{PwrFwdAlmLim, RF1_Out_Word,     30, 0xFFFF,  0.0, 214748364.7,   63,    0,    1,   "kW"}
+{PwrRefAlmLim, RF1_Out_Word,     31, 0xFFFF,  0.0, 214748364.7,   10,    0,    1,   "kW"}
+{LCWOutTmpLim, RF1_Out_Word,     32, 0xFFFF,  0.0, 214748364.7,   45,    0,    1, "degC"}
+}
+
+#----------------------------------------------------------------------------------
+
+# There are the binary inputs done with word access.
+file "bi_word.template" {
+pattern
+{           R,         PORT, OFFSET,   MASK,         ZNAM,       ONAM,      ZSV,      OSV,       SCAN}
+{ ACEnableRBV,  RF1_In_Word,      9, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{ DCEnableRBV,  RF1_In_Word,     10, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{ RFEnableRBV,  RF1_In_Word,     11, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{    FaultInt,  RF1_In_Word,     12, 0x0001,         "OK",    "Fault", NO_ALARM,    MAJOR, "I/O Intr"}
+{    FaultExt,  RF1_In_Word,     13, 0x0001,         "OK",    "Fault", NO_ALARM,    MAJOR, "I/O Intr"}
+{     Warning,  RF1_In_Word,     14, 0x0001,         "OK",    "Fault", NO_ALARM,    MINOR, "I/O Intr"}
+{ WireCheckSt,  RF1_In_Word,     21, 0x0001, "Incomplete", "Complete",    MINOR, NO_ALARM, "I/O Intr"}
+{    ConfigSt,  RF1_In_Word,     22, 0x0001, "Incomplete", "Complete",    MINOR, NO_ALARM, "I/O Intr"}
+}
+
+# There are the Inputs done with word access
+file "longin_custom.template"
+{ pattern
+{           R,         PORT, OFFSET,       SCAN,     EGU}
+{     CalYear,  RF1_In_Word,     15, "I/O Intr",      ""}
+{    CalMonth,  RF1_In_Word,     16, "I/O Intr",      ""}
+{      CalDay,  RF1_In_Word,     17, "I/O Intr",      ""}
+{     CalHour,  RF1_In_Word,     18, "I/O Intr",      ""}
+{      CalMin,  RF1_In_Word,     19, "I/O Intr",      ""}
+{      CalSec,  RF1_In_Word,     20, "I/O Intr",      ""}
+{    CalYear2,  RF1_In_Word,     93, "I/O Intr",      ""}
+{   CalMonth2,  RF1_In_Word,     94, "I/O Intr",      ""}
+{     CalDay2,  RF1_In_Word,     95, "I/O Intr",      ""}
+{    CalHour2,  RF1_In_Word,     96, "I/O Intr",      ""}
+{     CalMin2,  RF1_In_Word,     97, "I/O Intr",      ""}
+{     CalSec2,  RF1_In_Word,     98, "I/O Intr",      ""}
+{  PLCVersion,  RF1_In_Word,     99, "I/O Intr",      ""}
+{ H_AD_IntMon,  RF1_In_Word,    108, "I/O Intr",      ""}
+# Addr 110 (Offset 109) skipped
+{  SysAirTemp,  RF1_In_Word,    110, "I/O Intr",  "degC"}
+{   LCWInTemp,  RF1_In_Word,    111, "I/O Intr",  "degC"}
+{  LCWOutTemp,  RF1_In_Word,    112, "I/O Intr",  "degC"}
+{ HeatEx1Temp,  RF1_In_Word,    113, "I/O Intr",  "degC"}
+{ HeatEx2Temp,  RF1_In_Word,    114, "I/O Intr",  "degC"}
+{ CtrlAirTemp,  RF1_In_Word,    115, "I/O Intr",  "degC"}
+{ RadCombTemp,  RF1_In_Word,    116, "I/O Intr",  "degC"}
+# Addr 118 (Offset 117) skipped
+{ L_AD_IntMon,  RF1_In_Word,    118, "I/O Intr",      ""}
+# Addr 120 (Offset 119) skipped
+{SuB_CrBrkrSt,  RF1_In_Word,    120, "I/O Intr",      ""}
+# Addr 122-125 (Offset 121-124) skipped
+{IO3_IntlkMon,  RF1_In_Word,    125, "I/O Intr",      ""}
+{ IO1_WarnMon,  RF1_In_Word,    126, "I/O Intr",      ""}
+{ IO2_WarnMon,  RF1_In_Word,    127, "I/O Intr",      ""}
+{ IO3_WarnMon,  RF1_In_Word,    128, "I/O Intr",      ""}
+# Addr 130-131 (Offset 129-130) skipped
+{  HX1FanSpd1,  RF1_In_Word,    131, "I/O Intr",   "rpm"}
+{  HX1FanSpd2,  RF1_In_Word,    132, "I/O Intr",   "rpm"}
+{  HX1FanSpd3,  RF1_In_Word,    133, "I/O Intr",   "rpm"}
+{  HX1FanSpd4,  RF1_In_Word,    134, "I/O Intr",   "rpm"}
+{  HX1FanSpd5,  RF1_In_Word,    135, "I/O Intr",   "rpm"}
+{  HX1FanSpd6,  RF1_In_Word,    136, "I/O Intr",   "rpm"}
+{  HX1FanSpd7,  RF1_In_Word,    137, "I/O Intr",   "rpm"}
+{  HX1FanSpd8,  RF1_In_Word,    138, "I/O Intr",   "rpm"}
+{  HX2FanSpd1,  RF1_In_Word,    139, "I/O Intr",   "rpm"}
+{  HX2FanSpd2,  RF1_In_Word,    140, "I/O Intr",   "rpm"}
+{  HX2FanSpd3,  RF1_In_Word,    141, "I/O Intr",   "rpm"}
+{  HX2FanSpd4,  RF1_In_Word,    142, "I/O Intr",   "rpm"}
+{  HX2FanSpd5,  RF1_In_Word,    143, "I/O Intr",   "rpm"}
+{  HX2FanSpd6,  RF1_In_Word,    144, "I/O Intr",   "rpm"}
+{  HX2FanSpd7,  RF1_In_Word,    145, "I/O Intr",   "rpm"}
+{  HX2FanSpd8,  RF1_In_Word,    146, "I/O Intr",   "rpm"}
+{ CtrlFanSpd1,  RF1_In_Word,    147, "I/O Intr",   "rpm"}
+{ CtrlFanSpd2,  RF1_In_Word,    148, "I/O Intr",   "rpm"}
+}
+
+# These are the aiFloat intput done with read
+file "ai_custom.template"
+{ pattern
+{           R,        PORT, OFFSET,    BITS, EGUL,        EGUF, PREC,     EGU,       SCAN}
+{  480VAC1_UV, RF1_In_Word,    100,  0xFFFF,  0.0, 214748364.7,    1,   "VAC", "I/O Intr"}
+{  480VAC2_VW, RF1_In_Word,    101,  0xFFFF,  0.0, 214748364.7,    1,   "VAC", "I/O Intr"}
+{  480VAC3_UW, RF1_In_Word,    102,  0xFFFF,  0.0, 214748364.7,    1,   "VAC", "I/O Intr"}
+{    PwrInDrv, RF1_In_Word,    103,  0xFFFF,  0.0, 214748364.7,    1,   "dBm", "I/O Intr"}
+{      PwrFwd, RF1_In_Word,    104,  0xFFFF,  0.0, 214748364.7,    1,    "kW", "I/O Intr"}
+{      PwrRef, RF1_In_Word,    105,  0xFFFF,  0.0, 214748364.7,    1,    "kW", "I/O Intr"}
+{    Humidity, RF1_In_Word,    106,  0xFFFF,  0.0, 214748364.7,    1,     "%", "I/O Intr"}
+{ LCWFlowRate, RF1_In_Word,    107,  0xFFFF,  0.0, 214748364.7,    1, "L/min", "I/O Intr"}
+}
+
+
+file "ssa_RK_CA186_extras.template" {
+{none}
+}
+
+
