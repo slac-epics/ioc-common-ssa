@@ -48,9 +48,11 @@ pattern
 {     Warning,  RF1_In_Word,     14, 0x0001,         "OK",    "Fault", NO_ALARM,    MINOR, "I/O Intr"}
 { WireCheckSt,  RF1_In_Word,     21, 0x0001, "Incomplete", "Complete",    MINOR, NO_ALARM, "I/O Intr"}
 {    ConfigSt,  RF1_In_Word,     22, 0x0001, "Incomplete", "Complete",    MINOR, NO_ALARM, "I/O Intr"}
-{SuB_CrkBrkSt,  RF1_In_Word,    120, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
-{ SubCrkBrkSt,  RF1_In_Word,    220, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
-{    SSAPwrSt,  RF1_In_Word,    229, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
+{ SubCrkBrkSt,  RF1_In_Word,    120, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
+{SubCrkBrkSt2,  RF1_In_Word,    220, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
+{ SSAModPwrSt,  RF1_In_Word,    229, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
+{SubCrkBrkSt3,  RF1_In_Word,    320, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
+{SSAModPwrSt2,  RF1_In_Word,    329, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
 }
 
 # There are the Inputs done with word access
@@ -85,9 +87,9 @@ file "longin_custom.template"
 # Addr 121 in bi
 # Addr 122-125 (Offset 121-124) skipped
 {IO3_IntlkMon,  RF1_In_Word,    125, "I/O Intr",      ""}
-{ IO1_WarnMon,  RF1_In_Word,    126, "I/O Intr",      ""}
-{ IO2_WarnMon,  RF1_In_Word,    127, "I/O Intr",      ""}
-{ IO3_WarnMon,  RF1_In_Word,    128, "I/O Intr",      ""}
+{  IO1_WrnMon,  RF1_In_Word,    126, "I/O Intr",      ""}
+{  IO2_WrnMon,  RF1_In_Word,    127, "I/O Intr",      ""}
+{  IO3_WrnMon,  RF1_In_Word,    128, "I/O Intr",      ""}
 # Addr 130-131 (Offset 129-130) skipped
 {  HX1FanSpd1,  RF1_In_Word,    131, "I/O Intr",   "rpm"}
 {  HX1FanSpd2,  RF1_In_Word,    132, "I/O Intr",   "rpm"}
@@ -114,7 +116,7 @@ file "longin_custom.template"
 {PS1DCOutCurr,  RF1_In_Word,    204, "I/O Intr",     "A"}
 {PS2DCOutCurr,  RF1_In_Word,    205, "I/O Intr",     "A"}
 # Addr 207-209 (Offset 206-208) skipped
-{H_AD_WarnMon,  RF1_In_Word,    209, "I/O Intr",      ""}
+{ H_AD_WrnMon,  RF1_In_Word,    209, "I/O Intr",      ""}
 { GainAMPVolt,  RF1_In_Word,    210, "I/O Intr",   "VDC"}
 { DrvrAMPVolt,  RF1_In_Word,    211, "I/O Intr",   "VDC"}
 {PS1DCOutVolt,  RF1_In_Word,    212, "I/O Intr",   "VDC"}
@@ -123,12 +125,49 @@ file "longin_custom.template"
 {LCWHSinkTemp,  RF1_In_Word,    215, "I/O Intr",  "degC"}
 {  SSAAirTemp,  RF1_In_Word,    216, "I/O Intr",  "degC"}
 # Addr 218-219 (Offset 217-218) skipped
-{L_AD_WarnMon,  RF1_In_Word,    219, "I/O Intr",      ""}
+{ L_AD_WrnMon,  RF1_In_Word,    219, "I/O Intr",      ""}
 # Addr 221 in bi
 # Addr 222-226 (Offset 221-225) skipped
-{IO1_WarnMon2,  RF1_In_Word,    226, "I/O Intr",      ""}
-{IO2_WarnMon2,  RF1_In_Word,    227, "I/O Intr",      ""}
+{ IO1_WrnMon2,  RF1_In_Word,    226, "I/O Intr",      ""}
+{ IO2_WrnMon2,  RF1_In_Word,    227, "I/O Intr",      ""}
 # Addr 229 (Offset 228) skipped
+# Addr 230 in bi
+# Addr 231-238 (Offset 230-237) skipped
+{  Tr1FanSpd1,  RF1_In_Word,    238, "I/O Intr",   "rpm"}
+{  Tr1FanSpd2,  RF1_In_Word,    239, "I/O Intr",   "rpm"}
+{SSAModFanSpd,  RF1_In_Word,    240, "I/O Intr",   "rpm"}
+# Addr 242-299 (Offset 241-298) skipped
+{    FPGAVer2,  RF1_In_Word,    299, "I/O Intr",      ""}
+{   PwrOutFwd,  RF1_In_Word,    300, "I/O Intr",    "kW"}
+{     PwrRef2,  RF1_In_Word,    301, "I/O Intr",    "kW"}
+{ Dev1DrnCurr,  RF1_In_Word,    302, "I/O Intr",     "A"}
+{ Dev2DrnCurr,  RF1_In_Word,    303, "I/O Intr",     "A"}
+{PS1DCOutCurr,  RF1_In_Word,    304, "I/O Intr",     "A"}
+{PS2DCOutCurr,  RF1_In_Word,    305, "I/O Intr",     "A"}
+{PS3DCOutCurr,  RF1_In_Word,    306, "I/O Intr",     "A"}
+# Addr 308-309 (Offset 307-308) skipped
+{H_AD_WrnMon2,  RF1_In_Word,    309, "I/O Intr",      ""}
+{  SSADrnVolt,  RF1_In_Word,    310, "I/O Intr",   "VDC"}
+# Addr 312 (Offset 311) skipped
+{PS1DCOutVolt,  RF1_In_Word,    312, "I/O Intr",   "VDC"}
+{PS2DCOutVolt,  RF1_In_Word,    313, "I/O Intr",   "VDC"}
+{PS3DCOutVolt,  RF1_In_Word,    314, "I/O Intr",   "VDC"}
+{   LCWHSTemp,  RF1_In_Word,    315, "I/O Intr",  "degC"}
+{ SSAAirTemp2,  RF1_In_Word,    316, "I/O Intr",  "degC"}
+# Addr 318-319 (Offset 317-318) skipped
+{L_AD_WrnMon2,  RF1_In_Word,    319, "I/O Intr",      ""}
+# Addr 321 in bi
+# Addr 322-326 (Offset 321-325) skipped
+{ IO1_WrnMon3,  RF1_In_Word,    326, "I/O Intr",      ""}
+{ IO2_WrnMon3,  RF1_In_Word,    327, "I/O Intr",      ""}
+# Addr 329 (Offset 328) skipped
+# Addr 330 in bi
+# Addr 331-338 (Offset 330-337) skipped
+{     FanSpd1,  RF1_In_Word,    338, "I/O Intr",   "rpm"}
+{     FanSpd2,  RF1_In_Word,    339, "I/O Intr",   "rpm"}
+{      FanSpd,  RF1_In_Word,    340, "I/O Intr",   "rpm"}
+# Addr 342-349 (Offset 341-348) skipped
+{    FPGAVer3,  RF1_In_Word,    349, "I/O Intr",      ""}
 }
 
 # These are the aiFloat intput done with read
