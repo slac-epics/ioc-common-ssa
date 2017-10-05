@@ -1,0 +1,80 @@
+# asyn record for the underlying asyn octet port
+file "asynRecord.db" { 
+pattern
+{        R, PORT, ADDR, IMAX, OMAX}
+{OctetAsyn, $(P),    0,  125,  125}
+}
+#--------------------------------------------------------------------------------------------------
+
+# These are the binary outputs done with word access.
+file "bo_word.template" {
+pattern
+{           R,         PORT, OFFSET,   MASK,      ZNAM,     ONAM}
+{    RFEnable, RF1_Out_Word,      0, 0x0001, "Disable", "Enable"}
+{  FaultReset, RF1_Out_Word,      1, 0x0001,        "",  "Reset"}
+{WarningReset, RF1_Out_Word,      1, 0x0004,        "",  "Reset"}
+{   SysReboot, RF1_Out_Word,      2, 0x0001,        "", "Reboot"}
+}
+
+#----------------------------------------------------------------------------------
+
+# There are the binary inputs done with word access.
+file "bi_word.template" {
+pattern
+{           R,         PORT, OFFSET,   MASK,         ZNAM,       ONAM,      ZSV,      OSV,       SCAN}
+{ WaterLeakSt,  RF1_In_Word,     28, 0x0001,         "OK",    "Alarm", NO_ALARM,    MAJOR, "I/O Intr"}
+}
+
+# There are the integer inputs done with word access.
+file "longin_custom.template"
+{ pattern
+{           R,         PORT, OFFSET,       SCAN,     EGU}
+{   AlarmCode,  RF1_In_Word,      9, "I/O Intr",      ""}
+{ WarningCode,  RF1_In_Word,     10, "I/O Intr",      ""}
+{ThermostatSt,  RF1_In_Word,     29, "I/O Intr",      ""}
+{        PSSt,  RF1_In_Word,     30, "I/O Intr",      ""}
+}
+
+# These are the aiFloat intput done with read
+file "ai_custom.template"
+{ pattern
+{           R,        PORT, OFFSET,    BITS, EGUL,        EGUF, PREC,     EGU,       SCAN}
+{    Moisture, RF1_In_Word,     14,  0xFFFF,  0.0, 214748364.7,    1,     "%", "I/O Intr"}
+{       PwrIn, RF1_In_Word,     15,  0xFFFF,  0.0,  2147483647,    1,    "mV", "I/O Intr"}
+{      PwrFwd, RF1_In_Word,     16,  0xFFFF,  0.0,  2147483647,    1,     "W", "I/O Intr"}
+{      PwrRef, RF1_In_Word,     17,  0xFFFF,  0.0,  2147483647,    1,     "W", "I/O Intr"}
+{      DACurr, RF1_In_Word,     18,  0xFFFF,  0.0, 214748364.7,    1,     "A", "I/O Intr"}
+{    FA-1Curr, RF1_In_Word,     19,  0xFFFF,  0.0, 214748364.7,    1,     "A", "I/O Intr"}
+{    FA-2Curr, RF1_In_Word,     20,  0xFFFF,  0.0, 214748364.7,    1,     "A", "I/O Intr"}
+{    FA-3Curr, RF1_In_Word,     21,  0xFFFF,  0.0, 214748364.7,    1,     "A", "I/O Intr"}
+{    FA-4Curr, RF1_In_Word,     22,  0xFFFF,  0.0, 214748364.7,    1,     "A", "I/O Intr"}
+{        Volt, RF1_In_Word,     23,  0xFFFF,  0.0, 214748364.7,    1,     "V", "I/O Intr"}
+{      DATemp, RF1_In_Word,     24,  0xFFFF,  0.0, 214748364.7,    1,  "degC", "I/O Intr"}
+{    FA-1Temp, RF1_In_Word,     25,  0xFFFF,  0.0, 214748364.7,    1,  "degC", "I/O Intr"}
+{    FA-2Temp, RF1_In_Word,     26,  0xFFFF,  0.0, 214748364.7,    1,  "degC", "I/O Intr"}
+{   WaterFlow, RF1_In_Word,     27,  0xFFFF,  0.0, 214748364.7,    1, "L/min", "I/O Intr"}
+}
+
+#------------------------------------------------------------------------------------------
+file "asynRecord.template" { 
+pattern
+{           R,        PORT, ADDR, TMOD,             IFACE}
+{  RfIn1WAsyn, RF1_In_Word,    0, Read, asynUInt32Digital}
+}
+file "statistics.template" {
+pattern
+{           R,        PORT,         SCAN}
+{      RFIn1W, RF1_In_Word,  "10 second"}
+} 
+file "poll_delay.template" {
+pattern
+{           R,        PORT}
+{RFIn1WPDelay, RF1_In_Word}
+}
+
+#------------------------------------------------------------------------------------------
+file "ssa_RK_CA199_extras.template" {
+{none}
+}
+
+
