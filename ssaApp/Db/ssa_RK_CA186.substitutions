@@ -1,10 +1,10 @@
 # asyn record for the underlying asyn octet port
-#file "ASYN/db/asynRecord.db" { pattern
-#{R,       PORT,      ADDR,   IMAX,    OMAX}
-#{SSA1:    OctetAsyn,   ssa1,        0,      125,      123}
-#}
-
-#----------------------------------------------------------------------------------
+file "asynRecord.db" { 
+pattern
+{        R, PORT, ADDR, IMAX, OMAX}
+{OctetAsyn, $(P),    0,  125,  125}
+}
+#--------------------------------------------------------------------------------------------------
 
 # These are the binary outputs done with word access.
 file "bo_word.template" {
@@ -71,7 +71,8 @@ file "longin_custom.template"
 {    CalHour2,  RF1_In_Word,     96, "I/O Intr",      ""}
 {     CalMin2,  RF1_In_Word,     97, "I/O Intr",      ""}
 {     CalSec2,  RF1_In_Word,     98, "I/O Intr",      ""}
-{  PLCVersion,  RF1_In_Word,     99, "I/O Intr",      ""}
+{      PLCVer,  RF1_In_Word,     99, "I/O Intr",      ""}
+# Addr 101-108 in ai
 { H_AD_IntMon,  RF1_In_Word,    108, "I/O Intr",      ""}
 # Addr 110 (Offset 109) skipped
 {  SysAirTemp,  RF1_In_Word,    110, "I/O Intr",  "degC"}
@@ -111,14 +112,14 @@ file "longin_custom.template"
 { CtrlFanSpd2,  RF1_In_Word,    148, "I/O Intr",   "rpm"}
 {     FPGAVer,  RF1_In_Word,    149, "I/O Intr",      ""}
 # Addr 151-202 (Offset 150-201) skipped
-{ GainAMPCurr,  RF1_In_Word,    202, "I/O Intr",     "A"}
-{ DrvrAMPCurr,  RF1_In_Word,    203, "I/O Intr",     "A"}
+{ GainAmpCurr,  RF1_In_Word,    202, "I/O Intr",     "A"}
+{ DrvrAmpCurr,  RF1_In_Word,    203, "I/O Intr",     "A"}
 {PS1DCOutCurr,  RF1_In_Word,    204, "I/O Intr",     "A"}
 {PS2DCOutCurr,  RF1_In_Word,    205, "I/O Intr",     "A"}
 # Addr 207-209 (Offset 206-208) skipped
 { H_AD_WrnMon,  RF1_In_Word,    209, "I/O Intr",      ""}
-{ GainAMPVolt,  RF1_In_Word,    210, "I/O Intr",   "VDC"}
-{ DrvrAMPVolt,  RF1_In_Word,    211, "I/O Intr",   "VDC"}
+{ GainAmpVolt,  RF1_In_Word,    210, "I/O Intr",   "VDC"}
+{ DrvrAmpVolt,  RF1_In_Word,    211, "I/O Intr",   "VDC"}
 {PS1DCOutVolt,  RF1_In_Word,    212, "I/O Intr",   "VDC"}
 {PS2DCOutVolt,  RF1_In_Word,    213, "I/O Intr",   "VDC"}
 # Addr 215 (Offset 214) skipped
@@ -184,7 +185,24 @@ file "ai_custom.template"
 { LCWFlowRate, RF1_In_Word,    107,  0xFFFF,  0.0, 214748364.7,    1, "L/min", "I/O Intr"}
 }
 
+#------------------------------------------------------------------------------------------
+file "asynRecord.template" { 
+pattern
+{           R,        PORT, ADDR, TMOD,             IFACE}
+{  RfIn1WAsyn, RF1_In_Word,    0, Read, asynUInt32Digital}
+}
+file "statistics.template" {
+pattern
+{           R,        PORT,         SCAN}
+{      RFIn1W, RF1_In_Word,  "10 second"}
+} 
+file "poll_delay.template" {
+pattern
+{           R,        PORT}
+{RFIn1WPDelay, RF1_In_Word}
+}
 
+#------------------------------------------------------------------------------------------
 file "ssa_RK_CA186_extras.template" {
 {none}
 }
