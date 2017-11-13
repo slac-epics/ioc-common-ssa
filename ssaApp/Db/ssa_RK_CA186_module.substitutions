@@ -1,0 +1,50 @@
+
+# These are the binary outputs done with word access.
+file "bo_word.template" {
+pattern
+{           R,         PORT, OFFSET,   MASK,      ZNAM,     ONAM}
+##{    DCEnable, RF1_Out_Word,      0, 0x0001, "Disable", "Enable"}
+}
+
+# These are the integer ouputs done with word access.
+file "longout_custom.template" {
+pattern
+{           R,         PORT, OFFSET, HOPR, LOPR,     EGU}
+##{      PSVolt, RF1_Out_Word,      2, 2500,  700,    "mV"}
+}
+
+# These are ao (unsigned integer) outputs 0x0203-0x0210 done with word access
+file "ao_custom.template" {
+pattern
+{           R,         PORT, OFFSET,   BITS, EGUL,        EGUF, HOPR, LOPR, PREC,    EGU}
+##{   PwrFwAlLm, RF1_Out_Word,     29, 0xFFFF,  0.0, 214748364.7,   63,    0,    1,   "kW"}
+}
+
+#----------------------------------------------------------------------------------
+
+# There are the binary inputs done with word access.
+file "bi_word.template" {
+pattern
+{           R,         PORT, OFFSET,   MASK,         ZNAM,       ONAM,      ZSV,      OSV,       SCAN}
+#{ ACEnableRBV,  RF1_In_Word,      9, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+}
+
+# There are the Inputs done with word access
+file "longin_custom.template"
+{ pattern
+{           R,         PORT, OFFSET,       SCAN,     EGU}
+##{     CalYear,  RF1_In_Word,     15, "I/O Intr",      ""}
+}
+
+# These are the aiFloat intput done with read
+file "ai_custom.template"
+{ pattern
+{               R,        PORT,   OFFSET,   BITS, EGUL,        EGUF, PREC,     EGU,       SCAN}
+{$(MOD):PwrOutFwd, RF1_In_Word, $(START), 0xFFFF,  0.0,  2147483647,    1,    "kW", "I/O Intr"}
+{   $(MOD):PwrRef, RF1_In_Word, $(START), 0xFFFF,  0.0,  2147483647,    1,    "kW", "I/O Intr"}
+
+}
+
+#------------------------------------------------------------------------------------------
+
+
