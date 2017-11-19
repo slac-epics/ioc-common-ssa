@@ -5,8 +5,10 @@ record(ao, "$(P)$(R)") {
     field(LINR,"LINEAR")
     field(EGUL,"$(EGUL)")
     field(EGUF,"$(EGUF)")
-    field(HOPR,"$(HOPR)")
+    field(DRVL,"$(DRVL)")
+    field(DRVH,"$(DRVH)")
     field(LOPR,"$(LOPR)")
+    field(HOPR,"$(HOPR)")
     field(EGU, "$(EGU)")
     field(PREC,"$(PREC)")
 }

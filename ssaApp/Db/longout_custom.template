@@ -2,7 +2,9 @@
 record(longout, "$(P)$(R)") {
     field(DTYP, "asynUInt32Digital")
     field(OUT,  "@asynMask($(PORT) $(OFFSET) 0xFFFF)")
-    field(HOPR, "$(HOPR)")
+    field(DRVL, "$(DRVL)")
+    field(DRVH, "$(DRVH)")
     field(LOPR, "$(LOPR)")
+    field(HOPR, "$(HOPR)")
     field(EGU,  "$(EGU)")
 }
