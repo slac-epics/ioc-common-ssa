@@ -1,0 +1,14 @@
+record(ao, "$(P)$(R)") {
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT) $(OFFSET))MODBUS_DATA")
+    field(LINR, "LINEAR")
+    field(ESLO, "$(ESLO)")
+    field(EOFF, "$(EOFF)")
+    field(DRVL, "$(DRVL)")
+    field(DRVH, "$(DRVH)")
+    field(LOPR, "$(LOPR)")
+    field(HOPR, "$(HOPR)")
+    field(EGU,  "$(EGU)")
+    field(PREC, "$(PREC)")
+}
+
