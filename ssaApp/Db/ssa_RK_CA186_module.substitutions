@@ -1,48 +1,45 @@
-
-# These are the binary outputs done with word access.
-file "bo_word.template" {
-pattern
-{           R,         PORT, OFFSET,   MASK,      ZNAM,     ONAM}
-##{    DCEnable, RF1_Out_Word,      0, 0x0001, "Disable", "Enable"}
-}
-
-# These are the integer ouputs done with word access.
-file "longout_custom.template" {
-pattern
-{           R,         PORT, OFFSET, HOPR, LOPR,     EGU}
-##{      PSVolt, RF1_Out_Word,      2, 2500,  700,    "mV"}
-}
-
-# These are ao (unsigned integer) outputs 0x0203-0x0210 done with word access
-file "ao_custom.template" {
-pattern
-{           R,         PORT, OFFSET,   BITS, EGUL,        EGUF, HOPR, LOPR, PREC,    EGU}
-##{   PwrFwAlLm, RF1_Out_Word,     29, 0xFFFF,  0.0, 214748364.7,   63,    0,    1,   "kW"}
-}
-
 #----------------------------------------------------------------------------------
 
-# There are the binary inputs done with word access.
+# There are the binary inputs done with word access
 file "bi_word.template" {
 pattern
-{           R,         PORT, OFFSET,   MASK,         ZNAM,       ONAM,      ZSV,      OSV,       SCAN}
-#{ ACEnableRBV,  RF1_In_Word,      9, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{            R,         PORT, OFFSET,   MASK,         ZNAM,       ONAM,      ZSV,      OSV,       SCAN}
+{M00:SubCBStat,  RF1_In_Word,    319, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{  M00:PwrStat,  RF1_In_Word,    328, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
 }
 
-# There are the Inputs done with word access
-file "longin_custom.template"
-{ pattern
-{           R,         PORT, OFFSET,       SCAN,     EGU}
-##{     CalYear,  RF1_In_Word,     15, "I/O Intr",      ""}
+# There are the integer inputs done with word access
+file "longin_custom.template" {
+pattern
+{           R,         PORT, OFFSET,   EGU,       SCAN}
+{    HiADWarn,  RF1_In_Word,    308,    "", "I/O Intr"}
+{    LoADWarn,  RF1_In_Word,    318,    "", "I/O Intr"}
+{   IO1IntMon,  RF1_In_Word,    322,    "", "I/O Intr"}
+{   IO1WrnMon,  RF1_In_Word,    325,    "", "I/O Intr"}
+{   IO2WrnMon,  RF1_In_Word,    326,    "", "I/O Intr"}
+{     FPGAVer,  RF1_In_Word,    348,    "", "I/O Intr"}
 }
 
-# These are the aiFloat intput done with read
-file "ai_custom.template"
-{ pattern
-{               R,        PORT,   OFFSET,   BITS, EGUL,        EGUF, PREC,     EGU,       SCAN}
-{$(MOD):PwrOutFwd, RF1_In_Word, $(START), 0xFFFF,  0.0,  2147483647,    1,    "kW", "I/O Intr"}
-{   $(MOD):PwrRef, RF1_In_Word, $(START), 0xFFFF,  0.0,  2147483647,    1,    "kW", "I/O Intr"}
-
+# These are the aiFloat inputs done with read
+file "ai_custom.template" {
+pattern
+{           R,        PORT, OFFSET,  EOFF,   ESLO, PREC,     EGU,       SCAN}
+{   PwrOutFwd, RF1_In_Word,    299,   0.0,    1.0,    1,    "kW", "I/O Intr"}
+{      PwrRef, RF1_In_Word,    300,   0.0,    1.0,    1,    "kW", "I/O Intr"}
+{   Dv1DrnCur, RF1_In_Word,    301,   0.0,    1.0,    1,     "A", "I/O Intr"}
+{   Dv2DrnCur, RF1_In_Word,    302,   0.0,    1.0,    1,     "A", "I/O Intr"}
+{    PS1DCCur, RF1_In_Word,    303,   0.0,    1.0,    1,     "A", "I/O Intr"}
+{    PS2DCCur, RF1_In_Word,    304,   0.0,    1.0,    1,     "A", "I/O Intr"}
+{    PS3DCCur, RF1_In_Word,    305,   0.0,    1.0,    1,     "A", "I/O Intr"}
+{     DrnVolt, RF1_In_Word,    309,   0.0,    1.0,    1,   "VDC", "I/O Intr"}
+{   PS1DCVolt, RF1_In_Word,    311,   0.0,    1.0,    1,   "VDC", "I/O Intr"}
+{   PS2DCVolt, RF1_In_Word,    312,   0.0,    1.0,    1,   "VDC", "I/O Intr"}
+{   PS3DCVolt, RF1_In_Word,    313,   0.0,    1.0,    1,   "VDC", "I/O Intr"}
+{   LCWHSTemp, RF1_In_Word,    314,   0.0,    1.0,    1,  "degC", "I/O Intr"}
+{     AirTemp, RF1_In_Word,    315,   0.0,    1.0,    1,  "degC", "I/O Intr"}
+{   T1FanSpd1, RF1_In_Word,    337,   0.0,    1.0,    1,   "rpm", "I/O Intr"}
+{   T1FanSpd2, RF1_In_Word,    338,   0.0,    1.0,    1,   "rpm", "I/O Intr"}
+{      FanSpd, RF1_In_Word,    339,   0.0,    1.0,    1,   "rpm", "I/O Intr"}
 }
 
 #------------------------------------------------------------------------------------------
