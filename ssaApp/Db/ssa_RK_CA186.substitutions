@@ -40,10 +40,8 @@ pattern
 {           R,         PORT, OFFSET,    EOFF,   ESLO, DRVL, DRVH, LOPR, HOPR, PREC,     EGU}
 {   PwrFwAlLm, RF1_Out_Word,     29,     0.0,    1.0,    0, 2260,    0, 2260,    1,      ""}
 {   PwrRfAlLm, RF1_Out_Word,     30,     0.0,    1.0,    0,  730,    0,  730,    1,      ""}
-{   LCWOtTmLm, RF1_Out_Word,     31,     0.0,    1.0, 1001, 2065, 1001, 2065,    1,      ""}
-#{   LCWOtTmLm, RF1_Out_Word,     31,  -39.24, 0.0392,    0,   50,    0,   50,    1,  "degC"}
-{   LCWFlRtLm, RF1_Out_Word,     32,    0.0,     1.0, 1154, 1775, 1154, 1775,    1,      ""}
-#{   LCWFlRtLm, RF1_Out_Word,     32,    0.0,  0.0564,   65,  100,   65,  100,    1, "L/min"}
+{   LCWOtTmLm, RF1_Out_Word,     31, -39.235, 0.0392,    0,   50,    0,   50,    1,  "degC"}
+{   LCWFlRtLm, RF1_Out_Word,     32,     0.0, 0.0564,   65,  100,   65,  100,    1, "L/min"}
 }
 
 #----------------------------------------------------------------------------------
@@ -109,51 +107,46 @@ file "ai_slope.template"
 {    PwrInDrv, RF1_In_Word,    102,    0.0,     1.0,    1,   "dBm", "I/O Intr"}
 {      PwrFwd, RF1_In_Word,    103,    0.0,     1.0,    1,    "kW", "I/O Intr"}
 {      PwrRef, RF1_In_Word,    104,    0.0,     1.0,    1,    "kW", "I/O Intr"}
-{    Humidity, RF1_In_Word,    105,    0.0,     1.0,    1,      "", "I/O Intr"}
-#{    Humidity, RF1_In_Word,    105,    0.0,   0.132,    1,     "%", "I/O Intr"}
-{ LCWFlowRate, RF1_In_Word,    106,    0.0,     1.0,    1,      "", "I/O Intr"}
-#{ LCWFlowRate, RF1_In_Word,    106,    0.0,   0.056,    1, "L/min", "I/O Intr"}
-{  SysAirTemp, RF1_In_Word,    109,    0.0,     1.0,    1,      "", "I/O Intr"}
-#{  SysAirTemp, RF1_In_Word,    109, -39.24,   0.039,    1,  "degC", "I/O Intr"}
-{   LCWInTemp, RF1_In_Word,    110,    0.0,     1.0,    1,  "degC", "I/O Intr"}
-{  LCWOutTemp, RF1_In_Word,    111,    0.0,     1.0,    1,  "degC", "I/O Intr"}
-{ HeatEx1Temp, RF1_In_Word,    112,    0.0,     1.0,    1,  "degC", "I/O Intr"}
-{ HeatEx2Temp, RF1_In_Word,    113,    0.0,     1.0,    1,  "degC", "I/O Intr"}
-{ CtrlAirTemp, RF1_In_Word,    114,    0.0,     1.0,    1,  "degC", "I/O Intr"}
-{ RadCombTemp, RF1_In_Word,    115,    0.0,     1.0,    1,  "degC", "I/O Intr"}
-{  HX1FanSpd1, RF1_In_Word,    130,    0.0,     1.0,    1,      "", "I/O Intr"}
-#{  HX1FanSpd1, RF1_In_Word,    130,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
-{  HX1FanSpd2, RF1_In_Word,    131,    0.0,     1.0,    1,   "rpm", "I/O Intr"}
-{  HX1FanSpd3, RF1_In_Word,    132,    0.0,     1.0,    1,   "rpm", "I/O Intr"}
-{  HX1FanSpd4, RF1_In_Word,    133,    0.0,     1.0,    1,   "rpm", "I/O Intr"}
-{  HX1FanSpd5, RF1_In_Word,    134,    0.0,     1.0,    1,   "rpm", "I/O Intr"}
-{  HX1FanSpd6, RF1_In_Word,    135,    0.0,     1.0,    1,   "rpm", "I/O Intr"}
-{  HX1FanSpd7, RF1_In_Word,    136,    0.0,     1.0,    1,   "rpm", "I/O Intr"}
-{  HX1FanSpd8, RF1_In_Word,    137,    0.0,     1.0,    1,   "rpm", "I/O Intr"}
-{  HX2FanSpd1, RF1_In_Word,    138,    0.0,     1.0,    1,   "rpm", "I/O Intr"}
-{  HX2FanSpd2, RF1_In_Word,    139,    0.0,     1.0,    1,   "rpm", "I/O Intr"}
-{  HX2FanSpd3, RF1_In_Word,    140,    0.0,     1.0,    1,   "rpm", "I/O Intr"}
-{  HX2FanSpd4, RF1_In_Word,    141,    0.0,     1.0,    1,   "rpm", "I/O Intr"}
-{  HX2FanSpd5, RF1_In_Word,    142,    0.0,     1.0,    1,   "rpm", "I/O Intr"}
-{  HX2FanSpd6, RF1_In_Word,    143,    0.0,     1.0,    1,   "rpm", "I/O Intr"}
-{  HX2FanSpd7, RF1_In_Word,    144,    0.0,     1.0,    1,   "rpm", "I/O Intr"}
-{  HX2FanSpd8, RF1_In_Word,    145,    0.0,     1.0,    1,   "rpm", "I/O Intr"}
-{ CtrlFanSpd1, RF1_In_Word,    146,    0.0,     1.0,    1,   "rpm", "I/O Intr"}
-{ CtrlFanSpd2, RF1_In_Word,    147,    0.0,     1.0,    1,   "rpm", "I/O Intr"}
-{DrvDv1DrnCur, RF1_In_Word,    201,    0.0,     1.0,    1,      "", "I/O Intr"}
-#{DrvDv1DrnCur, RF1_In_Word,    201,    0.0,  0.00106,    1,     "A", "I/O Intr"}
-{DrvDv2DrnCur, RF1_In_Word,    202,    0.0,     1.0,    1,     "A", "I/O Intr"}
-{ DrvPS1DCCur, RF1_In_Word,    203,    0.0,     1.0,    1,     "A", "I/O Intr"}
-{ DrvPS2DCCur, RF1_In_Word,    204,    0.0,     1.0,    1,     "A", "I/O Intr"}
-{DrvGnDrnVolt, RF1_In_Word,    209,    0.0,     1.0,    1,   "VDC", "I/O Intr"}
-{DrvDrDrnVolt, RF1_In_Word,    210,    0.0,     1.0,    1,   "VDC", "I/O Intr"}
-{DrvPS1DCVolt, RF1_In_Word,    211,    0.0,     1.0,    1,   "VDC", "I/O Intr"}
-{DrvPS2DCVolt, RF1_In_Word,    212,    0.0,     1.0,    1,   "VDC", "I/O Intr"}
-{DrvLCWHSTemp, RF1_In_Word,    214,    0.0,     1.0,    1,  "degC", "I/O Intr"}
-{  DrvAirTemp, RF1_In_Word,    215,    0.0,     1.0,    1,  "degC", "I/O Intr"}
-{DrvT1FanSpd1, RF1_In_Word,    237,    0.0,     1.0,    1,   "rpm", "I/O Intr"}
-{DrvT1FanSpd2, RF1_In_Word,    238,    0.0,     1.0,    1,   "rpm", "I/O Intr"}
-{   DrvFanSpd, RF1_In_Word,    239,    0.0,     1.0,    1,   "rpm", "I/O Intr"}
+{    Humidity, RF1_In_Word,    105,    0.0,   0.132,    1,     "%", "I/O Intr"}
+{ LCWFlowRate, RF1_In_Word,    106,    0.0,  0.0564,    1, "L/min", "I/O Intr"}
+{  SysAirTemp, RF1_In_Word,    109, -39.24,  0.0392,    1,  "degC", "I/O Intr"}
+{   LCWInTemp, RF1_In_Word,    110, -39.24,  0.0392,    1,  "degC", "I/O Intr"}
+{  LCWOutTemp, RF1_In_Word,    111, -39.24,  0.0392,    1,  "degC", "I/O Intr"}
+{ HeatEx1Temp, RF1_In_Word,    112, -39.24,  0.0392,    1,  "degC", "I/O Intr"}
+{ HeatEx2Temp, RF1_In_Word,    113, -39.24,  0.0392,    1,  "degC", "I/O Intr"}
+{ CtrlAirTemp, RF1_In_Word,    114, -39.24,  0.0392,    1,  "degC", "I/O Intr"}
+{ RadCombTemp, RF1_In_Word,    115, -39.24,  0.0392,    1,  "degC", "I/O Intr"}
+{  HX1FanSpd1, RF1_In_Word,    130,    0.0,     4.0,    1,      "", "I/O Intr"}
+{  HX1FanSpd2, RF1_In_Word,    131,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{  HX1FanSpd3, RF1_In_Word,    132,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{  HX1FanSpd4, RF1_In_Word,    133,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{  HX1FanSpd5, RF1_In_Word,    134,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{  HX1FanSpd6, RF1_In_Word,    135,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{  HX1FanSpd7, RF1_In_Word,    136,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{  HX1FanSpd8, RF1_In_Word,    137,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{  HX2FanSpd1, RF1_In_Word,    138,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{  HX2FanSpd2, RF1_In_Word,    139,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{  HX2FanSpd3, RF1_In_Word,    140,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{  HX2FanSpd4, RF1_In_Word,    141,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{  HX2FanSpd5, RF1_In_Word,    142,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{  HX2FanSpd6, RF1_In_Word,    143,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{  HX2FanSpd7, RF1_In_Word,    144,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{  HX2FanSpd8, RF1_In_Word,    145,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{ CtrlFanSpd1, RF1_In_Word,    146,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{ CtrlFanSpd2, RF1_In_Word,    147,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{DrvDv1DrnCur, RF1_In_Word,    201,    0.0, 0.00106,    1,     "A", "I/O Intr"}
+{DrvDv2DrnCur, RF1_In_Word,    202,    0.0, 0.00106,    1,     "A", "I/O Intr"}
+{ DrvPS1DCCur, RF1_In_Word,    203,    0.0, 0.00106,    1,     "A", "I/O Intr"}
+{ DrvPS2DCCur, RF1_In_Word,    204,    0.0, 0.00106,    1,     "A", "I/O Intr"}
+{DrvGnDrnVolt, RF1_In_Word,    209,    0.0, 0.00568,    1,   "VDC", "I/O Intr"}
+{DrvDrDrnVolt, RF1_In_Word,    210,    0.0, 0.01719,    1,   "VDC", "I/O Intr"}
+{DrvPS1DCVolt, RF1_In_Word,    211,    0.0, 0.00568,    1,   "VDC", "I/O Intr"}
+{DrvPS2DCVolt, RF1_In_Word,    212,    0.0, 0.01719,    1,   "VDC", "I/O Intr"}
+{DrvLCWHSTemp, RF1_In_Word,    214, -39.24,  0.0392,    1,  "degC", "I/O Intr"}
+{  DrvAirTemp, RF1_In_Word,    215, -39.24,  0.0392,    1,  "degC", "I/O Intr"}
+{DrvT1FanSpd1, RF1_In_Word,    237,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{DrvT1FanSpd2, RF1_In_Word,    238,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{   DrvFanSpd, RF1_In_Word,    239,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
 }
 
 #------------------------------------------------------------------------------------------

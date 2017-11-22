@@ -21,7 +21,7 @@ pattern
 }
 
 # These are the aiFloat inputs done with read
-file "ai_custom.template" {
+file "ai_slope.template" {
 pattern
 {           R,        PORT, OFFSET,  EOFF,   ESLO, PREC,     EGU,       SCAN}
 {   PwrOutFwd, RF1_In_Word,    299,   0.0,    1.0,    1,    "kW", "I/O Intr"}
