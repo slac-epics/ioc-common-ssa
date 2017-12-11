@@ -1,0 +1,43 @@
+
+# --- Run state readback -------------------------------------------------------------
+record(calc, "$(P)RunState") {
+    field(DESC, "Run state readback")
+    field(INPA, "$(P)RFEnableRBV CP")
+    field(INPB, "$(P)AlarmCode CP")
+    field(CALC, "((B=0)&&A)?0:B?1:2")
+    field(FLNK, "$(P)RunStateMsg")
+}
+
+record(mbbi, "$(P)RunStateMsg") {
+    field(DESC, "Run state readback message")
+    field(INP,  "$(P)RunState")
+    field(ZRVL, "0")
+    field(ZRST, "Running")
+    field(ZRSV, "NO_ALARM")
+    field(ONVL, "1")
+    field(ONST, "Faulted")
+    field(ONSV, "MAJOR")
+    field(TWVL, "2")
+    field(TWST, "Disabled")
+    field(TWSV, "MINOR")
+}
+
+# --- Fault messages -------------------------------------------------------------
+record(aSub, "$(P)FaultAsub"){
+    field(DESC, "Fault message aSub")
+    field(ASG,  "Internal")  
+    field(SNAM, "asFaultMsg_CA199")
+    field(INPA, "$(P)AlarmCode CP")
+    field(FTA,  "LONG")  
+    field(NOA,  "1")
+    field(FTVA, "STRING")  
+    field(NOVA, "1")
+    field(OUTA, "$(P)FaultMsg PP")
+}
+
+record(stringin, "$(P)FaultMsg") {
+    field(DESC, "Fault message")
+}
+
+
+
