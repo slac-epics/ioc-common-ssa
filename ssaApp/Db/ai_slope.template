@@ -2,12 +2,10 @@ record(ai, "$(P)$(R)") {
     field(DTYP, "asynInt32")
     field(INP,  "@asyn($(PORT) $(OFFSET))MODBUS_DATA")
     field(LINR, "LINEAR")
-    field(ESLO, "$(ESLO)")
-    field(EOFF, "$(EOFF)")
-    field(HOPR, "$(HOPR)")
-    field(LOPR, "$(LOPR)")
-    field(PREC, "$(PREC)")
-    field(EGU,  "$(EGU)")
+    field(ESLO, "$(ESLO=1)")
+    field(EOFF, "$(EOFF=0)")
+    field(PREC, "$(PREC=1)")
+    field(EGU,  "$(EGU="")")
     field(SCAN, "$(SCAN)")
 }
 
