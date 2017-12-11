@@ -6,175 +6,192 @@ pattern
 }
 #--------------------------------------------------------------------------------------------------
 
-# These are the binary outputs done with word access.
+# Binary outputs, modbus function code 6.
 file "bo_word.template" {
 pattern
-{           R,         PORT, OFFSET,   MASK,      ZNAM,     ONAM}
-{    DCEnable, RF1_Out_Word,      0, 0x0001, "Disable", "Enable"}
-{    RFEnable, RF1_Out_Word,      1, 0x0001, "Disable", "Enable"}
-{  IntlkReset, RF1_Out_Word,      3, 0x0001,        "",  "Reset"}
-{ FltExtReset, RF1_Out_Word,      3, 0x0002,        "",  "Reset"}
-{   WarnReset, RF1_Out_Word,      3, 0x0004,        "",  "Reset"}
-{ XPortReboot, RF1_Out_Word,      4, 0x0001,        "", "Reboot"}
-{   SysReboot, RF1_Out_Word,      5, 0x0001,        "", "Reboot"}
-{   PulseMode, RF1_Out_Word,      6, 0x0001, "Disable", "Enable"}
-{     APD_ATT, RF1_Out_Word,      7, 0x0001,     "APD",    "ATT"}
+{           R,          PORT, OFFSET,   MASK,      ZNAM,     ONAM}
+{    DCEnable, RF00_Out_Word,      0, 0x0001, "Disable", "Enable"}
+{    RFEnable, RF00_Out_Word,      1, 0x0001, "Disable", "Enable"}
+{  IntlkReset, RF00_Out_Word,      3, 0x0001,        "",  "Reset"}
+{ FltExtReset, RF00_Out_Word,      3, 0x0002,        "",  "Reset"}
+{   WarnReset, RF00_Out_Word,      3, 0x0004,        "",  "Reset"}
+{ XPortReboot, RF00_Out_Word,      4, 0x0001,        "", "Reboot"}
+{   SysReboot, RF00_Out_Word,      5, 0x0001,        "", "Reboot"}
+{   PulseMode, RF00_Out_Word,      6, 0x0001, "Disable", "Enable"}
+{     APD_ATT, RF00_Out_Word,      7, 0x0001,     "APD",    "ATT"}
 }
 
-# These are the integer ouputs done with word access.
+# Integer ouputs, modbus function code 6.
 file "longout_custom.template" {
 pattern
-{           R,         PORT, OFFSET, DRVL, DRVH, LOPR, HOPR,     EGU}
-{      PSVolt, RF1_Out_Word,      2,  700, 2500,  700, 2500,    "mV"}
-{     CalYear, RF1_Out_Word,     92,   15,   99,   15,   99,      ""}
-{    CalMonth, RF1_Out_Word,     93,    1,   12,    1,   12,      ""}
-{      CalDay, RF1_Out_Word,     94,    1,   31,    1,   31,      ""}
-{     CalHour, RF1_Out_Word,     95,    0,   23,    0,   23,      ""}
-{      CalMin, RF1_Out_Word,     96,    0,   59,    0,   59,      ""}
-{      CalSec, RF1_Out_Word,     97,    0,   59,    0,   59,      ""}
+{           R,          PORT, OFFSET, DRVL, DRVH, LOPR, HOPR,     EGU}
+{      PSVolt, RF00_Out_Word,      2,  700, 2500,  700, 2500,    "mV"}
+{     CalYear, RF00_Out_Word,     92,   15,   99,   15,   99,      ""}
+{    CalMonth, RF00_Out_Word,     93,    1,   12,    1,   12,      ""}
+{      CalDay, RF00_Out_Word,     94,    1,   31,    1,   31,      ""}
+{     CalHour, RF00_Out_Word,     95,    0,   23,    0,   23,      ""}
+{      CalMin, RF00_Out_Word,     96,    0,   59,    0,   59,      ""}
+{      CalSec, RF00_Out_Word,     97,    0,   59,    0,   59,      ""}
 }
 
-# These are ao (unsigned integer) outputs 0x0203-0x0210 done with word access
+# Float outputs converted to integers, modbus function code 6.
 file "ao_slope.template" {
 pattern
-{           R,         PORT, OFFSET,    EOFF,   ESLO, DRVL, DRVH, LOPR, HOPR, PREC,     EGU}
-{   PwrFwAlLm, RF1_Out_Word,     29,     0.0,    1.0,    0, 2260,    0, 2260,    1,      ""}
-{   PwrRfAlLm, RF1_Out_Word,     30,     0.0,    1.0,    0,  730,    0,  730,    1,      ""}
-{   LCWOtTmLm, RF1_Out_Word,     31, -39.235, 0.0392,    0,   50,    0,   50,    1,  "degC"}
-{   LCWFlRtLm, RF1_Out_Word,     32,     0.0, 0.0564,   65,  100,   65,  100,    1, "L/min"}
+{           R,          PORT, OFFSET,    EOFF,   ESLO, DRVL, DRVH, LOPR, HOPR, PREC,     EGU}
+{   PwrFwAlLm, RF00_Out_Word,     29,     0.0,    1.0,    0, 2260,    0, 2260,    1,      ""}
+{   PwrRfAlLm, RF00_Out_Word,     30,     0.0,    1.0,    0,  730,    0,  730,    1,      ""}
+{   LCWOtTmLm, RF00_Out_Word,     31, -39.235, 0.0392,    0,   50,    0,   50,    1,  "degC"}
+{   LCWFlRtLm, RF00_Out_Word,     32,     0.0, 0.0564,   65,  100,   65,  100,    1, "L/min"}
 }
 
 #----------------------------------------------------------------------------------
 
-# There are the binary inputs done with word access.
+# Binary inputs, modbus function code 3.
 file "bi_word.template" {
 pattern
-{           R,         PORT, OFFSET,   MASK,         ZNAM,       ONAM,      ZSV,      OSV,       SCAN}
-{ ACEnableRBV,  RF1_In_Word,      9, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
-{ DCEnableRBV,  RF1_In_Word,     10, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
-{ RFEnableRBV,  RF1_In_Word,     11, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
-{    FaultInt,  RF1_In_Word,     12, 0x0001,   "No Error",    "Error", NO_ALARM,    MAJOR, "I/O Intr"}
-{    FaultExt,  RF1_In_Word,     13, 0x0001,   "No Error",    "Error", NO_ALARM,    MAJOR, "I/O Intr"}
-{     Warning,  RF1_In_Word,     14, 0x0001,   "No Error",    "Error", NO_ALARM,    MINOR, "I/O Intr"}
-{ WireChkStat,  RF1_In_Word,     21, 0x0001, "Incomplete", "Complete",    MINOR, NO_ALARM, "I/O Intr"}
-{APD_ATT_Stat,  RF1_In_Word,     23, 0x0001,        "APD",      "ATT", NO_ALARM, NO_ALARM, "I/O Intr"}
-{    VSWROVer,  RF1_In_Word,    179, 0x0001,      "Below",     "Over", NO_ALARM,    MINOR, "I/O Intr"}
-{DrvSubCBStat,  RF1_In_Word,    219, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
-{  DrvPwrStat,  RF1_In_Word,    228, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
+{           R,          PORT, OFFSET,   MASK,         ZNAM,       ONAM,      ZSV,      OSV,       SCAN}
+{ ACEnableRBV,  RF00_In_Word,      9, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{ DCEnableRBV,  RF00_In_Word,     10, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{ RFEnableRBV,  RF00_In_Word,     11, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{    FaultInt,  RF00_In_Word,     12, 0x0001,   "No Error",    "Error", NO_ALARM,    MAJOR, "I/O Intr"}
+{    FaultExt,  RF00_In_Word,     13, 0x0001,   "No Error",    "Error", NO_ALARM,    MAJOR, "I/O Intr"}
+{     Warning,  RF00_In_Word,     14, 0x0001,   "No Error",    "Error", NO_ALARM,    MINOR, "I/O Intr"}
+{ WireChkStat,  RF00_In_Word,     21, 0x0001, "Incomplete", "Complete",    MINOR, NO_ALARM, "I/O Intr"}
+{APD_ATT_Stat,  RF00_In_Word,     23, 0x0001,        "APD",      "ATT", NO_ALARM, NO_ALARM, "I/O Intr"}
+{    VSWROVer,  RF01_In_Word,    179, 0x0001,      "Below",     "Over", NO_ALARM,    MINOR, "I/O Intr"}
+{DrvSubCBStat,  RF02_In_Word,    219, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
+{  DrvPwrStat,  RF02_In_Word,    228, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
+{   FaultExt1,  RF39_In_Word,   3999, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+{   FaultExt2,  RF39_In_Word,   4000, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+{   FaultExt3,  RF40_In_Word,   4001, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+{   FaultExt4,  RF40_In_Word,   4002, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+{   FaultExt5,  RF40_In_Word,   4003, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+{   FaultExt6,  RF40_In_Word,   4004, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+{    FaultInt,  RF40_In_Word,   4005, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+{   Flt480_UV,  RF40_In_Word,   4006, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+{   Flt480_VW,  RF40_In_Word,   4007, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+{   Flt480_UW,  RF40_In_Word,   4008, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+{    FltPwrIn,  RF40_In_Word,   4009, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+{   FltPwrFwd,  RF40_In_Word,   4010, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+{   FltPwrRef,  RF40_In_Word,   4011, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+{  FltLCWFlow,  RF40_In_Word,   4013, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+{FltSysAirTmp,  RF40_In_Word,   4014, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+{ FltLCWInTmp,  RF40_In_Word,   4015, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+{FltLCWOutTmp,  RF40_In_Word,   4016, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+{   FltHX1Tmp,  RF40_In_Word,   4017, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+{   FltHX2Tmp,  RF40_In_Word,   4018, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+{FltCtlAirTmp,  RF40_In_Word,   4019, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+{FltRadCmbTmp,  RF40_In_Word,   4020, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+{FltCtlCktBrk,  RF40_In_Word,   4022, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+{   FltThermo,  RF40_In_Word,   4024, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+{  FltLCWLeak,  RF40_In_Word,   4025, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+{ FltAlarmBus,  RF40_In_Word,   4026, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
 }
 
-# There are the Inputs done with word access
+# Integer inputs, modbus function code 3.
 file "longin_custom.template"
 { pattern
-{           R,         PORT, OFFSET,     EGU,       SCAN}
-{  CalYearRBV,  RF1_In_Word,     15,      "", "I/O Intr"}
-{ CalMonthRBV,  RF1_In_Word,     16,      "", "I/O Intr"}
-{   CalDayRBV,  RF1_In_Word,     17,      "", "I/O Intr"}
-{  CalHourRBV,  RF1_In_Word,     18,      "", "I/O Intr"}
-{   CalMinRBV,  RF1_In_Word,     19,      "", "I/O Intr"}
-{   CalSecRBV,  RF1_In_Word,     20,      "", "I/O Intr"}
-{  ConfigStat,  RF1_In_Word,     22,      "", "I/O Intr"}
-{CtlIO1WrnMon,  RF1_In_Word,    125,      "", "I/O Intr"}
-{CtlIO2WrnMon,  RF1_In_Word,    126,      "", "I/O Intr"}
-{CtlIO3WrnMon,  RF1_In_Word,    127,      "", "I/O Intr"}
-{Comm_WE1Warn,  RF1_In_Word,    189,      "", "I/O Intr"}
-{Comm_WE2Warn,  RF1_In_Word,    190,      "", "I/O Intr"}
-{FPGA_RE1Warn,  RF1_In_Word,    193,      "", "I/O Intr"}
-{FPGA_RE2Warn,  RF1_In_Word,    194,      "", "I/O Intr"}
-{      PLCVer,  RF1_In_Word,    196,      "", "I/O Intr"}
-{      TFTVer,  RF1_In_Word,    197,      "", "I/O Intr"}
-{ CtrlFPGAVer,  RF1_In_Word,    198,      "", "I/O Intr"}
-{ DrvHiADWarn,  RF1_In_Word,    208,      "", "I/O Intr"}
-{ DrvLoADWarn,  RF1_In_Word,    218,      "", "I/O Intr"}
-{DrvIO1IntMon,  RF1_In_Word,    222,      "", "I/O Intr"}
-{DrvIO1WrnMon,  RF1_In_Word,    225,      "", "I/O Intr"}
-{DrvIO2WrnMon,  RF1_In_Word,    226,      "", "I/O Intr"}
-{  DrvFPGAVer,  RF1_In_Word,    298,      "", "I/O Intr"}
+{           R,          PORT, OFFSET,     EGU,       SCAN}
+{  CalYearRBV,  RF00_In_Word,     15,      "", "I/O Intr"}
+{ CalMonthRBV,  RF00_In_Word,     16,      "", "I/O Intr"}
+{   CalDayRBV,  RF00_In_Word,     17,      "", "I/O Intr"}
+{  CalHourRBV,  RF00_In_Word,     18,      "", "I/O Intr"}
+{   CalMinRBV,  RF00_In_Word,     19,      "", "I/O Intr"}
+{   CalSecRBV,  RF00_In_Word,     20,      "", "I/O Intr"}
+{  ConfigStat,  RF00_In_Word,     22,      "", "I/O Intr"}
+{CtlIO1WrnMon,  RF01_In_Word,    125,      "", "I/O Intr"}
+{CtlIO2WrnMon,  RF01_In_Word,    126,      "", "I/O Intr"}
+{CtlIO3WrnMon,  RF01_In_Word,    127,      "", "I/O Intr"}
+{Comm_WE1Warn,  RF01_In_Word,    189,      "", "I/O Intr"}
+{Comm_WE2Warn,  RF01_In_Word,    190,      "", "I/O Intr"}
+{FPGA_RE1Warn,  RF01_In_Word,    193,      "", "I/O Intr"}
+{FPGA_RE2Warn,  RF01_In_Word,    194,      "", "I/O Intr"}
+{      PLCVer,  RF01_In_Word,    196,      "", "I/O Intr"}
+{      TFTVer,  RF01_In_Word,    197,      "", "I/O Intr"}
+{ CtrlFPGAVer,  RF01_In_Word,    198,      "", "I/O Intr"}
+{ DrvHiADWarn,  RF02_In_Word,    208,      "", "I/O Intr"}
+{ DrvLoADWarn,  RF02_In_Word,    218,      "", "I/O Intr"}
+{DrvIO1IntMon,  RF02_In_Word,    222,      "", "I/O Intr"}
+{DrvIO1WrnMon,  RF02_In_Word,    225,      "", "I/O Intr"}
+{DrvIO2WrnMon,  RF02_In_Word,    226,      "", "I/O Intr"}
+{  DrvFPGAVer,  RF02_In_Word,    298,      "", "I/O Intr"}
 }
 
-# These are the aiFloat intput done with read
+# Integer inputs converted to floats, modbus function code 3.
 file "ai_slope.template"
 { pattern
-{           R,        PORT, OFFSET,   EOFF,    ESLO, PREC,     EGU,       SCAN}
-{   PSVoltRBV, RF1_In_Word,     34,    0.0,     1.0,    1,    "mV", "I/O Intr"}
-{PwrFwAlLmRBV, RF1_In_Word,     35,    0.0,     1.0,    1,    "kW", "I/O Intr"}
-{PwrRfAlLmRBV, RF1_In_Word,     36,    0.0,     1.0,    1,    "kW", "I/O Intr"}
-{LCWOtTmLmRBV, RF1_In_Word,     37,    0.0,     1.0,    1,  "degC", "I/O Intr"}
-{LCWFlRtLmRBV, RF1_In_Word,     38,    0.0,     1.0,    1, "L/min", "I/O Intr"}
-{  480VAC1_UV, RF1_In_Word,     99,    0.0,     1.0,    1,   "VAC", "I/O Intr"}
-{  480VAC2_VW, RF1_In_Word,    100,    0.0,     1.0,    1,   "VAC", "I/O Intr"}
-{  480VAC3_UW, RF1_In_Word,    101,    0.0,     1.0,    1,   "VAC", "I/O Intr"}
-{    PwrInDrv, RF1_In_Word,    102,    0.0,     1.0,    1,   "dBm", "I/O Intr"}
-{      PwrFwd, RF1_In_Word,    103,    0.0,     1.0,    1,    "kW", "I/O Intr"}
-{      PwrRef, RF1_In_Word,    104,    0.0,     1.0,    1,    "kW", "I/O Intr"}
-{    Humidity, RF1_In_Word,    105,    0.0,   0.132,    1,     "%", "I/O Intr"}
-{ LCWFlowRate, RF1_In_Word,    106,    0.0,  0.0564,    1, "L/min", "I/O Intr"}
-{  SysAirTemp, RF1_In_Word,    109, -39.24,  0.0392,    1,  "degC", "I/O Intr"}
-{   LCWInTemp, RF1_In_Word,    110, -39.24,  0.0392,    1,  "degC", "I/O Intr"}
-{  LCWOutTemp, RF1_In_Word,    111, -39.24,  0.0392,    1,  "degC", "I/O Intr"}
-{ HeatEx1Temp, RF1_In_Word,    112, -39.24,  0.0392,    1,  "degC", "I/O Intr"}
-{ HeatEx2Temp, RF1_In_Word,    113, -39.24,  0.0392,    1,  "degC", "I/O Intr"}
-{ CtrlAirTemp, RF1_In_Word,    114, -39.24,  0.0392,    1,  "degC", "I/O Intr"}
-{ RadCombTemp, RF1_In_Word,    115, -39.24,  0.0392,    1,  "degC", "I/O Intr"}
-{  HX1FanSpd1, RF1_In_Word,    130,    0.0,     4.0,    1,      "", "I/O Intr"}
-{  HX1FanSpd2, RF1_In_Word,    131,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
-{  HX1FanSpd3, RF1_In_Word,    132,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
-{  HX1FanSpd4, RF1_In_Word,    133,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
-{  HX1FanSpd5, RF1_In_Word,    134,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
-{  HX1FanSpd6, RF1_In_Word,    135,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
-{  HX1FanSpd7, RF1_In_Word,    136,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
-{  HX1FanSpd8, RF1_In_Word,    137,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
-{  HX2FanSpd1, RF1_In_Word,    138,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
-{  HX2FanSpd2, RF1_In_Word,    139,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
-{  HX2FanSpd3, RF1_In_Word,    140,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
-{  HX2FanSpd4, RF1_In_Word,    141,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
-{  HX2FanSpd5, RF1_In_Word,    142,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
-{  HX2FanSpd6, RF1_In_Word,    143,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
-{  HX2FanSpd7, RF1_In_Word,    144,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
-{  HX2FanSpd8, RF1_In_Word,    145,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
-{ CtrlFanSpd1, RF1_In_Word,    146,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
-{ CtrlFanSpd2, RF1_In_Word,    147,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
-{DrvDv1DrnCur, RF1_In_Word,    201,    0.0, 0.00106,    1,     "A", "I/O Intr"}
-{DrvDv2DrnCur, RF1_In_Word,    202,    0.0, 0.00106,    1,     "A", "I/O Intr"}
-{ DrvPS1DCCur, RF1_In_Word,    203,    0.0, 0.00106,    1,     "A", "I/O Intr"}
-{ DrvPS2DCCur, RF1_In_Word,    204,    0.0, 0.00106,    1,     "A", "I/O Intr"}
-{DrvGnDrnVolt, RF1_In_Word,    209,    0.0, 0.00568,    1,   "VDC", "I/O Intr"}
-{DrvDrDrnVolt, RF1_In_Word,    210,    0.0, 0.01719,    1,   "VDC", "I/O Intr"}
-{DrvPS1DCVolt, RF1_In_Word,    211,    0.0, 0.00568,    1,   "VDC", "I/O Intr"}
-{DrvPS2DCVolt, RF1_In_Word,    212,    0.0, 0.01719,    1,   "VDC", "I/O Intr"}
-{DrvLCWHSTemp, RF1_In_Word,    214, -39.24,  0.0392,    1,  "degC", "I/O Intr"}
-{  DrvAirTemp, RF1_In_Word,    215, -39.24,  0.0392,    1,  "degC", "I/O Intr"}
-{DrvT1FanSpd1, RF1_In_Word,    237,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
-{DrvT1FanSpd2, RF1_In_Word,    238,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
-{   DrvFanSpd, RF1_In_Word,    239,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{           R,         PORT, OFFSET,   EOFF,    ESLO, PREC,     EGU,       SCAN}
+{   PSVoltRBV, RF00_In_Word,     34,    0.0,     1.0,    1,    "mV", "I/O Intr"}
+{PwrFwAlLmRBV, RF00_In_Word,     35,    0.0,     1.0,    1,    "kW", "I/O Intr"}
+{PwrRfAlLmRBV, RF00_In_Word,     36,    0.0,     1.0,    1,    "kW", "I/O Intr"}
+{LCWOtTmLmRBV, RF00_In_Word,     37,    0.0,     1.0,    1,  "degC", "I/O Intr"}
+{LCWFlRtLmRBV, RF00_In_Word,     38,    0.0,     1.0,    1, "L/min", "I/O Intr"}
+{  480VAC1_UV, RF00_In_Word,     99,    0.0,     1.0,    0,   "VAC", "I/O Intr"}
+{  480VAC2_VW, RF01_In_Word,    100,    0.0,     1.0,    0,   "VAC", "I/O Intr"}
+{  480VAC3_UW, RF01_In_Word,    101,    0.0,     1.0,    0,   "VAC", "I/O Intr"}
+{    PwrInDrv, RF01_In_Word,    102,    0.0,     1.0,    1,   "dBm", "I/O Intr"}
+{      PwrFwd, RF01_In_Word,    103,    0.0,     1.0,    1,    "kW", "I/O Intr"}
+{      PwrRef, RF01_In_Word,    104,    0.0,     1.0,    1,    "kW", "I/O Intr"}
+{    Humidity, RF01_In_Word,    105,    0.0,   0.132,    1,     "%", "I/O Intr"}
+{ LCWFlowRate, RF01_In_Word,    106,    0.0,  0.0564,    1, "L/min", "I/O Intr"}
+{  SysAirTemp, RF01_In_Word,    109, -39.24,  0.0392,    1,  "degC", "I/O Intr"}
+{   LCWInTemp, RF01_In_Word,    110, -39.24,  0.0392,    1,  "degC", "I/O Intr"}
+{  LCWOutTemp, RF01_In_Word,    111, -39.24,  0.0392,    1,  "degC", "I/O Intr"}
+{ HeatEx1Temp, RF01_In_Word,    112, -39.24,  0.0392,    1,  "degC", "I/O Intr"}
+{ HeatEx2Temp, RF01_In_Word,    113, -39.24,  0.0392,    1,  "degC", "I/O Intr"}
+{ CtrlAirTemp, RF01_In_Word,    114, -39.24,  0.0392,    1,  "degC", "I/O Intr"}
+{ RadCombTemp, RF01_In_Word,    115, -39.24,  0.0392,    1,  "degC", "I/O Intr"}
+{  HX1FanSpd1, RF01_In_Word,    130,    0.0,     4.0,    1,      "", "I/O Intr"}
+{  HX1FanSpd2, RF01_In_Word,    131,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{  HX1FanSpd3, RF01_In_Word,    132,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{  HX1FanSpd4, RF01_In_Word,    133,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{  HX1FanSpd5, RF01_In_Word,    134,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{  HX1FanSpd6, RF01_In_Word,    135,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{  HX1FanSpd7, RF01_In_Word,    136,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{  HX1FanSpd8, RF01_In_Word,    137,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{  HX2FanSpd1, RF01_In_Word,    138,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{  HX2FanSpd2, RF01_In_Word,    139,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{  HX2FanSpd3, RF01_In_Word,    140,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{  HX2FanSpd4, RF01_In_Word,    141,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{  HX2FanSpd5, RF01_In_Word,    142,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{  HX2FanSpd6, RF01_In_Word,    143,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{  HX2FanSpd7, RF01_In_Word,    144,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{  HX2FanSpd8, RF01_In_Word,    145,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{ CtrlFanSpd1, RF01_In_Word,    146,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{ CtrlFanSpd2, RF01_In_Word,    147,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{DrvDv1DrnCur, RF02_In_Word,    201,    0.0, 0.00106,    1,     "A", "I/O Intr"}
+{DrvDv2DrnCur, RF02_In_Word,    202,    0.0, 0.00106,    1,     "A", "I/O Intr"}
+{ DrvPS1DCCur, RF02_In_Word,    203,    0.0, 0.00106,    1,     "A", "I/O Intr"}
+{ DrvPS2DCCur, RF02_In_Word,    204,    0.0, 0.00106,    1,     "A", "I/O Intr"}
+{DrvGnDrnVolt, RF02_In_Word,    209,    0.0, 0.00568,    1,   "VDC", "I/O Intr"}
+{DrvDrDrnVolt, RF02_In_Word,    210,    0.0, 0.01719,    1,   "VDC", "I/O Intr"}
+{DrvPS1DCVolt, RF02_In_Word,    211,    0.0, 0.00568,    1,   "VDC", "I/O Intr"}
+{DrvPS2DCVolt, RF02_In_Word,    212,    0.0, 0.01719,    1,   "VDC", "I/O Intr"}
+{DrvLCWHSTemp, RF02_In_Word,    214, -39.24,  0.0392,    1,  "degC", "I/O Intr"}
+{  DrvAirTemp, RF02_In_Word,    215, -39.24,  0.0392,    1,  "degC", "I/O Intr"}
+{DrvT1FanSpd1, RF02_In_Word,    237,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{DrvT1FanSpd2, RF02_In_Word,    238,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{   DrvFanSpd, RF02_In_Word,    239,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
 }
 
 #------------------------------------------------------------------------------------------
 file "asynRecord.template" { 
 pattern
-{           R,        PORT, ADDR, TMOD,             IFACE}
-{  RfIn1WAsyn, RF1_In_Word,    0, Read, asynUInt32Digital}
+{           R,         PORT, ADDR, TMOD,             IFACE}
+{  RfIn1WAsyn, RF00_In_Word,    0, Read, asynUInt32Digital}
 }
 file "statistics.template" {
 pattern
-{           R,        PORT,         SCAN}
-{      RFIn1W, RF1_In_Word,  "10 second"}
+{           R,         PORT,         SCAN}
+{      RFIn1W, RF00_In_Word,  "10 second"}
 } 
 file "poll_delay.template" {
 pattern
-{           R,        PORT}
-{RFIn1WPDelay, RF1_In_Word}
+{           R,         PORT}
+{RFIn1WPDelay, RF00_In_Word}
 }
 
 #------------------------------------------------------------------------------------------
-
-#file "ssa_RK_CA186_module.substitutions" {
-#pattern
-#{MOD}
-#{ 01}
-#{ 02}
-#{ 03}
-#}
 
 file "ssa_RK_CA186_extras.template" {
 {none}

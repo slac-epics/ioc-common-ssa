@@ -10,53 +10,23 @@ record(seq, "$(P)FltReset") {
     field(DESC, "Reset fault and restore operation")
     field(DLY1, "0")
     field(DOL1, "1")
-    field(LNK1, "$(P)OUT4a PP")
+    field(LNK1, "$(P)FltExtReset PP")
     field(DLY2, "1.5")
     field(DOL2, "1")
-    field(LNK2, "$(P)OUT4b PP")
+    field(LNK2, "$(P)DCEnable PP")
     field(DLY3, "1.5")
     field(DOL3, "1")
-    field(LNK3, "$(P)OUT1 PP")
-    field(DLY4, "1.5")
-#    field(DOL4, "2380")
-    field(DOL4, "1")
-#    field(LNK4, "$(P)OUT3 PP")
-    field(LNK4, "$(P)DrainVoltage.PROC PP")
-    field(DLY5, "1.5")
-    field(DOL5, "1")
-    field(LNK5, "$(P)OUT2 PP")
-}
-
-# --- Records for Drain Voltage, which sets the Output voltage --------------
-record(ao, "$(P)DrainVoltage") {
-    field(DESC, "Drain voltage set")
-    field(EGU,  "V")
-    field(PREC, "2")
-    field(LOPR, "13.5")
-    field(HOPR, "48")
-    field(DRVL, "13.5")
-    field(DRVH, "48")
-    field(FLNK, "$(P)DrainVCalc")
-    info(autosaveFields, "VAL")
-}
-
-record(calcout, "$(P)DrainVCalc") {
-    field(DESC, "Drain voltage conversion")
-    field(INPA, "$(P)DrainVoltage")
-    field(INPB, "131")
-    field(INPC, "2.5")
-    field(CALC, "(A*B)/C")
-    field(OUT,  "$(P)OUT3 PP")
+    field(LNK3, "$(P)RFEnable PP")
 }
 
 # --- Run state readback -------------------------------------------------------------
 record(calc, "$(P)RunState") {
     field(DESC, "Run state readback")
-    field(INPA, "$(P)IN10 CP")
-    field(INPB, "$(P)IN11 CP")
-    field(INPC, "$(P)IN12 CP")
-    field(INPD, "$(P)IN13 CP")
-    field(INPE, "$(P)IN14 CP")
+    field(INPA, "$(P)ACEnableRBV CP")
+    field(INPB, "$(P)DCEnableRBV CP")
+    field(INPC, "$(P)RFEnableRBV CP")
+    field(INPD, "$(P)FaultInt CP")
+    field(INPE, "$(P)FaultExt CP")
     field(CALC, "((D+E)=0&&A&&B&&C)?0:(D+E)>0?1:2")
     field(FLNK, "$(P)RunStateMsg")
 }
@@ -74,52 +44,5 @@ record(mbbi, "$(P)RunStateMsg") {
     field(TWST, "Disabled")
     field(TWSV, "MINOR")
 }
-
-# --- Fault messages -------------------------------------------------------------
-record(aSub, "$(P)FltIntAsub"){
-    field(DESC, "Internal fault message aSub")
-    field(SNAM, "asFaultMsg")
-    field(INPA, "$(P)IN13 CP")
-    field(FTA,  "LONG")  
-    field(NOA,  "1")
-    field(FTVA, "STRING")  
-    field(NOVA, "1")
-    field(OUTA, "$(P)FltIntMsg PP")
-}
-
-record(stringin, "$(P)FltIntMsg") {
-    field(DESC, "Internal fault message")
-}
-
-record(aSub, "$(P)FltExtAsub"){
-    field(DESC, "External fault message aSub")
-    field(SNAM, "asFaultMsg")
-    field(INPA, "$(P)IN14 CP")
-    field(FTA,  "LONG")  
-    field(NOA,  "1")
-    field(FTVA, "STRING")  
-    field(NOVA, "1")
-    field(OUTA, "$(P)FltExtMsg PP")
-}
-
-record(stringin, "$(P)FltExtMsg") {
-    field(DESC, "External fault message")
-}
-
-record(aSub, "$(P)WarningAsub"){
-    field(DESC, "Warning message aSub")
-    field(SNAM, "asFaultMsg")
-    field(INPA, "$(P)IN15 CP")
-    field(FTA,  "LONG")  
-    field(NOA,  "1")
-    field(FTVA, "STRING")  
-    field(NOVA, "1")
-    field(OUTA, "$(P)WarningMsg PP")
-}
-
-record(stringin, "$(P)WarningMsg") {
-    field(DESC, "Warning message")
-}
-
 
 
