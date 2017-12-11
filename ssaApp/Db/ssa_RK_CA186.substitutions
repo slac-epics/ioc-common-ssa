@@ -53,12 +53,12 @@ pattern
 { ACEnableRBV,  RF00_In_Word,      9, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
 { DCEnableRBV,  RF00_In_Word,     10, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
 { RFEnableRBV,  RF00_In_Word,     11, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
-{    FaultInt,  RF00_In_Word,     12, 0x0001,   "No Error",    "Error", NO_ALARM,    MAJOR, "I/O Intr"}
-{    FaultExt,  RF00_In_Word,     13, 0x0001,   "No Error",    "Error", NO_ALARM,    MAJOR, "I/O Intr"}
-{     Warning,  RF00_In_Word,     14, 0x0001,   "No Error",    "Error", NO_ALARM,    MINOR, "I/O Intr"}
+{    FaultInt,  RF00_In_Word,     12, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+{    FaultExt,  RF00_In_Word,     13, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+{     Warning,  RF00_In_Word,     14, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
 { WireChkStat,  RF00_In_Word,     21, 0x0001, "Incomplete", "Complete",    MINOR, NO_ALARM, "I/O Intr"}
 {APD_ATT_Stat,  RF00_In_Word,     23, 0x0001,        "APD",      "ATT", NO_ALARM, NO_ALARM, "I/O Intr"}
-{    VSWROVer,  RF01_In_Word,    179, 0x0001,      "Below",     "Over", NO_ALARM,    MINOR, "I/O Intr"}
+{    VSWROVer,  RF01_In_Word,    179, 0x0001,       "Over",    "Below",    MINOR, NO_ALARM, "I/O Intr"}
 {DrvSubCBStat,  RF02_In_Word,    219, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
 {  DrvPwrStat,  RF02_In_Word,    228, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
 {   FaultExt1,  RF39_In_Word,   3999, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
@@ -86,6 +86,11 @@ pattern
 {   FltThermo,  RF40_In_Word,   4024, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
 {  FltLCWLeak,  RF40_In_Word,   4025, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
 { FltAlarmBus,  RF40_In_Word,   4026, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+{    FltFanPS,  RF40_In_Word,   4031, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+{FltCommError,  RF40_In_Word,   4032, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+{     FltFPGA,  RF40_In_Word,   4033, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+{FltHeatSink1,  RF40_In_Word,   4034, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+{FltHeatSink2,  RF40_In_Word,   4035, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
 }
 
 # Integer inputs, modbus function code 3.
@@ -115,6 +120,8 @@ file "longin_custom.template"
 {DrvIO1WrnMon,  RF02_In_Word,    225,      "", "I/O Intr"}
 {DrvIO2WrnMon,  RF02_In_Word,    226,      "", "I/O Intr"}
 {  DrvFPGAVer,  RF02_In_Word,    298,      "", "I/O Intr"}
+{HeatSinkThm1,  RF40_In_Word,   4034,      "", "I/O Intr"}
+{HeatSinkThm2,  RF40_In_Word,   4035,      "", "I/O Intr"}
 }
 
 # Integer inputs converted to floats, modbus function code 3.

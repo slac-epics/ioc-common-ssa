@@ -8,4 +8,6 @@ iocBoot/*/envPaths
 *~
 build*.log*
 *.swp
+startup/
+*.bak
 
