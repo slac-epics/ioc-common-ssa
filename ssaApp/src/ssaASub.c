@@ -2,22 +2,18 @@
  *----------------------------------------------------------------------------*/
 #include <stdio.h>
 #include <string.h>
-//#include <time.h>
-//#include <sys/time.h>
-//#include <dbDefs.h>
 #include <alarm.h>
 #include <registryFunction.h>
 #include <aSubRecord.h>
 #include <epicsExport.h>
-//#include <stdlib.h>
 
-static long asFaultMsg(aSubRecord *pr){
+static long asFaultMsg(aSubRecord *prec){
 /*------------------------------------------------------------------------------
 Takes an integer error code as input, and displays a string message as output.
 - Since we're using a strinout record for the output, output messages should be 
     < 40 chars; otherwise we should use a waveform record.
  *----------------------------------------------------------------------------*/
-    unsigned int *errCode = (unsigned int *)pr->a;
+    unsigned int *errCode = (unsigned int *)prec->a;
     char *errMsg;
 
     if (*errCode == 0) errMsg = "No error";
@@ -114,11 +110,52 @@ Takes an integer error code as input, and displays a string message as output.
     
     //printf("errCode=%d, errMsg=%s\n", *errCode, errMsg);
 
-    if (errMsg) pr->vala = errMsg;
+    if (errMsg) prec->vala = errMsg;
 
-    return(0);
+    return 0;
 }
+
+static long asFaultMsg_CA199(aSubRecord *prec){
+/*------------------------------------------------------------------------------
+Takes an integer error code as input, and displays a string message as output.
+- Since we're using a strinout record for the output, output messages should be 
+    < 40 chars; otherwise we should use a waveform record.
+ *----------------------------------------------------------------------------*/
+    unsigned int *errCode = (unsigned int *)prec->a;
+    char *errMsg;
+
+    if (*errCode == 0) errMsg = "No error";
+    else if (*errCode == 100) errMsg = "Input Power";
+    else if (*errCode == 101) errMsg = "Forward Power";
+    else if (*errCode == 102) errMsg = "Refelected Power";
+    else if (*errCode == 200) errMsg = "Current DA";
+    else if (*errCode == 201) errMsg = "Current FA-1";
+    else if (*errCode == 202) errMsg = "Current FA-2";
+    else if (*errCode == 203) errMsg = "Current FA-3";
+    else if (*errCode == 204) errMsg = "Current FA-4";
+    else if (*errCode == 211) errMsg = "Voltage";
+    else if (*errCode == 300) errMsg = "Thermostat (DA)";
+    else if (*errCode == 301) errMsg = "Thermostat (FA1)";
+    else if (*errCode == 302) errMsg = "Thermostat (FA2)";
+    else if (*errCode == 303) errMsg = "Temperature (DA)";
+    else if (*errCode == 304) errMsg = "Temperature (FA1)";
+    else if (*errCode == 305) errMsg = "Temperature (FA)";
+    else if (*errCode == 400) errMsg = "AC/DC Power Supply";
+    else if (*errCode > 400 && *errCode < 449) errMsg = "AC/DC Power Supply";
+    else if (*errCode == 500) errMsg = "Water Flow";
+    else if (*errCode == 501) errMsg = "Water Leak";
+
+    else errMsg = "Unknown error code";
+    
+    printf("errCode=%d, errMsg=%s\n", *errCode, errMsg);
+
+    if (errMsg) prec->vala = errMsg;
+
+    return 0;
+}
+
 /**************************************************************************/
 
 epicsRegisterFunction(asFaultMsg);
+epicsRegisterFunction(asFaultMsg_CA199);
 

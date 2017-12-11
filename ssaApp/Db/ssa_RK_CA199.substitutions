@@ -6,7 +6,7 @@ pattern
 }
 #--------------------------------------------------------------------------------------------------
 
-# These are the binary outputs done with word access.
+# Binary outputs, modbus function code 6.
 file "bo_word.template" {
 pattern
 {           R,         PORT, OFFSET,   MASK,      ZNAM,     ONAM}
@@ -18,41 +18,42 @@ pattern
 
 #----------------------------------------------------------------------------------
 
-# There are the binary inputs done with word access.
+# Binary inputs, modbus function code 3.
 file "bi_word.template" {
 pattern
 {           R,         PORT, OFFSET,   MASK,         ZNAM,       ONAM,      ZSV,      OSV,       SCAN}
+{ RFEnableRBV,  RF1_In_Word,      0, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
 { WaterLeakSt,  RF1_In_Word,     28, 0x0001,         "OK",    "Alarm", NO_ALARM,    MAJOR, "I/O Intr"}
 }
 
-# There are the integer inputs done with word access.
+# Integer inputs, modbus function code 3.
 file "longin_custom.template"
 { pattern
 {           R,         PORT, OFFSET,       SCAN,     EGU}
 {   AlarmCode,  RF1_In_Word,      9, "I/O Intr",      ""}
 { WarningCode,  RF1_In_Word,     10, "I/O Intr",      ""}
 {ThermostatSt,  RF1_In_Word,     29, "I/O Intr",      ""}
-{        PSSt,  RF1_In_Word,     30, "I/O Intr",      ""}
+{ PwrSupplySt,  RF1_In_Word,     30, "I/O Intr",      ""}
 }
 
-# These are the aiFloat intput done with read
-file "ai_custom.template"
+# Integer inputs converted to floats, modbus function code 3.
+file "ai_slope.template"
 { pattern
-{           R,        PORT, OFFSET,    BITS, EGUL,        EGUF, PREC,     EGU,       SCAN}
-{    Moisture, RF1_In_Word,     14,  0xFFFF,  0.0, 214748364.7,    1,     "%", "I/O Intr"}
-{       PwrIn, RF1_In_Word,     15,  0xFFFF,  0.0,  2147483647,    1,    "mV", "I/O Intr"}
-{      PwrFwd, RF1_In_Word,     16,  0xFFFF,  0.0,  2147483647,    1,     "W", "I/O Intr"}
-{      PwrRef, RF1_In_Word,     17,  0xFFFF,  0.0,  2147483647,    1,     "W", "I/O Intr"}
-{      DACurr, RF1_In_Word,     18,  0xFFFF,  0.0, 214748364.7,    1,     "A", "I/O Intr"}
-{    FA-1Curr, RF1_In_Word,     19,  0xFFFF,  0.0, 214748364.7,    1,     "A", "I/O Intr"}
-{    FA-2Curr, RF1_In_Word,     20,  0xFFFF,  0.0, 214748364.7,    1,     "A", "I/O Intr"}
-{    FA-3Curr, RF1_In_Word,     21,  0xFFFF,  0.0, 214748364.7,    1,     "A", "I/O Intr"}
-{    FA-4Curr, RF1_In_Word,     22,  0xFFFF,  0.0, 214748364.7,    1,     "A", "I/O Intr"}
-{        Volt, RF1_In_Word,     23,  0xFFFF,  0.0, 214748364.7,    1,     "V", "I/O Intr"}
-{      DATemp, RF1_In_Word,     24,  0xFFFF,  0.0, 214748364.7,    1,  "degC", "I/O Intr"}
-{    FA-1Temp, RF1_In_Word,     25,  0xFFFF,  0.0, 214748364.7,    1,  "degC", "I/O Intr"}
-{    FA-2Temp, RF1_In_Word,     26,  0xFFFF,  0.0, 214748364.7,    1,  "degC", "I/O Intr"}
-{   WaterFlow, RF1_In_Word,     27,  0xFFFF,  0.0, 214748364.7,    1, "L/min", "I/O Intr"}
+{           R,        PORT, OFFSET,    EOFF,    ESLO, PREC,     EGU,       SCAN}
+{    Moisture, RF1_In_Word,     14,     0.0,     0.1,    1,     "%", "I/O Intr"}
+{       PwrIn, RF1_In_Word,     15,     0.0,     1.0,    1,    "mV", "I/O Intr"}
+{      PwrFwd, RF1_In_Word,     16,     0.0,     1.0,    1,     "W", "I/O Intr"}
+{      PwrRef, RF1_In_Word,     17,     0.0,     1.0,    1,     "W", "I/O Intr"}
+{      DACurr, RF1_In_Word,     18,     0.0,     0.1,    1,     "A", "I/O Intr"}
+{    FA-1Curr, RF1_In_Word,     19,     0.0,     0.1,    1,     "A", "I/O Intr"}
+{    FA-2Curr, RF1_In_Word,     20,     0.0,     0.1,    1,     "A", "I/O Intr"}
+{    FA-3Curr, RF1_In_Word,     21,     0.0,     0.1,    1,     "A", "I/O Intr"}
+{    FA-4Curr, RF1_In_Word,     22,     0.0,     0.1,    1,     "A", "I/O Intr"}
+{        Volt, RF1_In_Word,     23,     0.0,     0.1,    1,     "V", "I/O Intr"}
+{      DATemp, RF1_In_Word,     24,     0.0,     0.1,    1,  "degC", "I/O Intr"}
+{    FA-1Temp, RF1_In_Word,     25,     0.0,     0.1,    1,  "degC", "I/O Intr"}
+{    FA-2Temp, RF1_In_Word,     26,     0.0,     0.1,    1,  "degC", "I/O Intr"}
+{   WaterFlow, RF1_In_Word,     27,     0.0,     0.1,    1, "L/min", "I/O Intr"}
 }
 
 #------------------------------------------------------------------------------------------

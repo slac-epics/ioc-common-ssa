@@ -1,4 +1,4 @@
-# Modbus config for R&K CA199 SSA (for SRF gun)
+# Modbus config for R&K CA199 SSA (SRF gun)
 # Macros:
 # P - the PV name prefix
 # IP - The IP address or host name 
