@@ -1,4 +1,3 @@
-# longin record template for register inputs
 record(longin, "$(P)$(R)") {
     field(DTYP, "asynUInt32Digital")
     field(INP,  "@asynMask($(PORT) $(OFFSET) 0xFFFF)")
