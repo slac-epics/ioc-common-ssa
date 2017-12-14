@@ -80,9 +80,9 @@ dbLoadRecords("db/statistics.template", "P=$(P),R=ASYN_IN,PORT=RF00_In_Word,SCAN
 
 # Modbus function code: 6 (Write Single Register, 16-bit word access)
 # Start address: 1
-# Access 20 words as outputs 
+# Access 18 words as outputs 
 # Default data type: unsigned integer
-drvModbusAsynConfigure("RF1_Out_Word", "$(P)", 0, 6, 1, 20, 0, 100, "RK")
+drvModbusAsynConfigure("RF1_Out_Word", "$(P)", 0, 6, 1, 18, 0, 100, "RK")
 dbLoadRecords("db/asynRecord.db", "P=$(P),R=ASYN_OUT,PORT=RF1_Out_Word,ADDR=0,IMAX=0,OMAX=0")
 
 # Enable ASYN_TRACEIO_HEX on octet server

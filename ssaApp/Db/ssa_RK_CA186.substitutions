@@ -67,7 +67,7 @@ pattern
 {   FaultExt4,  RF40_In_Word,   4002, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
 {   FaultExt5,  RF40_In_Word,   4003, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
 {   FaultExt6,  RF40_In_Word,   4004, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
-{    FaultInt,  RF40_In_Word,   4005, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+{   FaultInt1,  RF40_In_Word,   4005, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
 {   Flt480_UV,  RF40_In_Word,   4006, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
 {   Flt480_VW,  RF40_In_Word,   4007, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
 {   Flt480_UW,  RF40_In_Word,   4008, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
@@ -89,8 +89,6 @@ pattern
 {    FltFanPS,  RF40_In_Word,   4031, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
 {FltCommError,  RF40_In_Word,   4032, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
 {     FltFPGA,  RF40_In_Word,   4033, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
-{FltHeatSink1,  RF40_In_Word,   4034, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
-{FltHeatSink2,  RF40_In_Word,   4035, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
 }
 
 # Integer inputs, modbus function code 3.
@@ -125,7 +123,7 @@ file "longin_custom.template"
 }
 
 # Integer inputs converted to floats, modbus function code 3.
-file "ai_slope.template"
+file "ai_slope_autosave.template"
 { pattern
 {           R,         PORT, OFFSET,   EOFF,    ESLO, PREC,     EGU,       SCAN}
 {   PSVoltRBV, RF00_In_Word,     34,    0.0,     1.0,    1,    "mV", "I/O Intr"}
@@ -166,12 +164,12 @@ file "ai_slope.template"
 {  HX2FanSpd8, RF01_In_Word,    145,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
 { CtrlFanSpd1, RF01_In_Word,    146,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
 { CtrlFanSpd2, RF01_In_Word,    147,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
-{DrvDv1DrnCur, RF02_In_Word,    201,    0.0, 0.00106,    1,     "A", "I/O Intr"}
-{DrvDv2DrnCur, RF02_In_Word,    202,    0.0, 0.00106,    1,     "A", "I/O Intr"}
-{ DrvPS1DCCur, RF02_In_Word,    203,    0.0, 0.00106,    1,     "A", "I/O Intr"}
-{ DrvPS2DCCur, RF02_In_Word,    204,    0.0, 0.00106,    1,     "A", "I/O Intr"}
+{DrvD1DrnCurr, RF02_In_Word,    201,    0.0, 0.00106,    1,     "A", "I/O Intr"}
+{DrvD2DrnCurr, RF02_In_Word,    202,    0.0, 0.00106,    1,     "A", "I/O Intr"}
+{DrvPS1DCCurr, RF02_In_Word,    203,    0.0, 0.00106,    1,     "A", "I/O Intr"}
+{DrvPS2DCCurr, RF02_In_Word,    204,    0.0, 0.00106,    1,     "A", "I/O Intr"}
 {DrvGnDrnVolt, RF02_In_Word,    209,    0.0, 0.00568,    1,   "VDC", "I/O Intr"}
-{DrvDrDrnVolt, RF02_In_Word,    210,    0.0, 0.01719,    1,   "VDC", "I/O Intr"}
+{  DrvDrnVolt, RF02_In_Word,    210,    0.0, 0.01719,    1,   "VDC", "I/O Intr"}
 {DrvPS1DCVolt, RF02_In_Word,    211,    0.0, 0.00568,    1,   "VDC", "I/O Intr"}
 {DrvPS2DCVolt, RF02_In_Word,    212,    0.0, 0.01719,    1,   "VDC", "I/O Intr"}
 {DrvLCWHSTemp, RF02_In_Word,    214, -39.24,  0.0392,    1,  "degC", "I/O Intr"}

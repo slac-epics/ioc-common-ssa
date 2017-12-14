@@ -17,7 +17,7 @@ ssa_registerRecordDeviceDriver(pdbbase)
 # Setup some additional environment variables
 # ====================================================================
 # Setup environment variables
-epicsEnvSet("ENGINEER", "Garth Brown")
+epicsEnvSet("ENGINEER", "M. Dunning")
 epicsEnvSet("LOCATION", "B15 SSA test stand")
 epicsEnvSet("P",        "SSA3:B15:")
 epicsEnvSet("IP",       "ssa-b15-rf0130")
@@ -80,7 +80,7 @@ dbLoadRecords("db/save_restoreStatus.db", "P=${IOC_P}:")
 #Load Additional databases:
 # =====================================================================
 ## Load record instances
-dbLoadRecords("db/ssa_RK_CA186.db", "P=$(P)")
+dbLoadRecords("db/ssa_RK_CA186.db", "P=$(P), LOC=$(LOCATION)")
 
 # END: Loading the record databases
 ########################################################################
