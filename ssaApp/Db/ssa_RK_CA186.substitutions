@@ -26,22 +26,22 @@ file "longout_custom.template" {
 pattern
 {           R,          PORT, OFFSET, DRVL, DRVH, LOPR, HOPR,     EGU}
 {      PSVolt, RF00_Out_Word,      2,  700, 2500,  700, 2500,    "mV"}
-{     CalYear, RF00_Out_Word,     92,   15,   99,   15,   99,      ""}
-{    CalMonth, RF00_Out_Word,     93,    1,   12,    1,   12,      ""}
-{      CalDay, RF00_Out_Word,     94,    1,   31,    1,   31,      ""}
-{     CalHour, RF00_Out_Word,     95,    0,   23,    0,   23,      ""}
-{      CalMin, RF00_Out_Word,     96,    0,   59,    0,   59,      ""}
-{      CalSec, RF00_Out_Word,     97,    0,   59,    0,   59,      ""}
+{     CalYear, RF02_Out_Word,      0,   15,   99,   15,   99,      ""}
+{    CalMonth, RF02_Out_Word,      1,    1,   12,    1,   12,      ""}
+{      CalDay, RF02_Out_Word,      2,    1,   31,    1,   31,      ""}
+{     CalHour, RF02_Out_Word,      3,    0,   23,    0,   23,      ""}
+{      CalMin, RF02_Out_Word,      4,    0,   59,    0,   59,      ""}
+{      CalSec, RF02_Out_Word,      5,    0,   59,    0,   59,      ""}
 }
 
 # Float outputs converted to integers, modbus function code 6.
 file "ao_slope.template" {
 pattern
 {           R,          PORT, OFFSET,    EOFF,   ESLO, DRVL, DRVH, LOPR, HOPR, PREC,     EGU}
-{   PwrFwAlLm, RF00_Out_Word,     29,     0.0,    1.0,    0, 2260,    0, 2260,    1,      ""}
-{   PwrRfAlLm, RF00_Out_Word,     30,     0.0,    1.0,    0,  730,    0,  730,    1,      ""}
-{   LCWOtTmLm, RF00_Out_Word,     31, -39.235, 0.0392,    0,   50,    0,   50,    1,  "degC"}
-{   LCWFlRtLm, RF00_Out_Word,     32,     0.0, 0.0564,   65,  100,   65,  100,    1, "L/min"}
+{   PwrFwAlLm, RF01_Out_Word,      0,     0.0,    1.0,    0, 2260,    0, 2260,    1,      ""}
+{   PwrRfAlLm, RF01_Out_Word,      1,     0.0,    1.0,    0,  730,    0,  730,    1,      ""}
+{   LCWOtTmLm, RF01_Out_Word,      2, -39.235, 0.0392,    0,   50,    0,   50,    1,  "degC"}
+{   LCWFlRtLm, RF01_Out_Word,      3,     0.0, 0.0564,   65,  100,   65,  100,    1, "L/min"}
 }
 
 #----------------------------------------------------------------------------------
