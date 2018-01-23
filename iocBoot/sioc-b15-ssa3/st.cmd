@@ -80,7 +80,8 @@ dbLoadRecords("db/save_restoreStatus.db", "P=${IOC_P}:")
 #Load Additional databases:
 # =====================================================================
 ## Load record instances
-dbLoadRecords("db/ssa_RK_CA186.db", "P=$(P), LOC=$(LOCATION)")
+dbLoadRecords("db/ssa_RK_CA186.db", "P=$(P)")
+dbLoadRecords("db/ssa_RK_CA186_modules.db", "P=$(P)")
 
 # END: Loading the record databases
 ########################################################################
@@ -92,33 +93,33 @@ dbLoadRecords("db/ssa_RK_CA186.db", "P=$(P), LOC=$(LOCATION)")
 # ============================================================
 # If all PVs don't connect continue anyway
 # ============================================================
-save_restoreSet_IncompleteSetsOk(1)
+#save_restoreSet_IncompleteSetsOk(1)
 
 # ============================================================
 # created save/restore backup files with date string
 # useful for recovery.
 # ============================================================
-save_restoreSet_DatedBackupFiles(1)
+#save_restoreSet_DatedBackupFiles(1)
 
 # ============================================================
 # Where to find the list of PVs to save
 # ============================================================
-set_requestfile_path("${IOC_DATA}/${IOC}/autosave-req")
+#set_requestfile_path("${IOC_DATA}/${IOC}/autosave-req")
 
 # ============================================================
 # Where to write the save files that will be used to restore
 # ============================================================
-set_savefile_path("${IOC_DATA}/${IOC}/autosave")
+#set_savefile_path("${IOC_DATA}/${IOC}/autosave")
 
 # ============================================================
 # Prefix that is use to update save/restore status database
 # records
 # ============================================================
-save_restoreSet_status_prefix("${IOC_P}:")
+#save_restoreSet_status_prefix("${IOC_P}:")
 
 ## Restore datasets
-set_pass0_restoreFile("info_settings.sav")
-set_pass1_restoreFile("info_settings.sav")
+#set_pass0_restoreFile("info_settings.sav")
+#set_pass1_restoreFile("info_settings.sav")
 
 # =====================================================================
 # End: Setup autosave/restore
@@ -129,23 +130,21 @@ set_pass1_restoreFile("info_settings.sav")
 # This is required if you use caPutLog.
 # Set access security file
 # Load common LCLS Access Configuration File
-< ${ACF_INIT}
+#< ${ACF_INIT}
 
 iocInit()
 
 # =====================================================
 # Turn on caPutLogging:
 # Log values only on change to the iocLogServer:
-caPutLogInit("${EPICS_CA_PUT_LOG_ADDR}")
-caPutLogShow(2)
+#caPutLogInit("${EPICS_CA_PUT_LOG_ADDR}")
+#caPutLogShow(2)
 # =====================================================
 
-## Start any sequence programs
-#seq sncExample,"user=gwbrownHost"
 
 ## Start autosave process:
-cd("${IOC_DATA}/${IOC}/autosave-req")
-makeAutosaveFiles()
-create_monitor_set("info_settings.req",20,"")
+#cd("${IOC_DATA}/${IOC}/autosave-req")
+#makeAutosaveFiles()
+#create_monitor_set("info_settings.req",20,"")
 
 
