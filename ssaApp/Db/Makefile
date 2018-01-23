@@ -22,6 +22,7 @@ DB_INSTALLS += $(MODBUS)/db/poll_delay.template
 # databases, templates, substitutions like this
 DB += ssa_RK_CA1300.db
 DB += ssa_RK_CA186.db
+DB += ssa_RK_CA186_modules.db
 DB += ssa_RK_CA199.db
 DB += ssa_BBEF.db
 
