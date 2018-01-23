@@ -9,39 +9,40 @@ NMODS = 31  # Total number of SSA modules
 NREGS = 50  # Register repeat period
 
 # bi
-str_cb =   '{{  M{0:02d}:SubCBStat,  RF{1:02d}_In_Word,   {2:4d}, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}}'
-str_pwr =  '{{    M{0:02d}:PwrStat,  RF{1:02d}_In_Word,   {2:4d}, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}}'
+str_cb =   '{{  M{0:02d}:SubCBStat,  RF{1:02d}_In_Word,     {2:2d}, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}}'
+str_pwr =  '{{    M{0:02d}:PwrStat,  RF{1:02d}_In_Word,     {2:2d}, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}}'
 
 # longin
-str_hiad = '{{   M{0:02d}:HiADWarn,  RF{1:02d}_In_Word,   {2:4d},    "", "I/O Intr"}}'
-str_load = '{{   M{0:02d}:LoADWarn,  RF{1:02d}_In_Word,   {2:4d},    "", "I/O Intr"}}'
-str_io1i = '{{  M{0:02d}:IO1IntMon,  RF{1:02d}_In_Word,   {2:4d},    "", "I/O Intr"}}'
-str_io1w = '{{  M{0:02d}:IO1WrnMon,  RF{1:02d}_In_Word,   {2:4d},    "", "I/O Intr"}}'
-str_io2w = '{{  M{0:02d}:IO2WrnMon,  RF{1:02d}_In_Word,   {2:4d},    "", "I/O Intr"}}'
-str_fpga = '{{    M{0:02d}:FPGAVer,  RF{1:02d}_In_Word,   {2:4d},    "", "I/O Intr"}}'
+str_hiad = '{{   M{0:02d}:HiADWarn,  RF{1:02d}_In_Word,     {2:2d},    "", "I/O Intr"}}'
+str_load = '{{   M{0:02d}:LoADWarn,  RF{1:02d}_In_Word,     {2:2d},    "", "I/O Intr"}}'
+str_io1i = '{{  M{0:02d}:IO1IntMon,  RF{1:02d}_In_Word,     {2:2d},    "", "I/O Intr"}}'
+str_io1w = '{{  M{0:02d}:IO1WrnMon,  RF{1:02d}_In_Word,     {2:2d},    "", "I/O Intr"}}'
+str_io2w = '{{  M{0:02d}:IO2WrnMon,  RF{1:02d}_In_Word,     {2:2d},    "", "I/O Intr"}}'
+str_fpga = '{{    M{0:02d}:FPGAVer,  RF{1:02d}_In_Word,     {2:2d},    "", "I/O Intr"}}'
 
 # ai
-str_pout = '{{  M{0:02d}:PwrOutFwd,  RF{1:02d}_In_Word,   {2:4d},     0.0,    1.0,    1,    "kW", "I/O Intr"}}'
-str_pref = '{{     M{0:02d}:PwrRef,  RF{1:02d}_In_Word,   {2:4d},     0.0,    1.0,    1,    "kW", "I/O Intr"}}'
-str_d1dc = '{{  M{0:02d}:Dv1DrnCur,  RF{1:02d}_In_Word,   {2:4d},     0.0, 0.0162,    1,     "A", "I/O Intr"}}'
-str_d2dc = '{{  M{0:02d}:Dv2DrnCur,  RF{1:02d}_In_Word,   {2:4d},     0.0, 0.0162,    1,     "A", "I/O Intr"}}'
-str_ps1c = '{{   M{0:02d}:PS1DCCur,  RF{1:02d}_In_Word,   {2:4d},     0.0, 0.0162,    1,     "A", "I/O Intr"}}'
-str_ps2c = '{{   M{0:02d}:PS2DCCur,  RF{1:02d}_In_Word,   {2:4d},     0.0, 0.0162,    1,     "A", "I/O Intr"}}'
-str_ps3c = '{{   M{0:02d}:PS3DCCur,  RF{1:02d}_In_Word,   {2:4d},     0.0, 0.0162,    1,     "A", "I/O Intr"}}'
-str_drnv = '{{    M{0:02d}:DrnVolt,  RF{1:02d}_In_Word,   {2:4d},     0.0, 0.0172,    1,   "VDC", "I/O Intr"}}'
-str_ps1v = '{{  M{0:02d}:PS1DCVolt,  RF{1:02d}_In_Word,   {2:4d},     0.0, 0.0172,    1,   "VDC", "I/O Intr"}}'
-str_ps2v = '{{  M{0:02d}:PS2DCVolt,  RF{1:02d}_In_Word,   {2:4d},     0.0, 0.0172,    1,   "VDC", "I/O Intr"}}'
-str_ps3v = '{{  M{0:02d}:PS3DCVolt,  RF{1:02d}_In_Word,   {2:4d},     0.0, 0.0172,    1,   "VDC", "I/O Intr"}}'
-str_lcwt = '{{  M{0:02d}:LCWHSTemp,  RF{1:02d}_In_Word,   {2:4d}, -39.235, 0.0392,    1,  "degC", "I/O Intr"}}'
-str_airt = '{{    M{0:02d}:AirTemp,  RF{1:02d}_In_Word,   {2:4d}, -39.235, 0.0392,    1,  "degC", "I/O Intr"}}'
-str_tfs1 = '{{  M{0:02d}:T1FanSpd1,  RF{1:02d}_In_Word,   {2:4d},     0.0,    4.0,    1,   "rpm", "I/O Intr"}}'
-str_tfs2 = '{{  M{0:02d}:T1FanSpd2,  RF{1:02d}_In_Word,   {2:4d},     0.0,    4.0,    1,   "rpm", "I/O Intr"}}'
-str_fans = '{{     M{0:02d}:FanSpd,  RF{1:02d}_In_Word,   {2:4d},     0.0,    4.0,    1,   "rpm", "I/O Intr"}}'
+str_pout = '{{  M{0:02d}:PwrOutFwd,  RF{1:02d}_In_Word,     {2:2d},     0.0,    1.0,    1,    "kW", "I/O Intr"}}'
+str_pref = '{{     M{0:02d}:PwrRef,  RF{1:02d}_In_Word,     {2:2d},     0.0,    1.0,    1,    "kW", "I/O Intr"}}'
+str_d1dc = '{{  M{0:02d}:Dv1DrnCur,  RF{1:02d}_In_Word,     {2:2d},     0.0, 0.0162,    1,     "A", "I/O Intr"}}'
+str_d2dc = '{{  M{0:02d}:Dv2DrnCur,  RF{1:02d}_In_Word,     {2:2d},     0.0, 0.0162,    1,     "A", "I/O Intr"}}'
+str_ps1c = '{{   M{0:02d}:PS1DCCur,  RF{1:02d}_In_Word,     {2:2d},     0.0, 0.0162,    1,     "A", "I/O Intr"}}'
+str_ps2c = '{{   M{0:02d}:PS2DCCur,  RF{1:02d}_In_Word,     {2:2d},     0.0, 0.0162,    1,     "A", "I/O Intr"}}'
+str_ps3c = '{{   M{0:02d}:PS3DCCur,  RF{1:02d}_In_Word,     {2:2d},     0.0, 0.0162,    1,     "A", "I/O Intr"}}'
+str_drnv = '{{    M{0:02d}:DrnVolt,  RF{1:02d}_In_Word,     {2:2d},     0.0, 0.0172,    1,   "VDC", "I/O Intr"}}'
+str_ps1v = '{{  M{0:02d}:PS1DCVolt,  RF{1:02d}_In_Word,     {2:2d},     0.0, 0.0172,    1,   "VDC", "I/O Intr"}}'
+str_ps2v = '{{  M{0:02d}:PS2DCVolt,  RF{1:02d}_In_Word,     {2:2d},     0.0, 0.0172,    1,   "VDC", "I/O Intr"}}'
+str_ps3v = '{{  M{0:02d}:PS3DCVolt,  RF{1:02d}_In_Word,     {2:2d},     0.0, 0.0172,    1,   "VDC", "I/O Intr"}}'
+str_lcwt = '{{  M{0:02d}:LCWHSTemp,  RF{1:02d}_In_Word,     {2:2d}, -39.235, 0.0392,    1,  "degC", "I/O Intr"}}'
+str_airt = '{{    M{0:02d}:AirTemp,  RF{1:02d}_In_Word,     {2:2d}, -39.235, 0.0392,    1,  "degC", "I/O Intr"}}'
+str_tfs1 = '{{  M{0:02d}:T1FanSpd1,  RF{1:02d}_In_Word,     {2:2d},     0.0,    4.0,    1,   "rpm", "I/O Intr"}}'
+str_tfs2 = '{{  M{0:02d}:T1FanSpd2,  RF{1:02d}_In_Word,     {2:2d},     0.0,    4.0,    1,   "rpm", "I/O Intr"}}'
+str_fans = '{{     M{0:02d}:FanSpd,  RF{1:02d}_In_Word,     {2:2d},     0.0,    4.0,    1,   "rpm", "I/O Intr"}}'
 
 def wrloop(f, str, nmods, nregs, start):
     for i in range(nmods):
         regnum = i*nregs + start
         j = (regnum - 1)/100
+        regnum %= 100
         f.write(str.format(i, j, regnum))
         f.write('\n')
 
@@ -72,7 +73,7 @@ def write_li(f):
     f.write('}\n\n')
 
 def write_ai(f):
-    f.write('file "ai_slope.template" {')
+    f.write('file "ai_slope_autosave.template" {')
     f.write('\n')
     f.write('pattern')
     f.write('\n')
