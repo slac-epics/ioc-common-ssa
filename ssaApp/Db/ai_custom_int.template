@@ -1,14 +1,12 @@
-# ai record template for register inputs
+# For a 16-bit signed integer with a slope/offset linear conversion
 record(ai, "$(P)$(R)") {
-    field(DTYP,"asynInt32")
-    field(INP,"@asynMask($(PORT) $(OFFSET) $(BITS))INT16")
-    field(LINR,"LINEAR")
-    field(EGUL,"$(EGUL)")
-    field(EGUF,"$(EGUF)")
-    field(HOPR,"$(HOPR)")
-    field(LOPR,"$(LOPR)")
-    field(PREC,"$(PREC)")
-    field(EGU, "$(EGU)")
-    field(SCAN,"$(SCAN)")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asynMask($(PORT) $(OFFSET))INT16")
+    field(LINR, "LINEAR")
+    field(ESLO, "$(ESLO=1)")
+    field(EOFF, "$(EOFF=0)")
+    field(PREC, "$(PREC=1)")
+    field(EGU,  "$(EGU="")")
+    field(SCAN, "$(SCAN)")
 }
 
