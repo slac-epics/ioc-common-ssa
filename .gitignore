@@ -9,6 +9,9 @@ iocBoot/*/envPaths
 build*.log*
 *.swp
 startup/
-*.bak
+*.bak*
 cfg/
+ssatest.subs
+trash/
+
 
