@@ -42,8 +42,8 @@ CROSS_COMPILER_TARGET_ARCHS =
 # =======================================================
 #IOCS_APPL_TOP  = $(INSTALL_LOCATION)
 
-INSTALL_LOCATION_STARTUP += $(INSTALL_LOCATION)/startup
-DIRECTORY_TARGETS += $(INSTALL_LOCATION_STARTUP)
+#INSTALL_LOCATION_STARTUP += $(INSTALL_LOCATION)/startup
+#DIRECTORY_TARGETS += $(INSTALL_LOCATION_STARTUP)
 # =======================================================
 
 ## =============================

@@ -10,4 +10,5 @@ build*.log*
 *.swp
 startup/
 *.bak
+cfg/
 
