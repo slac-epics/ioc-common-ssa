@@ -4,7 +4,7 @@
 # IP - The IP address or host name 
 
 # Poll time in ms for read operations
-epicsEnvSet("POLLTIME", "150")
+epicsEnvSet("POLLTIME", "50")
 
 # Use the following commands for TCP/IP
 # drvAsynIPPortConfigure(const char *portName, const char *hostInfo,
@@ -18,7 +18,7 @@ dbLoadRecords("db/asynRecord.db", "P=$(P),R=ASYN,PORT=$(P),ADDR=0,IMAX=0,OMAX=0"
 # modbusInterposeConfig(const char *portName, modbusLinkType linkType,
 #			int timeoutMsec, int writeDelayMsec)
 #
-modbusInterposeConfig("$(P)", 0, 300, 0)
+modbusInterposeConfig("$(P)", 0, 3000, 0)
 
 # Modbus function code: 3 (Read Holding Registers, 16-bit word access)
 # Start address: 1
@@ -76,7 +76,7 @@ drvModbusAsynConfigure("RF43_In_Word", "$(P)", 1, 3, 4301, 100, 0, $(POLLTIME), 
 drvModbusAsynConfigure("RF44_In_Word", "$(P)", 1, 3, 4401, 100, 0, $(POLLTIME), "RK")
 drvModbusAsynConfigure("RF45_In_Word", "$(P)", 1, 3, 4501, 100, 0, $(POLLTIME), "RK")
 
-# Load asyn record and statistics for first port
+# Load asyn record and statistics for first input port
 dbLoadRecords("db/asynRecord.db", "P=$(P),R=ASYN_IN,PORT=RF00_In_Word,ADDR=0,IMAX=0,OMAX=0")
 dbLoadRecords("db/statistics.template", "P=$(P),R=ASYN_IN,PORT=RF00_In_Word,SCAN=10 second")
 
@@ -84,21 +84,22 @@ dbLoadRecords("db/statistics.template", "P=$(P),R=ASYN_IN,PORT=RF00_In_Word,SCAN
 # Start address: 1
 # Access 8 words as outputs 
 # Default data type: unsigned integer
-drvModbusAsynConfigure("RF00_Out_Word", "$(P)", 1, 6, 1, 8, 0, 100, "RK")
+drvModbusAsynConfigure("RF00_Out_Word", "$(P)", 1, 6, 1, 8, 0, 1, "RK")
 dbLoadRecords("db/asynRecord.db", "P=$(P),R=ASYN_OUT,PORT=RF00_Out_Word,ADDR=0,IMAX=0,OMAX=0")
+dbLoadRecords("db/statistics.template", "P=$(P),R=ASYN_OUT,PORT=RF00_Out_Word,SCAN=10 second")
 
 # Modbus function code: 6 (Write Single Register, 16-bit word access)
 # Start address: 30
 # Access 4 words as outputs 
 # Default data type: unsigned integer
-drvModbusAsynConfigure("RF01_Out_Word", "$(P)", 1, 6, 30, 4, 0, 100, "RK")
+drvModbusAsynConfigure("RF01_Out_Word", "$(P)", 1, 6, 30, 4, 0, 1, "RK")
 dbLoadRecords("db/asynRecord.db", "P=$(P),R=ASYN_OUT,PORT=RF01_Out_Word,ADDR=0,IMAX=0,OMAX=0")
 
 # Modbus function code: 6 (Write Single Register, 16-bit word access)
 # Start address: 93
 # Access 6 words as outputs 
 # Default data type: unsigned integer
-drvModbusAsynConfigure("RF02_Out_Word", "$(P)", 1, 6, 93, 6, 0, 100, "RK")
+drvModbusAsynConfigure("RF02_Out_Word", "$(P)", 1, 6, 93, 6, 0, 1, "RK")
 dbLoadRecords("db/asynRecord.db", "P=$(P),R=ASYN_OUT,PORT=RF02_Out_Word,ADDR=0,IMAX=0,OMAX=0")
 
 # Enable ASYN_TRACEIO_HEX on octet server
