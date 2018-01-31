@@ -38,10 +38,12 @@ pattern
 file "ao_slope.template" {
 pattern
 {           R,          PORT, OFFSET,    EOFF,   ESLO, DRVL, DRVH, LOPR, HOPR, PREC,     EGU}
-{   PwrFwAlLm, RF01_Out_Word,      0,     0.0,    1.0,    0, 2260,    0, 2260,    1,      ""}
-{   PwrRfAlLm, RF01_Out_Word,      1,     0.0,    1.0,    0,  730,    0,  730,    1,      ""}
-{   LCWOtTmLm, RF01_Out_Word,      2, -39.235, 0.0392,    0,   50,    0,   50,    1,  "degC"}
-{   LCWFlRtLm, RF01_Out_Word,      3,     0.0, 0.0564,   65,  100,   65,  100,    1, "L/min"}
+{   PwrFwAlLm, RF01_Out_Word,      0,  -39.23, 0.0456,    0, 2260,    0, 2260,    1,      ""}
+{   PwrRfAlLm, RF01_Out_Word,      1,    -3.5, 0.0134,    0,  730,    0,  730,    1,      ""}
+#{   LCWOtTmLm, RF01_Out_Word,      2, -39.235, 0.0392,    0,   50,    0,   50,    1,  "degC"}
+{   LCWOtTmLm, RF01_Out_Word,      2,   -72.9, 0.0589,    0,   50,    0,   50,    1,  "degC"}
+#{   LCWFlRtLm, RF01_Out_Word,      3,     0.0, 0.0564,   65,  100,   65,  100,    1, "L/min"}
+{   LCWFlRtLm, RF01_Out_Word,      3,   -0.22, 0.0563,   65,  100,   65,  100,    1, "L/min"}
 }
 
 #----------------------------------------------------------------------------------
@@ -109,34 +111,44 @@ pattern
 {Comm_WE2Warn,  RF01_In_Word,     90,      "", "I/O Intr"}
 {FPGA_RE1Warn,  RF01_In_Word,     93,      "", "I/O Intr"}
 {FPGA_RE2Warn,  RF01_In_Word,     94,      "", "I/O Intr"}
-{      PLCVer,  RF01_In_Word,     96,      "", "I/O Intr"}
-{      TFTVer,  RF01_In_Word,     97,      "", "I/O Intr"}
-{ CtrlFPGAVer,  RF01_In_Word,     98,      "", "I/O Intr"}
 { DrvHiADWarn,  RF02_In_Word,      8,      "", "I/O Intr"}
 { DrvLoADWarn,  RF02_In_Word,     18,      "", "I/O Intr"}
 {DrvIO1IntMon,  RF02_In_Word,     22,      "", "I/O Intr"}
 {DrvIO1WrnMon,  RF02_In_Word,     25,      "", "I/O Intr"}
 {DrvIO2WrnMon,  RF02_In_Word,     26,      "", "I/O Intr"}
-{  DrvFPGAVer,  RF02_In_Word,     98,      "", "I/O Intr"}
 {HeatSinkThm1,  RF40_In_Word,     34,      "", "I/O Intr"}
 {HeatSinkThm2,  RF40_In_Word,     35,      "", "I/O Intr"}
 }
 
-# Integer inputs converted to floats, modbus function code 3.
+# Unsigned integer inputs converted to floats, modbus function code 3.
+# Uses a breakpoint table for conversion.
+file "ai_pwrFwd_autosave.template" {
+pattern
+{           R,         PORT, OFFSET,   PREC,     EGU,       SCAN}
+{      PwrFwd, RF01_In_Word,      3,      1,     "W", "I/O Intr"}
+}
+
+# Unsigned integer inputs converted to floats, modbus function code 3.
+# Uses a breakpoint table for conversion.
+file "ai_pwrRef_autosave.template" {
+pattern
+{           R,         PORT, OFFSET,   PREC,     EGU,       SCAN}
+{      PwrRef, RF01_In_Word,      4,      1,     "W", "I/O Intr"}
+}
+
+# Unsigned integer inputs converted to floats, modbus function code 3.
 file "ai_slope_autosave.template" {
 pattern
 {           R,         PORT, OFFSET,   EOFF,    ESLO, PREC,     EGU,       SCAN}
-{   PSVoltRBV, RF00_In_Word,     34,    0.0,     0.1,    1,    "mV", "I/O Intr"}
-{PwrFwAlLmRBV, RF00_In_Word,     35,    0.0,     1.0,    1,    "kW", "I/O Intr"}
-{PwrRfAlLmRBV, RF00_In_Word,     36,    0.0,     1.0,    1,    "kW", "I/O Intr"}
-{LCWOtTmLmRBV, RF00_In_Word,     37,    0.0,     1.0,    1,  "degC", "I/O Intr"}
-{LCWFlRtLmRBV, RF00_In_Word,     38,    0.0,     1.0,    1, "L/min", "I/O Intr"}
+{   PSVoltRBV, RF00_In_Word,     34,    0.0,     0.1,    1,     "V", "I/O Intr"}
+{PwrFwAlLmRBV, RF00_In_Word,     35,    0.0,    0.01,    1,    "kW", "I/O Intr"}
+{PwrRfAlLmRBV, RF00_In_Word,     36,    0.0,    0.01,    1,    "kW", "I/O Intr"}
+{LCWOtTmLmRBV, RF00_In_Word,     37,    0.0,     0.1,    1,  "degC", "I/O Intr"}
+{LCWFlRtLmRBV, RF00_In_Word,     38,    0.0,     0.1,    1, "L/min", "I/O Intr"}
 {  480VAC1_UV, RF00_In_Word,     99,    0.0,     1.0,    0,   "VAC", "I/O Intr"}
-{  480VAC2_VW, RF01_In_Word,     00,    0.0,     1.0,    0,   "VAC", "I/O Intr"}
-{  480VAC3_UW, RF01_In_Word,     01,    0.0,     1.0,    0,   "VAC", "I/O Intr"}
-{    PwrInDrv, RF01_In_Word,      2,    0.0,     1.0,    1,      "", "I/O Intr"}
-{      PwrFwd, RF01_In_Word,      3,    0.0,     1.0,    1,      "", "I/O Intr"}
-{      PwrRef, RF01_In_Word,      4,    0.0,     1.0,    1,      "", "I/O Intr"}
+{  480VAC2_VW, RF01_In_Word,      0,    0.0,     1.0,    0,   "VAC", "I/O Intr"}
+{  480VAC3_UW, RF01_In_Word,      1,    0.0,     1.0,    0,   "VAC", "I/O Intr"}
+{    PwrInDrv, RF01_In_Word,      2, -50.57, 0.04762,    1,   "dBm", "I/O Intr"}
 {    Humidity, RF01_In_Word,      5,    0.0,   0.132,    1,     "%", "I/O Intr"}
 { LCWFlowRate, RF01_In_Word,      6,    0.0,  0.0564,    1, "L/min", "I/O Intr"}
 {  SysAirTemp, RF01_In_Word,      9, -39.24,  0.0392,    1,  "degC", "I/O Intr"}
@@ -164,6 +176,9 @@ pattern
 {  HX2FanSpd8, RF01_In_Word,     45,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
 { CtrlFanSpd1, RF01_In_Word,     46,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
 { CtrlFanSpd2, RF01_In_Word,     47,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{      PLCVer, RF01_In_Word,     96,  -11.8,     0.1,    1,      "", "I/O Intr"}
+{      TFTVer, RF01_In_Word,     97,  -11.8,     0.1,    1,      "", "I/O Intr"}
+{ CtrlFPGAVer, RF01_In_Word,     98,  -11.8,     0.1,    1,      "", "I/O Intr"}
 {DrvD1DrnCurr, RF02_In_Word,      1,    0.0, 0.00106,    1,     "A", "I/O Intr"}
 {DrvD2DrnCurr, RF02_In_Word,      2,    0.0, 0.00106,    1,     "A", "I/O Intr"}
 {DrvPS1DCCurr, RF02_In_Word,      3,    0.0, 0.00106,    1,     "A", "I/O Intr"}
@@ -177,6 +192,7 @@ pattern
 {DrvT1FanSpd1, RF02_In_Word,     37,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
 {DrvT1FanSpd2, RF02_In_Word,     38,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
 {   DrvFanSpd, RF02_In_Word,     39,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{  DrvFPGAVer, RF02_In_Word,     98,  -11.8,     0.1,    1,      "", "I/O Intr"}
 }
 
 #------------------------------------------------------------------------------------------

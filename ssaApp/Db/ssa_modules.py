@@ -18,11 +18,11 @@ str_load = '{{   M{0:02d}:LoADWarn,  RF{1:02d}_In_Word,     {2:2d},    "", "I/O 
 str_io1i = '{{  M{0:02d}:IO1IntMon,  RF{1:02d}_In_Word,     {2:2d},    "", "I/O Intr"}}'
 str_io1w = '{{  M{0:02d}:IO1WrnMon,  RF{1:02d}_In_Word,     {2:2d},    "", "I/O Intr"}}'
 str_io2w = '{{  M{0:02d}:IO2WrnMon,  RF{1:02d}_In_Word,     {2:2d},    "", "I/O Intr"}}'
-str_fpga = '{{    M{0:02d}:FPGAVer,  RF{1:02d}_In_Word,     {2:2d},    "", "I/O Intr"}}'
+#str_fpga = '{{    M{0:02d}:FPGAVer,  RF{1:02d}_In_Word,     {2:2d},    "", "I/O Intr"}}'
 
 # ai
-str_pout = '{{  M{0:02d}:PwrOutFwd,  RF{1:02d}_In_Word,     {2:2d},     0.0,    1.0,    1,    "kW", "I/O Intr"}}'
-str_pref = '{{     M{0:02d}:PwrRef,  RF{1:02d}_In_Word,     {2:2d},     0.0,    1.0,    1,    "kW", "I/O Intr"}}'
+str_pout = '{{  M{0:02d}:PwrOutFwd,  RF{1:02d}_In_Word,     {2:2d},     0.0,    1.0,    1,      "", "I/O Intr"}}'
+str_pref = '{{     M{0:02d}:PwrRef,  RF{1:02d}_In_Word,     {2:2d},     0.0,    1.0,    1,      "", "I/O Intr"}}'
 str_d1dc = '{{  M{0:02d}:Dv1DrnCur,  RF{1:02d}_In_Word,     {2:2d},     0.0, 0.0162,    1,     "A", "I/O Intr"}}'
 str_d2dc = '{{  M{0:02d}:Dv2DrnCur,  RF{1:02d}_In_Word,     {2:2d},     0.0, 0.0162,    1,     "A", "I/O Intr"}}'
 str_ps1c = '{{   M{0:02d}:PS1DCCur,  RF{1:02d}_In_Word,     {2:2d},     0.0, 0.0162,    1,     "A", "I/O Intr"}}'
@@ -37,6 +37,7 @@ str_airt = '{{    M{0:02d}:AirTemp,  RF{1:02d}_In_Word,     {2:2d}, -39.235, 0.0
 str_tfs1 = '{{  M{0:02d}:T1FanSpd1,  RF{1:02d}_In_Word,     {2:2d},     0.0,    4.0,    1,   "rpm", "I/O Intr"}}'
 str_tfs2 = '{{  M{0:02d}:T1FanSpd2,  RF{1:02d}_In_Word,     {2:2d},     0.0,    4.0,    1,   "rpm", "I/O Intr"}}'
 str_fans = '{{     M{0:02d}:FanSpd,  RF{1:02d}_In_Word,     {2:2d},     0.0,    4.0,    1,   "rpm", "I/O Intr"}}'
+str_fpga = '{{    M{0:02d}:FPGAVer,  RF{1:02d}_In_Word,     {2:2d},   -11.8,    0.1,    1,      "", "I/O Intr"}}'
 
 def wrloop(f, str, nmods, nregs, start):
     for i in range(nmods):
@@ -69,7 +70,6 @@ def write_li(f):
     wrloop(f, str_io1i, NMODS, NREGS, 322)
     wrloop(f, str_io1w, NMODS, NREGS, 325)
     wrloop(f, str_io2w, NMODS, NREGS, 326)
-    wrloop(f, str_fpga, NMODS, NREGS, 348)
     f.write('}\n\n')
 
 def write_ai(f):
@@ -95,6 +95,7 @@ def write_ai(f):
     wrloop(f, str_tfs1, NMODS, NREGS, 337)
     wrloop(f, str_tfs2, NMODS, NREGS, 338)
     wrloop(f, str_fans, NMODS, NREGS, 339)
+    wrloop(f, str_fpga, NMODS, NREGS, 348)
     f.write('}\n\n')
     
 def write_subs_file(filename):

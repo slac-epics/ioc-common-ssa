@@ -40,6 +40,12 @@ ssa_DBD += asyn.dbd
 ssa_DBD += drvAsynIPPort.dbd
 #ssa_DBD += asynRecord.dbd
 ssa_DBD += modbusSupport.dbd
+
+# Breakpoint tables for power conversion
+ssa_DBD += bptSsaPwrFwd.dbd
+ssa_DBD += bptSsaPwrRef.dbd
+ssa_DBD += bptSsaPwrDrv.dbd
+
 # ======================================================================
 # <name>_registerRecordDeviceDriver.cpp will be created from <name>.dbd
 ssa_SRCS += ssa_registerRecordDeviceDriver.cpp
