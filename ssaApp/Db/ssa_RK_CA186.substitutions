@@ -145,9 +145,9 @@ pattern
 {PwrRfAlLmRBV, RF00_In_Word,     36,    0.0,    0.01,    1,    "kW", "I/O Intr"}
 {LCWOtTmLmRBV, RF00_In_Word,     37,    0.0,     0.1,    1,  "degC", "I/O Intr"}
 {LCWFlRtLmRBV, RF00_In_Word,     38,    0.0,     0.1,    1, "L/min", "I/O Intr"}
-{  480VAC1_UV, RF00_In_Word,     99,    0.0,     1.0,    0,   "VAC", "I/O Intr"}
-{  480VAC2_VW, RF01_In_Word,      0,    0.0,     1.0,    0,   "VAC", "I/O Intr"}
-{  480VAC3_UW, RF01_In_Word,      1,    0.0,     1.0,    0,   "VAC", "I/O Intr"}
+{  480VAC1_UV, RF00_In_Word,     99,   -842,   0.448,    0,   "VAC", "I/O Intr"}
+{  480VAC2_VW, RF01_In_Word,      0,   -842,   0.448,    0,   "VAC", "I/O Intr"}
+{  480VAC3_UW, RF01_In_Word,      1,   -842,   0.448,    0,   "VAC", "I/O Intr"}
 {    PwrInDrv, RF01_In_Word,      2, -50.57, 0.04762,    1,   "dBm", "I/O Intr"}
 {    Humidity, RF01_In_Word,      5,    0.0,   0.132,    1,     "%", "I/O Intr"}
 { LCWFlowRate, RF01_In_Word,      6,    0.0,  0.0564,    1, "L/min", "I/O Intr"}
