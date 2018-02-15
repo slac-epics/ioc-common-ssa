@@ -5,7 +5,7 @@
 # 2) Set DC enable;
 # 3) Set PS output control voltage;
 # 4) Set RF enable
-# For more info, see manual p.9)
+# For more info, see manual p.9
 record(seq, "$(P)FaultReset") {
     field(DESC, "Reset fault and restore operation")
     field(DLY1, "0")
@@ -18,18 +18,16 @@ record(seq, "$(P)FaultReset") {
     field(DOL3, "1")
     field(LNK3, "$(P)DCEnable PP")
     field(DLY4, "1.5")
-#    field(DOL4, "2380")
     field(DOL4, "1")
-#    field(LNK4, "$(P)OUT3 PP")
     field(LNK4, "$(P)DrainVoltSetPt.PROC PP")
     field(DLY5, "1.5")
     field(DOL5, "1")
     field(LNK5, "$(P)RFEnable PP")
 }
 
-# --- Records for Drain Voltage, which sets the Output voltage --------------
-record(ao, "$(P)DrainVoltSetPt") {
-    field(DESC, "Drain voltage set point")
+# --- Records for Drain Voltage, which sets the Output Voltage --------------
+record(ao, "$(P)DrainVoltSetpt") {
+    field(DESC, "Drain Voltage Setpt.")
     field(EGU,  "V")
     field(PREC, "2")
     field(LOPR, "13.5")
@@ -64,7 +62,7 @@ record(calc, "$(P)RunState") {
 }
 
 record(mbbi, "$(P)RunStateMsg") {
-    field(DESC, "Run state readback message")
+    field(DESC, "Run State")
     field(INP,  "$(P)RunState")
     field(ZRVL, "0")
     field(ZRST, "Running")
@@ -91,7 +89,7 @@ record(aSub, "$(P)FaultIntAsub"){
 }
 
 record(stringin, "$(P)FaultIntMsg") {
-    field(DESC, "Internal fault message")
+    field(DESC, "Internal Fault")
 }
 
 record(aSub, "$(P)FaultExtAsub"){
@@ -107,7 +105,7 @@ record(aSub, "$(P)FaultExtAsub"){
 }
 
 record(stringin, "$(P)FaultExtMsg") {
-    field(DESC, "External fault message")
+    field(DESC, "External Fault")
 }
 
 record(aSub, "$(P)WarningAsub"){
@@ -123,7 +121,7 @@ record(aSub, "$(P)WarningAsub"){
 }
 
 record(stringin, "$(P)WarningMsg") {
-    field(DESC, "Warning message")
+    field(DESC, "Warning")
 }
 
 
