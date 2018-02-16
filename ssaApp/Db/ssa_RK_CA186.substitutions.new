@@ -12,9 +12,9 @@ pattern
 {            R,          PORT, OFFSET,   MASK,      ZNAM,     ONAM}
 {     DCEnable, RF00_Out_Word,      0, 0x0001, "Disable", "Enable"}
 {     RFEnable, RF00_Out_Word,      1, 0x0001, "Disable", "Enable"}
-{   IntlkReset, RF00_Out_Word,      3, 0x0001,        "",  "Reset"}
+{FaultIntReset, RF00_Out_Word,      3, 0x0001,        "",  "Reset"}
 {FaultExtReset, RF00_Out_Word,      3, 0x0002,        "",  "Reset"}
-{    WarnReset, RF00_Out_Word,      3, 0x0004,        "",  "Reset"}
+{ WarningReset, RF00_Out_Word,      3, 0x0004,        "",  "Reset"}
 {  XPortReboot, RF00_Out_Word,      4, 0x0001,        "", "Reboot"}
 {    SysReboot, RF00_Out_Word,      5, 0x0001,        "", "Reboot"}
 {    PulseMode, RF00_Out_Word,      6, 0x0001, "Disable", "Enable"}
@@ -71,7 +71,7 @@ pattern
  {   Fault480_UV,  RF40_In_Word,      6, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
  {   Fault480_VW,  RF40_In_Word,      7, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
  {   Fault480_UW,  RF40_In_Word,      8, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
- { FaultInputPwr,  RF40_In_Word,      9, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+ {   FaultDrvPwr,  RF40_In_Word,      9, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
  {   FaultFwdPwr,  RF40_In_Word,     10, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
  {   FaultRefPwr,  RF40_In_Word,     11, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
  {  FaultLCWFlow,  RF40_In_Word,     13, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
@@ -146,50 +146,50 @@ pattern
 {    480VAC1_UV, RF00_In_Word,     99,    0.0,     1.0,    0,   "VAC", "I/O Intr"}
 {    480VAC2_VW, RF01_In_Word,      0,    0.0,     1.0,    0,   "VAC", "I/O Intr"}
 {    480VAC3_UW, RF01_In_Word,      1,    0.0,     1.0,    0,   "VAC", "I/O Intr"}
-{      InputPwr, RF01_In_Word,      2, -50.57, 0.04762,    1,   "dBm", "I/O Intr"}
+{        DrvPwr, RF01_In_Word,      2, -50.57, 0.04762,    1,   "dBm", "I/O Intr"}
 {      Humidity, RF01_In_Word,      5,    0.0,   0.132,    1,     "%", "I/O Intr"}
 {   LCWFlowRate, RF01_In_Word,      6,    0.0,  0.0564,    1, "L/min", "I/O Intr"}
 {    SysAirTemp, RF01_In_Word,      9, -39.24,  0.0392,    1,  "degC", "I/O Intr"}
 {     LCWInTemp, RF01_In_Word,     10, -39.24,  0.0392,    1,  "degC", "I/O Intr"}
 {    LCWOutTemp, RF01_In_Word,     11, -39.24,  0.0392,    1,  "degC", "I/O Intr"}
-{   HeatEx1Temp, RF01_In_Word,     12, -39.24,  0.0392,    1,  "degC", "I/O Intr"}
-{   HeatEx2Temp, RF01_In_Word,     13, -39.24,  0.0392,    1,  "degC", "I/O Intr"}
+{       HX1Temp, RF01_In_Word,     12, -39.24,  0.0392,    1,  "degC", "I/O Intr"}
+{       HX2Temp, RF01_In_Word,     13, -39.24,  0.0392,    1,  "degC", "I/O Intr"}
 {   CtrlAirTemp, RF01_In_Word,     14, -39.24,  0.0392,    1,  "degC", "I/O Intr"}
 {   RadCombTemp, RF01_In_Word,     15, -39.24,  0.0392,    1,  "degC", "I/O Intr"}
-{  HX1FanSpeed1, RF01_In_Word,     30,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
-{  HX1FanSpeed2, RF01_In_Word,     31,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
-{  HX1FanSpeed3, RF01_In_Word,     32,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
-{  HX1FanSpeed4, RF01_In_Word,     33,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
-{  HX1FanSpeed5, RF01_In_Word,     34,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
-{  HX1FanSpeed6, RF01_In_Word,     35,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
-{  HX1FanSpeed7, RF01_In_Word,     36,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
-{  HX1FanSpeed8, RF01_In_Word,     37,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
-{  HX2FanSpeed1, RF01_In_Word,     38,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
-{  HX2FanSpeed2, RF01_In_Word,     39,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
-{  HX2FanSpeed3, RF01_In_Word,     40,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
-{  HX2FanSpeed4, RF01_In_Word,     41,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
-{  HX2FanSpeed5, RF01_In_Word,     42,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
-{  HX2FanSpeed6, RF01_In_Word,     43,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
-{  HX2FanSpeed7, RF01_In_Word,     44,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
-{  HX2FanSpeed8, RF01_In_Word,     45,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
-{ CtrlFanSpeed1, RF01_In_Word,     46,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
-{ CtrlFanSpeed2, RF01_In_Word,     47,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{    HX1FanSpd1, RF01_In_Word,     30,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{    HX1FanSpd2, RF01_In_Word,     31,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{    HX1FanSpd3, RF01_In_Word,     32,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{    HX1FanSpd4, RF01_In_Word,     33,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{    HX1FanSpd5, RF01_In_Word,     34,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{    HX1FanSpd6, RF01_In_Word,     35,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{    HX1FanSpd7, RF01_In_Word,     36,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{    HX1FanSpd8, RF01_In_Word,     37,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{    HX2FanSpd1, RF01_In_Word,     38,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{    HX2FanSpd2, RF01_In_Word,     39,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{    HX2FanSpd3, RF01_In_Word,     40,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{    HX2FanSpd4, RF01_In_Word,     41,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{    HX2FanSpd5, RF01_In_Word,     42,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{    HX2FanSpd6, RF01_In_Word,     43,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{    HX2FanSpd7, RF01_In_Word,     44,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{    HX2FanSpd8, RF01_In_Word,     45,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{   CtrlFanSpd1, RF01_In_Word,     46,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{   CtrlFanSpd2, RF01_In_Word,     47,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
 {        PLCVer, RF01_In_Word,     96,  -11.8,     0.1,    1,      "", "I/O Intr"}
 {        TFTVer, RF01_In_Word,     97,  -11.8,     0.1,    1,      "", "I/O Intr"}
 {   CtrlFPGAVer, RF01_In_Word,     98,  -11.8,     0.1,    1,      "", "I/O Intr"}
-{    DrvD1Drn_I, RF02_In_Word,      1,    0.0, 0.00106,    1,     "A", "I/O Intr"}
-{    DrvD2Drn_I, RF02_In_Word,      2,    0.0, 0.00106,    1,     "A", "I/O Intr"}
-{    DrvPS1DC_I, RF02_In_Word,      3,    0.0, 0.00106,    1,     "A", "I/O Intr"}
-{    DrvPS2DC_I, RF02_In_Word,      4,    0.0, 0.00106,    1,     "A", "I/O Intr"}
-{  DrvGnDrnVolt, RF02_In_Word,      9,    0.0, 0.00568,    1,   "VDC", "I/O Intr"}
-{    DrvDrnVolt, RF02_In_Word,     10,    0.0, 0.01719,    1,   "VDC", "I/O Intr"}
-{  DrvPS1DCVolt, RF02_In_Word,     11,    0.0, 0.00568,    1,   "VDC", "I/O Intr"}
-{  DrvPS2DCVolt, RF02_In_Word,     12,    0.0, 0.01719,    1,   "VDC", "I/O Intr"}
+{DrvDev1Drain_I, RF02_In_Word,      1,    0.0, 0.00106,    1,     "A", "I/O Intr"}
+{DrvDev2Drain_I, RF02_In_Word,      2,    0.0, 0.00106,    1,     "A", "I/O Intr"}
+{      DrvPS1_I, RF02_In_Word,      3,    0.0, 0.00106,    1,     "A", "I/O Intr"}
+{      DrvPS2_I, RF02_In_Word,      4,    0.0, 0.00106,    1,     "A", "I/O Intr"}
+{DrvGainDrain_V, RF02_In_Word,      9,    0.0, 0.00568,    1,   "VDC", "I/O Intr"}
+{    DrvDrain_V, RF02_In_Word,     10,    0.0, 0.01719,    1,   "VDC", "I/O Intr"}
+{      DrvPS1_V, RF02_In_Word,     11,    0.0, 0.00568,    1,   "VDC", "I/O Intr"}
+{      DrvPS2_V, RF02_In_Word,     12,    0.0, 0.01719,    1,   "VDC", "I/O Intr"}
 {  DrvLCWHSTemp, RF02_In_Word,     14, -39.24,  0.0392,    1,  "degC", "I/O Intr"}
 {    DrvAirTemp, RF02_In_Word,     15, -39.24,  0.0392,    1,  "degC", "I/O Intr"}
-{DrvT1FanSpeed1, RF02_In_Word,     37,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
-{DrvT1FanSpeed2, RF02_In_Word,     38,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
-{   DrvFanSpeed, RF02_In_Word,     39,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{DrvTrf1FanSpd1, RF02_In_Word,     37,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{DrvTrf1FanSpd2, RF02_In_Word,     38,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
+{     DrvFanSpd, RF02_In_Word,     39,    0.0,     4.0,    1,   "rpm", "I/O Intr"}
 {    DrvFPGAVer, RF02_In_Word,     98,  -11.8,     0.1,    1,      "", "I/O Intr"}
 }
 
