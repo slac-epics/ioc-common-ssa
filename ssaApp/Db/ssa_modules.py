@@ -13,31 +13,31 @@ str_cb =   '{{  M{0:02d}_SubCBStat,  RF{1:02d}_In_Word,     {2:2d}, 0x0001,   "D
 str_pwr =  '{{    M{0:02d}_PwrStat,  RF{1:02d}_In_Word,     {2:2d}, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}}'
 
 # longin
-str_hiad = '{{   M{0:02d}_HiADWarn,  RF{1:02d}_In_Word,     {2:2d},    "", "I/O Intr"}}'
-str_load = '{{   M{0:02d}_LoADWarn,  RF{1:02d}_In_Word,     {2:2d},    "", "I/O Intr"}}'
-str_io1i = '{{  M{0:02d}_IO1IntMon,  RF{1:02d}_In_Word,     {2:2d},    "", "I/O Intr"}}'
-str_io1w = '{{  M{0:02d}_IO1WrnMon,  RF{1:02d}_In_Word,     {2:2d},    "", "I/O Intr"}}'
-str_io2w = '{{  M{0:02d}_IO2WrnMon,  RF{1:02d}_In_Word,     {2:2d},    "", "I/O Intr"}}'
-#str_fpga = '{{    M{0:02d}_FPGAVer,  RF{1:02d}_In_Word,     {2:2d},    "", "I/O Intr"}}'
+str_hiad = '{{   M{0:02d}_HiADWarn,  RF{1:02d}_In_Word,     {2:2d},     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,    "", "I/O Intr"}}'
+str_load = '{{   M{0:02d}_LoADWarn,  RF{1:02d}_In_Word,     {2:2d},     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,    "", "I/O Intr"}}'
+str_io1i = '{{  M{0:02d}_IO1IntMon,  RF{1:02d}_In_Word,     {2:2d},     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,    "", "I/O Intr"}}'
+str_io1w = '{{  M{0:02d}_IO1WrnMon,  RF{1:02d}_In_Word,     {2:2d},     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,    "", "I/O Intr"}}'
+str_io2w = '{{  M{0:02d}_IO2WrnMon,  RF{1:02d}_In_Word,     {2:2d},     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,    "", "I/O Intr"}}'
+#str_fpga = '{{    M{0:02d}_FPGAVer,  RF{1:02d}_In_Word,     {2:2d},     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,    "", "I/O Intr"}}'
 
 # ai
-str_pout = '{{     M{0:02d}_PwrFwd,  RF{1:02d}_In_Word,     {2:2d},     0.0,    1.0,    1,      "", "I/O Intr"}}'
-str_pref = '{{     M{0:02d}_PwrRef,  RF{1:02d}_In_Word,     {2:2d},     0.0,    1.0,    1,      "", "I/O Intr"}}'
-str_d1dc = '{{M{0:02d}_Dev1Drain_I,  RF{1:02d}_In_Word,     {2:2d},     0.0, 0.0162,    1,     "A", "I/O Intr"}}'
-str_d2dc = '{{M{0:02d}_Dev2Drain_I,  RF{1:02d}_In_Word,     {2:2d},     0.0, 0.0162,    1,     "A", "I/O Intr"}}'
-str_ps1c = '{{      M{0:02d}_PS1_I,  RF{1:02d}_In_Word,     {2:2d},     0.0, 0.0162,    1,     "A", "I/O Intr"}}'
-str_ps2c = '{{      M{0:02d}_PS2_I,  RF{1:02d}_In_Word,     {2:2d},     0.0, 0.0162,    1,     "A", "I/O Intr"}}'
-str_ps3c = '{{      M{0:02d}_PS3_I,  RF{1:02d}_In_Word,     {2:2d},     0.0, 0.0162,    1,     "A", "I/O Intr"}}'
-str_drnv = '{{    M{0:02d}_Drain_V,  RF{1:02d}_In_Word,     {2:2d},     0.0, 0.0172,    1,   "VDC", "I/O Intr"}}'
-str_ps1v = '{{      M{0:02d}_PS1_V,  RF{1:02d}_In_Word,     {2:2d},     0.0, 0.0172,    1,   "VDC", "I/O Intr"}}'
-str_ps2v = '{{      M{0:02d}_PS2_V,  RF{1:02d}_In_Word,     {2:2d},     0.0, 0.0172,    1,   "VDC", "I/O Intr"}}'
-str_ps3v = '{{      M{0:02d}_PS3_V,  RF{1:02d}_In_Word,     {2:2d},     0.0, 0.0172,    1,   "VDC", "I/O Intr"}}'
-str_lcwt = '{{  M{0:02d}_LCWHSTemp,  RF{1:02d}_In_Word,     {2:2d}, -39.235, 0.0392,    1,  "degC", "I/O Intr"}}'
-str_airt = '{{    M{0:02d}_AirTemp,  RF{1:02d}_In_Word,     {2:2d}, -39.235, 0.0392,    1,  "degC", "I/O Intr"}}'
-str_tfs1 = '{{M{0:02d}_Trf1FanSpd1,  RF{1:02d}_In_Word,     {2:2d},     0.0,    4.0,    1,   "rpm", "I/O Intr"}}'
-str_tfs2 = '{{M{0:02d}_Trf1FanSpd2,  RF{1:02d}_In_Word,     {2:2d},     0.0,    4.0,    1,   "rpm", "I/O Intr"}}'
-str_fans = '{{     M{0:02d}_FanSpd,  RF{1:02d}_In_Word,     {2:2d},     0.0,    4.0,    1,   "rpm", "I/O Intr"}}'
-str_fpga = '{{    M{0:02d}_FPGAVer,  RF{1:02d}_In_Word,     {2:2d},   -11.8,    0.1,    1,      "", "I/O Intr"}}'
+str_pout = '{{     M{0:02d}_PwrFwd,  RF{1:02d}_In_Word,     {2:2d},     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}}'
+str_pref = '{{     M{0:02d}_PwrRef,  RF{1:02d}_In_Word,     {2:2d},     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}}'
+str_d1dc = '{{M{0:02d}_Dev1Drain_I,  RF{1:02d}_In_Word,     {2:2d},     0.0, 0.0162,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,     "A", "I/O Intr"}}'
+str_d2dc = '{{M{0:02d}_Dev2Drain_I,  RF{1:02d}_In_Word,     {2:2d},     0.0, 0.0162,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,     "A", "I/O Intr"}}'
+str_ps1c = '{{      M{0:02d}_PS1_I,  RF{1:02d}_In_Word,     {2:2d},     0.0, 0.0162,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,     "A", "I/O Intr"}}'
+str_ps2c = '{{      M{0:02d}_PS2_I,  RF{1:02d}_In_Word,     {2:2d},     0.0, 0.0162,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,     "A", "I/O Intr"}}'
+str_ps3c = '{{      M{0:02d}_PS3_I,  RF{1:02d}_In_Word,     {2:2d},     0.0, 0.0162,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,     "A", "I/O Intr"}}'
+str_drnv = '{{    M{0:02d}_Drain_V,  RF{1:02d}_In_Word,     {2:2d},     0.0, 0.0172,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,   "VDC", "I/O Intr"}}'
+str_ps1v = '{{      M{0:02d}_PS1_V,  RF{1:02d}_In_Word,     {2:2d},     0.0, 0.0172,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,   "VDC", "I/O Intr"}}'
+str_ps2v = '{{      M{0:02d}_PS2_V,  RF{1:02d}_In_Word,     {2:2d},     0.0, 0.0172,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,   "VDC", "I/O Intr"}}'
+str_ps3v = '{{      M{0:02d}_PS3_V,  RF{1:02d}_In_Word,     {2:2d},     0.0, 0.0172,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,   "VDC", "I/O Intr"}}'
+str_lcwt = '{{  M{0:02d}_LCWHSTemp,  RF{1:02d}_In_Word,     {2:2d}, -39.235, 0.0392,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,  "degC", "I/O Intr"}}'
+str_airt = '{{    M{0:02d}_AirTemp,  RF{1:02d}_In_Word,     {2:2d}, -39.235, 0.0392,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,  "degC", "I/O Intr"}}'
+str_tfs1 = '{{M{0:02d}_Trf1FanSpd1,  RF{1:02d}_In_Word,     {2:2d},     0.0,    4.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}}'
+str_tfs2 = '{{M{0:02d}_Trf1FanSpd2,  RF{1:02d}_In_Word,     {2:2d},     0.0,    4.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}}'
+str_fans = '{{     M{0:02d}_FanSpd,  RF{1:02d}_In_Word,     {2:2d},     0.0,    4.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}}'
+str_fpga = '{{    M{0:02d}_FPGAVer,  RF{1:02d}_In_Word,     {2:2d},   -11.8,    0.1,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}}'
 
 def wrloop(f, str, nmods, nregs, start):
     for i in range(nmods):
@@ -63,7 +63,7 @@ def write_li(f):
     f.write('\n')
     f.write('pattern')
     f.write('\n')
-    f.write('{              R,          PORT, OFFSET,   EGU,       SCAN}')
+    f.write('{              R,          PORT, OFFSET,   LOLO,    LOW,   HIGH,   HIHI,     LLSV,      LSV,      HSV,     HHSV,   EGU,       SCAN}')
     f.write('\n')
     wrloop(f, str_hiad, NMODS, NREGS, 308)
     wrloop(f, str_load, NMODS, NREGS, 318)
@@ -77,7 +77,7 @@ def write_ai(f):
     f.write('\n')
     f.write('pattern')
     f.write('\n')
-    f.write('{              R,          PORT, OFFSET,    EOFF,   ESLO, PREC,     EGU,       SCAN}')
+    f.write('{              R,          PORT, OFFSET,    EOFF,   ESLO, PREC,   LOLO,    LOW,   HIGH,   HIHI,     LLSV,      LSV,      HSV,     HHSV,     EGU,       SCAN}')
     f.write('\n')
     wrloop(f, str_pout, NMODS, NREGS, 299)
     wrloop(f, str_pref, NMODS, NREGS, 300)
