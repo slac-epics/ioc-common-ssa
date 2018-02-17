@@ -1,10 +1,11 @@
 record(ai, "$(P)$(R)") {
     field(DTYP, "asynInt32")
+    field(DESC, "$(DESC="")")
     field(INP,  "@asyn($(PORT) $(OFFSET))MODBUS_DATA")
     field(LINR, "ssaPwrRef")
     field(PREC, "$(PREC=1)")
     field(EGU,  "$(EGU="")")
-    field(SCAN, "$(SCAN)")
+    field(SCAN, "$(SCAN="I/O Intr")")
     info(autosaveFields, "LOLO LOW HIGH HIHI HYST LLSV LSV HSV HHSV")
 }
 
