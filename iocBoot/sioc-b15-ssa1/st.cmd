@@ -18,7 +18,7 @@ ssa_registerRecordDeviceDriver(pdbbase)
 # ====================================================================
 # Setup environment variables
 epicsEnvSet("ENGINEER", "Garth Brown")
-epicsEnvSet("LOCATION", "B15 SSA test stand")
+epicsEnvSet("LOCATION", "B15 SSA test stand 1")
 epicsEnvSet("P",        "SSA1:B15:")
 epicsEnvSet("IP",       "ssa-b15-rf0110")
 epicsEnvSet("IOC_P",    "SIOC:B15:SSA1")
@@ -141,7 +141,7 @@ caPutLogShow(2)
 # =====================================================
 
 ## Start any sequence programs
-#seq sncExample,"user=gwbrownHost"
+seq(seq_ssa_CA1300, "P=$(P)")
 
 ## Start autosave process:
 cd("${IOC_DATA}/${IOC}/autosave-req")
