@@ -14,27 +14,40 @@ dbLoadRecords("db/asynRecord.db","P=$(P),R=ASYN,PORT=$(P),ADDR=0,IMAX=0,OMAX=0")
 # modbusInterposeConfig(const char *portName, modbusLinkType linkType,
 #			int timeoutMsec, int writeDelayMsec)
 # linkType 0 = TCP/IP
-modbusInterposeConfig("$(P)", 0, 400, 0)
+modbusInterposeConfig("$(P)", 0, 2000, 100)
 
 
 # Modbus function code: 3 (Read Holding Registers, 16-bit word access)
 # Start address: 1
-# Access 117 words as inputs
+# Access 125 words as inputs
 # Default data type: unsigned integer
 # drvModbusAsynConfigure("portName", "TcpPortName", slaveaddress,
 #			modbusFunctions, modbusStartAddress, modbusLength,
 #			dataType, pollMsec, "plcType")
-drvModbusAsynConfigure("RF1_In_Word", "$(P)", 0, 3, 1, 117, 0, 500, "RK")
+drvModbusAsynConfigure("RF1_In_Word", "$(P)", 0, 3, 1, 125, 0, 500, "RK")
 dbLoadRecords("db/asynRecord.db", "P=$(P),R=ASYN_IN,PORT=RF1_In_Word,ADDR=0,IMAX=0,OMAX=0")
 dbLoadRecords("db/statistics.template", "P=$(P),R=ASYN_IN,PORT=RF1_In_Word,SCAN=10 second")
+
+# Modbus function code: 3 (Read Holding Registers, 16-bit word access)
+# Start address: 120
+# Access 8 words as inputs
+# Default data type: unsigned integer
+drvModbusAsynConfigure("RF2_In_Word", "$(P)", 0, 3, 120, 8, 0, 5000, "RK")
+dbLoadRecords("db/asynRecord.db", "P=$(P),R=ASYN_IN,PORT=RF2_In_Word,ADDR=0,IMAX=0,OMAX=0")
 
 # Modbus function code: 6 (Write Single Register, 16-bit word access)
 # Start address: 1
 # Access 6 words as outputs 
 # Default data type: unsigned integer
-# Note: why is data type 1 below?
-drvModbusAsynConfigure("RF1_Out_Word", "$(P)", 0, 6, 1, 6, 1, 100, "RK")
+drvModbusAsynConfigure("RF1_Out_Word", "$(P)", 0, 6, 1, 6, 0, 100, "RK")
 dbLoadRecords("db/asynRecord.db","P=$(P),R=ASYN_OUT,PORT=RF1_Out_Word,ADDR=0,IMAX=0,OMAX=0")
+
+# Modbus function code: 6 (Write Single Register, 16-bit word access)
+# Start address: 112
+# Access 5 words as outputs 
+# Default data type: unsigned integer
+drvModbusAsynConfigure("RF2_Out_Word", "$(P)", 0, 6, 112, 5, 0, 100, "RK")
+dbLoadRecords("db/asynRecord.db","P=$(P),R=ASYN_OUT,PORT=RF2_Out_Word,ADDR=0,IMAX=0,OMAX=0")
 
 # Enable ASYN_TRACEIO_HEX on octet server
 #asynSetTraceIOMask("$(P)", 0, 4)

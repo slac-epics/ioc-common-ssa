@@ -1,156 +1,145 @@
+# asyn record for the underlying asyn octet port
+file "asynRecord.db" { 
+pattern
+{        R, PORT, ADDR, IMAX, OMAX}
+{OctetAsyn, $(P),    0,  125,  125}
+}
+#--------------------------------------------------------------------------------------------------
 
 # Binary outputs, modbus function code 6.
-file "bo_word.template" {
+file "bo_word_custom.template" {
 pattern
-{     R,         PORT, OFFSET,   MASK,      ZNAM,     ONAM}
-{  OUT1, RF1_Out_Word,      0, 0x0001, "Disable", "Enable"}
-{  OUT2, RF1_Out_Word,      1, 0x0001, "Disable", "Enable"}
-{ OUT4a, RF1_Out_Word,      3, 0x0001,         0,        1}
-{ OUT4b, RF1_Out_Word,      3, 0x0002,         0,        1}
-{  OUT5, RF1_Out_Word,      4, 0x0001,         0, "Reboot"}
-{  OUT6, RF1_Out_Word,      5, 0x0001,         0, "Reboot"}
+{            R,                    DESC,         PORT, OFFSET,   MASK,      ZNAM,     ONAM}
+{     DCEnable,     "DC Enable/Disable", RF1_Out_Word,      0, 0x0001, "Disable", "Enable"}
+{     RFEnable,     "RF Enable/Disable", RF1_Out_Word,      1, 0x0001, "Disable", "Enable"}
+{FaultIntReset,  "Internal Fault Reset", RF1_Out_Word,      3, 0x0001,        "",  "Reset"}
+{FaultExtReset,  "External Fault Reset", RF1_Out_Word,      3, 0x0002,        "",  "Reset"}
+{ WarningReset,         "Warning Reset", RF1_Out_Word,      3, 0x0004,        "",  "Reset"}
+{  XPortReboot,         "X-Port Reboot", RF1_Out_Word,      4, 0x0001,        "", "Reboot"}
+{    SysReboot,         "System Reboot", RF1_Out_Word,      5, 0x0001,        "", "Reboot"}
 }
 
 # Integer ouputs, modbus function code 6.
-file "longout.template" {
+file "longout_custom.template" {
 pattern
-{    R,         PORT, OFFSET}
-{ OUT3, RF1_Out_Word,      2}
+{            R,                    DESC,         PORT, OFFSET, DRVL, DRVH, LOPR, HOPR,     EGU}
+{  PSVoltSetpt,  "PS Out Voltage Setpt", RF1_Out_Word,      2,  700, 2520,  700, 2520,    "mV"}
+{ CalYearSetpt,        "Cal Year Setpt", RF2_Out_Word,      0,   15,   99,   15,   99,      ""}
+{CalMonthSetpt,       "Cal Month Setpt", RF2_Out_Word,      1,    1,   12,    1,   12,      ""}
+{  CalDaySetpt,         "Cal Day Setpt", RF2_Out_Word,      2,    1,   31,    1,   31,      ""}
+{ CalHourSetpt,        "Cal Hour Setpt", RF2_Out_Word,      3,    0,   23,    0,   23,      ""}
+{  CalMinSetpt,      "Cal Minute Setpt", RF2_Out_Word,      4,    0,   59,    0,   59,      ""}
 }
 
+#--------------------------------------------------------------------------
+
 # Binary inputs, modbus function code 3.
-file "bi_word.template" {
+file "bi_word_custom.template" {
 pattern
-{    R,         PORT, OFFSET,   MASK,       ZNAM,      ONAM,      ZSV,      OSV,       SCAN}
-{  IN1,  RF1_In_Word,      0, 0x0001, "Disabled", "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
-{  IN2,  RF1_In_Word,      1, 0x0001, "Disabled", "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
-{ IN10,  RF1_In_Word,      9, 0x0001, "Disabled", "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
-{ IN11,  RF1_In_Word,     10, 0x0001, "Disabled", "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
-{ IN12,  RF1_In_Word,     11, 0x0001, "Disabled", "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
-{ IN25,  RF1_In_Word,     24, 0x0001,       "OK",   "Alarm", NO_ALARM,    MAJOR, "I/O Intr"}
-{ IN28,  RF1_In_Word,     27, 0x0001,       "OK",   "Alarm", NO_ALARM,    MAJOR, "I/O Intr"}
+{           R,                     DESC,         PORT, OFFSET,   MASK,       ZNAM,      ONAM,      ZSV,      OSV,       SCAN}
+{ ACEnableRBV,             "AC Enabled",  RF1_In_Word,      9, 0x0001, "Disabled", "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{ DCEnableRBV,             "DC Enabled",  RF1_In_Word,     10, 0x0001, "Disabled", "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{ RFEnableRBV,             "RF Enabled",  RF1_In_Word,     11, 0x0001, "Disabled", "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{  ThermoStat,      "Thermostat Status",  RF1_In_Word,     24, 0x0001,       "OK",   "Alarm", NO_ALARM,    MAJOR, "I/O Intr"}
+{ WtrLeakStat,      "Water Leak Status",  RF1_In_Word,     27, 0x0001,       "OK",   "Alarm", NO_ALARM,    MAJOR, "I/O Intr"}
 }
 
 # Integer inputs, modbus function code 3.
-file "longin_custom.template" {
+file "longin_custom_autosave.template" {
 pattern
-{    R,         PORT, OFFSET,     EGU,       SCAN}
-{  IN4,  RF1_In_Word,      3,      "", "I/O Intr"}
-{  IN4,  RF1_In_Word,      3,      "", "I/O Intr"}
-{  IN5,  RF1_In_Word,      4,      "", "I/O Intr"}
-{  IN6,  RF1_In_Word,      5,      "", "I/O Intr"}
-{  IN7,  RF1_In_Word,      6,      "", "I/O Intr"}
-{  IN8,  RF1_In_Word,      7,      "", "I/O Intr"}
-{  IN9,  RF1_In_Word,      8,      "", "I/O Intr"}
-{ IN13,  RF1_In_Word,     12,      "", "I/O Intr"}
-{ IN14,  RF1_In_Word,     13,      "", "I/O Intr"}
-{ IN15,  RF1_In_Word,     14,      "", "I/O Intr"}
-{ IN16,  RF1_In_Word,     15,      "", "I/O Intr"}
-{ IN17,  RF1_In_Word,     16,      "", "I/O Intr"}
-{ IN18,  RF1_In_Word,     17,      "", "I/O Intr"}
-{ IN19,  RF1_In_Word,     18,      "", "I/O Intr"}
-{ IN20,  RF1_In_Word,     19,      "", "I/O Intr"}
-{ IN21,  RF1_In_Word,     20,      "", "I/O Intr"}
-{ IN23,  RF1_In_Word,     22,      "", "I/O Intr"}
-{ IN24,  RF1_In_Word,     23,      "", "I/O Intr"}
-{ IN26,  RF1_In_Word,     25,      "", "I/O Intr"}
-{ IN27,  RF1_In_Word,     26,      "", "I/O Intr"}
-{ IN29,  RF1_In_Word,     28,      "", "I/O Intr"}
-{ IN30,  RF1_In_Word,     29,      "", "I/O Intr"}
-{ IN31,  RF1_In_Word,     30,      "", "I/O Intr"}
-{ IN33,  RF1_In_Word,     32,      "", "I/O Intr"}
-{ IN35,  RF1_In_Word,     34,      "", "I/O Intr"}
-{ IN36,  RF1_In_Word,     35,      "", "I/O Intr"}
-{ IN37,  RF1_In_Word,     36,      "", "I/O Intr"}
-{ IN38,  RF1_In_Word,     37,      "", "I/O Intr"}
-{ IN39,  RF1_In_Word,     38,      "", "I/O Intr"}
-{ IN40,  RF1_In_Word,     39,      "", "I/O Intr"}
-{ IN41,  RF1_In_Word,     40,      "", "I/O Intr"}
-{ IN42,  RF1_In_Word,     41,      "", "I/O Intr"}
-{ IN43,  RF1_In_Word,     42,      "", "I/O Intr"}
-{ IN47,  RF1_In_Word,     46,      "", "I/O Intr"}
-{ IN56,  RF1_In_Word,     55,      "", "I/O Intr"}
-{ IN57,  RF1_In_Word,     56,      "", "I/O Intr"}
-{ IN58,  RF1_In_Word,     57,      "", "I/O Intr"}
-{ IN59,  RF1_In_Word,     58,      "", "I/O Intr"}
-{ IN63,  RF1_In_Word,     62,      "", "I/O Intr"}
-{ IN72,  RF1_In_Word,     71,      "", "I/O Intr"}
-{ IN73,  RF1_In_Word,     72,      "", "I/O Intr"}
-{ IN74,  RF1_In_Word,     73,      "", "I/O Intr"}
-{ IN75,  RF1_In_Word,     74,      "", "I/O Intr"}
-{ IN79,  RF1_In_Word,     78,      "", "I/O Intr"}
-{ IN84,  RF1_In_Word,     83,      "", "I/O Intr"}
-{ IN85,  RF1_In_Word,     84,      "", "I/O Intr"}
-{ IN86,  RF1_In_Word,     85,      "", "I/O Intr"}
-{ IN87,  RF1_In_Word,     86,      "", "I/O Intr"}
-{ IN88,  RF1_In_Word,     87,      "", "I/O Intr"}
-{ IN89,  RF1_In_Word,     88,      "", "I/O Intr"}
-{ IN90,  RF1_In_Word,     89,      "", "I/O Intr"}
-{ IN91,  RF1_In_Word,     90,      "", "I/O Intr"}
-{ IN95,  RF1_In_Word,     94,      "", "I/O Intr"}
-{ IN96,  RF1_In_Word,     95,      "", "I/O Intr"}
-{ IN97,  RF1_In_Word,     96,      "", "I/O Intr"}
-{IN104,  RF1_In_Word,    103,      "", "I/O Intr"}
-{IN105,  RF1_In_Word,    104,      "", "I/O Intr"}
-{IN106,  RF1_In_Word,    105,      "", "I/O Intr"}
-{IN107,  RF1_In_Word,    106,      "", "I/O Intr"}
-{IN108,  RF1_In_Word,    107,      "", "I/O Intr"}
-{IN109,  RF1_In_Word,    108,      "", "I/O Intr"}
-{IN110,  RF1_In_Word,    109,      "", "I/O Intr"}
-{IN111,  RF1_In_Word,    110,      "", "I/O Intr"}
-{IN112,  RF1_In_Word,    111,      "", "I/O Intr"}
-{IN113,  RF1_In_Word,    112,      "", "I/O Intr"}
-{IN114,  RF1_In_Word,    113,      "", "I/O Intr"}
-{IN115,  RF1_In_Word,    114,      "", "I/O Intr"}
-{IN116,  RF1_In_Word,    115,      "", "I/O Intr"}
+{           R,                     DESC,         PORT, OFFSET, LOLO,  LOW, HIGH, HIHI,     LLSV,      LSV,      HSV,     HHSV,      EGU,       SCAN}
+{   PSVoltRBV,         "PS Out Voltage",  RF1_In_Word,      3,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,     "mV", "I/O Intr"}
+{  ErrCodeInt,    "Internal Error Code",  RF1_In_Word,     12,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
+{  ErrCodeExt,    "External Error Code",  RF1_In_Word,     13,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
+{ WarningCode,           "Warning Code",  RF1_In_Word,     14,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
+{      DrvPwr,            "Drive Power",  RF1_In_Word,     15,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,     "mV", "I/O Intr"}
+{      FwdPwr,          "Forward Power",  RF1_In_Word,     16,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "W", "I/O Intr"}
+{      RefPwr,        "Reflected Power",  RF1_In_Word,     17,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "W", "I/O Intr"}
+{CtrlFanSpeed,      "Ctrl Unit Fan Spd",  RF1_In_Word,     22,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,    "rpm", "I/O Intr"}
+{ DA_FanSpeed,        "Drv Amp Fan Spd",  RF1_In_Word,     46,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,    "rpm", "I/O Intr"}
+{    FA1_Pwr1,        "Fin. Amp 1 Pwr1",  RF1_In_Word,     55,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "W", "I/O Intr"}
+{    FA1_Pwr2,        "Fin. Amp 1 Pwr2",  RF1_In_Word,     56,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "W", "I/O Intr"}
+{    FA1_Pwr3,        "Fin. Amp 1 Pwr3",  RF1_In_Word,     57,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "W", "I/O Intr"}
+{    FA1_Pwr4,        "Fin. Amp 1 Pwr4",  RF1_In_Word,     58,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "W", "I/O Intr"}
+{FA1_FanSpeed,     "Fin. Amp 1 Fan Spd",  RF1_In_Word,     62,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,    "rpm", "I/O Intr"}
+{    FA2_Pwr1,        "Fin. Amp 2 Pwr1",  RF1_In_Word,     71,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "W", "I/O Intr"}
+{    FA2_Pwr2,        "Fin. Amp 2 Pwr2",  RF1_In_Word,     72,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "W", "I/O Intr"}
+{    FA2_Pwr3,        "Fin. Amp 2 Pwr3",  RF1_In_Word,     73,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "W", "I/O Intr"}
+{    FA2_Pwr4,        "Fin. Amp 2 Pwr4",  RF1_In_Word,     74,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "W", "I/O Intr"}
+{FA2_FanSpeed,     "Fin. Amp 2 Fan Spd",  RF1_In_Word,     78,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,    "rpm", "I/O Intr"}
+{    FA3_Pwr1,        "Fin. Amp 3 Pwr1",  RF1_In_Word,     87,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "W", "I/O Intr"}
+{    FA3_Pwr2,        "Fin. Amp 3 Pwr2",  RF1_In_Word,     88,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "W", "I/O Intr"}
+{FA3_FanSpeed,     "Fin. Amp 3 Fan Spd",  RF1_In_Word,     94,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,    "rpm", "I/O Intr"}
+{  480VACStat,          "480VAC Status",  RF1_In_Word,     95,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
+{     PSFault,          "PS Unit Fault",  RF1_In_Word,     96,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
+{ PSFaultStat,   "PS Unit Fault Status",  RF1_In_Word,    103,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
+{ HXFan1Speed,    "Heat Exc. Fan 1 Spd",  RF1_In_Word,    104,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,    "rpm", "I/O Intr"}
+{ HXFan2Speed,    "Heat Exc. Fan 2 Spd",  RF1_In_Word,    105,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,    "rpm", "I/O Intr"}
+{ HXFan3Speed,    "Heat Exc. Fan 3 Spd",  RF1_In_Word,    106,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,    "rpm", "I/O Intr"}
+{ HXFan4Speed,    "Heat Exc. Fan 4 Spd",  RF1_In_Word,    107,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,    "rpm", "I/O Intr"}
+{ PSFan1Speed,      "PS Unit Fan 1 Spd",  RF1_In_Word,    108,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,    "rpm", "I/O Intr"}
+{ PSFan2Speed,      "PS Unit Fan 2 Spd",  RF1_In_Word,    109,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,    "rpm", "I/O Intr"}
+{ PSFan3Speed,      "PS Unit Fan 3 Spd",  RF1_In_Word,    110,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,    "rpm", "I/O Intr"}
+{  CalYearRBV,      "Cal Year Readback",  RF1_In_Word,    111,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
+{ CalMonthRBV,     "Cal Month Readback",  RF1_In_Word,    112,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
+{   CalDayRBV,       "Cal Day Readback",  RF1_In_Word,    113,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
+{  CalHourRBV,      "Cal Hour Readback",  RF1_In_Word,    114,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
+{   CalMinRBV,    "Cal Minute Readback",  RF1_In_Word,    115,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
+{  MainSWVer0,  "Main SW Version Major",  RF2_In_Word,      0,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
+{  MainSWVer1,  "Main SW Version Minor",  RF2_In_Word,      1,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
+{    SDSWVer0,    "SD SW Version Major",  RF2_In_Word,      2,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
+{    SDSWVer1,    "SD SW Version Minor",  RF2_In_Word,      3,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
+{   SubSWVer0,   "Sub SW Version Major",  RF2_In_Word,      4,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
+{   SubSWVer1,   "Sub SW Version Minor",  RF2_In_Word,      5,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
+{    PSSWVer0,    "PS SW Version Major",  RF2_In_Word,      6,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
+{    PSSWVer1,    "PS SW Version Minor",  RF2_In_Word,      7,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
 }
 
 # Integer inputs converted to floats, modbus function code 3.
-file "ai_slope.template" {
+file "ai_slope_autosave.template" {
 pattern
-{   R,         PORT, OFFSET,   EOFF,   ESLO, PREC,     EGU,       SCAN}
-{  IN3, RF1_In_Word,      2,    0.0,    1.0,    1,      "", "I/O Intr"}
-{ IN22, RF1_In_Word,     21,    0.0,    0.1,    1,      "", "I/O Intr"}
-{ IN32, RF1_In_Word,     31,    0.0,    0.1,    1,      "", "I/O Intr"}
-{ IN34, RF1_In_Word,     33,    0.0,    0.1,    1,      "", "I/O Intr"}
-{ IN44, RF1_In_Word,     43,    0.0,    0.1,    1,      "", "I/O Intr"}
-{ IN45, RF1_In_Word,     44,    0.0,    0.1,    1,      "", "I/O Intr"}
-{ IN46, RF1_In_Word,     45,    0.0,    0.1,    1,      "", "I/O Intr"}
-{ IN48, RF1_In_Word,     47,    0.0,    0.1,    1,      "", "I/O Intr"}
-{ IN49, RF1_In_Word,     48,    0.0,    0.1,    1,      "", "I/O Intr"}
-{ IN50, RF1_In_Word,     49,    0.0,    0.1,    1,      "", "I/O Intr"}
-{ IN51, RF1_In_Word,     50,    0.0,    0.1,    1,      "", "I/O Intr"}
-{ IN52, RF1_In_Word,     51,    0.0,    0.1,    1,      "", "I/O Intr"}
-{ IN53, RF1_In_Word,     52,    0.0,    0.1,    1,      "", "I/O Intr"}
-{ IN54, RF1_In_Word,     53,    0.0,    0.1,    1,      "", "I/O Intr"}
-{ IN55, RF1_In_Word,     54,    0.0,    0.1,    1,      "", "I/O Intr"}
-{ IN60, RF1_In_Word,     59,    0.0,    0.1,    1,      "", "I/O Intr"}
-{ IN61, RF1_In_Word,     60,    0.0,    0.1,    1,      "", "I/O Intr"}
-{ IN62, RF1_In_Word,     61,    0.0,    0.1,    1,      "", "I/O Intr"}
-{ IN64, RF1_In_Word,     63,    0.0,    0.1,    1,      "", "I/O Intr"}
-{ IN65, RF1_In_Word,     64,    0.0,    0.1,    1,      "", "I/O Intr"}
-{ IN66, RF1_In_Word,     65,    0.0,    0.1,    1,      "", "I/O Intr"}
-{ IN67, RF1_In_Word,     66,    0.0,    0.1,    1,      "", "I/O Intr"}
-{ IN68, RF1_In_Word,     67,    0.0,    0.1,    1,      "", "I/O Intr"}
-{ IN69, RF1_In_Word,     68,    0.0,    0.1,    1,      "", "I/O Intr"}
-{ IN70, RF1_In_Word,     69,    0.0,    0.1,    1,      "", "I/O Intr"}
-{ IN71, RF1_In_Word,     70,    0.0,    0.1,    1,      "", "I/O Intr"}
-{ IN76, RF1_In_Word,     75,    0.0,    0.1,    1,      "", "I/O Intr"}
-{ IN77, RF1_In_Word,     76,    0.0,    0.1,    1,      "", "I/O Intr"}
-{ IN78, RF1_In_Word,     77,    0.0,    0.1,    1,      "", "I/O Intr"}
-{ IN80, RF1_In_Word,     79,    0.0,    0.1,    1,      "", "I/O Intr"}
-{ IN81, RF1_In_Word,     80,    0.0,    0.1,    1,      "", "I/O Intr"}
-{ IN82, RF1_In_Word,     81,    0.0,    0.1,    1,      "", "I/O Intr"}
-{ IN83, RF1_In_Word,     82,    0.0,    0.1,    1,      "", "I/O Intr"}
-{ IN92, RF1_In_Word,     91,    0.0,    0.1,    1,      "", "I/O Intr"}
-{ IN93, RF1_In_Word,     92,    0.0,    0.1,    1,      "", "I/O Intr"}
-{ IN94, RF1_In_Word,     93,    0.0,    0.1,    1,      "", "I/O Intr"}
-{ IN98, RF1_In_Word,     97,    0.0,    0.1,    1,      "", "I/O Intr"}
-{ IN99, RF1_In_Word,     98,    0.0,    0.1,    1,      "", "I/O Intr"}
-{IN100, RF1_In_Word,     99,    0.0,    0.1,    1,      "", "I/O Intr"}
-{IN101, RF1_In_Word,    100,    0.0,    0.1,    1,      "", "I/O Intr"}
-{IN102, RF1_In_Word,    101,    0.0,    0.1,    1,      "", "I/O Intr"}
-{IN103, RF1_In_Word,    102,    0.0,    0.1,    1,      "", "I/O Intr"}
+{           R,                     DESC,         PORT, OFFSET,   EOFF,   ESLO, PREC, LOLO,  LOW, HIGH, HIHI,     LLSV,      LSV,      HSV,     HHSV,      EGU,       SCAN}
+{ CtrlAirTemp,     "Ctrl Unit Air Temp",  RF1_In_Word,     21,    0.0,    0.1,    1,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,   "degC", "I/O Intr"}
+{       DA_I1,      "Drv Amp Current 1",  RF1_In_Word,     31,    0.0,    0.1,    1,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "A", "I/O Intr"}
+{       DA_I2,      "Drv Amp Current 2",  RF1_In_Word,     33,    0.0,    0.1,    1,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "A", "I/O Intr"}
+{    DA_PS1_V,      "Drv Amp PS1 Volts",  RF1_In_Word,     43,    0.0,    0.1,    1,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "V", "I/O Intr"}
+{    DA_PS2_V,      "Drv Amp PS2 Volts",  RF1_In_Word,     44,    0.0,    0.1,    1,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "V", "I/O Intr"}
+{   DA_HSTemp, "Drv Amp Heat Sink Temp",  RF1_In_Word,     45,    0.0,    0.1,    1,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,   "degC", "I/O Intr"}
+{      FA1_I1,   "Fin. Amp 1 Current 1",  RF1_In_Word,     47,    0.0,    0.1,    1,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "A", "I/O Intr"}
+{      FA1_I2,   "Fin. Amp 1 Current 2",  RF1_In_Word,     48,    0.0,    0.1,    1,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "A", "I/O Intr"}
+{      FA1_I3,   "Fin. Amp 1 Current 3",  RF1_In_Word,     49,    0.0,    0.1,    1,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "A", "I/O Intr"}
+{      FA1_I4,   "Fin. Amp 1 Current 4",  RF1_In_Word,     50,    0.0,    0.1,    1,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "A", "I/O Intr"}
+{      FA1_I5,   "Fin. Amp 1 Current 5",  RF1_In_Word,     51,    0.0,    0.1,    1,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "A", "I/O Intr"}
+{      FA1_I6,   "Fin. Amp 1 Current 6",  RF1_In_Word,     52,    0.0,    0.1,    1,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "A", "I/O Intr"}
+{      FA1_I7,   "Fin. Amp 1 Current 7",  RF1_In_Word,     53,    0.0,    0.1,    1,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "A", "I/O Intr"}
+{      FA1_I8,   "Fin. Amp 1 Current 8",  RF1_In_Word,     54,    0.0,    0.1,    1,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "A", "I/O Intr"}
+{   FA1_PS1_V,   "Fin. Amp 1 PS1 Volts",  RF1_In_Word,     59,    0.0,    0.1,    1,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "V", "I/O Intr"}
+{   FA1_PS2_V,   "Fin. Amp 1 PS2 Volts",  RF1_In_Word,     60,    0.0,    0.1,    1,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "V", "I/O Intr"}
+{  FA1_HSTemp, "Fin. Amp 1 HtSink Temp",  RF1_In_Word,     61,    0.0,    0.1,    1,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,   "degC", "I/O Intr"}
+{      FA2_I1,   "Fin. Amp 2 Current 1",  RF1_In_Word,     63,    0.0,    0.1,    1,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "A", "I/O Intr"}
+{      FA2_I2,   "Fin. Amp 2 Current 2",  RF1_In_Word,     64,    0.0,    0.1,    1,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "A", "I/O Intr"}
+{      FA2_I3,   "Fin. Amp 2 Current 3",  RF1_In_Word,     65,    0.0,    0.1,    1,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "A", "I/O Intr"}
+{      FA2_I4,   "Fin. Amp 2 Current 4",  RF1_In_Word,     66,    0.0,    0.1,    1,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "A", "I/O Intr"}
+{      FA2_I5,   "Fin. Amp 2 Current 5",  RF1_In_Word,     67,    0.0,    0.1,    1,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "A", "I/O Intr"}
+{      FA2_I6,   "Fin. Amp 2 Current 6",  RF1_In_Word,     68,    0.0,    0.1,    1,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "A", "I/O Intr"}
+{      FA2_I7,   "Fin. Amp 2 Current 7",  RF1_In_Word,     69,    0.0,    0.1,    1,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "A", "I/O Intr"}
+{      FA2_I8,   "Fin. Amp 2 Current 8",  RF1_In_Word,     70,    0.0,    0.1,    1,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "A", "I/O Intr"}
+{   FA2_PS1_V,   "Fin. Amp 2 PS1 Volts",  RF1_In_Word,     75,    0.0,    0.1,    1,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "V", "I/O Intr"}
+{   FA2_PS2_V,   "Fin. Amp 2 PS2 Volts",  RF1_In_Word,     76,    0.0,    0.1,    1,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "V", "I/O Intr"}
+{  FA2_HSTemp, "Fin. Amp 2 HtSink Temp",  RF1_In_Word,     77,    0.0,    0.1,    1,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,   "degC", "I/O Intr"}
+{      FA3_I1,   "Fin. Amp 3 Current 1",  RF1_In_Word,     79,    0.0,    0.1,    1,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "A", "I/O Intr"}
+{      FA3_I2,   "Fin. Amp 3 Current 2",  RF1_In_Word,     80,    0.0,    0.1,    1,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "A", "I/O Intr"}
+{      FA3_I3,   "Fin. Amp 3 Current 3",  RF1_In_Word,     81,    0.0,    0.1,    1,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "A", "I/O Intr"}
+{      FA3_I4,   "Fin. Amp 3 Current 4",  RF1_In_Word,     82,    0.0,    0.1,    1,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "A", "I/O Intr"}
+{   FA3_PS1_V,   "Fin. Amp 3 PS1 Volts",  RF1_In_Word,     91,    0.0,    0.1,    1,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "V", "I/O Intr"}
+{   FA3_PS2_V,   "Fin. Amp 3 PS2 Volts",  RF1_In_Word,     92,    0.0,    0.1,    1,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "V", "I/O Intr"}
+{  FA3_HSTemp, "Fin. Amp 3 HtSink Temp",  RF1_In_Word,     93,    0.0,    0.1,    1,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,   "degC", "I/O Intr"}
+{   PSAirTemp,       "PS Unit Air Temp",  RF1_In_Word,     97,    0.0,    0.1,    1,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,   "degC", "I/O Intr"}
+{ HXInAirTemp, "Heat Exc. In. Air Temp",  RF1_In_Word,     98,    0.0,    0.1,    1,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,   "degC", "I/O Intr"}
+{   LCWInTemp,         "LCW Inlet Temp",  RF1_In_Word,     99,    0.0,    0.1,    1,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,   "degC", "I/O Intr"}
+{  LCWOutTemp,        "LCW Outlet Temp",  RF1_In_Word,    100,    0.0,    0.1,    1,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,   "degC", "I/O Intr"}
+{    Humidity,               "Humidity",  RF1_In_Word,    101,    0.0,    0.1,    1,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "%", "I/O Intr"}
+{  LCWOutFlow,   "LCW Outlet Flow Rate",  RF1_In_Word,    102,    0.0,    0.1,    1,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,  "L/min", "I/O Intr"}
 }
 
 file "ssa_RK_CA1300_extras.template" {
