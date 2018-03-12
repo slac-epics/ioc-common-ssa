@@ -1,74 +1,32 @@
-
-# --- Reset faults --------------------------------------
-#record(bo, "$(P)FaultReset") {
-#}
-
-record(seq, "$(P)FaultReset") {
-    field(DESC, "Reset faults")
-    field(DOL1, "1")
-    field(LNK1, "$(P)ResetMsg PP")
-    field(DOL2, "1")
-    field(LNK2, "$(P)FaultIntReset PP")
-    field(DLY3, "2")
-    field(DOL3, "1")
-    field(LNK3, "$(P)FaultExtReset PP")
-    field(DLY4, "2")
-    field(DOL4, "1")
-    field(LNK4, "$(P)WarningReset PP")
-    field(DLY5, "1")
-    field(DOL5, "0")
-    field(LNK5, "$(P)ResetMsg PP")
+# --- These records are used in the sequencer program -----------
+record(bo, "$(P)FaultReset"){
+    field(DESC, "Fault Reset")
+    field(ZNAM, "Standby")
+    field(ONAM, "Resetting...")
 }
 
-# --- Reset faults and turn on RF --------------------------------------
-# Sequence is:
-# 1) Reset internal and external faults; 
-# 2) Set DC enable;
-# 3) Set PS output control voltage;
-# 4) Set RF enable
-# For more info, see manual p.9
-record(seq, "$(P)TurnOnSeq") {
-    field(DESC, "Reset faults and turn on RF")
-    field(DLY1, "0")
-    field(DOL1, "1")
-    field(LNK1, "$(P))FaultReset.PROC PP")
-    field(DLY2, "5")
-    field(DOL2, "2")
-    field(LNK2, "$(P)ResetMsg PP")
-    field(DOL3, "1")
-    field(LNK3, "$(P)DCEnable PP")
-    field(DLY4, "2")
-    field(DOL4, "3")
-    field(LNK4, "$(P)ResetMsg PP")
-    field(DLY5, "2")
-    field(DOL5, "1")
-    field(LNK5, "$(P)DrainVoltSetPt.PROC PP")
-    field(DOL6, "4")
-    field(LNK6, "$(P)ResetMsg PP")
-    field(DLY7, "2")
-    field(DOL7, "1")
-    field(LNK7, "$(P)RFEnable PP")
-    field(DLY8, "1")
-    field(DOL8, "5")
-    field(LNK8, "$(P)ResetMsg PP")
+record(bo, "$(P)PowerOn"){
+    field(DESC, "Power On")
+    field(ZNAM, "Standby")
+    field(ONAM, "Powering On...")
 }
 
-record(mbbi, "$(P)ResetMsg") {
-    field(DESC, "Reset message")
-    field(ZRVL, "0")
-    field(ZRST, "Standby")
-    field(ONVL, "1")
-    field(ONST, "Resetting faults...")
-    field(TWVL, "2")
-    field(TWST, "Enabling DC...")
-    field(THVL, "3")
-    field(THST, "Setting Drain Voltage...")
-    field(FRVL, "4")
-    field(FRST, "Enabling RF...")
-    field(FVVL, "5")
-    field(FVST, "Done")
-    field(VAL,  "0")
-    field(PINI, "1")
+record(bo, "$(P)PowerOff"){
+    field(DESC, "Power Off")
+    field(ZNAM, "Standby")
+    field(ONAM, "Powering Off...")
+}
+
+record(bo, "$(P)SystemReboot"){
+    field(DESC, "System Reboot")
+    field(ZNAM, "Standby")
+    field(ONAM, "Rebooting...")
+}
+
+record(bo, "$(P)XPortReboot"){
+    field(DESC, "X-Port Reboot")
+    field(ZNAM, "Standby")
+    field(ONAM, "Rebooting...")
 }
 
 # --- Drain Voltage <---> Output Voltage --------------
@@ -95,11 +53,12 @@ record(calcout, "$(P)DrainVCalc") {
 }
 
 record(calc, "$(P)DrainVoltRBV") {
-    field(DESC, "Output to drain voltage conversion")
+    field(DESC, "Drain voltage")
     field(INPA, "$(P)PSVoltRBV CP")
     field(INPB, "131")
     field(INPC, "2.5")
     field(EGU,  "V")
+    field(PREC, "2")
     field(CALC, "(A*C)/B")
 }
 
@@ -113,6 +72,7 @@ record(calc, "$(P)DrvPwr_dBm") {
     field(INPE, "0.0296")
     field(INPF, "-15.618")
     field(EGU,  "dBm")
+    field(PREC, "1")
     field(CALC, "A^4*B+A^3*C+A^2*D+A*E+F")
     field(FLNK, "$(P)DrvPwr_mW")
 }
@@ -124,50 +84,63 @@ record(calc, "$(P)DrvPwr_mW") {
     field(INPC, "3.147E-5")
     field(INPD, "0.0404")
     field(EGU,  "mW")
+    field(PREC, "1")
     field(CALC, "A^2*B+A*C+D")
 }
+#---------------------------------------------------------------
 
-# --- Run state readback -------------------------------------------------------------
-record(calc, "$(P)RunState") {
-    field(DESC, "Run state readback")
-    field(ASG,  "Internal")
-    field(INPA, "$(P)ACEnableRBV CP")
-    field(INPB, "$(P)DCEnableRBV CP")
-    field(INPC, "$(P)RFEnableRBV CP")
-    field(INPD, "$(P)ErrCodeInt CP")
-    field(INPE, "$(P)ErrCodeExt CP")
-    field(CALC, "((D+E)=0&&A&&B&&C)?0:(D+E)>0?1:2")
-    field(FLNK, "$(P)RunStateMsg")
-}
-
-record(mbbi, "$(P)RunStateMsg") {
-    field(DESC, "Run State")
-    field(INP,  "$(P)RunState")
+record(mbbi, "$(P)StatusMsg") {
+    field(DESC, "Status Message")
     field(ZRVL, "0")
-    field(ZRST, "None")
-    field(ZRSV, "NO_ALARM")
+    field(ZRST, "Unknown")
+    field(ZRSV, "MINOR")
     field(ONVL, "1")
     field(ONST, "Faulted")
     field(ONSV, "MAJOR")
     field(TWVL, "2")
-    field(TWST, "Disabled")
+    field(TWST, "SSA Off")
     field(TWSV, "MINOR")
     field(THVL, "3")
-    field(THST, "Running")
+    field(THST, "SSA On")
     field(THSV, "NO_ALARM")
+    field(FRVL, "4")
+    field(FRST, "Resetting Faults...")
+    field(FRSV, "NO_ALARM")
+    field(FVVL, "5")
+    field(FVST, "Powering On...")
+    field(FVSV, "NO_ALARM")
+    field(SXVL, "6")
+    field(SXST, "Powering Off...")
+    field(SXSV, "NO_ALARM")
+    field(SVVL, "7")
+    field(SVST, "Fault Reset Failed...")
+    field(SVSV, "MINOR")
+    field(EIVL, "8")
+    field(EIST, "Power On Failed...")
+    field(EISV, "MINOR")
+    field(NIVL, "9")
+    field(NIST, "Power Off Failed...")
+    field(NISV, "MINOR")
+    field(TEVL, "10")
+    field(TEST, "Rebooting SSA...")
+    field(TESV, "MINOR")
+    field(ELVL, "11")
+    field(ELST, "Rebooting X-Port...")
+    field(ELSV, "MINOR")
 }
+
 
 # --- Fault messages -------------------------------------------------------------
 record(aSub, "$(P)FaultIntAsub"){
     field(DESC, "Internal fault message aSub")
     field(ASG,  "Internal")
     field(SNAM, "asFaultMsg")
-    field(INPA, "$(P)ErrCodeInt CP")
+    field(INPA, "$(P)ErrCodeInt CP MS")
     field(FTA,  "LONG")  
     field(NOA,  "1")
     field(FTVA, "STRING")  
     field(NOVA, "1")
-    field(OUTA, "$(P)FaultIntMsg PP")
+    field(OUTA, "$(P)FaultIntMsg PP MS")
 }
 
 record(stringin, "$(P)FaultIntMsg") {
@@ -178,12 +151,12 @@ record(aSub, "$(P)FaultExtAsub"){
     field(DESC, "External fault message aSub")
     field(ASG,  "Internal")
     field(SNAM, "asFaultMsg")
-    field(INPA, "$(P)ErrCodeExt CP")
+    field(INPA, "$(P)ErrCodeExt CP MS")
     field(FTA,  "LONG")  
     field(NOA,  "1")
     field(FTVA, "STRING")  
     field(NOVA, "1")
-    field(OUTA, "$(P)FaultExtMsg PP")
+    field(OUTA, "$(P)FaultExtMsg PP MS")
 }
 
 record(stringin, "$(P)FaultExtMsg") {
@@ -194,16 +167,44 @@ record(aSub, "$(P)WarningAsub"){
     field(DESC, "Warning message aSub")
     field(ASG,  "Internal")
     field(SNAM, "asFaultMsg")
-    field(INPA, "$(P)WarningCode CP")
+    field(INPA, "$(P)WarningCode CP MS")
     field(FTA,  "LONG")  
     field(NOA,  "1")
     field(FTVA, "STRING")  
     field(NOVA, "1")
-    field(OUTA, "$(P)WarningMsg PP")
+    field(OUTA, "$(P)WarningMsg PP MS")
 }
 
 record(stringin, "$(P)WarningMsg") {
     field(DESC, "Warning")
+}
+
+record(calcout, "$(P)FaultSumCalc") {
+    field(DESC, "Fault Summary Calc")
+    field(ASG,  "Internal")
+    field(INPA, "$(P)ErrCodeInt CP")
+    field(INPB, "$(P)ErrCodeExt CP")
+    field(CALC, "(A>0 && B>0)?3:(A>0)?1:(B>0)?2:4")
+    field(OUT,  "$(P)FaultSummary PP")
+}
+
+record(mbbi, "$(P)FaultSummary") {
+    field(DESC, "Fault Summary")
+    field(ZRVL, "0")
+    field(ZRST, "Unknown")
+    field(ZRSV, "MINOR")
+    field(ONVL, "1")
+    field(ONST, "Internal Fault")
+    field(ONSV, "MAJOR")
+    field(TWVL, "2")
+    field(TWST, "External Fault")
+    field(TWSV, "MAJOR")
+    field(THVL, "3")
+    field(THST, "Multiple Faults")
+    field(THSV, "MAJOR")
+    field(FRVL, "4")
+    field(FRST, "OK")
+    field(FRSV, "NO_ALARM")
 }
 
 

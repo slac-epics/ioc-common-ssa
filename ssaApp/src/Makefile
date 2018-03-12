@@ -62,7 +62,7 @@ $(PROD_NAME)_SRCS_vxWorks += -nil-
 # Add locally compiled object code
 # For example, subroutines
 # ========================================================================
-$(PROD_NAME)_SRCS += seq_$(PROD_NAME)_CA1300.st
+$(PROD_NAME)_SRCS += $(PROD_NAME)Seq_RK_CA1300.st
 
 # =====================================================
 # Link in the code from other libraries
@@ -86,10 +86,10 @@ $(PROD_NAME)_LIBS += asyn
 # NOTE: To build SNL programs, SNCSEQ must be defined
 # in the <top>/configure/RELEASE file
 #
-ifneq ($(SNCSEQ),)
+#ifneq ($(SNCSEQ),)
 #    $(PROD_NAME)_SNCFLAGS += +r
     $(PROD_NAME)_LIBS += seq pv
-endif
+#endif
 
 $(PROD_NAME)_LIBS += $(EPICS_BASE_IOC_LIBS)
 
