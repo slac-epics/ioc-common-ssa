@@ -141,7 +141,7 @@ caPutLogShow(2)
 # =====================================================
 
 ## Start any sequence programs
-seq(seqSsa_CA1300, "P=$(P)")
+seq(seq_ssa_CA1300, "P=$(P)")
 
 ## Start autosave process:
 cd("${IOC_DATA}/${IOC}/autosave-req")

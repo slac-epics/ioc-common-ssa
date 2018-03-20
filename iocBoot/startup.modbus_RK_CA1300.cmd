@@ -14,7 +14,7 @@ dbLoadRecords("db/asynRecord.db","P=$(P),R=ASYN,PORT=$(P),ADDR=0,IMAX=0,OMAX=0")
 # modbusInterposeConfig(const char *portName, modbusLinkType linkType,
 #			int timeoutMsec, int writeDelayMsec)
 # linkType 0 = TCP/IP
-modbusInterposeConfig("$(P)", 0, 2000, 100)
+modbusInterposeConfig("$(P)", 0, 1500, 0)
 
 
 # Modbus function code: 3 (Read Holding Registers, 16-bit word access)
