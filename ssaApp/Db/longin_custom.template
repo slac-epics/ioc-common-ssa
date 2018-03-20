@@ -3,5 +3,5 @@ record(longin, "$(P)$(R)") {
     field(DTYP, "asynUInt32Digital")
     field(INP,  "@asynMask($(PORT) $(OFFSET) 0xFFFF)")
     field(EGU,  "$(EGU="")")
-    field(SCAN, "$(SCAN)")
+    field(SCAN, "$(SCAN="I/O Intr")")
 }
