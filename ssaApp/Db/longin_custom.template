@@ -3,5 +3,13 @@ record(longin, "$(P)$(R)") {
     field(DTYP, "asynUInt32Digital")
     field(INP,  "@asynMask($(PORT) $(OFFSET) 0xFFFF)")
     field(EGU,  "$(EGU="")")
+    field(LOLO, "$(LOLO="")")
+    field(LOW,  "$(LOW="")")
+    field(HIGH, "$(HIGH="")")
+    field(HIHI, "$(HIHI="")")
+    field(LSV,  "$(LSV="")")
+    field(LLSV, "$(LLSV="")")
+    field(HSV,  "$(HSV="")")
+    field(HHSV, "$(HHSV="")")
     field(SCAN, "$(SCAN="I/O Intr")")
 }
