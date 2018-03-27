@@ -45,13 +45,13 @@ pattern
 }
 
 # Integer inputs, modbus function code 3.
-file "longin_custom_autosave.template" {
+file "longin_custom.template" {
 pattern
 {           R,                     DESC,         PORT, OFFSET,  LOLO,   LOW,  HIGH,  HIHI,     LLSV,      LSV,      HSV,     HHSV,      EGU,       SCAN}
 {   PSVoltRBV,         "PS Out Voltage",  RF1_In_Word,      2,    "",    "",  2520,  2530, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "mV", "I/O Intr"}
 {  ErrCodeInt,    "Internal Error Code",  RF1_In_Word,     12,    "",    "",    "",     1, NO_ALARM, NO_ALARM, NO_ALARM,    MAJOR,       "", "I/O Intr"}
 {  ErrCodeExt,    "External Error Code",  RF1_In_Word,     13,    "",    "",    "",     1, NO_ALARM, NO_ALARM, NO_ALARM,    MAJOR,       "", "I/O Intr"}
-{ WarningCode,           "Warning Code",  RF1_In_Word,     14,    "",    "",    "",     1, NO_ALARM, NO_ALARM, NO_ALARM,    MINOR,       "", "I/O Intr"}
+{ WarningCode,           "Warning Code",  RF1_In_Word,     14,    "",    "",     1,    "", NO_ALARM, NO_ALARM,    MINOR, NO_ALARM,       "", "I/O Intr"}
 {      DrvPwr,            "Drive Power",  RF1_In_Word,     15,    "",    "",  2500,  2510, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "mV", "I/O Intr"}
 {      FwdPwr,          "Forward Power",  RF1_In_Word,     16,    "",    "",  4200,  4210, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
 {      RefPwr,        "Reflected Power",  RF1_In_Word,     17,    "",    "",   400,   500, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
@@ -79,8 +79,7 @@ pattern
 { HXFan4Speed,    "Heat Exc. Fan 4 Spd",  RF1_In_Word,    107,    "",  6300, 11700, 12000, NO_ALARM,    MINOR,    MINOR,    MAJOR,    "rpm", "I/O Intr"}
 { PSFan1Speed,      "PS Unit Fan 1 Spd",  RF1_In_Word,    108,    "",  5250,  9750, 10000, NO_ALARM,    MINOR,    MINOR,    MAJOR,    "rpm", "I/O Intr"}
 { PSFan2Speed,      "PS Unit Fan 2 Spd",  RF1_In_Word,    109,    "",  5250,  9750, 10000, NO_ALARM,    MINOR,    MINOR,    MAJOR,    "rpm", "I/O Intr"}
-{ PSFan3Speed,      "PS Unit Fan 3 Spd",  RF1_In_Word,    110,    "",  5250,  9750, 10000, NO_ALARM,    MINOR,    MINOR,    MAJOR,    "rpm", "I/O Intr"}
-}
+{ PSFan3Speed,      "PS Unit Fan 3 Spd",  RF1_In_Word,    110,    "",  2800,  5980,  6500, NO_ALARM,    MINOR,    MINOR,    MAJOR,    "rpm", "I/O Intr"}
 
 file "longin_custom.template" {
 pattern
@@ -90,18 +89,18 @@ pattern
 {   CalDayRBV,       "Cal Day Readback",  RF1_In_Word,    113,  "", "I/O Intr"}
 {  CalHourRBV,      "Cal Hour Readback",  RF1_In_Word,    114,  "", "I/O Intr"}
 {   CalMinRBV,    "Cal Minute Readback",  RF1_In_Word,    115,  "", "I/O Intr"}
-{  MainSWVer0,  "Main SW Version Major",  RF2_In_Word,      0,  "", "I/O Intr"}
-{  MainSWVer1,  "Main SW Version Minor",  RF2_In_Word,      1,  "", "I/O Intr"}
-{    SDSWVer0,    "SD SW Version Major",  RF2_In_Word,      2,  "", "I/O Intr"}
-{    SDSWVer1,    "SD SW Version Minor",  RF2_In_Word,      3,  "", "I/O Intr"}
-{   SubSWVer0,   "Sub SW Version Major",  RF2_In_Word,      4,  "", "I/O Intr"}
-{   SubSWVer1,   "Sub SW Version Minor",  RF2_In_Word,      5,  "", "I/O Intr"}
-{    PSSWVer0,    "PS SW Version Major",  RF2_In_Word,      6,  "", "I/O Intr"}
-{    PSSWVer1,    "PS SW Version Minor",  RF2_In_Word,      7,  "", "I/O Intr"}
+{  MainSWVer0,      "Main SW Ver Major",  RF2_In_Word,      0,  "", "I/O Intr"}
+{  MainSWVer1,      "Main SW Ver Minor",  RF2_In_Word,      1,  "", "I/O Intr"}
+{    SDSWVer0,        "SD SW Ver Major",  RF2_In_Word,      2,  "", "I/O Intr"}
+{    SDSWVer1,        "SD SW Ver Minor",  RF2_In_Word,      3,  "", "I/O Intr"}
+{   SubSWVer0,       "Sub SW Ver Major",  RF2_In_Word,      4,  "", "I/O Intr"}
+{   SubSWVer1,       "Sub SW Ver Minor",  RF2_In_Word,      5,  "", "I/O Intr"}
+{    PSSWVer0,        "PS SW Ver Major",  RF2_In_Word,      6,  "", "I/O Intr"}
+{    PSSWVer1,        "PS SW Ver Minor",  RF2_In_Word,      7,  "", "I/O Intr"}
 }
 
 # Integer inputs converted to floats, modbus function code 3.
-file "ai_slope_autosave.template" {
+file "ai_slope.template" {
 pattern
 {           R,                     DESC,         PORT, OFFSET,   EOFF,   ESLO, PREC, LOLO,  LOW, HIGH, HIHI,     LLSV,      LSV,      HSV,     HHSV,      EGU,       SCAN}
 { CtrlAirTemp,     "Ctrl Unit Air Temp",  RF1_In_Word,     21,    0.0,    0.1,    1,   10,   15,   55,   60,    MAJOR,    MINOR,    MINOR,    MAJOR,   "degC", "I/O Intr"}
