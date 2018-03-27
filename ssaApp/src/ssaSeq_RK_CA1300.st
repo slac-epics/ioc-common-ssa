@@ -28,16 +28,16 @@ monitor rfEnableRBV;
 int rfEnable;
 assign rfEnable to "{P}RFEnable";
 
-int errorCodeInt;
-assign errorCodeInt to "{P}ErrCodeInt";
-monitor errorCodeInt;
+int faultInt;
+assign faultInt to "{P}ErrCodeInt";
+monitor faultInt;
 
 int faultIntReset;
 assign faultIntReset to "{P}FaultIntReset";
 
-int errorCodeExt;
-assign errorCodeExt to "{P}ErrCodeExt";
-monitor errorCodeExt;
+int faultExt;
+assign faultExt to "{P}ErrCodeExt";
+monitor faultExt;
 
 int faultExtReset;
 assign faultExtReset to "{P}FaultExtReset";
@@ -92,6 +92,10 @@ assign drainVoltProc to "{P}DrainVoltSetpt.PROC";
 #define powerOffTimeout 5.0
 #define sysRebootTimeout 6.0
 #define xPortRebootTimeout 6.0
+#define faultCond (faultInt || faultExt)
+#define enabledCond (acEnableRBV && dcEnableRBV && rfEnableRBV)
+#define notEnabledOrFaultCond (!acEnableRBV || !dcEnableRBV || !rfEnableRBV || faultInt || faultExt)
+
 
 /*----------------------------------------------------------------*/
 ss ssa_state_check {
@@ -102,13 +106,13 @@ ss ssa_state_check {
             statusMsg = 3;
             pvPut(statusMsg);
         }
-        when (errorCodeInt || errorCodeExt) {
+        when (faultCond) {
         } state faultedState
-        when (!powerOn && (!acEnableRBV || !dcEnableRBV || !rfEnableRBV) && !(errorCodeInt || errorCodeExt)) {
+        when (!powerOn && !enabledCond && !faultCond) {
         } state ssaOffState
-        when (powerOn && (!acEnableRBV || !dcEnableRBV || !rfEnableRBV) && !(errorCodeInt || errorCodeExt)) {
+        when (powerOn && !enabledCond && !faultCond) {
         } state poweringOnState
-        when (powerOn && (acEnableRBV && dcEnableRBV && rfEnableRBV)) {
+        when (powerOn && enabledCond) {
             powerOn = 0;
             pvPut(powerOn);
         } state ssaOnState
@@ -131,21 +135,21 @@ ss ssa_state_check {
     state ssaOffState {
     /* SSA is off: No faults, but DC and/or RF disabled. */
         entry {
-            if (DEBUG) printf("STATE: ssaOffState\n");
+            if (DEBUG) printf("STATE: ssaOffState\n");            statusMsg = 2;
             statusMsg = 2;
             pvPut(statusMsg);
         }
-        when ((acEnableRBV && dcEnableRBV && rfEnableRBV) && !(errorCodeInt || errorCodeExt)) {
+        when (enabledCond && !faultCond) {
         } state ssaOnState
-        when (errorCodeInt || errorCodeExt) {
+        when (faultCond) {
         } state faultedState
-        when (faultReset && (errorCodeInt || errorCodeExt)) {
+        when (faultReset && faultCond) {
         } state faultResetState
-        when (faultReset && !(errorCodeInt || errorCodeExt)) {
+        when (faultReset && !faultCond) {
             faultReset = 0;
             pvPut(faultReset);
         } state ssaOffState
-        when (powerOn && (!acEnableRBV || !dcEnableRBV || !rfEnableRBV || errorCodeInt || errorCodeExt)) {
+        when (powerOn && notEnabledOrFaultCond) {
         } state poweringOnState
         when (powerOff) {
             powerOff = 0;
@@ -164,13 +168,13 @@ ss ssa_state_check {
             statusMsg = 1;
             pvPut(statusMsg);
         }
-        when ((acEnableRBV && dcEnableRBV && rfEnableRBV) && !(errorCodeInt || errorCodeExt)) {
+        when (enabledCond && !faultCond) {
         } state ssaOnState
-        when ((!acEnableRBV || !dcEnableRBV || !rfEnableRBV) && !(errorCodeInt || errorCodeExt)) {
+        when (!enabledCond && !faultCond) {
         } state ssaOffState
-        when (faultReset && (errorCodeInt || errorCodeExt)) {
+        when (faultReset && faultCond) {
         } state faultResetState
-        when (powerOn && (!acEnableRBV || !dcEnableRBV || !rfEnableRBV || errorCodeInt || errorCodeExt)) {
+        when (powerOn && notEnabledOrFaultCond) {
         } state poweringOnState
         when (systemReboot) {
         } state sysRebootState
@@ -183,16 +187,16 @@ ss ssa_state_check {
         entry {
             if (DEBUG) printf("STATE: faultResetState\n");
         }
-        when (!efTest(resetFlag) && (errorCodeInt || errorCodeExt)) {
+        when (!efTest(resetFlag) && faultCond) {
             if (DEBUG) printf("Resetting...\n");
             statusMsg = 4;
             pvPut(statusMsg);
-            if (errorCodeInt) {
+            if (faultInt) {
                 if (DEBUG) printf("faultIntReset\n");
                 faultIntReset = 1;
                 pvPut(faultIntReset, SYNC);
             }
-            if (errorCodeExt) {
+            if (faultExt) {
                 faultExtReset = 1;
                 pvPut(faultExtReset, SYNC);
                 if (DEBUG) printf("faultExtReset\n");
@@ -204,17 +208,17 @@ ss ssa_state_check {
             }
             efSet(resetFlag);
         } state faultResetState
-        when (delay(resetTimeout) && efTest(resetFlag) && (errorCodeInt || errorCodeExt)) {
+        when (delay(resetTimeout) && efTest(resetFlag) && faultCond) {
             faultReset = 0;
             pvPut(faultReset);
             efClear(resetFlag);
         } state faultResetFailState
-        when (faultReset && efTest(resetFlag) && !(errorCodeInt || errorCodeExt)) {
+        when (faultReset && efTest(resetFlag) && !faultCond) {
             faultReset = 0;
             pvPut(faultReset);
             efClear(resetFlag);
         } state ssaOnState
-        when (delay(powerOnWait) && powerOn && efTest(resetFlag) && !(errorCodeInt || errorCodeExt)) {
+        when (delay(powerOnWait) && powerOn && efTest(resetFlag) && !faultCond) {
             efClear(resetFlag);
         } state poweringOnState
     }
@@ -239,7 +243,7 @@ ss ssa_state_check {
         entry {
             if (DEBUG) printf("STATE: poweringOnState\n");
         }
-        when (errorCodeInt || errorCodeExt) {
+        when (faultCond) {
         } state faultResetState
         when (!efTest(powerOnFlag)) {
             if (DEBUG) printf("Powering on...\n");
@@ -260,12 +264,12 @@ ss ssa_state_check {
             }
             efSet(powerOnFlag);
         } state poweringOnState
-        when (powerOn && delay(powerOnTimeout) && efTest(powerOnFlag) && (!acEnableRBV || !dcEnableRBV || !rfEnableRBV)) {
+        when (powerOn && delay(powerOnTimeout) && efTest(powerOnFlag) && !enabledCond) {
             powerOn = 0;
             pvPut(powerOn);
             efClear(powerOnFlag);
         } state powerOnFailState
-        when (powerOn && efTest(powerOnFlag) && acEnableRBV && dcEnableRBV && rfEnableRBV) {
+        when (powerOn && efTest(powerOnFlag) && enabledCond) {
             powerOn = 0;
             pvPut(powerOn);
             efClear(powerOnFlag);
@@ -303,12 +307,12 @@ ss ssa_state_check {
             }
             efSet(powerOffFlag);
         } state poweringOffState
-        when (powerOff && delay(powerOffTimeout) && efTest(powerOffFlag) && (dcEnableRBV && rfEnableRBV)) {
+        when (powerOff && delay(powerOffTimeout) && efTest(powerOffFlag) && enabledCond) {
             powerOff = 0;
             pvPut(powerOff);
             efClear(powerOffFlag);
         } state powerOffFailState
-        when (powerOff && efTest(powerOffFlag) && (!dcEnableRBV || !rfEnableRBV)) {
+        when (powerOff && efTest(powerOffFlag) && !enabledCond) {
             powerOff = 0;
             pvPut(powerOff);
             efClear(powerOffFlag);
