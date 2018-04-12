@@ -5,6 +5,10 @@ program seq_ssa_CA1300
 description...
 */
 
+%%#include <epicsTime.h>        /* for timestamps */
+%%epicsTimeStamp ts_current;  /* Current timestamp */
+%%char asciiTime_current[64];
+
 /*----------------------------------------------------------------*/
 option +r;  /* one sequence task per ssa */
 
@@ -84,7 +88,7 @@ evflag xPortRebootFlag;
 int drainVoltProc;
 assign drainVoltProc to "{P}DrainVoltSetpt.PROC";
 
-#define DEBUG 1
+#define DEBUG 0
 #define failWait 5.0
 #define resetTimeout 5.0
 #define powerOnTimeout 5.0
@@ -94,7 +98,7 @@ assign drainVoltProc to "{P}DrainVoltSetpt.PROC";
 #define xPortRebootTimeout 6.0
 #define faultCond (faultInt || faultExt)
 #define enabledCond (acEnableRBV && dcEnableRBV && rfEnableRBV)
-#define notEnabledOrFaultCond (!acEnableRBV || !dcEnableRBV || !rfEnableRBV || faultInt || faultExt)
+#define notEnabledOrFaultCond (!enabledCond || faultCond)
 
 
 /*----------------------------------------------------------------*/
@@ -135,7 +139,7 @@ ss ssa_state_check {
     state ssaOffState {
     /* SSA is off: No faults, but DC and/or RF disabled. */
         entry {
-            if (DEBUG) printf("STATE: ssaOffState\n");            statusMsg = 2;
+            if (DEBUG) printf("STATE: ssaOffState\n");
             statusMsg = 2;
             pvPut(statusMsg);
         }
@@ -165,6 +169,11 @@ ss ssa_state_check {
     /* SSA is off: External or internal fault. SSA internally disables DC & RF when this happens. */
         entry {
             if (DEBUG) printf("STATE: faultedState\n");
+            epicsTimeGetCurrent(&ts_current);
+            %{epicsTimeToStrftime(asciiTime_current, sizeof(asciiTime_current),
+                "%Y%m%d_%H:%M:%S.%06f", &ts_current);
+            }%
+            printf("[%s] SSA faulted\n", asciiTime_current);
             statusMsg = 1;
             pvPut(statusMsg);
         }
@@ -189,6 +198,11 @@ ss ssa_state_check {
         }
         when (!efTest(resetFlag) && faultCond) {
             if (DEBUG) printf("Resetting...\n");
+            epicsTimeGetCurrent(&ts_current);
+            %{epicsTimeToStrftime(asciiTime_current, sizeof(asciiTime_current),
+                "%Y%m%d_%H:%M:%S.%06f", &ts_current);
+            }%
+            printf("[%s] Resetting SSA faults\n", asciiTime_current);
             statusMsg = 4;
             pvPut(statusMsg);
             if (faultInt) {
@@ -247,6 +261,11 @@ ss ssa_state_check {
         } state faultResetState
         when (!efTest(powerOnFlag)) {
             if (DEBUG) printf("Powering on...\n");
+            epicsTimeGetCurrent(&ts_current);
+            %{epicsTimeToStrftime(asciiTime_current, sizeof(asciiTime_current),
+                "%Y%m%d_%H:%M:%S.%06f", &ts_current);
+            }%
+            printf("[%s] Powering SSA on\n", asciiTime_current);
             statusMsg = 5;
             pvPut(statusMsg);
             if (!dcEnableRBV) {
@@ -295,6 +314,11 @@ ss ssa_state_check {
             pvPut(statusMsg);
         }
         when (!efTest(powerOffFlag)) {
+            epicsTimeGetCurrent(&ts_current);
+            %{epicsTimeToStrftime(asciiTime_current, sizeof(asciiTime_current),
+                "%Y%m%d_%H:%M:%S.%06f", &ts_current);
+            }%
+            printf("[%s] Powering SSA off\n", asciiTime_current);
             if (rfEnableRBV) {
                 rfEnable = 0;
                 pvPut(rfEnable, SYNC);
@@ -334,6 +358,11 @@ ss ssa_state_check {
     /* System reboot: Execute system reboot, then transition back to On state. */
         entry {
             if (DEBUG) printf("STATE: sysReboot\n");
+            epicsTimeGetCurrent(&ts_current);
+            %{epicsTimeToStrftime(asciiTime_current, sizeof(asciiTime_current),
+                "%Y%m%d_%H:%M:%S.%06f", &ts_current);
+            }%
+            printf("[%s] SSA sysReboot\n", asciiTime_current);
         }
         when (!efTest(sysRebootFlag)) {
             statusMsg = 10;
@@ -353,6 +382,11 @@ ss ssa_state_check {
     /* Lantronix X-port reboot: Execute reboot, then transition back to On state. */
         entry {
             if (DEBUG) printf("STATE: xPortReboot\n");
+            epicsTimeGetCurrent(&ts_current);
+            %{epicsTimeToStrftime(asciiTime_current, sizeof(asciiTime_current),
+                "%Y%m%d_%H:%M:%S.%06f", &ts_current);
+            }%
+            printf("[%s] SSA X-port reboot\n", asciiTime_current);
         }
         when (!efTest(xPortRebootFlag)) {
             statusMsg = 11;
