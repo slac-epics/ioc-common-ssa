@@ -103,10 +103,15 @@ Takes an integer error code as input, and displays a string message as output.
     else if (*errCode == 514) errMsg = "Ext. Fault No.3 24V Permit Line";
     else if (*errCode == 515) errMsg = "Ext. Fault 1 & 3 24V Permit Line";
     else if (*errCode == 516) errMsg = "Ext. Fault 2 & 3 24V Permit Line";
+    else if (*errCode == 517) errMsg = "Ext. Fault 1,2,3 24V Permit Line";
     else if (*errCode == 518) errMsg = "Ext. Fault No.4 24V Permit Line";
     else if (*errCode == 519) errMsg = "Ext. Fault 1 & 4 24V Permit Line";
     else if (*errCode == 520) errMsg = "Ext. Fault 2 & 4 24V Permit Line";
+    else if (*errCode == 521) errMsg = "Ext. Fault 1,2,4 24V Permit Line";
     else if (*errCode == 522) errMsg = "Ext. Fault 3 & 4 24V Permit Line";
+    else if (*errCode == 523) errMsg = "Ext. Fault 1,3,4 24V Permit Line";
+    else if (*errCode == 524) errMsg = "Ext. Fault 2,3,4 24V Permit Line";
+    else if (*errCode == 525) errMsg = "Ext. Fault 1,2,3,4 24V Permit Line";
     else if (*errCode == 530) errMsg = "Reflected Pwr";
     else if (*errCode == 550) errMsg = "Ctrl Unit Air Temp";
     else if (*errCode == 560) errMsg = "Thermostat Status";
