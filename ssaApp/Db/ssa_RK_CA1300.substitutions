@@ -57,7 +57,7 @@ pattern
 {      RefPwr,        "Reflected Power",  RF1_In_Word,     17,    "",    "",   400,   500, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
 {CtrlFanSpeed,      "Ctrl Unit Fan Spd",  RF1_In_Word,     22,    "",  6300, 11700, 12000, NO_ALARM,    MINOR,    MINOR,    MAJOR,    "rpm", "I/O Intr"}
 { DA_FanSpeed,        "Drv Amp Fan Spd",  RF1_In_Word,     46,    "",  5250,  9750, 10000, NO_ALARM,    MINOR,    MINOR,    MAJOR,    "rpm", "I/O Intr"}
-{    FA1_Pwr1,        "Fin. Amp 1 Pwr1",  RF1_In_Word,     55,    "",    "",   550,   560, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
+{    FA1_Pwr1,        "Fin. Amp 1 Pwr1",  RF1_In_Word,     55,    "",    "",   570,   580, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
 {    FA1_Pwr2,        "Fin. Amp 1 Pwr2",  RF1_In_Word,     56,    "",    "",   550,   560, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
 {    FA1_Pwr3,        "Fin. Amp 1 Pwr3",  RF1_In_Word,     57,    "",    "",   550,   560, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
 {    FA1_Pwr4,        "Fin. Amp 1 Pwr4",  RF1_In_Word,     58,    "",    "",   550,   560, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
