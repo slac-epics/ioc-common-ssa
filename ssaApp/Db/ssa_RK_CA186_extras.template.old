@@ -1,0 +1,115 @@
+
+# --- Reset fault and restore operation --------------------------------------
+# Sequence should be:
+# 1) Disable DC and RF;
+# 2) Reset internal and external faults; 
+# 3) Reset Warning;
+# 4) Enable DC;
+# 5) Wait until all modules' "Power Status" is "ON" (approx. 20 seconds);
+# 6) Set PS output control voltage to 2450 mV;
+# 7) Set RF enable
+## Now that this is complicated enough it should probably be rewritten in sequencer ...
+
+record(seq, "$(P)FltReset") {
+    field(DESC, "Reset fault and restore operation")
+    field(DOL1, "1")
+    field(LNK1, "$(P)ResetMsg PP")
+    field(DLY2, "0")
+    field(DOL2, "0")
+    field(LNK2, "$(P)DCEnable PP")
+    field(DLY3, "1")
+    field(DOL3, "0")
+    field(LNK3, "$(P)RFEnable PP")
+    field(DLY4, "6")
+    field(DOL4, "2")
+    field(LNK4, "$(P)ResetMsg PP")
+    field(DLY5, "1")
+    field(DOL5, "1")
+    field(LNK5, "$(P)IntlkReset PP")
+    field(DLY6, "1")
+    field(DOL6, "1")
+    field(LNK6, "$(P)FltExtReset PP")
+    field(DLY7, "1")
+    field(DOL7, "1")
+    field(LNK7, "$(P)WarnReset PP")
+    field(DLY8, "7")
+    field(DOL8, "3")
+    field(LNK8, "$(P)ResetMsg PP")
+    field(DLY9, "1")
+    field(DOL9, "1")
+    field(LNK9, "$(P)DCEnable PP")
+    field(DOLA, "1")
+    field(LNKA, "$(P)FltReset2.PROC")
+}
+
+record(seq, "$(P)FltReset2") {
+    field(DESC, "Reset fault and restore operation")
+    field(DLY1, "5")
+    field(DOL1, "4")
+    field(LNK1, "$(P)ResetMsg PP")
+    field(DLY2, "20")
+    field(DOL2, "5")
+    field(LNK2, "$(P)ResetMsg PP")
+    field(DLY3, "1")
+    field(DOL3, "2450")
+    field(LNK3, "$(P)PSVolt PP")
+    field(DLY4, "3")
+    field(DOL4, "6")
+    field(LNK4, "$(P)ResetMsg PP")
+    field(DLY5, "1")
+    field(DOL5, "1")
+    field(LNK5, "$(P)RFEnable PP")
+    field(DLY6, "4")
+    field(DOL6, "7")
+    field(LNK6, "$(P)ResetMsg PP")
+}
+
+record(mbbi, "$(P)ResetMsg") {
+    field(DESC, "Reset message")
+    field(ZRVL, "0")
+    field(ZRST, "Standby")
+    field(ONVL, "1")
+    field(ONST, "Disabling DC and RF...")
+    field(TWVL, "2")
+    field(TWST, "Resetting faults...")
+    field(THVL, "3")
+    field(THST, "Enabling DC...")
+    field(FRVL, "4")
+    field(FRST, "Waiting for modules...")
+    field(FVVL, "5")
+    field(FVST, "Setting voltage to 2450...")
+    field(SXVL, "6")
+    field(SXST, "Enabling RF...")
+    field(SVVL, "7")
+    field(SVST, "Done")
+    field(VAL,  "0")
+    field(PINI, "1")
+}
+
+# --- Run state readback -------------------------------------------------------------
+record(calc, "$(P)RunState") {
+    field(DESC, "Run state readback")
+    field(INPA, "$(P)ACEnableRBV CP")
+    field(INPB, "$(P)DCEnableRBV CP")
+    field(INPC, "$(P)RFEnableRBV CP")
+    field(INPD, "$(P)FaultInt CP")
+    field(INPE, "$(P)FaultExt CP")
+    field(CALC, "(((D+E)=2)&&A&&B&&C)?0:(D+E)<2?1:2")
+    field(FLNK, "$(P)RunStateMsg")
+}
+
+record(mbbi, "$(P)RunStateMsg") {
+    field(DESC, "Run state readback message")
+    field(INP,  "$(P)RunState")
+    field(ZRVL, "0")
+    field(ZRST, "Running")
+    field(ZRSV, "NO_ALARM")
+    field(ONVL, "1")
+    field(ONST, "Faulted")
+    field(ONSV, "MAJOR")
+    field(TWVL, "2")
+    field(TWST, "Disabled")
+    field(TWSV, "MINOR")
+}
+
+

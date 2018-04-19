@@ -2,761 +2,761 @@
 
 file "bi_word.template" {
 pattern
-{              R,          PORT, OFFSET,   MASK,         ZNAM,       ONAM,      ZSV,      OSV,       SCAN}
-{  M00:SubCBStat,  RF03_In_Word,     19, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
-{  M01:SubCBStat,  RF03_In_Word,     69, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
-{  M02:SubCBStat,  RF04_In_Word,     19, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
-{  M03:SubCBStat,  RF04_In_Word,     69, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
-{  M04:SubCBStat,  RF05_In_Word,     19, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
-{  M05:SubCBStat,  RF05_In_Word,     69, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
-{  M06:SubCBStat,  RF06_In_Word,     19, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
-{  M07:SubCBStat,  RF06_In_Word,     69, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
-{  M08:SubCBStat,  RF07_In_Word,     19, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
-{  M09:SubCBStat,  RF07_In_Word,     69, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
-{  M10:SubCBStat,  RF08_In_Word,     19, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
-{  M11:SubCBStat,  RF08_In_Word,     69, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
-{  M12:SubCBStat,  RF09_In_Word,     19, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
-{  M13:SubCBStat,  RF09_In_Word,     69, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
-{  M14:SubCBStat,  RF10_In_Word,     19, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
-{  M15:SubCBStat,  RF10_In_Word,     69, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
-{  M16:SubCBStat,  RF11_In_Word,     19, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
-{  M17:SubCBStat,  RF11_In_Word,     69, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
-{  M18:SubCBStat,  RF12_In_Word,     19, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
-{  M19:SubCBStat,  RF12_In_Word,     69, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
-{  M20:SubCBStat,  RF13_In_Word,     19, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
-{  M21:SubCBStat,  RF13_In_Word,     69, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
-{  M22:SubCBStat,  RF14_In_Word,     19, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
-{  M23:SubCBStat,  RF14_In_Word,     69, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
-{  M24:SubCBStat,  RF15_In_Word,     19, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
-{  M25:SubCBStat,  RF15_In_Word,     69, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
-{  M26:SubCBStat,  RF16_In_Word,     19, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
-{  M27:SubCBStat,  RF16_In_Word,     69, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
-{  M28:SubCBStat,  RF17_In_Word,     19, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
-{  M29:SubCBStat,  RF17_In_Word,     69, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
-{  M30:SubCBStat,  RF18_In_Word,     19, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
-{    M00:PwrStat,  RF03_In_Word,     28, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
-{    M01:PwrStat,  RF03_In_Word,     78, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
-{    M02:PwrStat,  RF04_In_Word,     28, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
-{    M03:PwrStat,  RF04_In_Word,     78, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
-{    M04:PwrStat,  RF05_In_Word,     28, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
-{    M05:PwrStat,  RF05_In_Word,     78, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
-{    M06:PwrStat,  RF06_In_Word,     28, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
-{    M07:PwrStat,  RF06_In_Word,     78, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
-{    M08:PwrStat,  RF07_In_Word,     28, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
-{    M09:PwrStat,  RF07_In_Word,     78, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
-{    M10:PwrStat,  RF08_In_Word,     28, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
-{    M11:PwrStat,  RF08_In_Word,     78, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
-{    M12:PwrStat,  RF09_In_Word,     28, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
-{    M13:PwrStat,  RF09_In_Word,     78, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
-{    M14:PwrStat,  RF10_In_Word,     28, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
-{    M15:PwrStat,  RF10_In_Word,     78, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
-{    M16:PwrStat,  RF11_In_Word,     28, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
-{    M17:PwrStat,  RF11_In_Word,     78, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
-{    M18:PwrStat,  RF12_In_Word,     28, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
-{    M19:PwrStat,  RF12_In_Word,     78, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
-{    M20:PwrStat,  RF13_In_Word,     28, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
-{    M21:PwrStat,  RF13_In_Word,     78, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
-{    M22:PwrStat,  RF14_In_Word,     28, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
-{    M23:PwrStat,  RF14_In_Word,     78, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
-{    M24:PwrStat,  RF15_In_Word,     28, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
-{    M25:PwrStat,  RF15_In_Word,     78, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
-{    M26:PwrStat,  RF16_In_Word,     28, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
-{    M27:PwrStat,  RF16_In_Word,     78, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
-{    M28:PwrStat,  RF17_In_Word,     28, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
-{    M29:PwrStat,  RF17_In_Word,     78, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
-{    M30:PwrStat,  RF18_In_Word,     28, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
+{              R,                     DESC,         PORT, OFFSET,   MASK,         ZNAM,       ONAM,      ZSV,      OSV,       SCAN}
+{  M00_SubCBStat,    "Sub Ckt Brkr Status", RF03_In_Word,     19, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{  M01_SubCBStat,    "Sub Ckt Brkr Status", RF03_In_Word,     69, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{  M02_SubCBStat,    "Sub Ckt Brkr Status", RF04_In_Word,     19, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{  M03_SubCBStat,    "Sub Ckt Brkr Status", RF04_In_Word,     69, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{  M04_SubCBStat,    "Sub Ckt Brkr Status", RF05_In_Word,     19, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{  M05_SubCBStat,    "Sub Ckt Brkr Status", RF05_In_Word,     69, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{  M06_SubCBStat,    "Sub Ckt Brkr Status", RF06_In_Word,     19, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{  M07_SubCBStat,    "Sub Ckt Brkr Status", RF06_In_Word,     69, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{  M08_SubCBStat,    "Sub Ckt Brkr Status", RF07_In_Word,     19, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{  M09_SubCBStat,    "Sub Ckt Brkr Status", RF07_In_Word,     69, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{  M10_SubCBStat,    "Sub Ckt Brkr Status", RF08_In_Word,     19, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{  M11_SubCBStat,    "Sub Ckt Brkr Status", RF08_In_Word,     69, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{  M12_SubCBStat,    "Sub Ckt Brkr Status", RF09_In_Word,     19, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{  M13_SubCBStat,    "Sub Ckt Brkr Status", RF09_In_Word,     69, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{  M14_SubCBStat,    "Sub Ckt Brkr Status", RF10_In_Word,     19, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{  M15_SubCBStat,    "Sub Ckt Brkr Status", RF10_In_Word,     69, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{  M16_SubCBStat,    "Sub Ckt Brkr Status", RF11_In_Word,     19, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{  M17_SubCBStat,    "Sub Ckt Brkr Status", RF11_In_Word,     69, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{  M18_SubCBStat,    "Sub Ckt Brkr Status", RF12_In_Word,     19, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{  M19_SubCBStat,    "Sub Ckt Brkr Status", RF12_In_Word,     69, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{  M20_SubCBStat,    "Sub Ckt Brkr Status", RF13_In_Word,     19, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{  M21_SubCBStat,    "Sub Ckt Brkr Status", RF13_In_Word,     69, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{  M22_SubCBStat,    "Sub Ckt Brkr Status", RF14_In_Word,     19, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{  M23_SubCBStat,    "Sub Ckt Brkr Status", RF14_In_Word,     69, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{  M24_SubCBStat,    "Sub Ckt Brkr Status", RF15_In_Word,     19, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{  M25_SubCBStat,    "Sub Ckt Brkr Status", RF15_In_Word,     69, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{  M26_SubCBStat,    "Sub Ckt Brkr Status", RF16_In_Word,     19, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{  M27_SubCBStat,    "Sub Ckt Brkr Status", RF16_In_Word,     69, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{  M28_SubCBStat,    "Sub Ckt Brkr Status", RF17_In_Word,     19, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{  M29_SubCBStat,    "Sub Ckt Brkr Status", RF17_In_Word,     69, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{  M30_SubCBStat,    "Sub Ckt Brkr Status", RF18_In_Word,     19, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{    M00_PwrStat,    "Module Power Status",   03_In_Word,     28, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
+{    M01_PwrStat,    "Module Power Status",   03_In_Word,     78, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
+{    M02_PwrStat,    "Module Power Status",   04_In_Word,     28, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
+{    M03_PwrStat,    "Module Power Status",   04_In_Word,     78, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
+{    M04_PwrStat,    "Module Power Status",   05_In_Word,     28, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
+{    M05_PwrStat,    "Module Power Status",   05_In_Word,     78, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
+{    M06_PwrStat,    "Module Power Status",   06_In_Word,     28, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
+{    M07_PwrStat,    "Module Power Status",   06_In_Word,     78, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
+{    M08_PwrStat,    "Module Power Status",   07_In_Word,     28, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
+{    M09_PwrStat,    "Module Power Status",   07_In_Word,     78, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
+{    M10_PwrStat,    "Module Power Status",   08_In_Word,     28, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
+{    M11_PwrStat,    "Module Power Status",   08_In_Word,     78, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
+{    M12_PwrStat,    "Module Power Status",   09_In_Word,     28, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
+{    M13_PwrStat,    "Module Power Status",   09_In_Word,     78, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
+{    M14_PwrStat,    "Module Power Status",   10_In_Word,     28, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
+{    M15_PwrStat,    "Module Power Status",   10_In_Word,     78, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
+{    M16_PwrStat,    "Module Power Status",   11_In_Word,     28, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
+{    M17_PwrStat,    "Module Power Status",   11_In_Word,     78, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
+{    M18_PwrStat,    "Module Power Status",   12_In_Word,     28, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
+{    M19_PwrStat,    "Module Power Status",   12_In_Word,     78, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
+{    M20_PwrStat,    "Module Power Status",   13_In_Word,     28, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
+{    M21_PwrStat,    "Module Power Status",   13_In_Word,     78, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
+{    M22_PwrStat,    "Module Power Status",   14_In_Word,     28, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
+{    M23_PwrStat,    "Module Power Status",   14_In_Word,     78, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
+{    M24_PwrStat,    "Module Power Status",   15_In_Word,     28, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
+{    M25_PwrStat,    "Module Power Status",   15_In_Word,     78, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
+{    M26_PwrStat,    "Module Power Status",   16_In_Word,     28, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
+{    M27_PwrStat,    "Module Power Status",   16_In_Word,     78, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
+{    M28_PwrStat,    "Module Power Status",   17_In_Word,     28, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
+{    M29_PwrStat,    "Module Power Status",   17_In_Word,     78, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
+{    M30_PwrStat,    "Module Power Status",   18_In_Word,     28, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
 }
 
 file "longin_custom.template" {
 pattern
-{              R,          PORT, OFFSET,   EGU,       SCAN}
-{   M00:HiADWarn,  RF03_In_Word,      8,    "", "I/O Intr"}
-{   M01:HiADWarn,  RF03_In_Word,     58,    "", "I/O Intr"}
-{   M02:HiADWarn,  RF04_In_Word,      8,    "", "I/O Intr"}
-{   M03:HiADWarn,  RF04_In_Word,     58,    "", "I/O Intr"}
-{   M04:HiADWarn,  RF05_In_Word,      8,    "", "I/O Intr"}
-{   M05:HiADWarn,  RF05_In_Word,     58,    "", "I/O Intr"}
-{   M06:HiADWarn,  RF06_In_Word,      8,    "", "I/O Intr"}
-{   M07:HiADWarn,  RF06_In_Word,     58,    "", "I/O Intr"}
-{   M08:HiADWarn,  RF07_In_Word,      8,    "", "I/O Intr"}
-{   M09:HiADWarn,  RF07_In_Word,     58,    "", "I/O Intr"}
-{   M10:HiADWarn,  RF08_In_Word,      8,    "", "I/O Intr"}
-{   M11:HiADWarn,  RF08_In_Word,     58,    "", "I/O Intr"}
-{   M12:HiADWarn,  RF09_In_Word,      8,    "", "I/O Intr"}
-{   M13:HiADWarn,  RF09_In_Word,     58,    "", "I/O Intr"}
-{   M14:HiADWarn,  RF10_In_Word,      8,    "", "I/O Intr"}
-{   M15:HiADWarn,  RF10_In_Word,     58,    "", "I/O Intr"}
-{   M16:HiADWarn,  RF11_In_Word,      8,    "", "I/O Intr"}
-{   M17:HiADWarn,  RF11_In_Word,     58,    "", "I/O Intr"}
-{   M18:HiADWarn,  RF12_In_Word,      8,    "", "I/O Intr"}
-{   M19:HiADWarn,  RF12_In_Word,     58,    "", "I/O Intr"}
-{   M20:HiADWarn,  RF13_In_Word,      8,    "", "I/O Intr"}
-{   M21:HiADWarn,  RF13_In_Word,     58,    "", "I/O Intr"}
-{   M22:HiADWarn,  RF14_In_Word,      8,    "", "I/O Intr"}
-{   M23:HiADWarn,  RF14_In_Word,     58,    "", "I/O Intr"}
-{   M24:HiADWarn,  RF15_In_Word,      8,    "", "I/O Intr"}
-{   M25:HiADWarn,  RF15_In_Word,     58,    "", "I/O Intr"}
-{   M26:HiADWarn,  RF16_In_Word,      8,    "", "I/O Intr"}
-{   M27:HiADWarn,  RF16_In_Word,     58,    "", "I/O Intr"}
-{   M28:HiADWarn,  RF17_In_Word,      8,    "", "I/O Intr"}
-{   M29:HiADWarn,  RF17_In_Word,     58,    "", "I/O Intr"}
-{   M30:HiADWarn,  RF18_In_Word,      8,    "", "I/O Intr"}
-{   M00:LoADWarn,  RF03_In_Word,     18,    "", "I/O Intr"}
-{   M01:LoADWarn,  RF03_In_Word,     68,    "", "I/O Intr"}
-{   M02:LoADWarn,  RF04_In_Word,     18,    "", "I/O Intr"}
-{   M03:LoADWarn,  RF04_In_Word,     68,    "", "I/O Intr"}
-{   M04:LoADWarn,  RF05_In_Word,     18,    "", "I/O Intr"}
-{   M05:LoADWarn,  RF05_In_Word,     68,    "", "I/O Intr"}
-{   M06:LoADWarn,  RF06_In_Word,     18,    "", "I/O Intr"}
-{   M07:LoADWarn,  RF06_In_Word,     68,    "", "I/O Intr"}
-{   M08:LoADWarn,  RF07_In_Word,     18,    "", "I/O Intr"}
-{   M09:LoADWarn,  RF07_In_Word,     68,    "", "I/O Intr"}
-{   M10:LoADWarn,  RF08_In_Word,     18,    "", "I/O Intr"}
-{   M11:LoADWarn,  RF08_In_Word,     68,    "", "I/O Intr"}
-{   M12:LoADWarn,  RF09_In_Word,     18,    "", "I/O Intr"}
-{   M13:LoADWarn,  RF09_In_Word,     68,    "", "I/O Intr"}
-{   M14:LoADWarn,  RF10_In_Word,     18,    "", "I/O Intr"}
-{   M15:LoADWarn,  RF10_In_Word,     68,    "", "I/O Intr"}
-{   M16:LoADWarn,  RF11_In_Word,     18,    "", "I/O Intr"}
-{   M17:LoADWarn,  RF11_In_Word,     68,    "", "I/O Intr"}
-{   M18:LoADWarn,  RF12_In_Word,     18,    "", "I/O Intr"}
-{   M19:LoADWarn,  RF12_In_Word,     68,    "", "I/O Intr"}
-{   M20:LoADWarn,  RF13_In_Word,     18,    "", "I/O Intr"}
-{   M21:LoADWarn,  RF13_In_Word,     68,    "", "I/O Intr"}
-{   M22:LoADWarn,  RF14_In_Word,     18,    "", "I/O Intr"}
-{   M23:LoADWarn,  RF14_In_Word,     68,    "", "I/O Intr"}
-{   M24:LoADWarn,  RF15_In_Word,     18,    "", "I/O Intr"}
-{   M25:LoADWarn,  RF15_In_Word,     68,    "", "I/O Intr"}
-{   M26:LoADWarn,  RF16_In_Word,     18,    "", "I/O Intr"}
-{   M27:LoADWarn,  RF16_In_Word,     68,    "", "I/O Intr"}
-{   M28:LoADWarn,  RF17_In_Word,     18,    "", "I/O Intr"}
-{   M29:LoADWarn,  RF17_In_Word,     68,    "", "I/O Intr"}
-{   M30:LoADWarn,  RF18_In_Word,     18,    "", "I/O Intr"}
-{  M00:IO1IntMon,  RF03_In_Word,     22,    "", "I/O Intr"}
-{  M01:IO1IntMon,  RF03_In_Word,     72,    "", "I/O Intr"}
-{  M02:IO1IntMon,  RF04_In_Word,     22,    "", "I/O Intr"}
-{  M03:IO1IntMon,  RF04_In_Word,     72,    "", "I/O Intr"}
-{  M04:IO1IntMon,  RF05_In_Word,     22,    "", "I/O Intr"}
-{  M05:IO1IntMon,  RF05_In_Word,     72,    "", "I/O Intr"}
-{  M06:IO1IntMon,  RF06_In_Word,     22,    "", "I/O Intr"}
-{  M07:IO1IntMon,  RF06_In_Word,     72,    "", "I/O Intr"}
-{  M08:IO1IntMon,  RF07_In_Word,     22,    "", "I/O Intr"}
-{  M09:IO1IntMon,  RF07_In_Word,     72,    "", "I/O Intr"}
-{  M10:IO1IntMon,  RF08_In_Word,     22,    "", "I/O Intr"}
-{  M11:IO1IntMon,  RF08_In_Word,     72,    "", "I/O Intr"}
-{  M12:IO1IntMon,  RF09_In_Word,     22,    "", "I/O Intr"}
-{  M13:IO1IntMon,  RF09_In_Word,     72,    "", "I/O Intr"}
-{  M14:IO1IntMon,  RF10_In_Word,     22,    "", "I/O Intr"}
-{  M15:IO1IntMon,  RF10_In_Word,     72,    "", "I/O Intr"}
-{  M16:IO1IntMon,  RF11_In_Word,     22,    "", "I/O Intr"}
-{  M17:IO1IntMon,  RF11_In_Word,     72,    "", "I/O Intr"}
-{  M18:IO1IntMon,  RF12_In_Word,     22,    "", "I/O Intr"}
-{  M19:IO1IntMon,  RF12_In_Word,     72,    "", "I/O Intr"}
-{  M20:IO1IntMon,  RF13_In_Word,     22,    "", "I/O Intr"}
-{  M21:IO1IntMon,  RF13_In_Word,     72,    "", "I/O Intr"}
-{  M22:IO1IntMon,  RF14_In_Word,     22,    "", "I/O Intr"}
-{  M23:IO1IntMon,  RF14_In_Word,     72,    "", "I/O Intr"}
-{  M24:IO1IntMon,  RF15_In_Word,     22,    "", "I/O Intr"}
-{  M25:IO1IntMon,  RF15_In_Word,     72,    "", "I/O Intr"}
-{  M26:IO1IntMon,  RF16_In_Word,     22,    "", "I/O Intr"}
-{  M27:IO1IntMon,  RF16_In_Word,     72,    "", "I/O Intr"}
-{  M28:IO1IntMon,  RF17_In_Word,     22,    "", "I/O Intr"}
-{  M29:IO1IntMon,  RF17_In_Word,     72,    "", "I/O Intr"}
-{  M30:IO1IntMon,  RF18_In_Word,     22,    "", "I/O Intr"}
-{  M00:IO1WrnMon,  RF03_In_Word,     25,    "", "I/O Intr"}
-{  M01:IO1WrnMon,  RF03_In_Word,     75,    "", "I/O Intr"}
-{  M02:IO1WrnMon,  RF04_In_Word,     25,    "", "I/O Intr"}
-{  M03:IO1WrnMon,  RF04_In_Word,     75,    "", "I/O Intr"}
-{  M04:IO1WrnMon,  RF05_In_Word,     25,    "", "I/O Intr"}
-{  M05:IO1WrnMon,  RF05_In_Word,     75,    "", "I/O Intr"}
-{  M06:IO1WrnMon,  RF06_In_Word,     25,    "", "I/O Intr"}
-{  M07:IO1WrnMon,  RF06_In_Word,     75,    "", "I/O Intr"}
-{  M08:IO1WrnMon,  RF07_In_Word,     25,    "", "I/O Intr"}
-{  M09:IO1WrnMon,  RF07_In_Word,     75,    "", "I/O Intr"}
-{  M10:IO1WrnMon,  RF08_In_Word,     25,    "", "I/O Intr"}
-{  M11:IO1WrnMon,  RF08_In_Word,     75,    "", "I/O Intr"}
-{  M12:IO1WrnMon,  RF09_In_Word,     25,    "", "I/O Intr"}
-{  M13:IO1WrnMon,  RF09_In_Word,     75,    "", "I/O Intr"}
-{  M14:IO1WrnMon,  RF10_In_Word,     25,    "", "I/O Intr"}
-{  M15:IO1WrnMon,  RF10_In_Word,     75,    "", "I/O Intr"}
-{  M16:IO1WrnMon,  RF11_In_Word,     25,    "", "I/O Intr"}
-{  M17:IO1WrnMon,  RF11_In_Word,     75,    "", "I/O Intr"}
-{  M18:IO1WrnMon,  RF12_In_Word,     25,    "", "I/O Intr"}
-{  M19:IO1WrnMon,  RF12_In_Word,     75,    "", "I/O Intr"}
-{  M20:IO1WrnMon,  RF13_In_Word,     25,    "", "I/O Intr"}
-{  M21:IO1WrnMon,  RF13_In_Word,     75,    "", "I/O Intr"}
-{  M22:IO1WrnMon,  RF14_In_Word,     25,    "", "I/O Intr"}
-{  M23:IO1WrnMon,  RF14_In_Word,     75,    "", "I/O Intr"}
-{  M24:IO1WrnMon,  RF15_In_Word,     25,    "", "I/O Intr"}
-{  M25:IO1WrnMon,  RF15_In_Word,     75,    "", "I/O Intr"}
-{  M26:IO1WrnMon,  RF16_In_Word,     25,    "", "I/O Intr"}
-{  M27:IO1WrnMon,  RF16_In_Word,     75,    "", "I/O Intr"}
-{  M28:IO1WrnMon,  RF17_In_Word,     25,    "", "I/O Intr"}
-{  M29:IO1WrnMon,  RF17_In_Word,     75,    "", "I/O Intr"}
-{  M30:IO1WrnMon,  RF18_In_Word,     25,    "", "I/O Intr"}
-{  M00:IO2WrnMon,  RF03_In_Word,     26,    "", "I/O Intr"}
-{  M01:IO2WrnMon,  RF03_In_Word,     76,    "", "I/O Intr"}
-{  M02:IO2WrnMon,  RF04_In_Word,     26,    "", "I/O Intr"}
-{  M03:IO2WrnMon,  RF04_In_Word,     76,    "", "I/O Intr"}
-{  M04:IO2WrnMon,  RF05_In_Word,     26,    "", "I/O Intr"}
-{  M05:IO2WrnMon,  RF05_In_Word,     76,    "", "I/O Intr"}
-{  M06:IO2WrnMon,  RF06_In_Word,     26,    "", "I/O Intr"}
-{  M07:IO2WrnMon,  RF06_In_Word,     76,    "", "I/O Intr"}
-{  M08:IO2WrnMon,  RF07_In_Word,     26,    "", "I/O Intr"}
-{  M09:IO2WrnMon,  RF07_In_Word,     76,    "", "I/O Intr"}
-{  M10:IO2WrnMon,  RF08_In_Word,     26,    "", "I/O Intr"}
-{  M11:IO2WrnMon,  RF08_In_Word,     76,    "", "I/O Intr"}
-{  M12:IO2WrnMon,  RF09_In_Word,     26,    "", "I/O Intr"}
-{  M13:IO2WrnMon,  RF09_In_Word,     76,    "", "I/O Intr"}
-{  M14:IO2WrnMon,  RF10_In_Word,     26,    "", "I/O Intr"}
-{  M15:IO2WrnMon,  RF10_In_Word,     76,    "", "I/O Intr"}
-{  M16:IO2WrnMon,  RF11_In_Word,     26,    "", "I/O Intr"}
-{  M17:IO2WrnMon,  RF11_In_Word,     76,    "", "I/O Intr"}
-{  M18:IO2WrnMon,  RF12_In_Word,     26,    "", "I/O Intr"}
-{  M19:IO2WrnMon,  RF12_In_Word,     76,    "", "I/O Intr"}
-{  M20:IO2WrnMon,  RF13_In_Word,     26,    "", "I/O Intr"}
-{  M21:IO2WrnMon,  RF13_In_Word,     76,    "", "I/O Intr"}
-{  M22:IO2WrnMon,  RF14_In_Word,     26,    "", "I/O Intr"}
-{  M23:IO2WrnMon,  RF14_In_Word,     76,    "", "I/O Intr"}
-{  M24:IO2WrnMon,  RF15_In_Word,     26,    "", "I/O Intr"}
-{  M25:IO2WrnMon,  RF15_In_Word,     76,    "", "I/O Intr"}
-{  M26:IO2WrnMon,  RF16_In_Word,     26,    "", "I/O Intr"}
-{  M27:IO2WrnMon,  RF16_In_Word,     76,    "", "I/O Intr"}
-{  M28:IO2WrnMon,  RF17_In_Word,     26,    "", "I/O Intr"}
-{  M29:IO2WrnMon,  RF17_In_Word,     76,    "", "I/O Intr"}
-{  M30:IO2WrnMon,  RF18_In_Word,     26,    "", "I/O Intr"}
+{              R,                     DESC,         PORT, OFFSET,   LOLO,    LOW,   HIGH,   HIHI,     LLSV,      LSV,      HSV,     HHSV,   EGU,       SCAN}
+{   M00_HiADWarn,         "Hi A/D Warning", RF03_In_Word,      8,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M01_HiADWarn,         "Hi A/D Warning", RF03_In_Word,     58,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M02_HiADWarn,         "Hi A/D Warning", RF04_In_Word,      8,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M03_HiADWarn,         "Hi A/D Warning", RF04_In_Word,     58,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M04_HiADWarn,         "Hi A/D Warning", RF05_In_Word,      8,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M05_HiADWarn,         "Hi A/D Warning", RF05_In_Word,     58,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M06_HiADWarn,         "Hi A/D Warning", RF06_In_Word,      8,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M07_HiADWarn,         "Hi A/D Warning", RF06_In_Word,     58,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M08_HiADWarn,         "Hi A/D Warning", RF07_In_Word,      8,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M09_HiADWarn,         "Hi A/D Warning", RF07_In_Word,     58,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M10_HiADWarn,         "Hi A/D Warning", RF08_In_Word,      8,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M11_HiADWarn,         "Hi A/D Warning", RF08_In_Word,     58,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M12_HiADWarn,         "Hi A/D Warning", RF09_In_Word,      8,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M13_HiADWarn,         "Hi A/D Warning", RF09_In_Word,     58,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M14_HiADWarn,         "Hi A/D Warning", RF10_In_Word,      8,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M15_HiADWarn,         "Hi A/D Warning", RF10_In_Word,     58,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M16_HiADWarn,         "Hi A/D Warning", RF11_In_Word,      8,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M17_HiADWarn,         "Hi A/D Warning", RF11_In_Word,     58,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M18_HiADWarn,         "Hi A/D Warning", RF12_In_Word,      8,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M19_HiADWarn,         "Hi A/D Warning", RF12_In_Word,     58,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M20_HiADWarn,         "Hi A/D Warning", RF13_In_Word,      8,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M21_HiADWarn,         "Hi A/D Warning", RF13_In_Word,     58,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M22_HiADWarn,         "Hi A/D Warning", RF14_In_Word,      8,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M23_HiADWarn,         "Hi A/D Warning", RF14_In_Word,     58,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M24_HiADWarn,         "Hi A/D Warning", RF15_In_Word,      8,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M25_HiADWarn,         "Hi A/D Warning", RF15_In_Word,     58,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M26_HiADWarn,         "Hi A/D Warning", RF16_In_Word,      8,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M27_HiADWarn,         "Hi A/D Warning", RF16_In_Word,     58,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M28_HiADWarn,         "Hi A/D Warning", RF17_In_Word,      8,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M29_HiADWarn,         "Hi A/D Warning", RF17_In_Word,     58,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M30_HiADWarn,         "Hi A/D Warning", RF18_In_Word,      8,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M00_LoADWarn,         "Lo A/D Warning", RF03_In_Word,     18,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M01_LoADWarn,         "Lo A/D Warning", RF03_In_Word,     68,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M02_LoADWarn,         "Lo A/D Warning", RF04_In_Word,     18,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M03_LoADWarn,         "Lo A/D Warning", RF04_In_Word,     68,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M04_LoADWarn,         "Lo A/D Warning", RF05_In_Word,     18,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M05_LoADWarn,         "Lo A/D Warning", RF05_In_Word,     68,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M06_LoADWarn,         "Lo A/D Warning", RF06_In_Word,     18,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M07_LoADWarn,         "Lo A/D Warning", RF06_In_Word,     68,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M08_LoADWarn,         "Lo A/D Warning", RF07_In_Word,     18,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M09_LoADWarn,         "Lo A/D Warning", RF07_In_Word,     68,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M10_LoADWarn,         "Lo A/D Warning", RF08_In_Word,     18,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M11_LoADWarn,         "Lo A/D Warning", RF08_In_Word,     68,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M12_LoADWarn,         "Lo A/D Warning", RF09_In_Word,     18,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M13_LoADWarn,         "Lo A/D Warning", RF09_In_Word,     68,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M14_LoADWarn,         "Lo A/D Warning", RF10_In_Word,     18,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M15_LoADWarn,         "Lo A/D Warning", RF10_In_Word,     68,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M16_LoADWarn,         "Lo A/D Warning", RF11_In_Word,     18,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M17_LoADWarn,         "Lo A/D Warning", RF11_In_Word,     68,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M18_LoADWarn,         "Lo A/D Warning", RF12_In_Word,     18,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M19_LoADWarn,         "Lo A/D Warning", RF12_In_Word,     68,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M20_LoADWarn,         "Lo A/D Warning", RF13_In_Word,     18,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M21_LoADWarn,         "Lo A/D Warning", RF13_In_Word,     68,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M22_LoADWarn,         "Lo A/D Warning", RF14_In_Word,     18,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M23_LoADWarn,         "Lo A/D Warning", RF14_In_Word,     68,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M24_LoADWarn,         "Lo A/D Warning", RF15_In_Word,     18,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M25_LoADWarn,         "Lo A/D Warning", RF15_In_Word,     68,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M26_LoADWarn,         "Lo A/D Warning", RF16_In_Word,     18,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M27_LoADWarn,         "Lo A/D Warning", RF16_In_Word,     68,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M28_LoADWarn,         "Lo A/D Warning", RF17_In_Word,     18,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M29_LoADWarn,         "Lo A/D Warning", RF17_In_Word,     68,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M30_LoADWarn,         "Lo A/D Warning", RF18_In_Word,     18,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M00_IO1Intlk,        "I/O 1 Interlock", RF03_In_Word,     22,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M01_IO1Intlk,        "I/O 1 Interlock", RF03_In_Word,     72,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M02_IO1Intlk,        "I/O 1 Interlock", RF04_In_Word,     22,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M03_IO1Intlk,        "I/O 1 Interlock", RF04_In_Word,     72,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M04_IO1Intlk,        "I/O 1 Interlock", RF05_In_Word,     22,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M05_IO1Intlk,        "I/O 1 Interlock", RF05_In_Word,     72,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M06_IO1Intlk,        "I/O 1 Interlock", RF06_In_Word,     22,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M07_IO1Intlk,        "I/O 1 Interlock", RF06_In_Word,     72,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M08_IO1Intlk,        "I/O 1 Interlock", RF07_In_Word,     22,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M09_IO1Intlk,        "I/O 1 Interlock", RF07_In_Word,     72,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M10_IO1Intlk,        "I/O 1 Interlock", RF08_In_Word,     22,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M11_IO1Intlk,        "I/O 1 Interlock", RF08_In_Word,     72,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M12_IO1Intlk,        "I/O 1 Interlock", RF09_In_Word,     22,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M13_IO1Intlk,        "I/O 1 Interlock", RF09_In_Word,     72,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M14_IO1Intlk,        "I/O 1 Interlock", RF10_In_Word,     22,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M15_IO1Intlk,        "I/O 1 Interlock", RF10_In_Word,     72,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M16_IO1Intlk,        "I/O 1 Interlock", RF11_In_Word,     22,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M17_IO1Intlk,        "I/O 1 Interlock", RF11_In_Word,     72,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M18_IO1Intlk,        "I/O 1 Interlock", RF12_In_Word,     22,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M19_IO1Intlk,        "I/O 1 Interlock", RF12_In_Word,     72,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M20_IO1Intlk,        "I/O 1 Interlock", RF13_In_Word,     22,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M21_IO1Intlk,        "I/O 1 Interlock", RF13_In_Word,     72,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M22_IO1Intlk,        "I/O 1 Interlock", RF14_In_Word,     22,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M23_IO1Intlk,        "I/O 1 Interlock", RF14_In_Word,     72,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M24_IO1Intlk,        "I/O 1 Interlock", RF15_In_Word,     22,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M25_IO1Intlk,        "I/O 1 Interlock", RF15_In_Word,     72,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M26_IO1Intlk,        "I/O 1 Interlock", RF16_In_Word,     22,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M27_IO1Intlk,        "I/O 1 Interlock", RF16_In_Word,     72,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M28_IO1Intlk,        "I/O 1 Interlock", RF17_In_Word,     22,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M29_IO1Intlk,        "I/O 1 Interlock", RF17_In_Word,     72,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{   M30_IO1Intlk,        "I/O 1 Interlock", RF18_In_Word,     22,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M00_IO1Warn,          "I/O 1 Warning", RF03_In_Word,     25,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M01_IO1Warn,          "I/O 1 Warning", RF03_In_Word,     75,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M02_IO1Warn,          "I/O 1 Warning", RF04_In_Word,     25,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M03_IO1Warn,          "I/O 1 Warning", RF04_In_Word,     75,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M04_IO1Warn,          "I/O 1 Warning", RF05_In_Word,     25,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M05_IO1Warn,          "I/O 1 Warning", RF05_In_Word,     75,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M06_IO1Warn,          "I/O 1 Warning", RF06_In_Word,     25,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M07_IO1Warn,          "I/O 1 Warning", RF06_In_Word,     75,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M08_IO1Warn,          "I/O 1 Warning", RF07_In_Word,     25,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M09_IO1Warn,          "I/O 1 Warning", RF07_In_Word,     75,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M10_IO1Warn,          "I/O 1 Warning", RF08_In_Word,     25,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M11_IO1Warn,          "I/O 1 Warning", RF08_In_Word,     75,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M12_IO1Warn,          "I/O 1 Warning", RF09_In_Word,     25,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M13_IO1Warn,          "I/O 1 Warning", RF09_In_Word,     75,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M14_IO1Warn,          "I/O 1 Warning", RF10_In_Word,     25,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M15_IO1Warn,          "I/O 1 Warning", RF10_In_Word,     75,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M16_IO1Warn,          "I/O 1 Warning", RF11_In_Word,     25,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M17_IO1Warn,          "I/O 1 Warning", RF11_In_Word,     75,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M18_IO1Warn,          "I/O 1 Warning", RF12_In_Word,     25,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M19_IO1Warn,          "I/O 1 Warning", RF12_In_Word,     75,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M20_IO1Warn,          "I/O 1 Warning", RF13_In_Word,     25,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M21_IO1Warn,          "I/O 1 Warning", RF13_In_Word,     75,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M22_IO1Warn,          "I/O 1 Warning", RF14_In_Word,     25,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M23_IO1Warn,          "I/O 1 Warning", RF14_In_Word,     75,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M24_IO1Warn,          "I/O 1 Warning", RF15_In_Word,     25,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M25_IO1Warn,          "I/O 1 Warning", RF15_In_Word,     75,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M26_IO1Warn,          "I/O 1 Warning", RF16_In_Word,     25,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M27_IO1Warn,          "I/O 1 Warning", RF16_In_Word,     75,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M28_IO1Warn,          "I/O 1 Warning", RF17_In_Word,     25,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M29_IO1Warn,          "I/O 1 Warning", RF17_In_Word,     75,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M30_IO1Warn,          "I/O 1 Warning", RF18_In_Word,     25,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M00_IO2Warn,          "I/O 2 Warning", RF03_In_Word,     26,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M01_IO2Warn,          "I/O 2 Warning", RF03_In_Word,     76,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M02_IO2Warn,          "I/O 2 Warning", RF04_In_Word,     26,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M03_IO2Warn,          "I/O 2 Warning", RF04_In_Word,     76,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M04_IO2Warn,          "I/O 2 Warning", RF05_In_Word,     26,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M05_IO2Warn,          "I/O 2 Warning", RF05_In_Word,     76,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M06_IO2Warn,          "I/O 2 Warning", RF06_In_Word,     26,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M07_IO2Warn,          "I/O 2 Warning", RF06_In_Word,     76,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M08_IO2Warn,          "I/O 2 Warning", RF07_In_Word,     26,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M09_IO2Warn,          "I/O 2 Warning", RF07_In_Word,     76,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M10_IO2Warn,          "I/O 2 Warning", RF08_In_Word,     26,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M11_IO2Warn,          "I/O 2 Warning", RF08_In_Word,     76,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M12_IO2Warn,          "I/O 2 Warning", RF09_In_Word,     26,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M13_IO2Warn,          "I/O 2 Warning", RF09_In_Word,     76,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M14_IO2Warn,          "I/O 2 Warning", RF10_In_Word,     26,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M15_IO2Warn,          "I/O 2 Warning", RF10_In_Word,     76,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M16_IO2Warn,          "I/O 2 Warning", RF11_In_Word,     26,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M17_IO2Warn,          "I/O 2 Warning", RF11_In_Word,     76,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M18_IO2Warn,          "I/O 2 Warning", RF12_In_Word,     26,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M19_IO2Warn,          "I/O 2 Warning", RF12_In_Word,     76,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M20_IO2Warn,          "I/O 2 Warning", RF13_In_Word,     26,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M21_IO2Warn,          "I/O 2 Warning", RF13_In_Word,     76,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M22_IO2Warn,          "I/O 2 Warning", RF14_In_Word,     26,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M23_IO2Warn,          "I/O 2 Warning", RF14_In_Word,     76,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M24_IO2Warn,          "I/O 2 Warning", RF15_In_Word,     26,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M25_IO2Warn,          "I/O 2 Warning", RF15_In_Word,     76,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M26_IO2Warn,          "I/O 2 Warning", RF16_In_Word,     26,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M27_IO2Warn,          "I/O 2 Warning", RF16_In_Word,     76,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M28_IO2Warn,          "I/O 2 Warning", RF17_In_Word,     26,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M29_IO2Warn,          "I/O 2 Warning", RF17_In_Word,     76,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
+{    M30_IO2Warn,          "I/O 2 Warning", RF18_In_Word,     26,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}
 }
 
-file "ai_slope_autosave.template" {
+file "ai_slope.template" {
 pattern
-{              R,          PORT, OFFSET,    EOFF,   ESLO, PREC,     EGU,       SCAN}
-{  M00:PwrOutFwd,  RF02_In_Word,     99,     0.0,    1.0,    1,      "", "I/O Intr"}
-{  M01:PwrOutFwd,  RF03_In_Word,     49,     0.0,    1.0,    1,      "", "I/O Intr"}
-{  M02:PwrOutFwd,  RF03_In_Word,     99,     0.0,    1.0,    1,      "", "I/O Intr"}
-{  M03:PwrOutFwd,  RF04_In_Word,     49,     0.0,    1.0,    1,      "", "I/O Intr"}
-{  M04:PwrOutFwd,  RF04_In_Word,     99,     0.0,    1.0,    1,      "", "I/O Intr"}
-{  M05:PwrOutFwd,  RF05_In_Word,     49,     0.0,    1.0,    1,      "", "I/O Intr"}
-{  M06:PwrOutFwd,  RF05_In_Word,     99,     0.0,    1.0,    1,      "", "I/O Intr"}
-{  M07:PwrOutFwd,  RF06_In_Word,     49,     0.0,    1.0,    1,      "", "I/O Intr"}
-{  M08:PwrOutFwd,  RF06_In_Word,     99,     0.0,    1.0,    1,      "", "I/O Intr"}
-{  M09:PwrOutFwd,  RF07_In_Word,     49,     0.0,    1.0,    1,      "", "I/O Intr"}
-{  M10:PwrOutFwd,  RF07_In_Word,     99,     0.0,    1.0,    1,      "", "I/O Intr"}
-{  M11:PwrOutFwd,  RF08_In_Word,     49,     0.0,    1.0,    1,      "", "I/O Intr"}
-{  M12:PwrOutFwd,  RF08_In_Word,     99,     0.0,    1.0,    1,      "", "I/O Intr"}
-{  M13:PwrOutFwd,  RF09_In_Word,     49,     0.0,    1.0,    1,      "", "I/O Intr"}
-{  M14:PwrOutFwd,  RF09_In_Word,     99,     0.0,    1.0,    1,      "", "I/O Intr"}
-{  M15:PwrOutFwd,  RF10_In_Word,     49,     0.0,    1.0,    1,      "", "I/O Intr"}
-{  M16:PwrOutFwd,  RF10_In_Word,     99,     0.0,    1.0,    1,      "", "I/O Intr"}
-{  M17:PwrOutFwd,  RF11_In_Word,     49,     0.0,    1.0,    1,      "", "I/O Intr"}
-{  M18:PwrOutFwd,  RF11_In_Word,     99,     0.0,    1.0,    1,      "", "I/O Intr"}
-{  M19:PwrOutFwd,  RF12_In_Word,     49,     0.0,    1.0,    1,      "", "I/O Intr"}
-{  M20:PwrOutFwd,  RF12_In_Word,     99,     0.0,    1.0,    1,      "", "I/O Intr"}
-{  M21:PwrOutFwd,  RF13_In_Word,     49,     0.0,    1.0,    1,      "", "I/O Intr"}
-{  M22:PwrOutFwd,  RF13_In_Word,     99,     0.0,    1.0,    1,      "", "I/O Intr"}
-{  M23:PwrOutFwd,  RF14_In_Word,     49,     0.0,    1.0,    1,      "", "I/O Intr"}
-{  M24:PwrOutFwd,  RF14_In_Word,     99,     0.0,    1.0,    1,      "", "I/O Intr"}
-{  M25:PwrOutFwd,  RF15_In_Word,     49,     0.0,    1.0,    1,      "", "I/O Intr"}
-{  M26:PwrOutFwd,  RF15_In_Word,     99,     0.0,    1.0,    1,      "", "I/O Intr"}
-{  M27:PwrOutFwd,  RF16_In_Word,     49,     0.0,    1.0,    1,      "", "I/O Intr"}
-{  M28:PwrOutFwd,  RF16_In_Word,     99,     0.0,    1.0,    1,      "", "I/O Intr"}
-{  M29:PwrOutFwd,  RF17_In_Word,     49,     0.0,    1.0,    1,      "", "I/O Intr"}
-{  M30:PwrOutFwd,  RF17_In_Word,     99,     0.0,    1.0,    1,      "", "I/O Intr"}
-{     M00:PwrRef,  RF02_In_Word,      0,     0.0,    1.0,    1,      "", "I/O Intr"}
-{     M01:PwrRef,  RF03_In_Word,     50,     0.0,    1.0,    1,      "", "I/O Intr"}
-{     M02:PwrRef,  RF03_In_Word,      0,     0.0,    1.0,    1,      "", "I/O Intr"}
-{     M03:PwrRef,  RF04_In_Word,     50,     0.0,    1.0,    1,      "", "I/O Intr"}
-{     M04:PwrRef,  RF04_In_Word,      0,     0.0,    1.0,    1,      "", "I/O Intr"}
-{     M05:PwrRef,  RF05_In_Word,     50,     0.0,    1.0,    1,      "", "I/O Intr"}
-{     M06:PwrRef,  RF05_In_Word,      0,     0.0,    1.0,    1,      "", "I/O Intr"}
-{     M07:PwrRef,  RF06_In_Word,     50,     0.0,    1.0,    1,      "", "I/O Intr"}
-{     M08:PwrRef,  RF06_In_Word,      0,     0.0,    1.0,    1,      "", "I/O Intr"}
-{     M09:PwrRef,  RF07_In_Word,     50,     0.0,    1.0,    1,      "", "I/O Intr"}
-{     M10:PwrRef,  RF07_In_Word,      0,     0.0,    1.0,    1,      "", "I/O Intr"}
-{     M11:PwrRef,  RF08_In_Word,     50,     0.0,    1.0,    1,      "", "I/O Intr"}
-{     M12:PwrRef,  RF08_In_Word,      0,     0.0,    1.0,    1,      "", "I/O Intr"}
-{     M13:PwrRef,  RF09_In_Word,     50,     0.0,    1.0,    1,      "", "I/O Intr"}
-{     M14:PwrRef,  RF09_In_Word,      0,     0.0,    1.0,    1,      "", "I/O Intr"}
-{     M15:PwrRef,  RF10_In_Word,     50,     0.0,    1.0,    1,      "", "I/O Intr"}
-{     M16:PwrRef,  RF10_In_Word,      0,     0.0,    1.0,    1,      "", "I/O Intr"}
-{     M17:PwrRef,  RF11_In_Word,     50,     0.0,    1.0,    1,      "", "I/O Intr"}
-{     M18:PwrRef,  RF11_In_Word,      0,     0.0,    1.0,    1,      "", "I/O Intr"}
-{     M19:PwrRef,  RF12_In_Word,     50,     0.0,    1.0,    1,      "", "I/O Intr"}
-{     M20:PwrRef,  RF12_In_Word,      0,     0.0,    1.0,    1,      "", "I/O Intr"}
-{     M21:PwrRef,  RF13_In_Word,     50,     0.0,    1.0,    1,      "", "I/O Intr"}
-{     M22:PwrRef,  RF13_In_Word,      0,     0.0,    1.0,    1,      "", "I/O Intr"}
-{     M23:PwrRef,  RF14_In_Word,     50,     0.0,    1.0,    1,      "", "I/O Intr"}
-{     M24:PwrRef,  RF14_In_Word,      0,     0.0,    1.0,    1,      "", "I/O Intr"}
-{     M25:PwrRef,  RF15_In_Word,     50,     0.0,    1.0,    1,      "", "I/O Intr"}
-{     M26:PwrRef,  RF15_In_Word,      0,     0.0,    1.0,    1,      "", "I/O Intr"}
-{     M27:PwrRef,  RF16_In_Word,     50,     0.0,    1.0,    1,      "", "I/O Intr"}
-{     M28:PwrRef,  RF16_In_Word,      0,     0.0,    1.0,    1,      "", "I/O Intr"}
-{     M29:PwrRef,  RF17_In_Word,     50,     0.0,    1.0,    1,      "", "I/O Intr"}
-{     M30:PwrRef,  RF17_In_Word,      0,     0.0,    1.0,    1,      "", "I/O Intr"}
-{  M00:Dv1DrnCur,  RF03_In_Word,      1,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M01:Dv1DrnCur,  RF03_In_Word,     51,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M02:Dv1DrnCur,  RF04_In_Word,      1,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M03:Dv1DrnCur,  RF04_In_Word,     51,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M04:Dv1DrnCur,  RF05_In_Word,      1,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M05:Dv1DrnCur,  RF05_In_Word,     51,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M06:Dv1DrnCur,  RF06_In_Word,      1,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M07:Dv1DrnCur,  RF06_In_Word,     51,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M08:Dv1DrnCur,  RF07_In_Word,      1,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M09:Dv1DrnCur,  RF07_In_Word,     51,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M10:Dv1DrnCur,  RF08_In_Word,      1,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M11:Dv1DrnCur,  RF08_In_Word,     51,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M12:Dv1DrnCur,  RF09_In_Word,      1,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M13:Dv1DrnCur,  RF09_In_Word,     51,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M14:Dv1DrnCur,  RF10_In_Word,      1,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M15:Dv1DrnCur,  RF10_In_Word,     51,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M16:Dv1DrnCur,  RF11_In_Word,      1,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M17:Dv1DrnCur,  RF11_In_Word,     51,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M18:Dv1DrnCur,  RF12_In_Word,      1,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M19:Dv1DrnCur,  RF12_In_Word,     51,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M20:Dv1DrnCur,  RF13_In_Word,      1,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M21:Dv1DrnCur,  RF13_In_Word,     51,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M22:Dv1DrnCur,  RF14_In_Word,      1,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M23:Dv1DrnCur,  RF14_In_Word,     51,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M24:Dv1DrnCur,  RF15_In_Word,      1,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M25:Dv1DrnCur,  RF15_In_Word,     51,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M26:Dv1DrnCur,  RF16_In_Word,      1,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M27:Dv1DrnCur,  RF16_In_Word,     51,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M28:Dv1DrnCur,  RF17_In_Word,      1,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M29:Dv1DrnCur,  RF17_In_Word,     51,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M30:Dv1DrnCur,  RF18_In_Word,      1,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M00:Dv2DrnCur,  RF03_In_Word,      2,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M01:Dv2DrnCur,  RF03_In_Word,     52,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M02:Dv2DrnCur,  RF04_In_Word,      2,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M03:Dv2DrnCur,  RF04_In_Word,     52,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M04:Dv2DrnCur,  RF05_In_Word,      2,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M05:Dv2DrnCur,  RF05_In_Word,     52,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M06:Dv2DrnCur,  RF06_In_Word,      2,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M07:Dv2DrnCur,  RF06_In_Word,     52,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M08:Dv2DrnCur,  RF07_In_Word,      2,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M09:Dv2DrnCur,  RF07_In_Word,     52,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M10:Dv2DrnCur,  RF08_In_Word,      2,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M11:Dv2DrnCur,  RF08_In_Word,     52,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M12:Dv2DrnCur,  RF09_In_Word,      2,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M13:Dv2DrnCur,  RF09_In_Word,     52,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M14:Dv2DrnCur,  RF10_In_Word,      2,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M15:Dv2DrnCur,  RF10_In_Word,     52,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M16:Dv2DrnCur,  RF11_In_Word,      2,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M17:Dv2DrnCur,  RF11_In_Word,     52,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M18:Dv2DrnCur,  RF12_In_Word,      2,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M19:Dv2DrnCur,  RF12_In_Word,     52,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M20:Dv2DrnCur,  RF13_In_Word,      2,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M21:Dv2DrnCur,  RF13_In_Word,     52,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M22:Dv2DrnCur,  RF14_In_Word,      2,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M23:Dv2DrnCur,  RF14_In_Word,     52,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M24:Dv2DrnCur,  RF15_In_Word,      2,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M25:Dv2DrnCur,  RF15_In_Word,     52,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M26:Dv2DrnCur,  RF16_In_Word,      2,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M27:Dv2DrnCur,  RF16_In_Word,     52,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M28:Dv2DrnCur,  RF17_In_Word,      2,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M29:Dv2DrnCur,  RF17_In_Word,     52,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{  M30:Dv2DrnCur,  RF18_In_Word,      2,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M00:PS1DCCur,  RF03_In_Word,      3,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M01:PS1DCCur,  RF03_In_Word,     53,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M02:PS1DCCur,  RF04_In_Word,      3,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M03:PS1DCCur,  RF04_In_Word,     53,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M04:PS1DCCur,  RF05_In_Word,      3,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M05:PS1DCCur,  RF05_In_Word,     53,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M06:PS1DCCur,  RF06_In_Word,      3,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M07:PS1DCCur,  RF06_In_Word,     53,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M08:PS1DCCur,  RF07_In_Word,      3,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M09:PS1DCCur,  RF07_In_Word,     53,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M10:PS1DCCur,  RF08_In_Word,      3,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M11:PS1DCCur,  RF08_In_Word,     53,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M12:PS1DCCur,  RF09_In_Word,      3,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M13:PS1DCCur,  RF09_In_Word,     53,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M14:PS1DCCur,  RF10_In_Word,      3,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M15:PS1DCCur,  RF10_In_Word,     53,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M16:PS1DCCur,  RF11_In_Word,      3,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M17:PS1DCCur,  RF11_In_Word,     53,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M18:PS1DCCur,  RF12_In_Word,      3,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M19:PS1DCCur,  RF12_In_Word,     53,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M20:PS1DCCur,  RF13_In_Word,      3,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M21:PS1DCCur,  RF13_In_Word,     53,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M22:PS1DCCur,  RF14_In_Word,      3,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M23:PS1DCCur,  RF14_In_Word,     53,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M24:PS1DCCur,  RF15_In_Word,      3,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M25:PS1DCCur,  RF15_In_Word,     53,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M26:PS1DCCur,  RF16_In_Word,      3,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M27:PS1DCCur,  RF16_In_Word,     53,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M28:PS1DCCur,  RF17_In_Word,      3,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M29:PS1DCCur,  RF17_In_Word,     53,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M30:PS1DCCur,  RF18_In_Word,      3,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M00:PS2DCCur,  RF03_In_Word,      4,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M01:PS2DCCur,  RF03_In_Word,     54,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M02:PS2DCCur,  RF04_In_Word,      4,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M03:PS2DCCur,  RF04_In_Word,     54,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M04:PS2DCCur,  RF05_In_Word,      4,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M05:PS2DCCur,  RF05_In_Word,     54,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M06:PS2DCCur,  RF06_In_Word,      4,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M07:PS2DCCur,  RF06_In_Word,     54,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M08:PS2DCCur,  RF07_In_Word,      4,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M09:PS2DCCur,  RF07_In_Word,     54,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M10:PS2DCCur,  RF08_In_Word,      4,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M11:PS2DCCur,  RF08_In_Word,     54,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M12:PS2DCCur,  RF09_In_Word,      4,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M13:PS2DCCur,  RF09_In_Word,     54,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M14:PS2DCCur,  RF10_In_Word,      4,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M15:PS2DCCur,  RF10_In_Word,     54,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M16:PS2DCCur,  RF11_In_Word,      4,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M17:PS2DCCur,  RF11_In_Word,     54,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M18:PS2DCCur,  RF12_In_Word,      4,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M19:PS2DCCur,  RF12_In_Word,     54,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M20:PS2DCCur,  RF13_In_Word,      4,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M21:PS2DCCur,  RF13_In_Word,     54,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M22:PS2DCCur,  RF14_In_Word,      4,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M23:PS2DCCur,  RF14_In_Word,     54,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M24:PS2DCCur,  RF15_In_Word,      4,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M25:PS2DCCur,  RF15_In_Word,     54,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M26:PS2DCCur,  RF16_In_Word,      4,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M27:PS2DCCur,  RF16_In_Word,     54,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M28:PS2DCCur,  RF17_In_Word,      4,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M29:PS2DCCur,  RF17_In_Word,     54,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M30:PS2DCCur,  RF18_In_Word,      4,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M00:PS3DCCur,  RF03_In_Word,      5,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M01:PS3DCCur,  RF03_In_Word,     55,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M02:PS3DCCur,  RF04_In_Word,      5,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M03:PS3DCCur,  RF04_In_Word,     55,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M04:PS3DCCur,  RF05_In_Word,      5,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M05:PS3DCCur,  RF05_In_Word,     55,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M06:PS3DCCur,  RF06_In_Word,      5,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M07:PS3DCCur,  RF06_In_Word,     55,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M08:PS3DCCur,  RF07_In_Word,      5,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M09:PS3DCCur,  RF07_In_Word,     55,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M10:PS3DCCur,  RF08_In_Word,      5,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M11:PS3DCCur,  RF08_In_Word,     55,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M12:PS3DCCur,  RF09_In_Word,      5,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M13:PS3DCCur,  RF09_In_Word,     55,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M14:PS3DCCur,  RF10_In_Word,      5,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M15:PS3DCCur,  RF10_In_Word,     55,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M16:PS3DCCur,  RF11_In_Word,      5,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M17:PS3DCCur,  RF11_In_Word,     55,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M18:PS3DCCur,  RF12_In_Word,      5,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M19:PS3DCCur,  RF12_In_Word,     55,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M20:PS3DCCur,  RF13_In_Word,      5,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M21:PS3DCCur,  RF13_In_Word,     55,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M22:PS3DCCur,  RF14_In_Word,      5,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M23:PS3DCCur,  RF14_In_Word,     55,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M24:PS3DCCur,  RF15_In_Word,      5,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M25:PS3DCCur,  RF15_In_Word,     55,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M26:PS3DCCur,  RF16_In_Word,      5,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M27:PS3DCCur,  RF16_In_Word,     55,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M28:PS3DCCur,  RF17_In_Word,      5,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M29:PS3DCCur,  RF17_In_Word,     55,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{   M30:PS3DCCur,  RF18_In_Word,      5,     0.0, 0.0162,    1,     "A", "I/O Intr"}
-{    M00:DrnVolt,  RF03_In_Word,      9,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{    M01:DrnVolt,  RF03_In_Word,     59,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{    M02:DrnVolt,  RF04_In_Word,      9,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{    M03:DrnVolt,  RF04_In_Word,     59,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{    M04:DrnVolt,  RF05_In_Word,      9,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{    M05:DrnVolt,  RF05_In_Word,     59,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{    M06:DrnVolt,  RF06_In_Word,      9,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{    M07:DrnVolt,  RF06_In_Word,     59,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{    M08:DrnVolt,  RF07_In_Word,      9,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{    M09:DrnVolt,  RF07_In_Word,     59,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{    M10:DrnVolt,  RF08_In_Word,      9,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{    M11:DrnVolt,  RF08_In_Word,     59,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{    M12:DrnVolt,  RF09_In_Word,      9,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{    M13:DrnVolt,  RF09_In_Word,     59,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{    M14:DrnVolt,  RF10_In_Word,      9,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{    M15:DrnVolt,  RF10_In_Word,     59,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{    M16:DrnVolt,  RF11_In_Word,      9,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{    M17:DrnVolt,  RF11_In_Word,     59,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{    M18:DrnVolt,  RF12_In_Word,      9,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{    M19:DrnVolt,  RF12_In_Word,     59,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{    M20:DrnVolt,  RF13_In_Word,      9,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{    M21:DrnVolt,  RF13_In_Word,     59,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{    M22:DrnVolt,  RF14_In_Word,      9,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{    M23:DrnVolt,  RF14_In_Word,     59,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{    M24:DrnVolt,  RF15_In_Word,      9,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{    M25:DrnVolt,  RF15_In_Word,     59,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{    M26:DrnVolt,  RF16_In_Word,      9,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{    M27:DrnVolt,  RF16_In_Word,     59,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{    M28:DrnVolt,  RF17_In_Word,      9,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{    M29:DrnVolt,  RF17_In_Word,     59,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{    M30:DrnVolt,  RF18_In_Word,      9,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M00:PS1DCVolt,  RF03_In_Word,     11,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M01:PS1DCVolt,  RF03_In_Word,     61,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M02:PS1DCVolt,  RF04_In_Word,     11,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M03:PS1DCVolt,  RF04_In_Word,     61,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M04:PS1DCVolt,  RF05_In_Word,     11,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M05:PS1DCVolt,  RF05_In_Word,     61,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M06:PS1DCVolt,  RF06_In_Word,     11,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M07:PS1DCVolt,  RF06_In_Word,     61,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M08:PS1DCVolt,  RF07_In_Word,     11,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M09:PS1DCVolt,  RF07_In_Word,     61,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M10:PS1DCVolt,  RF08_In_Word,     11,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M11:PS1DCVolt,  RF08_In_Word,     61,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M12:PS1DCVolt,  RF09_In_Word,     11,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M13:PS1DCVolt,  RF09_In_Word,     61,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M14:PS1DCVolt,  RF10_In_Word,     11,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M15:PS1DCVolt,  RF10_In_Word,     61,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M16:PS1DCVolt,  RF11_In_Word,     11,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M17:PS1DCVolt,  RF11_In_Word,     61,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M18:PS1DCVolt,  RF12_In_Word,     11,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M19:PS1DCVolt,  RF12_In_Word,     61,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M20:PS1DCVolt,  RF13_In_Word,     11,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M21:PS1DCVolt,  RF13_In_Word,     61,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M22:PS1DCVolt,  RF14_In_Word,     11,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M23:PS1DCVolt,  RF14_In_Word,     61,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M24:PS1DCVolt,  RF15_In_Word,     11,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M25:PS1DCVolt,  RF15_In_Word,     61,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M26:PS1DCVolt,  RF16_In_Word,     11,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M27:PS1DCVolt,  RF16_In_Word,     61,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M28:PS1DCVolt,  RF17_In_Word,     11,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M29:PS1DCVolt,  RF17_In_Word,     61,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M30:PS1DCVolt,  RF18_In_Word,     11,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M00:PS2DCVolt,  RF03_In_Word,     12,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M01:PS2DCVolt,  RF03_In_Word,     62,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M02:PS2DCVolt,  RF04_In_Word,     12,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M03:PS2DCVolt,  RF04_In_Word,     62,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M04:PS2DCVolt,  RF05_In_Word,     12,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M05:PS2DCVolt,  RF05_In_Word,     62,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M06:PS2DCVolt,  RF06_In_Word,     12,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M07:PS2DCVolt,  RF06_In_Word,     62,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M08:PS2DCVolt,  RF07_In_Word,     12,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M09:PS2DCVolt,  RF07_In_Word,     62,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M10:PS2DCVolt,  RF08_In_Word,     12,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M11:PS2DCVolt,  RF08_In_Word,     62,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M12:PS2DCVolt,  RF09_In_Word,     12,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M13:PS2DCVolt,  RF09_In_Word,     62,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M14:PS2DCVolt,  RF10_In_Word,     12,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M15:PS2DCVolt,  RF10_In_Word,     62,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M16:PS2DCVolt,  RF11_In_Word,     12,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M17:PS2DCVolt,  RF11_In_Word,     62,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M18:PS2DCVolt,  RF12_In_Word,     12,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M19:PS2DCVolt,  RF12_In_Word,     62,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M20:PS2DCVolt,  RF13_In_Word,     12,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M21:PS2DCVolt,  RF13_In_Word,     62,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M22:PS2DCVolt,  RF14_In_Word,     12,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M23:PS2DCVolt,  RF14_In_Word,     62,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M24:PS2DCVolt,  RF15_In_Word,     12,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M25:PS2DCVolt,  RF15_In_Word,     62,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M26:PS2DCVolt,  RF16_In_Word,     12,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M27:PS2DCVolt,  RF16_In_Word,     62,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M28:PS2DCVolt,  RF17_In_Word,     12,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M29:PS2DCVolt,  RF17_In_Word,     62,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M30:PS2DCVolt,  RF18_In_Word,     12,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M00:PS3DCVolt,  RF03_In_Word,     13,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M01:PS3DCVolt,  RF03_In_Word,     63,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M02:PS3DCVolt,  RF04_In_Word,     13,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M03:PS3DCVolt,  RF04_In_Word,     63,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M04:PS3DCVolt,  RF05_In_Word,     13,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M05:PS3DCVolt,  RF05_In_Word,     63,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M06:PS3DCVolt,  RF06_In_Word,     13,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M07:PS3DCVolt,  RF06_In_Word,     63,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M08:PS3DCVolt,  RF07_In_Word,     13,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M09:PS3DCVolt,  RF07_In_Word,     63,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M10:PS3DCVolt,  RF08_In_Word,     13,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M11:PS3DCVolt,  RF08_In_Word,     63,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M12:PS3DCVolt,  RF09_In_Word,     13,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M13:PS3DCVolt,  RF09_In_Word,     63,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M14:PS3DCVolt,  RF10_In_Word,     13,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M15:PS3DCVolt,  RF10_In_Word,     63,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M16:PS3DCVolt,  RF11_In_Word,     13,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M17:PS3DCVolt,  RF11_In_Word,     63,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M18:PS3DCVolt,  RF12_In_Word,     13,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M19:PS3DCVolt,  RF12_In_Word,     63,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M20:PS3DCVolt,  RF13_In_Word,     13,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M21:PS3DCVolt,  RF13_In_Word,     63,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M22:PS3DCVolt,  RF14_In_Word,     13,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M23:PS3DCVolt,  RF14_In_Word,     63,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M24:PS3DCVolt,  RF15_In_Word,     13,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M25:PS3DCVolt,  RF15_In_Word,     63,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M26:PS3DCVolt,  RF16_In_Word,     13,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M27:PS3DCVolt,  RF16_In_Word,     63,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M28:PS3DCVolt,  RF17_In_Word,     13,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M29:PS3DCVolt,  RF17_In_Word,     63,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M30:PS3DCVolt,  RF18_In_Word,     13,     0.0, 0.0172,    1,   "VDC", "I/O Intr"}
-{  M00:LCWHSTemp,  RF03_In_Word,     14, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{  M01:LCWHSTemp,  RF03_In_Word,     64, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{  M02:LCWHSTemp,  RF04_In_Word,     14, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{  M03:LCWHSTemp,  RF04_In_Word,     64, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{  M04:LCWHSTemp,  RF05_In_Word,     14, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{  M05:LCWHSTemp,  RF05_In_Word,     64, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{  M06:LCWHSTemp,  RF06_In_Word,     14, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{  M07:LCWHSTemp,  RF06_In_Word,     64, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{  M08:LCWHSTemp,  RF07_In_Word,     14, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{  M09:LCWHSTemp,  RF07_In_Word,     64, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{  M10:LCWHSTemp,  RF08_In_Word,     14, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{  M11:LCWHSTemp,  RF08_In_Word,     64, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{  M12:LCWHSTemp,  RF09_In_Word,     14, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{  M13:LCWHSTemp,  RF09_In_Word,     64, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{  M14:LCWHSTemp,  RF10_In_Word,     14, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{  M15:LCWHSTemp,  RF10_In_Word,     64, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{  M16:LCWHSTemp,  RF11_In_Word,     14, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{  M17:LCWHSTemp,  RF11_In_Word,     64, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{  M18:LCWHSTemp,  RF12_In_Word,     14, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{  M19:LCWHSTemp,  RF12_In_Word,     64, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{  M20:LCWHSTemp,  RF13_In_Word,     14, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{  M21:LCWHSTemp,  RF13_In_Word,     64, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{  M22:LCWHSTemp,  RF14_In_Word,     14, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{  M23:LCWHSTemp,  RF14_In_Word,     64, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{  M24:LCWHSTemp,  RF15_In_Word,     14, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{  M25:LCWHSTemp,  RF15_In_Word,     64, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{  M26:LCWHSTemp,  RF16_In_Word,     14, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{  M27:LCWHSTemp,  RF16_In_Word,     64, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{  M28:LCWHSTemp,  RF17_In_Word,     14, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{  M29:LCWHSTemp,  RF17_In_Word,     64, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{  M30:LCWHSTemp,  RF18_In_Word,     14, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{    M00:AirTemp,  RF03_In_Word,     15, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{    M01:AirTemp,  RF03_In_Word,     65, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{    M02:AirTemp,  RF04_In_Word,     15, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{    M03:AirTemp,  RF04_In_Word,     65, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{    M04:AirTemp,  RF05_In_Word,     15, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{    M05:AirTemp,  RF05_In_Word,     65, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{    M06:AirTemp,  RF06_In_Word,     15, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{    M07:AirTemp,  RF06_In_Word,     65, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{    M08:AirTemp,  RF07_In_Word,     15, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{    M09:AirTemp,  RF07_In_Word,     65, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{    M10:AirTemp,  RF08_In_Word,     15, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{    M11:AirTemp,  RF08_In_Word,     65, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{    M12:AirTemp,  RF09_In_Word,     15, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{    M13:AirTemp,  RF09_In_Word,     65, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{    M14:AirTemp,  RF10_In_Word,     15, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{    M15:AirTemp,  RF10_In_Word,     65, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{    M16:AirTemp,  RF11_In_Word,     15, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{    M17:AirTemp,  RF11_In_Word,     65, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{    M18:AirTemp,  RF12_In_Word,     15, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{    M19:AirTemp,  RF12_In_Word,     65, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{    M20:AirTemp,  RF13_In_Word,     15, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{    M21:AirTemp,  RF13_In_Word,     65, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{    M22:AirTemp,  RF14_In_Word,     15, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{    M23:AirTemp,  RF14_In_Word,     65, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{    M24:AirTemp,  RF15_In_Word,     15, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{    M25:AirTemp,  RF15_In_Word,     65, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{    M26:AirTemp,  RF16_In_Word,     15, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{    M27:AirTemp,  RF16_In_Word,     65, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{    M28:AirTemp,  RF17_In_Word,     15, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{    M29:AirTemp,  RF17_In_Word,     65, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{    M30:AirTemp,  RF18_In_Word,     15, -39.235, 0.0392,    1,  "degC", "I/O Intr"}
-{  M00:T1FanSpd1,  RF03_In_Word,     37,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M01:T1FanSpd1,  RF03_In_Word,     87,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M02:T1FanSpd1,  RF04_In_Word,     37,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M03:T1FanSpd1,  RF04_In_Word,     87,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M04:T1FanSpd1,  RF05_In_Word,     37,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M05:T1FanSpd1,  RF05_In_Word,     87,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M06:T1FanSpd1,  RF06_In_Word,     37,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M07:T1FanSpd1,  RF06_In_Word,     87,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M08:T1FanSpd1,  RF07_In_Word,     37,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M09:T1FanSpd1,  RF07_In_Word,     87,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M10:T1FanSpd1,  RF08_In_Word,     37,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M11:T1FanSpd1,  RF08_In_Word,     87,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M12:T1FanSpd1,  RF09_In_Word,     37,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M13:T1FanSpd1,  RF09_In_Word,     87,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M14:T1FanSpd1,  RF10_In_Word,     37,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M15:T1FanSpd1,  RF10_In_Word,     87,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M16:T1FanSpd1,  RF11_In_Word,     37,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M17:T1FanSpd1,  RF11_In_Word,     87,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M18:T1FanSpd1,  RF12_In_Word,     37,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M19:T1FanSpd1,  RF12_In_Word,     87,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M20:T1FanSpd1,  RF13_In_Word,     37,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M21:T1FanSpd1,  RF13_In_Word,     87,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M22:T1FanSpd1,  RF14_In_Word,     37,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M23:T1FanSpd1,  RF14_In_Word,     87,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M24:T1FanSpd1,  RF15_In_Word,     37,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M25:T1FanSpd1,  RF15_In_Word,     87,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M26:T1FanSpd1,  RF16_In_Word,     37,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M27:T1FanSpd1,  RF16_In_Word,     87,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M28:T1FanSpd1,  RF17_In_Word,     37,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M29:T1FanSpd1,  RF17_In_Word,     87,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M30:T1FanSpd1,  RF18_In_Word,     37,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M00:T1FanSpd2,  RF03_In_Word,     38,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M01:T1FanSpd2,  RF03_In_Word,     88,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M02:T1FanSpd2,  RF04_In_Word,     38,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M03:T1FanSpd2,  RF04_In_Word,     88,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M04:T1FanSpd2,  RF05_In_Word,     38,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M05:T1FanSpd2,  RF05_In_Word,     88,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M06:T1FanSpd2,  RF06_In_Word,     38,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M07:T1FanSpd2,  RF06_In_Word,     88,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M08:T1FanSpd2,  RF07_In_Word,     38,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M09:T1FanSpd2,  RF07_In_Word,     88,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M10:T1FanSpd2,  RF08_In_Word,     38,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M11:T1FanSpd2,  RF08_In_Word,     88,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M12:T1FanSpd2,  RF09_In_Word,     38,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M13:T1FanSpd2,  RF09_In_Word,     88,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M14:T1FanSpd2,  RF10_In_Word,     38,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M15:T1FanSpd2,  RF10_In_Word,     88,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M16:T1FanSpd2,  RF11_In_Word,     38,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M17:T1FanSpd2,  RF11_In_Word,     88,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M18:T1FanSpd2,  RF12_In_Word,     38,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M19:T1FanSpd2,  RF12_In_Word,     88,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M20:T1FanSpd2,  RF13_In_Word,     38,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M21:T1FanSpd2,  RF13_In_Word,     88,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M22:T1FanSpd2,  RF14_In_Word,     38,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M23:T1FanSpd2,  RF14_In_Word,     88,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M24:T1FanSpd2,  RF15_In_Word,     38,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M25:T1FanSpd2,  RF15_In_Word,     88,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M26:T1FanSpd2,  RF16_In_Word,     38,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M27:T1FanSpd2,  RF16_In_Word,     88,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M28:T1FanSpd2,  RF17_In_Word,     38,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M29:T1FanSpd2,  RF17_In_Word,     88,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{  M30:T1FanSpd2,  RF18_In_Word,     38,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{     M00:FanSpd,  RF03_In_Word,     39,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{     M01:FanSpd,  RF03_In_Word,     89,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{     M02:FanSpd,  RF04_In_Word,     39,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{     M03:FanSpd,  RF04_In_Word,     89,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{     M04:FanSpd,  RF05_In_Word,     39,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{     M05:FanSpd,  RF05_In_Word,     89,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{     M06:FanSpd,  RF06_In_Word,     39,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{     M07:FanSpd,  RF06_In_Word,     89,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{     M08:FanSpd,  RF07_In_Word,     39,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{     M09:FanSpd,  RF07_In_Word,     89,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{     M10:FanSpd,  RF08_In_Word,     39,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{     M11:FanSpd,  RF08_In_Word,     89,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{     M12:FanSpd,  RF09_In_Word,     39,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{     M13:FanSpd,  RF09_In_Word,     89,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{     M14:FanSpd,  RF10_In_Word,     39,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{     M15:FanSpd,  RF10_In_Word,     89,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{     M16:FanSpd,  RF11_In_Word,     39,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{     M17:FanSpd,  RF11_In_Word,     89,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{     M18:FanSpd,  RF12_In_Word,     39,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{     M19:FanSpd,  RF12_In_Word,     89,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{     M20:FanSpd,  RF13_In_Word,     39,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{     M21:FanSpd,  RF13_In_Word,     89,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{     M22:FanSpd,  RF14_In_Word,     39,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{     M23:FanSpd,  RF14_In_Word,     89,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{     M24:FanSpd,  RF15_In_Word,     39,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{     M25:FanSpd,  RF15_In_Word,     89,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{     M26:FanSpd,  RF16_In_Word,     39,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{     M27:FanSpd,  RF16_In_Word,     89,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{     M28:FanSpd,  RF17_In_Word,     39,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{     M29:FanSpd,  RF17_In_Word,     89,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{     M30:FanSpd,  RF18_In_Word,     39,     0.0,    4.0,    1,   "rpm", "I/O Intr"}
-{    M00:FPGAVer,  RF03_In_Word,     48,   -11.8,    0.1,    1,      "", "I/O Intr"}
-{    M01:FPGAVer,  RF03_In_Word,     98,   -11.8,    0.1,    1,      "", "I/O Intr"}
-{    M02:FPGAVer,  RF04_In_Word,     48,   -11.8,    0.1,    1,      "", "I/O Intr"}
-{    M03:FPGAVer,  RF04_In_Word,     98,   -11.8,    0.1,    1,      "", "I/O Intr"}
-{    M04:FPGAVer,  RF05_In_Word,     48,   -11.8,    0.1,    1,      "", "I/O Intr"}
-{    M05:FPGAVer,  RF05_In_Word,     98,   -11.8,    0.1,    1,      "", "I/O Intr"}
-{    M06:FPGAVer,  RF06_In_Word,     48,   -11.8,    0.1,    1,      "", "I/O Intr"}
-{    M07:FPGAVer,  RF06_In_Word,     98,   -11.8,    0.1,    1,      "", "I/O Intr"}
-{    M08:FPGAVer,  RF07_In_Word,     48,   -11.8,    0.1,    1,      "", "I/O Intr"}
-{    M09:FPGAVer,  RF07_In_Word,     98,   -11.8,    0.1,    1,      "", "I/O Intr"}
-{    M10:FPGAVer,  RF08_In_Word,     48,   -11.8,    0.1,    1,      "", "I/O Intr"}
-{    M11:FPGAVer,  RF08_In_Word,     98,   -11.8,    0.1,    1,      "", "I/O Intr"}
-{    M12:FPGAVer,  RF09_In_Word,     48,   -11.8,    0.1,    1,      "", "I/O Intr"}
-{    M13:FPGAVer,  RF09_In_Word,     98,   -11.8,    0.1,    1,      "", "I/O Intr"}
-{    M14:FPGAVer,  RF10_In_Word,     48,   -11.8,    0.1,    1,      "", "I/O Intr"}
-{    M15:FPGAVer,  RF10_In_Word,     98,   -11.8,    0.1,    1,      "", "I/O Intr"}
-{    M16:FPGAVer,  RF11_In_Word,     48,   -11.8,    0.1,    1,      "", "I/O Intr"}
-{    M17:FPGAVer,  RF11_In_Word,     98,   -11.8,    0.1,    1,      "", "I/O Intr"}
-{    M18:FPGAVer,  RF12_In_Word,     48,   -11.8,    0.1,    1,      "", "I/O Intr"}
-{    M19:FPGAVer,  RF12_In_Word,     98,   -11.8,    0.1,    1,      "", "I/O Intr"}
-{    M20:FPGAVer,  RF13_In_Word,     48,   -11.8,    0.1,    1,      "", "I/O Intr"}
-{    M21:FPGAVer,  RF13_In_Word,     98,   -11.8,    0.1,    1,      "", "I/O Intr"}
-{    M22:FPGAVer,  RF14_In_Word,     48,   -11.8,    0.1,    1,      "", "I/O Intr"}
-{    M23:FPGAVer,  RF14_In_Word,     98,   -11.8,    0.1,    1,      "", "I/O Intr"}
-{    M24:FPGAVer,  RF15_In_Word,     48,   -11.8,    0.1,    1,      "", "I/O Intr"}
-{    M25:FPGAVer,  RF15_In_Word,     98,   -11.8,    0.1,    1,      "", "I/O Intr"}
-{    M26:FPGAVer,  RF16_In_Word,     48,   -11.8,    0.1,    1,      "", "I/O Intr"}
-{    M27:FPGAVer,  RF16_In_Word,     98,   -11.8,    0.1,    1,      "", "I/O Intr"}
-{    M28:FPGAVer,  RF17_In_Word,     48,   -11.8,    0.1,    1,      "", "I/O Intr"}
-{    M29:FPGAVer,  RF17_In_Word,     98,   -11.8,    0.1,    1,      "", "I/O Intr"}
-{    M30:FPGAVer,  RF18_In_Word,     48,   -11.8,    0.1,    1,      "", "I/O Intr"}
+{              R,                     DESC,         PORT, OFFSET,    EOFF,   ESLO, PREC,   LOLO,    LOW,   HIGH,   HIHI,     LLSV,      LSV,      HSV,     HHSV,     EGU,       SCAN}
+{     M00_FwdPwr,          "Forward Power", RF02_In_Word,     99,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M01_FwdPwr,          "Forward Power", RF03_In_Word,     49,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M02_FwdPwr,          "Forward Power", RF03_In_Word,     99,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M03_FwdPwr,          "Forward Power", RF04_In_Word,     49,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M04_FwdPwr,          "Forward Power", RF04_In_Word,     99,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M05_FwdPwr,          "Forward Power", RF05_In_Word,     49,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M06_FwdPwr,          "Forward Power", RF05_In_Word,     99,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M07_FwdPwr,          "Forward Power", RF06_In_Word,     49,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M08_FwdPwr,          "Forward Power", RF06_In_Word,     99,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M09_FwdPwr,          "Forward Power", RF07_In_Word,     49,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M10_FwdPwr,          "Forward Power", RF07_In_Word,     99,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M11_FwdPwr,          "Forward Power", RF08_In_Word,     49,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M12_FwdPwr,          "Forward Power", RF08_In_Word,     99,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M13_FwdPwr,          "Forward Power", RF09_In_Word,     49,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M14_FwdPwr,          "Forward Power", RF09_In_Word,     99,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M15_FwdPwr,          "Forward Power", RF10_In_Word,     49,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M16_FwdPwr,          "Forward Power", RF10_In_Word,     99,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M17_FwdPwr,          "Forward Power", RF11_In_Word,     49,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M18_FwdPwr,          "Forward Power", RF11_In_Word,     99,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M19_FwdPwr,          "Forward Power", RF12_In_Word,     49,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M20_FwdPwr,          "Forward Power", RF12_In_Word,     99,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M21_FwdPwr,          "Forward Power", RF13_In_Word,     49,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M22_FwdPwr,          "Forward Power", RF13_In_Word,     99,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M23_FwdPwr,          "Forward Power", RF14_In_Word,     49,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M24_FwdPwr,          "Forward Power", RF14_In_Word,     99,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M25_FwdPwr,          "Forward Power", RF15_In_Word,     49,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M26_FwdPwr,          "Forward Power", RF15_In_Word,     99,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M27_FwdPwr,          "Forward Power", RF16_In_Word,     49,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M28_FwdPwr,          "Forward Power", RF16_In_Word,     99,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M29_FwdPwr,          "Forward Power", RF17_In_Word,     49,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M30_FwdPwr,          "Forward Power", RF17_In_Word,     99,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M00_RefPwr,        "Reflected Power", RF02_In_Word,      0,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M01_RefPwr,        "Reflected Power", RF03_In_Word,     50,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M02_RefPwr,        "Reflected Power", RF03_In_Word,      0,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M03_RefPwr,        "Reflected Power", RF04_In_Word,     50,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M04_RefPwr,        "Reflected Power", RF04_In_Word,      0,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M05_RefPwr,        "Reflected Power", RF05_In_Word,     50,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M06_RefPwr,        "Reflected Power", RF05_In_Word,      0,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M07_RefPwr,        "Reflected Power", RF06_In_Word,     50,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M08_RefPwr,        "Reflected Power", RF06_In_Word,      0,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M09_RefPwr,        "Reflected Power", RF07_In_Word,     50,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M10_RefPwr,        "Reflected Power", RF07_In_Word,      0,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M11_RefPwr,        "Reflected Power", RF08_In_Word,     50,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M12_RefPwr,        "Reflected Power", RF08_In_Word,      0,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M13_RefPwr,        "Reflected Power", RF09_In_Word,     50,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M14_RefPwr,        "Reflected Power", RF09_In_Word,      0,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M15_RefPwr,        "Reflected Power", RF10_In_Word,     50,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M16_RefPwr,        "Reflected Power", RF10_In_Word,      0,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M17_RefPwr,        "Reflected Power", RF11_In_Word,     50,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M18_RefPwr,        "Reflected Power", RF11_In_Word,      0,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M19_RefPwr,        "Reflected Power", RF12_In_Word,     50,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M20_RefPwr,        "Reflected Power", RF12_In_Word,      0,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M21_RefPwr,        "Reflected Power", RF13_In_Word,     50,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M22_RefPwr,        "Reflected Power", RF13_In_Word,      0,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M23_RefPwr,        "Reflected Power", RF14_In_Word,     50,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M24_RefPwr,        "Reflected Power", RF14_In_Word,      0,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M25_RefPwr,        "Reflected Power", RF15_In_Word,     50,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M26_RefPwr,        "Reflected Power", RF15_In_Word,      0,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M27_RefPwr,        "Reflected Power", RF16_In_Word,     50,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M28_RefPwr,        "Reflected Power", RF16_In_Word,      0,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M29_RefPwr,        "Reflected Power", RF17_In_Word,     50,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     M30_RefPwr,        "Reflected Power", RF17_In_Word,      0,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{  M00_Dev1Drn_I, "Device 1 Drain Current", RF03_In_Word,      1,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M01_Dev1Drn_I, "Device 1 Drain Current", RF03_In_Word,     51,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M02_Dev1Drn_I, "Device 1 Drain Current", RF04_In_Word,      1,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M03_Dev1Drn_I, "Device 1 Drain Current", RF04_In_Word,     51,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M04_Dev1Drn_I, "Device 1 Drain Current", RF05_In_Word,      1,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M05_Dev1Drn_I, "Device 1 Drain Current", RF05_In_Word,     51,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M06_Dev1Drn_I, "Device 1 Drain Current", RF06_In_Word,      1,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M07_Dev1Drn_I, "Device 1 Drain Current", RF06_In_Word,     51,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M08_Dev1Drn_I, "Device 1 Drain Current", RF07_In_Word,      1,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M09_Dev1Drn_I, "Device 1 Drain Current", RF07_In_Word,     51,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M10_Dev1Drn_I, "Device 1 Drain Current", RF08_In_Word,      1,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M11_Dev1Drn_I, "Device 1 Drain Current", RF08_In_Word,     51,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M12_Dev1Drn_I, "Device 1 Drain Current", RF09_In_Word,      1,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M13_Dev1Drn_I, "Device 1 Drain Current", RF09_In_Word,     51,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M14_Dev1Drn_I, "Device 1 Drain Current", RF10_In_Word,      1,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M15_Dev1Drn_I, "Device 1 Drain Current", RF10_In_Word,     51,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M16_Dev1Drn_I, "Device 1 Drain Current", RF11_In_Word,      1,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M17_Dev1Drn_I, "Device 1 Drain Current", RF11_In_Word,     51,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M18_Dev1Drn_I, "Device 1 Drain Current", RF12_In_Word,      1,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M19_Dev1Drn_I, "Device 1 Drain Current", RF12_In_Word,     51,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M20_Dev1Drn_I, "Device 1 Drain Current", RF13_In_Word,      1,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M21_Dev1Drn_I, "Device 1 Drain Current", RF13_In_Word,     51,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M22_Dev1Drn_I, "Device 1 Drain Current", RF14_In_Word,      1,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M23_Dev1Drn_I, "Device 1 Drain Current", RF14_In_Word,     51,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M24_Dev1Drn_I, "Device 1 Drain Current", RF15_In_Word,      1,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M25_Dev1Drn_I, "Device 1 Drain Current", RF15_In_Word,     51,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M26_Dev1Drn_I, "Device 1 Drain Current", RF16_In_Word,      1,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M27_Dev1Drn_I, "Device 1 Drain Current", RF16_In_Word,     51,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M28_Dev1Drn_I, "Device 1 Drain Current", RF17_In_Word,      1,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M29_Dev1Drn_I, "Device 1 Drain Current", RF17_In_Word,     51,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M30_Dev1Drn_I, "Device 1 Drain Current", RF18_In_Word,      1,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M00_Dev2Drn_I, "Device 1 Drain Current", RF03_In_Word,      2,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M01_Dev2Drn_I, "Device 1 Drain Current", RF03_In_Word,     52,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M02_Dev2Drn_I, "Device 1 Drain Current", RF04_In_Word,      2,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M03_Dev2Drn_I, "Device 1 Drain Current", RF04_In_Word,     52,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M04_Dev2Drn_I, "Device 1 Drain Current", RF05_In_Word,      2,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M05_Dev2Drn_I, "Device 1 Drain Current", RF05_In_Word,     52,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M06_Dev2Drn_I, "Device 1 Drain Current", RF06_In_Word,      2,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M07_Dev2Drn_I, "Device 1 Drain Current", RF06_In_Word,     52,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M08_Dev2Drn_I, "Device 1 Drain Current", RF07_In_Word,      2,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M09_Dev2Drn_I, "Device 1 Drain Current", RF07_In_Word,     52,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M10_Dev2Drn_I, "Device 1 Drain Current", RF08_In_Word,      2,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M11_Dev2Drn_I, "Device 1 Drain Current", RF08_In_Word,     52,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M12_Dev2Drn_I, "Device 1 Drain Current", RF09_In_Word,      2,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M13_Dev2Drn_I, "Device 1 Drain Current", RF09_In_Word,     52,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M14_Dev2Drn_I, "Device 1 Drain Current", RF10_In_Word,      2,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M15_Dev2Drn_I, "Device 1 Drain Current", RF10_In_Word,     52,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M16_Dev2Drn_I, "Device 1 Drain Current", RF11_In_Word,      2,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M17_Dev2Drn_I, "Device 1 Drain Current", RF11_In_Word,     52,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M18_Dev2Drn_I, "Device 1 Drain Current", RF12_In_Word,      2,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M19_Dev2Drn_I, "Device 1 Drain Current", RF12_In_Word,     52,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M20_Dev2Drn_I, "Device 1 Drain Current", RF13_In_Word,      2,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M21_Dev2Drn_I, "Device 1 Drain Current", RF13_In_Word,     52,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M22_Dev2Drn_I, "Device 1 Drain Current", RF14_In_Word,      2,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M23_Dev2Drn_I, "Device 1 Drain Current", RF14_In_Word,     52,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M24_Dev2Drn_I, "Device 1 Drain Current", RF15_In_Word,      2,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M25_Dev2Drn_I, "Device 1 Drain Current", RF15_In_Word,     52,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M26_Dev2Drn_I, "Device 1 Drain Current", RF16_In_Word,      2,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M27_Dev2Drn_I, "Device 1 Drain Current", RF16_In_Word,     52,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M28_Dev2Drn_I, "Device 1 Drain Current", RF17_In_Word,      2,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M29_Dev2Drn_I, "Device 1 Drain Current", RF17_In_Word,     52,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{  M30_Dev2Drn_I, "Device 1 Drain Current", RF18_In_Word,      2,     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M00_PS1_I,  "PS1 DC Output Current", RF03_In_Word,      3,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M01_PS1_I,  "PS1 DC Output Current", RF03_In_Word,     53,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M02_PS1_I,  "PS1 DC Output Current", RF04_In_Word,      3,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M03_PS1_I,  "PS1 DC Output Current", RF04_In_Word,     53,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M04_PS1_I,  "PS1 DC Output Current", RF05_In_Word,      3,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M05_PS1_I,  "PS1 DC Output Current", RF05_In_Word,     53,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M06_PS1_I,  "PS1 DC Output Current", RF06_In_Word,      3,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M07_PS1_I,  "PS1 DC Output Current", RF06_In_Word,     53,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M08_PS1_I,  "PS1 DC Output Current", RF07_In_Word,      3,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M09_PS1_I,  "PS1 DC Output Current", RF07_In_Word,     53,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M10_PS1_I,  "PS1 DC Output Current", RF08_In_Word,      3,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M11_PS1_I,  "PS1 DC Output Current", RF08_In_Word,     53,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M12_PS1_I,  "PS1 DC Output Current", RF09_In_Word,      3,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M13_PS1_I,  "PS1 DC Output Current", RF09_In_Word,     53,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M14_PS1_I,  "PS1 DC Output Current", RF10_In_Word,      3,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M15_PS1_I,  "PS1 DC Output Current", RF10_In_Word,     53,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M16_PS1_I,  "PS1 DC Output Current", RF11_In_Word,      3,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M17_PS1_I,  "PS1 DC Output Current", RF11_In_Word,     53,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M18_PS1_I,  "PS1 DC Output Current", RF12_In_Word,      3,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M19_PS1_I,  "PS1 DC Output Current", RF12_In_Word,     53,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M20_PS1_I,  "PS1 DC Output Current", RF13_In_Word,      3,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M21_PS1_I,  "PS1 DC Output Current", RF13_In_Word,     53,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M22_PS1_I,  "PS1 DC Output Current", RF14_In_Word,      3,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M23_PS1_I,  "PS1 DC Output Current", RF14_In_Word,     53,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M24_PS1_I,  "PS1 DC Output Current", RF15_In_Word,      3,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M25_PS1_I,  "PS1 DC Output Current", RF15_In_Word,     53,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M26_PS1_I,  "PS1 DC Output Current", RF16_In_Word,      3,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M27_PS1_I,  "PS1 DC Output Current", RF16_In_Word,     53,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M28_PS1_I,  "PS1 DC Output Current", RF17_In_Word,      3,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M29_PS1_I,  "PS1 DC Output Current", RF17_In_Word,     53,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M30_PS1_I,  "PS1 DC Output Current", RF18_In_Word,      3,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M00_PS2_I,  "PS2 DC Output Current", RF03_In_Word,      4,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M01_PS2_I,  "PS2 DC Output Current", RF03_In_Word,     54,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M02_PS2_I,  "PS2 DC Output Current", RF04_In_Word,      4,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M03_PS2_I,  "PS2 DC Output Current", RF04_In_Word,     54,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M04_PS2_I,  "PS2 DC Output Current", RF05_In_Word,      4,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M05_PS2_I,  "PS2 DC Output Current", RF05_In_Word,     54,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M06_PS2_I,  "PS2 DC Output Current", RF06_In_Word,      4,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M07_PS2_I,  "PS2 DC Output Current", RF06_In_Word,     54,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M08_PS2_I,  "PS2 DC Output Current", RF07_In_Word,      4,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M09_PS2_I,  "PS2 DC Output Current", RF07_In_Word,     54,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M10_PS2_I,  "PS2 DC Output Current", RF08_In_Word,      4,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M11_PS2_I,  "PS2 DC Output Current", RF08_In_Word,     54,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M12_PS2_I,  "PS2 DC Output Current", RF09_In_Word,      4,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M13_PS2_I,  "PS2 DC Output Current", RF09_In_Word,     54,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M14_PS2_I,  "PS2 DC Output Current", RF10_In_Word,      4,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M15_PS2_I,  "PS2 DC Output Current", RF10_In_Word,     54,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M16_PS2_I,  "PS2 DC Output Current", RF11_In_Word,      4,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M17_PS2_I,  "PS2 DC Output Current", RF11_In_Word,     54,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M18_PS2_I,  "PS2 DC Output Current", RF12_In_Word,      4,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M19_PS2_I,  "PS2 DC Output Current", RF12_In_Word,     54,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M20_PS2_I,  "PS2 DC Output Current", RF13_In_Word,      4,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M21_PS2_I,  "PS2 DC Output Current", RF13_In_Word,     54,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M22_PS2_I,  "PS2 DC Output Current", RF14_In_Word,      4,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M23_PS2_I,  "PS2 DC Output Current", RF14_In_Word,     54,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M24_PS2_I,  "PS2 DC Output Current", RF15_In_Word,      4,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M25_PS2_I,  "PS2 DC Output Current", RF15_In_Word,     54,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M26_PS2_I,  "PS2 DC Output Current", RF16_In_Word,      4,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M27_PS2_I,  "PS2 DC Output Current", RF16_In_Word,     54,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M28_PS2_I,  "PS2 DC Output Current", RF17_In_Word,      4,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M29_PS2_I,  "PS2 DC Output Current", RF17_In_Word,     54,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M30_PS2_I,  "PS2 DC Output Current", RF18_In_Word,      4,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M00_PS3_I,  "PS3 DC Output Current", RF03_In_Word,      5,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M01_PS3_I,  "PS3 DC Output Current", RF03_In_Word,     55,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M02_PS3_I,  "PS3 DC Output Current", RF04_In_Word,      5,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M03_PS3_I,  "PS3 DC Output Current", RF04_In_Word,     55,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M04_PS3_I,  "PS3 DC Output Current", RF05_In_Word,      5,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M05_PS3_I,  "PS3 DC Output Current", RF05_In_Word,     55,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M06_PS3_I,  "PS3 DC Output Current", RF06_In_Word,      5,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M07_PS3_I,  "PS3 DC Output Current", RF06_In_Word,     55,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M08_PS3_I,  "PS3 DC Output Current", RF07_In_Word,      5,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M09_PS3_I,  "PS3 DC Output Current", RF07_In_Word,     55,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M10_PS3_I,  "PS3 DC Output Current", RF08_In_Word,      5,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M11_PS3_I,  "PS3 DC Output Current", RF08_In_Word,     55,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M12_PS3_I,  "PS3 DC Output Current", RF09_In_Word,      5,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M13_PS3_I,  "PS3 DC Output Current", RF09_In_Word,     55,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M14_PS3_I,  "PS3 DC Output Current", RF10_In_Word,      5,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M15_PS3_I,  "PS3 DC Output Current", RF10_In_Word,     55,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M16_PS3_I,  "PS3 DC Output Current", RF11_In_Word,      5,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M17_PS3_I,  "PS3 DC Output Current", RF11_In_Word,     55,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M18_PS3_I,  "PS3 DC Output Current", RF12_In_Word,      5,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M19_PS3_I,  "PS3 DC Output Current", RF12_In_Word,     55,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M20_PS3_I,  "PS3 DC Output Current", RF13_In_Word,      5,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M21_PS3_I,  "PS3 DC Output Current", RF13_In_Word,     55,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M22_PS3_I,  "PS3 DC Output Current", RF14_In_Word,      5,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M23_PS3_I,  "PS3 DC Output Current", RF14_In_Word,     55,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M24_PS3_I,  "PS3 DC Output Current", RF15_In_Word,      5,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M25_PS3_I,  "PS3 DC Output Current", RF15_In_Word,     55,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M26_PS3_I,  "PS3 DC Output Current", RF16_In_Word,      5,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M27_PS3_I,  "PS3 DC Output Current", RF16_In_Word,     55,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M28_PS3_I,  "PS3 DC Output Current", RF17_In_Word,      5,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M29_PS3_I,  "PS3 DC Output Current", RF17_In_Word,     55,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M30_PS3_I,  "PS3 DC Output Current", RF18_In_Word,      5,     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{      M00_Drn_V,          "Drain Voltage", RF03_In_Word,      9,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M01_Drn_V,          "Drain Voltage", RF03_In_Word,     59,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M02_Drn_V,          "Drain Voltage", RF04_In_Word,      9,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M03_Drn_V,          "Drain Voltage", RF04_In_Word,     59,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M04_Drn_V,          "Drain Voltage", RF05_In_Word,      9,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M05_Drn_V,          "Drain Voltage", RF05_In_Word,     59,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M06_Drn_V,          "Drain Voltage", RF06_In_Word,      9,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M07_Drn_V,          "Drain Voltage", RF06_In_Word,     59,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M08_Drn_V,          "Drain Voltage", RF07_In_Word,      9,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M09_Drn_V,          "Drain Voltage", RF07_In_Word,     59,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M10_Drn_V,          "Drain Voltage", RF08_In_Word,      9,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M11_Drn_V,          "Drain Voltage", RF08_In_Word,     59,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M12_Drn_V,          "Drain Voltage", RF09_In_Word,      9,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M13_Drn_V,          "Drain Voltage", RF09_In_Word,     59,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M14_Drn_V,          "Drain Voltage", RF10_In_Word,      9,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M15_Drn_V,          "Drain Voltage", RF10_In_Word,     59,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M16_Drn_V,          "Drain Voltage", RF11_In_Word,      9,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M17_Drn_V,          "Drain Voltage", RF11_In_Word,     59,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M18_Drn_V,          "Drain Voltage", RF12_In_Word,      9,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M19_Drn_V,          "Drain Voltage", RF12_In_Word,     59,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M20_Drn_V,          "Drain Voltage", RF13_In_Word,      9,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M21_Drn_V,          "Drain Voltage", RF13_In_Word,     59,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M22_Drn_V,          "Drain Voltage", RF14_In_Word,      9,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M23_Drn_V,          "Drain Voltage", RF14_In_Word,     59,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M24_Drn_V,          "Drain Voltage", RF15_In_Word,      9,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M25_Drn_V,          "Drain Voltage", RF15_In_Word,     59,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M26_Drn_V,          "Drain Voltage", RF16_In_Word,      9,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M27_Drn_V,          "Drain Voltage", RF16_In_Word,     59,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M28_Drn_V,          "Drain Voltage", RF17_In_Word,      9,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M29_Drn_V,          "Drain Voltage", RF17_In_Word,     59,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M30_Drn_V,          "Drain Voltage", RF18_In_Word,      9,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M00_PS1_V,  "PS1 DC Output Voltage", RF03_In_Word,     11,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M01_PS1_V,  "PS1 DC Output Voltage", RF03_In_Word,     61,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M02_PS1_V,  "PS1 DC Output Voltage", RF04_In_Word,     11,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M03_PS1_V,  "PS1 DC Output Voltage", RF04_In_Word,     61,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M04_PS1_V,  "PS1 DC Output Voltage", RF05_In_Word,     11,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M05_PS1_V,  "PS1 DC Output Voltage", RF05_In_Word,     61,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M06_PS1_V,  "PS1 DC Output Voltage", RF06_In_Word,     11,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M07_PS1_V,  "PS1 DC Output Voltage", RF06_In_Word,     61,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M08_PS1_V,  "PS1 DC Output Voltage", RF07_In_Word,     11,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M09_PS1_V,  "PS1 DC Output Voltage", RF07_In_Word,     61,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M10_PS1_V,  "PS1 DC Output Voltage", RF08_In_Word,     11,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M11_PS1_V,  "PS1 DC Output Voltage", RF08_In_Word,     61,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M12_PS1_V,  "PS1 DC Output Voltage", RF09_In_Word,     11,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M13_PS1_V,  "PS1 DC Output Voltage", RF09_In_Word,     61,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M14_PS1_V,  "PS1 DC Output Voltage", RF10_In_Word,     11,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M15_PS1_V,  "PS1 DC Output Voltage", RF10_In_Word,     61,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M16_PS1_V,  "PS1 DC Output Voltage", RF11_In_Word,     11,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M17_PS1_V,  "PS1 DC Output Voltage", RF11_In_Word,     61,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M18_PS1_V,  "PS1 DC Output Voltage", RF12_In_Word,     11,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M19_PS1_V,  "PS1 DC Output Voltage", RF12_In_Word,     61,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M20_PS1_V,  "PS1 DC Output Voltage", RF13_In_Word,     11,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M21_PS1_V,  "PS1 DC Output Voltage", RF13_In_Word,     61,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M22_PS1_V,  "PS1 DC Output Voltage", RF14_In_Word,     11,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M23_PS1_V,  "PS1 DC Output Voltage", RF14_In_Word,     61,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M24_PS1_V,  "PS1 DC Output Voltage", RF15_In_Word,     11,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M25_PS1_V,  "PS1 DC Output Voltage", RF15_In_Word,     61,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M26_PS1_V,  "PS1 DC Output Voltage", RF16_In_Word,     11,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M27_PS1_V,  "PS1 DC Output Voltage", RF16_In_Word,     61,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M28_PS1_V,  "PS1 DC Output Voltage", RF17_In_Word,     11,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M29_PS1_V,  "PS1 DC Output Voltage", RF17_In_Word,     61,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M30_PS1_V,  "PS1 DC Output Voltage", RF18_In_Word,     11,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M00_PS2_V,  "PS2 DC Output Voltage", RF03_In_Word,     12,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M01_PS2_V,  "PS2 DC Output Voltage", RF03_In_Word,     62,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M02_PS2_V,  "PS2 DC Output Voltage", RF04_In_Word,     12,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M03_PS2_V,  "PS2 DC Output Voltage", RF04_In_Word,     62,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M04_PS2_V,  "PS2 DC Output Voltage", RF05_In_Word,     12,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M05_PS2_V,  "PS2 DC Output Voltage", RF05_In_Word,     62,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M06_PS2_V,  "PS2 DC Output Voltage", RF06_In_Word,     12,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M07_PS2_V,  "PS2 DC Output Voltage", RF06_In_Word,     62,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M08_PS2_V,  "PS2 DC Output Voltage", RF07_In_Word,     12,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M09_PS2_V,  "PS2 DC Output Voltage", RF07_In_Word,     62,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M10_PS2_V,  "PS2 DC Output Voltage", RF08_In_Word,     12,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M11_PS2_V,  "PS2 DC Output Voltage", RF08_In_Word,     62,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M12_PS2_V,  "PS2 DC Output Voltage", RF09_In_Word,     12,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M13_PS2_V,  "PS2 DC Output Voltage", RF09_In_Word,     62,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M14_PS2_V,  "PS2 DC Output Voltage", RF10_In_Word,     12,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M15_PS2_V,  "PS2 DC Output Voltage", RF10_In_Word,     62,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M16_PS2_V,  "PS2 DC Output Voltage", RF11_In_Word,     12,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M17_PS2_V,  "PS2 DC Output Voltage", RF11_In_Word,     62,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M18_PS2_V,  "PS2 DC Output Voltage", RF12_In_Word,     12,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M19_PS2_V,  "PS2 DC Output Voltage", RF12_In_Word,     62,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M20_PS2_V,  "PS2 DC Output Voltage", RF13_In_Word,     12,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M21_PS2_V,  "PS2 DC Output Voltage", RF13_In_Word,     62,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M22_PS2_V,  "PS2 DC Output Voltage", RF14_In_Word,     12,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M23_PS2_V,  "PS2 DC Output Voltage", RF14_In_Word,     62,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M24_PS2_V,  "PS2 DC Output Voltage", RF15_In_Word,     12,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M25_PS2_V,  "PS2 DC Output Voltage", RF15_In_Word,     62,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M26_PS2_V,  "PS2 DC Output Voltage", RF16_In_Word,     12,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M27_PS2_V,  "PS2 DC Output Voltage", RF16_In_Word,     62,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M28_PS2_V,  "PS2 DC Output Voltage", RF17_In_Word,     12,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M29_PS2_V,  "PS2 DC Output Voltage", RF17_In_Word,     62,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M30_PS2_V,  "PS2 DC Output Voltage", RF18_In_Word,     12,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M00_PS3_V,  "PS3 DC Output Voltage", RF03_In_Word,     13,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M01_PS3_V,  "PS3 DC Output Voltage", RF03_In_Word,     63,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M02_PS3_V,  "PS3 DC Output Voltage", RF04_In_Word,     13,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M03_PS3_V,  "PS3 DC Output Voltage", RF04_In_Word,     63,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M04_PS3_V,  "PS3 DC Output Voltage", RF05_In_Word,     13,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M05_PS3_V,  "PS3 DC Output Voltage", RF05_In_Word,     63,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M06_PS3_V,  "PS3 DC Output Voltage", RF06_In_Word,     13,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M07_PS3_V,  "PS3 DC Output Voltage", RF06_In_Word,     63,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M08_PS3_V,  "PS3 DC Output Voltage", RF07_In_Word,     13,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M09_PS3_V,  "PS3 DC Output Voltage", RF07_In_Word,     63,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M10_PS3_V,  "PS3 DC Output Voltage", RF08_In_Word,     13,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M11_PS3_V,  "PS3 DC Output Voltage", RF08_In_Word,     63,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M12_PS3_V,  "PS3 DC Output Voltage", RF09_In_Word,     13,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M13_PS3_V,  "PS3 DC Output Voltage", RF09_In_Word,     63,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M14_PS3_V,  "PS3 DC Output Voltage", RF10_In_Word,     13,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M15_PS3_V,  "PS3 DC Output Voltage", RF10_In_Word,     63,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M16_PS3_V,  "PS3 DC Output Voltage", RF11_In_Word,     13,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M17_PS3_V,  "PS3 DC Output Voltage", RF11_In_Word,     63,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M18_PS3_V,  "PS3 DC Output Voltage", RF12_In_Word,     13,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M19_PS3_V,  "PS3 DC Output Voltage", RF12_In_Word,     63,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M20_PS3_V,  "PS3 DC Output Voltage", RF13_In_Word,     13,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M21_PS3_V,  "PS3 DC Output Voltage", RF13_In_Word,     63,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M22_PS3_V,  "PS3 DC Output Voltage", RF14_In_Word,     13,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M23_PS3_V,  "PS3 DC Output Voltage", RF14_In_Word,     63,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M24_PS3_V,  "PS3 DC Output Voltage", RF15_In_Word,     13,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M25_PS3_V,  "PS3 DC Output Voltage", RF15_In_Word,     63,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M26_PS3_V,  "PS3 DC Output Voltage", RF16_In_Word,     13,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M27_PS3_V,  "PS3 DC Output Voltage", RF16_In_Word,     63,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M28_PS3_V,  "PS3 DC Output Voltage", RF17_In_Word,     13,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M29_PS3_V,  "PS3 DC Output Voltage", RF17_In_Word,     63,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{      M30_PS3_V,  "PS3 DC Output Voltage", RF18_In_Word,     13,     0.0, 0.0172,    1,     "",   15.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{  M00_LCWHSTemp,     "LCW Heat Sink Temp", RF03_In_Word,     14, -39.235, 0.0392,    1,     "",     "",   50.0,   52.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{  M01_LCWHSTemp,     "LCW Heat Sink Temp", RF03_In_Word,     64, -39.235, 0.0392,    1,     "",     "",   50.0,   52.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{  M02_LCWHSTemp,     "LCW Heat Sink Temp", RF04_In_Word,     14, -39.235, 0.0392,    1,     "",     "",   50.0,   52.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{  M03_LCWHSTemp,     "LCW Heat Sink Temp", RF04_In_Word,     64, -39.235, 0.0392,    1,     "",     "",   50.0,   52.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{  M04_LCWHSTemp,     "LCW Heat Sink Temp", RF05_In_Word,     14, -39.235, 0.0392,    1,     "",     "",   50.0,   52.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{  M05_LCWHSTemp,     "LCW Heat Sink Temp", RF05_In_Word,     64, -39.235, 0.0392,    1,     "",     "",   50.0,   52.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{  M06_LCWHSTemp,     "LCW Heat Sink Temp", RF06_In_Word,     14, -39.235, 0.0392,    1,     "",     "",   50.0,   52.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{  M07_LCWHSTemp,     "LCW Heat Sink Temp", RF06_In_Word,     64, -39.235, 0.0392,    1,     "",     "",   50.0,   52.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{  M08_LCWHSTemp,     "LCW Heat Sink Temp", RF07_In_Word,     14, -39.235, 0.0392,    1,     "",     "",   50.0,   52.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{  M09_LCWHSTemp,     "LCW Heat Sink Temp", RF07_In_Word,     64, -39.235, 0.0392,    1,     "",     "",   50.0,   52.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{  M10_LCWHSTemp,     "LCW Heat Sink Temp", RF08_In_Word,     14, -39.235, 0.0392,    1,     "",     "",   50.0,   52.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{  M11_LCWHSTemp,     "LCW Heat Sink Temp", RF08_In_Word,     64, -39.235, 0.0392,    1,     "",     "",   50.0,   52.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{  M12_LCWHSTemp,     "LCW Heat Sink Temp", RF09_In_Word,     14, -39.235, 0.0392,    1,     "",     "",   50.0,   52.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{  M13_LCWHSTemp,     "LCW Heat Sink Temp", RF09_In_Word,     64, -39.235, 0.0392,    1,     "",     "",   50.0,   52.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{  M14_LCWHSTemp,     "LCW Heat Sink Temp", RF10_In_Word,     14, -39.235, 0.0392,    1,     "",     "",   50.0,   52.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{  M15_LCWHSTemp,     "LCW Heat Sink Temp", RF10_In_Word,     64, -39.235, 0.0392,    1,     "",     "",   50.0,   52.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{  M16_LCWHSTemp,     "LCW Heat Sink Temp", RF11_In_Word,     14, -39.235, 0.0392,    1,     "",     "",   50.0,   52.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{  M17_LCWHSTemp,     "LCW Heat Sink Temp", RF11_In_Word,     64, -39.235, 0.0392,    1,     "",     "",   50.0,   52.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{  M18_LCWHSTemp,     "LCW Heat Sink Temp", RF12_In_Word,     14, -39.235, 0.0392,    1,     "",     "",   50.0,   52.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{  M19_LCWHSTemp,     "LCW Heat Sink Temp", RF12_In_Word,     64, -39.235, 0.0392,    1,     "",     "",   50.0,   52.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{  M20_LCWHSTemp,     "LCW Heat Sink Temp", RF13_In_Word,     14, -39.235, 0.0392,    1,     "",     "",   50.0,   52.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{  M21_LCWHSTemp,     "LCW Heat Sink Temp", RF13_In_Word,     64, -39.235, 0.0392,    1,     "",     "",   50.0,   52.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{  M22_LCWHSTemp,     "LCW Heat Sink Temp", RF14_In_Word,     14, -39.235, 0.0392,    1,     "",     "",   50.0,   52.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{  M23_LCWHSTemp,     "LCW Heat Sink Temp", RF14_In_Word,     64, -39.235, 0.0392,    1,     "",     "",   50.0,   52.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{  M24_LCWHSTemp,     "LCW Heat Sink Temp", RF15_In_Word,     14, -39.235, 0.0392,    1,     "",     "",   50.0,   52.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{  M25_LCWHSTemp,     "LCW Heat Sink Temp", RF15_In_Word,     64, -39.235, 0.0392,    1,     "",     "",   50.0,   52.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{  M26_LCWHSTemp,     "LCW Heat Sink Temp", RF16_In_Word,     14, -39.235, 0.0392,    1,     "",     "",   50.0,   52.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{  M27_LCWHSTemp,     "LCW Heat Sink Temp", RF16_In_Word,     64, -39.235, 0.0392,    1,     "",     "",   50.0,   52.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{  M28_LCWHSTemp,     "LCW Heat Sink Temp", RF17_In_Word,     14, -39.235, 0.0392,    1,     "",     "",   50.0,   52.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{  M29_LCWHSTemp,     "LCW Heat Sink Temp", RF17_In_Word,     64, -39.235, 0.0392,    1,     "",     "",   50.0,   52.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{  M30_LCWHSTemp,     "LCW Heat Sink Temp", RF18_In_Word,     14, -39.235, 0.0392,    1,     "",     "",   50.0,   52.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{    M00_AirTemp,        "Module Air Temp", RF03_In_Word,     15, -39.235, 0.0392,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{    M01_AirTemp,        "Module Air Temp", RF03_In_Word,     65, -39.235, 0.0392,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{    M02_AirTemp,        "Module Air Temp", RF04_In_Word,     15, -39.235, 0.0392,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{    M03_AirTemp,        "Module Air Temp", RF04_In_Word,     65, -39.235, 0.0392,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{    M04_AirTemp,        "Module Air Temp", RF05_In_Word,     15, -39.235, 0.0392,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{    M05_AirTemp,        "Module Air Temp", RF05_In_Word,     65, -39.235, 0.0392,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{    M06_AirTemp,        "Module Air Temp", RF06_In_Word,     15, -39.235, 0.0392,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{    M07_AirTemp,        "Module Air Temp", RF06_In_Word,     65, -39.235, 0.0392,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{    M08_AirTemp,        "Module Air Temp", RF07_In_Word,     15, -39.235, 0.0392,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{    M09_AirTemp,        "Module Air Temp", RF07_In_Word,     65, -39.235, 0.0392,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{    M10_AirTemp,        "Module Air Temp", RF08_In_Word,     15, -39.235, 0.0392,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{    M11_AirTemp,        "Module Air Temp", RF08_In_Word,     65, -39.235, 0.0392,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{    M12_AirTemp,        "Module Air Temp", RF09_In_Word,     15, -39.235, 0.0392,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{    M13_AirTemp,        "Module Air Temp", RF09_In_Word,     65, -39.235, 0.0392,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{    M14_AirTemp,        "Module Air Temp", RF10_In_Word,     15, -39.235, 0.0392,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{    M15_AirTemp,        "Module Air Temp", RF10_In_Word,     65, -39.235, 0.0392,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{    M16_AirTemp,        "Module Air Temp", RF11_In_Word,     15, -39.235, 0.0392,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{    M17_AirTemp,        "Module Air Temp", RF11_In_Word,     65, -39.235, 0.0392,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{    M18_AirTemp,        "Module Air Temp", RF12_In_Word,     15, -39.235, 0.0392,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{    M19_AirTemp,        "Module Air Temp", RF12_In_Word,     65, -39.235, 0.0392,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{    M20_AirTemp,        "Module Air Temp", RF13_In_Word,     15, -39.235, 0.0392,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{    M21_AirTemp,        "Module Air Temp", RF13_In_Word,     65, -39.235, 0.0392,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{    M22_AirTemp,        "Module Air Temp", RF14_In_Word,     15, -39.235, 0.0392,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{    M23_AirTemp,        "Module Air Temp", RF14_In_Word,     65, -39.235, 0.0392,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{    M24_AirTemp,        "Module Air Temp", RF15_In_Word,     15, -39.235, 0.0392,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{    M25_AirTemp,        "Module Air Temp", RF15_In_Word,     65, -39.235, 0.0392,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{    M26_AirTemp,        "Module Air Temp", RF16_In_Word,     15, -39.235, 0.0392,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{    M27_AirTemp,        "Module Air Temp", RF16_In_Word,     65, -39.235, 0.0392,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{    M28_AirTemp,        "Module Air Temp", RF17_In_Word,     15, -39.235, 0.0392,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{    M29_AirTemp,        "Module Air Temp", RF17_In_Word,     65, -39.235, 0.0392,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{    M30_AirTemp,        "Module Air Temp", RF18_In_Word,     15, -39.235, 0.0392,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{  M00_TxFanSpd1,  "Transformer Fan Spd 1", RF03_In_Word,     37,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M01_TxFanSpd1,  "Transformer Fan Spd 1", RF03_In_Word,     87,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M02_TxFanSpd1,  "Transformer Fan Spd 1", RF04_In_Word,     37,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M03_TxFanSpd1,  "Transformer Fan Spd 1", RF04_In_Word,     87,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M04_TxFanSpd1,  "Transformer Fan Spd 1", RF05_In_Word,     37,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M05_TxFanSpd1,  "Transformer Fan Spd 1", RF05_In_Word,     87,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M06_TxFanSpd1,  "Transformer Fan Spd 1", RF06_In_Word,     37,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M07_TxFanSpd1,  "Transformer Fan Spd 1", RF06_In_Word,     87,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M08_TxFanSpd1,  "Transformer Fan Spd 1", RF07_In_Word,     37,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M09_TxFanSpd1,  "Transformer Fan Spd 1", RF07_In_Word,     87,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M10_TxFanSpd1,  "Transformer Fan Spd 1", RF08_In_Word,     37,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M11_TxFanSpd1,  "Transformer Fan Spd 1", RF08_In_Word,     87,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M12_TxFanSpd1,  "Transformer Fan Spd 1", RF09_In_Word,     37,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M13_TxFanSpd1,  "Transformer Fan Spd 1", RF09_In_Word,     87,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M14_TxFanSpd1,  "Transformer Fan Spd 1", RF10_In_Word,     37,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M15_TxFanSpd1,  "Transformer Fan Spd 1", RF10_In_Word,     87,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M16_TxFanSpd1,  "Transformer Fan Spd 1", RF11_In_Word,     37,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M17_TxFanSpd1,  "Transformer Fan Spd 1", RF11_In_Word,     87,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M18_TxFanSpd1,  "Transformer Fan Spd 1", RF12_In_Word,     37,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M19_TxFanSpd1,  "Transformer Fan Spd 1", RF12_In_Word,     87,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M20_TxFanSpd1,  "Transformer Fan Spd 1", RF13_In_Word,     37,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M21_TxFanSpd1,  "Transformer Fan Spd 1", RF13_In_Word,     87,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M22_TxFanSpd1,  "Transformer Fan Spd 1", RF14_In_Word,     37,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M23_TxFanSpd1,  "Transformer Fan Spd 1", RF14_In_Word,     87,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M24_TxFanSpd1,  "Transformer Fan Spd 1", RF15_In_Word,     37,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M25_TxFanSpd1,  "Transformer Fan Spd 1", RF15_In_Word,     87,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M26_TxFanSpd1,  "Transformer Fan Spd 1", RF16_In_Word,     37,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M27_TxFanSpd1,  "Transformer Fan Spd 1", RF16_In_Word,     87,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M28_TxFanSpd1,  "Transformer Fan Spd 1", RF17_In_Word,     37,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M29_TxFanSpd1,  "Transformer Fan Spd 1", RF17_In_Word,     87,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M30_TxFanSpd1,  "Transformer Fan Spd 1", RF18_In_Word,     37,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M00_TxFanSpd2,  "Transformer Fan Spd 2", RF03_In_Word,     38,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M01_TxFanSpd2,  "Transformer Fan Spd 2", RF03_In_Word,     88,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M02_TxFanSpd2,  "Transformer Fan Spd 2", RF04_In_Word,     38,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M03_TxFanSpd2,  "Transformer Fan Spd 2", RF04_In_Word,     88,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M04_TxFanSpd2,  "Transformer Fan Spd 2", RF05_In_Word,     38,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M05_TxFanSpd2,  "Transformer Fan Spd 2", RF05_In_Word,     88,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M06_TxFanSpd2,  "Transformer Fan Spd 2", RF06_In_Word,     38,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M07_TxFanSpd2,  "Transformer Fan Spd 2", RF06_In_Word,     88,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M08_TxFanSpd2,  "Transformer Fan Spd 2", RF07_In_Word,     38,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M09_TxFanSpd2,  "Transformer Fan Spd 2", RF07_In_Word,     88,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M10_TxFanSpd2,  "Transformer Fan Spd 2", RF08_In_Word,     38,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M11_TxFanSpd2,  "Transformer Fan Spd 2", RF08_In_Word,     88,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M12_TxFanSpd2,  "Transformer Fan Spd 2", RF09_In_Word,     38,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M13_TxFanSpd2,  "Transformer Fan Spd 2", RF09_In_Word,     88,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M14_TxFanSpd2,  "Transformer Fan Spd 2", RF10_In_Word,     38,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M15_TxFanSpd2,  "Transformer Fan Spd 2", RF10_In_Word,     88,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M16_TxFanSpd2,  "Transformer Fan Spd 2", RF11_In_Word,     38,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M17_TxFanSpd2,  "Transformer Fan Spd 2", RF11_In_Word,     88,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M18_TxFanSpd2,  "Transformer Fan Spd 2", RF12_In_Word,     38,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M19_TxFanSpd2,  "Transformer Fan Spd 2", RF12_In_Word,     88,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M20_TxFanSpd2,  "Transformer Fan Spd 2", RF13_In_Word,     38,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M21_TxFanSpd2,  "Transformer Fan Spd 2", RF13_In_Word,     88,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M22_TxFanSpd2,  "Transformer Fan Spd 2", RF14_In_Word,     38,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M23_TxFanSpd2,  "Transformer Fan Spd 2", RF14_In_Word,     88,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M24_TxFanSpd2,  "Transformer Fan Spd 2", RF15_In_Word,     38,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M25_TxFanSpd2,  "Transformer Fan Spd 2", RF15_In_Word,     88,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M26_TxFanSpd2,  "Transformer Fan Spd 2", RF16_In_Word,     38,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M27_TxFanSpd2,  "Transformer Fan Spd 2", RF16_In_Word,     88,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M28_TxFanSpd2,  "Transformer Fan Spd 2", RF17_In_Word,     38,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M29_TxFanSpd2,  "Transformer Fan Spd 2", RF17_In_Word,     88,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  M30_TxFanSpd2,  "Transformer Fan Spd 2", RF18_In_Word,     38,     0.0,    4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{     M00_FanSpd,       "Module Fan Speed", RF03_In_Word,     39,     0.0,    4.0,    1,     "",   5304,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{     M01_FanSpd,       "Module Fan Speed", RF03_In_Word,     89,     0.0,    4.0,    1,     "",   5304,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{     M02_FanSpd,       "Module Fan Speed", RF04_In_Word,     39,     0.0,    4.0,    1,     "",   5304,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{     M03_FanSpd,       "Module Fan Speed", RF04_In_Word,     89,     0.0,    4.0,    1,     "",   5304,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{     M04_FanSpd,       "Module Fan Speed", RF05_In_Word,     39,     0.0,    4.0,    1,     "",   5304,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{     M05_FanSpd,       "Module Fan Speed", RF05_In_Word,     89,     0.0,    4.0,    1,     "",   5304,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{     M06_FanSpd,       "Module Fan Speed", RF06_In_Word,     39,     0.0,    4.0,    1,     "",   5304,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{     M07_FanSpd,       "Module Fan Speed", RF06_In_Word,     89,     0.0,    4.0,    1,     "",   5304,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{     M08_FanSpd,       "Module Fan Speed", RF07_In_Word,     39,     0.0,    4.0,    1,     "",   5304,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{     M09_FanSpd,       "Module Fan Speed", RF07_In_Word,     89,     0.0,    4.0,    1,     "",   5304,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{     M10_FanSpd,       "Module Fan Speed", RF08_In_Word,     39,     0.0,    4.0,    1,     "",   5304,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{     M11_FanSpd,       "Module Fan Speed", RF08_In_Word,     89,     0.0,    4.0,    1,     "",   5304,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{     M12_FanSpd,       "Module Fan Speed", RF09_In_Word,     39,     0.0,    4.0,    1,     "",   5304,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{     M13_FanSpd,       "Module Fan Speed", RF09_In_Word,     89,     0.0,    4.0,    1,     "",   5304,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{     M14_FanSpd,       "Module Fan Speed", RF10_In_Word,     39,     0.0,    4.0,    1,     "",   5304,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{     M15_FanSpd,       "Module Fan Speed", RF10_In_Word,     89,     0.0,    4.0,    1,     "",   5304,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{     M16_FanSpd,       "Module Fan Speed", RF11_In_Word,     39,     0.0,    4.0,    1,     "",   5304,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{     M17_FanSpd,       "Module Fan Speed", RF11_In_Word,     89,     0.0,    4.0,    1,     "",   5304,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{     M18_FanSpd,       "Module Fan Speed", RF12_In_Word,     39,     0.0,    4.0,    1,     "",   5304,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{     M19_FanSpd,       "Module Fan Speed", RF12_In_Word,     89,     0.0,    4.0,    1,     "",   5304,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{     M20_FanSpd,       "Module Fan Speed", RF13_In_Word,     39,     0.0,    4.0,    1,     "",   5304,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{     M21_FanSpd,       "Module Fan Speed", RF13_In_Word,     89,     0.0,    4.0,    1,     "",   5304,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{     M22_FanSpd,       "Module Fan Speed", RF14_In_Word,     39,     0.0,    4.0,    1,     "",   5304,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{     M23_FanSpd,       "Module Fan Speed", RF14_In_Word,     89,     0.0,    4.0,    1,     "",   5304,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{     M24_FanSpd,       "Module Fan Speed", RF15_In_Word,     39,     0.0,    4.0,    1,     "",   5304,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{     M25_FanSpd,       "Module Fan Speed", RF15_In_Word,     89,     0.0,    4.0,    1,     "",   5304,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{     M26_FanSpd,       "Module Fan Speed", RF16_In_Word,     39,     0.0,    4.0,    1,     "",   5304,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{     M27_FanSpd,       "Module Fan Speed", RF16_In_Word,     89,     0.0,    4.0,    1,     "",   5304,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{     M28_FanSpd,       "Module Fan Speed", RF17_In_Word,     39,     0.0,    4.0,    1,     "",   5304,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{     M29_FanSpd,       "Module Fan Speed", RF17_In_Word,     89,     0.0,    4.0,    1,     "",   5304,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{     M30_FanSpd,       "Module Fan Speed", RF18_In_Word,     39,     0.0,    4.0,    1,     "",   5304,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{    M00_FPGAVer,           "FPGA Version", RF03_In_Word,     48,   -11.8,    0.1,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{    M01_FPGAVer,           "FPGA Version", RF03_In_Word,     98,   -11.8,    0.1,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{    M02_FPGAVer,           "FPGA Version", RF04_In_Word,     48,   -11.8,    0.1,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{    M03_FPGAVer,           "FPGA Version", RF04_In_Word,     98,   -11.8,    0.1,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{    M04_FPGAVer,           "FPGA Version", RF05_In_Word,     48,   -11.8,    0.1,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{    M05_FPGAVer,           "FPGA Version", RF05_In_Word,     98,   -11.8,    0.1,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{    M06_FPGAVer,           "FPGA Version", RF06_In_Word,     48,   -11.8,    0.1,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{    M07_FPGAVer,           "FPGA Version", RF06_In_Word,     98,   -11.8,    0.1,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{    M08_FPGAVer,           "FPGA Version", RF07_In_Word,     48,   -11.8,    0.1,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{    M09_FPGAVer,           "FPGA Version", RF07_In_Word,     98,   -11.8,    0.1,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{    M10_FPGAVer,           "FPGA Version", RF08_In_Word,     48,   -11.8,    0.1,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{    M11_FPGAVer,           "FPGA Version", RF08_In_Word,     98,   -11.8,    0.1,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{    M12_FPGAVer,           "FPGA Version", RF09_In_Word,     48,   -11.8,    0.1,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{    M13_FPGAVer,           "FPGA Version", RF09_In_Word,     98,   -11.8,    0.1,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{    M14_FPGAVer,           "FPGA Version", RF10_In_Word,     48,   -11.8,    0.1,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{    M15_FPGAVer,           "FPGA Version", RF10_In_Word,     98,   -11.8,    0.1,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{    M16_FPGAVer,           "FPGA Version", RF11_In_Word,     48,   -11.8,    0.1,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{    M17_FPGAVer,           "FPGA Version", RF11_In_Word,     98,   -11.8,    0.1,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{    M18_FPGAVer,           "FPGA Version", RF12_In_Word,     48,   -11.8,    0.1,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{    M19_FPGAVer,           "FPGA Version", RF12_In_Word,     98,   -11.8,    0.1,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{    M20_FPGAVer,           "FPGA Version", RF13_In_Word,     48,   -11.8,    0.1,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{    M21_FPGAVer,           "FPGA Version", RF13_In_Word,     98,   -11.8,    0.1,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{    M22_FPGAVer,           "FPGA Version", RF14_In_Word,     48,   -11.8,    0.1,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{    M23_FPGAVer,           "FPGA Version", RF14_In_Word,     98,   -11.8,    0.1,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{    M24_FPGAVer,           "FPGA Version", RF15_In_Word,     48,   -11.8,    0.1,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{    M25_FPGAVer,           "FPGA Version", RF15_In_Word,     98,   -11.8,    0.1,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{    M26_FPGAVer,           "FPGA Version", RF16_In_Word,     48,   -11.8,    0.1,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{    M27_FPGAVer,           "FPGA Version", RF16_In_Word,     98,   -11.8,    0.1,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{    M28_FPGAVer,           "FPGA Version", RF17_In_Word,     48,   -11.8,    0.1,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{    M29_FPGAVer,           "FPGA Version", RF17_In_Word,     98,   -11.8,    0.1,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{    M30_FPGAVer,           "FPGA Version", RF18_In_Word,     48,   -11.8,    0.1,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
 }
 
 #----------------------------------------------------------
