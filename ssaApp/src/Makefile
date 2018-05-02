@@ -26,7 +26,6 @@ $(PROD_NAME)_DBD += asSupport.dbd
 $(PROD_NAME)_DBD += caPutLog.dbd
 $(PROD_NAME)_DBD += $(PROD_NAME)ASubSupport.dbd
 $(PROD_NAME)_DBD += $(PROD_NAME)SeqSupport.dbd
-$(PROD_NAME)_DBD += $(CEXP_DBDS)
 
 # ================================================================================
 # The system command will be mainly used by linux hosted IOCs
@@ -40,7 +39,6 @@ $(PROD_NAME)_DBD += system.dbd
 
 $(PROD_NAME)_DBD += asyn.dbd
 $(PROD_NAME)_DBD += drvAsynIPPort.dbd
-#$(PROD_NAME)_DBD += asynRecord.dbd
 $(PROD_NAME)_DBD += modbusSupport.dbd
 
 # Breakpoint tables for power conversion
@@ -76,9 +74,6 @@ $(PROD_NAME)_LIBS += autosave
 # Needed to link caPutLog support
 $(PROD_NAME)_LIBS += caPutLog
 
-# Needed to link cexpsh() support
-$(PROD_NAME)_LIBS += $(CEXP_LIBS)
-
 $(PROD_NAME)_LIBS += modbus
 $(PROD_NAME)_LIBS += asyn
 
@@ -86,10 +81,9 @@ $(PROD_NAME)_LIBS += asyn
 # NOTE: To build SNL programs, SNCSEQ must be defined
 # in the <top>/configure/RELEASE file
 #
-#ifneq ($(SNCSEQ),)
-#    $(PROD_NAME)_SNCFLAGS += +r
+ifneq ($(SNCSEQ),)
     $(PROD_NAME)_LIBS += seq pv
-#endif
+endif
 
 $(PROD_NAME)_LIBS += $(EPICS_BASE_IOC_LIBS)
 
