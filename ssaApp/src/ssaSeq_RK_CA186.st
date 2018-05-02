@@ -103,7 +103,8 @@ assign psVoltProc to "{P}PSVoltSetpt.PROC";
 #define warningCond !warning
 #define faultCond (!faultInt || !faultExt)
 #define enabledCond (acEnableRBV && dcEnableRBV && rfEnableRBV)
-#define notEnabledOrFaultCond (!acEnableRBV || !dcEnableRBV || !rfEnableRBV || !faultInt || !faultExt)
+//#define notEnabledOrFaultCond (!acEnableRBV || !dcEnableRBV || !rfEnableRBV || !faultInt || !faultExt)
+#define notEnabledOrFaultCond (!enabledCond || faultCond)
 
 /*----------------------------------------------------------------*/
 ss ssa_state_check {
@@ -257,7 +258,7 @@ ss ssa_state_check {
     }
 
     state poweringOnState {
-    /* Turn SSA on: Reset faults if present; enable DC; set drain voltage; enable RF. */
+    /* Turn SSA on: Reset faults if present; enable DC; wait for all modules to power up; set drain voltage; enable RF. */
         entry {
             if (DEBUG) printf("STATE: poweringOnState\n");
         }
@@ -272,8 +273,9 @@ ss ssa_state_check {
                 dcEnable = 1;
                 pvPut(dcEnable, SYNC);
             }
-            // TODO: Wait for modules to turn on...is there a better way to check than testing each module's power PV?
-            // TODO: I may need to move psVoltProc to the final block
+            // The epicsThreadSleep below is temporary...
+            epicsThreadSleep(20.0);
+            // TODO: Wait for modules to turn on...is there a better way to check than testing each module's power PV or sleeping?
             if (DEBUG) printf("psVoltProc\n");
             psVoltProc = 1;
             pvPut(psVoltProc, SYNC);
