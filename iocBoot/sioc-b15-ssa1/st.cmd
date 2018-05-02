@@ -19,7 +19,7 @@ ssa_registerRecordDeviceDriver(pdbbase)
 # Setup environment variables
 epicsEnvSet("ENGINEER", "Garth Brown")
 epicsEnvSet("LOCATION", "B15 SSA test stand 1")
-epicsEnvSet("P",        "SSA1:B15:")
+epicsEnvSet("P",        "ACCL:L1B:0210:SSA:")
 epicsEnvSet("IP",       "ssa-b15-rf0110")
 epicsEnvSet("IOC_P",    "SIOC:B15:SSA1")
 
