@@ -11,9 +11,9 @@ DB_INSTALLS += $(ASYN)/db/asynRecord.db
 DB_INSTALLS += $(MODBUS)/db/bo_word.template
 DB_INSTALLS += $(MODBUS)/db/longout.template
 DB_INSTALLS += $(MODBUS)/db/bi_word.template
-DB_INSTALLS += $(MODBUS)/db/longin.template
-DB_INSTALLS += $(MODBUS)/db/ai.template
-DB_INSTALLS += $(MODBUS)/db/intarray_in.template
+#DB_INSTALLS += $(MODBUS)/db/longin.template
+#DB_INSTALLS += $(MODBUS)/db/ai.template
+#DB_INSTALLS += $(MODBUS)/db/intarray_in.template
 DB_INSTALLS += $(MODBUS)/db/statistics.template
 DB_INSTALLS += $(MODBUS)/db/poll_delay.template
 
