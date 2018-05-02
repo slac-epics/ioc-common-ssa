@@ -3,8 +3,9 @@
 # Generate substitutions file for N SSA modules.
 
 from __future__ import print_function
+import sys
 
-outfile = 'ssatest.subs'
+outfile = 'test.out'
 NMODS = 31  # Total number of SSA modules
 NREGS = 50  # Register repeat period
 
@@ -96,6 +97,18 @@ def write_ai(f):
     wrloop(f, str_fans, NMODS, NREGS, 339)
     wrloop(f, str_fpga, NMODS, NREGS, 348)
     f.write('}\n\n')
+
+def write_alarm_sums(f):
+    f.write('file "ssa_RK_CA186_moduleAlarms.template" {')
+    f.write('\n')
+    f.write('pattern')
+    f.write('\n')
+    f.write('{MOD}')
+    f.write('\n')
+    for i in range(NMODS):
+        f.write('{{M{0:02d}}}'.format(i))
+        f.write('\n')
+    f.write('}\n\n')
     
 def write_subs_file(filename):
     with open(filename, 'w') as f:
@@ -108,11 +121,17 @@ def write_subs_file(filename):
         write_li(f)
         #ai
         write_ai(f)
+        write_alarm_sums(f)
         f.write('#----------------------------------------------------------')
         f.write('\n')
 
 if __name__ == '__main__':
-    write_subs_file(outfile)
+    if len(sys.argv) == 1:
+        write_subs_file(outfile)
+    elif len(sys.argv) == 2:
+        write_subs_file(sys.argv[1])
+    else:
+        print('sys.argv[0]: Invalid arguments')
 
 
 

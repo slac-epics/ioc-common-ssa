@@ -1,0 +1,40 @@
+#--- Module $(MOD) alarm summaries -------------------------------------------------
+record(calc, "$(P)$(MOD)_PIVAlarmSum") {
+    field(DESC, "$(MOD) P-I-V Alarm Sum")
+    field(INPA, "$(P)$(MOD)_FwdPwr.SEVR CP MS")
+    field(INPB, "$(P)$(MOD)_RefPwr.SEVR CP MS")
+    field(INPC, "$(P)$(MOD)_Dev1Drn_I.SEVR CP MS")
+    field(INPD, "$(P)$(MOD)_Dev2Drn_I.SEVR CP MS")
+    field(INPE, "$(P)$(MOD)_Drn_V.SEVR CP MS")
+    field(INPF, "$(P)$(MOD)_PS1_I.SEVR CP MS")
+    field(INPG, "$(P)$(MOD)_PS2_I.SEVR CP MS")
+    field(INPH, "$(P)$(MOD)_PS3_I.SEVR CP MS")
+    field(INPI, "$(P)$(MOD)_PS1_V.SEVR CP MS")
+    field(INPJ, "$(P)$(MOD)_PS2_V.SEVR CP MS")
+    field(INPK, "$(P)$(MOD)_PS3_V.SEVR CP MS")
+    field(FLNK, "$(P)$(MOD)_AlarmSummary")
+}
+
+record(calc, "$(P)$(MOD)_MiscAlarmSum") {
+    field(DESC, "$(MOD) Misc Alarm Sum")
+    field(INPA, "$(P)$(MOD)_SubCBStat.SEVR CP MS")
+    field(INPB, "$(P)$(MOD)_PwrStat.SEVR CP MS")
+    field(INPC, "$(P)$(MOD)_LCWHSTemp.SEVR CP MS")
+    field(INPD, "$(P)$(MOD)_AirTemp.SEVR CP MS")
+    field(INPE, "$(P)$(MOD)_TxFanSpd1.SEVR CP MS")
+    field(INPF, "$(P)$(MOD)_TxFanSpd2.SEVR CP MS")
+    field(INPG, "$(P)$(MOD)_FanSpd.SEVR CP MS")
+    field(INPH, "$(P)$(MOD)_HiADWarn.SEVR CP MS")
+    field(INPI, "$(P)$(MOD)_LoADWarn.SEVR CP MS")
+    field(INPJ, "$(P)$(MOD)_IO1Intlk.SEVR CP MS")
+    field(INPK, "$(P)$(MOD)_IO1Warn.SEVR CP MS")
+    field(INPL, "$(P)$(MOD)_IO2Warn.SEVR CP MS")
+    field(FLNK, "$(P)$(MOD)_AlarmSummary")
+}
+
+record(calc, "$(P)$(MOD)_AlarmSummary") {
+    field(DESC, "Module $(MOD) Alarm Summary")
+    field(INPA, "$(P)$(MOD)_PIVAlarmSum MS")
+    field(INPB, "$(P)$(MOD)_MiscAlarmSum MS")
+}
+
