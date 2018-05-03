@@ -13,5 +13,6 @@ startup/
 cfg/
 ssatest.subs
 trash/
+.__afs*
 
 

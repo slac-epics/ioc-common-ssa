@@ -173,7 +173,7 @@ ss ssa_state_check {
             %{epicsTimeToStrftime(asciiTime_current, sizeof(asciiTime_current),
                 "%Y%m%d_%H:%M:%S.%06f", &ts_current);
             }%
-            printf("[%s] SSA faulted\n", asciiTime_current);
+            printf("[%s] SSA faulted (%s)\n", asciiTime_current, macValueGet("P"));
             statusMsg = 1;
             pvPut(statusMsg);
         }
@@ -202,7 +202,7 @@ ss ssa_state_check {
             %{epicsTimeToStrftime(asciiTime_current, sizeof(asciiTime_current),
                 "%Y%m%d_%H:%M:%S.%06f", &ts_current);
             }%
-            printf("[%s] Resetting SSA faults\n", asciiTime_current);
+            printf("[%s] Resetting SSA faults (%s)\n", asciiTime_current, macValueGet("P"));
             statusMsg = 4;
             pvPut(statusMsg);
             if (faultInt) {
@@ -265,7 +265,7 @@ ss ssa_state_check {
             %{epicsTimeToStrftime(asciiTime_current, sizeof(asciiTime_current),
                 "%Y%m%d_%H:%M:%S.%06f", &ts_current);
             }%
-            printf("[%s] Powering SSA on\n", asciiTime_current);
+            printf("[%s] Powering SSA on (%s)\n", asciiTime_current, macValueGet("P"));
             statusMsg = 5;
             pvPut(statusMsg);
             if (!dcEnableRBV) {
@@ -318,7 +318,7 @@ ss ssa_state_check {
             %{epicsTimeToStrftime(asciiTime_current, sizeof(asciiTime_current),
                 "%Y%m%d_%H:%M:%S.%06f", &ts_current);
             }%
-            printf("[%s] Powering SSA off\n", asciiTime_current);
+            printf("[%s] Powering SSA off (%s)\n", asciiTime_current, macValueGet("P"));
             if (rfEnableRBV) {
                 rfEnable = 0;
                 pvPut(rfEnable, SYNC);
@@ -362,7 +362,7 @@ ss ssa_state_check {
             %{epicsTimeToStrftime(asciiTime_current, sizeof(asciiTime_current),
                 "%Y%m%d_%H:%M:%S.%06f", &ts_current);
             }%
-            printf("[%s] SSA sysReboot\n", asciiTime_current);
+            printf("[%s] SSA sysReboot (%s)\n", asciiTime_current, macValueGet("P"));
         }
         when (!efTest(sysRebootFlag)) {
             statusMsg = 10;
@@ -386,7 +386,7 @@ ss ssa_state_check {
             %{epicsTimeToStrftime(asciiTime_current, sizeof(asciiTime_current),
                 "%Y%m%d_%H:%M:%S.%06f", &ts_current);
             }%
-            printf("[%s] SSA X-port reboot\n", asciiTime_current);
+            printf("[%s] SSA X-port reboot (%s)\n", asciiTime_current, macValueGet("P"));
         }
         when (!efTest(xPortRebootFlag)) {
             statusMsg = 11;
