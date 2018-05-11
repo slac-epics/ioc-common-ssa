@@ -1,5 +1,9 @@
 #!../../../bin/rhel6-x86_64/ssa
 
+# For LERF only
+# Do *NOT* run this IOC at SLAC
+# It would cause duplicate PV names
+
 < envPaths
 
 cd ${TOP}
@@ -7,7 +11,6 @@ cd ${TOP}
 ## Register all support components
 dbLoadDatabase("dbd/ssa.dbd")
 ssa_registerRecordDeviceDriver(pdbbase)
-
 
 ## Set up environment variables
 epicsEnvSet("ENGINEER", "Sonya Hoobler")
