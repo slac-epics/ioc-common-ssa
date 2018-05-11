@@ -127,13 +127,9 @@ ss ssa_state_check {
         when (powerOff) {
         } state poweringOffState
         when (systemReboot) {
-            systemReboot = 0;
-            pvPut(systemReboot);
-        } state ssaOnState
+        } state sysRebootState
         when (xPortReboot) {
-            xPortReboot = 0;
-            pvPut(xPortReboot);
-        } state ssaOnState
+        } state xPortRebootState
     }
 
     state ssaOffState {
