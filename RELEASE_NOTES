@@ -10,11 +10,8 @@
 #  Rev:  dd-mmm-yyyy, Reviewer's Name    (USERNAME)
 #--------------------------------------------------------------
 
-ssa-R0-0-1: 02-Apr-2018  M. Dunning (mdunning) 
+ssa-R0-0-1: 02-May-2018  M. Dunning (mdunning) 
     First tagged release
-
-ssa-R0-0-2: 11-May-2018  M. Dunning (mdunning) 
-    ssaSeq_RK_CA1300.st: Enable System and X-port buttons to take action while SSA is on
 
 
 
