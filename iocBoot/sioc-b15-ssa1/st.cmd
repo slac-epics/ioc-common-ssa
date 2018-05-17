@@ -34,14 +34,14 @@ epicsEnvSet("EPICS_IOC_LOG_CLIENT_INET","${IOC}")
 # SSA1: L1B:0210
 epicsEnvSet("P",        "ACCL:L1B:0210:SSA:")
 epicsEnvSet("IP",       "ssa-b15-rf0110")
-< iocBoot/startup.modbus_RK_CA1300.cmd
-dbLoadRecords("db/ssa_RK_CA1300.db", "P=$(P)")
+< iocBoot/common/startup.modbus_RK_CA1300.cmd
+dbLoadRecords("db/ssa_RK_CA1300_4.6kW.db", "P=$(P)")
 epicsThreadSleep(0.5)
 
 # SSA2: L1B:0220
 epicsEnvSet("P",        "ACCL:L1B:0220:SSA:")
 epicsEnvSet("IP",       "ssa-b15-rf0120")
-< iocBoot/startup.modbus_RK_CA1300.cmd
+< iocBoot/common/startup.modbus_RK_CA1300.cmd
 dbLoadRecords("db/ssa_RK_CA1300.db", "P=$(P)")
 epicsThreadSleep(0.5)
 
