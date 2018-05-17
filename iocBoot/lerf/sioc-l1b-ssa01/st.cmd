@@ -36,56 +36,56 @@ epicsEnvSet("EPICS_IOC_LOG_CLIENT_INET","${IOC}")
 
 # SSA1: L1B:0210
 epicsEnvSet("P",        "ACCL:L1B:0210:SSA:")
-epicsEnvSet("IP",       "lcls-ssa01")
+epicsEnvSet("IP",       "lcls-ssa11")
 < iocBoot/common/startup.modbus_RK_CA1300.cmd
 dbLoadRecords("db/ssa_RK_CA1300.db", "P=$(P)")
 epicsThreadSleep(0.5)
 
 # SSA2: L1B:0220
 epicsEnvSet("P",        "ACCL:L1B:0220:SSA:")
-epicsEnvSet("IP",       "lcls-ssa02")
+epicsEnvSet("IP",       "lcls-ssa12")
 < iocBoot/common/startup.modbus_RK_CA1300.cmd
 dbLoadRecords("db/ssa_RK_CA1300.db", "P=$(P)")
 epicsThreadSleep(0.5)
 
 # SSA2: L1B:0230
 epicsEnvSet("P",        "ACCL:L1B:0230:SSA:")
-epicsEnvSet("IP",       "lcls-ssa03")
+epicsEnvSet("IP",       "lcls-ssa13")
 < iocBoot/common/startup.modbus_RK_CA1300.cmd
 dbLoadRecords("db/ssa_RK_CA1300.db", "P=$(P)")
 epicsThreadSleep(0.5)
 
 # SSA2: L1B:0240
 epicsEnvSet("P",        "ACCL:L1B:0240:SSA:")
-epicsEnvSet("IP",       "lcls-ssa04")
+epicsEnvSet("IP",       "lcls-ssa14")
 < iocBoot/common/startup.modbus_RK_CA1300.cmd
 dbLoadRecords("db/ssa_RK_CA1300.db", "P=$(P)")
 epicsThreadSleep(0.5)
 
 # SSA2: L1B:0250
 epicsEnvSet("P",        "ACCL:L1B:0250:SSA:")
-epicsEnvSet("IP",       "lcls-ssa05")
+epicsEnvSet("IP",       "lcls-ssa15")
 < iocBoot/common/startup.modbus_RK_CA1300.cmd
 dbLoadRecords("db/ssa_RK_CA1300.db", "P=$(P)")
 epicsThreadSleep(0.5)
 
 # SSA2: L1B:0260
 epicsEnvSet("P",        "ACCL:L1B:0260:SSA:")
-epicsEnvSet("IP",       "lcls-ssa06")
+epicsEnvSet("IP",       "lcls-ssa16")
 < iocBoot/common/startup.modbus_RK_CA1300.cmd
 dbLoadRecords("db/ssa_RK_CA1300.db", "P=$(P)")
 epicsThreadSleep(0.5)
 
 # SSA2: L1B:0270
 epicsEnvSet("P",        "ACCL:L1B:0270:SSA:")
-epicsEnvSet("IP",       "lcls-ssa07")
+epicsEnvSet("IP",       "lcls-ssa17")
 < iocBoot/common/startup.modbus_RK_CA1300.cmd
 dbLoadRecords("db/ssa_RK_CA1300.db", "P=$(P)")
 epicsThreadSleep(0.5)
 
 # SSA2: L1B:0280
 epicsEnvSet("P",        "ACCL:L1B:0280:SSA:")
-epicsEnvSet("IP",       "lcls-ssa08")
+epicsEnvSet("IP",       "lcls-ssa18")
 < iocBoot/common/startup.modbus_RK_CA1300.cmd
 dbLoadRecords("db/ssa_RK_CA1300.db", "P=$(P)")
 epicsThreadSleep(0.5)
