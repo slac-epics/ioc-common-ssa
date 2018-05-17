@@ -10,6 +10,10 @@
 #  Rev:  dd-mmm-yyyy, Reviewer's Name    (USERNAME)
 #--------------------------------------------------------------
 
+ssa-R0-0-3: 17-May-2018  S. Hoobler (sonya) 
+    Add LERF sioc-l1b-rf02
+    Initial version deployed at LERF
+
 ssa-R0-0-2: 15-May-2018  M. Dunning (mdunning) 
     Create common and lerf iocBoot directories (thanks to Sonya)
     Add support for 4.6 kW LCLS-II HE SSA
