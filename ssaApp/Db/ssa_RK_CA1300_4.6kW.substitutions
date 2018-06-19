@@ -53,7 +53,7 @@ pattern
 {  ErrCodeExt,    "External Error Code",    $(P)_inw1,     13,    "",    "",    "",     1, NO_ALARM, NO_ALARM, NO_ALARM,    MAJOR,       "", "I/O Intr"}
 { WarningCode,           "Warning Code",    $(P)_inw1,     14,    "",    "",     1,    "", NO_ALARM, NO_ALARM,    MINOR, NO_ALARM,       "", "I/O Intr"}
 {      DrvPwr,            "Drive Power",    $(P)_inw1,     15,    "",    "",  2500,  2510, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "mV", "I/O Intr"}
-{      FwdPwr,          "Forward Power",    $(P)_inw1,     16,    "",    "",  4700,  4710, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
+{      FwdPwr,          "Forward Power",    $(P)_inw1,     16,    "",    "",  4750,  4760, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
 {      RefPwr,        "Reflected Power",    $(P)_inw1,     17,    "",    "",   400,   500, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
 {CtrlFanSpeed,      "Ctrl Unit Fan Spd",    $(P)_inw1,     22,    "",  6300, 11700, 12000, NO_ALARM,    MINOR,    MINOR,    MAJOR,    "rpm", "I/O Intr"}
 { DA_FanSpeed,        "Drv Amp Fan Spd",    $(P)_inw1,     46,    "",  5250,  9750, 10000, NO_ALARM,    MINOR,    MINOR,    MAJOR,    "rpm", "I/O Intr"}
