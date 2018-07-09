@@ -49,7 +49,7 @@ def wrloop(f, str, nmods, nregs, start):
         f.write('\n')
 
 def write_bi(f):
-    f.write('file "bi_word.template" {')
+    f.write('file "bi_word_custom.template" {')
     f.write('\n')
     f.write('pattern')
     f.write('\n')

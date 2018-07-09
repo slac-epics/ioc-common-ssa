@@ -1,6 +1,6 @@
 #--- SSA modules 00-30 -----------------------------------
 
-file "bi_word.template" {
+file "bi_word_custom.template" {
 pattern
 {              R,                     DESC,       PORT, OFFSET,   MASK,         ZNAM,       ONAM,      ZSV,      OSV,       SCAN}
 {  M00_SubCBStat,    "Sub Ckt Brkr Status", $(P)_inw03,     19, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
