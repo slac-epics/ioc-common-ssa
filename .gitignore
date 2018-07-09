@@ -4,7 +4,7 @@ O.*/
 RELEASE_SITE
 db/
 dbd/
-iocBoot/*/envPaths
+envPaths
 *~
 build*.log*
 *.swp
