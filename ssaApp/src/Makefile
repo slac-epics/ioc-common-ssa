@@ -49,7 +49,6 @@ $(PROD_NAME)_DBD += bptSsaPwrDrv.dbd
 # ======================================================================
 # <name>_registerRecordDeviceDriver.cpp will be created from <name>.dbd
 $(PROD_NAME)_SRCS += $(PROD_NAME)_registerRecordDeviceDriver.cpp
-$(PROD_NAME)_SRCS += $(PROD_NAME)ASub.c
 
 $(PROD_NAME)_SRCS_DEFAULT += $(PROD_NAME)Main.cpp
 
@@ -60,6 +59,7 @@ $(PROD_NAME)_SRCS_vxWorks += -nil-
 # Add locally compiled object code
 # For example, subroutines
 # ========================================================================
+$(PROD_NAME)_SRCS += $(PROD_NAME)ASub.c
 $(PROD_NAME)_SRCS += $(PROD_NAME)Seq_RK_CA1300.st
 $(PROD_NAME)_SRCS += $(PROD_NAME)Seq_RK_CA186.st
 
