@@ -82,10 +82,10 @@ assign xPortRebootReg to "{P}XPReboot";
 evflag xPortRebootFlag;
 
 //int modulePwrStatus[31];
-int modulePwrStatus[2];
-assign modulePwrStatus[0] to $(P)M00:PwrStat;
-assign modulePwrStatus[1] to $(P)M30:PwrStat;
-monitor modulePwrStatus;
+//int modulePwrStatus[2];
+//assign modulePwrStatus[0] to $(P)M00:PwrStat;
+//assign modulePwrStatus[1] to $(P)M30:PwrStat;
+//monitor modulePwrStatus;
 
 int psVoltProc;
 assign psVoltProc to "{P}PSVoltSetpt.PROC";
