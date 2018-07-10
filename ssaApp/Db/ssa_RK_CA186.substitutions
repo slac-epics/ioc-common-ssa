@@ -7,7 +7,7 @@ pattern
 #--------------------------------------------------------------------------------------------------
 
 # Binary outputs, modbus function code 6.
-file "bo_word.template" {
+file "bo_word_custom.template" {
 pattern
 {            R,                      DESC,        PORT, OFFSET,   MASK,      ZNAM,     ONAM}
 {     DCEnable,       "DC Enable/Disable", $(P)_outw00,      0, 0x0001, "Disable", "Enable"}
