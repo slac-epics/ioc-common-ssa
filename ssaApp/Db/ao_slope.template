@@ -1,4 +1,5 @@
 record(ao, "$(P)$(R)") {
+    field(DESC, "$(DESC="")")
     field(DTYP, "asynInt32")
     field(OUT,  "@asyn($(PORT) $(OFFSET))MODBUS_DATA")
     field(LINR, "LINEAR")
