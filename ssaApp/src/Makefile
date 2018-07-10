@@ -61,6 +61,7 @@ $(PROD_NAME)_SRCS_vxWorks += -nil-
 # For example, subroutines
 # ========================================================================
 $(PROD_NAME)_SRCS += $(PROD_NAME)Seq_RK_CA1300.st
+$(PROD_NAME)_SRCS += $(PROD_NAME)Seq_RK_CA186.st
 
 # =====================================================
 # Link in the code from other libraries
