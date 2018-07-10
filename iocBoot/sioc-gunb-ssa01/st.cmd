@@ -149,27 +149,27 @@ caPutLogShow(2)
 # This must be done after iocInit
 #
 # Gun SSA 1: GUN:GUNB:100:SSA1
-seq(seq_ssa_CA186, "P=GUN:GUNB:100:SSA1:")
+seq(ssaSeq_RK_CA186, "P=GUN:GUNB:100:SSA1:")
 epicsThreadSleep(0.5)
 
 # Gun SSA 2: GUN:GUNB:100:SSA2
-seq(seq_ssa_CA186, "P=GUN:GUNB:100:SSA2:")
+seq(ssaSeq_RK_CA186, "P=GUN:GUNB:100:SSA2:")
 epicsThreadSleep(0.5)
 
 # Buncher SSA 1: ACCL:GUNB:455:SSA1
-seq(seq_ssa_CA1300, "P=ACCL:GUNB:455:SSA1:")
+seq(ssaSeq_RK_CA1300, "P=ACCL:GUNB:455:SSA1:")
 epicsThreadSleep(0.5)
 
 # Buncher SSA 2: ACCL:GUNB:455:SSA2
-seq(seq_ssa_CA1300, "P=ACCL:GUNB:455:SSA2:")
+seq(ssaSeq_RK_CA1300, "P=ACCL:GUNB:455:SSA2:")
 epicsThreadSleep(0.5)
 
 # Buncher SSA 3: ACCL:GUNB:455:SSA3
-seq(seq_ssa_CA1300, "P=ACCL:GUNB:455:SSA3:")
+seq(ssaSeq_RK_CA1300, "P=ACCL:GUNB:455:SSA3:")
 epicsThreadSleep(0.5)
 
 # Buncher SSA 4: ACCL:GUNB:455:SSA4
-seq(seq_ssa_CA1300, "P=ACCL:GUNB:455:SSA4:")
+seq(ssaSeq_RK_CA1300, "P=ACCL:GUNB:455:SSA4:")
 epicsThreadSleep(0.5)
 
 
