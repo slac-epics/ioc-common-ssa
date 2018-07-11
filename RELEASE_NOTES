@@ -13,6 +13,7 @@
 ssa-R0-0-4: 09-Jul-2018  M. Dunning (mdunning) 
     Add LCLS-II gun/buncher IOC sioc-gunb-ssa01
     Support multiple CA186 SSAs per IOC
+    Add alarm summaries for CA186 SSA
     Upgrade asyn and modbus
 
 ssa-R0-0-3: 17-May-2018  S. Hoobler (sonya) 
