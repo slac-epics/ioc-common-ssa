@@ -146,7 +146,7 @@ pattern
 {      480VAC1_UV,        "480 VAC U-V RBV", $(P)_inw00,     99,   -842,   0.448,    0,    432,    450,    500,    528,    MAJOR,    MINOR,    MINOR,    MAJOR,   "VAC", "I/O Intr"}
 {      480VAC2_VW,        "480 VAC V-W RBV", $(P)_inw01,      0,   -842,   0.448,    0,    432,    450,    500,    528,    MAJOR,    MINOR,    MINOR,    MAJOR,   "VAC", "I/O Intr"}
 {      480VAC3_UW,        "480 VAC U-W RBV", $(P)_inw01,      1,   -842,   0.448,    0,    432,    450,    500,    528,    MAJOR,    MINOR,    MINOR,    MAJOR,   "VAC", "I/O Intr"}
-{          DrvPwr,  "Drive (Input) Pwr RBV", $(P)_inw01,      2, -50.57, 0.04762,    1,     "",   -1.0,    0.0,      0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,   "dBm", "I/O Intr"}
+{          DrvPwr,          "Drive Pwr RBV", $(P)_inw01,      2, -50.57, 0.04762,    1,     "",   -1.0,    0.0,      0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,   "dBm", "I/O Intr"}
 {        Humidity,               "Humidity", $(P)_inw01,      5,    0.0,   0.132,    1,   10.0,   15.0,   80.0,   85.0,    MAJOR,    MINOR,    MINOR,    MAJOR,     "%", "I/O Intr"}
 {     LCWFlowRate,          "LCW Flow Rate", $(P)_inw01,      6,    0.0,  0.0564,    1,   65.0,   60.0,     "",     "",    MAJOR,    MINOR, NO_ALARM, NO_ALARM, "L/min", "I/O Intr"}
 {      SysAirTemp,           "Sys Air Temp", $(P)_inw01,      9, -39.24,  0.0392,    1,     "",     "",   45.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
