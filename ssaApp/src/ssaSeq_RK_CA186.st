@@ -2,8 +2,13 @@ program seq_ssa_CA186
 
 /*----------------------------------------------------------------*/
 /*
-description...
+This sequencer routine controls SSA states by monitoring inputs, which can 
+come from SSA readbacks (e.g. interlocks), or user-generated input 
+(e.g. On/Off buttons).
 */
+
+%%#include <epicsTime.h>   // timestamps
+%%#include <errlog.h>      // errlogPrintf
 
 /*----------------------------------------------------------------*/
 option +r;  /* one sequence task per ssa */
@@ -90,21 +95,33 @@ evflag xPortRebootFlag;
 int psVoltProc;
 assign psVoltProc to "{P}PSVoltSetpt.PROC";
 
-#define DEBUG 1
-#define failWait 5.0
-#define resetTimeout 5.0
-#define powerOnTimeout 45.0
-#define powerOnWait 2.0
-#define powerOffTimeout 5.0
-#define sysRebootTimeout 6.0
-#define xPortRebootTimeout 6.0
-#define faultIntCond !faultInt
-#define faultExtCond !faultExt
-#define warningCond !warning
-#define faultCond (!faultInt || !faultExt)
+// Constants --------------------------------
+#define DEBUG 0
+#define failWait 5.0  // Time to stay in faultResetFailState
+#define resetTimeout 5.0  // Time to wait after attempting to reset a fault before we declare failure
+#define powerOnTimeout 45.0  // Time to wait before we declare power on sequence to be a failure
+#define powerOnWait 2.0  // Time to wait in faultResetState before going to poweringOnState
+#define powerOffTimeout 5.0  // Time to wait in poweringOffState before going to powerOffFailState
+#define sysRebootTimeout 6.0  // Time to wait after sysReboot before we go to ssaOnState
+#define xPortRebootTimeout 6.0  // Time to wait after xPortReboot before we go to ssaOnState
+#define faultIntCond !faultInt  // Logic is inverted w.r.t. CA1300 SSAs
+#define faultExtCond !faultExt  // Logic is inverted w.r.t. CA1300 SSAs
+#define warningCond !warning  // Logic is inverted w.r.t. CA1300 SSAs
+#define faultCond (faultIntCond || faultExtCond)
 #define enabledCond (acEnableRBV && dcEnableRBV && rfEnableRBV)
-//#define notEnabledOrFaultCond (!acEnableRBV || !dcEnableRBV || !rfEnableRBV || !faultInt || !faultExt)
 #define notEnabledOrFaultCond (!enabledCond || faultCond)
+
+
+// Variables --------------------------------
+%%static char tsbuffer[64];  // For timestamp
+
+// Functions ----------------------------------
+%{static char *timestamp() {
+    epicsTimeStamp ts_current;
+    epicsTimeGetCurrent(&ts_current);
+    epicsTimeToStrftime(tsbuffer, sizeof(tsbuffer), "%Y%m%d_%H:%M:%S.%06f", &ts_current);
+    return tsbuffer;
+}}%
 
 /*----------------------------------------------------------------*/
 ss ssa_state_check {
@@ -132,13 +149,9 @@ ss ssa_state_check {
         when (powerOff) {
         } state poweringOffState
         when (systemReboot) {
-            systemReboot = 0;
-            pvPut(systemReboot);
-        } state ssaOnState
+        } state sysRebootState
         when (xPortReboot) {
-            xPortReboot = 0;
-            pvPut(xPortReboot);
-        } state ssaOnState
+        } state xPortRebootState
     }
 
     state ssaOffState {
@@ -174,6 +187,7 @@ ss ssa_state_check {
     /* SSA is off: External or internal fault. SSA internally disables DC & RF when this happens. */
         entry {
             if (DEBUG) printf("STATE: faultedState\n");
+            errlogPrintf("[%s] SSA faulted (%s)\n", timestamp(), macValueGet("P"));
             statusMsg = 1;
             pvPut(statusMsg);
         }
@@ -192,12 +206,14 @@ ss ssa_state_check {
     }
     
     state faultResetState {
-    /* Disable DC and RF if enabled; reset internal and external faults and warning.  SSA still needs to be turned on after this in order to run. */
+        /* Disable DC and RF if enabled; reset internal and external faults and warning.  
+                SSA still needs to be turned on after this in order to run. */
         entry {
             if (DEBUG) printf("STATE: faultResetState\n");
         }
         when (!efTest(resetFlag) && faultCond) {
             if (DEBUG) printf("Resetting...\n");
+            errlogPrintf("[%s] Resetting SSA faults (%s)\n", timestamp(), macValueGet("P"));
             statusMsg = 4;
             pvPut(statusMsg);
             if (dcEnableRBV) {
@@ -266,6 +282,7 @@ ss ssa_state_check {
         } state faultResetState
         when (!efTest(powerOnFlag)) {
             if (DEBUG) printf("Powering on...\n");
+            errlogPrintf("[%s] Powering SSA on (%s)\n", timestamp(), macValueGet("P"));
             statusMsg = 5;
             pvPut(statusMsg);
             if (!dcEnableRBV) {
@@ -318,6 +335,7 @@ ss ssa_state_check {
             pvPut(statusMsg);
         }
         when (!efTest(powerOffFlag)) {
+            errlogPrintf("[%s] Powering SSA off (%s)\n", timestamp(), macValueGet("P"));
             if (rfEnableRBV) {
                 rfEnable = 0;
                 pvPut(rfEnable, SYNC);
@@ -357,6 +375,7 @@ ss ssa_state_check {
     /* System reboot: Execute system reboot, then transition back to On state. */
         entry {
             if (DEBUG) printf("STATE: sysReboot\n");
+            errlogPrintf("[%s] SSA sysReboot (%s)\n", timestamp(), macValueGet("P"));
         }
         when (!efTest(sysRebootFlag)) {
             statusMsg = 10;
@@ -376,6 +395,7 @@ ss ssa_state_check {
     /* Lantronix X-port reboot: Execute reboot, then transition back to On state. */
         entry {
             if (DEBUG) printf("STATE: xPortReboot\n");
+            errlogPrintf("[%s] SSA X-port reboot (%s)\n", timestamp(), macValueGet("P"));
         }
         when (!efTest(xPortRebootFlag)) {
             statusMsg = 11;

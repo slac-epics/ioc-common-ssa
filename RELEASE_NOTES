@@ -10,6 +10,10 @@
 #  Rev:  dd-mmm-yyyy, Reviewer's Name    (USERNAME)
 #--------------------------------------------------------------
 
+ssa-R0-0-5: 08-Aug-2018  M. Dunning (mdunning)
+    Add message printing to gun sequencer routine
+    Add comments to gun and l-band sequencer routines
+
 ssa-R0-0-4: 09-Jul-2018  M. Dunning (mdunning) 
     Add LCLS-II gun/buncher IOC sioc-gunb-ssa01
     Support multiple CA186 SSAs per IOC
