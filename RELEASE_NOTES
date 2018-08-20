@@ -10,6 +10,11 @@
 #  Rev:  dd-mmm-yyyy, Reviewer's Name    (USERNAME)
 #--------------------------------------------------------------
 
+ssa-R0-0-6: 20-Aug-2018  M. Dunning (mdunning)
+    Add "public" ai record for l-band drain voltage readback
+    Add drain voltage setpt and readback for gun ssa
+    Fix PSVoltRBV alarm limits for gun ssa
+
 ssa-R0-0-5: 08-Aug-2018  M. Dunning (mdunning)
     Add message printing to gun sequencer routine
     Add comments to gun and l-band sequencer routines

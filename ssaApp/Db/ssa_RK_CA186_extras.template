@@ -30,49 +30,45 @@ record(bo, "$(P)XPortReboot"){
 }
 
 # --- Drain Voltage <---> Output Voltage --------------
-# This model doesn't have a conversion table...let's save this for later
-#record(ao, "$(P)DrainVoltSetpt") {
-#    field(DESC, "Drain Voltage Setpt")
-#    field(EGU,  "V")
-#    field(PREC, "2")
-#    field(LOPR, "13.5")
-#    field(HOPR, "48")
-#    field(DRVL, "13.5")
-#    field(DRVH, "48")
-#    field(FLNK, "$(P)DrainVCalc")
-#    info(autosaveFields, "VAL")
-#}
-#
-#record(calcout, "$(P)DrainVCalc") {
-#    field(DESC, "Drain to output voltage conversion")
-#    field(ASG,  "Internal")
-#    field(INPA, "$(P)DrainVoltSetpt")
-#    field(INPB, "131")
-#    field(INPC, "2.5")
-#    field(CALC, "(A*B)/C")
-#    field(OUT,  "$(P)PSVoltSetpt PP")
-#}
-#
-#record(calc, "$(P)DrainVoltRBV") {
-#    field(DESC, "Drain voltage")
-#    field(INPA, "$(P)PSVoltRBV CPP")
-#    field(INPB, "131")
-#    field(INPC, "2.5")
-#    field(EGU,  "V")
-#    field(PREC, "2")
-#    field(CALC, "(A*C)/B")
-#}
-
-record(ao, "$(P)PSVoltSetpt") {
-    field(DESC, "Output Voltage Setpt [mV]")
-    field(EGU,  "mV")
-    field(PREC, "1")
-    field(LOPR, "700")
-    field(HOPR, "2500")
-    field(DRVL, "700")
-    field(DRVH, "2500")
-    field(OUT,  "$(P)PSVolt PP")
+# This model doesn't have a conversion table, so I'm inferring this by setting
+# reg. 3 and reading back reg. 35
+record(ao, "$(P)DrainVoltSetpt") {
+    field(DESC, "Drain Voltage Setpt [V]")
+    field(EGU,  "V")
+    field(PREC, "2")
+    field(LOPR, "13.4")
+    field(HOPR, "45")
+    field(DRVL, "13.4")
+    field(DRVH, "45")
+    field(FLNK, "$(P)DrainVCalc")
     info(autosaveFields, "VAL")
+}
+
+record(calcout, "$(P)DrainVCalc") {
+    field(DESC, "Drain to output voltage conversion")
+    field(ASG,  "Internal")
+    field(INPA, "$(P)DrainVoltSetpt")
+    field(INPB, "51.998")
+    field(INPC, "2.262")
+    field(CALC, "(A*B) + C")
+    field(OUT,  "$(P)PSVoltSetpt PP")
+}
+
+record(calc, "$(P)DrainVoltRBVCalc") {
+    field(DESC, "Drain voltage RBV calc")
+    field(ASG,  "Internal")
+    field(INPA, "$(P)PSVoltRBV CPP MS")
+    field(EGU,  "V")
+    field(PREC, "2")
+    field(CALC, "A")
+    field(FLNK, "$(P)DrainVoltRBV")
+}
+
+record(ai, "$(P)DrainVoltRBV") {
+    field(DESC, "Drain Voltage RBV")
+    field(INP, "$(P)DrainVoltRBVCalc MS")
+    field(EGU,  "V")
+    field(PREC, "2")
 }
 #---------------------------------------------------------------
 
