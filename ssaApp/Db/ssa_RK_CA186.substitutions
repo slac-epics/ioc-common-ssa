@@ -25,7 +25,7 @@ pattern
 file "longout_custom.template" {
 pattern
 {            R,                      DESC,        PORT, OFFSET, DRVL, DRVH, LOPR, HOPR,     EGU}
-{       PSVolt,          "Output Voltage", $(P)_outw00,      2,  700, 2500,  700, 2500,    "mV"}
+{  PSVoltSetpt,          "Output Voltage", $(P)_outw00,      2,  700, 2500,  700, 2500,    "mV"}
 { CalYearSetpt,          "Cal Year Setpt", $(P)_outw02,      0,   15,   99,   15,   99,      ""}
 {CalMonthSetpt,         "Cal Month Setpt", $(P)_outw02,      1,    1,   12,    1,   12,      ""}
 {  CalDaySetpt,           "Cal Day Setpt", $(P)_outw02,      2,    1,   31,    1,   31,      ""}
