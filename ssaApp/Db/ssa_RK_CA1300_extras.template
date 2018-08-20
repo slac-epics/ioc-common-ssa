@@ -52,14 +52,23 @@ record(calcout, "$(P)DrainVCalc") {
     field(OUT,  "$(P)PSVoltSetpt PP")
 }
 
-record(calc, "$(P)DrainVoltRBV") {
-    field(DESC, "Drain voltage")
-    field(INPA, "$(P)PSVoltRBV CP")
+record(calc, "$(P)DrainVoltRBVCalc") {
+    field(DESC, "Drain voltage calc")
+    field(ASG,  "Internal")
+    field(INPA, "$(P)PSVoltRBV CPP MS")
     field(INPB, "131")
     field(INPC, "2.5")
     field(EGU,  "V")
     field(PREC, "2")
     field(CALC, "(A*C)/B")
+    field(FLNK, "$(P)DrainVoltRBV")
+}
+
+record(ai, "$(P)DrainVoltRBV") {
+    field(DESC, "Drain voltage RBV")
+    field(INP, "$(P)DrainVoltRBVCalc MS")
+    field(EGU,  "V")
+    field(PREC, "2")
 }
 
 # --- Drive (input) power -------------------------------------------------------------
