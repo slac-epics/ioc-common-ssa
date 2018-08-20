@@ -93,7 +93,7 @@ evflag xPortRebootFlag;
 //monitor modulePwrStatus;
 
 int psVoltProc;
-assign psVoltProc to "{P}PSVoltSetpt.PROC";
+assign psVoltProc to "{P}DrainVoltSetpt.PROC";
 
 // Constants --------------------------------
 #define DEBUG 0
