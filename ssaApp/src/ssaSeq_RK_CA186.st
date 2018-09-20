@@ -199,6 +199,10 @@ ss ssa_state_check {
         } state faultResetState
         when (powerOn && notEnabledOrFaultCond) {
         } state poweringOnState
+        when (powerOff) {
+            powerOff = 0;
+            pvPut(powerOff);
+        } state ssaOffState
         when (systemReboot) {
         } state sysRebootState
         when (xPortReboot) {

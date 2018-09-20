@@ -3,12 +3,13 @@
 #
 #  Name: RELEASE_NOTES
 #
-#  Rem:  This files describes release notes for
-#        the XXX IOC Application.
+#  Rem:  This file describes release notes for
+#        the ssa IOC Application.
 #
-#  Auth: xx-Dec-2012, XXX         (xxx)
-#  Rev:  dd-mmm-yyyy, Reviewer's Name    (USERNAME)
 #--------------------------------------------------------------
+
+ssa-R0-0-7: 20-Sep-2018  M. Dunning (mdunning)
+    Sequencer routines: when faulted, make power off button return instead of staying depressed
 
 ssa-R0-0-6: 20-Aug-2018  M. Dunning (mdunning)
     Add "public" ai record for l-band drain voltage readback
