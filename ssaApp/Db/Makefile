@@ -25,7 +25,8 @@ DB += ssa_RK_CA1300_4.6kW.db
 DB += ssa_RK_CA186.db
 DB += ssa_RK_CA186_modules.db
 DB += ssa_RK_CA199.db
-DB += ssa_BBEF.db
+#DB += ssa_BBEF.db
+DB += ssa_RK_CA3900.db
 
 # Install Common databases needed by All IOCs
 # ========================================================
