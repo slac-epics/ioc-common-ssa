@@ -8,6 +8,10 @@
 #
 #--------------------------------------------------------------
 
+ssa-R0-0-8: (NOT YET RELEASED)  M. Dunning (mdunning)
+    Add support for R&K CA3900 3.9 GHz SSA for LCLS2
+    Update module versions
+
 ssa-R0-0-7: 20-Sep-2018  M. Dunning (mdunning)
     Sequencer routines: when faulted, make power off button return instead of staying depressed
 
