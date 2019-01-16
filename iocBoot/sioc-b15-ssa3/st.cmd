@@ -22,23 +22,23 @@ epicsEnvSet("EPICS_IOC_LOG_CLIENT_INET","${IOC}")
 # epicsEnvSet("IP",       "<ssa_ip_address>")
 #
 ## Source the following file for each SSA after setting the two environment variables P and IP
-# < iocBoot/startup.modbus_RK_CA1300.cmd
+# < iocBoot/startup.modbus_RK_CA3900.cmd
 #
 ## Load record instances for each SSA, after setting the environment variable P
-# dbLoadRecords("db/ssa_RK_CA1300.db", "P=$(P)")
+# dbLoadRecords("db/ssa_RK_CA3900.db", "P=$(P)")
 
 # SSA1: SSA:B15:003 
 epicsEnvSet("P",        "SSA:B15:003:")
 epicsEnvSet("IP",       "ssa-b15-rf0130")
-< iocBoot/common/startup.modbus_RK_CA1300.cmd
+< iocBoot/common/startup.modbus_RK_CA3900.cmd
 dbLoadRecords("db/ssa_RK_CA3900.db", "P=$(P)")
 epicsThreadSleep(0.5)
 
 ## SSA2: L1B:0220
 #epicsEnvSet("P",        "ACCL:L1B:0220:SSA:")
 #epicsEnvSet("IP",       "ssa-b15-rf0120")
-#< iocBoot/common/startup.modbus_RK_CA1300.cmd
-#dbLoadRecords("db/ssa_RK_CA1300.db", "P=$(P)")
+#< iocBoot/common/startup.modbus_RK_CA3900.cmd
+#dbLoadRecords("db/ssa_RK_CA3900.db", "P=$(P)")
 #epicsThreadSleep(0.5)
 
 # =====================================================================
@@ -113,11 +113,11 @@ caPutLogShow(2)
 # This must be done after iocInit
 #
 # SSA1: SSA:B15:003
-seq(seq_ssa_CA1300, "P=SSA:B15:003:")
+seq(seq_ssa_CA3900, "P=SSA:B15:003:")
 epicsThreadSleep(0.5)
 
 # SSA2: L1B:0220
-#seq(seq_ssa_CA1300, "P=ACCL:L1B:0220:SSA:")
+#seq(seq_ssa_CA3900, "P=ACCL:L1B:0220:SSA:")
 #epicsThreadSleep(0.5)
 
 ## Start autosave process:
