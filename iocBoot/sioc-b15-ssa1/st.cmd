@@ -38,12 +38,12 @@ epicsEnvSet("IP",       "ssa-b15-rf0110")
 dbLoadRecords("db/ssa_RK_CA1300_4.6kW.db", "P=$(P)")
 epicsThreadSleep(0.5)
 
-# SSA2: L1B:0220
-epicsEnvSet("P",        "ACCL:L1B:0220:SSA:")
-epicsEnvSet("IP",       "ssa-b15-rf0120")
-< iocBoot/common/startup.modbus_RK_CA1300.cmd
-dbLoadRecords("db/ssa_RK_CA1300.db", "P=$(P)")
-epicsThreadSleep(0.5)
+## SSA2: L1B:0220
+#epicsEnvSet("P",        "ACCL:L1B:0220:SSA:")
+#epicsEnvSet("IP",       "ssa-b15-rf0120")
+#< iocBoot/common/startup.modbus_RK_CA1300.cmd
+#dbLoadRecords("db/ssa_RK_CA1300.db", "P=$(P)")
+#epicsThreadSleep(0.5)
 
 # =====================================================================
 # Load iocAdmin databases to support IOC Health and monitoring
@@ -121,8 +121,8 @@ seq(seq_ssa_CA1300, "P=ACCL:L1B:0210:SSA:")
 epicsThreadSleep(0.5)
 
 # SSA2: L1B:0220
-seq(seq_ssa_CA1300, "P=ACCL:L1B:0220:SSA:")
-epicsThreadSleep(0.5)
+#seq(seq_ssa_CA1300, "P=ACCL:L1B:0220:SSA:")
+#epicsThreadSleep(0.5)
 
 ## Start autosave process:
 cd("${IOC_DATA}/${IOC}/autosave-req")
