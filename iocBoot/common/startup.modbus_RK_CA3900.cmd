@@ -32,10 +32,17 @@ dbLoadRecords("db/statistics.template", "P=$(P), R=ASYN_IN, PORT=$(P)_inw1, SCAN
 
 # Modbus function code: 3 (Read Holding Registers, 16-bit word access)
 # Start address: 125
-# Access 36 words as inputs
+# Access 16 words as inputs
 # Default data type: unsigned integer
-drvModbusAsynConfigure("$(P)_inw2", "$(P)", 0, 3, 125, 36, 0, 5000, "RK")
+drvModbusAsynConfigure("$(P)_inw2", "$(P)", 0, 3, 125, 16, 0, 5000, "RK")
 dbLoadRecords("db/asynRecord.db", "P=$(P), R=ASYN_IN, PORT=$(P)_inw2, ADDR=0,IMAX=0,OMAX=0")
+
+# Modbus function code: 3 (Read Holding Registers, 16-bit word access)
+# Start address: 171
+# Access 20 words as inputs
+# Default data type: unsigned integer
+drvModbusAsynConfigure("$(P)_inw3", "$(P)", 0, 3, 171, 20, 0, 5000, "RK")
+dbLoadRecords("db/asynRecord.db", "P=$(P), R=ASYN_IN, PORT=$(P)_inw3, ADDR=0,IMAX=0,OMAX=0")
 
 # Modbus function code: 6 (Write Single Register, 16-bit word access)
 # Start address: 1
