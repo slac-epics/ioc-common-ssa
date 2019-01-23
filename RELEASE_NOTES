@@ -8,8 +8,10 @@
 #
 #--------------------------------------------------------------
 
-ssa-R0-0-8: (NOT YET RELEASED)  M. Dunning (mdunning)
+ssa-R0-0-8: 23-Jan-2019  M. Dunning (mdunning)
     Add support for R&K CA3900 3.9 GHz SSA for LCLS2
+    sioc-b15-ssa3: Change from CA186 to CA3900 config
+    sioc-b15-ssa1: Remove SSA2 which is not connected
     Update module versions
 
 ssa-R0-0-7: 20-Sep-2018  M. Dunning (mdunning)
