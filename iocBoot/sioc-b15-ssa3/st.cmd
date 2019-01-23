@@ -28,7 +28,7 @@ epicsEnvSet("EPICS_IOC_LOG_CLIENT_INET","${IOC}")
 # dbLoadRecords("db/ssa_RK_CA3900.db", "P=$(P)")
 
 # SSA1: SSA:B15:003 
-epicsEnvSet("P",        "SSA:B15:003:")
+epicsEnvSet("P",        "SSA3:B15:")
 epicsEnvSet("IP",       "ssa-b15-rf0130")
 < iocBoot/common/startup.modbus_RK_CA3900.cmd
 dbLoadRecords("db/ssa_RK_CA3900.db", "P=$(P)")
@@ -112,8 +112,8 @@ caPutLogShow(2)
 ## Start sequence programs, one for each SSA
 # This must be done after iocInit
 #
-# SSA1: SSA:B15:003
-seq(seq_ssa_CA3900, "P=SSA:B15:003:")
+# SSA1: SSA3:B15
+seq(seq_ssa_CA3900, "P=SSA3:B15:")
 epicsThreadSleep(0.5)
 
 # SSA2: L1B:0220
