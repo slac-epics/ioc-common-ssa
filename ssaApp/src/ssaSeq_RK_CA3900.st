@@ -83,8 +83,9 @@ int xPortRebootReg;
 assign xPortRebootReg to "{P}XPReboot";
 evflag xPortRebootFlag;
 
-int drainVoltProc;
-assign drainVoltProc to "{P}DrainVoltSetpt.PROC";
+//int drainVoltProc;
+//assign drainVoltProc to "{P}DrainVoltSetpt.PROC";
+//assign drainVoltProc to "{P}DrainVoltSetpt.PROC";
 
 // Constants --------------------------------
 #define DEBUG 0
@@ -271,9 +272,9 @@ ss ssa_state_check {
                 dcEnable = 1;
                 pvPut(dcEnable, SYNC);
             }
-            if (DEBUG) printf("drainVoltProc\n");
-            drainVoltProc = 1;
-            pvPut(drainVoltProc, SYNC);
+            //if (DEBUG) printf("drainVoltProc\n");
+            //drainVoltProc = 1;
+            //pvPut(drainVoltProc, SYNC);
             if (!rfEnableRBV) {
                 if (DEBUG) printf("rfEnable\n");
                 rfEnable = 1;
