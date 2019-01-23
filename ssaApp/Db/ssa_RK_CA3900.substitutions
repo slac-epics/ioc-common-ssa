@@ -62,7 +62,7 @@ pattern
 {     FwdPwr2,        "Forward Power 2",    $(P)_inw1,     19,    "",    "",   970,   990, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
 {     RefPwr2,      "Reflected Power 2",    $(P)_inw1,     20,    "",    "",    40,    50, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
 {CtrlFanSpeed,      "Ctrl Unit Fan Spd",    $(P)_inw1,     28,    "",  6300, 11700, 12000, NO_ALARM,    MINOR,    MINOR,    MAJOR,    "rpm", "I/O Intr"}
-{PAmpFanSpeed,      "Ctrl Unit Fan Spd",    $(P)_inw1,     29,    "",  6300, 11700, 12000, NO_ALARM,    MINOR,    MINOR,    MAJOR,    "rpm", "I/O Intr"}
+{PAmpFanSpeed,         "PreAmp Fan Spd",    $(P)_inw1,     29,    "",  6300, 11700, 12000, NO_ALARM,    MINOR,    MINOR,    MAJOR,    "rpm", "I/O Intr"}
 {    FA1_Pwr1,        "Fin. Amp 1 Pwr1",    $(P)_inw1,     42,    "",    "",   140,   150, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
 {    FA1_Pwr2,        "Fin. Amp 1 Pwr2",    $(P)_inw1,     43,    "",    "",   140,   150, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
 {    FA1_Pwr3,        "Fin. Amp 1 Pwr3",    $(P)_inw1,     44,    "",    "",   140,   150, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
@@ -95,7 +95,7 @@ pattern
 { HXFan3Speed,    "Heat Exc. Fan 3 Spd",    $(P)_inw1,    122,    "",  6300, 11700, 12000, NO_ALARM,    MINOR,    MINOR,    MAJOR,    "rpm", "I/O Intr"}
 { HXFan4Speed,    "Heat Exc. Fan 4 Spd",    $(P)_inw1,    123,    "",  6300, 11700, 12000, NO_ALARM,    MINOR,    MINOR,    MAJOR,    "rpm", "I/O Intr"}
 # Due to modus read limit of 125 words, we'll use another port and start at address 125
-# So for $(P)_inw2: Offset = Address -125    
+# So for $(P)_inw2: Offset = Address - 125
 { PSFan1Speed,      "PS Unit Fan 1 Spd",    $(P)_inw2,      0,    "",  5250,  9750, 10000, NO_ALARM,    MINOR,    MINOR,    MAJOR,    "rpm", "I/O Intr"}
 { PSFan2Speed,      "PS Unit Fan 2 Spd",    $(P)_inw2,      1,    "",  5250,  9750, 10000, NO_ALARM,    MINOR,    MINOR,    MAJOR,    "rpm", "I/O Intr"}
 { PSFan3Speed,      "PS Unit Fan 3 Spd",    $(P)_inw2,      2,    "",  2590,  4810,  5500, NO_ALARM,    MINOR,    MINOR,    MAJOR,    "rpm", "I/O Intr"}
@@ -112,26 +112,28 @@ pattern
 {   SubSWVer1,       "Sub SW Ver Minor",    $(P)_inw2,     13,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
 {    PSSWVer0,        "PS SW Ver Major",    $(P)_inw2,     14,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
 {    PSSWVer1,        "PS SW Ver Minor",    $(P)_inw2,     15,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
-{LastRFDis_YM, "Last RF Disable Yr/Mon",    $(P)_inw2,     46,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
-{LastRFDis_DH, "Last RF Disable Day/Hr",    $(P)_inw2,     47,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
-{LastRFDis_ms,  "Last RF Disable Min/S",    $(P)_inw2,     48,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
-{ LastRbt_Y_M,     "Last Reboot Yr/Mon",    $(P)_inw2,     49,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
-{ LastRbt_D_H,     "Last Reboot Day/Hr",    $(P)_inw2,     50,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
-{ LastRbt_m_s,      "Last Reboot Min/S",    $(P)_inw2,     51,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
-{  FaultStat1,         "Fault Status 1",    $(P)_inw2,     52,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
-{  FaultStat2,         "Fault Status 2",    $(P)_inw2,     53,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
-{  FaultStat3,         "Fault Status 3",    $(P)_inw2,     54,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
-{    CtrlWarn,     "Ctrl. Unit Warning",    $(P)_inw2,     55,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
-{    FA1Warn1,   "Fin. Amp 1 Warning 1",    $(P)_inw2,     56,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
-{    FA1Warn2,   "Fin. Amp 1 Warning 2",    $(P)_inw2,     57,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
-{    FA2Warn1,   "Fin. Amp 2 Warning 1",    $(P)_inw2,     58,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
-{    FA2Warn2,   "Fin. Amp 2 Warning 2",    $(P)_inw2,     59,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
-{    FA3Warn1,   "Fin. Amp 3 Warning 1",    $(P)_inw2,     60,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
-{    FA3Warn2,   "Fin. Amp 3 Warning 2",    $(P)_inw2,     61,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
-{    FA4Warn1,   "Fin. Amp 4 Warning 1",    $(P)_inw2,     62,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
-{    FA4Warn2,   "Fin. Amp 4 Warning 2",    $(P)_inw2,     63,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
-{     PS1Warn,  "Power Suply 1 Warning",    $(P)_inw2,     64,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
-{     PS2Warn,  "Power Suply 2 Warning",    $(P)_inw2,     65,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
+# Use another port and start at address 171
+# So for $(P)_inw3: Offset = Address - 171 
+{LastRFDis_YM, "Last RF Disable Yr/Mon",    $(P)_inw3,      0,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
+{LastRFDis_DH, "Last RF Disable Day/Hr",    $(P)_inw3,      1,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
+{LastRFDis_ms,  "Last RF Disable Min/S",    $(P)_inw3,      2,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
+{  LastRbt_YM,     "Last Reboot Yr/Mon",    $(P)_inw3,      3,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
+{  LastRbt_DH,     "Last Reboot Day/Hr",    $(P)_inw3,      4,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
+{  LastRbt_ms,      "Last Reboot Min/S",    $(P)_inw3,      5,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
+{  FaultStat1,         "Fault Status 1",    $(P)_inw3,      6,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
+{  FaultStat2,         "Fault Status 2",    $(P)_inw3,      7,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
+{  FaultStat3,         "Fault Status 3",    $(P)_inw3,      8,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
+{CtrlWarnStat,     "Ctrl. Unit Warning",    $(P)_inw3,      9,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
+{FA1WarnStat1,   "Fin. Amp 1 Warning 1",    $(P)_inw3,     10,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
+{FA1WarnStat2,   "Fin. Amp 1 Warning 2",    $(P)_inw3,     11,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
+{FA2WarnStat1,   "Fin. Amp 2 Warning 1",    $(P)_inw3,     12,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
+{FA2WarnStat2,   "Fin. Amp 2 Warning 2",    $(P)_inw3,     13,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
+{FA3WarnStat1,   "Fin. Amp 3 Warning 1",    $(P)_inw3,     14,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
+{FA3WarnStat2,   "Fin. Amp 3 Warning 2",    $(P)_inw3,     15,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
+{FA4WarnStat1,   "Fin. Amp 4 Warning 1",    $(P)_inw3,     16,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
+{FA4WarnStat2,   "Fin. Amp 4 Warning 2",    $(P)_inw3,     17,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
+{ PSWarnStat1,  "Power Suply Warning 1",    $(P)_inw3,     18,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
+{ PSWarnStat2,  "Power Suply Warning 2",    $(P)_inw3,     19,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
 }
 
 # Integer inputs converted to floats, modbus function code 3.
@@ -141,7 +143,7 @@ pattern
 {   PreAmp_I1,       "PreAmp Current 1",    $(P)_inw1,     21,    0.0,    0.1,    1,   "",    0,  3.8,  4.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,      "A", "I/O Intr"}
 {   PreAmp_I2,       "PreAmp Current 1",    $(P)_inw1,     22,    0.0,    0.1,    1,   "",    0,  3.8,  4.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,      "A", "I/O Intr"}
 { PS_Plus12_V,          "PS +12V Volts",    $(P)_inw1,     23,    0.0,    0.1,    1, 10.0, 11.0, 13.0, 14.0,    MAJOR,    MINOR,    MINOR,    MAJOR,      "V", "I/O Intr"}
-{PS_Minus12_V,          "PS -12V Volts",    $(P)_inw1,     24,    0.0,    0.1,    1,  -14,  -13,  -11,  -10,    MAJOR,    MINOR,    MINOR,    MAJOR,      "V", "I/O Intr"}
+{PS_Minus12_V,          "PS -12V Volts",    $(P)_inw1,     24,    0.0,    0.1,    1, 10.0, 11.0, 13.0, 14.0,    MAJOR,    MINOR,    MINOR,    MAJOR,      "V", "I/O Intr"}
 { CtrlAirTemp,     "Ctrl Unit Air Temp",    $(P)_inw1,     25,    0.0,    0.1,    1,   10,   15,   55,   60,    MAJOR,    MINOR,    MINOR,    MAJOR,   "degC", "I/O Intr"}
 { PS_Plus24_V,          "PS +24V Volts",    $(P)_inw1,     30,    0.0,    0.1,    1, 22.0, 23.0, 25.0, 26.0,    MAJOR,    MINOR,    MINOR,    MAJOR,      "V", "I/O Intr"}
 {      FA1_I1,   "Fin. Amp 1 Current 1",    $(P)_inw1,     31,    0.0,    0.1,    1,   "",   "",  3.8,  4.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "A", "I/O Intr"}
