@@ -30,69 +30,59 @@ record(bo, "$(P)XPortReboot"){
 }
 
 # --- Drain Voltage <---> Output Voltage --------------
-record(ao, "$(P)DrainVoltSetpt") {
-    field(DESC, "Drain Voltage Setpt [V]")
-    field(EGU,  "V")
-    field(PREC, "2")
-    field(LOPR, "13.5")
-    field(HOPR, "48")
-    field(DRVL, "13.5")
-    field(DRVH, "48")
-    field(FLNK, "$(P)DrainVCalc")
-    info(autosaveFields, "VAL")
-}
-
-record(calcout, "$(P)DrainVCalc") {
-    field(DESC, "Drain to output voltage conversion")
-    field(ASG,  "Internal")
-    field(INPA, "$(P)DrainVoltSetpt")
-    field(INPB, "131")
-    field(INPC, "2.5")
-    field(CALC, "(A*B)/C")
-    field(OUT,  "$(P)PSVolt_FO PP")
-}
-
-record(calc, "$(P)DrainVoltRBVCalc") {
-    field(DESC, "Drain voltage calc")
-    field(ASG,  "Internal")
-    field(INPA, "$(P)PSVoltRBV1 CPP MS")
-    field(INPD, "$(P)PSVoltRBV2 CPP MS")
-    field(INPB, "131")
-    field(INPC, "2.5")
-    field(EGU,  "V")
-    field(PREC, "2")
-    field(CALC, "(((A+D)/2)*C)/B")
-    field(FLNK, "$(P)DrainVoltRBV")
-}
-
-record(ai, "$(P)DrainVoltRBV") {
-    field(DESC, "Drain voltage RBV")
-    field(INP, "$(P)DrainVoltRBVCalc MS")
-    field(EGU,  "V")
-    field(PREC, "2")
-}
-
-record(dfanout, "$(P)PSVolt_FO") {
-    field(DESC, "PS output voltage fanout")
-    field(ASG,  "Internal")
-    field(OUTA, "$(P)PSVoltSetpt1 PP")
-    field(OUTB, "$(P)PSVoltSetpt2 PP")
-}
+#record(ao, "$(P)DrainVoltSetpt") {
+#    field(DESC, "Drain Voltage Setpt [V]")
+#    field(EGU,  "V")
+#    field(PREC, "2")
+#    field(LOPR, "13.5")
+#    field(HOPR, "48")
+#    field(DRVL, "13.5")
+#    field(DRVH, "48")
+#    field(FLNK, "$(P)DrainVCalc")
+#    info(autosaveFields, "VAL")
+#}
+#
+#record(calcout, "$(P)DrainVCalc") {
+#    field(DESC, "Drain to output voltage conversion")
+#    field(ASG,  "Internal")
+#    field(INPA, "$(P)DrainVoltSetpt")
+#    field(INPB, "131")
+#    field(INPC, "2.5")
+#    field(CALC, "(A*B)/C")
+#    field(OUT,  "$(P)PSVolt_FO PP")
+#}
+#
+#record(calc, "$(P)DrainVoltRBVCalc") {
+#    field(DESC, "Drain voltage calc")
+#    field(ASG,  "Internal")
+#    field(INPA, "$(P)PSVoltRBV1 CPP MS")
+#    field(INPD, "$(P)PSVoltRBV2 CPP MS")
+#    field(INPB, "131")
+#    field(INPC, "2.5")
+#    field(EGU,  "V")
+#    field(PREC, "2")
+#    field(CALC, "(((A+D)/2)*C)/B")
+#    field(FLNK, "$(P)DrainVoltRBV")
+#}
+#
+#record(ai, "$(P)DrainVoltRBV") {
+#    field(DESC, "Drain voltage RBV")
+#    field(INP, "$(P)DrainVoltRBVCalc MS")
+#    field(EGU,  "V")
+#    field(PREC, "2")
+#}
+#
+#record(dfanout, "$(P)PSVolt_FO") {
+#    field(DESC, "PS output voltage fanout")
+#    field(ASG,  "Internal")
+#    field(OUTA, "$(P)PSVoltSetpt1 PP")
+#    field(OUTB, "$(P)PSVoltSetpt2 PP")
+#}
 
 # --- Drive (input) power -------------------------------------------------------------
-record(calc, "$(P)DrvPwrAve") {
-    field(DESC, "Drive power average")
-    field(INPA, "$(P)DrvPwr1 CP")
-    field(INPB, "$(P)DrvPwr2 CP")
-    field(EGU,  "mV")
-    field(PREC, "1")
-    field(CALC, "(A+B)/2")
-    field(FLNK, "$(P)DrvPwr_dBm")
-}
-
-record(calc, "$(P)DrvPwr_dBm") {
-    field(DESC, "Drive power [dBm]")
-    field(INPA, "$(P)DrvPwrAve")
+record(calc, "$(P)DrvPwr1_dBm") {
+    field(DESC, "Drive power 1 [dBm]")
+    field(INPA, "$(P)DrvPwr1 CPP MS")
     field(INPB, "-1.095E-12")
     field(INPC, "7.43E-9")
     field(INPD, "-1.977E-5")
@@ -101,12 +91,37 @@ record(calc, "$(P)DrvPwr_dBm") {
     field(EGU,  "dBm")
     field(PREC, "1")
     field(CALC, "A^4*B+A^3*C+A^2*D+A*E+F")
-    field(FLNK, "$(P)DrvPwr_mW")
+    field(FLNK, "$(P)DrvPwr1_mW")
 }
 
-record(calc, "$(P)DrvPwr_mW") {
-    field(DESC, "Drive power [mW]")
-    field(INPA, "$(P)DrvPwrAve")
+record(calc, "$(P)DrvPwr1_mW") {
+    field(DESC, "Drive power 1 [mW]")
+    field(INPA, "$(P)DrvPwr1 MS")
+    field(INPB, "1.065E-6")
+    field(INPC, "3.147E-5")
+    field(INPD, "0.0404")
+    field(EGU,  "mW")
+    field(PREC, "1")
+    field(CALC, "A^2*B+A*C+D")
+}
+
+record(calc, "$(P)DrvPwr2_dBm") {
+    field(DESC, "Drive power 2 [dBm]")
+    field(INPA, "$(P)DrvPwr2 CPP MS")
+    field(INPB, "-1.095E-12")
+    field(INPC, "7.43E-9")
+    field(INPD, "-1.977E-5")
+    field(INPE, "0.0296")
+    field(INPF, "-15.618")
+    field(EGU,  "dBm")
+    field(PREC, "1")
+    field(CALC, "A^4*B+A^3*C+A^2*D+A*E+F")
+    field(FLNK, "$(P)DrvPwr2_mW")
+}
+
+record(calc, "$(P)DrvPwr2_mW") {
+    field(DESC, "Drive power 2 [mW]")
+    field(INPA, "$(P)DrvPwr2 MS")
     field(INPB, "1.065E-6")
     field(INPC, "3.147E-5")
     field(INPD, "0.0404")
@@ -258,13 +273,20 @@ record(calc, "$(P)VoltAlarmSum1") {
     field(INPI, "$(P)FA2_PS_V2 CP MS")
     field(INPJ, "$(P)FA3_PS_V1 CP MS")
     field(INPK, "$(P)FA3_PS_V2 CP MS")
-    field(FLNK, "$(P)AlarmSummary")
+    field(FLNK, "$(P)VoltAlarmSum")
 }
 
 record(calc, "$(P)VoltAlarmSum2") {
     field(DESC, "Voltage Alarm Sum 2")
     field(INPA, "$(P)FA4_PS_V1 CP MS")
     field(INPB, "$(P)FA4_PS_V2 CP MS")
+    field(FLNK, "$(P)VoltAlarmSum")
+}
+
+record(calc, "$(P)VoltAlarmSum") {
+    field(DESC, "Voltage Alarm Sum")
+    field(INPA, "$(P)VoltAlarmSum1 MS")
+    field(INPB, "$(P)VoltAlarmSum2 MS")
     field(FLNK, "$(P)AlarmSummary")
 }
 
@@ -338,6 +360,8 @@ record(calc, "$(P)CurrAlarmSum") {
     field(INPB, "$(P)FA2CurrAlarmSum MS")
     field(INPC, "$(P)FA3CurrAlarmSum MS")
     field(INPD, "$(P)FA4CurrAlarmSum MS")
+    field(INPE, "$(P)PreAmp_I1 CP MS")
+    field(INPF, "$(P)PreAmp_I2 CP MS")
     field(FLNK, "$(P)AlarmSummary")
 }
 
@@ -424,12 +448,19 @@ record(calc, "$(P)FanAlarmSum1") {
     field(INPJ, "$(P)HXFan2Speed CP MS")
     field(INPK, "$(P)HXFan3Speed CP MS")
     field(INPL, "$(P)HXFan4Speed CP MS")
-    field(FLNK, "$(P)AlarmSummary")
+    field(FLNK, "$(P)FanAlarmSum")
 }
 
 record(calc, "$(P)FanAlarmSum2") {
     field(DESC, "Fan Alarm Sum 2")
     field(INPA, "$(P)PAmpFanSpeed CP MS")
+    field(FLNK, "$(P)FanAlarmSum")
+}
+
+record(calc, "$(P)FanAlarmSum") {
+    field(DESC, "Fan Alarm Sum")
+    field(INPA, "$(P)FanAlarmSum1 MS")
+    field(INPB, "$(P)FanAlarmSum2 MS")
     field(FLNK, "$(P)AlarmSummary")
 }
 
@@ -453,14 +484,12 @@ record(calc, "$(P)AlarmSummary0") {
 record(calc, "$(P)AlarmSummary") {
     field(DESC, "Alarm Summary")
     field(INPA, "$(P)MiscAlarmSum MS")
-    field(INPB, "$(P)VoltAlarmSum1 MS")
-    field(INPC, "$(P)VoltAlarmSum2 MS")
-    field(INPD, "$(P)CurrAlarmSum MS")
-    field(INPE, "$(P)PwrAlarmSum MS")
-    field(INPF, "$(P)TempAlarmSum MS")
-    field(INPG, "$(P)FanAlarmSum1 MS")
-    field(INPH, "$(P)FanAlarmSum2 MS")
-    field(INPI, "$(P)AlarmSummary0 MS")
+    field(INPB, "$(P)VoltAlarmSum MS")
+    field(INPC, "$(P)CurrAlarmSum MS")
+    field(INPD, "$(P)PwrAlarmSum MS")
+    field(INPE, "$(P)TempAlarmSum MS")
+    field(INPF, "$(P)FanAlarmSum MS")
+    field(INPG, "$(P)AlarmSummary0 MS")
 }
 
 
