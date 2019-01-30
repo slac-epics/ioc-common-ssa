@@ -176,7 +176,7 @@ record(mbbi, "$(P)StatusMsg") {
 record(aSub, "$(P)FaultIntAsub"){
     field(DESC, "Internal fault message aSub")
     field(ASG,  "Internal")
-    field(SNAM, "asFaultMsg")
+    field(SNAM, "asFaultMsg_CA3900")
     field(INPA, "$(P)ErrCodeInt CP MS")
     field(FTA,  "LONG")  
     field(NOA,  "1")
@@ -192,7 +192,7 @@ record(stringin, "$(P)FaultIntMsg") {
 record(aSub, "$(P)FaultExtAsub"){
     field(DESC, "External fault message aSub")
     field(ASG,  "Internal")
-    field(SNAM, "asFaultMsg")
+    field(SNAM, "asFaultMsg_CA3900")
     field(INPA, "$(P)ErrCodeExt CP MS")
     field(FTA,  "LONG")  
     field(NOA,  "1")
@@ -208,7 +208,7 @@ record(stringin, "$(P)FaultExtMsg") {
 record(aSub, "$(P)WarningAsub"){
     field(DESC, "Warning message aSub")
     field(ASG,  "Internal")
-    field(SNAM, "asFaultMsg")
+    field(SNAM, "asFaultMsg_CA3900")
     field(INPA, "$(P)WarningCode CP MS")
     field(FTA,  "LONG")  
     field(NOA,  "1")
