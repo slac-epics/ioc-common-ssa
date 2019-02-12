@@ -8,8 +8,9 @@
 #
 #--------------------------------------------------------------
 
-ssa-R0-0-9: NOT YET RELEASED  M. Dunning (mdunning)
+ssa-R0-0-9: 11-Feb-2019  M. Dunning (mdunning)
     Add CA3900 error messages
+    Separate ssa1 and ssa2 b15 dev IOCs
 
 ssa-R0-0-8: 23-Jan-2019  M. Dunning (mdunning)
     Add support for R&K CA3900 3.9 GHz SSA for LCLS2
