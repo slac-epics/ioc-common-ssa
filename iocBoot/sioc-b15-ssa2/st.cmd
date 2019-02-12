@@ -1,10 +1,6 @@
 #!../../bin/rhel6-x86_64/ssa
 
-## You may have to change ssa to something else
-## everywhere it appears in this file
-
 < envPaths
-
 
 cd ${TOP}
 
@@ -13,61 +9,37 @@ dbLoadDatabase("dbd/ssa.dbd")
 ssa_registerRecordDeviceDriver(pdbbase)
 
 
-# ====================================================================
-# Setup some additional environment variables
-# ====================================================================
-# Setup environment variables
-epicsEnvSet("ENGINEER", "Garth Brown")
+## Set up environment variables
+epicsEnvSet("ENGINEER", "Mike Dunning")
 epicsEnvSet("LOCATION", "B15 SSA test stand 2")
-epicsEnvSet("P",        "ACCL:L1B:0220:SSA:")
-epicsEnvSet("IP",       "ssa-b15-rf0120")
 epicsEnvSet("IOC_P",    "SIOC:B15:SSA2")
 
-# tag log messages with IOC name
-# How to escape the "iocb15-rf01" as the PERL program
-# will try to repplace it.
-# So, uncomment the following and remove the backslash
+## Tag log messages with IOC name
 epicsEnvSet("EPICS_IOC_LOG_CLIENT_INET","${IOC}")
 
-# ========================================================
-# Support Large Arrays/Waveforms; Number in Bytes
-# Please calculate the size of the largest waveform
-# that you support in your IOC.  Do not just copy numbers
-# from other apps.  This will only lead to an exhaustion
-# of resources and problems with your IOC.
-# The default maximum size for a channel access array is
-# 16K bytes.
-# ========================================================
-#epicsEnvSet("EPICS_CA_MAX_ARRAY_BYTES", "65536")
 
-# END: Additional environment variables
-# ====================================================================
+## The following two environment variables should be set for each SSA
+# epicsEnvSet("P",        "<pv_prefix>")
+# epicsEnvSet("IP",       "<ssa_ip_address>")
+#
+## Source the following file for each SSA after setting the two environment variables P and IP
+# < iocBoot/startup.modbus_RK_CA1300.cmd
+#
+## Load record instances for each SSA, after setting the environment variable P
+# dbLoadRecords("db/ssa_RK_CA1300.db", "P=$(P)")
 
+# SSA2: L1B:0220
+epicsEnvSet("P",        "ACCL:L1B:0220:SSA:")
+epicsEnvSet("IP",       "ssa-b15-rf0120")
+< iocBoot/common/startup.modbus_RK_CA1300.cmd
+dbLoadRecords("db/ssa_RK_CA1300.db", "P=$(P)")
+epicsThreadSleep(0.5)
 
-########################################################################
-# BEGIN: Hardware specific configuration
-#######################################################################
-
-# Uses environment variables $P and $IP, set above, to connect to the ssa
-< iocBoot/startup.modbus_RK_CA1300.cmd
-
-# END: Hardware specific configuration
-# =====================================================================
-
-
-########################################################################
-# BEGIN: Load the record databases
-#######################################################################
 # =====================================================================
 # Load iocAdmin databases to support IOC Health and monitoring
 # =====================================================================
 dbLoadRecords("db/iocAdminSoft.db","IOC=${IOC_P}")
 dbLoadRecords("db/iocAdminScanMon.db","IOC=${IOC_P}")
-
-# The following database is a result of a python parser
-# which looks at RELEASE_SITE and RELEASE to discover
-# versions of software your IOC is referencing
-# The python parser is part of iocAdmin
 dbLoadRecords("db/iocRelease.db","IOC=${IOC_P}")
 
 # =====================================================================
@@ -77,16 +49,7 @@ dbLoadRecords("db/save_restoreStatus.db", "P=${IOC_P}:")
 
 
 # =====================================================================
-#Load Additional databases:
-# =====================================================================
-## Load record instances
-dbLoadRecords("db/ssa_RK_CA1300.db", "P=$(P)")
-
-# END: Loading the record databases
-########################################################################
-
-# =====================================================================
-## Begin: Setup autosave/restore
+## Begin: Set up autosave/restore
 # =====================================================================
 
 # ============================================================
@@ -140,12 +103,16 @@ caPutLogInit("${EPICS_CA_PUT_LOG_ADDR}")
 caPutLogShow(2)
 # =====================================================
 
-## Start any sequence programs
-seq(seq_ssa_CA1300, "P=$(P)")
+## Start sequence programs, one for each SSA
+# This must be done after iocInit
+#
+# SSA2: L1B:0220
+seq(seq_ssa_CA1300, "P=ACCL:L1B:0220:SSA:")
+epicsThreadSleep(0.5)
 
 ## Start autosave process:
 cd("${IOC_DATA}/${IOC}/autosave-req")
 makeAutosaveFiles()
-create_monitor_set("info_settings.req",20,"")
+create_monitor_set("info_settings.req", 20, "")
 
 
