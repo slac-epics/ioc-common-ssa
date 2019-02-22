@@ -10,14 +10,11 @@ ssa_registerRecordDeviceDriver(pdbbase)
 
 
 ## Set up environment variables
-epicsEnvSet("ENGINEER", "Garth Brown")
+epicsEnvSet("ENGINEER", "Mike Dunning")
 epicsEnvSet("LOCATION", "B15 SSA test stand 1")
 epicsEnvSet("IOC_P",    "SIOC:B15:SSA1")
 
 ## Tag log messages with IOC name
-# How to escape the "iocb15-rf01" as the PERL program
-# will try to repplace it.
-# So, uncomment the following and remove the backslash
 epicsEnvSet("EPICS_IOC_LOG_CLIENT_INET","${IOC}")
 
 
