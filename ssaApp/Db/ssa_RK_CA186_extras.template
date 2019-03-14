@@ -196,6 +196,7 @@ record(calc, "$(P)VoltAlarmSum") {
     field(INPB, "$(P)DrvrDrn_V.SEVR CPP MS")
     field(INPC, "$(P)DrvrPS1_V.SEVR CPP MS")
     field(INPD, "$(P)DrvrPS2_V.SEVR CPP MS")
+    field(INPE, "$(P)DrainVoltRBV.SEVR CPP MS")
     field(FLNK, "$(P)AlarmSummary")
 }
 
@@ -269,6 +270,60 @@ record(calc, "$(P)FanAlarmSum") {
     field(FLNK, "$(P)AlarmSummary")
 }
 
+record(calc, "$(P)ModuleAlarmSum1") {
+    field(DESC, "Module Alarm Sum")
+    field(INPA, "$(P)M00_AlarmSummary.SEVR CPP MS")
+    field(INPB, "$(P)M01_AlarmSummary.SEVR CPP MS")
+    field(INPC, "$(P)M02_AlarmSummary.SEVR CPP MS")
+    field(INPD, "$(P)M03_AlarmSummary.SEVR CPP MS")
+    field(INPE, "$(P)M04_AlarmSummary.SEVR CPP MS")
+    field(INPF, "$(P)M05_AlarmSummary.SEVR CPP MS")
+    field(INPG, "$(P)M06_AlarmSummary.SEVR CPP MS")
+    field(INPH, "$(P)M07_AlarmSummary.SEVR CPP MS")
+    field(INPI, "$(P)M08_AlarmSummary.SEVR CPP MS")
+    field(INPJ, "$(P)M09_AlarmSummary.SEVR CPP MS")
+    field(INPK, "$(P)M10_AlarmSummary.SEVR CPP MS")
+    field(INPL, "$(P)M11_AlarmSummary.SEVR CPP MS")
+    field(FLNK, "$(P)ModuleAlarmSum")
+}
+
+record(calc, "$(P)ModuleAlarmSum2") {
+    field(DESC, "Module Alarm Sum")
+    field(INPA, "$(P)M12_AlarmSummary.SEVR CPP MS")
+    field(INPB, "$(P)M13_AlarmSummary.SEVR CPP MS")
+    field(INPC, "$(P)M14_AlarmSummary.SEVR CPP MS")
+    field(INPD, "$(P)M15_AlarmSummary.SEVR CPP MS")
+    field(INPE, "$(P)M16_AlarmSummary.SEVR CPP MS")
+    field(INPF, "$(P)M17_AlarmSummary.SEVR CPP MS")
+    field(INPG, "$(P)M18_AlarmSummary.SEVR CPP MS")
+    field(INPH, "$(P)M19_AlarmSummary.SEVR CPP MS")
+    field(INPI, "$(P)M20_AlarmSummary.SEVR CPP MS")
+    field(INPJ, "$(P)M21_AlarmSummary.SEVR CPP MS")
+    field(INPK, "$(P)M22_AlarmSummary.SEVR CPP MS")
+    field(INPL, "$(P)M23_AlarmSummary.SEVR CPP MS")
+    field(FLNK, "$(P)ModuleAlarmSum")
+}
+
+record(calc, "$(P)ModuleAlarmSum3") {
+    field(DESC, "Module Alarm Sum")
+    field(INPA, "$(P)M24_AlarmSummary.SEVR CPP MS")
+    field(INPB, "$(P)M25_AlarmSummary.SEVR CPP MS")
+    field(INPC, "$(P)M26_AlarmSummary.SEVR CPP MS")
+    field(INPD, "$(P)M27_AlarmSummary.SEVR CPP MS")
+    field(INPE, "$(P)M28_AlarmSummary.SEVR CPP MS")
+    field(INPF, "$(P)M29_AlarmSummary.SEVR CPP MS")
+    field(INPG, "$(P)M30_AlarmSummary.SEVR CPP MS")
+    field(FLNK, "$(P)ModuleAlarmSum")
+}
+
+record(calc, "$(P)ModuleAlarmSum") {
+    field(DESC, "Fan Alarm Sum")
+    field(INPA, "$(P)ModuleAlarmSum1.SEVR MS")
+    field(INPB, "$(P)ModuleAlarmSum2.SEVR MS")
+    field(INPC, "$(P)ModuleAlarmSum3.SEVR MS")
+    field(FLNK, "$(P)AlarmSummary")
+}
+
 record(calc, "$(P)AlarmSummary") {
     field(DESC, "Alarm Summary")
     field(INPA, "$(P)MiscAlarmSum MS")
@@ -276,6 +331,7 @@ record(calc, "$(P)AlarmSummary") {
     field(INPC, "$(P)CurrAlarmSum MS")
     field(INPE, "$(P)TempAlarmSum MS")
     field(INPF, "$(P)FanAlarmSum MS")
+    field(INPG, "$(P)ModuleAlarmSum MS")
 }
 
 
