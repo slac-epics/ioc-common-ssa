@@ -114,21 +114,6 @@ record(mbbi, "$(P)StatusMsg") {
 
 
 # --- Fault messages -------------------------------------------------------------
-#record(calc, "$(P)FaultSummary1") {
-#    field(DESC, "Fault Summary 1")
-#    field(ASG,  "Internal")
-#    field(INPA, "$(P)FaultInt.SEVR CPP MS")
-#    field(INPB, "$(P)FaultExt.SEVR CPP MS")
-#    field(INPC, "$(P)FaultExt1.SEVR CPP MS")
-#    field(INPD, "$(P)FaultExt2.SEVR CPP MS")
-#    field(INPE, "$(P)FaultExt3.SEVR CPP MS")
-#    field(INPF, "$(P)FaultExt4.SEVR CPP MS")
-#    field(INPG, "$(P)FaultExt5.SEVR CPP MS")
-#    field(INPH, "$(P)FaultExt6.SEVR CPP MS")
-#    field(INPI, "$(P)FaultInt1.SEVR CPP MS")
-#    field(INPJ, "$(P)FaultCtlCktBrk.SEVR CPP MS")
-#}
-
 record(calcout, "$(P)FaultSumCalc") {
     field(DESC, "Fault Summary Calc")
     field(ASG,  "Internal")
