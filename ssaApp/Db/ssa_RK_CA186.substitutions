@@ -61,12 +61,12 @@ pattern
  {      VSWROver,           "VSWR Status", $(P)_inw01,     79, 0x0001,       "Over",    "Below",    MINOR, NO_ALARM, "I/O Intr"}
  { DrvrSubCBStat,  "Driver Sub CB Status", $(P)_inw02,     19, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
  {   DrvrPwrStat,     "Driver Pwr Status", $(P)_inw02,     28, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
- {     FaultExt1,      "External Fault 1", $(P)_inw39,     99, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
- {     FaultExt2,      "External Fault 2", $(P)_inw40,      0, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
- {     FaultExt3,      "External Fault 3", $(P)_inw40,      1, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
- {     FaultExt4,      "External Fault 4", $(P)_inw40,      2, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
- {     FaultExt5,      "External Fault 5", $(P)_inw40,      3, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
- {     FaultExt6,      "External Fault 6", $(P)_inw40,      4, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+ {     FaultExt1,            "NIRP Fault", $(P)_inw39,     99, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+ {     FaultExt2,       "Circ Flow Fault", $(P)_inw40,      0, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+ {     FaultExt3,    "RF Load Flow Fault", $(P)_inw40,      1, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+ {     FaultExt4,    "RF Load Flow Fault", $(P)_inw40,      2, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+ {     FaultExt5,    "RF Load Flow Fault", $(P)_inw40,      3, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+ {     FaultExt6,            "Door Fault", $(P)_inw40,      4, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
  {     FaultInt1,      "Internal Fault 1", $(P)_inw40,      5, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
  {   Fault480_UV,     "480 VAC U-V Fault", $(P)_inw40,      6, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
  {   Fault480_VW,     "480 VAC V-W Fault", $(P)_inw40,      7, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
