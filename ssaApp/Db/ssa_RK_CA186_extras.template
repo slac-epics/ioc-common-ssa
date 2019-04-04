@@ -40,6 +40,14 @@ record(ao, "$(P)DrainVoltSetpt") {
     field(HOPR, "45")
     field(DRVL, "13.4")
     field(DRVH, "45")
+    field(LOLO, "35")
+    field(LOW,  "37")
+    field(HIGH, "46")
+    field(HIHI, "47")
+    field(LLSV, "MAJOR")
+    field(LSV,  "MINOR")
+    field(HSV,  "MINOR")
+    field(HHSV, "MAJOR")
     field(FLNK, "$(P)DrainVCalc")
     info(autosaveFields, "VAL")
 }
@@ -69,6 +77,15 @@ record(ai, "$(P)DrainVoltRBV") {
     field(INP, "$(P)DrainVoltRBVCalc MS")
     field(EGU,  "V")
     field(PREC, "2")
+    field(LOLO, "")
+    field(LOW,  "37")
+    field(HIGH, "46")
+    field(HIHI, "47")
+    field(LLSV, "NO_ALARM")
+    field(LSV,  "MINOR")
+    field(HSV,  "MINOR")
+    field(HHSV, "MAJOR")
+
 }
 #---------------------------------------------------------------
 
