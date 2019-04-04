@@ -1,0 +1,14 @@
+
+# Common controls for cryomodule SSAs.
+# Macros:
+#   OUT: PV attribute 
+#   MASK: Bitmask to select which SSAs to control; e.g. 3 for SSAs 1 & 2, 15 for SSAs 1,2,3,4.
+
+file "ssaCommonControls.template" {
+pattern
+{       OUT, MASK, DLY}
+{   PowerOn,  255, 0.5}
+{  PowerOff,  255, 0.1}
+{FaultReset,  255, 0.5}
+}
+

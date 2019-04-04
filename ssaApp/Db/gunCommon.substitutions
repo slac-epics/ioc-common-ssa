@@ -1,0 +1,15 @@
+
+# Common controls for gun SSAs.
+# Macros:
+#   OUT: PV attribute 
+#   MASK: Bitmask to select which SSAs to control; e.g. 3 for SSAs 1 & 2, 15 for SSAs 1,2,3,4.
+#   DLY: Delay between each SSA command
+
+file "ssaCommonControls.template" {
+pattern
+{SSA1  SSA2,  N,  M,        OUT, MASK, DLY}
+{SSA1, SSA2, "", "",    PowerOn,    3, 1.0}
+{SSA1, SSA2, "", "",   PowerOff,    3, 0.1}
+{SSA1, SSA2, "", "", FaultReset,    3, 1.0}
+}
+

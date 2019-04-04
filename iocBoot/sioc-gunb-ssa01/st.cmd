@@ -75,6 +75,10 @@ epicsEnvSet("IP", "ssa-gunb-455-4")
 dbLoadRecords("db/ssa_RK_CA1300.db", "P=$(P)")
 epicsThreadSleep(0.5)
 
+# Load common SSA databases
+dbLoadRecords("db/gunCommon.db", "P=GUN:GUNB:100:")
+dbLoadRecords("db/buncherCommon.db", "P=ACCL:GUNB:455:")
+
 
 # =====================================================================
 # Load iocAdmin databases to support IOC Health and monitoring

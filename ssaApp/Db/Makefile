@@ -28,6 +28,10 @@ DB += ssa_RK_CA199.db
 #DB += ssa_BBEF.db
 DB += ssa_RK_CA3900.db
 
+DB += gunCommon.db
+DB += buncherCommon.db
+DB += cryomoduleCommon.db
+
 # Install Common databases needed by All IOCs
 # ========================================================
 # Install databases from iocAdmin package

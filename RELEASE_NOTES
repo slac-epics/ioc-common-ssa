@@ -8,6 +8,10 @@
 #
 #--------------------------------------------------------------
 
+ssa-R0-0-10: 04-Apr-2019  M. Dunning (mdunning)
+    Add common On/Off/Reset controls
+    Adjust CA186 alarm limits for drain voltage
+
 ssa-R0-0-9: 11-Feb-2019  M. Dunning (mdunning)
     Add CA3900 error messages
     Separate ssa1 and ssa2 b15 dev IOCs
