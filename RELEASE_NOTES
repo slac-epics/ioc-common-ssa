@@ -8,6 +8,9 @@
 #
 #--------------------------------------------------------------
 
+ssa-R0-0-11: 09-Apr-2019  M. Dunning (mdunning)
+    Add polynomial conversion for gun fwd/rev/drv power
+
 ssa-R0-0-10: 04-Apr-2019  M. Dunning (mdunning)
     Add common On/Off/Reset controls
     Adjust CA186 alarm limits for drain voltage

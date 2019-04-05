@@ -119,19 +119,13 @@ pattern
 }
 
 # Unsigned integer inputs converted to floats, modbus function code 3.
-# Uses a breakpoint table for conversion.
-file "ai_pwrFwd_autosave.template" {
+# Uses a polynomial for conversion.
+file "ai_polyConvert_autosave.template" {
 pattern
-{           R,                       DESC,       PORT, OFFSET,   PREC,   LOLO,    LOW,   HIGH,   HIHI,     LLSV,      LSV,      HSV,     HHSV,     EGU,       SCAN}
-{      FwdPwr,            "Forward Power", $(P)_inw01,      3,      1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,     "W", "I/O Intr"}
-}
-
-# Unsigned integer inputs converted to floats, modbus function code 3.
-# Uses a breakpoint table for conversion.
-file "ai_pwrRef_autosave.template" {
-pattern
-{           R,                       DESC,       PORT, OFFSET,   PREC,   LOLO,    LOW,   HIGH,   HIHI,     LLSV,      LSV,      HSV,     HHSV,     EGU,       SCAN}
-{      RefPwr,          "Reflected Power", $(P)_inw01,      4,      1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,     "W", "I/O Intr"}
+{               R,                     DESC,       PORT, OFFSET,      C0,      C1,      C2, PREC, LOLO,    LOW,   HIGH,   HIHI,     LLSV,      LSV,      HSV,     HHSV,     EGU}
+{          DrvPwr,          "Drive Pwr RBV", $(P)_inw01,      2,  -50.57, 0.04762,     0.0,    1,   "",  -10.0,   15.0,   20.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "dBm"}
+{          FwdPwr,          "Forward Power", $(P)_inw01,      3, -1988.3,  2.0953, 0.01198,    1,   "",     "",     45,     50, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "W"}
+{          RefPwr,        "Reflected Power", $(P)_inw01,      4,  3333.2, -4.0553, 0.01493,    1,   "",     "",      8,     10, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "W"}
 }
 
 # Unsigned integer inputs converted to floats, modbus function code 3.
@@ -146,7 +140,6 @@ pattern
 {      480VAC1_UV,        "480 VAC U-V RBV", $(P)_inw00,     99,   -842,   0.448,    0,    432,    450,    500,    528,    MAJOR,    MINOR,    MINOR,    MAJOR,   "VAC", "I/O Intr"}
 {      480VAC2_VW,        "480 VAC V-W RBV", $(P)_inw01,      0,   -842,   0.448,    0,    432,    450,    500,    528,    MAJOR,    MINOR,    MINOR,    MAJOR,   "VAC", "I/O Intr"}
 {      480VAC3_UW,        "480 VAC U-W RBV", $(P)_inw01,      1,   -842,   0.448,    0,    432,    450,    500,    528,    MAJOR,    MINOR,    MINOR,    MAJOR,   "VAC", "I/O Intr"}
-{          DrvPwr,          "Drive Pwr RBV", $(P)_inw01,      2, -50.57, 0.04762,    1,     "",   -1.0,    0.0,      0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,   "dBm", "I/O Intr"}
 {        Humidity,               "Humidity", $(P)_inw01,      5,    0.0,   0.132,    1,   10.0,   15.0,   80.0,   85.0,    MAJOR,    MINOR,    MINOR,    MAJOR,     "%", "I/O Intr"}
 {     LCWFlowRate,          "LCW Flow Rate", $(P)_inw01,      6,    0.0,  0.0564,    1,   65.0,   60.0,     "",     "",    MAJOR,    MINOR, NO_ALARM, NO_ALARM, "L/min", "I/O Intr"}
 {      SysAirTemp,           "Sys Air Temp", $(P)_inw01,      9, -39.24,  0.0392,    1,     "",     "",   45.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
