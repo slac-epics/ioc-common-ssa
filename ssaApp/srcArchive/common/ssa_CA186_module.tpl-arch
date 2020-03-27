@@ -1,0 +1,35 @@
+# File: ssa_CA186_module.tpl-arch
+#
+# Format:  PVNAME     INTERVAL     [ monitor | scan ]
+# The interval is in seconds
+
+# Name                  Interval Mode
+#----------------------------------------------
+$(P):M$(M)_AirTemp   1
+$(P):M$(M)_AlarmSummary.SEVR 1
+$(P):M$(M)_Dev1Drn_I 1
+$(P):M$(M)_Dev2Drn_I 1
+$(P):M$(M)_Drn_V 1
+$(P):M$(M)_FPGAVer   1
+$(P):M$(M)_FanSpd    1
+$(P):M$(M)_FwdPwr    1
+$(P):M$(M)_HiADWarn  1
+$(P):M$(M)_IO1Intlk  1
+$(P):M$(M)_IO1Warn   1
+$(P):M$(M)_IO2Warn   1
+$(P):M$(M)_LCWHSTemp 1
+$(P):M$(M)_LoADWarn  1
+$(P):M$(M)_MiscAlarmSum.SEVR 1
+$(P):M$(M)_PIVAlarmSum.SEVR  1
+$(P):M$(M)_PS1_I 1
+$(P):M$(M)_PS1_V 1
+$(P):M$(M)_PS2_I 1
+$(P):M$(M)_PS2_V 1
+$(P):M$(M)_PS3_I 1
+$(P):M$(M)_PS3_V 1
+$(P):M$(M)_PwrStat   1
+$(P):M$(M)_RefPwr    1
+$(P):M$(M)_SubCBStat 1
+$(P):M$(M)_TxFanSpd1 1
+$(P):M$(M)_TxFanSpd2 1
+

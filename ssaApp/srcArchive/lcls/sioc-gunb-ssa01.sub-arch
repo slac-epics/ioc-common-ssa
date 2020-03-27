@@ -1,0 +1,87 @@
+# Archive list
+
+file  ssa_CA186.tpl-arch {
+pattern {P}
+        {GUN:GUNB:100:SSA1}
+        {GUN:GUNB:100:SSA2}
+}
+
+file  ssa_CA186_module.tpl-arch {
+pattern {P                ,  M}
+        {GUN:GUNB:100:SSA1, 00}
+        {GUN:GUNB:100:SSA1, 01}
+        {GUN:GUNB:100:SSA1, 02}
+        {GUN:GUNB:100:SSA1, 03}
+        {GUN:GUNB:100:SSA1, 04}
+        {GUN:GUNB:100:SSA1, 05}
+        {GUN:GUNB:100:SSA1, 06}
+        {GUN:GUNB:100:SSA1, 07}
+        {GUN:GUNB:100:SSA1, 08}
+        {GUN:GUNB:100:SSA1, 09}
+        {GUN:GUNB:100:SSA1, 10}
+        {GUN:GUNB:100:SSA1, 11}
+        {GUN:GUNB:100:SSA1, 12}
+        {GUN:GUNB:100:SSA1, 13}
+        {GUN:GUNB:100:SSA1, 14}
+        {GUN:GUNB:100:SSA1, 15}
+        {GUN:GUNB:100:SSA1, 16}
+        {GUN:GUNB:100:SSA1, 17}
+        {GUN:GUNB:100:SSA1, 18}
+        {GUN:GUNB:100:SSA1, 19}
+        {GUN:GUNB:100:SSA1, 20}
+        {GUN:GUNB:100:SSA1, 21}
+        {GUN:GUNB:100:SSA1, 22}
+        {GUN:GUNB:100:SSA1, 23}
+        {GUN:GUNB:100:SSA1, 24}
+        {GUN:GUNB:100:SSA1, 25}
+        {GUN:GUNB:100:SSA1, 26}
+        {GUN:GUNB:100:SSA1, 27}
+        {GUN:GUNB:100:SSA1, 28}
+        {GUN:GUNB:100:SSA1, 29}
+        {GUN:GUNB:100:SSA1, 30}
+        {GUN:GUNB:100:SSA2, 00}
+        {GUN:GUNB:100:SSA2, 01}
+        {GUN:GUNB:100:SSA2, 02}
+        {GUN:GUNB:100:SSA2, 03}
+        {GUN:GUNB:100:SSA2, 04}
+        {GUN:GUNB:100:SSA2, 05}
+        {GUN:GUNB:100:SSA2, 06}
+        {GUN:GUNB:100:SSA2, 07}
+        {GUN:GUNB:100:SSA2, 08}
+        {GUN:GUNB:100:SSA2, 09}
+        {GUN:GUNB:100:SSA2, 10}
+        {GUN:GUNB:100:SSA2, 11}
+        {GUN:GUNB:100:SSA2, 12}
+        {GUN:GUNB:100:SSA2, 13}
+        {GUN:GUNB:100:SSA2, 14}
+        {GUN:GUNB:100:SSA2, 15}
+        {GUN:GUNB:100:SSA2, 16}
+        {GUN:GUNB:100:SSA2, 17}
+        {GUN:GUNB:100:SSA2, 18}
+        {GUN:GUNB:100:SSA2, 19}
+        {GUN:GUNB:100:SSA2, 20}
+        {GUN:GUNB:100:SSA2, 21}
+        {GUN:GUNB:100:SSA2, 22}
+        {GUN:GUNB:100:SSA2, 23}
+        {GUN:GUNB:100:SSA2, 24}
+        {GUN:GUNB:100:SSA2, 25}
+        {GUN:GUNB:100:SSA2, 26}
+        {GUN:GUNB:100:SSA2, 27}
+        {GUN:GUNB:100:SSA2, 28}
+        {GUN:GUNB:100:SSA2, 29}
+        {GUN:GUNB:100:SSA2, 30}
+}
+
+file  ssa_CA1300.tpl-arch {
+pattern {P                 }
+        {ACCL:GUNB:455:SSA1}
+        {ACCL:GUNB:455:SSA2}
+        {ACCL:GUNB:455:SSA3}
+        {ACCL:GUNB:455:SSA4}
+}
+
+file archive_iocAdmin.archive {
+pattern {IOC            }
+        {SIOC:GUNB:SSA01}
+}
+

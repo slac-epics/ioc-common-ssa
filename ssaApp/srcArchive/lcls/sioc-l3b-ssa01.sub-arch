@@ -1,0 +1,44 @@
+# Archive list
+
+file  ssa_CA1300.tpl-arch {
+pattern {P                }
+        {ACCL:L3B:1610:SSA}
+        {ACCL:L3B:1620:SSA}
+        {ACCL:L3B:1630:SSA}
+        {ACCL:L3B:1640:SSA}
+        {ACCL:L3B:1650:SSA}
+        {ACCL:L3B:1660:SSA}
+        {ACCL:L3B:1670:SSA}
+        {ACCL:L3B:1680:SSA}
+# SSAs for CM 17-19 are not ready yet so are commented out
+#        {ACCL:L3B:1710:SSA}
+#        {ACCL:L3B:1720:SSA}
+#        {ACCL:L3B:1730:SSA}
+#        {ACCL:L3B:1740:SSA}
+#        {ACCL:L3B:1750:SSA}
+#        {ACCL:L3B:1760:SSA}
+#        {ACCL:L3B:1770:SSA}
+#        {ACCL:L3B:1780:SSA}
+#        {ACCL:L3B:1810:SSA}
+#        {ACCL:L3B:1820:SSA}
+#        {ACCL:L3B:1830:SSA}
+#        {ACCL:L3B:1840:SSA}
+#        {ACCL:L3B:1850:SSA}
+#        {ACCL:L3B:1860:SSA}
+#        {ACCL:L3B:1870:SSA}
+#        {ACCL:L3B:1880:SSA}
+#        {ACCL:L3B:1910:SSA}
+#        {ACCL:L3B:1920:SSA}
+#        {ACCL:L3B:1930:SSA}
+#        {ACCL:L3B:1940:SSA}
+#        {ACCL:L3B:1950:SSA}
+#        {ACCL:L3B:1960:SSA}
+#        {ACCL:L3B:1970:SSA}
+#        {ACCL:L3B:1980:SSA}
+}
+
+file archive_iocAdmin.archive {
+pattern {IOC           }
+        {SIOC:L3B:SSA01}
+}
+
