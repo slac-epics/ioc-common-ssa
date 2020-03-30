@@ -1,152 +1,152 @@
 # File: ssa_CA186.tpl-arch
 #
 # Format:  PVNAME     INTERVAL     [ monitor | scan ]
-# The interval is in seconds
+# Interval is in seconds; default mode is scan
 
 # Name                  Interval Mode
 #----------------------------------------------
-$(P):480VAC1_UV    1
-$(P):480VAC2_VW    1
-$(P):480VAC3_UW    1
-$(P):ACEnableRBV   1
-$(P):APD_ATT   1
-$(P):APD_ATT_Stat  1
-$(P):AlarmSummary.SEVR 1
-$(P):Comm_WE1Warn  1
-$(P):Comm_WE2Warn  1
-$(P):ConfigStat    1
-$(P):CtlIO1Warn    1
-$(P):CtlIO2Warn    1
-$(P):CtlIO3Warn    1
-$(P):CtrlAirTemp   1
-$(P):CtrlFan1Spd   1
-$(P):CtrlFan2Spd   1
-$(P):CurrAlarmSum.SEVR 1
-$(P):DCEnable  1
-$(P):DCEnableRBV   1
-$(P):DrainVoltRBV  1
-$(P):DrainVoltRBVCalc  1
-$(P):DrainVoltSetpt    1
-$(P):DrvPwr    1
-$(P):DrvrAirTemp   1
-$(P):DrvrDev1Drn_I 1
-$(P):DrvrDev2Drn_I 1
-$(P):DrvrDrn_V 1
-$(P):DrvrFanSpd    1
-$(P):DrvrGainDrn_V 1
-$(P):DrvrHiADWarn  1
-$(P):DrvrIO1Intlk  1
-$(P):DrvrIO1Warn   1
-$(P):DrvrIO2Warn   1
-$(P):DrvrLCWHSTemp 1
-$(P):DrvrLoADWarn  1
-$(P):DrvrPS1_I 1
-$(P):DrvrPS1_V 1
-$(P):DrvrPS2_I 1
-$(P):DrvrPS2_V 1
-$(P):DrvrPwrStat   1
-$(P):DrvrSubCBStat 1
-$(P):DrvrTx1Fan1Spd    1
-$(P):DrvrTx1Fan2Spd    1
-$(P):FPGA_RE1Warn  1
-$(P):FPGA_RE2Warn  1
-$(P):FanAlarmSum.SEVR  1
-$(P):FanAlarmSum1  1
-$(P):FanAlarmSum2  1
-$(P):FanAlarmSum3  1
-$(P):Fault480_UV   1
-$(P):Fault480_UW   1
-$(P):Fault480_VW   1
-$(P):FaultAlarmBus 1
-$(P):FaultCommError    1
-$(P):FaultCtlAirTemp   1
-$(P):FaultCtlCktBrk    1
-$(P):FaultDrvPwr   1
-$(P):FaultExt  1
-$(P):FaultExt1 1
-$(P):FaultExt2 1
-$(P):FaultExt3 1
-$(P):FaultExt4 1
-$(P):FaultExt5 1
-$(P):FaultExt6 1
-$(P):FaultExtReset 1
-$(P):FaultFPGA 1
-$(P):FaultFanPS    1
-$(P):FaultFwdPwr   1
-$(P):FaultHX1Temp  1
-$(P):FaultHX2Temp  1
-$(P):FaultInt  1
-$(P):FaultInt1 1
-$(P):FaultIntReset 1
-$(P):FaultLCWFlow  1
-$(P):FaultLCWInTemp    1
-$(P):FaultLCWLeak  1
-$(P):FaultLCWOutTemp   1
-$(P):FaultRadCmbTemp   1
-$(P):FaultRefPwr   1
-$(P):FaultReset    1
-$(P):FaultSummary  1
-$(P):FaultSysAirTemp   1
-$(P):FaultThermo   1
-$(P):FwdPwr    1
-$(P):FwdPwrAlLm    1
-$(P):FwdPwrAlLmRBV 1
-$(P):HX1Fan1Spd    1
-$(P):HX1Fan2Spd    1
-$(P):HX1Fan3Spd    1
-$(P):HX1Fan4Spd    1
-$(P):HX1Fan5Spd    1
-$(P):HX1Fan6Spd    1
-$(P):HX1Fan7Spd    1
-$(P):HX1Fan8Spd    1
-$(P):HX1Temp   1
-$(P):HX2Fan1Spd    1
-$(P):HX2Fan2Spd    1
-$(P):HX2Fan3Spd    1
-$(P):HX2Fan4Spd    1
-$(P):HX2Fan5Spd    1
-$(P):HX2Fan6Spd    1
-$(P):HX2Fan7Spd    1
-$(P):HX2Fan8Spd    1
-$(P):HX2Temp   1
-$(P):HeatSinkThm1  1
-$(P):HeatSinkThm2  1
-$(P):Humidity  1
-$(P):LCWFlowRate   1
-$(P):LCWFlowRateLm 1
-$(P):LCWFlowRateLmRBV  1
-$(P):LCWInTemp 1
-$(P):LCWOutTemp    1
-$(P):LCWOutTempLm  1
-$(P):LCWOutTempLmRBV   1
-$(P):MiscAlarmSum.SEVR 1
-$(P):MiscAlarmSum1 1
-$(P):MiscAlarmSum2 1
-$(P):PSVoltRBV 1
-$(P):PSVoltSetpt   1
-$(P):PowerOff  1
-$(P):PowerOn   1
-$(P):PulseMode 1
-$(P):RFEnable  1
-$(P):RFEnableRBV   1
-$(P):RadCombTemp   1
-$(P):RefPwr    1
-$(P):RefPwrAlLm    1
-$(P):RefPwrAlLmRBV 1
-$(P):StatusMsg 1
-$(P):SysAirTemp    1
-$(P):SysReboot 1
-$(P):SystemReboot  1
-$(P):TempAlarmSum.SEVR 1
-$(P):VoltAlarmSum.SEVR 1
-$(P):Warning   1
-$(P):WarningReset  1
-$(P):WireCheckStat 1
-$(P):XPReboot  1
-$(P):XPortReboot   1
-$(P):CtrlFPGAVer   60
-$(P):DrvrFPGAVer   60
-$(P):PLCVer    60
-$(P):TFTVer    60
-$(P):VSWROver  60
+$(P):480VAC1_UV    1 monitor
+$(P):480VAC2_VW    1 monitor
+$(P):480VAC3_UW    1 monitor
+$(P):ACEnableRBV   1 monitor
+$(P):APD_ATT   1 monitor
+$(P):APD_ATT_Stat  1 monitor
+$(P):AlarmSummary.SEVR 1 monitor
+$(P):Comm_WE1Warn  1 monitor
+$(P):Comm_WE2Warn  1 monitor
+$(P):ConfigStat    1 monitor
+$(P):CtlIO1Warn    1 monitor
+$(P):CtlIO2Warn    1 monitor
+$(P):CtlIO3Warn    1 monitor
+$(P):CtrlAirTemp   1 monitor
+$(P):CtrlFan1Spd   1 monitor
+$(P):CtrlFan2Spd   1 monitor
+$(P):CurrAlarmSum.SEVR 1 monitor
+$(P):DCEnable  1 monitor
+$(P):DCEnableRBV   1 monitor
+$(P):DrainVoltRBV  1 monitor
+$(P):DrainVoltRBVCalc  1 monitor
+$(P):DrainVoltSetpt    1 monitor
+$(P):DrvPwr    1 monitor
+$(P):DrvrAirTemp   1 monitor
+$(P):DrvrDev1Drn_I 1 monitor
+$(P):DrvrDev2Drn_I 1 monitor
+$(P):DrvrDrn_V 1 monitor
+$(P):DrvrFanSpd    1 monitor
+$(P):DrvrGainDrn_V 1 monitor
+$(P):DrvrHiADWarn  1 monitor
+$(P):DrvrIO1Intlk  1 monitor
+$(P):DrvrIO1Warn   1 monitor
+$(P):DrvrIO2Warn   1 monitor
+$(P):DrvrLCWHSTemp 1 monitor
+$(P):DrvrLoADWarn  1 monitor
+$(P):DrvrPS1_I 1 monitor
+$(P):DrvrPS1_V 1 monitor
+$(P):DrvrPS2_I 1 monitor
+$(P):DrvrPS2_V 1 monitor
+$(P):DrvrPwrStat   1 monitor
+$(P):DrvrSubCBStat 1 monitor
+$(P):DrvrTx1Fan1Spd    1 monitor
+$(P):DrvrTx1Fan2Spd    1 monitor
+$(P):FPGA_RE1Warn  1 monitor
+$(P):FPGA_RE2Warn  1 monitor
+$(P):FanAlarmSum.SEVR  1 monitor
+$(P):FanAlarmSum1  1 monitor
+$(P):FanAlarmSum2  1 monitor
+$(P):FanAlarmSum3  1 monitor
+$(P):Fault480_UV   1 monitor
+$(P):Fault480_UW   1 monitor
+$(P):Fault480_VW   1 monitor
+$(P):FaultAlarmBus 1 monitor
+$(P):FaultCommError    1 monitor
+$(P):FaultCtlAirTemp   1 monitor
+$(P):FaultCtlCktBrk    1 monitor
+$(P):FaultDrvPwr   1 monitor
+$(P):FaultExt  1 monitor
+$(P):FaultExt1 1 monitor
+$(P):FaultExt2 1 monitor
+$(P):FaultExt3 1 monitor
+$(P):FaultExt4 1 monitor
+$(P):FaultExt5 1 monitor
+$(P):FaultExt6 1 monitor
+$(P):FaultExtReset 1 monitor
+$(P):FaultFPGA 1 monitor
+$(P):FaultFanPS    1 monitor
+$(P):FaultFwdPwr   1 monitor
+$(P):FaultHX1Temp  1 monitor
+$(P):FaultHX2Temp  1 monitor
+$(P):FaultInt  1 monitor
+$(P):FaultInt1 1 monitor
+$(P):FaultIntReset 1 monitor
+$(P):FaultLCWFlow  1 monitor
+$(P):FaultLCWInTemp    1 monitor
+$(P):FaultLCWLeak  1 monitor
+$(P):FaultLCWOutTemp   1 monitor
+$(P):FaultRadCmbTemp   1 monitor
+$(P):FaultRefPwr   1 monitor
+$(P):FaultReset    1 monitor
+$(P):FaultSummary  1 monitor
+$(P):FaultSysAirTemp   1 monitor
+$(P):FaultThermo   1 monitor
+$(P):FwdPwr    1 monitor
+$(P):FwdPwrAlLm    1 monitor
+$(P):FwdPwrAlLmRBV 1 monitor
+$(P):HX1Fan1Spd    1 monitor
+$(P):HX1Fan2Spd    1 monitor
+$(P):HX1Fan3Spd    1 monitor
+$(P):HX1Fan4Spd    1 monitor
+$(P):HX1Fan5Spd    1 monitor
+$(P):HX1Fan6Spd    1 monitor
+$(P):HX1Fan7Spd    1 monitor
+$(P):HX1Fan8Spd    1 monitor
+$(P):HX1Temp   1 monitor
+$(P):HX2Fan1Spd    1 monitor
+$(P):HX2Fan2Spd    1 monitor
+$(P):HX2Fan3Spd    1 monitor
+$(P):HX2Fan4Spd    1 monitor
+$(P):HX2Fan5Spd    1 monitor
+$(P):HX2Fan6Spd    1 monitor
+$(P):HX2Fan7Spd    1 monitor
+$(P):HX2Fan8Spd    1 monitor
+$(P):HX2Temp   1 monitor
+$(P):HeatSinkThm1  1 monitor
+$(P):HeatSinkThm2  1 monitor
+$(P):Humidity  1 monitor
+$(P):LCWFlowRate   1 monitor
+$(P):LCWFlowRateLm 1 monitor
+$(P):LCWFlowRateLmRBV  1 monitor
+$(P):LCWInTemp 1 monitor
+$(P):LCWOutTemp    1 monitor
+$(P):LCWOutTempLm  1 monitor
+$(P):LCWOutTempLmRBV   1 monitor
+$(P):MiscAlarmSum.SEVR 1 monitor
+$(P):MiscAlarmSum1 1 monitor
+$(P):MiscAlarmSum2 1 monitor
+$(P):PSVoltRBV 1 monitor
+$(P):PSVoltSetpt   1 monitor
+$(P):PowerOff  1 monitor
+$(P):PowerOn   1 monitor
+$(P):PulseMode 1 monitor
+$(P):RFEnable  1 monitor
+$(P):RFEnableRBV   1 monitor
+$(P):RadCombTemp   1 monitor
+$(P):RefPwr    1 monitor
+$(P):RefPwrAlLm    1 monitor
+$(P):RefPwrAlLmRBV 1 monitor
+$(P):StatusMsg 1 monitor
+$(P):SysAirTemp    1 monitor
+$(P):SysReboot 1 monitor
+$(P):SystemReboot  1 monitor
+$(P):TempAlarmSum.SEVR 1 monitor
+$(P):VoltAlarmSum.SEVR 1 monitor
+$(P):Warning   1 monitor
+$(P):WarningReset  1 monitor
+$(P):WireCheckStat 1 monitor
+$(P):XPReboot  1 monitor
+$(P):XPortReboot   1 monitor
+$(P):CtrlFPGAVer   60 monitor
+$(P):DrvrFPGAVer   60 monitor
+$(P):PLCVer    60 monitor
+$(P):TFTVer    60 monitor
+$(P):VSWROver  60 monitor
 
