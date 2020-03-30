@@ -8,13 +8,8 @@ include $(TOP)/configure/CONFIG
 # ================================================
 # Build the IOC application
 # ================================================
-# This will attempt to build an IOC application 
-# for every target including the host computer.
 PROD_NAME = ssa
 PROD_IOC = $(PROD_NAME)
-
-# Use the following for RTEMS Only IOCs
-#PROD_IOC_RTEMS = $(PROD_NAME)
 
 # $(PROD_NAME).dbd will be created and installed
 DBD += $(PROD_NAME).dbd
@@ -27,10 +22,6 @@ $(PROD_NAME)_DBD += caPutLog.dbd
 $(PROD_NAME)_DBD += $(PROD_NAME)ASubSupport.dbd
 $(PROD_NAME)_DBD += $(PROD_NAME)SeqSupport.dbd
 
-# ================================================================================
-# The system command will be mainly used by linux hosted IOCs
-# Very useful for changing kernel thread priorities for kernel drivers
-# ================================================================================
 $(PROD_NAME)_DBD += system.dbd
 
 # If you don't have an EVR comment the following two lines:
@@ -52,9 +43,6 @@ $(PROD_NAME)_SRCS += $(PROD_NAME)_registerRecordDeviceDriver.cpp
 
 $(PROD_NAME)_SRCS_DEFAULT += $(PROD_NAME)Main.cpp
 
-$(PROD_NAME)_SRCS_vxWorks += -nil-
-
-# ========================================================================
 # ========================================================================
 # Add locally compiled object code
 # For example, subroutines
@@ -84,7 +72,7 @@ $(PROD_NAME)_LIBS += asyn
 # in the <top>/configure/RELEASE file
 #
 ifneq ($(SNCSEQ),)
-    $(PROD_NAME)_LIBS += seq pv
+$(PROD_NAME)_LIBS += seq pv
 endif
 
 $(PROD_NAME)_LIBS += $(EPICS_BASE_IOC_LIBS)
