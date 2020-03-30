@@ -37,15 +37,14 @@ DB += cryomoduleCommon.db
 # Install databases from iocAdmin package
 # These databases support IOC Health and Monitoring
 # ========================================================
-# HardIOC using RTEMS
-DB_INSTALLS += $(IOCADMIN)/db/iocAdminRTEMS.db
-# SoftIOC
 DB_INSTALLS += $(IOCADMIN)/db/iocAdminSoft.db
-
 DB_INSTALLS += $(IOCADMIN)/db/iocAdminScanMon.db
 DB_INSTALLS += $(IOCADMIN)/db/iocScanMonSum.db
 DB_INSTALLS += $(IOCADMIN)/db/iocScanMon.db
 IOCRELEASE_DB += iocRelease.db
+
+# Sequence Admin
+DB_INSTALLS += $(SNCSEQ)/db/devSeqCar.db
 
 # Install Database to support reading the status of the autosave package:
 DB_INSTALLS += $(AUTOSAVE)/db/save_restoreStatus.db
