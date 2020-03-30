@@ -1,20 +1,11 @@
 #!../../bin/rhel6-x86_64/ssa
 
-< envPaths
-
-cd ${TOP}
-
-## Register all support components
-dbLoadDatabase("dbd/ssa.dbd")
-ssa_registerRecordDeviceDriver(pdbbase)
-
-## Set up environment variables
-epicsEnvSet("ENGINEER", "M. Dunning")
+## Environment variables
 epicsEnvSet("LOCATION", "L3B CM 16-19")
 epicsEnvSet("IOC_P",    "SIOC:L3B:SSA01")
 
-# Tag log messages with IOC name
-epicsEnvSet("EPICS_IOC_LOG_CLIENT_INET","${IOC}")
+< $(TOP)/iocBoot/common/st.cmd.soft
+
 
 ## Run IOC shell script for each SSA
 #
@@ -124,23 +115,6 @@ dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L3B:, M=16")
 #dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L3B:, M=18")
 #dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L3B:, M=19")
 
-
-# =====================================================================
-# Load iocAdmin databases to support IOC Health and monitoring
-# =====================================================================
-dbLoadRecords("db/iocAdminSoft.db", "IOC=${IOC_P}")
-dbLoadRecords("db/iocAdminScanMon.db", "IOC=${IOC_P}")
-dbLoadRecords("db/iocRelease.db", "IOC=${IOC_P}")
-
-# Autosave initialization
-< $(TOP)/iocBoot/common/autosave_init.cmd
-
-# =====================================================================
-# Channel Access Security:
-# This is required if you use caPutLog.
-# Set access security file
-# Load common LCLS Access Configuration File
-< ${ACF_INIT}
 
 iocInit()
 
