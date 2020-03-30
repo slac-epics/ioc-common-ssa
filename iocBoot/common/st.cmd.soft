@@ -1,0 +1,47 @@
+# File: st.cmd.soft
+# Required environment variables:
+# IOC_P - IOC name, e.g. SIOC:L2B:SSA03
+# LOCATION - location...
+
+
+< envPaths
+
+cd ${TOP}
+
+## Register all support components
+dbLoadDatabase("dbd/ssa.dbd")
+ssa_registerRecordDeviceDriver(pdbbase)
+
+## Environment variables
+epicsEnvSet("ENGINEER", "M. Dunning")
+
+# Tag log messages with IOC name
+epicsEnvSet("EPICS_IOC_LOG_CLIENT_INET","${IOC}")
+
+# =====================================================================
+# Load iocAdmin databases to support IOC Health and monitoring
+# =====================================================================
+dbLoadRecords("db/iocAdminSoft.db", "IOC=${IOC_P}")
+dbLoadRecords("db/iocAdminScanMon.db", "IOC=${IOC_P}")
+dbLoadRecords("db/iocRelease.db", "IOC=${IOC_P}")
+
+# Sequencer
+dbLoadRecords("db/devSeqCar.db","SIOC=${IOC_P}")
+
+# Autosave initialization
+< $(TOP)/iocBoot/common/autosave_init.cmd
+
+# =====================================================================
+# Channel Access Security:
+# This is required if you use caPutLog.
+# Set access security file
+# Load common LCLS Access Configuration File
+< ${ACF_INIT}
+
+#==============================================================
+# Update archive pv list in ${IOC_DATA}
+#==============================================================
+system("cp $(TOP)/archive/${IOC}.archive ${IOC_DATA}/${IOC}/archive/")
+
+# End of file
+
