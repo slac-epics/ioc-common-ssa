@@ -8,10 +8,11 @@
 #
 #--------------------------------------------------------------
 
-ssa-R0-1-0: 27-Mar-2020  M. Dunning (mdunning)
+R1.0.0: 27-Mar-2020  M. Dunning (mdunning)
     Add new iocsh script for cryomodule SSAs
     Add IOCs for CM 12-19 SSAs
-    Add archiving
+    Add auto-archiving
+    Upgrade to EPICS 7
 
 ssa-R0-0-11: 09-Apr-2019  M. Dunning (mdunning)
     Add polynomial conversion for gun fwd/rev/drv power
