@@ -1,8 +1,10 @@
 #!../../bin/rhel6-x86_64/ssa
 
+< envPaths
+
 ## Environment variables
 epicsEnvSet("LOCATION", "L2B CM 12-15")
-epicsEnvSet("IOC_P",    "SIOC:L2B:SSA03")
+epicsEnvSet("IOC_NAME", "SIOC:L2B:SSA03")
 
 < $(TOP)/iocBoot/common/st.cmd.soft
 
@@ -259,7 +261,7 @@ seq(seq_ssa_CA1300, "P=ACCL:L2B:1580:SSA:")
 epicsThreadSleep(0.25)
 
 # Autosave start
-< $(TOP)/iocBoot/common/autosave_init.cmd
+< $(TOP)/iocBoot/common/autosave_start.cmd
 
 cd $(TOP)
 

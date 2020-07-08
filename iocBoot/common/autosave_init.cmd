@@ -1,13 +1,13 @@
 # autosave_init.cmd
 # Required environment variables:
-# ${IOC_P} - IOC name, e.g. SIOC:GUNB:SSA01
-# ${IOC_DATA}
-# ${IOC}
+# ${IOC_NAME} - IOC name as PV prefix, e.g. SIOC:GUNB:SSA01
+# ${IOC_DATA} - path to IOC data directory
+# ${IOC} - IOC name, e.g. sioc-gunb-ssa01
 
 # =====================================================================
 # Load database for autosave status
 # =====================================================================
-dbLoadRecords("db/save_restoreStatus.db", "P=${IOC_P}:")
+dbLoadRecords("db/save_restoreStatus.db", "P=${IOC_NAME}:")
 
 # ============================================================
 # If all PVs don't connect continue anyway
@@ -34,7 +34,7 @@ set_savefile_path("${IOC_DATA}/${IOC}/autosave")
 # Prefix that is use to update save/restore status database
 # records
 # ============================================================
-save_restoreSet_status_prefix("${IOC_P}:")
+save_restoreSet_status_prefix("${IOC_NAME}:")
 
 ## Restore datasets
 set_pass0_restoreFile("info_settings.sav")

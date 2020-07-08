@@ -1,7 +1,7 @@
 # autosave_start.cmd
 # Required environment variables:
-# ${IOC_DATA}
-# ${IOC}
+# ${IOC_DATA} - path to IOC data directory
+# ${IOC} - IOC name, e.g. sioc-gunb-ssa01
 
 ## Start autosave process:
 cd("${IOC_DATA}/${IOC}/autosave-req")

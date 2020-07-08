@@ -1,10 +1,7 @@
 # File: st.cmd.soft
 # Required environment variables:
-# IOC_P - IOC name, e.g. SIOC:L2B:SSA03
+# IOC_NAME - IOC name, e.g. SIOC:L2B:SSA03
 # LOCATION - location...
-
-
-< envPaths
 
 cd ${TOP}
 
@@ -16,17 +13,17 @@ ssa_registerRecordDeviceDriver(pdbbase)
 epicsEnvSet("ENGINEER", "M. Dunning")
 
 # Tag log messages with IOC name
-epicsEnvSet("EPICS_IOC_LOG_CLIENT_INET","${IOC}")
+epicsEnvSet("EPICS_IOC_LOG_CLIENT_INET", "${IOC}")
 
 # =====================================================================
 # Load iocAdmin databases to support IOC Health and monitoring
 # =====================================================================
-dbLoadRecords("db/iocAdminSoft.db", "IOC=${IOC_P}")
-dbLoadRecords("db/iocAdminScanMon.db", "IOC=${IOC_P}")
-dbLoadRecords("db/iocRelease.db", "IOC=${IOC_P}")
+dbLoadRecords("db/iocAdminSoft.db", "IOC=${IOC_NAME}")
+dbLoadRecords("db/iocAdminScanMon.db", "IOC=${IOC_NAME}")
+dbLoadRecords("db/iocRelease.db", "IOC=${IOC_NAME}")
 
 # Sequencer
-dbLoadRecords("db/devSeqCar.db","SIOC=${IOC_P}")
+dbLoadRecords("db/devSeqCar.db", "SIOC=${IOC_NAME}")
 
 # Autosave initialization
 < $(TOP)/iocBoot/common/autosave_init.cmd

@@ -1,8 +1,10 @@
 #!../../bin/rhel6-x86_64/ssa
 
+< envPaths
+
 ## Environment variables
 epicsEnvSet("LOCATION", "L3B CM 16-19")
-epicsEnvSet("IOC_P",    "SIOC:L3B:SSA01")
+epicsEnvSet("IOC_NAME", "SIOC:L3B:SSA01")
 
 < $(TOP)/iocBoot/common/st.cmd.soft
 
@@ -261,7 +263,7 @@ epicsThreadSleep(0.25)
 
 
 # Autosave start
-< $(TOP)/iocBoot/common/autosave_init.cmd
+< $(TOP)/iocBoot/common/autosave_start.cmd
 
 cd $(TOP)
 
