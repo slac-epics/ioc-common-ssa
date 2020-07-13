@@ -44,6 +44,7 @@ dbLoadRecords("db/asynRecord.db", "P=$(P), R=ASYN_IN, PORT=$(PORT)_inw2, ADDR=0,
 # Default data type: unsigned integer
 drvModbusAsynConfigure("$(PORT)_outw1", "$(PORT)", 0, 6, 1, 6, 0, 100, "RK")
 dbLoadRecords("db/asynRecord.db","P=$(P), R=ASYN_OUT, PORT=$(PORT)_outw1, ADDR=0,IMAX=0,OMAX=0")
+dbLoadRecords("db/statistics.template", "P=$(P), R=ASYN_OUT, PORT=$(PORT)_outw1, SCAN=10 second")
 
 # Modbus function code: 6 (Write Single Register, 16-bit word access)
 # Start address: 112
@@ -53,18 +54,19 @@ drvModbusAsynConfigure("$(PORT)_outw2", "$(PORT)", 0, 6, 112, 5, 0, 100, "RK")
 dbLoadRecords("db/asynRecord.db","P=$(P), R=ASYN_OUT, PORT=$(PORT)_outw2, ADDR=0,IMAX=0,OMAX=0")
 
 # Enable ASYN_TRACEIO_HEX on octet server
-asynSetTraceIOMask("$(PORT)", 0, 4)
+asynSetTraceIOMask("$(PORT)", 0, 0x4)
 # Enable ASYN_TRACE_ERROR and ASYN_TRACEIO_DRIVER on octet server
-#asynSetTraceMask("$(PORT)", 0, 9)
+#asynSetTraceMask("$(PORT)", 0, 0x9)
 # Dump up to 256 bytes in asynTrace
 asynSetTraceIOTruncateSize("$(PORT)", 0, 256)
 
 # Enable ASYN_TRACEIO_HEX on modbus server
-asynSetTraceIOMask("$(PORT)_inw1", 0, 4)
-# Enable all debugging on modbus server
-#asynSetTraceMask("$(PORT)_inw1", 0, 255)
+asynSetTraceIOMask("$(PORT)_inw1", 0, 0x4)
+# Enable ASYN_TRACE_FLOW on modbus server
+#asynSetTraceMask("$(PORT)_inw1", 0, 0x11)
 # Dump up to 512 bytes in asynTrace
 asynSetTraceIOTruncateSize("$(PORT)_inw1", 0, 512)
+asynSetTraceIOTruncateSize("$(PORT)_inw2", 0, 512)
 
 # Load records
 dbLoadRecords("db/ssa_RK_CA1300.db", "P=$(P), PORT=$(PORT)")
