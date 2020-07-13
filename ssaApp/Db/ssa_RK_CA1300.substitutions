@@ -1,10 +1,3 @@
-# asyn record for the underlying asyn octet port
-file "asynRecord.db" { 
-pattern
-{        R, PORT, ADDR, IMAX, OMAX}
-{OctetAsyn, $(P),    0,  125,  125}
-}
-#--------------------------------------------------------------------------------------------------
 
 # Binary outputs, modbus function code 6.
 file "bo_word_custom.template" {
