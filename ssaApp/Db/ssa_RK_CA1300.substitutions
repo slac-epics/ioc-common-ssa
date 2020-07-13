@@ -2,26 +2,26 @@
 # Binary outputs, modbus function code 6.
 file "bo_word_custom.template" {
 pattern
-{            R,                    DESC,            PORT, OFFSET,   MASK,      ZNAM,     ONAM}
-{     DCEnable,     "DC Enable/Disable",   $(PORT)_outw1,      0, 0x0001, "Disable", "Enable"}
-{     RFEnable,     "RF Enable/Disable",   $(PORT)_outw1,      1, 0x0001, "Disable", "Enable"}
-{FaultIntReset,  "Internal Fault Reset",   $(PORT)_outw1,      3, 0x0001,        "",  "Reset"}
-{FaultExtReset,  "External Fault Reset",   $(PORT)_outw1,      3, 0x0002,        "",  "Reset"}
-{ WarningReset,         "Warning Reset",   $(PORT)_outw1,      3, 0x0004,        "",  "Reset"}
-{     XPReboot,         "X-Port Reboot",   $(PORT)_outw1,      4, 0x0001,        "", "Reboot"}
-{    SysReboot,         "System Reboot",   $(PORT)_outw1,      5, 0x0001,        "", "Reboot"}
+{            R,                    DESC,              PORT, OFFSET,   MASK,      ZNAM,     ONAM}
+{     DCEnable,     "DC Enable/Disable",   $(PORT_P)_outw1,      0, 0x0001, "Disable", "Enable"}
+{     RFEnable,     "RF Enable/Disable",   $(PORT_P)_outw1,      1, 0x0001, "Disable", "Enable"}
+{FaultIntReset,  "Internal Fault Reset",   $(PORT_P)_outw1,      3, 0x0001,        "",  "Reset"}
+{FaultExtReset,  "External Fault Reset",   $(PORT_P)_outw1,      3, 0x0002,        "",  "Reset"}
+{ WarningReset,         "Warning Reset",   $(PORT_P)_outw1,      3, 0x0004,        "",  "Reset"}
+{     XPReboot,         "X-Port Reboot",   $(PORT_P)_outw1,      4, 0x0001,        "", "Reboot"}
+{    SysReboot,         "System Reboot",   $(PORT_P)_outw1,      5, 0x0001,        "", "Reboot"}
 }
 
 # Integer ouputs, modbus function code 6.
 file "longout_custom.template" {
 pattern
-{            R,                    DESC,            PORT, OFFSET, DRVL, DRVH, LOPR, HOPR,     EGU}
-{  PSVoltSetpt,  "PS Out Voltage Setpt",   $(PORT)_outw1,      2,  700, 2520,  700, 2520,    "mV"}
-{ CalYearSetpt,        "Cal Year Setpt",   $(PORT)_outw2,      0,   15,   99,   15,   99,      ""}
-{CalMonthSetpt,       "Cal Month Setpt",   $(PORT)_outw2,      1,    1,   12,    1,   12,      ""}
-{  CalDaySetpt,         "Cal Day Setpt",   $(PORT)_outw2,      2,    1,   31,    1,   31,      ""}
-{ CalHourSetpt,        "Cal Hour Setpt",   $(PORT)_outw2,      3,    0,   23,    0,   23,      ""}
-{  CalMinSetpt,      "Cal Minute Setpt",   $(PORT)_outw2,      4,    0,   59,    0,   59,      ""}
+{            R,                    DESC,              PORT, OFFSET, DRVL, DRVH, LOPR, HOPR,     EGU}
+{  PSVoltSetpt,  "PS Out Voltage Setpt",   $(PORT_P)_outw1,      2,  700, 2520,  700, 2520,    "mV"}
+{ CalYearSetpt,        "Cal Year Setpt",   $(PORT_P)_outw2,      0,   15,   99,   15,   99,      ""}
+{CalMonthSetpt,       "Cal Month Setpt",   $(PORT_P)_outw2,      1,    1,   12,    1,   12,      ""}
+{  CalDaySetpt,         "Cal Day Setpt",   $(PORT_P)_outw2,      2,    1,   31,    1,   31,      ""}
+{ CalHourSetpt,        "Cal Hour Setpt",   $(PORT_P)_outw2,      3,    0,   23,    0,   23,      ""}
+{  CalMinSetpt,      "Cal Minute Setpt",   $(PORT_P)_outw2,      4,    0,   59,    0,   59,      ""}
 }
 
 #--------------------------------------------------------------------------
@@ -29,114 +29,114 @@ pattern
 # Binary inputs, modbus function code 3.
 file "bi_word_custom.template" {
 pattern
-{           R,                     DESC,            PORT, OFFSET,   MASK,       ZNAM,      ONAM,      ZSV,      OSV,       SCAN}
-{ ACEnableRBV,             "AC Enabled",    $(PORT)_inw1,      9, 0x0001, "Disabled", "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
-{ DCEnableRBV,             "DC Enabled",    $(PORT)_inw1,     10, 0x0001, "Disabled", "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
-{ RFEnableRBV,             "RF Enabled",    $(PORT)_inw1,     11, 0x0001, "Disabled", "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
-{  ThermoStat,      "Thermostat Status",    $(PORT)_inw1,     24, 0x0001,       "OK",   "Alarm", NO_ALARM,    MAJOR, "I/O Intr"}
-{ WtrLeakStat,      "Water Leak Status",    $(PORT)_inw1,     27, 0x0001,       "OK",   "Alarm", NO_ALARM,    MAJOR, "I/O Intr"}
+{           R,                     DESC,              PORT, OFFSET,   MASK,       ZNAM,      ONAM,      ZSV,      OSV,       SCAN}
+{ ACEnableRBV,             "AC Enabled",    $(PORT_P)_inw1,      9, 0x0001, "Disabled", "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{ DCEnableRBV,             "DC Enabled",    $(PORT_P)_inw1,     10, 0x0001, "Disabled", "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{ RFEnableRBV,             "RF Enabled",    $(PORT_P)_inw1,     11, 0x0001, "Disabled", "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+{  ThermoStat,      "Thermostat Status",    $(PORT_P)_inw1,     24, 0x0001,       "OK",   "Alarm", NO_ALARM,    MAJOR, "I/O Intr"}
+{ WtrLeakStat,      "Water Leak Status",    $(PORT_P)_inw1,     27, 0x0001,       "OK",   "Alarm", NO_ALARM,    MAJOR, "I/O Intr"}
 }
 
 # Integer inputs, modbus function code 3.
 file "longin_custom.template" {
 pattern
-{           R,                     DESC,            PORT, OFFSET,  LOLO,   LOW,  HIGH,  HIHI,     LLSV,      LSV,      HSV,     HHSV,      EGU,       SCAN}
-{   PSVoltRBV,         "PS Out Voltage",    $(PORT)_inw1,      2,    "",    "",  2520,  2530, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "mV", "I/O Intr"}
-{  ErrCodeInt,    "Internal Error Code",    $(PORT)_inw1,     12,    "",    "",    "",     1, NO_ALARM, NO_ALARM, NO_ALARM,    MAJOR,       "", "I/O Intr"}
-{  ErrCodeExt,    "External Error Code",    $(PORT)_inw1,     13,    "",    "",    "",     1, NO_ALARM, NO_ALARM, NO_ALARM,    MAJOR,       "", "I/O Intr"}
-{ WarningCode,           "Warning Code",    $(PORT)_inw1,     14,    "",    "",     1,    "", NO_ALARM, NO_ALARM,    MINOR, NO_ALARM,       "", "I/O Intr"}
-{      DrvPwr,            "Drive Power",    $(PORT)_inw1,     15,    "",    "",  2500,  2510, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "mV", "I/O Intr"}
-{      FwdPwr,          "Forward Power",    $(PORT)_inw1,     16,    "",    "",  4200,  4210, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
-{      RefPwr,        "Reflected Power",    $(PORT)_inw1,     17,    "",    "",   400,   500, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
-{CtrlFanSpeed,      "Ctrl Unit Fan Spd",    $(PORT)_inw1,     22,    "",  6300, 11700, 12000, NO_ALARM,    MINOR,    MINOR,    MAJOR,    "rpm", "I/O Intr"}
-{ DA_FanSpeed,        "Drv Amp Fan Spd",    $(PORT)_inw1,     46,    "",  5250,  9750, 10000, NO_ALARM,    MINOR,    MINOR,    MAJOR,    "rpm", "I/O Intr"}
-{    FA1_Pwr1,        "Fin. Amp 1 Pwr1",    $(PORT)_inw1,     55,    "",    "",   570,   580, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
-{    FA1_Pwr2,        "Fin. Amp 1 Pwr2",    $(PORT)_inw1,     56,    "",    "",   550,   560, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
-{    FA1_Pwr3,        "Fin. Amp 1 Pwr3",    $(PORT)_inw1,     57,    "",    "",   550,   560, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
-{    FA1_Pwr4,        "Fin. Amp 1 Pwr4",    $(PORT)_inw1,     58,    "",    "",   550,   560, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
-{FA1_FanSpeed,     "Fin. Amp 1 Fan Spd",    $(PORT)_inw1,     62,    "",  5250,  9750, 10000, NO_ALARM,    MINOR,    MINOR,    MAJOR,    "rpm", "I/O Intr"}
-{    FA2_Pwr1,        "Fin. Amp 2 Pwr1",    $(PORT)_inw1,     71,    "",    "",   550,   560, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
-{    FA2_Pwr2,        "Fin. Amp 2 Pwr2",    $(PORT)_inw1,     72,    "",    "",   550,   560, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
-{    FA2_Pwr3,        "Fin. Amp 2 Pwr3",    $(PORT)_inw1,     73,    "",    "",   550,   560, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
-{    FA2_Pwr4,        "Fin. Amp 2 Pwr4",    $(PORT)_inw1,     74,    "",    "",   550,   560, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
-{FA2_FanSpeed,     "Fin. Amp 2 Fan Spd",    $(PORT)_inw1,     78,    "",  5250,  9750, 10000, NO_ALARM,    MINOR,    MINOR,    MAJOR,    "rpm", "I/O Intr"}
-{    FA3_Pwr1,        "Fin. Amp 3 Pwr1",    $(PORT)_inw1,     87,    "",    "",   550,   560, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
-{    FA3_Pwr2,        "Fin. Amp 3 Pwr2",    $(PORT)_inw1,     88,    "",    "",   550,   560, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
-{FA3_FanSpeed,     "Fin. Amp 3 Fan Spd",    $(PORT)_inw1,     94,    "",  5250,  9750, 10000, NO_ALARM,    MINOR,    MINOR,    MAJOR,    "rpm", "I/O Intr"}
-{  480VACStat,          "480VAC Status",    $(PORT)_inw1,     95,    "",    "",    "",     1, NO_ALARM, NO_ALARM, NO_ALARM,    MAJOR,       "", "I/O Intr"}
-{     PSFault,          "PS Unit Fault",    $(PORT)_inw1,     96,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
-{ PSFaultStat,   "PS Unit Fault Status",    $(PORT)_inw1,    103,    "",    "",    "",     1, NO_ALARM, NO_ALARM, NO_ALARM,    MAJOR,       "", "I/O Intr"}
-{ HXFan1Speed,    "Heat Exc. Fan 1 Spd",    $(PORT)_inw1,    104,    "",  6300, 11700, 12000, NO_ALARM,    MINOR,    MINOR,    MAJOR,    "rpm", "I/O Intr"}
-{ HXFan2Speed,    "Heat Exc. Fan 2 Spd",    $(PORT)_inw1,    105,    "",  6300, 11700, 12000, NO_ALARM,    MINOR,    MINOR,    MAJOR,    "rpm", "I/O Intr"}
-{ HXFan3Speed,    "Heat Exc. Fan 3 Spd",    $(PORT)_inw1,    106,    "",  6300, 11700, 12000, NO_ALARM,    MINOR,    MINOR,    MAJOR,    "rpm", "I/O Intr"}
-{ HXFan4Speed,    "Heat Exc. Fan 4 Spd",    $(PORT)_inw1,    107,    "",  6300, 11700, 12000, NO_ALARM,    MINOR,    MINOR,    MAJOR,    "rpm", "I/O Intr"}
-{ PSFan1Speed,      "PS Unit Fan 1 Spd",    $(PORT)_inw1,    108,    "",  5250,  9750, 10000, NO_ALARM,    MINOR,    MINOR,    MAJOR,    "rpm", "I/O Intr"}
-{ PSFan2Speed,      "PS Unit Fan 2 Spd",    $(PORT)_inw1,    109,    "",  5250,  9750, 10000, NO_ALARM,    MINOR,    MINOR,    MAJOR,    "rpm", "I/O Intr"}
-{ PSFan3Speed,      "PS Unit Fan 3 Spd",    $(PORT)_inw1,    110,    "",  2800,  5980,  6500, NO_ALARM,    MINOR,    MINOR,    MAJOR,    "rpm", "I/O Intr"}
+{           R,                     DESC,              PORT, OFFSET,  LOLO,   LOW,  HIGH,  HIHI,     LLSV,      LSV,      HSV,     HHSV,      EGU,       SCAN}
+{   PSVoltRBV,         "PS Out Voltage",    $(PORT_P)_inw1,      2,    "",    "",  2520,  2530, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "mV", "I/O Intr"}
+{  ErrCodeInt,    "Internal Error Code",    $(PORT_P)_inw1,     12,    "",    "",    "",     1, NO_ALARM, NO_ALARM, NO_ALARM,    MAJOR,       "", "I/O Intr"}
+{  ErrCodeExt,    "External Error Code",    $(PORT_P)_inw1,     13,    "",    "",    "",     1, NO_ALARM, NO_ALARM, NO_ALARM,    MAJOR,       "", "I/O Intr"}
+{ WarningCode,           "Warning Code",    $(PORT_P)_inw1,     14,    "",    "",     1,    "", NO_ALARM, NO_ALARM,    MINOR, NO_ALARM,       "", "I/O Intr"}
+{      DrvPwr,            "Drive Power",    $(PORT_P)_inw1,     15,    "",    "",  2500,  2510, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "mV", "I/O Intr"}
+{      FwdPwr,          "Forward Power",    $(PORT_P)_inw1,     16,    "",    "",  4200,  4210, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
+{      RefPwr,        "Reflected Power",    $(PORT_P)_inw1,     17,    "",    "",   400,   500, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
+{CtrlFanSpeed,      "Ctrl Unit Fan Spd",    $(PORT_P)_inw1,     22,    "",  6300, 11700, 12000, NO_ALARM,    MINOR,    MINOR,    MAJOR,    "rpm", "I/O Intr"}
+{ DA_FanSpeed,        "Drv Amp Fan Spd",    $(PORT_P)_inw1,     46,    "",  5250,  9750, 10000, NO_ALARM,    MINOR,    MINOR,    MAJOR,    "rpm", "I/O Intr"}
+{    FA1_Pwr1,        "Fin. Amp 1 Pwr1",    $(PORT_P)_inw1,     55,    "",    "",   570,   580, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
+{    FA1_Pwr2,        "Fin. Amp 1 Pwr2",    $(PORT_P)_inw1,     56,    "",    "",   550,   560, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
+{    FA1_Pwr3,        "Fin. Amp 1 Pwr3",    $(PORT_P)_inw1,     57,    "",    "",   550,   560, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
+{    FA1_Pwr4,        "Fin. Amp 1 Pwr4",    $(PORT_P)_inw1,     58,    "",    "",   550,   560, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
+{FA1_FanSpeed,     "Fin. Amp 1 Fan Spd",    $(PORT_P)_inw1,     62,    "",  5250,  9750, 10000, NO_ALARM,    MINOR,    MINOR,    MAJOR,    "rpm", "I/O Intr"}
+{    FA2_Pwr1,        "Fin. Amp 2 Pwr1",    $(PORT_P)_inw1,     71,    "",    "",   550,   560, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
+{    FA2_Pwr2,        "Fin. Amp 2 Pwr2",    $(PORT_P)_inw1,     72,    "",    "",   550,   560, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
+{    FA2_Pwr3,        "Fin. Amp 2 Pwr3",    $(PORT_P)_inw1,     73,    "",    "",   550,   560, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
+{    FA2_Pwr4,        "Fin. Amp 2 Pwr4",    $(PORT_P)_inw1,     74,    "",    "",   550,   560, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
+{FA2_FanSpeed,     "Fin. Amp 2 Fan Spd",    $(PORT_P)_inw1,     78,    "",  5250,  9750, 10000, NO_ALARM,    MINOR,    MINOR,    MAJOR,    "rpm", "I/O Intr"}
+{    FA3_Pwr1,        "Fin. Amp 3 Pwr1",    $(PORT_P)_inw1,     87,    "",    "",   550,   560, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
+{    FA3_Pwr2,        "Fin. Amp 3 Pwr2",    $(PORT_P)_inw1,     88,    "",    "",   550,   560, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
+{FA3_FanSpeed,     "Fin. Amp 3 Fan Spd",    $(PORT_P)_inw1,     94,    "",  5250,  9750, 10000, NO_ALARM,    MINOR,    MINOR,    MAJOR,    "rpm", "I/O Intr"}
+{  480VACStat,          "480VAC Status",    $(PORT_P)_inw1,     95,    "",    "",    "",     1, NO_ALARM, NO_ALARM, NO_ALARM,    MAJOR,       "", "I/O Intr"}
+{     PSFault,          "PS Unit Fault",    $(PORT_P)_inw1,     96,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
+{ PSFaultStat,   "PS Unit Fault Status",    $(PORT_P)_inw1,    103,    "",    "",    "",     1, NO_ALARM, NO_ALARM, NO_ALARM,    MAJOR,       "", "I/O Intr"}
+{ HXFan1Speed,    "Heat Exc. Fan 1 Spd",    $(PORT_P)_inw1,    104,    "",  6300, 11700, 12000, NO_ALARM,    MINOR,    MINOR,    MAJOR,    "rpm", "I/O Intr"}
+{ HXFan2Speed,    "Heat Exc. Fan 2 Spd",    $(PORT_P)_inw1,    105,    "",  6300, 11700, 12000, NO_ALARM,    MINOR,    MINOR,    MAJOR,    "rpm", "I/O Intr"}
+{ HXFan3Speed,    "Heat Exc. Fan 3 Spd",    $(PORT_P)_inw1,    106,    "",  6300, 11700, 12000, NO_ALARM,    MINOR,    MINOR,    MAJOR,    "rpm", "I/O Intr"}
+{ HXFan4Speed,    "Heat Exc. Fan 4 Spd",    $(PORT_P)_inw1,    107,    "",  6300, 11700, 12000, NO_ALARM,    MINOR,    MINOR,    MAJOR,    "rpm", "I/O Intr"}
+{ PSFan1Speed,      "PS Unit Fan 1 Spd",    $(PORT_P)_inw1,    108,    "",  5250,  9750, 10000, NO_ALARM,    MINOR,    MINOR,    MAJOR,    "rpm", "I/O Intr"}
+{ PSFan2Speed,      "PS Unit Fan 2 Spd",    $(PORT_P)_inw1,    109,    "",  5250,  9750, 10000, NO_ALARM,    MINOR,    MINOR,    MAJOR,    "rpm", "I/O Intr"}
+{ PSFan3Speed,      "PS Unit Fan 3 Spd",    $(PORT_P)_inw1,    110,    "",  2800,  5980,  6500, NO_ALARM,    MINOR,    MINOR,    MAJOR,    "rpm", "I/O Intr"}
 
 file "longin_custom.template" {
 pattern
-{           R,                     DESC,            PORT, OFFSET, EGU,       SCAN}
-{  CalYearRBV,      "Cal Year Readback",    $(PORT)_inw1,    111,  "", "I/O Intr"}
-{ CalMonthRBV,     "Cal Month Readback",    $(PORT)_inw1,    112,  "", "I/O Intr"}
-{   CalDayRBV,       "Cal Day Readback",    $(PORT)_inw1,    113,  "", "I/O Intr"}
-{  CalHourRBV,      "Cal Hour Readback",    $(PORT)_inw1,    114,  "", "I/O Intr"}
-{   CalMinRBV,    "Cal Minute Readback",    $(PORT)_inw1,    115,  "", "I/O Intr"}
-{  MainSWVer0,      "Main SW Ver Major",    $(PORT)_inw2,      0,  "", "I/O Intr"}
-{  MainSWVer1,      "Main SW Ver Minor",    $(PORT)_inw2,      1,  "", "I/O Intr"}
-{    SDSWVer0,        "SD SW Ver Major",    $(PORT)_inw2,      2,  "", "I/O Intr"}
-{    SDSWVer1,        "SD SW Ver Minor",    $(PORT)_inw2,      3,  "", "I/O Intr"}
-{   SubSWVer0,       "Sub SW Ver Major",    $(PORT)_inw2,      4,  "", "I/O Intr"}
-{   SubSWVer1,       "Sub SW Ver Minor",    $(PORT)_inw2,      5,  "", "I/O Intr"}
-{    PSSWVer0,        "PS SW Ver Major",    $(PORT)_inw2,      6,  "", "I/O Intr"}
-{    PSSWVer1,        "PS SW Ver Minor",    $(PORT)_inw2,      7,  "", "I/O Intr"}
+{           R,                     DESC,              PORT, OFFSET, EGU,       SCAN}
+{  CalYearRBV,      "Cal Year Readback",    $(PORT_P)_inw1,    111,  "", "I/O Intr"}
+{ CalMonthRBV,     "Cal Month Readback",    $(PORT_P)_inw1,    112,  "", "I/O Intr"}
+{   CalDayRBV,       "Cal Day Readback",    $(PORT_P)_inw1,    113,  "", "I/O Intr"}
+{  CalHourRBV,      "Cal Hour Readback",    $(PORT_P)_inw1,    114,  "", "I/O Intr"}
+{   CalMinRBV,    "Cal Minute Readback",    $(PORT_P)_inw1,    115,  "", "I/O Intr"}
+{  MainSWVer0,      "Main SW Ver Major",    $(PORT_P)_inw2,      0,  "", "I/O Intr"}
+{  MainSWVer1,      "Main SW Ver Minor",    $(PORT_P)_inw2,      1,  "", "I/O Intr"}
+{    SDSWVer0,        "SD SW Ver Major",    $(PORT_P)_inw2,      2,  "", "I/O Intr"}
+{    SDSWVer1,        "SD SW Ver Minor",    $(PORT_P)_inw2,      3,  "", "I/O Intr"}
+{   SubSWVer0,       "Sub SW Ver Major",    $(PORT_P)_inw2,      4,  "", "I/O Intr"}
+{   SubSWVer1,       "Sub SW Ver Minor",    $(PORT_P)_inw2,      5,  "", "I/O Intr"}
+{    PSSWVer0,        "PS SW Ver Major",    $(PORT_P)_inw2,      6,  "", "I/O Intr"}
+{    PSSWVer1,        "PS SW Ver Minor",    $(PORT_P)_inw2,      7,  "", "I/O Intr"}
 }
 
 # Integer inputs converted to floats, modbus function code 3.
 file "ai_slope.template" {
 pattern
-{           R,                     DESC,            PORT, OFFSET,   EOFF,   ESLO, PREC, LOLO,  LOW, HIGH, HIHI,     LLSV,      LSV,      HSV,     HHSV,      EGU,       SCAN}
-{ CtrlAirTemp,     "Ctrl Unit Air Temp",    $(PORT)_inw1,     21,    0.0,    0.1,    1,   10,   15,   55,   60,    MAJOR,    MINOR,    MINOR,    MAJOR,   "degC", "I/O Intr"}
-{       DA_I1,      "Drv Amp Current 1",    $(PORT)_inw1,     31,    0.0,    0.1,    1,   "",  0.5,  2.8,  3.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,      "A", "I/O Intr"}
-{       DA_I2,      "Drv Amp Current 2",    $(PORT)_inw1,     33,    0.0,    0.1,    1,   "",   "", 11.3, 11.5, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "A", "I/O Intr"}
-{    DA_PS1_V,      "Drv Amp PS1 Volts",    $(PORT)_inw1,     43,    0.0,    0.1,    1,   "", 10.0, 13.8, 14.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,      "V", "I/O Intr"}
-{    DA_PS2_V,      "Drv Amp PS2 Volts",    $(PORT)_inw1,     44,    0.0,    0.1,    1,   "", 10.0, 47.5, 48.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,      "V", "I/O Intr"}
-{   DA_HSTemp, "Drv Amp Heat Sink Temp",    $(PORT)_inw1,     45,    0.0,    0.1,    1,   10,   15,   55,   60,    MAJOR,    MINOR,    MINOR,    MAJOR,   "degC", "I/O Intr"}
-{      FA1_I1,   "Fin. Amp 1 Current 1",    $(PORT)_inw1,     47,    0.0,    0.1,    1,   "",   "", 11.3, 11.5, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "A", "I/O Intr"}
-{      FA1_I2,   "Fin. Amp 1 Current 2",    $(PORT)_inw1,     48,    0.0,    0.1,    1,   "",   "", 11.3, 11.5, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "A", "I/O Intr"}
-{      FA1_I3,   "Fin. Amp 1 Current 3",    $(PORT)_inw1,     49,    0.0,    0.1,    1,   "",   "", 11.3, 11.5, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "A", "I/O Intr"}
-{      FA1_I4,   "Fin. Amp 1 Current 4",    $(PORT)_inw1,     50,    0.0,    0.1,    1,   "",   "", 11.3, 11.5, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "A", "I/O Intr"}
-{      FA1_I5,   "Fin. Amp 1 Current 5",    $(PORT)_inw1,     51,    0.0,    0.1,    1,   "",   "", 11.3, 11.5, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "A", "I/O Intr"}
-{      FA1_I6,   "Fin. Amp 1 Current 6",    $(PORT)_inw1,     52,    0.0,    0.1,    1,   "",   "", 11.3, 11.5, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "A", "I/O Intr"}
-{      FA1_I7,   "Fin. Amp 1 Current 7",    $(PORT)_inw1,     53,    0.0,    0.1,    1,   "",   "", 11.3, 11.5, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "A", "I/O Intr"}
-{      FA1_I8,   "Fin. Amp 1 Current 8",    $(PORT)_inw1,     54,    0.0,    0.1,    1,   "",   "", 11.3, 11.5, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "A", "I/O Intr"}
-{   FA1_PS1_V,   "Fin. Amp 1 PS1 Volts",    $(PORT)_inw1,     59,    0.0,    0.1,    1,   "", 10.0, 47.5, 48.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,      "V", "I/O Intr"}
-{   FA1_PS2_V,   "Fin. Amp 1 PS2 Volts",    $(PORT)_inw1,     60,    0.0,    0.1,    1,   "", 10.0, 47.5, 48.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,      "V", "I/O Intr"}
-{  FA1_HSTemp, "Fin. Amp 1 HtSink Temp",    $(PORT)_inw1,     61,    0.0,    0.1,    1,   10,   15,   55,   60,    MAJOR,    MINOR,    MINOR,    MAJOR,   "degC", "I/O Intr"}
-{      FA2_I1,   "Fin. Amp 2 Current 1",    $(PORT)_inw1,     63,    0.0,    0.1,    1,   "",   "", 11.3, 11.5, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "A", "I/O Intr"}
-{      FA2_I2,   "Fin. Amp 2 Current 2",    $(PORT)_inw1,     64,    0.0,    0.1,    1,   "",   "", 11.3, 11.5, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "A", "I/O Intr"}
-{      FA2_I3,   "Fin. Amp 2 Current 3",    $(PORT)_inw1,     65,    0.0,    0.1,    1,   "",   "", 11.3, 11.5, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "A", "I/O Intr"}
-{      FA2_I4,   "Fin. Amp 2 Current 4",    $(PORT)_inw1,     66,    0.0,    0.1,    1,   "",   "", 11.3, 11.5, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "A", "I/O Intr"}
-{      FA2_I5,   "Fin. Amp 2 Current 5",    $(PORT)_inw1,     67,    0.0,    0.1,    1,   "",   "", 11.3, 11.5, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "A", "I/O Intr"}
-{      FA2_I6,   "Fin. Amp 2 Current 6",    $(PORT)_inw1,     68,    0.0,    0.1,    1,   "",   "", 11.3, 11.5, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "A", "I/O Intr"}
-{      FA2_I7,   "Fin. Amp 2 Current 7",    $(PORT)_inw1,     69,    0.0,    0.1,    1,   "",   "", 11.3, 11.5, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "A", "I/O Intr"}
-{      FA2_I8,   "Fin. Amp 2 Current 8",    $(PORT)_inw1,     70,    0.0,    0.1,    1,   "",   "", 11.3, 11.5, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "A", "I/O Intr"}
-{   FA2_PS1_V,   "Fin. Amp 2 PS1 Volts",    $(PORT)_inw1,     75,    0.0,    0.1,    1,   "", 10.0, 47.5, 48.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,      "V", "I/O Intr"}
-{   FA2_PS2_V,   "Fin. Amp 2 PS2 Volts",    $(PORT)_inw1,     76,    0.0,    0.1,    1,   "", 10.0, 47.5, 48.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,      "V", "I/O Intr"}
-{  FA2_HSTemp, "Fin. Amp 2 HtSink Temp",    $(PORT)_inw1,     77,    0.0,    0.1,    1,   10,   15,   55,   60,    MAJOR,    MINOR,    MINOR,    MAJOR,   "degC", "I/O Intr"}
-{      FA3_I1,   "Fin. Amp 3 Current 1",    $(PORT)_inw1,     79,    0.0,    0.1,    1,   "",   "", 11.3, 11.5, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "A", "I/O Intr"}
-{      FA3_I2,   "Fin. Amp 3 Current 2",    $(PORT)_inw1,     80,    0.0,    0.1,    1,   "",   "", 11.3, 11.5, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "A", "I/O Intr"}
-{      FA3_I3,   "Fin. Amp 3 Current 3",    $(PORT)_inw1,     81,    0.0,    0.1,    1,   "",   "", 11.3, 11.5, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "A", "I/O Intr"}
-{      FA3_I4,   "Fin. Amp 3 Current 4",    $(PORT)_inw1,     82,    0.0,    0.1,    1,   "",   "", 11.3, 11.5, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "A", "I/O Intr"}
-{   FA3_PS1_V,   "Fin. Amp 3 PS1 Volts",    $(PORT)_inw1,     91,    0.0,    0.1,    1,   "", 10.0, 47.5, 48.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,      "V", "I/O Intr"}
-{   FA3_PS2_V,   "Fin. Amp 3 PS2 Volts",    $(PORT)_inw1,     92,    0.0,    0.1,    1,   "", 10.0, 47.5, 48.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,      "V", "I/O Intr"}
-{  FA3_HSTemp, "Fin. Amp 3 HtSink Temp",    $(PORT)_inw1,     93,    0.0,    0.1,    1,   10,   15,   55,   60,    MAJOR,    MINOR,    MINOR,    MAJOR,   "degC", "I/O Intr"}
-{   PSAirTemp,       "PS Unit Air Temp",    $(PORT)_inw1,     97,    0.0,    0.1,    1,   10,   15,   55,   60,    MAJOR,    MINOR,    MINOR,    MAJOR,   "degC", "I/O Intr"}
-{ HXInAirTemp, "Heat Exc. In. Air Temp",    $(PORT)_inw1,     98,    0.0,    0.1,    1,   10,   15,   55,   60,    MAJOR,    MINOR,    MINOR,    MAJOR,   "degC", "I/O Intr"}
-{   LCWInTemp,         "LCW Inlet Temp",    $(PORT)_inw1,     99,    0.0,    0.1,    1,   22,   23,   36,   38,    MAJOR,    MINOR,    MINOR,    MAJOR,   "degC", "I/O Intr"}
-{  LCWOutTemp,        "LCW Outlet Temp",    $(PORT)_inw1,    100,    0.0,    0.1,    1,   22,   23,   43,   45,    MAJOR,    MINOR,    MINOR,    MAJOR,   "degC", "I/O Intr"}
-{    Humidity,               "Humidity",    $(PORT)_inw1,    101,    0.0,    0.1,    1,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "%", "I/O Intr"}
-{  LCWOutFlow,   "LCW Outlet Flow Rate",    $(PORT)_inw1,    102,    0.0,    0.1,    1, 10.0, 10.5, 29.5, 30.0,    MAJOR,    MINOR,    MINOR,    MAJOR,  "L/min", "I/O Intr"}
+{           R,                     DESC,              PORT, OFFSET,   EOFF,   ESLO, PREC, LOLO,  LOW, HIGH, HIHI,     LLSV,      LSV,      HSV,     HHSV,      EGU,       SCAN}
+{ CtrlAirTemp,     "Ctrl Unit Air Temp",    $(PORT_P)_inw1,     21,    0.0,    0.1,    1,   10,   15,   55,   60,    MAJOR,    MINOR,    MINOR,    MAJOR,   "degC", "I/O Intr"}
+{       DA_I1,      "Drv Amp Current 1",    $(PORT_P)_inw1,     31,    0.0,    0.1,    1,   "",  0.5,  2.8,  3.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,      "A", "I/O Intr"}
+{       DA_I2,      "Drv Amp Current 2",    $(PORT_P)_inw1,     33,    0.0,    0.1,    1,   "",   "", 11.3, 11.5, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "A", "I/O Intr"}
+{    DA_PS1_V,      "Drv Amp PS1 Volts",    $(PORT_P)_inw1,     43,    0.0,    0.1,    1,   "", 10.0, 13.8, 14.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,      "V", "I/O Intr"}
+{    DA_PS2_V,      "Drv Amp PS2 Volts",    $(PORT_P)_inw1,     44,    0.0,    0.1,    1,   "", 10.0, 47.5, 48.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,      "V", "I/O Intr"}
+{   DA_HSTemp, "Drv Amp Heat Sink Temp",    $(PORT_P)_inw1,     45,    0.0,    0.1,    1,   10,   15,   55,   60,    MAJOR,    MINOR,    MINOR,    MAJOR,   "degC", "I/O Intr"}
+{      FA1_I1,   "Fin. Amp 1 Current 1",    $(PORT_P)_inw1,     47,    0.0,    0.1,    1,   "",   "", 11.3, 11.5, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "A", "I/O Intr"}
+{      FA1_I2,   "Fin. Amp 1 Current 2",    $(PORT_P)_inw1,     48,    0.0,    0.1,    1,   "",   "", 11.3, 11.5, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "A", "I/O Intr"}
+{      FA1_I3,   "Fin. Amp 1 Current 3",    $(PORT_P)_inw1,     49,    0.0,    0.1,    1,   "",   "", 11.3, 11.5, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "A", "I/O Intr"}
+{      FA1_I4,   "Fin. Amp 1 Current 4",    $(PORT_P)_inw1,     50,    0.0,    0.1,    1,   "",   "", 11.3, 11.5, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "A", "I/O Intr"}
+{      FA1_I5,   "Fin. Amp 1 Current 5",    $(PORT_P)_inw1,     51,    0.0,    0.1,    1,   "",   "", 11.3, 11.5, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "A", "I/O Intr"}
+{      FA1_I6,   "Fin. Amp 1 Current 6",    $(PORT_P)_inw1,     52,    0.0,    0.1,    1,   "",   "", 11.3, 11.5, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "A", "I/O Intr"}
+{      FA1_I7,   "Fin. Amp 1 Current 7",    $(PORT_P)_inw1,     53,    0.0,    0.1,    1,   "",   "", 11.3, 11.5, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "A", "I/O Intr"}
+{      FA1_I8,   "Fin. Amp 1 Current 8",    $(PORT_P)_inw1,     54,    0.0,    0.1,    1,   "",   "", 11.3, 11.5, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "A", "I/O Intr"}
+{   FA1_PS1_V,   "Fin. Amp 1 PS1 Volts",    $(PORT_P)_inw1,     59,    0.0,    0.1,    1,   "", 10.0, 47.5, 48.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,      "V", "I/O Intr"}
+{   FA1_PS2_V,   "Fin. Amp 1 PS2 Volts",    $(PORT_P)_inw1,     60,    0.0,    0.1,    1,   "", 10.0, 47.5, 48.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,      "V", "I/O Intr"}
+{  FA1_HSTemp, "Fin. Amp 1 HtSink Temp",    $(PORT_P)_inw1,     61,    0.0,    0.1,    1,   10,   15,   55,   60,    MAJOR,    MINOR,    MINOR,    MAJOR,   "degC", "I/O Intr"}
+{      FA2_I1,   "Fin. Amp 2 Current 1",    $(PORT_P)_inw1,     63,    0.0,    0.1,    1,   "",   "", 11.3, 11.5, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "A", "I/O Intr"}
+{      FA2_I2,   "Fin. Amp 2 Current 2",    $(PORT_P)_inw1,     64,    0.0,    0.1,    1,   "",   "", 11.3, 11.5, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "A", "I/O Intr"}
+{      FA2_I3,   "Fin. Amp 2 Current 3",    $(PORT_P)_inw1,     65,    0.0,    0.1,    1,   "",   "", 11.3, 11.5, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "A", "I/O Intr"}
+{      FA2_I4,   "Fin. Amp 2 Current 4",    $(PORT_P)_inw1,     66,    0.0,    0.1,    1,   "",   "", 11.3, 11.5, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "A", "I/O Intr"}
+{      FA2_I5,   "Fin. Amp 2 Current 5",    $(PORT_P)_inw1,     67,    0.0,    0.1,    1,   "",   "", 11.3, 11.5, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "A", "I/O Intr"}
+{      FA2_I6,   "Fin. Amp 2 Current 6",    $(PORT_P)_inw1,     68,    0.0,    0.1,    1,   "",   "", 11.3, 11.5, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "A", "I/O Intr"}
+{      FA2_I7,   "Fin. Amp 2 Current 7",    $(PORT_P)_inw1,     69,    0.0,    0.1,    1,   "",   "", 11.3, 11.5, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "A", "I/O Intr"}
+{      FA2_I8,   "Fin. Amp 2 Current 8",    $(PORT_P)_inw1,     70,    0.0,    0.1,    1,   "",   "", 11.3, 11.5, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "A", "I/O Intr"}
+{   FA2_PS1_V,   "Fin. Amp 2 PS1 Volts",    $(PORT_P)_inw1,     75,    0.0,    0.1,    1,   "", 10.0, 47.5, 48.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,      "V", "I/O Intr"}
+{   FA2_PS2_V,   "Fin. Amp 2 PS2 Volts",    $(PORT_P)_inw1,     76,    0.0,    0.1,    1,   "", 10.0, 47.5, 48.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,      "V", "I/O Intr"}
+{  FA2_HSTemp, "Fin. Amp 2 HtSink Temp",    $(PORT_P)_inw1,     77,    0.0,    0.1,    1,   10,   15,   55,   60,    MAJOR,    MINOR,    MINOR,    MAJOR,   "degC", "I/O Intr"}
+{      FA3_I1,   "Fin. Amp 3 Current 1",    $(PORT_P)_inw1,     79,    0.0,    0.1,    1,   "",   "", 11.3, 11.5, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "A", "I/O Intr"}
+{      FA3_I2,   "Fin. Amp 3 Current 2",    $(PORT_P)_inw1,     80,    0.0,    0.1,    1,   "",   "", 11.3, 11.5, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "A", "I/O Intr"}
+{      FA3_I3,   "Fin. Amp 3 Current 3",    $(PORT_P)_inw1,     81,    0.0,    0.1,    1,   "",   "", 11.3, 11.5, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "A", "I/O Intr"}
+{      FA3_I4,   "Fin. Amp 3 Current 4",    $(PORT_P)_inw1,     82,    0.0,    0.1,    1,   "",   "", 11.3, 11.5, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "A", "I/O Intr"}
+{   FA3_PS1_V,   "Fin. Amp 3 PS1 Volts",    $(PORT_P)_inw1,     91,    0.0,    0.1,    1,   "", 10.0, 47.5, 48.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,      "V", "I/O Intr"}
+{   FA3_PS2_V,   "Fin. Amp 3 PS2 Volts",    $(PORT_P)_inw1,     92,    0.0,    0.1,    1,   "", 10.0, 47.5, 48.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,      "V", "I/O Intr"}
+{  FA3_HSTemp, "Fin. Amp 3 HtSink Temp",    $(PORT_P)_inw1,     93,    0.0,    0.1,    1,   10,   15,   55,   60,    MAJOR,    MINOR,    MINOR,    MAJOR,   "degC", "I/O Intr"}
+{   PSAirTemp,       "PS Unit Air Temp",    $(PORT_P)_inw1,     97,    0.0,    0.1,    1,   10,   15,   55,   60,    MAJOR,    MINOR,    MINOR,    MAJOR,   "degC", "I/O Intr"}
+{ HXInAirTemp, "Heat Exc. In. Air Temp",    $(PORT_P)_inw1,     98,    0.0,    0.1,    1,   10,   15,   55,   60,    MAJOR,    MINOR,    MINOR,    MAJOR,   "degC", "I/O Intr"}
+{   LCWInTemp,         "LCW Inlet Temp",    $(PORT_P)_inw1,     99,    0.0,    0.1,    1,   22,   23,   36,   38,    MAJOR,    MINOR,    MINOR,    MAJOR,   "degC", "I/O Intr"}
+{  LCWOutTemp,        "LCW Outlet Temp",    $(PORT_P)_inw1,    100,    0.0,    0.1,    1,   22,   23,   43,   45,    MAJOR,    MINOR,    MINOR,    MAJOR,   "degC", "I/O Intr"}
+{    Humidity,               "Humidity",    $(PORT_P)_inw1,    101,    0.0,    0.1,    1,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "%", "I/O Intr"}
+{  LCWOutFlow,   "LCW Outlet Flow Rate",    $(PORT_P)_inw1,    102,    0.0,    0.1,    1, 10.0, 10.5, 29.5, 30.0,    MAJOR,    MINOR,    MINOR,    MAJOR,  "L/min", "I/O Intr"}
 }
 
 file "ssa_RK_CA1300_extras.template" {
