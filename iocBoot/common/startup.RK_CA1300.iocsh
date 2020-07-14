@@ -62,8 +62,10 @@ asynSetTraceIOTruncateSize("$(PORT)", 0, 256)
 
 # Enable ASYN_TRACEIO_HEX on modbus server
 asynSetTraceIOMask("$(PORT)_inw1", 0, 0x4)
+asynSetTraceIOMask("$(PORT)_inw2", 0, 0x4)
 # Enable ASYN_TRACE_FLOW on modbus server
 #asynSetTraceMask("$(PORT)_inw1", 0, 0x11)
+#asynSetTraceMask("$(PORT)_inw2", 0, 0x11)
 # Dump up to 512 bytes in asynTrace
 asynSetTraceIOTruncateSize("$(PORT)_inw1", 0, 512)
 asynSetTraceIOTruncateSize("$(PORT)_inw2", 0, 512)
