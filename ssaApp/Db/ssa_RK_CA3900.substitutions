@@ -139,7 +139,7 @@ pattern
 # Integer inputs converted to floats, modbus function code 3.
 file "ai_slope.template" {
 pattern
-{           R,                     DESC,         PORT, OFFSET,   EOFF,   ESLO, PREC, LOLO,  LOW, HIGH, HIHI,     LLSV,      LSV,      HSV,     HHSV,      EGU,       SCAN}
+{           R,                     DESC,         PORT, OFFSET,   AOFF,   ASLO, PREC, LOLO,  LOW, HIGH, HIHI,     LLSV,      LSV,      HSV,     HHSV,      EGU,       SCAN}
 {   PreAmp_I1,       "PreAmp Current 1",    $(P)_inw1,     21,    0.0,    0.1,    1,   "",    0,  3.8,  4.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,      "A", "I/O Intr"}
 {   PreAmp_I2,       "PreAmp Current 2",    $(P)_inw1,     22,    0.0,    0.1,    1,   "",    0,  3.8,  4.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,      "A", "I/O Intr"}
 { PS_Plus12_V,          "PS +12V Volts",    $(P)_inw1,     23,    0.0,    0.1,    1, 10.0, 11.0, 13.0, 14.0,    MAJOR,    MINOR,    MINOR,    MAJOR,      "V", "I/O Intr"}

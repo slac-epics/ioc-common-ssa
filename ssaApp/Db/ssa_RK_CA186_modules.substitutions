@@ -230,7 +230,7 @@ pattern
 
 file "ai_slope.template" {
 pattern
-{              R,                     DESC,       PORT, OFFSET,    EOFF,   ESLO, PREC,   LOLO,    LOW,   HIGH,   HIHI,     LLSV,      LSV,      HSV,     HHSV,     EGU,       SCAN}
+{              R,                     DESC,       PORT, OFFSET,    AOFF,   ASLO, PREC,   LOLO,    LOW,   HIGH,   HIHI,     LLSV,      LSV,      HSV,     HHSV,     EGU,       SCAN}
 {     M00_FwdPwr,          "Forward Power", $(P)_inw02,     99,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
 {     M01_FwdPwr,          "Forward Power", $(P)_inw03,     49,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
 {     M02_FwdPwr,          "Forward Power", $(P)_inw03,     99,     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}

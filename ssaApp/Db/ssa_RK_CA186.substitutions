@@ -37,7 +37,7 @@ pattern
 # Float outputs converted to integers, modbus function code 6.
 file "ao_slope.template" {
 pattern
-{            R,                      DESC,        PORT, OFFSET,    EOFF,   ESLO, DRVL, DRVH, LOPR, HOPR, PREC,     EGU}
+{            R,                      DESC,        PORT, OFFSET,    AOFF,   ASLO, DRVL, DRVH, LOPR, HOPR, PREC,     EGU}
 {   FwdPwrAlLm,       "Fwd Pwr Alarm Lim", $(P)_outw01,      0,  -39.23, 0.0456,    0, 2260,    0, 2260,    1,      ""}
 {   RefPwrAlLm,       "Ref Pwr Alarm Lim", $(P)_outw01,      1,    -3.5, 0.0134,    0,  730,    0,  730,    1,      ""}
 { LCWOutTempLm,  "LCW Out Temp Lim (MAX)", $(P)_outw01,      2,   -72.9, 0.0589,    0,   50,    0,   50,    1,  "degC"}
@@ -131,7 +131,7 @@ pattern
 # Unsigned integer inputs converted to floats, modbus function code 3.
 file "ai_slope.template" {
 pattern
-{               R,                     DESC,       PORT, OFFSET,   EOFF,    ESLO, PREC,   LOLO,    LOW,   HIGH,   HIHI,     LLSV,      LSV,      HSV,     HHSV,     EGU,       SCAN}
+{               R,                     DESC,       PORT, OFFSET,   AOFF,    ASLO, PREC,   LOLO,    LOW,   HIGH,   HIHI,     LLSV,      LSV,      HSV,     HHSV,     EGU,       SCAN}
 {       PSVoltRBV,     "Output Voltage RBV", $(P)_inw00,     34,    0.0,     0.1,    1,     "",     "",   44.8,   45.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "V", "I/O Intr"}
 {   FwdPwrAlLmRBV,  "Fwd Pwr Alarm Lim RBV", $(P)_inw00,     35,    0.0,    0.01,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,    "kW", "I/O Intr"}
 {   RefPwrAlLmRBV,  "Ref Pwr Alarm Lim RBV", $(P)_inw00,     36,    0.0,    0.01,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,    "kW", "I/O Intr"}

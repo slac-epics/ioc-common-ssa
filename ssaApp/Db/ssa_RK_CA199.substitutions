@@ -39,7 +39,7 @@ file "longin_custom.template"
 # Integer inputs converted to floats, modbus function code 3.
 file "ai_slope_autosave.template"
 { pattern
-{           R,        PORT, OFFSET,    EOFF,    ESLO, PREC,     EGU,       SCAN}
+{           R,        PORT, OFFSET,    AOFF,    ASLO, PREC,     EGU,       SCAN}
 {    Moisture, RF1_In_Word,     14,     0.0,     0.1,    1,     "%", "I/O Intr"}
 {       PwrIn, RF1_In_Word,     15,     0.0,     1.0,    1,    "mV", "I/O Intr"}
 {      PwrFwd, RF1_In_Word,     16,     0.0,     1.0,    1,     "W", "I/O Intr"}

@@ -23,7 +23,7 @@ pattern
 # These are the aiFloat inputs done with read
 file "ai_slope.template" {
 pattern
-{           R,        PORT, OFFSET,  EOFF,   ESLO, PREC,     EGU,       SCAN}
+{           R,        PORT, OFFSET,  AOFF,   ASLO, PREC,     EGU,       SCAN}
 {   PwrOutFwd, RF1_In_Word,    299,   0.0,    1.0,    1,    "kW", "I/O Intr"}
 {      PwrRef, RF1_In_Word,    300,   0.0,    1.0,    1,    "kW", "I/O Intr"}
 {   Dv1DrnCur, RF1_In_Word,    301,   0.0,    1.0,    1,     "A", "I/O Intr"}

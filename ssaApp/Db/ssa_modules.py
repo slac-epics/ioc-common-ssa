@@ -81,7 +81,7 @@ def write_ai(f):
     f.write('\n')
     f.write('pattern')
     f.write('\n')
-    f.write('{              R,                     DESC,       PORT, OFFSET,    EOFF,   ESLO, PREC,   LOLO,    LOW,   HIGH,   HIHI,     LLSV,      LSV,      HSV,     HHSV,     EGU,       SCAN}')
+    f.write('{              R,                     DESC,       PORT, OFFSET,    AOFF,   ASLO, PREC,   LOLO,    LOW,   HIGH,   HIHI,     LLSV,      LSV,      HSV,     HHSV,     EGU,       SCAN}')
     f.write('\n')
     wrloop(f, str_pout, NMODS, NREGS, 299)
     wrloop(f, str_pref, NMODS, NREGS, 300)
