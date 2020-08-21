@@ -1,0 +1,21 @@
+# Archive list for sioc-l0b-ssa01
+
+## Leave commented out for initial checkouts.  Uncomment when ready.
+
+#file  ssa_CA1300.tpl-arch {
+#pattern {P                }
+#        {ACCL:L0B:0110:SSA}
+#        {ACCL:L0B:0120:SSA}
+#        {ACCL:L0B:0130:SSA}
+#        {ACCL:L0B:0140:SSA}
+#        {ACCL:L0B:0150:SSA}
+#        {ACCL:L0B:0160:SSA}
+#        {ACCL:L0B:0170:SSA}
+#        {ACCL:L0B:0180:SSA}
+#}
+#
+#file archive_iocAdmin.archive {
+#pattern {IOC           }
+#        {SIOC:L0B:SSA01}
+#}
+
