@@ -100,6 +100,7 @@ caPutLogInit("${EPICS_CA_PUT_LOG_ADDR}")
 caPutLogShow(2)
 # =====================================================
 
+
 ## Start sequence programs, one for each SSA
 # This must be done after iocInit
 #
@@ -198,6 +199,7 @@ epicsThreadSleep(0.25)
 # SSA24: L1B:H240
 seq(seq_ssa_CA1300, "P=ACCL:L1B:H240:SSA:")
 epicsThreadSleep(0.25)
+
 
 # Autosave start
 < $(TOP)/iocBoot/common/autosave_start.cmd
