@@ -11,55 +11,53 @@ epicsEnvSet("IOC_NAME", "SIOC:L2B:SSA03")
 
 ## Run IOC shell script for each SSA
 #
-# SSAs for CM 12-13 are not ready yet so are commented out
-#
-## SSA1: L2B:1210
-#iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L2B_1210, P=ACCL:L2B:1210:SSA:, IP=ssa-l2b-1210")
-#
-## SSA2: L2B:1220
-#iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L2B_1220, P=ACCL:L2B:1220:SSA:, IP=ssa-l2b-1220")
-#
-## SSA3: L2B:1230
-#iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L2B_1230, P=ACCL:L2B:1230:SSA:, IP=ssa-l2b-1230")
-#
-## SSA4: L2B:1240
-#iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L2B_1240, P=ACCL:L2B:1240:SSA:, IP=ssa-l2b-1240")
-#
-## SSA5: L2B:1250
-#iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L2B_1250, P=ACCL:L2B:1250:SSA:, IP=ssa-l2b-1250")
-#
-## SSA6: L2B:1260
-#iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L2B_1260, P=ACCL:L2B:1260:SSA:, IP=ssa-l2b-1260")
-#
-## SSA7: L2B:1270
-#iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L2B_1270, P=ACCL:L2B:1270:SSA:, IP=ssa-l2b-1270")
-#
-## SSA8: L2B:1280
-#iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L2B_1280, P=ACCL:L2B:1280:SSA:, IP=ssa-l2b-1280")
-#
-## SSA9: L2B:1310
-#iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L2B_1310, P=ACCL:L2B:1310:SSA:, IP=ssa-l2b-1310")
-#
-## SSA10: L2B:1320
-#iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L2B_1320, P=ACCL:L2B:1320:SSA:, IP=ssa-l2b-1320")
-#
-## SSA11: L2B:1330
-#iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L2B_1330, P=ACCL:L2B:1330:SSA:, IP=ssa-l2b-1330")
-#
-## SSA12: L2B:1340
-#iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L2B_1340, P=ACCL:L2B:1340:SSA:, IP=ssa-l2b-1340")
-#
-## SSA13: L2B:1350
-#iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L2B_1350, P=ACCL:L2B:1350:SSA:, IP=ssa-l2b-1350")
-#
-## SSA14: L2B:1360
-#iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L2B_1360, P=ACCL:L2B:1360:SSA:, IP=ssa-l2b-1360")
-#
-## SSA15: L2B:1370
-#iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L2B_1370, P=ACCL:L2B:1370:SSA:, IP=ssa-l2b-1370")
-#
-## SSA16: L2B:1380
-#iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L2B_1380, P=ACCL:L2B:1380:SSA:, IP=ssa-l2b-1380")
+# SSA1: L2B:1210
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L2B_1210, P=ACCL:L2B:1210:SSA:, IP=ssa-l2b-1210")
+
+# SSA2: L2B:1220
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L2B_1220, P=ACCL:L2B:1220:SSA:, IP=ssa-l2b-1220")
+
+# SSA3: L2B:1230
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L2B_1230, P=ACCL:L2B:1230:SSA:, IP=ssa-l2b-1230")
+
+# SSA4: L2B:1240
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L2B_1240, P=ACCL:L2B:1240:SSA:, IP=ssa-l2b-1240")
+
+# SSA5: L2B:1250
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L2B_1250, P=ACCL:L2B:1250:SSA:, IP=ssa-l2b-1250")
+
+# SSA6: L2B:1260
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L2B_1260, P=ACCL:L2B:1260:SSA:, IP=ssa-l2b-1260")
+
+# SSA7: L2B:1270
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L2B_1270, P=ACCL:L2B:1270:SSA:, IP=ssa-l2b-1270")
+
+# SSA8: L2B:1280
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L2B_1280, P=ACCL:L2B:1280:SSA:, IP=ssa-l2b-1280")
+
+# SSA9: L2B:1310
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L2B_1310, P=ACCL:L2B:1310:SSA:, IP=ssa-l2b-1310")
+
+# SSA10: L2B:1320
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L2B_1320, P=ACCL:L2B:1320:SSA:, IP=ssa-l2b-1320")
+
+# SSA11: L2B:1330
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L2B_1330, P=ACCL:L2B:1330:SSA:, IP=ssa-l2b-1330")
+
+# SSA12: L2B:1340
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L2B_1340, P=ACCL:L2B:1340:SSA:, IP=ssa-l2b-1340")
+
+# SSA13: L2B:1350
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L2B_1350, P=ACCL:L2B:1350:SSA:, IP=ssa-l2b-1350")
+
+# SSA14: L2B:1360
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L2B_1360, P=ACCL:L2B:1360:SSA:, IP=ssa-l2b-1360")
+
+# SSA15: L2B:1370
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L2B_1370, P=ACCL:L2B:1370:SSA:, IP=ssa-l2b-1370")
+
+# SSA16: L2B:1380
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L2B_1380, P=ACCL:L2B:1380:SSA:, IP=ssa-l2b-1380")
 
 # SSA17: L2B:1410
 iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L2B_1410, P=ACCL:L2B:1410:SSA:, IP=ssa-l2b-1410")
@@ -110,9 +108,8 @@ iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L2B_1570, P=ACC
 iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L2B_1580, P=ACCL:L2B:1580:SSA:, IP=ssa-l2b-1580")
 
 # Load common SSA databases
-# SSAs for CM 12-13 are not ready yet so are commented out
-#dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L2B:, M=12")
-#dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L2B:, M=13")
+dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L2B:, M=12")
+dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L2B:, M=13")
 dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L2B:, M=14")
 dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L2B:, M=15")
 
@@ -130,71 +127,69 @@ caPutLogShow(2)
 ## Start sequence programs, one for each SSA
 # This must be done after iocInit
 #
-# SSAs for CM 12-13 are not ready yet so are commented out
-#
-## SSA1: L2B:1210
-#seq(seq_ssa_CA1300, "P=ACCL:L2B:1210:SSA:")
-#epicsThreadSleep(0.25)
-#
-## SSA2: L2B:1220
-#seq(seq_ssa_CA1300, "P=ACCL:L2B:1220:SSA:")
-#epicsThreadSleep(0.25)
-#
-## SSA3: L2B:1230
-#seq(seq_ssa_CA1300, "P=ACCL:L2B:1230:SSA:")
-#epicsThreadSleep(0.25)
-#
-## SSA4: L2B:1240
-#seq(seq_ssa_CA1300, "P=ACCL:L2B:1240:SSA:")
-#epicsThreadSleep(0.25)
-#
-## SSA5: L2B:1250
-#seq(seq_ssa_CA1300, "P=ACCL:L2B:1250:SSA:")
-#epicsThreadSleep(0.25)
-#
-## SSA6: L2B:1260
-#seq(seq_ssa_CA1300, "P=ACCL:L2B:1260:SSA:")
-#epicsThreadSleep(0.25)
-#
-## SSA7: L2B:1270
-#seq(seq_ssa_CA1300, "P=ACCL:L2B:1270:SSA:")
-#epicsThreadSleep(0.25)
-#
-## SSA8: L2B:1280
-#seq(seq_ssa_CA1300, "P=ACCL:L2B:1280:SSA:")
-#epicsThreadSleep(0.25)
-#
-## SSA9: L2B:1310
-#seq(seq_ssa_CA1300, "P=ACCL:L2B:1310:SSA:")
-#epicsThreadSleep(0.25)
-#
-## SSA10: L2B:1320
-#seq(seq_ssa_CA1300, "P=ACCL:L2B:1320:SSA:")
-#epicsThreadSleep(0.25)
-#
-## SSA11: L2B:1330
-#seq(seq_ssa_CA1300, "P=ACCL:L2B:1330:SSA:")
-#epicsThreadSleep(0.25)
-#
-## SSA12: L2B:1340
-#seq(seq_ssa_CA1300, "P=ACCL:L2B:1340:SSA:")
-#epicsThreadSleep(0.25)
-#
-## SSA13: L2B:1350
-#seq(seq_ssa_CA1300, "P=ACCL:L2B:1350:SSA:")
-#epicsThreadSleep(0.25)
-#
-## SSA14: L2B:1360
-#seq(seq_ssa_CA1300, "P=ACCL:L2B:1360:SSA:")
-#epicsThreadSleep(0.25)
-#
-## SSA15: L2B:1370
-#seq(seq_ssa_CA1300, "P=ACCL:L2B:1370:SSA:")
-#epicsThreadSleep(0.25)
-#
-## SSA16: L2B:1380
-#seq(seq_ssa_CA1300, "P=ACCL:L2B:1380:SSA:")
-#epicsThreadSleep(0.25)
+# SSA1: L2B:1210
+seq(seq_ssa_CA1300, "P=ACCL:L2B:1210:SSA:")
+epicsThreadSleep(0.25)
+
+# SSA2: L2B:1220
+seq(seq_ssa_CA1300, "P=ACCL:L2B:1220:SSA:")
+epicsThreadSleep(0.25)
+
+# SSA3: L2B:1230
+seq(seq_ssa_CA1300, "P=ACCL:L2B:1230:SSA:")
+epicsThreadSleep(0.25)
+
+# SSA4: L2B:1240
+seq(seq_ssa_CA1300, "P=ACCL:L2B:1240:SSA:")
+epicsThreadSleep(0.25)
+
+# SSA5: L2B:1250
+seq(seq_ssa_CA1300, "P=ACCL:L2B:1250:SSA:")
+epicsThreadSleep(0.25)
+
+# SSA6: L2B:1260
+seq(seq_ssa_CA1300, "P=ACCL:L2B:1260:SSA:")
+epicsThreadSleep(0.25)
+
+# SSA7: L2B:1270
+seq(seq_ssa_CA1300, "P=ACCL:L2B:1270:SSA:")
+epicsThreadSleep(0.25)
+
+# SSA8: L2B:1280
+seq(seq_ssa_CA1300, "P=ACCL:L2B:1280:SSA:")
+epicsThreadSleep(0.25)
+
+# SSA9: L2B:1310
+seq(seq_ssa_CA1300, "P=ACCL:L2B:1310:SSA:")
+epicsThreadSleep(0.25)
+
+# SSA10: L2B:1320
+seq(seq_ssa_CA1300, "P=ACCL:L2B:1320:SSA:")
+epicsThreadSleep(0.25)
+
+# SSA11: L2B:1330
+seq(seq_ssa_CA1300, "P=ACCL:L2B:1330:SSA:")
+epicsThreadSleep(0.25)
+
+# SSA12: L2B:1340
+seq(seq_ssa_CA1300, "P=ACCL:L2B:1340:SSA:")
+epicsThreadSleep(0.25)
+
+# SSA13: L2B:1350
+seq(seq_ssa_CA1300, "P=ACCL:L2B:1350:SSA:")
+epicsThreadSleep(0.25)
+
+# SSA14: L2B:1360
+seq(seq_ssa_CA1300, "P=ACCL:L2B:1360:SSA:")
+epicsThreadSleep(0.25)
+
+# SSA15: L2B:1370
+seq(seq_ssa_CA1300, "P=ACCL:L2B:1370:SSA:")
+epicsThreadSleep(0.25)
+
+# SSA16: L2B:1380
+seq(seq_ssa_CA1300, "P=ACCL:L2B:1380:SSA:")
+epicsThreadSleep(0.25)
 
 # SSA17: L2B:1410
 seq(seq_ssa_CA1300, "P=ACCL:L2B:1410:SSA:")
