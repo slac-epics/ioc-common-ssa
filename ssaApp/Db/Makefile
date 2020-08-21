@@ -31,6 +31,7 @@ DB += ssa_RK_CA3900.db
 DB += gunCommon.db
 DB += buncherCommon.db
 DB += cryomoduleCommon.db
+DB += hlCommon.db
 
 # Install Common databases needed by All IOCs
 # ========================================================
