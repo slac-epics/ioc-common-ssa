@@ -3,12 +3,13 @@
 # Macros:
 #   OUT: PV attribute 
 #   MASK: Bitmask to select which SSAs to control; e.g. 3 for SSAs 1 & 2, 15 for SSAs 1,2,3,4.
+#   DLY: Delay between sequence steps
 
-file "ssaCommonControls.template" {
+file "ssaCommonControls_4x.template" {
 pattern
-{       OUT, MASK, DLY}
-{   PowerOn,   15, 0.5}
-{  PowerOff,   15, 0.1}
-{FaultReset,   15, 0.5}
+{       OUT, DLY}
+{   PowerOn, 0.5}
+{  PowerOff, 0.1}
+{FaultReset, 0.5}
 }
 

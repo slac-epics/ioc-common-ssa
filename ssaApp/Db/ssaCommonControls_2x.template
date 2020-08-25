@@ -1,0 +1,21 @@
+
+record(bo, "$(P)$(M)$(N=00:)SSA:$(OUT)All") {
+    field(DESC, "SSAs $(OUT)")
+    field(ZNAM, "$(ZNAM="")")
+    field(ONAM, "$(ONAM="")")
+    field(FLNK, "$(P)$(M)$(N=00:)SSA:$(OUT)Seq")
+}
+
+record(seq, "$(P)$(M)$(N=00:)SSA:$(OUT)Seq") {
+    field(DESC, "SSAs $(OUT) sequence")
+    field(ASG,  "Internal")
+    field(SELM, "Mask")
+    field(SELN, "$(MASK=3)")
+    field(DLY1, "0")
+    field(DOL1, "$(DOL=1)")
+    field(LNK1, "$(P)$(M)$(SSA1=10:SSA):$(OUT) PP")
+    field(DLY2, "$(DLY=1.0)")
+    field(DOL2, "$(DOL=1)")
+    field(LNK2, "$(P)$(M)$(SSA2=20:SSA):$(OUT) PP")
+}
+

@@ -8,8 +8,10 @@
 #
 #--------------------------------------------------------------
 
-R1.0.4: 21-Aug-2020  M. Dunning (mdunning)
+R1.0.4: 25-Aug-2020  M. Dunning (mdunning)
     Add iocs for remaining CM & HL SSAs
+    Use iocsh format for HL 3.9 GHz SSAs
+    Split common control db files
 
 R1.0.3: 14-Aug-2020  M. Dunning (mdunning)
     Use new iocsh script for CA1300_4.6kW; update sioc-b15-ssa1
