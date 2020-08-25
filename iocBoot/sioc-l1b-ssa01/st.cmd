@@ -60,35 +60,35 @@ iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L1B_0370, P=ACC
 iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L1B_0380, P=ACCL:L1B:0380:SSA:, IP=ssa-l1b-0380")
 
 # SSA17: L1B:H110
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L1B_H110, P=ACCL:L1B:H110:SSA:, IP=ssa-l1b-h110")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA3900.iocsh", "PORT=L1B_H110, P=ACCL:L1B:H110:SSA:, IP=ssa-l1b-h110")
 
 # SSA18: L1B:H120
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L1B_H120, P=ACCL:L1B:H120:SSA:, IP=ssa-l1b-h120")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA3900.iocsh", "PORT=L1B_H120, P=ACCL:L1B:H120:SSA:, IP=ssa-l1b-h120")
 
 # SSA19: L1B:H130
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L1B_H130, P=ACCL:L1B:H130:SSA:, IP=ssa-l1b-h130")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA3900.iocsh", "PORT=L1B_H130, P=ACCL:L1B:H130:SSA:, IP=ssa-l1b-h130")
 
 # SSA20: L1B:H140
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L1B_H140, P=ACCL:L1B:H140:SSA:, IP=ssa-l1b-h140")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA3900.iocsh", "PORT=L1B_H140, P=ACCL:L1B:H140:SSA:, IP=ssa-l1b-h140")
 
 # SSA21: L1B:H210
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L1B_H210, P=ACCL:L1B:H210:SSA:, IP=ssa-l1b-h210")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA3900.iocsh", "PORT=L1B_H210, P=ACCL:L1B:H210:SSA:, IP=ssa-l1b-h210")
 
 # SSA22: L1B:H220
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L1B_H220, P=ACCL:L1B:H220:SSA:, IP=ssa-l1b-h220")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA3900.iocsh", "PORT=L1B_H220, P=ACCL:L1B:H220:SSA:, IP=ssa-l1b-h220")
 
 # SSA23: L1B:H230
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L1B_H230, P=ACCL:L1B:H230:SSA:, IP=ssa-l1b-h230")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA3900.iocsh", "PORT=L1B_H230, P=ACCL:L1B:H230:SSA:, IP=ssa-l1b-h230")
 
 # SSA24: L1B:H240
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L1B_H240, P=ACCL:L1B:H240:SSA:, IP=ssa-l1b-h240")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA3900.iocsh", "PORT=L1B_H240, P=ACCL:L1B:H240:SSA:, IP=ssa-l1b-h240")
 
 
 # Load common SSA databases
 dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L1B:, M=02")
 dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L1B:, M=03")
-dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L1B:, M=H1")
-dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L1B:, M=H2")
+dbLoadRecords("db/hlCommon.db", "P=ACCL:L1B:, M=H1")
+dbLoadRecords("db/hlCommon.db", "P=ACCL:L1B:, M=H2")
 
 
 iocInit()
@@ -169,35 +169,35 @@ seq(seq_ssa_CA1300, "P=ACCL:L1B:0380:SSA:")
 epicsThreadSleep(0.25)
 
 # SSA17: L1B:H110
-seq(seq_ssa_CA1300, "P=ACCL:L1B:H110:SSA:")
+seq(seq_ssa_CA3900, "P=ACCL:L1B:H110:SSA:")
 epicsThreadSleep(0.25)
 
 # SSA18: L1B:H120
-seq(seq_ssa_CA1300, "P=ACCL:L1B:H120:SSA:")
+seq(seq_ssa_CA3900, "P=ACCL:L1B:H120:SSA:")
 epicsThreadSleep(0.25)
 
 # SSA19: L1B:H130
-seq(seq_ssa_CA1300, "P=ACCL:L1B:H130:SSA:")
+seq(seq_ssa_CA3900, "P=ACCL:L1B:H130:SSA:")
 epicsThreadSleep(0.25)
 
 # SSA20: L1B:H140
-seq(seq_ssa_CA1300, "P=ACCL:L1B:H140:SSA:")
+seq(seq_ssa_CA3900, "P=ACCL:L1B:H140:SSA:")
 epicsThreadSleep(0.25)
 
 # SSA21: L1B:H210
-seq(seq_ssa_CA1300, "P=ACCL:L1B:H210:SSA:")
+seq(seq_ssa_CA3900, "P=ACCL:L1B:H210:SSA:")
 epicsThreadSleep(0.25)
 
 # SSA22: L1B:H220
-seq(seq_ssa_CA1300, "P=ACCL:L1B:H220:SSA:")
+seq(seq_ssa_CA3900, "P=ACCL:L1B:H220:SSA:")
 epicsThreadSleep(0.25)
 
 # SSA23: L1B:H230
-seq(seq_ssa_CA1300, "P=ACCL:L1B:H230:SSA:")
+seq(seq_ssa_CA3900, "P=ACCL:L1B:H230:SSA:")
 epicsThreadSleep(0.25)
 
 # SSA24: L1B:H240
-seq(seq_ssa_CA1300, "P=ACCL:L1B:H240:SSA:")
+seq(seq_ssa_CA3900, "P=ACCL:L1B:H240:SSA:")
 epicsThreadSleep(0.25)
 
 
