@@ -1,0 +1,379 @@
+# --- These records are used in the sequencer program -----------
+record(bo, "$(P)FaultReset"){
+    field(DESC, "Fault Reset")
+    field(ZNAM, "Standby")
+    field(ONAM, "Resetting...")
+}
+
+record(bo, "$(P)PowerOn"){
+    field(DESC, "Power On")
+    field(ZNAM, "Standby")
+    field(ONAM, "Powering On...")
+}
+
+record(bo, "$(P)PowerOff"){
+    field(DESC, "Power Off")
+    field(ZNAM, "Standby")
+    field(ONAM, "Powering Off...")
+}
+
+record(bo, "$(P)SystemReboot"){
+    field(DESC, "System Reboot")
+    field(ZNAM, "Standby")
+    field(ONAM, "Rebooting...")
+}
+
+record(bo, "$(P)XPortReboot"){
+    field(DESC, "X-Port Reboot")
+    field(ZNAM, "Standby")
+    field(ONAM, "Rebooting...")
+}
+
+# --- Drain Voltage <---> Output Voltage --------------
+record(ao, "$(P)DrainVoltSetpt") {
+    field(DESC, "Drain Voltage Setpt [V]")
+    field(EGU,  "V")
+    field(PREC, "2")
+    field(LOPR, "18")
+    field(HOPR, "48")
+    field(DRVL, "18")
+    field(DRVH, "48")
+    field(FLNK, "$(P)DrainVCalc")
+    info(autosaveFields, "VAL")
+}
+
+record(calcout, "$(P)DrainVCalc") {
+    field(DESC, "Drain to output voltage conversion")
+    field(ASG,  "Internal")
+    field(INPA, "$(P)DrainVoltSetpt")
+    field(INPB, "66.27")
+    field(INPC, "-1098")
+    field(CALC, "A*B + C")
+    field(OUT,  "$(P)PSVoltSetpt PP")
+}
+
+record(calc, "$(P)DrainVoltRBVCalc") {
+    field(DESC, "Drain voltage calc")
+    field(ASG,  "Internal")
+    field(INPA, "$(P)PSVoltRBV CPP MS")
+    field(INPB, "0.0151")
+    field(INPC, "16.57")
+    field(EGU,  "V")
+    field(PREC, "2")
+    field(CALC, "A*B + C")
+    field(FLNK, "$(P)DrainVoltRBV")
+}
+
+record(ai, "$(P)DrainVoltRBV") {
+    field(DESC, "Drain voltage RBV")
+    field(INP, "$(P)DrainVoltRBVCalc MS")
+    field(EGU,  "V")
+    field(PREC, "2")
+}
+
+# --- Drive (input) power -------------------------------------------------------------
+record(calc, "$(P)DrvPwr_dBm") {
+    field(DESC, "Drive power [dBm]")
+    field(INPA, "$(P)DrvPwr CP")
+    field(INPB, "-3.91E-12")
+    field(INPC, "1.979E-8")
+    field(INPD, "-3.892E-5")
+    field(INPE, "0.0425")
+    field(INPF, "-15.05")
+    field(EGU,  "dBm")
+    field(PREC, "1")
+    field(CALC, "A^4*B+A^3*C+A^2*D+A*E+F")
+    field(FLNK, "$(P)DrvPwr_mW")
+}
+
+record(calc, "$(P)DrvPwr_mW") {
+    field(DESC, "Drive power [mW]")
+    field(INPA, "$(P)DrvPwr")
+    field(INPB, "2.927E-6")
+    field(INPC, "2.386E-4")
+    field(INPD, "0.1014")
+    field(EGU,  "mW")
+    field(PREC, "1")
+    field(CALC, "A^2*B+A*C+D")
+}
+#---------------------------------------------------------------
+
+record(mbbi, "$(P)StatusMsg") {
+    field(DESC, "Status Message")
+    field(ZRVL, "0")
+    field(ZRST, "Unknown")
+    field(ZRSV, "MINOR")
+    field(ONVL, "1")
+    field(ONST, "Faulted")
+    field(ONSV, "MAJOR")
+    field(TWVL, "2")
+    field(TWST, "SSA Off")
+    field(TWSV, "MINOR")
+    field(THVL, "3")
+    field(THST, "SSA On")
+    field(THSV, "NO_ALARM")
+    field(FRVL, "4")
+    field(FRST, "Resetting Faults...")
+    field(FRSV, "NO_ALARM")
+    field(FVVL, "5")
+    field(FVST, "Powering On...")
+    field(FVSV, "NO_ALARM")
+    field(SXVL, "6")
+    field(SXST, "Powering Off...")
+    field(SXSV, "NO_ALARM")
+    field(SVVL, "7")
+    field(SVST, "Fault Reset Failed...")
+    field(SVSV, "MINOR")
+    field(EIVL, "8")
+    field(EIST, "Power On Failed...")
+    field(EISV, "MINOR")
+    field(NIVL, "9")
+    field(NIST, "Power Off Failed...")
+    field(NISV, "MINOR")
+    field(TEVL, "10")
+    field(TEST, "Rebooting SSA...")
+    field(TESV, "MINOR")
+    field(ELVL, "11")
+    field(ELST, "Rebooting X-Port...")
+    field(ELSV, "MINOR")
+}
+
+
+# --- Fault messages -------------------------------------------------------------
+#record(aSub, "$(P)FaultIntAsub"){
+#    field(DESC, "Internal fault message aSub")
+#    field(ASG,  "Internal")
+#    field(SNAM, "asFaultMsg")
+#    field(INPA, "$(P)ErrCodeInt CP MS")
+#    field(FTA,  "LONG")  
+#    field(NOA,  "1")
+#    field(FTVA, "STRING")  
+#    field(NOVA, "1")
+#    field(OUTA, "$(P)FaultIntMsg PP MS")
+#}
+#
+#record(stringin, "$(P)FaultIntMsg") {
+#    field(DESC, "Internal Fault")
+#}
+#
+#record(aSub, "$(P)FaultExtAsub"){
+#    field(DESC, "External fault message aSub")
+#    field(ASG,  "Internal")
+#    field(SNAM, "asFaultMsg")
+#    field(INPA, "$(P)ErrCodeExt CP MS")
+#    field(FTA,  "LONG")  
+#    field(NOA,  "1")
+#    field(FTVA, "STRING")  
+#    field(NOVA, "1")
+#    field(OUTA, "$(P)FaultExtMsg PP MS")
+#}
+#
+#record(stringin, "$(P)FaultExtMsg") {
+#    field(DESC, "External Fault")
+#}
+#
+#record(aSub, "$(P)WarningAsub"){
+#    field(DESC, "Warning message aSub")
+#    field(ASG,  "Internal")
+#    field(SNAM, "asFaultMsg")
+#    field(INPA, "$(P)WarningCode CP MS")
+#    field(FTA,  "LONG")  
+#    field(NOA,  "1")
+#    field(FTVA, "STRING")  
+#    field(NOVA, "1")
+#    field(OUTA, "$(P)WarningMsg PP MS")
+#}
+#
+#record(stringin, "$(P)WarningMsg") {
+#    field(DESC, "Warning")
+#}
+
+record(calcout, "$(P)FaultSumCalc") {
+    field(DESC, "Fault Summary Calc")
+    field(ASG,  "Internal")
+    field(INPA, "$(P)ErrCodeInt CP")
+    field(INPB, "$(P)ErrCodeExt CP")
+    field(CALC, "(A>0 && B>0)?3:(A>0)?1:(B>0)?2:4")
+    field(OUT,  "$(P)FaultSummary PP")
+}
+
+record(mbbi, "$(P)FaultSummary") {
+    field(DESC, "Fault Summary")
+    field(ZRVL, "0")
+    field(ZRST, "Unknown")
+    field(ZRSV, "MINOR")
+    field(ONVL, "1")
+    field(ONST, "Internal Fault")
+    field(ONSV, "MAJOR")
+    field(TWVL, "2")
+    field(TWST, "External Fault")
+    field(TWSV, "MAJOR")
+    field(THVL, "3")
+    field(THST, "Multiple Faults")
+    field(THSV, "MAJOR")
+    field(FRVL, "4")
+    field(FRST, "OK")
+    field(FRSV, "NO_ALARM")
+}
+
+#--- Alarm summaries -------------------------------------------------
+record(calc, "$(P)MiscAlarmSum") {
+    field(DESC, "Misc Alarm Sum")
+    field(INPA, "$(P)ACEnableRBV CP MS")
+    field(INPB, "$(P)ThermoStat CP MS")
+    field(INPC, "$(P)WtrLeakStat CP MS")
+    field(INPD, "$(P)480VACStat CP MS")
+    field(INPE, "$(P)Humidity CP MS")
+    field(INPF, "$(P)LCWOutFlow CP MS")
+    field(FLNK, "$(P)AlarmSummary")
+}
+
+record(calc, "$(P)VoltAlarmSum") {
+    field(DESC, "Voltage Alarm Sum")
+    field(INPA, "$(P)PSVoltRBV CP MS")
+#    field(INPB, "$(P)DA_PS1_V CP MS")
+#    field(INPC, "$(P)DA_PS2_V CP MS")
+#    field(INPD, "$(P)FA1_PS1_V CP MS")
+#    field(INPE, "$(P)FA1_PS2_V CP MS")
+#    field(INPF, "$(P)FA2_PS1_V CP MS")
+#    field(INPG, "$(P)FA2_PS2_V CP MS")
+#    field(INPH, "$(P)FA3_PS1_V CP MS")
+#    field(INPI, "$(P)FA3_PS2_V CP MS")
+    field(FLNK, "$(P)AlarmSummary")
+}
+
+#record(calc, "$(P)DACurrAlarmSum") {
+#    field(DESC, "DA Current Alarm Sum")
+#    field(INPA, "$(P)DA_I1 CP MS")
+#    field(INPB, "$(P)DA_I2 CP MS")
+#    field(FLNK, "$(P)CurrAlarmSum")
+#}
+#
+#record(calc, "$(P)FA1CurrAlarmSum") {
+#    field(DESC, "FA1 Current Alarm Sum")
+#    field(INPA, "$(P)FA1_I1 CP MS")
+#    field(INPB, "$(P)FA1_I2 CP MS")
+#    field(INPC, "$(P)FA1_I3 CP MS")
+#    field(INPD, "$(P)FA1_I4 CP MS")
+#    field(INPE, "$(P)FA1_I5 CP MS")
+#    field(INPF, "$(P)FA1_I6 CP MS")
+#    field(INPG, "$(P)FA1_I7 CP MS")
+#    field(INPH, "$(P)FA1_I8 CP MS")
+#    field(FLNK, "$(P)CurrAlarmSum")
+#}
+#
+#record(calc, "$(P)FA2CurrAlarmSum") {
+#    field(DESC, "FA2 Current Alarm Sum")
+#    field(INPA, "$(P)FA2_I1 CP MS")
+#    field(INPB, "$(P)FA2_I2 CP MS")
+#    field(INPC, "$(P)FA2_I3 CP MS")
+#    field(INPD, "$(P)FA2_I4 CP MS")
+#    field(INPE, "$(P)FA2_I5 CP MS")
+#    field(INPF, "$(P)FA2_I6 CP MS")
+#    field(INPG, "$(P)FA2_I7 CP MS")
+#    field(INPH, "$(P)FA2_I8 CP MS")
+#    field(FLNK, "$(P)CurrAlarmSum")
+#}
+#
+#record(calc, "$(P)FA3CurrAlarmSum") {
+#    field(DESC, "FA3 Current Alarm Sum")
+#    field(INPA, "$(P)FA3_I1 CP MS")
+#    field(INPB, "$(P)FA3_I2 CP MS")
+#    field(INPC, "$(P)FA3_I3 CP MS")
+#    field(INPD, "$(P)FA3_I4 CP MS")
+#    field(FLNK, "$(P)CurrAlarmSum")
+#}
+#
+#record(calc, "$(P)CurrAlarmSum") {
+#    field(DESC, "Current Alarm Sum")
+#    field(INPA, "$(P)DACurrAlarmSum MS")
+#    field(INPB, "$(P)FA1CurrAlarmSum MS")
+#    field(INPC, "$(P)FA2CurrAlarmSum MS")
+#    field(INPD, "$(P)FA3CurrAlarmSum MS")
+#    field(FLNK, "$(P)AlarmSummary")
+#}
+#
+#record(calc, "$(P)FA1PwrAlarmSum") {
+#    field(DESC, "FA1 Power Alarm Sum")
+#    field(INPA, "$(P)FA1_Pwr1 CP MS")
+#    field(INPB, "$(P)FA1_Pwr2 CP MS")
+#    field(INPC, "$(P)FA1_Pwr3 CP MS")
+#    field(INPD, "$(P)FA1_Pwr4 CP MS")
+#    field(FLNK, "$(P)PwrAlarmSum")
+#}
+#
+#record(calc, "$(P)FA2PwrAlarmSum") {
+#    field(DESC, "FA2 Power Alarm Sum")
+#    field(INPA, "$(P)FA2_Pwr1 CP MS")
+#    field(INPB, "$(P)FA2_Pwr2 CP MS")
+#    field(INPC, "$(P)FA2_Pwr3 CP MS")
+#    field(INPD, "$(P)FA2_Pwr4 CP MS")
+#    field(FLNK, "$(P)PwrAlarmSum")
+#}
+#
+#record(calc, "$(P)FA3PwrAlarmSum") {
+#    field(DESC, "FA3 Power Alarm Sum")
+#    field(INPA, "$(P)FA3_Pwr1 CP MS")
+#    field(INPB, "$(P)FA3_Pwr2 CP MS")
+#    field(FLNK, "$(P)PwrAlarmSum")
+#}
+
+record(calc, "$(P)PwrAlarmSum") {
+    field(DESC, "Power Alarm Sum")
+    field(INPA, "$(P)DrvPwr CP MS")
+    field(INPB, "$(P)FwdPwr CP MS")
+    field(INPC, "$(P)RefPwr CP MS")
+#    field(INPD, "$(P)FA1PwrAlarmSum MS")
+#    field(INPE, "$(P)FA2PwrAlarmSum MS")
+#    field(INPF, "$(P)FA3PwrAlarmSum MS")
+    field(FLNK, "$(P)AlarmSummary")
+}
+
+record(calc, "$(P)TempAlarmSum") {
+    field(DESC, "Temp Alarm Sum")
+#    field(INPA, "$(P)CtrlAirTemp CP MS")
+#    field(INPB, "$(P)DA_HSTemp CP MS")
+#    field(INPC, "$(P)FA1_HSTemp CP MS")
+#    field(INPD, "$(P)FA2_HSTemp CP MS")
+#    field(INPE, "$(P)FA3_HSTemp CP MS")
+#    field(INPF, "$(P)PSAirTemp CP MS")
+#    field(INPG, "$(P)HXInAirTemp CP MS")
+    field(INPH, "$(P)LCWInTemp CP MS")
+    field(INPI, "$(P)LCWOutTemp CP MS")
+    field(FLNK, "$(P)AlarmSummary")
+}
+
+#record(calc, "$(P)FanAlarmSum") {
+#    field(DESC, "Fan Alarm Sum")
+#    field(INPA, "$(P)CtrlFanSpeed CP MS")
+#    field(INPB, "$(P)DA_FanSpeed CP MS")
+#    field(INPC, "$(P)FA1_FanSpeed CP MS")
+#    field(INPD, "$(P)FA2_FanSpeed CP MS")
+#    field(INPE, "$(P)FA3_FanSpeed CP MS")
+#    field(INPF, "$(P)PSFan1Speed CP MS")
+#    field(INPG, "$(P)PSFan2Speed CP MS")
+#    field(INPH, "$(P)PSFan3Speed CP MS")
+#    field(INPI, "$(P)HXFan1Speed CP MS")
+#    field(INPJ, "$(P)HXFan2Speed CP MS")
+#    field(INPK, "$(P)HXFan3Speed CP MS")
+#    field(INPL, "$(P)HXFan4Speed CP MS")
+#    field(FLNK, "$(P)AlarmSummary")
+#}
+
+record(calc, "$(P)AlarmSummary") {
+    field(DESC, "Alarm Summary")
+    field(INPA, "$(P)MiscAlarmSum MS")
+    field(INPB, "$(P)VoltAlarmSum MS")
+#    field(INPC, "$(P)CurrAlarmSum MS")
+    field(INPD, "$(P)PwrAlarmSum MS")
+    field(INPE, "$(P)TempAlarmSum MS")
+#    field(INPF, "$(P)FanAlarmSum MS")
+    field(INPG, "$(P)DCEnableRBV CP MS")
+    field(INPH, "$(P)RFEnableRBV CP MS")
+    field(INPI, "$(P)ErrCodeInt CP MS")
+    field(INPJ, "$(P)ErrCodeExt CP MS")
+    field(INPK, "$(P)WarningCode CP MS")
+    field(INPL, "$(P)PSFault CP MS")
+}
+
+
