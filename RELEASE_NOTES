@@ -8,8 +8,8 @@
 #
 #--------------------------------------------------------------
 
-R1.0.5: 17-Sep-2020  M. Dunning (mdunning)
-    Add phase 1 support for 1.3GHz 7kW SSA. This is just ~30 registers so the SSA can be powered on.
+R1.1.0: 21-Sep-2020  M. Dunning (mdunning)
+    Add support for 1.3GHz 7kW SSA
 
 R1.0.4: 25-Aug-2020  M. Dunning (mdunning)
     Add iocs for remaining CM & HL SSAs
