@@ -1,3 +1,4 @@
 function(asFaultMsg)
+function(asFaultMsg_CA1300_7kW)
 function(asFaultMsg_CA199)
 function(asFaultMsg_CA3900)
