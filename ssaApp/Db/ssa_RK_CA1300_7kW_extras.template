@@ -132,6 +132,22 @@ record(stringin, "$(P)WarningMsg") {
     field(DESC, "Warning")
 }
 
+record(aSub, "$(P)CritWarnAsub"){
+    field(DESC, "Critical Warning message aSub")
+    field(ASG,  "Internal")
+    field(SNAM, "asFaultMsg_CA1300_7kW")
+    field(INPA, "$(P)CritWarnCode CP MS")
+    field(FTA,  "LONG")  
+    field(NOA,  "1")
+    field(FTVA, "STRING")  
+    field(NOVA, "1")
+    field(OUTA, "$(P)CritWarnMsg PP MS")
+}
+
+record(stringin, "$(P)CritWarnMsg") {
+    field(DESC, "Critcal Warning")
+}
+
 record(calcout, "$(P)FaultSumCalc") {
     field(DESC, "Fault Summary Calc")
     field(ASG,  "Internal")
