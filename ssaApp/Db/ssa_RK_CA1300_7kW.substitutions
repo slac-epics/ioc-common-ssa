@@ -84,8 +84,8 @@ pattern
 { FA5_RefPwr1,    "Fin. Amp 5 Ref Pwr1",    $(PORT_P)_inw1,    112,    "",    "",   500,  1000, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
 { FA5_FwdPwr2,    "Fin. Amp 5 Fwd Pwr1",    $(PORT_P)_inw1,    113,    "",    "",  1000,  1100, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
 { FA5_RefPwr2,    "Fin. Amp 5 Ref Pwr1",    $(PORT_P)_inw1,    114,    "",    "",   500,  1000, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
-{   DA_FwdPwr,    "Fin. Amp 5 Fwd Pwr1",    $(PORT_P)_inw2,      5,    "",    "",   500,   550, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
-{   DA_RefPwr,    "Fin. Amp 5 Ref Pwr1",    $(PORT_P)_inw2,      6,    "",    "",   450,   500, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
+{   DA_FwdPwr,             "DA Fwd Pwr",    $(PORT_P)_inw2,      5,    "",    "",   500,   550, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
+{   DA_RefPwr,             "DA Ref Pwr",    $(PORT_P)_inw2,      6,    "",    "",   450,   500, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
 { HXFan1Speed,    "Heat Exc. Fan 1 Spd",    $(PORT_P)_inw2,     21,    "",  5000,  8500,  9000, NO_ALARM,    MINOR,    MINOR,    MAJOR,    "rpm", "I/O Intr"}
 { HXFan2Speed,    "Heat Exc. Fan 2 Spd",    $(PORT_P)_inw2,     22,    "",  5000,  8500,  9000, NO_ALARM,    MINOR,    MINOR,    MAJOR,    "rpm", "I/O Intr"}
 { HXFan3Speed,    "Heat Exc. Fan 3 Spd",    $(PORT_P)_inw2,     23,    "",  5000,  8500,  9000, NO_ALARM,    MINOR,    MINOR,    MAJOR,    "rpm", "I/O Intr"}
