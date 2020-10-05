@@ -217,6 +217,7 @@ Takes an integer error code as input, and displays a string message as output.
     else if (*errCode == 501) errMsg = "Forward Pwr";
     else if (*errCode == 502) errMsg = "Water Leak Status";
     else if (*errCode == 503) errMsg = "RF Ctrl Unit Fan Speed";
+    else if (*errCode == 504) errMsg = "Ready for RF (timer)";
     else if (*errCode == 511) errMsg = "Ext. Fault No.1 24V Permit Line";
     else if (*errCode == 512) errMsg = "Ext. Fault No.2 24V Permit Line";
     else if (*errCode == 513) errMsg = "Ext. Fault 1 & 2 24V Permit Line";
