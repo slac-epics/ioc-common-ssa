@@ -29,6 +29,18 @@ record(bo, "$(P)XPortReboot"){
     field(ONAM, "Rebooting...")
 }
 
+# This is a dummy PV so that we can share the CA1300 sequencer routine.
+# Since this register doesn't exist, it must be locked to Enabled.
+record(bo, "$(P)ACEnableRBV"){
+    field(DESC, "AC Enabled (dummy PV)")
+    field(ZNAM, "Disabled")
+    field(ONAM, "Enabled")
+    field(ZSV,  "MINOR")
+    field(DOL,  "1")
+    field(OMSL, "closed_loop")
+    field(PINI, "1")
+}
+
 # --- Drain Voltage <---> Output Voltage --------------
 #record(ao, "$(P)DrainVoltSetpt") {
 #    field(DESC, "Drain Voltage Setpt [V]")
