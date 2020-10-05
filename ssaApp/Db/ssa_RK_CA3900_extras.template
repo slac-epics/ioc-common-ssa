@@ -42,54 +42,55 @@ record(bo, "$(P)ACEnableRBV"){
 }
 
 # --- Drain Voltage <---> Output Voltage --------------
-#record(ao, "$(P)DrainVoltSetpt") {
-#    field(DESC, "Drain Voltage Setpt [V]")
-#    field(EGU,  "V")
-#    field(PREC, "2")
-#    field(LOPR, "13.5")
-#    field(HOPR, "48")
-#    field(DRVL, "13.5")
-#    field(DRVH, "48")
-#    field(FLNK, "$(P)DrainVCalc")
-#    info(autosaveFields, "VAL")
-#}
-#
-#record(calcout, "$(P)DrainVCalc") {
-#    field(DESC, "Drain to output voltage conversion")
-#    field(ASG,  "Internal")
-#    field(INPA, "$(P)DrainVoltSetpt")
-#    field(INPB, "131")
-#    field(INPC, "2.5")
-#    field(CALC, "(A*B)/C")
+record(ao, "$(P)DrainVoltSetpt") {
+    field(DESC, "Drain Voltage Setpt [V]")
+    field(EGU,  "V")
+    field(PREC, "2")
+    field(LOPR, "13.5")
+    field(HOPR, "48")
+    field(DRVL, "13.5")
+    field(DRVH, "48")
+    field(FLNK, "$(P)DrainVCalc")
+    info(autosaveFields, "VAL")
+}
+
+record(calcout, "$(P)DrainVCalc") {
+    field(DESC, "Drain to output voltage conversion")
+    field(ASG,  "Internal")
+    field(INPA, "$(P)DrainVoltSetpt")
+    field(INPB, "131")
+    field(INPC, "2.5")
+    field(CALC, "(A*B)/C")
+# Commenting this out for now.  Don't know how this should work with the CA3900 since it has two PSs.
 #    field(OUT,  "$(P)PSVolt_FO PP")
-#}
-#
-#record(calc, "$(P)DrainVoltRBVCalc") {
-#    field(DESC, "Drain voltage calc")
-#    field(ASG,  "Internal")
-#    field(INPA, "$(P)PSVoltRBV1 CPP MS")
-#    field(INPD, "$(P)PSVoltRBV2 CPP MS")
-#    field(INPB, "131")
-#    field(INPC, "2.5")
-#    field(EGU,  "V")
-#    field(PREC, "2")
-#    field(CALC, "(((A+D)/2)*C)/B")
-#    field(FLNK, "$(P)DrainVoltRBV")
-#}
-#
-#record(ai, "$(P)DrainVoltRBV") {
-#    field(DESC, "Drain voltage RBV")
-#    field(INP, "$(P)DrainVoltRBVCalc MS")
-#    field(EGU,  "V")
-#    field(PREC, "2")
-#}
-#
-#record(dfanout, "$(P)PSVolt_FO") {
-#    field(DESC, "PS output voltage fanout")
-#    field(ASG,  "Internal")
-#    field(OUTA, "$(P)PSVoltSetpt1 PP")
-#    field(OUTB, "$(P)PSVoltSetpt2 PP")
-#}
+}
+
+record(calc, "$(P)DrainVoltRBVCalc") {
+    field(DESC, "Drain voltage calc")
+    field(ASG,  "Internal")
+    field(INPA, "$(P)PSVoltRBV1 CPP MS")
+    field(INPD, "$(P)PSVoltRBV2 CPP MS")
+    field(INPB, "131")
+    field(INPC, "2.5")
+    field(EGU,  "V")
+    field(PREC, "2")
+    field(CALC, "(((A+D)/2)*C)/B")
+    field(FLNK, "$(P)DrainVoltRBV")
+}
+
+record(ai, "$(P)DrainVoltRBV") {
+    field(DESC, "Drain voltage RBV")
+    field(INP, "$(P)DrainVoltRBVCalc MS")
+    field(EGU,  "V")
+    field(PREC, "2")
+}
+
+record(dfanout, "$(P)PSVolt_FO") {
+    field(DESC, "PS output voltage fanout")
+    field(ASG,  "Internal")
+    field(OUTA, "$(P)PSVoltSetpt1 PP")
+    field(OUTB, "$(P)PSVoltSetpt2 PP")
+}
 
 # --- Drive (input) power -------------------------------------------------------------
 record(calc, "$(P)DrvPwr1_dBm") {
