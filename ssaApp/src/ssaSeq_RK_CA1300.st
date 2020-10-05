@@ -91,6 +91,13 @@ int xPortRebootReg;
 assign xPortRebootReg to "{P}XPReboot";
 evflag xPortRebootFlag;
 
+int procReset;
+assign procReset to "{P}ProcessorReset";
+monitor procReset;
+int procResetReg;
+assign procResetReg to "{P}ProcReset";
+evflag procResetFlag;
+
 int drainVoltProc;
 assign drainVoltProc to "{P}DrainVoltSetpt.PROC";
 
@@ -103,6 +110,7 @@ assign drainVoltProc to "{P}DrainVoltSetpt.PROC";
 #define powerOffTimeout 5.0  // Time to wait in poweringOffState before going to powerOffFailState
 #define sysRebootTimeout 6.0  // Time to wait after sysReboot before we go to ssaOnState
 #define xPortRebootTimeout 6.0  // Time to wait after xPortReboot before we go to ssaOnState
+#define procResetTimeout 6.0  // Time to wait after procReset before we go to ssaOnState
 #define faultCond (faultInt || faultExt)
 #define enabledCond (acEnableRBV && dcEnableRBV && rfEnableRBV)
 #define notEnabledOrFaultCond (!enabledCond || faultCond)
@@ -147,6 +155,8 @@ ss ssa_state_check {
         } state sysRebootState
         when (xPortReboot) {
         } state xPortRebootState
+        when (procReset) {
+        } state procResetState
     }
 
     state ssaOffState {
@@ -176,6 +186,8 @@ ss ssa_state_check {
         } state sysRebootState
         when (xPortReboot) {
         } state xPortRebootState
+        when (procReset) {
+        } state procResetState
     }
 
     state faultedState {
@@ -202,6 +214,8 @@ ss ssa_state_check {
         } state sysRebootState
         when (xPortReboot) {
         } state xPortRebootState
+        when (procReset) {
+        } state procResetState
     }
     
     state faultResetState {
@@ -397,6 +411,26 @@ ss ssa_state_check {
             xPortReboot = 0;
             pvPut(xPortReboot);
             efClear(xPortRebootFlag);
+        } state ssaOnState
+    }
+    
+    state procResetState {
+    /* Processor reset: Execute reset, then transition back to On state. */
+        entry {
+            if (DEBUG) printf("STATE: procReset\n");
+            errlogPrintf("[%s] SSA processor reset (%s)\n", timestamp(), macValueGet("P"));
+        }
+        when (!efTest(procResetFlag)) {
+            statusMsg = 12;
+            pvPut(statusMsg);
+            procResetReg = 1;
+            pvPut(procResetReg, SYNC);
+            efSet(procResetFlag);
+        } state procResetState
+        when (delay(procResetTimeout) && efTest(procResetFlag)) {
+            procReset = 0;
+            pvPut(procReset);
+            efClear(procResetFlag);
         } state ssaOnState
     }
 }
