@@ -116,15 +116,19 @@ assign drainVoltProc to "{P}DrainVoltSetpt.PROC";
 #define notEnabledOrFaultCond (!enabledCond || faultCond)
 
 // Variables --------------------------------
-%%static char tsbuffer[64];  // For timestamp
+%% static char tsbuffer[64];  // For timestamp
+%{ enum status {STAT_UNK, STAT_FLT, STAT_OFF, STAT_ON, STAT_RST, STAT_PWRON, STAT_PWROFF, STAT_RST_FAIL, 
+    STAT_PWRON_FAIL, STAT_PWROFF_FAIL, STAT_RBT, STAT_XP_RBT, STAT_PROC_RST};
+}%
 
 // Functions ----------------------------------
-%{static char *timestamp() {
-    epicsTimeStamp ts_current;
-    epicsTimeGetCurrent(&ts_current);
-    epicsTimeToStrftime(tsbuffer, sizeof(tsbuffer), "%Y%m%d_%H:%M:%S.%06f", &ts_current);
-    return tsbuffer;
-}}%
+%{ static char *timestamp() {
+   epicsTimeStamp ts_current;
+   epicsTimeGetCurrent(&ts_current);
+   epicsTimeToStrftime(tsbuffer, sizeof(tsbuffer), "%Y%m%d_%H:%M:%S.%06f", &ts_current);
+   return tsbuffer;
+   }
+}%
 
 /*----------------------------------------------------------------*/
 ss ssa_state_check {
@@ -132,7 +136,7 @@ ss ssa_state_check {
     /* SSA is on and running: No faults; DC and RF are enabled. */
         entry {
             if (DEBUG) printf("STATE: ssaOnState\n");
-            statusMsg = 3;
+            statusMsg = STAT_ON;
             pvPut(statusMsg);
         }
         when (faultCond) {
@@ -163,7 +167,7 @@ ss ssa_state_check {
     /* SSA is off: No faults, but DC and/or RF disabled. */
         entry {
             if (DEBUG) printf("STATE: ssaOffState\n");
-            statusMsg = 2;
+            statusMsg = STAT_OFF;
             pvPut(statusMsg);
         }
         when (enabledCond && !faultCond) {
@@ -195,7 +199,7 @@ ss ssa_state_check {
         entry {
             if (DEBUG) printf("STATE: faultedState\n");
             errlogPrintf("[%s] SSA faulted (%s)\n", timestamp(), macValueGet("P"));
-            statusMsg = 1;
+            statusMsg = STAT_FLT;
             pvPut(statusMsg);
         }
         when (enabledCond && !faultCond) {
@@ -227,7 +231,7 @@ ss ssa_state_check {
         when (!efTest(resetFlag) && faultCond) {
             if (DEBUG) printf("Resetting...\n");
             errlogPrintf("[%s] Resetting SSA faults (%s)\n", timestamp(), macValueGet("P"));
-            statusMsg = 4;
+            statusMsg = STAT_RST;
             pvPut(statusMsg);
             if (faultInt) {
                 if (DEBUG) printf("faultIntReset\n");
@@ -265,7 +269,7 @@ ss ssa_state_check {
     /* Fault reset failed: Wait a bit and then transition back to faulted state. */
         entry {
             if (DEBUG) printf("STATE: faultResetFailState\n");
-            statusMsg = 7;
+            statusMsg = STAT_RST_FAIL;
             pvPut(statusMsg);
         }
         when (delay(failWait)) {
@@ -286,7 +290,7 @@ ss ssa_state_check {
         when (!efTest(powerOnFlag)) {
             if (DEBUG) printf("Powering on...\n");
             errlogPrintf("[%s] Powering SSA on (%s)\n", timestamp(), macValueGet("P"));
-            statusMsg = 5;
+            statusMsg = STAT_PWRON;
             pvPut(statusMsg);
             if (!dcEnableRBV) {
                 if (DEBUG) printf("dcEnable\n");
@@ -323,7 +327,7 @@ ss ssa_state_check {
     /* Power on failed: Wait a bit and then transition back to Off state. */
         entry {
             if (DEBUG) printf("STATE: powerOnFailState\n");
-            statusMsg = 8;
+            statusMsg = STAT_PWRON_FAIL;
             pvPut(statusMsg);
         }
         when (delay(failWait)) {
@@ -334,7 +338,7 @@ ss ssa_state_check {
     /* Turn SSA off: Disable RF; Disable DC. */
         entry {
             if (DEBUG) printf("STATE: poweringOffState\n");
-            statusMsg = 6;
+            statusMsg = STAT_PWROFF;
             pvPut(statusMsg);
         }
         when (!efTest(powerOffFlag)) {
@@ -367,7 +371,7 @@ ss ssa_state_check {
     /* Power off failed: Wait a bit and then transition back to On state. */
         entry {
             if (DEBUG) printf("STATE: powerOffFailState\n");
-            statusMsg = 9;
+            statusMsg = STAT_PWROFF_FAIL;
             pvPut(statusMsg);
         }
         when (delay(failWait)) {
@@ -381,7 +385,7 @@ ss ssa_state_check {
             errlogPrintf("[%s] SSA sysReboot (%s)\n", timestamp(), macValueGet("P"));
         }
         when (!efTest(sysRebootFlag)) {
-            statusMsg = 10;
+            statusMsg = STAT_RBT;
             pvPut(statusMsg);
             sysRebootReg = 1;
             pvPut(sysRebootReg, SYNC);
@@ -401,7 +405,7 @@ ss ssa_state_check {
             errlogPrintf("[%s] SSA X-port reboot (%s)\n", timestamp(), macValueGet("P"));
         }
         when (!efTest(xPortRebootFlag)) {
-            statusMsg = 11;
+            statusMsg = STAT_XP_RBT;
             pvPut(statusMsg);
             xPortRebootReg = 1;
             pvPut(xPortRebootReg, SYNC);
@@ -421,7 +425,7 @@ ss ssa_state_check {
             errlogPrintf("[%s] SSA processor reset (%s)\n", timestamp(), macValueGet("P"));
         }
         when (!efTest(procResetFlag)) {
-            statusMsg = 12;
+            statusMsg = STAT_PROC_RST;
             pvPut(statusMsg);
             procResetReg = 1;
             pvPut(procResetReg, SYNC);
