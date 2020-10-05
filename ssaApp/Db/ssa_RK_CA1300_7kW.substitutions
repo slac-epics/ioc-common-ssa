@@ -193,6 +193,10 @@ pattern
 {    Humidity,               "Humidity",    $(PORT_P)_inw2,     33,    0.0,    0.1,    1,   "",   "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "%", "I/O Intr"}
 }
 
+file "ssa_RK_common.template" {
+{none}
+}
+
 file "ssa_RK_CA1300_7kW_extras.template" {
 {none}
 }

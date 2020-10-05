@@ -1,33 +1,3 @@
-# --- These records are used in the sequencer program -----------
-record(bo, "$(P)FaultReset"){
-    field(DESC, "Fault Reset")
-    field(ZNAM, "Standby")
-    field(ONAM, "Resetting...")
-}
-
-record(bo, "$(P)PowerOn"){
-    field(DESC, "Power On")
-    field(ZNAM, "Standby")
-    field(ONAM, "Powering On...")
-}
-
-record(bo, "$(P)PowerOff"){
-    field(DESC, "Power Off")
-    field(ZNAM, "Standby")
-    field(ONAM, "Powering Off...")
-}
-
-record(bo, "$(P)SystemReboot"){
-    field(DESC, "System Reboot")
-    field(ZNAM, "Standby")
-    field(ONAM, "Rebooting...")
-}
-
-record(bo, "$(P)XPortReboot"){
-    field(DESC, "X-Port Reboot")
-    field(ZNAM, "Standby")
-    field(ONAM, "Rebooting...")
-}
 
 # --- Drain Voltage <---> Output Voltage --------------
 record(ao, "$(P)DrainVoltSetpt") {
@@ -96,48 +66,6 @@ record(calc, "$(P)DrvPwr_mW") {
     field(PREC, "1")
     field(CALC, "A^2*B+A*C+D")
 }
-#---------------------------------------------------------------
-
-record(mbbi, "$(P)StatusMsg") {
-    field(DESC, "Status Message")
-    field(ZRVL, "0")
-    field(ZRST, "Unknown")
-    field(ZRSV, "MINOR")
-    field(ONVL, "1")
-    field(ONST, "Faulted")
-    field(ONSV, "MAJOR")
-    field(TWVL, "2")
-    field(TWST, "SSA Off")
-    field(TWSV, "MINOR")
-    field(THVL, "3")
-    field(THST, "SSA On")
-    field(THSV, "NO_ALARM")
-    field(FRVL, "4")
-    field(FRST, "Resetting Faults...")
-    field(FRSV, "NO_ALARM")
-    field(FVVL, "5")
-    field(FVST, "Powering On...")
-    field(FVSV, "NO_ALARM")
-    field(SXVL, "6")
-    field(SXST, "Powering Off...")
-    field(SXSV, "NO_ALARM")
-    field(SVVL, "7")
-    field(SVST, "Fault Reset Failed...")
-    field(SVSV, "MINOR")
-    field(EIVL, "8")
-    field(EIST, "Power On Failed...")
-    field(EISV, "MINOR")
-    field(NIVL, "9")
-    field(NIST, "Power Off Failed...")
-    field(NISV, "MINOR")
-    field(TEVL, "10")
-    field(TEST, "Rebooting SSA...")
-    field(TESV, "MINOR")
-    field(ELVL, "11")
-    field(ELST, "Rebooting X-Port...")
-    field(ELSV, "MINOR")
-}
-
 
 # --- Fault messages -------------------------------------------------------------
 record(aSub, "$(P)FaultIntAsub"){

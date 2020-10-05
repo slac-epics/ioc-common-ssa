@@ -145,6 +145,10 @@ pattern
 {  LCWOutFlow,   "LCW Outlet Flow Rate",    $(PORT_P)_inw1,    102,    0.0,    0.1,    1, 10.0, 10.5, 29.5, 30.0,    MAJOR,    MINOR,    MINOR,    MAJOR,  "L/min", "I/O Intr"}
 }
 
+file "ssa_RK_common.template" {
+{none}
+}
+
 file "ssa_RK_CA1300_4.6kW_extras.template" {
 {none}
 }
