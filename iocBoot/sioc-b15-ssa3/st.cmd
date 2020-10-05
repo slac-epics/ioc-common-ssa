@@ -113,11 +113,11 @@ caPutLogShow(2)
 # This must be done after iocInit
 #
 # SSA1: SSA3:B15
-seq(seq_ssa_CA3900, "P=SSA3:B15:")
+seq(seq_ssa_CA1300, "P=SSA3:B15:")
 epicsThreadSleep(0.5)
 
 # SSA2: L1B:0220
-#seq(seq_ssa_CA3900, "P=ACCL:L1B:0220:SSA:")
+#seq(seq_ssa_CA1300, "P=ACCL:L1B:0220:SSA:")
 #epicsThreadSleep(0.5)
 
 ## Start autosave process:
