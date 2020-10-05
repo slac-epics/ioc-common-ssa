@@ -33,6 +33,11 @@ monitor rfEnableRBV;
 int rfEnable;
 assign rfEnable to "{P}RFEnable";
 
+int rfCountdown;
+assign rfCountdown to "{P}RFCountdown";
+monitor rfCountdown;
+int rfCountdownLast = -1;
+
 int faultInt;
 assign faultInt to "{P}ErrCodeInt";
 monitor faultInt;
@@ -283,6 +288,10 @@ ss ssa_state_check {
                 pvPut(rfEnable, SYNC);
             }
             efSet(powerOnFlag);
+        } state poweringOnState
+        when (delay(2.0) && rfCountdown && (rfCountdown != rfCountdownLast)) {
+            rfCountdownLast = rfCountdown;
+            if (DEBUG) printf("rfCountdown=%d, rfCountdownLast=%d\n", rfCountdown, rfCountdownLast);
         } state poweringOnState
         when (powerOn && delay(powerOnTimeout) && efTest(powerOnFlag) && !enabledCond) {
             powerOn = 0;

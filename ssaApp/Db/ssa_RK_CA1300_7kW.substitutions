@@ -7,7 +7,7 @@ pattern
 {     RFEnable,     "RF Enable/Disable",   $(PORT_P)_outw1,      1, 0x0001, "Disable", "Enable"}
 {FaultIntReset,  "Internal Fault Reset",   $(PORT_P)_outw1,      3, 0x0001,        "",  "Reset"}
 {FaultExtReset,  "External Fault Reset",   $(PORT_P)_outw1,      3, 0x0002,        "",  "Reset"}
-{ WarningReset,         "Warning Reset",   $(PORT_P)_outw1,      3, 0x0004,        "",  "Reset"}
+{ WarningReset,   "Crit. Warning Reset",   $(PORT_P)_outw1,      3, 0x0004,        "",  "Reset"}
 {    ProcReset,       "Processor Reset",   $(PORT_P)_outw1,      3, 0x0008,        "",  "Reset"}
 {     XPReboot,         "X-Port Reboot",   $(PORT_P)_outw1,      4, 0x0001,        "", "Reboot"}
 {    SysReboot,         "System Reboot",   $(PORT_P)_outw1,      5, 0x0001,        "", "Reboot"}
@@ -50,6 +50,7 @@ pattern
 {  ErrCodeExt,    "External Error Code",    $(PORT_P)_inw1,     10,    "",    "",    "",     1, NO_ALARM, NO_ALARM, NO_ALARM,    MAJOR,       "", "I/O Intr"}
 {FaultExtStat,  "External fault status",    $(PORT_P)_inw1,     11,    "",    "",    "",     1, NO_ALARM, NO_ALARM, NO_ALARM,    MAJOR,       "", "I/O Intr"}
 { WarningCode,           "Warning Code",    $(PORT_P)_inw1,     12,    "",    "",     1,    "", NO_ALARM, NO_ALARM,    MINOR, NO_ALARM,       "", "I/O Intr"}
+{CritWarnCode,  "Critical Warning Code",    $(PORT_P)_inw1,     13,    "",    "",     1,    "", NO_ALARM, NO_ALARM,    MINOR, NO_ALARM,       "", "I/O Intr"}
 { ErrCodeProc,   "Processor Error Code",    $(PORT_P)_inw1,     14,    "",    "",     1,    "", NO_ALARM, NO_ALARM,    MINOR, NO_ALARM,       "", "I/O Intr"}
 {FaultPrcStat, "Processor fault status",    $(PORT_P)_inw1,     15,    "",    "",    "",     1, NO_ALARM, NO_ALARM, NO_ALARM,    MAJOR,       "", "I/O Intr"}
 {  ThermoStat,      "Thermostat status",    $(PORT_P)_inw1,     17,    "",    "",    "",     1, NO_ALARM, NO_ALARM, NO_ALARM,    MAJOR,       "", "I/O Intr"}
@@ -58,6 +59,7 @@ pattern
 {      FwdPwr,          "Forward Power",    $(PORT_P)_inw1,     21,    "",    "",  7350,  7700, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
 {      RefPwr,        "Reflected Power",    $(PORT_P)_inw1,     22,    "",    "",   350,   700, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
 {RFCUFanSpeed,   "RF Ctrl Unit Fan Spd",    $(PORT_P)_inw1,     26,    "",  5000,  8500,  9000, NO_ALARM,    MINOR,    MINOR,    MAJOR,    "rpm", "I/O Intr"}
+{ RFCountdown, "Ready for RF countdown",    $(PORT_P)_inw1,     27,    "",    "",     1,    "", NO_ALARM, NO_ALARM,    MINOR, NO_ALARM,       "", "I/O Intr"}
 {  PSFaultCnt,    "PS Unit Fault Count",    $(PORT_P)_inw1,     29,    "",    "",    "",     3, NO_ALARM, NO_ALARM, NO_ALARM,    MAJOR,       "", "I/O Intr"}
 { PSFaultStat,   "PS Unit Fault Status",    $(PORT_P)_inw1,     30,    "",    "",    "",     1, NO_ALARM, NO_ALARM, NO_ALARM,    MAJOR,       "", "I/O Intr"}
 { PSFan1Speed,       "PS Unit Fan1 Spd",    $(PORT_P)_inw1,     35,    "",  5000,  8500,  9000, NO_ALARM,    MINOR,    MINOR,    MAJOR,    "rpm", "I/O Intr"}
