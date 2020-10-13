@@ -54,7 +54,7 @@ pattern
 { ErrCodeProc,   "Processor Error Code",    $(PORT_P)_inw1,     14,    "",    "",     1,    "", NO_ALARM, NO_ALARM,    MINOR, NO_ALARM,       "", "I/O Intr"}
 {FaultPrcStat, "Processor fault status",    $(PORT_P)_inw1,     15,    "",    "",    "",     1, NO_ALARM, NO_ALARM, NO_ALARM,    MAJOR,       "", "I/O Intr"}
 {  ThermoStat,      "Thermostat status",    $(PORT_P)_inw1,     17,    "",    "",    "",     1, NO_ALARM, NO_ALARM, NO_ALARM,    MAJOR,       "", "I/O Intr"}
-{  SDCardStat,         "SD Card status",    $(PORT_P)_inw1,     19,    "",    "",    "",     1, NO_ALARM, NO_ALARM, NO_ALARM,    MAJOR,       "", "I/O Intr"}
+{  SDCardStat,         "SD Card status",    $(PORT_P)_inw1,     19,    "",    "",     1,    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
 {      DrvPwr,            "Drive Power",    $(PORT_P)_inw1,     20,    "",    "",  1335,  1550, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,       "", "I/O Intr"}
 {      FwdPwr,          "Forward Power",    $(PORT_P)_inw1,     21,    "",    "",  7350,  7700, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
 {      RefPwr,        "Reflected Power",    $(PORT_P)_inw1,     22,    "",    "",   350,   700, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
@@ -66,24 +66,24 @@ pattern
 { PSFan2Speed,       "PS Unit Fan2 Spd",    $(PORT_P)_inw1,     36,    "",  5000,  8500,  9000, NO_ALARM,    MINOR,    MINOR,    MAJOR,    "rpm", "I/O Intr"}
 { FA1_FwdPwr1,    "Fin. Amp 1 Fwd Pwr1",    $(PORT_P)_inw1,     43,    "",    "",  1000,  1100, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
 { FA1_RefPwr1,    "Fin. Amp 1 Ref Pwr1",    $(PORT_P)_inw1,     44,    "",    "",   500,  1000, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
-{ FA1_FwdPwr2,    "Fin. Amp 1 Fwd Pwr1",    $(PORT_P)_inw1,     45,    "",    "",  1000,  1100, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
-{ FA1_RefPwr2,    "Fin. Amp 1 Ref Pwr1",    $(PORT_P)_inw1,     46,    "",    "",   500,  1000, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
+{ FA1_FwdPwr2,    "Fin. Amp 1 Fwd Pwr2",    $(PORT_P)_inw1,     45,    "",    "",  1000,  1100, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
+{ FA1_RefPwr2,    "Fin. Amp 1 Ref Pwr2",    $(PORT_P)_inw1,     46,    "",    "",   500,  1000, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
 { FA2_FwdPwr1,    "Fin. Amp 2 Fwd Pwr1",    $(PORT_P)_inw1,     60,    "",    "",  1000,  1100, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
 { FA2_RefPwr1,    "Fin. Amp 2 Ref Pwr1",    $(PORT_P)_inw1,     61,    "",    "",   500,  1000, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
-{ FA2_FwdPwr2,    "Fin. Amp 2 Fwd Pwr1",    $(PORT_P)_inw1,     62,    "",    "",  1000,  1100, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
-{ FA2_RefPwr2,    "Fin. Amp 2 Ref Pwr1",    $(PORT_P)_inw1,     63,    "",    "",   500,  1000, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
+{ FA2_FwdPwr2,    "Fin. Amp 2 Fwd Pwr2",    $(PORT_P)_inw1,     62,    "",    "",  1000,  1100, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
+{ FA2_RefPwr2,    "Fin. Amp 2 Ref Pwr2",    $(PORT_P)_inw1,     63,    "",    "",   500,  1000, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
 { FA3_FwdPwr1,    "Fin. Amp 3 Fwd Pwr1",    $(PORT_P)_inw1,     77,    "",    "",  1000,  1100, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
 { FA3_RefPwr1,    "Fin. Amp 3 Ref Pwr1",    $(PORT_P)_inw1,     78,    "",    "",   500,  1000, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
-{ FA3_FwdPwr2,    "Fin. Amp 3 Fwd Pwr1",    $(PORT_P)_inw1,     79,    "",    "",  1000,  1100, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
-{ FA3_RefPwr2,    "Fin. Amp 3 Ref Pwr1",    $(PORT_P)_inw1,     80,    "",    "",   500,  1000, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
+{ FA3_FwdPwr2,    "Fin. Amp 3 Fwd Pwr2",    $(PORT_P)_inw1,     79,    "",    "",  1000,  1100, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
+{ FA3_RefPwr2,    "Fin. Amp 3 Ref Pwr2",    $(PORT_P)_inw1,     80,    "",    "",   500,  1000, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
 { FA4_FwdPwr1,    "Fin. Amp 4 Fwd Pwr1",    $(PORT_P)_inw1,     94,    "",    "",  1000,  1100, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
 { FA4_RefPwr1,    "Fin. Amp 4 Ref Pwr1",    $(PORT_P)_inw1,     95,    "",    "",   500,  1000, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
-{ FA4_FwdPwr2,    "Fin. Amp 4 Fwd Pwr1",    $(PORT_P)_inw1,     96,    "",    "",  1000,  1100, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
-{ FA4_RefPwr2,    "Fin. Amp 4 Ref Pwr1",    $(PORT_P)_inw1,     97,    "",    "",   500,  1000, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
+{ FA4_FwdPwr2,    "Fin. Amp 4 Fwd Pwr2",    $(PORT_P)_inw1,     96,    "",    "",  1000,  1100, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
+{ FA4_RefPwr2,    "Fin. Amp 4 Ref Pwr2",    $(PORT_P)_inw1,     97,    "",    "",   500,  1000, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
 { FA5_FwdPwr1,    "Fin. Amp 5 Fwd Pwr1",    $(PORT_P)_inw1,    111,    "",    "",  1000,  1100, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
 { FA5_RefPwr1,    "Fin. Amp 5 Ref Pwr1",    $(PORT_P)_inw1,    112,    "",    "",   500,  1000, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
-{ FA5_FwdPwr2,    "Fin. Amp 5 Fwd Pwr1",    $(PORT_P)_inw1,    113,    "",    "",  1000,  1100, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
-{ FA5_RefPwr2,    "Fin. Amp 5 Ref Pwr1",    $(PORT_P)_inw1,    114,    "",    "",   500,  1000, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
+{ FA5_FwdPwr2,    "Fin. Amp 5 Fwd Pwr2",    $(PORT_P)_inw1,    113,    "",    "",  1000,  1100, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
+{ FA5_RefPwr2,    "Fin. Amp 5 Ref Pwr2",    $(PORT_P)_inw1,    114,    "",    "",   500,  1000, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
 {   DA_FwdPwr,             "DA Fwd Pwr",    $(PORT_P)_inw2,      5,    "",    "",   500,   550, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
 {   DA_RefPwr,             "DA Ref Pwr",    $(PORT_P)_inw2,      6,    "",    "",   450,   500, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "W", "I/O Intr"}
 { HXFan1Speed,    "Heat Exc. Fan 1 Spd",    $(PORT_P)_inw2,     21,    "",  5000,  8500,  9000, NO_ALARM,    MINOR,    MINOR,    MAJOR,    "rpm", "I/O Intr"}
