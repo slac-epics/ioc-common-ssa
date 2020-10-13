@@ -5,6 +5,11 @@ program seq_ssa_CA1300
 This sequencer routine controls SSA states by monitoring inputs, which can 
 come from SSA readbacks (e.g. interlocks), or user-generated input 
 (e.g. On/Off buttons).
+This routine should work for the following SSAs:
+CA1300 3.8 kW (standard cryo)
+CA1300 4.6 kW (HE)
+CA1300 7 kW (HE)
+CA3900 (HL)
 */
 
 %%#include <epicsTime.h>   // timestamps
@@ -56,6 +61,10 @@ int warningCode;
 assign warningCode to "{P}WarningCode";
 monitor warningCode;
 
+int critWarningCode;
+assign critWarningCode to "{P}CritWarnCode";
+monitor critWarningCode;
+
 int warningReset;
 assign warningReset to "{P}WarningReset";
 
@@ -104,14 +113,14 @@ assign drainVoltProc to "{P}DrainVoltSetpt.PROC";
 // Constants --------------------------------
 #define DEBUG 0
 #define failWait 5.0  // Time to wait after attempting to reset a fault before we declare failure
-#define resetTimeout 5.0  // Time to wait after attempting to reset a fault before we declare failure
+#define resetTimeout 10.0  // Time to wait after attempting to reset a fault before we declare failure
 #define powerOnTimeout 5.0  // Time to wait before we declare power on sequence to be a failure
 #define powerOnWait 2.0  // Time to wait in faultResetState before going to poweringOnState
 #define powerOffTimeout 5.0  // Time to wait in poweringOffState before going to powerOffFailState
 #define sysRebootTimeout 6.0  // Time to wait after sysReboot before we go to ssaOnState
 #define xPortRebootTimeout 6.0  // Time to wait after xPortReboot before we go to ssaOnState
 #define procResetTimeout 6.0  // Time to wait after procReset before we go to ssaOnState
-#define faultCond (faultInt || faultExt)
+#define faultCond (faultInt || faultExt || critWarningCode)
 #define enabledCond (acEnableRBV && dcEnableRBV && rfEnableRBV)
 #define notEnabledOrFaultCond (!enabledCond || faultCond)
 
@@ -238,12 +247,15 @@ ss ssa_state_check {
                 faultIntReset = 1;
                 pvPut(faultIntReset, SYNC);
             }
+            // TODO: Get rid of this sleep in favor of a test loop.  This is needed for the 7kW SSA.
+            // Or try resetting external fault first?
+            epicsThreadSleep(10.0);
             if (faultExt) {
                 faultExtReset = 1;
                 pvPut(faultExtReset, SYNC);
                 if (DEBUG) printf("faultExtReset\n");
             }
-            if (warningCode) {
+            if (warningCode || critWarningCode) {
                 warningReset = 1;
                 pvPut(warningReset, SYNC);
                 if (DEBUG) printf("warningReset\n");
@@ -310,6 +322,11 @@ ss ssa_state_check {
         when (delay(2.0) && rfCountdown && (rfCountdown != rfCountdownLast)) {
             rfCountdownLast = rfCountdown;
             if (DEBUG) printf("rfCountdown=%d, rfCountdownLast=%d\n", rfCountdown, rfCountdownLast);
+        } state poweringOnState
+        when (delay(0.5) && dcEnableRBV && !rfEnableRBV) {
+            if (DEBUG) printf("rfEnable2\n");
+            rfEnable = 1;
+            pvPut(rfEnable, SYNC);
         } state poweringOnState
         when (powerOn && delay(powerOnTimeout) && efTest(powerOnFlag) && !enabledCond) {
             powerOn = 0;
