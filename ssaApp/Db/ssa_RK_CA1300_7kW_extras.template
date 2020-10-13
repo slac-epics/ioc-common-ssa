@@ -186,6 +186,7 @@ record(calc, "$(P)MiscAlarmSum") {
     field(INPE, "$(P)Humidity CP MS")
     field(INPF, "$(P)LCWOutFlow CP MS")
     field(INPG, "$(P)SDCardStat CP MS")
+    field(INPH, "$(P)RFCountdown CP MS")
     field(FLNK, "$(P)AlarmSummary")
 }
 
