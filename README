@@ -1,21 +1,3 @@
-#==============================================================
-#
-#  Name: README
-#
-#  Rem:  
-#        EPICS IOC Application 
-#
-#  Side: None
-#
-#  Auth: XX-Mar-2012,          (XX)
-#  Rev:  dd-mmm-yyyy, Reviewer's Name (USERNAME)
-#--------------------------------------------------------------
-#  Mod:
-#        dd-mmm-yyyy, Reviewer's Name (USERNAME)
-#          coment
-#
-#==============================================================
 
-Multi-facility SSA application
+An EPICS IOC application for controlling solid-state amplifiers (SSA).
 
-# End of file
