@@ -1,47 +1,40 @@
-# asyn record for the underlying asyn octet port
-file "asynRecord.db" { 
-pattern
-{        R, PORT, ADDR, IMAX, OMAX}
-{OctetAsyn, $(P),    0,  125,  125}
-}
-#--------------------------------------------------------------------------------------------------
 
 # Binary outputs, modbus function code 6.
 file "bo_word_custom.template" {
 pattern
-{            R,                      DESC,        PORT, OFFSET,   MASK,      ZNAM,     ONAM}
-{     DCEnable,       "DC Enable/Disable", $(P)_outw00,      0, 0x0001, "Disable", "Enable"}
-{     RFEnable,       "RF Enable/Disable", $(P)_outw00,      1, 0x0001, "Disable", "Enable"}
-{FaultIntReset,    "Internal Fault Reset", $(P)_outw00,      3, 0x0001,        "",  "Reset"}
-{FaultExtReset,    "External Fault Reset", $(P)_outw00,      3, 0x0002,        "",  "Reset"}
-{ WarningReset,           "Warning Reset", $(P)_outw00,      3, 0x0004,        "",  "Reset"}
-{     XPReboot,           "X-Port Reboot", $(P)_outw00,      4, 0x0001,        "", "Reboot"}
-{    SysReboot,           "System Reboot", $(P)_outw00,      5, 0x0001,        "", "Reboot"}
-{    PulseMode,              "Pulse Mode", $(P)_outw00,      6, 0x0001, "Disable", "Enable"}
-{      APD_ATT,            "APD/ATT Mode", $(P)_outw00,      7, 0x0001,     "APD",    "ATT"}
+{            R,                      DESC,             PORT, OFFSET,   MASK,      ZNAM,     ONAM}
+{     DCEnable,       "DC Enable/Disable", $(PORT_P)_outw00,      0, 0x0001, "Disable", "Enable"}
+{     RFEnable,       "RF Enable/Disable", $(PORT_P)_outw00,      1, 0x0001, "Disable", "Enable"}
+{FaultIntReset,    "Internal Fault Reset", $(PORT_P)_outw00,      3, 0x0001,        "",  "Reset"}
+{FaultExtReset,    "External Fault Reset", $(PORT_P)_outw00,      3, 0x0002,        "",  "Reset"}
+{ WarningReset,           "Warning Reset", $(PORT_P)_outw00,      3, 0x0004,        "",  "Reset"}
+{     XPReboot,           "X-Port Reboot", $(PORT_P)_outw00,      4, 0x0001,        "", "Reboot"}
+{    SysReboot,           "System Reboot", $(PORT_P)_outw00,      5, 0x0001,        "", "Reboot"}
+{    PulseMode,              "Pulse Mode", $(PORT_P)_outw00,      6, 0x0001, "Disable", "Enable"}
+{      APD_ATT,            "APD/ATT Mode", $(PORT_P)_outw00,      7, 0x0001,     "APD",    "ATT"}
 }
 
 # Integer ouputs, modbus function code 6.
 file "longout_custom.template" {
 pattern
-{            R,                      DESC,        PORT, OFFSET, DRVL, DRVH, LOPR, HOPR,     EGU}
-{  PSVoltSetpt,          "Output Voltage", $(P)_outw00,      2,  700, 2500,  700, 2500,    "mV"}
-{ CalYearSetpt,          "Cal Year Setpt", $(P)_outw02,      0,   15,   99,   15,   99,      ""}
-{CalMonthSetpt,         "Cal Month Setpt", $(P)_outw02,      1,    1,   12,    1,   12,      ""}
-{  CalDaySetpt,           "Cal Day Setpt", $(P)_outw02,      2,    1,   31,    1,   31,      ""}
-{ CalHourSetpt,          "Cal Hour Setpt", $(P)_outw02,      3,    0,   23,    0,   23,      ""}
-{  CalMinSetpt,        "Cal Minute Setpt", $(P)_outw02,      4,    0,   59,    0,   59,      ""}
-{  CalSecSetpt,        "Cal Second Setpt", $(P)_outw02,      5,    0,   59,    0,   59,      ""}
+{            R,                      DESC,             PORT, OFFSET, DRVL, DRVH, LOPR, HOPR,     EGU}
+{  PSVoltSetpt,          "Output Voltage", $(PORT_P)_outw00,      2,  700, 2500,  700, 2500,    "mV"}
+{ CalYearSetpt,          "Cal Year Setpt", $(PORT_P)_outw02,      0,   15,   99,   15,   99,      ""}
+{CalMonthSetpt,         "Cal Month Setpt", $(PORT_P)_outw02,      1,    1,   12,    1,   12,      ""}
+{  CalDaySetpt,           "Cal Day Setpt", $(PORT_P)_outw02,      2,    1,   31,    1,   31,      ""}
+{ CalHourSetpt,          "Cal Hour Setpt", $(PORT_P)_outw02,      3,    0,   23,    0,   23,      ""}
+{  CalMinSetpt,        "Cal Minute Setpt", $(PORT_P)_outw02,      4,    0,   59,    0,   59,      ""}
+{  CalSecSetpt,        "Cal Second Setpt", $(PORT_P)_outw02,      5,    0,   59,    0,   59,      ""}
 }
 
 # Float outputs converted to integers, modbus function code 6.
 file "ao_slope.template" {
 pattern
-{            R,                      DESC,        PORT, OFFSET,    AOFF,   ASLO, DRVL, DRVH, LOPR, HOPR, PREC,     EGU}
-{   FwdPwrAlLm,       "Fwd Pwr Alarm Lim", $(P)_outw01,      0,  -39.23, 0.0456,    0, 2260,    0, 2260,    1,      ""}
-{   RefPwrAlLm,       "Ref Pwr Alarm Lim", $(P)_outw01,      1,    -3.5, 0.0134,    0,  730,    0,  730,    1,      ""}
-{ LCWOutTempLm,  "LCW Out Temp Lim (MAX)", $(P)_outw01,      2,   -72.9, 0.0589,    0,   50,    0,   50,    1,  "degC"}
-{LCWFlowRateLm, "LCW Flow Rate Lim (MIN)", $(P)_outw01,      3,   -0.22, 0.0563,   65,  100,   65,  100,    1, "L/min"}
+{            R,                      DESC,             PORT, OFFSET,    AOFF,   ASLO, DRVL, DRVH, LOPR, HOPR, PREC,     EGU}
+{   FwdPwrAlLm,       "Fwd Pwr Alarm Lim", $(PORT_P)_outw01,      0,  -39.23, 0.0456,    0, 2260,    0, 2260,    1,      ""}
+{   RefPwrAlLm,       "Ref Pwr Alarm Lim", $(PORT_P)_outw01,      1,    -3.5, 0.0134,    0,  730,    0,  730,    1,      ""}
+{ LCWOutTempLm,  "LCW Out Temp Lim (MAX)", $(PORT_P)_outw01,      2,   -72.9, 0.0589,    0,   50,    0,   50,    1,  "degC"}
+{LCWFlowRateLm, "LCW Flow Rate Lim (MIN)", $(PORT_P)_outw01,      3,   -0.22, 0.0563,   65,  100,   65,  100,    1, "L/min"}
 }
 
 #----------------------------------------------------------------------------------
@@ -49,158 +42,158 @@ pattern
 # Binary inputs, modbus function code 3.
 file "bi_word_custom.template" {
 pattern
- {             R,                    DESC,       PORT, OFFSET,   MASK,         ZNAM,       ONAM,      ZSV,      OSV,       SCAN}
- {   ACEnableRBV,            "AC Enabled", $(P)_inw00,      9, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
- {   DCEnableRBV,            "DC Enabled", $(P)_inw00,     10, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
- {   RFEnableRBV,            "RF Enabled", $(P)_inw00,     11, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
- {      FaultInt, "Internal Fault Status", $(P)_inw00,     12, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
- {      FaultExt, "External Fault Status", $(P)_inw00,     13, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
- {       Warning,        "Warning Status", $(P)_inw00,     14, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
- { WireCheckStat,     "Wire Check Status", $(P)_inw00,     21, 0x0001, "Incomplete", "Complete",    MINOR, NO_ALARM, "I/O Intr"}
- {  APD_ATT_Stat,        "APD/ATT Status", $(P)_inw00,     23, 0x0001,        "APD",      "ATT", NO_ALARM, NO_ALARM, "I/O Intr"}
- {      VSWROver,           "VSWR Status", $(P)_inw01,     79, 0x0001,       "Over",    "Below",    MINOR, NO_ALARM, "I/O Intr"}
- { DrvrSubCBStat,  "Driver Sub CB Status", $(P)_inw02,     19, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
- {   DrvrPwrStat,     "Driver Pwr Status", $(P)_inw02,     28, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
- {     FaultExt1,            "NIRP Fault", $(P)_inw39,     99, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
- {     FaultExt2,       "Circ Flow Fault", $(P)_inw40,      0, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
- {     FaultExt3,    "RF Load Flow Fault", $(P)_inw40,      1, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
- {     FaultExt4,    "RF Load Flow Fault", $(P)_inw40,      2, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
- {     FaultExt5,    "RF Load Flow Fault", $(P)_inw40,      3, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
- {     FaultExt6,            "Door Fault", $(P)_inw40,      4, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
- {     FaultInt1,      "Internal Fault 1", $(P)_inw40,      5, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
- {   Fault480_UV,     "480 VAC U-V Fault", $(P)_inw40,      6, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
- {   Fault480_VW,     "480 VAC V-W Fault", $(P)_inw40,      7, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
- {   Fault480_UW,     "480 VAC U-W Fault", $(P)_inw40,      8, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
- {   FaultDrvPwr,         "Drv Pwr Fault", $(P)_inw40,      9, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
- {   FaultFwdPwr,         "Fwd Pwr Fault", $(P)_inw40,     10, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
- {   FaultRefPwr,         "Ref Pwr Fault", $(P)_inw40,     11, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
- {  FaultLCWFlow,        "LCW Flow Fault", $(P)_inw40,     13, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
-{FaultSysAirTemp,    "Sys Air Temp Fault", $(P)_inw40,     14, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
-{ FaultLCWInTemp,     "LCW In Temp Fault", $(P)_inw40,     15, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
-{FaultLCWOutTemp,    "LCW Out Temp Fault", $(P)_inw40,     16, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
-{   FaultHX1Temp,  "Heat Ex 1 Temp Fault", $(P)_inw40,     17, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
-{   FaultHX2Temp,  "Heat Ex 2 Temp Fault", $(P)_inw40,     18, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
-{FaultCtlAirTemp,   "Ctrl Air Temp Fault", $(P)_inw40,     19, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
-{FaultRadCmbTemp,   "Rad Comb Temp Fault", $(P)_inw40,     20, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
- {FaultCtlCktBrk,   "Ctrl Ckt Brkr Fault", $(P)_inw40,     22, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
- {   FaultThermo,      "Thermostat Fault", $(P)_inw40,     24, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
- {  FaultLCWLeak,        "LCW Leak Fault", $(P)_inw40,     25, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
- { FaultAlarmBus,  "Alarm Bus-line Fault", $(P)_inw40,     26, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
- {    FaultFanPS,          "Fan PS Fault", $(P)_inw40,     31, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
- {FaultCommError,      "Comm Error Fault", $(P)_inw40,     32, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
- {     FaultFPGA,            "FPGA Fault", $(P)_inw40,     33, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+ {             R,                    DESC,            PORT, OFFSET,   MASK,         ZNAM,       ONAM,      ZSV,      OSV,       SCAN}
+ {   ACEnableRBV,            "AC Enabled", $(PORT_P)_inw00,      9, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+ {   DCEnableRBV,            "DC Enabled", $(PORT_P)_inw00,     10, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+ {   RFEnableRBV,            "RF Enabled", $(PORT_P)_inw00,     11, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
+ {      FaultInt, "Internal Fault Status", $(PORT_P)_inw00,     12, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+ {      FaultExt, "External Fault Status", $(PORT_P)_inw00,     13, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+ {       Warning,        "Warning Status", $(PORT_P)_inw00,     14, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+ { WireCheckStat,     "Wire Check Status", $(PORT_P)_inw00,     21, 0x0001, "Incomplete", "Complete",    MINOR, NO_ALARM, "I/O Intr"}
+ {  APD_ATT_Stat,        "APD/ATT Status", $(PORT_P)_inw00,     23, 0x0001,        "APD",      "ATT", NO_ALARM, NO_ALARM, "I/O Intr"}
+ {      VSWROver,           "VSWR Status", $(PORT_P)_inw01,     79, 0x0001,       "Over",    "Below",    MINOR, NO_ALARM, "I/O Intr"}
+ { DrvrSubCBStat,  "Driver Sub CB Status", $(PORT_P)_inw02,     19, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
+ {   DrvrPwrStat,     "Driver Pwr Status", $(PORT_P)_inw02,     28, 0x0001,        "OFF",       "ON",    MINOR, NO_ALARM, "I/O Intr"}
+ {     FaultExt1,            "NIRP Fault", $(PORT_P)_inw39,     99, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+ {     FaultExt2,       "Circ Flow Fault", $(PORT_P)_inw40,      0, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+ {     FaultExt3,    "RF Load Flow Fault", $(PORT_P)_inw40,      1, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+ {     FaultExt4,    "RF Load Flow Fault", $(PORT_P)_inw40,      2, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+ {     FaultExt5,    "RF Load Flow Fault", $(PORT_P)_inw40,      3, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+ {     FaultExt6,            "Door Fault", $(PORT_P)_inw40,      4, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+ {     FaultInt1,      "Internal Fault 1", $(PORT_P)_inw40,      5, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+ {   Fault480_UV,     "480 VAC U-V Fault", $(PORT_P)_inw40,      6, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+ {   Fault480_VW,     "480 VAC V-W Fault", $(PORT_P)_inw40,      7, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+ {   Fault480_UW,     "480 VAC U-W Fault", $(PORT_P)_inw40,      8, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+ {   FaultDrvPwr,         "Drv Pwr Fault", $(PORT_P)_inw40,      9, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+ {   FaultFwdPwr,         "Fwd Pwr Fault", $(PORT_P)_inw40,     10, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+ {   FaultRefPwr,         "Ref Pwr Fault", $(PORT_P)_inw40,     11, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+ {  FaultLCWFlow,        "LCW Flow Fault", $(PORT_P)_inw40,     13, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+{FaultSysAirTemp,    "Sys Air Temp Fault", $(PORT_P)_inw40,     14, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+{ FaultLCWInTemp,     "LCW In Temp Fault", $(PORT_P)_inw40,     15, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+{FaultLCWOutTemp,    "LCW Out Temp Fault", $(PORT_P)_inw40,     16, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+{   FaultHX1Temp,  "Heat Ex 1 Temp Fault", $(PORT_P)_inw40,     17, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+{   FaultHX2Temp,  "Heat Ex 2 Temp Fault", $(PORT_P)_inw40,     18, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+{FaultCtlAirTemp,   "Ctrl Air Temp Fault", $(PORT_P)_inw40,     19, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+{FaultRadCmbTemp,   "Rad Comb Temp Fault", $(PORT_P)_inw40,     20, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+ {FaultCtlCktBrk,   "Ctrl Ckt Brkr Fault", $(PORT_P)_inw40,     22, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+ {   FaultThermo,      "Thermostat Fault", $(PORT_P)_inw40,     24, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+ {  FaultLCWLeak,        "LCW Leak Fault", $(PORT_P)_inw40,     25, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+ { FaultAlarmBus,  "Alarm Bus-line Fault", $(PORT_P)_inw40,     26, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+ {    FaultFanPS,          "Fan PS Fault", $(PORT_P)_inw40,     31, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+ {FaultCommError,      "Comm Error Fault", $(PORT_P)_inw40,     32, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+ {     FaultFPGA,            "FPGA Fault", $(PORT_P)_inw40,     33, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
 }
 
 # Integer inputs, modbus function code 3.
 file "longin_custom.template" {
 pattern
-{           R,                       DESC,       PORT, OFFSET,   LOLO,    LOW,   HIGH,   HIHI,     LLSV,      LSV,      HSV,     HHSV,     EGU,       SCAN}
-{  ConfigStat,            "Config Status", $(P)_inw00,     22,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
-{  CtlIO1Warn,  "Ctrl Unit I/O 1 Warning", $(P)_inw01,     25,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
-{  CtlIO2Warn,  "Ctrl Unit I/O 2 Warning", $(P)_inw01,     26,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
-{  CtlIO3Warn,  "Ctrl Unit I/O 3 Warning", $(P)_inw01,     27,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
-{Comm_WE1Warn,      "Comm Wire 1 Warning", $(P)_inw01,     89,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
-{Comm_WE2Warn,      "Comm Wire 2 Warning", $(P)_inw01,     90,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
-{FPGA_RE1Warn,  "FPGA Response 1 Warning", $(P)_inw01,     93,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
-{FPGA_RE2Warn,  "FPGA Response 2 Warning", $(P)_inw01,     94,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
-{DrvrHiADWarn,    "Driver Hi A/D Warning", $(P)_inw02,      8,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
-{DrvrLoADWarn,    "Driver Lo A/D Warning", $(P)_inw02,     18,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
-{DrvrIO1Intlk,   "Driver I/O 1 Interlock", $(P)_inw02,     22,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
-{ DrvrIO1Warn,     "Driver I/O 1 Warning", $(P)_inw02,     25,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
-{ DrvrIO2Warn,     "Driver I/O 1 Warning", $(P)_inw02,     26,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
-{HeatSinkThm1,        "Heat Sink 1 Fault", $(P)_inw40,     34,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
-{HeatSinkThm2,        "Heat Sink 2 Fault", $(P)_inw40,     35,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
-{  CalYearRBV,        "Cal Year Readback", $(P)_inw00,     15,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
-{ CalMonthRBV,       "Cal Month Readback", $(P)_inw00,     16,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
-{   CalDayRBV,         "Cal Day Readback", $(P)_inw00,     17,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
-{  CalHourRBV,        "Cal Hour Readback", $(P)_inw00,     18,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
-{   CalMinRBV,      "Cal Minute Readback", $(P)_inw00,     19,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
-{   CalSecRBV,      "Cal Second Readback", $(P)_inw00,     20,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{           R,                       DESC,            PORT, OFFSET,   LOLO,    LOW,   HIGH,   HIHI,     LLSV,      LSV,      HSV,     HHSV,     EGU,       SCAN}
+{  ConfigStat,            "Config Status", $(PORT_P)_inw00,     22,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{  CtlIO1Warn,  "Ctrl Unit I/O 1 Warning", $(PORT_P)_inw01,     25,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{  CtlIO2Warn,  "Ctrl Unit I/O 2 Warning", $(PORT_P)_inw01,     26,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{  CtlIO3Warn,  "Ctrl Unit I/O 3 Warning", $(PORT_P)_inw01,     27,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{Comm_WE1Warn,      "Comm Wire 1 Warning", $(PORT_P)_inw01,     89,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{Comm_WE2Warn,      "Comm Wire 2 Warning", $(PORT_P)_inw01,     90,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{FPGA_RE1Warn,  "FPGA Response 1 Warning", $(PORT_P)_inw01,     93,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{FPGA_RE2Warn,  "FPGA Response 2 Warning", $(PORT_P)_inw01,     94,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{DrvrHiADWarn,    "Driver Hi A/D Warning", $(PORT_P)_inw02,      8,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{DrvrLoADWarn,    "Driver Lo A/D Warning", $(PORT_P)_inw02,     18,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{DrvrIO1Intlk,   "Driver I/O 1 Interlock", $(PORT_P)_inw02,     22,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{ DrvrIO1Warn,     "Driver I/O 1 Warning", $(PORT_P)_inw02,     25,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{ DrvrIO2Warn,     "Driver I/O 1 Warning", $(PORT_P)_inw02,     26,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{HeatSinkThm1,        "Heat Sink 1 Fault", $(PORT_P)_inw40,     34,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{HeatSinkThm2,        "Heat Sink 2 Fault", $(PORT_P)_inw40,     35,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{  CalYearRBV,        "Cal Year Readback", $(PORT_P)_inw00,     15,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{ CalMonthRBV,       "Cal Month Readback", $(PORT_P)_inw00,     16,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{   CalDayRBV,         "Cal Day Readback", $(PORT_P)_inw00,     17,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{  CalHourRBV,        "Cal Hour Readback", $(PORT_P)_inw00,     18,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{   CalMinRBV,      "Cal Minute Readback", $(PORT_P)_inw00,     19,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{   CalSecRBV,      "Cal Second Readback", $(PORT_P)_inw00,     20,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
 }
 
 # Unsigned integer inputs converted to floats, modbus function code 3.
 # Uses a polynomial for conversion.
 file "ai_polyConvert_autosave.template" {
 pattern
-{               R,                     DESC,       PORT, OFFSET,      C0,      C1,      C2, PREC, LOLO,    LOW,   HIGH,   HIHI,     LLSV,      LSV,      HSV,     HHSV,     EGU}
-{          DrvPwr,          "Drive Pwr RBV", $(P)_inw01,      2,  -50.57, 0.04762,     0.0,    1,   "",  -10.0,   15.0,   20.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "dBm"}
-{          FwdPwr,          "Forward Power", $(P)_inw01,      3, -1988.3,  2.0953, 0.01198,    1,   "",     "",     45,     50, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "W"}
-{          RefPwr,        "Reflected Power", $(P)_inw01,      4,  3333.2, -4.0553, 0.01493,    1,   "",     "",      8,     10, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "W"}
+{               R,                     DESC,            PORT, OFFSET,      C0,      C1,      C2, PREC, LOLO,    LOW,   HIGH,   HIHI,     LLSV,      LSV,      HSV,     HHSV,     EGU}
+{          DrvPwr,          "Drive Pwr RBV", $(PORT_P)_inw01,      2,  -50.57, 0.04762,     0.0,    1,   "",  -10.0,   15.0,   20.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "dBm"}
+{          FwdPwr,          "Forward Power", $(PORT_P)_inw01,      3, -1988.3,  2.0953, 0.01198,    1,   "",     "",     45,     50, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "W"}
+{          RefPwr,        "Reflected Power", $(PORT_P)_inw01,      4,  3333.2, -4.0553, 0.01493,    1,   "",     "",      8,     10, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "W"}
 }
 
 # Unsigned integer inputs converted to floats, modbus function code 3.
 file "ai_slope.template" {
 pattern
-{               R,                     DESC,       PORT, OFFSET,   AOFF,    ASLO, PREC,   LOLO,    LOW,   HIGH,   HIHI,     LLSV,      LSV,      HSV,     HHSV,     EGU,       SCAN}
-{       PSVoltRBV,     "Output Voltage RBV", $(P)_inw00,     34,    0.0,     0.1,    1,     "",     "",   44.8,   45.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "V", "I/O Intr"}
-{   FwdPwrAlLmRBV,  "Fwd Pwr Alarm Lim RBV", $(P)_inw00,     35,    0.0,    0.01,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,    "kW", "I/O Intr"}
-{   RefPwrAlLmRBV,  "Ref Pwr Alarm Lim RBV", $(P)_inw00,     36,    0.0,    0.01,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,    "kW", "I/O Intr"}
-{ LCWOutTempLmRBV,   "LCW Out Temp Lim RBV", $(P)_inw00,     37,    0.0,     0.1,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,  "degC", "I/O Intr"}
-{LCWFlowRateLmRBV,  "LCW Flow Rate Lim RBV", $(P)_inw00,     38,    0.0,     0.1,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM, "L/min", "I/O Intr"}
-{      480VAC1_UV,        "480 VAC U-V RBV", $(P)_inw00,     99,   -842,   0.448,    0,    432,    450,    500,    528,    MAJOR,    MINOR,    MINOR,    MAJOR,   "VAC", "I/O Intr"}
-{      480VAC2_VW,        "480 VAC V-W RBV", $(P)_inw01,      0,   -842,   0.448,    0,    432,    450,    500,    528,    MAJOR,    MINOR,    MINOR,    MAJOR,   "VAC", "I/O Intr"}
-{      480VAC3_UW,        "480 VAC U-W RBV", $(P)_inw01,      1,   -842,   0.448,    0,    432,    450,    500,    528,    MAJOR,    MINOR,    MINOR,    MAJOR,   "VAC", "I/O Intr"}
-{        Humidity,               "Humidity", $(P)_inw01,      5,    0.0,   0.132,    1,   10.0,   15.0,   80.0,   85.0,    MAJOR,    MINOR,    MINOR,    MAJOR,     "%", "I/O Intr"}
-{     LCWFlowRate,          "LCW Flow Rate", $(P)_inw01,      6,    0.0,  0.0564,    1,   65.0,   60.0,     "",     "",    MAJOR,    MINOR, NO_ALARM, NO_ALARM, "L/min", "I/O Intr"}
-{      SysAirTemp,           "Sys Air Temp", $(P)_inw01,      9, -39.24,  0.0392,    1,     "",     "",   45.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
-{       LCWInTemp,         "LCW Inlet Temp", $(P)_inw01,     10, -39.24,  0.0392,    1,     "",   22.0,   32.0,   34.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,  "degC", "I/O Intr"}
-{      LCWOutTemp,        "LCW Outlet Temp", $(P)_inw01,     11, -39.24,  0.0392,    1,     "",     "",   43.0,   45.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
-{         HX1Temp,         "Heat Ex 1 Temp", $(P)_inw01,     12, -39.24,  0.0392,    1,     "",     "",   45.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
-{         HX2Temp,         "Heat Ex 2 Temp", $(P)_inw01,     13, -39.24,  0.0392,    1,     "",     "",   45.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
-{     CtrlAirTemp,     "Ctrl Unit Air Temp", $(P)_inw01,     14, -39.24,  0.0392,    1,     "",     "",   45.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
-{     RadCombTemp,          "Rad Comb Temp", $(P)_inw01,     15, -39.24,  0.0392,    1,     "",     "",   65.0,   70.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
-{      HX1Fan1Spd,    "Heat Ex 1 Fan 1 Spd", $(P)_inw01,     30,    0.0,     4.0,    1,     "",   5980,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
-{      HX1Fan2Spd,    "Heat Ex 1 Fan 2 Spd", $(P)_inw01,     31,    0.0,     4.0,    1,     "",   5980,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
-{      HX1Fan3Spd,    "Heat Ex 1 Fan 3 Spd", $(P)_inw01,     32,    0.0,     4.0,    1,     "",   5980,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
-{      HX1Fan4Spd,    "Heat Ex 1 Fan 4 Spd", $(P)_inw01,     33,    0.0,     4.0,    1,     "",   5980,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
-{      HX1Fan5Spd,    "Heat Ex 1 Fan 5 Spd", $(P)_inw01,     34,    0.0,     4.0,    1,     "",   5980,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
-{      HX1Fan6Spd,    "Heat Ex 1 Fan 6 Spd", $(P)_inw01,     35,    0.0,     4.0,    1,     "",   5980,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
-{      HX1Fan7Spd,    "Heat Ex 1 Fan 7 Spd", $(P)_inw01,     36,    0.0,     4.0,    1,     "",   5980,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
-{      HX1Fan8Spd,    "Heat Ex 1 Fan 8 Spd", $(P)_inw01,     37,    0.0,     4.0,    1,     "",   5980,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
-{      HX2Fan1Spd,    "Heat Ex 2 Fan 1 Spd", $(P)_inw01,     38,    0.0,     4.0,    1,     "",   5980,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
-{      HX2Fan2Spd,    "Heat Ex 2 Fan 2 Spd", $(P)_inw01,     39,    0.0,     4.0,    1,     "",   5980,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
-{      HX2Fan3Spd,    "Heat Ex 2 Fan 3 Spd", $(P)_inw01,     40,    0.0,     4.0,    1,     "",   5980,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
-{      HX2Fan4Spd,    "Heat Ex 2 Fan 4 Spd", $(P)_inw01,     41,    0.0,     4.0,    1,     "",   5980,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
-{      HX2Fan5Spd,    "Heat Ex 2 Fan 5 Spd", $(P)_inw01,     42,    0.0,     4.0,    1,     "",   5980,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
-{      HX2Fan6Spd,    "Heat Ex 2 Fan 6 Spd", $(P)_inw01,     43,    0.0,     4.0,    1,     "",   5980,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
-{      HX2Fan7Spd,    "Heat Ex 2 Fan 7 Spd", $(P)_inw01,     44,    0.0,     4.0,    1,     "",   5980,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
-{      HX2Fan8Spd,    "Heat Ex 2 Fan 8 Spd", $(P)_inw01,     45,    0.0,     4.0,    1,     "",   5980,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
-{     CtrlFan1Spd,    "Ctrl Unit Fan 1 Spd", $(P)_inw01,     46,    0.0,     4.0,    1,     "",   5304,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
-{     CtrlFan2Spd,    "Ctrl Unit Fan 2 Spd", $(P)_inw01,     47,    0.0,     4.0,    1,     "",   5304,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
-{   DrvrDev1Drn_I, "Device 1 Drain Current", $(P)_inw02,      1,    0.0, 0.00106,    1,     "",     "",    1.8,    2.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
-{   DrvrDev2Drn_I, "Device 2 Drain Current", $(P)_inw02,      2,    0.0, 0.00106,    1,     "",     "",    1.3,    1.5, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
-{       DrvrPS1_I,    "PS 1 DC Out Current", $(P)_inw02,      3,    0.0, 0.00106,    1,     "",     "",    2.0,    2.2, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
-{       DrvrPS2_I,    "PS 2 DC Out Current", $(P)_inw02,      4,    0.0, 0.00106,    1,     "",     "",    1.8,    2.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
-{   DrvrGainDrn_V, "Gain Amp Drain Voltage", $(P)_inw02,      9,    0.0, 0.00568,    1,     "",   10.0,   13.5,   14.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
-{       DrvrDrn_V, "Drvr Amp Drain Voltage", $(P)_inw02,     10,    0.0, 0.01719,    1,     "",   43.0,   45.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
-{       DrvrPS1_V,    "PS 1 DC Out Voltage", $(P)_inw02,     11,    0.0, 0.00568,    1,     "",   10.0,   13.5,   14.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
-{       DrvrPS2_V,    "PS 2 DC Out Voltage", $(P)_inw02,     12,    0.0, 0.01719,    1,     "",   43.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
-{   DrvrLCWHSTemp,     "LCW Heat Sink Temp", $(P)_inw02,     14, -39.24,  0.0392,    1,     "",     "",   50.0,   52.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
-{     DrvrAirTemp,        "Driver Air Temp", $(P)_inw02,     15, -39.24,  0.0392,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
-{  DrvrTx1Fan1Spd,      "Trfmr 1 Fan 1 Spd", $(P)_inw02,     37,    0.0,     4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
-{  DrvrTx1Fan2Spd,      "Trfmr 1 Fan 2 Spd", $(P)_inw02,     38,    0.0,     4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
-{      DrvrFanSpd,         "Driver Fan Spd", $(P)_inw02,     39,    0.0,     4.0,    1,     "",   5304,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
-{          PLCVer,            "PLC Version", $(P)_inw01,     96,  -11.8,     0.1,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
-{          TFTVer,            "TFT Version", $(P)_inw01,     97,  -11.8,     0.1,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
-{     CtrlFPGAVer, "Ctrl Unit FPGA Version", $(P)_inw01,     98,  -11.8,     0.1,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
-{     DrvrFPGAVer,    "Driver FPGA Version", $(P)_inw02,     98,  -11.8,     0.1,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{               R,                     DESC,            PORT, OFFSET,   AOFF,    ASLO, PREC,   LOLO,    LOW,   HIGH,   HIHI,     LLSV,      LSV,      HSV,     HHSV,     EGU,       SCAN}
+{       PSVoltRBV,     "Output Voltage RBV", $(PORT_P)_inw00,     34,    0.0,     0.1,    1,     "",     "",   44.8,   45.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "V", "I/O Intr"}
+{   FwdPwrAlLmRBV,  "Fwd Pwr Alarm Lim RBV", $(PORT_P)_inw00,     35,    0.0,    0.01,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,    "kW", "I/O Intr"}
+{   RefPwrAlLmRBV,  "Ref Pwr Alarm Lim RBV", $(PORT_P)_inw00,     36,    0.0,    0.01,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,    "kW", "I/O Intr"}
+{ LCWOutTempLmRBV,   "LCW Out Temp Lim RBV", $(PORT_P)_inw00,     37,    0.0,     0.1,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,  "degC", "I/O Intr"}
+{LCWFlowRateLmRBV,  "LCW Flow Rate Lim RBV", $(PORT_P)_inw00,     38,    0.0,     0.1,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM, "L/min", "I/O Intr"}
+{      480VAC1_UV,        "480 VAC U-V RBV", $(PORT_P)_inw00,     99,   -842,   0.448,    0,    432,    450,    500,    528,    MAJOR,    MINOR,    MINOR,    MAJOR,   "VAC", "I/O Intr"}
+{      480VAC2_VW,        "480 VAC V-W RBV", $(PORT_P)_inw01,      0,   -842,   0.448,    0,    432,    450,    500,    528,    MAJOR,    MINOR,    MINOR,    MAJOR,   "VAC", "I/O Intr"}
+{      480VAC3_UW,        "480 VAC U-W RBV", $(PORT_P)_inw01,      1,   -842,   0.448,    0,    432,    450,    500,    528,    MAJOR,    MINOR,    MINOR,    MAJOR,   "VAC", "I/O Intr"}
+{        Humidity,               "Humidity", $(PORT_P)_inw01,      5,    0.0,   0.132,    1,   10.0,   15.0,   80.0,   85.0,    MAJOR,    MINOR,    MINOR,    MAJOR,     "%", "I/O Intr"}
+{     LCWFlowRate,          "LCW Flow Rate", $(PORT_P)_inw01,      6,    0.0,  0.0564,    1,   65.0,   60.0,     "",     "",    MAJOR,    MINOR, NO_ALARM, NO_ALARM, "L/min", "I/O Intr"}
+{      SysAirTemp,           "Sys Air Temp", $(PORT_P)_inw01,      9, -39.24,  0.0392,    1,     "",     "",   45.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{       LCWInTemp,         "LCW Inlet Temp", $(PORT_P)_inw01,     10, -39.24,  0.0392,    1,     "",   22.0,   32.0,   34.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{      LCWOutTemp,        "LCW Outlet Temp", $(PORT_P)_inw01,     11, -39.24,  0.0392,    1,     "",     "",   43.0,   45.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{         HX1Temp,         "Heat Ex 1 Temp", $(PORT_P)_inw01,     12, -39.24,  0.0392,    1,     "",     "",   45.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{         HX2Temp,         "Heat Ex 2 Temp", $(PORT_P)_inw01,     13, -39.24,  0.0392,    1,     "",     "",   45.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{     CtrlAirTemp,     "Ctrl Unit Air Temp", $(PORT_P)_inw01,     14, -39.24,  0.0392,    1,     "",     "",   45.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{     RadCombTemp,          "Rad Comb Temp", $(PORT_P)_inw01,     15, -39.24,  0.0392,    1,     "",     "",   65.0,   70.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{      HX1Fan1Spd,    "Heat Ex 1 Fan 1 Spd", $(PORT_P)_inw01,     30,    0.0,     4.0,    1,     "",   5980,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{      HX1Fan2Spd,    "Heat Ex 1 Fan 2 Spd", $(PORT_P)_inw01,     31,    0.0,     4.0,    1,     "",   5980,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{      HX1Fan3Spd,    "Heat Ex 1 Fan 3 Spd", $(PORT_P)_inw01,     32,    0.0,     4.0,    1,     "",   5980,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{      HX1Fan4Spd,    "Heat Ex 1 Fan 4 Spd", $(PORT_P)_inw01,     33,    0.0,     4.0,    1,     "",   5980,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{      HX1Fan5Spd,    "Heat Ex 1 Fan 5 Spd", $(PORT_P)_inw01,     34,    0.0,     4.0,    1,     "",   5980,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{      HX1Fan6Spd,    "Heat Ex 1 Fan 6 Spd", $(PORT_P)_inw01,     35,    0.0,     4.0,    1,     "",   5980,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{      HX1Fan7Spd,    "Heat Ex 1 Fan 7 Spd", $(PORT_P)_inw01,     36,    0.0,     4.0,    1,     "",   5980,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{      HX1Fan8Spd,    "Heat Ex 1 Fan 8 Spd", $(PORT_P)_inw01,     37,    0.0,     4.0,    1,     "",   5980,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{      HX2Fan1Spd,    "Heat Ex 2 Fan 1 Spd", $(PORT_P)_inw01,     38,    0.0,     4.0,    1,     "",   5980,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{      HX2Fan2Spd,    "Heat Ex 2 Fan 2 Spd", $(PORT_P)_inw01,     39,    0.0,     4.0,    1,     "",   5980,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{      HX2Fan3Spd,    "Heat Ex 2 Fan 3 Spd", $(PORT_P)_inw01,     40,    0.0,     4.0,    1,     "",   5980,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{      HX2Fan4Spd,    "Heat Ex 2 Fan 4 Spd", $(PORT_P)_inw01,     41,    0.0,     4.0,    1,     "",   5980,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{      HX2Fan5Spd,    "Heat Ex 2 Fan 5 Spd", $(PORT_P)_inw01,     42,    0.0,     4.0,    1,     "",   5980,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{      HX2Fan6Spd,    "Heat Ex 2 Fan 6 Spd", $(PORT_P)_inw01,     43,    0.0,     4.0,    1,     "",   5980,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{      HX2Fan7Spd,    "Heat Ex 2 Fan 7 Spd", $(PORT_P)_inw01,     44,    0.0,     4.0,    1,     "",   5980,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{      HX2Fan8Spd,    "Heat Ex 2 Fan 8 Spd", $(PORT_P)_inw01,     45,    0.0,     4.0,    1,     "",   5980,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{     CtrlFan1Spd,    "Ctrl Unit Fan 1 Spd", $(PORT_P)_inw01,     46,    0.0,     4.0,    1,     "",   5304,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{     CtrlFan2Spd,    "Ctrl Unit Fan 2 Spd", $(PORT_P)_inw01,     47,    0.0,     4.0,    1,     "",   5304,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{   DrvrDev1Drn_I, "Device 1 Drain Current", $(PORT_P)_inw02,      1,    0.0, 0.00106,    1,     "",     "",    1.8,    2.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{   DrvrDev2Drn_I, "Device 2 Drain Current", $(PORT_P)_inw02,      2,    0.0, 0.00106,    1,     "",     "",    1.3,    1.5, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{       DrvrPS1_I,    "PS 1 DC Out Current", $(PORT_P)_inw02,      3,    0.0, 0.00106,    1,     "",     "",    2.0,    2.2, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{       DrvrPS2_I,    "PS 2 DC Out Current", $(PORT_P)_inw02,      4,    0.0, 0.00106,    1,     "",     "",    1.8,    2.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
+{   DrvrGainDrn_V, "Gain Amp Drain Voltage", $(PORT_P)_inw02,      9,    0.0, 0.00568,    1,     "",   10.0,   13.5,   14.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{       DrvrDrn_V, "Drvr Amp Drain Voltage", $(PORT_P)_inw02,     10,    0.0, 0.01719,    1,     "",   43.0,   45.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{       DrvrPS1_V,    "PS 1 DC Out Voltage", $(PORT_P)_inw02,     11,    0.0, 0.00568,    1,     "",   10.0,   13.5,   14.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{       DrvrPS2_V,    "PS 2 DC Out Voltage", $(PORT_P)_inw02,     12,    0.0, 0.01719,    1,     "",   43.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{   DrvrLCWHSTemp,     "LCW Heat Sink Temp", $(PORT_P)_inw02,     14, -39.24,  0.0392,    1,     "",     "",   50.0,   52.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{     DrvrAirTemp,        "Driver Air Temp", $(PORT_P)_inw02,     15, -39.24,  0.0392,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
+{  DrvrTx1Fan1Spd,      "Trfmr 1 Fan 1 Spd", $(PORT_P)_inw02,     37,    0.0,     4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{  DrvrTx1Fan2Spd,      "Trfmr 1 Fan 2 Spd", $(PORT_P)_inw02,     38,    0.0,     4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{      DrvrFanSpd,         "Driver Fan Spd", $(PORT_P)_inw02,     39,    0.0,     4.0,    1,     "",   5304,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
+{          PLCVer,            "PLC Version", $(PORT_P)_inw01,     96,  -11.8,     0.1,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{          TFTVer,            "TFT Version", $(PORT_P)_inw01,     97,  -11.8,     0.1,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     CtrlFPGAVer, "Ctrl Unit FPGA Version", $(PORT_P)_inw01,     98,  -11.8,     0.1,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{     DrvrFPGAVer,    "Driver FPGA Version", $(PORT_P)_inw02,     98,  -11.8,     0.1,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
 }
 
 #------------------------------------------------------------------------------------------
 file "asynRecord.template" { 
 pattern
-{           R,       PORT, ADDR, TMOD,             IFACE}
-{  RfIn1WAsyn, $(P)_inw00,    0, Read, asynUInt32Digital}
+{           R,            PORT, ADDR, TMOD,             IFACE}
+{  RfIn1WAsyn, $(PORT_P)_inw00,    0, Read, asynUInt32Digital}
 }
 file "statistics.template" {
 pattern
-{           R,       PORT,         SCAN}
-{      RFIn1W, $(P)_inw00,  "10 second"}
+{           R,            PORT,         SCAN}
+{      RFIn1W, $(PORT_P)_inw00,  "10 second"}
 } 
 file "poll_delay.template" {
 pattern
-{           R,       PORT}
-{RFIn1WPDelay, $(P)_inw00}
+{           R,            PORT}
+{RFIn1WPDelay, $(PORT_P)_inw00}
 }
 
 #------------------------------------------------------------------------------------------
