@@ -8,6 +8,11 @@
 #
 #--------------------------------------------------------------
 
+R1.1.2: 16-Dec-2020  M. Dunning (mdunning)
+    Use new iocsh fornmat for gun SSAs
+    Move buncher SSAs to separate IOC
+    Switch b15 ssa3 to CA186
+
 R1.1.1: 11-Dec-2020  M. Dunning (mdunning)
     Fix calendar address offset for CA1300 4.6kW
     Switch b15 ssa1 to 7 kW
