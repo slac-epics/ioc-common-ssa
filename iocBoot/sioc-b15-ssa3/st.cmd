@@ -12,7 +12,7 @@ epicsEnvSet("IOC_NAME", "SIOC:B15:SSA3")
 #
 # SSA1: SSA3:B15
 # Gun SSA (CA186)
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA186.iocsh", "PORT=SSA3, P=SSA3:B15:, IP=ssa-b15-rf0130")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA186.iocsh", "PORT=SSA3,P=SSA3:B15:,IP=ssa-b15-rf0130,POLLTIME=50")
 
 
 iocInit()
