@@ -1,0 +1,334 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 347
+y 199
+w 660
+h 324
+font "helvetica-medium-r-12.0"
+ctlFont "helvetica-medium-r-12.0"
+btnFont "helvetica-medium-r-12.0"
+fgColor index 8
+bgColor index 3
+textColor index 14
+ctlFgColor1 index 14
+ctlFgColor2 index 14
+ctlBgColor1 index 51
+ctlBgColor2 index 8
+topShadowColor index 50
+botShadowColor index 10
+showGrid
+snapToGrid
+gridSize 4
+endScreenProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 0
+y 0
+w 1296
+h 68
+lineColor index 13
+fill
+fillColor index 63
+endObjectProperties
+
+# (Exit Button)
+object activeExitButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 592
+y 8
+w 60
+h 32
+fgColor index 14
+bgColor index 4
+topShadowColor index 1
+botShadowColor index 13
+label "EXIT"
+font "helvetica-bold-r-18.0"
+3d
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 12
+y 8
+w 364
+h 24
+font "helvetica-bold-r-18.0"
+fgColor index 13
+bgColor index 2
+useDisplayBg
+value {
+  "LCLS-II Gun SSA - Faults More"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 20
+y 36
+w 260
+h 24
+font "helvetica-bold-r-14.0"
+fgColor index 29
+bgColor index 2
+useDisplayBg
+value {
+  "$(P)"
+}
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 348
+y 100
+w 258
+h 192
+
+beginGroup
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 428
+y 188
+w 88
+h 20
+controlPv "$(P):HeatSinkThm2"
+format "hex"
+font "helvetica-medium-r-12.0"
+fgColor index 15
+fgAlarm
+bgColor index 14
+limitsFromDb
+nullColor index 14
+smartRefresh
+fastUpdate
+useHexPrefix
+useAlarmBorder
+newPos
+objType "controls"
+endObjectProperties
+
+# (Byte)
+object ByteClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 524
+y 100
+w 12
+h 192
+controlPv "$(P):HeatSinkThm2"
+lineColor index 8
+onColor index 15
+offColor index 20
+endian "little"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 540
+y 100
+w 66
+h 192
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+useDisplayBg
+value {
+  "SSA mod - 15"
+  "SSA mod - 16"
+  "SSA mod - 17"
+  "SSA mod - 18"
+  "SSA mod - 19"
+  "SSA mod - 20"
+  "SSA mod - 21"
+  "SSA mod - 22"
+  "SSA mod - 23"
+  "SSA mod - 24"
+  "SSA mod - 25"
+  "SSA mod - 26"
+  "SSA mod - 27"
+  "SSA mod - 28"
+  "SSA mod - 29"
+  "SSA mod - 30"
+}
+autoSize
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 348
+y 168
+w 168
+h 16
+controlPv "$(P):HeatSinkThm2.DESC"
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 51
+useDisplayBg
+limitsFromDb
+nullColor index 14
+useHexPrefix
+newPos
+objType "monitors"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 16
+y 100
+w 275
+h 192
+
+beginGroup
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 96
+y 188
+w 88
+h 20
+controlPv "$(P):HeatSinkThm1"
+format "hex"
+font "helvetica-medium-r-12.0"
+fgColor index 15
+fgAlarm
+bgColor index 14
+limitsFromDb
+nullColor index 14
+smartRefresh
+fastUpdate
+useHexPrefix
+useAlarmBorder
+newPos
+objType "controls"
+endObjectProperties
+
+# (Byte)
+object ByteClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 192
+y 100
+w 12
+h 192
+controlPv "$(P):HeatSinkThm1"
+lineColor index 8
+onColor index 15
+offColor index 20
+endian "little"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 208
+y 100
+w 83
+h 192
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+useDisplayBg
+value {
+  "SSA mod - Driver"
+  "SSA mod - 00"
+  "SSA mod - 01"
+  "SSA mod - 02"
+  "SSA mod - 03"
+  "SSA mod - 04"
+  "SSA mod - 05"
+  "SSA mod - 06"
+  "SSA mod - 07"
+  "SSA mod - 08"
+  "SSA mod - 09"
+  "SSA mod - 10"
+  "SSA mod - 11"
+  "SSA mod - 12"
+  "SSA mod - 13"
+  "SSA mod - 14"
+}
+autoSize
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 16
+y 168
+w 168
+h 16
+controlPv "$(P):HeatSinkThm1.DESC"
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 51
+useDisplayBg
+limitsFromDb
+nullColor index 14
+useHexPrefix
+newPos
+objType "monitors"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+

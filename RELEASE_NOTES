@@ -8,6 +8,10 @@
 #
 #--------------------------------------------------------------
 
+R1.1.3: xx-xxx-xxxx  M. Dunning (mdunning)
+    Add op directory for displays
+    Clean up documentation
+
 R1.1.2: 16-Dec-2020  M. Dunning (mdunning)
     Use new iocsh fornmat for gun SSAs
     Move buncher SSAs to separate IOC
