@@ -22,8 +22,8 @@ str_io1w = '{{    M{0:02d}_IO1Warn,          "I/O 1 Warning", $(PORT_P)_inw{1:02
 str_io2w = '{{    M{0:02d}_IO2Warn,          "I/O 2 Warning", $(PORT_P)_inw{1:02d},     {2:2d},     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,    "", "I/O Intr"}}'
 
 # ai
-str_pout = '{{     M{0:02d}_FwdPwr,          "Forward Power", $(PORT_P)_inw{1:02d},     {2:2d},     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}}'
-str_pref = '{{     M{0:02d}_RefPwr,        "Reflected Power", $(PORT_P)_inw{1:02d},     {2:2d},     0.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}}'
+str_pout = '{{     M{0:02d}_FwdPwr,          "Forward Power", $(PORT_P)_inw{1:02d},     {2:2d},  -120.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,     "W", "I/O Intr"}}'
+str_pref = '{{     M{0:02d}_RefPwr,        "Reflected Power", $(PORT_P)_inw{1:02d},     {2:2d},  -120.0,    1.0,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,     "W", "I/O Intr"}}'
 str_d1dc = '{{  M{0:02d}_Dev1Drn_I, "Device 1 Drain Current", $(PORT_P)_inw{1:02d},     {2:2d},     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}}'
 str_d2dc = '{{  M{0:02d}_Dev2Drn_I, "Device 1 Drain Current", $(PORT_P)_inw{1:02d},     {2:2d},     0.0, 0.0162,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}}'
 str_ps1c = '{{      M{0:02d}_PS1_I,  "PS1 DC Output Current", $(PORT_P)_inw{1:02d},     {2:2d},     0.0, 0.0162,    1,     "",     "",   42.0,   44.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}}'

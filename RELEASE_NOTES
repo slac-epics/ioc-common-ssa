@@ -8,7 +8,8 @@
 #
 #--------------------------------------------------------------
 
-R1.1.3: xx-xxx-xxxx  M. Dunning (mdunning)
+R1.1.3: 21-Apr-2021  M. Dunning (mdunning)
+    Add offset and units for CA186 FWD and REF module power records
     Add op directory for displays
     Clean up documentation
 
