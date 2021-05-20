@@ -1,45 +1,43 @@
 # Archive list for sioc-l2b-ssa01
 
-## Leave commented out for initial checkouts.  Uncomment when ready.
+file  ssa_CA1300.tpl-arch {
+pattern {P                }
+        {ACCL:L2B:0410:SSA}
+        {ACCL:L2B:0420:SSA}
+        {ACCL:L2B:0430:SSA}
+        {ACCL:L2B:0440:SSA}
+        {ACCL:L2B:0450:SSA}
+        {ACCL:L2B:0460:SSA}
+        {ACCL:L2B:0470:SSA}
+        {ACCL:L2B:0480:SSA}
+        {ACCL:L2B:0510:SSA}
+        {ACCL:L2B:0520:SSA}
+        {ACCL:L2B:0530:SSA}
+        {ACCL:L2B:0540:SSA}
+        {ACCL:L2B:0550:SSA}
+        {ACCL:L2B:0560:SSA}
+        {ACCL:L2B:0570:SSA}
+        {ACCL:L2B:0580:SSA}
+        {ACCL:L2B:0610:SSA}
+        {ACCL:L2B:0620:SSA}
+        {ACCL:L2B:0630:SSA}
+        {ACCL:L2B:0640:SSA}
+        {ACCL:L2B:0650:SSA}
+        {ACCL:L2B:0660:SSA}
+        {ACCL:L2B:0670:SSA}
+        {ACCL:L2B:0680:SSA}
+        {ACCL:L2B:0710:SSA}
+        {ACCL:L2B:0720:SSA}
+        {ACCL:L2B:0730:SSA}
+        {ACCL:L2B:0740:SSA}
+        {ACCL:L2B:0750:SSA}
+        {ACCL:L2B:0760:SSA}
+        {ACCL:L2B:0770:SSA}
+        {ACCL:L2B:0780:SSA}
+}
 
-#file  ssa_CA1300.tpl-arch {
-#pattern {P                }
-#        {ACCL:L2B:0410:SSA}
-#        {ACCL:L2B:0420:SSA}
-#        {ACCL:L2B:0430:SSA}
-#        {ACCL:L2B:0440:SSA}
-#        {ACCL:L2B:0450:SSA}
-#        {ACCL:L2B:0460:SSA}
-#        {ACCL:L2B:0470:SSA}
-#        {ACCL:L2B:0480:SSA}
-#        {ACCL:L2B:0510:SSA}
-#        {ACCL:L2B:0520:SSA}
-#        {ACCL:L2B:0530:SSA}
-#        {ACCL:L2B:0540:SSA}
-#        {ACCL:L2B:0550:SSA}
-#        {ACCL:L2B:0560:SSA}
-#        {ACCL:L2B:0570:SSA}
-#        {ACCL:L2B:0580:SSA}
-#        {ACCL:L2B:0610:SSA}
-#        {ACCL:L2B:0620:SSA}
-#        {ACCL:L2B:0630:SSA}
-#        {ACCL:L2B:0640:SSA}
-#        {ACCL:L2B:0650:SSA}
-#        {ACCL:L2B:0660:SSA}
-#        {ACCL:L2B:0670:SSA}
-#        {ACCL:L2B:0680:SSA}
-#        {ACCL:L2B:0710:SSA}
-#        {ACCL:L2B:0720:SSA}
-#        {ACCL:L2B:0730:SSA}
-#        {ACCL:L2B:0740:SSA}
-#        {ACCL:L2B:0750:SSA}
-#        {ACCL:L2B:0760:SSA}
-#        {ACCL:L2B:0770:SSA}
-#        {ACCL:L2B:0780:SSA}
-#}
-#
-#file archive_iocAdmin.archive {
-#pattern {IOC           }
-#        {SIOC:L2B:SSA01}
-#}
+file archive_iocAdmin.archive {
+pattern {IOC           }
+        {SIOC:L2B:SSA01}
+}
 

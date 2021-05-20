@@ -1,38 +1,36 @@
 # Archive list for sioc-l1b-ssa01
 
-## Leave commented out for initial checkouts.  Uncomment when ready.
+file  ssa_CA1300.tpl-arch {
+pattern {P                }
+        {ACCL:L1B:0210:SSA}
+        {ACCL:L1B:0220:SSA}
+        {ACCL:L1B:0230:SSA}
+        {ACCL:L1B:0240:SSA}
+        {ACCL:L1B:0250:SSA}
+        {ACCL:L1B:0260:SSA}
+        {ACCL:L1B:0270:SSA}
+        {ACCL:L1B:0280:SSA}
+        {ACCL:L1B:0310:SSA}
+        {ACCL:L1B:0320:SSA}
+        {ACCL:L1B:0330:SSA}
+        {ACCL:L1B:0340:SSA}
+        {ACCL:L1B:0350:SSA}
+        {ACCL:L1B:0360:SSA}
+        {ACCL:L1B:0370:SSA}
+        {ACCL:L1B:0380:SSA}
+        {ACCL:L1B:H110:SSA}
+        {ACCL:L1B:H120:SSA}
+        {ACCL:L1B:H130:SSA}
+        {ACCL:L1B:H140:SSA}
+        {ACCL:L1B:H210:SSA}
+        {ACCL:L1B:H220:SSA}
+        {ACCL:L1B:H230:SSA}
+        {ACCL:L1B:H240:SSA}
 
-#file  ssa_CA1300.tpl-arch {
-#pattern {P                }
-#        {ACCL:L1B:0210:SSA}
-#        {ACCL:L1B:0220:SSA}
-#        {ACCL:L1B:0230:SSA}
-#        {ACCL:L1B:0240:SSA}
-#        {ACCL:L1B:0250:SSA}
-#        {ACCL:L1B:0260:SSA}
-#        {ACCL:L1B:0270:SSA}
-#        {ACCL:L1B:0280:SSA}
-#        {ACCL:L1B:0310:SSA}
-#        {ACCL:L1B:0320:SSA}
-#        {ACCL:L1B:0330:SSA}
-#        {ACCL:L1B:0340:SSA}
-#        {ACCL:L1B:0350:SSA}
-#        {ACCL:L1B:0360:SSA}
-#        {ACCL:L1B:0370:SSA}
-#        {ACCL:L1B:0380:SSA}
-#        {ACCL:L1B:H110:SSA}
-#        {ACCL:L1B:H120:SSA}
-#        {ACCL:L1B:H130:SSA}
-#        {ACCL:L1B:H140:SSA}
-#        {ACCL:L1B:H210:SSA}
-#        {ACCL:L1B:H220:SSA}
-#        {ACCL:L1B:H230:SSA}
-#        {ACCL:L1B:H240:SSA}
+}
 
-#}
-#
-#file archive_iocAdmin.archive {
-#pattern {IOC           }
-#        {SIOC:L1B:SSA01}
-#}
+file archive_iocAdmin.archive {
+pattern {IOC           }
+        {SIOC:L1B:SSA01}
+}
 

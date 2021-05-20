@@ -1,45 +1,43 @@
 # Archive list for sioc-l3b-ssa03
 
-## Leave commented out for initial checkouts.  Uncomment when ready.
+file  ssa_CA1300.tpl-arch {
+pattern {P                }
+        {ACCL:L3B:2410:SSA}
+        {ACCL:L3B:2420:SSA}
+        {ACCL:L3B:2430:SSA}
+        {ACCL:L3B:2440:SSA}
+        {ACCL:L3B:2450:SSA}
+        {ACCL:L3B:2460:SSA}
+        {ACCL:L3B:2470:SSA}
+        {ACCL:L3B:2480:SSA}
+        {ACCL:L3B:2510:SSA}
+        {ACCL:L3B:2520:SSA}
+        {ACCL:L3B:2530:SSA}
+        {ACCL:L3B:2540:SSA}
+        {ACCL:L3B:2550:SSA}
+        {ACCL:L3B:2560:SSA}
+        {ACCL:L3B:2570:SSA}
+        {ACCL:L3B:2580:SSA}
+        {ACCL:L3B:2610:SSA}
+        {ACCL:L3B:2620:SSA}
+        {ACCL:L3B:2630:SSA}
+        {ACCL:L3B:2640:SSA}
+        {ACCL:L3B:2650:SSA}
+        {ACCL:L3B:2660:SSA}
+        {ACCL:L3B:2670:SSA}
+        {ACCL:L3B:2680:SSA}
+        {ACCL:L3B:2710:SSA}
+        {ACCL:L3B:2720:SSA}
+        {ACCL:L3B:2730:SSA}
+        {ACCL:L3B:2740:SSA}
+        {ACCL:L3B:2750:SSA}
+        {ACCL:L3B:2760:SSA}
+        {ACCL:L3B:2770:SSA}
+        {ACCL:L3B:2780:SSA}
+}
 
-#file  ssa_CA1300.tpl-arch {
-#pattern {P                }
-#        {ACCL:L3B:2410:SSA}
-#        {ACCL:L3B:2420:SSA}
-#        {ACCL:L3B:2430:SSA}
-#        {ACCL:L3B:2440:SSA}
-#        {ACCL:L3B:2450:SSA}
-#        {ACCL:L3B:2460:SSA}
-#        {ACCL:L3B:2470:SSA}
-#        {ACCL:L3B:2480:SSA}
-#        {ACCL:L3B:2510:SSA}
-#        {ACCL:L3B:2520:SSA}
-#        {ACCL:L3B:2530:SSA}
-#        {ACCL:L3B:2540:SSA}
-#        {ACCL:L3B:2550:SSA}
-#        {ACCL:L3B:2560:SSA}
-#        {ACCL:L3B:2570:SSA}
-#        {ACCL:L3B:2580:SSA}
-#        {ACCL:L3B:2610:SSA}
-#        {ACCL:L3B:2620:SSA}
-#        {ACCL:L3B:2630:SSA}
-#        {ACCL:L3B:2640:SSA}
-#        {ACCL:L3B:2650:SSA}
-#        {ACCL:L3B:2660:SSA}
-#        {ACCL:L3B:2670:SSA}
-#        {ACCL:L3B:2680:SSA}
-#        {ACCL:L3B:2710:SSA}
-#        {ACCL:L3B:2720:SSA}
-#        {ACCL:L3B:2730:SSA}
-#        {ACCL:L3B:2740:SSA}
-#        {ACCL:L3B:2750:SSA}
-#        {ACCL:L3B:2760:SSA}
-#        {ACCL:L3B:2770:SSA}
-#        {ACCL:L3B:2780:SSA}
-#}
-#
-#file archive_iocAdmin.archive {
-#pattern {IOC           }
-#        {SIOC:L3B:SSA03}
-#}
+file archive_iocAdmin.archive {
+pattern {IOC           }
+        {SIOC:L3B:SSA03}
+}
 
