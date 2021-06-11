@@ -84,6 +84,7 @@ $(P):FaultIntReset    1 monitor
 $(P):FaultReset   1 monitor
 $(P):FaultSummary 1 monitor
 $(P):FwdPwr   1 monitor
+$(P):Humidity   1 monitor
 $(P):HXFan1Speed  1 monitor
 $(P):HXFan2Speed  1 monitor
 $(P):HXFan3Speed  1 monitor
