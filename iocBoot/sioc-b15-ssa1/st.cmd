@@ -11,10 +11,8 @@ epicsEnvSet("IOC_NAME", "SIOC:B15:SSA1")
 ## Run IOC shell script for each SSA
 #
 # SSA1: L1B:0210
-# 4.6 kW
-#iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_4.6kW.iocsh", "PORT=L1B_0210, P=ACCL:L1B:0210:SSA:, IP=ssa-b15-rf0110")
-# 7 kW
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L1B_0210, P=ACCL:L1B:0210:SSA:, IP=ssa-b15-rf0110")
+# 3.8 kW (cryomodule)
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L1B_0210, P=ACCL:L1B:0210:SSA:, IP=ssa-b15-rf0110")
 
 
 iocInit()
