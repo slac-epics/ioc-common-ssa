@@ -8,6 +8,11 @@
 #
 #--------------------------------------------------------------
 
+R1.1.5: 31-Aug-2021  M. Dunning (mdunning)
+    Move sioc-b15-ssa1 to 3.8 kW SSA
+    Move sioc-b15-ssa4 to 3.9 GHz SSA
+    Add sioc-b15-ssa5 for 3.8 kW SSA
+
 R1.1.4: 19-May-2021  M. Dunning (mdunning)
     Uncomment archive files
 

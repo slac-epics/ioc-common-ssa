@@ -1,0 +1,40 @@
+#!../../bin/rhel6-x86_64/ssa
+
+< envPaths
+
+## Environment variables
+epicsEnvSet("LOCATION", "B15 SSA test stand 5")
+epicsEnvSet("IOC_NAME", "SIOC:B15:SSA5")
+
+< $(TOP)/iocBoot/common/st.cmd.soft
+
+## Run IOC shell script for each SSA
+#
+# SSA1: L1B:0250
+# 3.8 kW (cryomodule)
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L1B_0250, P=ACCL:L1B:0250:SSA:, IP=ssa-b15-rf0150")
+
+
+iocInit()
+
+# =====================================================
+# Turn on caPutLogging:
+# Log values only on change to the iocLogServer:
+caPutLogInit("${EPICS_CA_PUT_LOG_ADDR}")
+caPutLogShow(2)
+# =====================================================
+
+## Start sequence programs, one for each SSA
+# This must be done after iocInit
+#
+# SSA1: L1B:0250
+seq(seq_ssa_CA1300, "P=ACCL:L1B:0250:SSA:")
+epicsThreadSleep(0.5)
+
+# Autosave start
+< $(TOP)/iocBoot/common/autosave_start.cmd
+
+cd $(TOP)
+
+# End of file
+
