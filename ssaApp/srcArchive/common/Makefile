@@ -8,6 +8,8 @@ ARCHIVE += $(IOCADMIN)/archive/archive_iocAdmin.archive
 
 # Install archive list into $TOP/archive
 ARCHIVE += ssa_CA1300.tpl-arch
+ARCHIVE += ssa_CA1300_4.6kW.tpl-arch
+ARCHIVE += ssa_CA1300_7kW.tpl-arch
 ARCHIVE += ssa_CA186.tpl-arch
 ARCHIVE += ssa_CA186_module.tpl-arch
 

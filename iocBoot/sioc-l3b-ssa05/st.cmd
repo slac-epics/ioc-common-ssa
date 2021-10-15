@@ -75,37 +75,37 @@ iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L3B_3440, P=ACC
 iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L3B_3450, P=ACCL:L3B:3450:SSA:, IP=ssa-l3b-3450")
 
 # SSA22: L3B:3460
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L3B_3460, P=ACCL:L3B:3460:SSA:, IP=ssa-l3b-3460")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_4.6kW.iocsh", "PORT=L3B_3460, P=ACCL:L3B:3460:SSA:, IP=ssa-l3b-3460")
 
 # SSA23: L3B:3470
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L3B_3470, P=ACCL:L3B:3470:SSA:, IP=ssa-l3b-3470")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_4.6kW.iocsh", "PORT=L3B_3470, P=ACCL:L3B:3470:SSA:, IP=ssa-l3b-3470")
 
 # SSA24: L3B:3480
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L3B_3480, P=ACCL:L3B:3480:SSA:, IP=ssa-l3b-3480")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_4.6kW.iocsh", "PORT=L3B_3480, P=ACCL:L3B:3480:SSA:, IP=ssa-l3b-3480")
 
 # SSA25: L3B:3510
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L3B_3510, P=ACCL:L3B:3510:SSA:, IP=ssa-l3b-3510")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_4.6kW.iocsh", "PORT=L3B_3510, P=ACCL:L3B:3510:SSA:, IP=ssa-l3b-3510")
 
 # SSA26: L3B:3520
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L3B_3520, P=ACCL:L3B:3520:SSA:, IP=ssa-l3b-3520")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L3B_3520, P=ACCL:L3B:3520:SSA:, IP=ssa-l3b-3520")
 
 # SSA27: L3B:3530
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L3B_3530, P=ACCL:L3B:3530:SSA:, IP=ssa-l3b-3530")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L3B_3530, P=ACCL:L3B:3530:SSA:, IP=ssa-l3b-3530")
 
 # SSA28: L3B:3540
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L3B_3540, P=ACCL:L3B:3540:SSA:, IP=ssa-l3b-3540")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L3B_3540, P=ACCL:L3B:3540:SSA:, IP=ssa-l3b-3540")
 
 # SSA29: L3B:3550
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L3B_3550, P=ACCL:L3B:3550:SSA:, IP=ssa-l3b-3550")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L3B_3550, P=ACCL:L3B:3550:SSA:, IP=ssa-l3b-3550")
 
 # SSA30: L3B:3560
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L3B_3560, P=ACCL:L3B:3560:SSA:, IP=ssa-l3b-3560")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L3B_3560, P=ACCL:L3B:3560:SSA:, IP=ssa-l3b-3560")
 
 # SSA31: L3B:3570
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L3B_3570, P=ACCL:L3B:3570:SSA:, IP=ssa-l3b-3570")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L3B_3570, P=ACCL:L3B:3570:SSA:, IP=ssa-l3b-3570")
 
 # SSA32: L3B:3580
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L3B_3580, P=ACCL:L3B:3580:SSA:, IP=ssa-l3b-3580")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L3B_3580, P=ACCL:L3B:3580:SSA:, IP=ssa-l3b-3580")
 
 
 # Load common SSA databases

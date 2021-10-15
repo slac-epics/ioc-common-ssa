@@ -8,6 +8,10 @@
 #
 #--------------------------------------------------------------
 
+R1.1.6: 14-Oct-2021  M. Dunning (mdunning)
+    Update L3B downstream SSAs: some are now 4.6 and 7 kW
+    Clean up unused startup files
+
 R1.1.5: 31-Aug-2021  M. Dunning (mdunning)
     Move sioc-b15-ssa1 to 3.8 kW SSA
     Move sioc-b15-ssa4 to 3.9 GHz SSA

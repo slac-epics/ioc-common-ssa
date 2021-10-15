@@ -23,10 +23,18 @@ pattern {P                }
         {ACCL:L3B:3430:SSA}
         {ACCL:L3B:3440:SSA}
         {ACCL:L3B:3450:SSA}
+}
+
+file  ssa_CA1300_4.6kW.tpl-arch {
+pattern {P                }
         {ACCL:L3B:3460:SSA}
         {ACCL:L3B:3470:SSA}
         {ACCL:L3B:3480:SSA}
         {ACCL:L3B:3510:SSA}
+}
+
+file  ssa_CA1300_7kW.tpl-arch {
+pattern {P                }
         {ACCL:L3B:3520:SSA}
         {ACCL:L3B:3530:SSA}
         {ACCL:L3B:3540:SSA}
