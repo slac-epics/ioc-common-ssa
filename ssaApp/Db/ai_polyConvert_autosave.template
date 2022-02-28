@@ -11,7 +11,7 @@ record(ai, "$(P)$(R)_raw") {
 record(calc, "$(P)$(R)_conv") {
     field(DESC, "Convert using poly coeff")
     field(ASG,  "Internal")
-    field(INPA, "$(P)$(R)_raw")
+    field(INPA, "$(P)$(R)_raw MS")
     field(INPB, "$(P)$(R)_C0")
     field(INPC, "$(P)$(R)_C1")
     field(INPD, "$(P)$(R)_C2")
@@ -24,7 +24,7 @@ record(calc, "$(P)$(R)_conv") {
 
 record(ai, "$(P)$(R)") {
     field(DESC, "$(DESC="")")
-    field(INP,  "$(P)$(R)_conv")
+    field(INP,  "$(P)$(R)_conv MS")
     field(EGU,  "$(EGU="")")
     field(PREC, "$(PREC=2)")
     field(LOLO, "$(LOLO="")")

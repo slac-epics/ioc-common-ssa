@@ -8,6 +8,11 @@
 #
 #--------------------------------------------------------------
 
+R1.1.7: 28-Feb-2022  M. Dunning (mdunning)
+    Add PowerOnStatus PV.  This is a binary PV which simply shows if the SSA is on or not.
+    Add dynamic alarm limts for drain & PS voltage setpoints
+    Add MS attribute to power readbacks
+
 R1.1.6: 14-Oct-2021  M. Dunning (mdunning)
     Update L3B downstream SSAs: some are now 4.6 and 7 kW
     Clean up unused startup files

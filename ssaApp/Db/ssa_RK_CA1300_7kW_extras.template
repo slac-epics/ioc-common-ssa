@@ -84,7 +84,7 @@ record(calcout, "$(P)DrainVoltHiHiCalc") {
 # --- Drive (input) power -------------------------------------------------------------
 record(calc, "$(P)DrvPwr_dBm") {
     field(DESC, "Drive power [dBm]")
-    field(INPA, "$(P)DrvPwr CP")
+    field(INPA, "$(P)DrvPwr CP MS")
     field(INPB, "-3.91E-12")
     field(INPC, "1.979E-8")
     field(INPD, "-3.892E-5")
@@ -98,7 +98,7 @@ record(calc, "$(P)DrvPwr_dBm") {
 
 record(calc, "$(P)DrvPwr_mW") {
     field(DESC, "Drive power [mW]")
-    field(INPA, "$(P)DrvPwr")
+    field(INPA, "$(P)DrvPwr MS")
     field(INPB, "2.927E-6")
     field(INPC, "2.386E-4")
     field(INPD, "0.1014")
