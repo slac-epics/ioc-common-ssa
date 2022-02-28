@@ -76,5 +76,20 @@ record(mbbi, "$(P)StatusMsg") {
     field(TVVL, "12")
     field(TVST, "Resetting Processor...")
     field(TVSV, "MINOR")
+    field(FLNK, "$(P)PowerOnStatusCalc")
+}
+
+record(calc, "$(P)PowerOnStatusCalc"){
+    field(DESC, "Power On status calc")
+    field(INPA, "$(P)StatusMsg")
+    field(CALC, "A=3")
+    field(FLNK, "$(P)PowerOnStatus")
+}
+
+record(bi, "$(P)PowerOnStatus"){
+    field(DESC, "Power On status")
+    field(INP,  "$(P)PowerOnStatusCalc")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
 }
 
