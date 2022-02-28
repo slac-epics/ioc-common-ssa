@@ -40,14 +40,6 @@ record(ao, "$(P)DrainVoltSetpt") {
     field(HOPR, "45")
     field(DRVL, "13.4")
     field(DRVH, "45")
-    field(LOLO, "35")
-    field(LOW,  "37")
-    field(HIGH, "46")
-    field(HIHI, "47")
-    field(LLSV, "MAJOR")
-    field(LSV,  "MINOR")
-    field(HSV,  "MINOR")
-    field(HHSV, "MAJOR")
     field(FLNK, "$(P)DrainVCalc")
     info(autosaveFields, "VAL")
 }
@@ -60,14 +52,13 @@ record(calcout, "$(P)DrainVCalc") {
     field(INPC, "2.262")
     field(CALC, "(A*B) + C")
     field(OUT,  "$(P)PSVoltSetpt PP")
+    field(FLNK, "$(P)DrainVoltLoLoCalc")
 }
 
 record(calc, "$(P)DrainVoltRBVCalc") {
     field(DESC, "Drain voltage RBV calc")
     field(ASG,  "Internal")
     field(INPA, "$(P)PSVoltRBV CPP MS")
-    field(EGU,  "V")
-    field(PREC, "2")
     field(CALC, "A")
     field(FLNK, "$(P)DrainVoltRBV")
 }
@@ -77,16 +68,48 @@ record(ai, "$(P)DrainVoltRBV") {
     field(INP, "$(P)DrainVoltRBVCalc MS")
     field(EGU,  "V")
     field(PREC, "2")
-    field(LOLO, "")
-    field(LOW,  "37")
-    field(HIGH, "46")
-    field(HIHI, "47")
-    field(LLSV, "NO_ALARM")
-    field(LSV,  "MINOR")
-    field(HSV,  "MINOR")
-    field(HHSV, "MAJOR")
-
+# Alarm limits are set dynamically with the records below.
 }
+
+record(calcout, "$(P)DrainVoltLoLoCalc") {
+    field(DESC, "Drain voltage LOLO calc")
+    field(ASG,  "Internal")
+    field(INPA, "$(P)DrainVoltSetpt")
+    field(INPB, "-2.0")
+    field(CALC, "A+B")
+    field(OUT,  "$(P)DrainVoltRBV.LOLO")
+    field(FLNK, "$(P)DrainVoltLowCalc")
+}
+
+record(calcout, "$(P)DrainVoltLowCalc") {
+    field(DESC, "Drain voltage LOW calc")
+    field(ASG,  "Internal")
+    field(INPA, "$(P)DrainVoltSetpt")
+    field(INPB, "-1.0")
+    field(CALC, "A+B")
+    field(OUT,  "$(P)DrainVoltRBV.LOW")
+    field(FLNK, "$(P)DrainVoltHighCalc")
+}
+
+record(calcout, "$(P)DrainVoltHighCalc") {
+    field(DESC, "Drain voltage HIGH calc")
+    field(ASG,  "Internal")
+    field(INPA, "$(P)DrainVoltSetpt")
+    field(INPB, "1.0")
+    field(CALC, "A+B")
+    field(OUT,  "$(P)DrainVoltRBV.HIGH")
+    field(FLNK, "$(P)DrainVoltHiHiCalc")
+}
+
+record(calcout, "$(P)DrainVoltHiHiCalc") {
+    field(DESC, "Drain voltage HIHI calc")
+    field(ASG,  "Internal")
+    field(INPA, "$(P)DrainVoltSetpt")
+    field(INPB, "2.0")
+    field(CALC, "A+B")
+    field(OUT,  "$(P)DrainVoltRBV.HIHI PP")
+}
+
 #---------------------------------------------------------------
 
 record(mbbi, "$(P)StatusMsg") {

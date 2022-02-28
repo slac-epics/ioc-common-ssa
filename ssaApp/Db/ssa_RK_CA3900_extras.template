@@ -45,7 +45,7 @@ record(bo, "$(P)ProcReset"){
     field(PINI, "1")
 }
 
-# --- Drain Voltage <---> Output Voltage --------------
+# --- Drain Voltage <---> Output Voltage (this is currently not used for the CA3900)
 record(ao, "$(P)DrainVoltSetpt") {
     field(DESC, "Drain Voltage Setpt [V]")
     field(EGU,  "V")
@@ -65,8 +65,6 @@ record(calcout, "$(P)DrainVCalc") {
     field(INPB, "131")
     field(INPC, "2.5")
     field(CALC, "(A*B)/C")
-# Commenting this out for now.  Don't know how this should work with the CA3900 since it has two PSs.
-#    field(OUT,  "$(P)PSVolt_FO PP")
 }
 
 record(calc, "$(P)DrainVoltRBVCalc") {
@@ -89,11 +87,83 @@ record(ai, "$(P)DrainVoltRBV") {
     field(PREC, "2")
 }
 
-record(dfanout, "$(P)PSVolt_FO") {
-    field(DESC, "PS output voltage fanout")
+# --- Dynamic PSVoltRBV alarm limits, based on PSVoltSetpt ---
+record(calcout, "$(P)PSVolt1LoLoCalc") {
+    field(DESC, "Drain voltage LOLO calc")
     field(ASG,  "Internal")
-    field(OUTA, "$(P)PSVoltSetpt1 PP")
-    field(OUTB, "$(P)PSVoltSetpt2 PP")
+    field(INPA, "$(P)PSVoltSetpt1 CP")
+    field(INPB, "-60.0")
+    field(CALC, "A+B")
+    field(OUT,  "$(P)PSVoltRBV1.LOLO PP")
+    field(FLNK, "$(P)PSVolt1LowCalc")
+}
+
+record(calcout, "$(P)PSVolt1LowCalc") {
+    field(DESC, "Drain voltage LOW calc")
+    field(ASG,  "Internal")
+    field(INPA, "$(P)PSVoltSetpt1")
+    field(INPB, "-30.0")
+    field(CALC, "A+B")
+    field(OUT,  "$(P)PSVoltRBV1.LOW PP")
+    field(FLNK, "$(P)PSVolt1HighCalc")
+}
+
+record(calcout, "$(P)PSVolt1HighCalc") {
+    field(DESC, "Drain voltage HIGH calc")
+    field(ASG,  "Internal")
+    field(INPA, "$(P)PSVoltSetpt1")
+    field(INPB, "30.0")
+    field(CALC, "A+B")
+    field(OUT,  "$(P)PSVoltRBV1.HIGH PP")
+    field(FLNK, "$(P)PSVolt1HiHiCalc")
+}
+
+record(calcout, "$(P)PSVolt1HiHiCalc") {
+    field(DESC, "Drain voltage HIHI calc")
+    field(ASG,  "Internal")
+    field(INPA, "$(P)PSVoltSetpt1")
+    field(INPB, "60.0")
+    field(CALC, "A+B")
+    field(OUT,  "$(P)PSVoltRBV1.HIHI PP")
+}
+
+record(calcout, "$(P)PSVolt2LoLoCalc") {
+    field(DESC, "Drain voltage LOLO calc")
+    field(ASG,  "Internal")
+    field(INPA, "$(P)PSVoltSetpt2 CP")
+    field(INPB, "-60.0")
+    field(CALC, "A+B")
+    field(OUT,  "$(P)PSVoltRBV2.LOLO PP")
+    field(FLNK, "$(P)PSVolt2LowCalc")
+}
+
+record(calcout, "$(P)PSVolt2LowCalc") {
+    field(DESC, "Drain voltage LOW calc")
+    field(ASG,  "Internal")
+    field(INPA, "$(P)PSVoltSetpt2")
+    field(INPB, "-30.0")
+    field(CALC, "A+B")
+    field(OUT,  "$(P)PSVoltRBV2.LOW PP")
+    field(FLNK, "$(P)PSVolt2HighCalc")
+}
+
+record(calcout, "$(P)PSVolt2HighCalc") {
+    field(DESC, "Drain voltage HIGH calc")
+    field(ASG,  "Internal")
+    field(INPA, "$(P)PSVoltSetpt2")
+    field(INPB, "30.0")
+    field(CALC, "A+B")
+    field(OUT,  "$(P)PSVoltRBV2.HIGH PP")
+    field(FLNK, "$(P)PSVolt2HiHiCalc")
+}
+
+record(calcout, "$(P)PSVolt2HiHiCalc") {
+    field(DESC, "Drain voltage HIHI calc")
+    field(ASG,  "Internal")
+    field(INPA, "$(P)PSVoltSetpt2")
+    field(INPB, "60.0")
+    field(CALC, "A+B")
+    field(OUT,  "$(P)PSVoltRBV2.HIHI PP")
 }
 
 # --- Drive (input) power -------------------------------------------------------------

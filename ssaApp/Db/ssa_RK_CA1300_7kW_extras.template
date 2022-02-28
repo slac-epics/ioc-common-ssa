@@ -39,6 +39,46 @@ record(ai, "$(P)DrainVoltRBV") {
     field(INP, "$(P)DrainVoltRBVCalc MS")
     field(EGU,  "V")
     field(PREC, "2")
+# Alarm limits are set dynamically with the records below.
+}
+
+record(calcout, "$(P)DrainVoltLoLoCalc") {
+    field(DESC, "Drain voltage LOLO calc")
+    field(ASG,  "Internal")
+    field(INPA, "$(P)DrainVoltSetpt")
+    field(INPB, "-2.0")
+    field(CALC, "A+B")
+    field(OUT,  "$(P)DrainVoltRBV.LOLO")
+    field(FLNK, "$(P)DrainVoltLowCalc")
+}
+
+record(calcout, "$(P)DrainVoltLowCalc") {
+    field(DESC, "Drain voltage LOW calc")
+    field(ASG,  "Internal")
+    field(INPA, "$(P)DrainVoltSetpt")
+    field(INPB, "-1.0")
+    field(CALC, "A+B")
+    field(OUT,  "$(P)DrainVoltRBV.LOW")
+    field(FLNK, "$(P)DrainVoltHighCalc")
+}
+
+record(calcout, "$(P)DrainVoltHighCalc") {
+    field(DESC, "Drain voltage HIGH calc")
+    field(ASG,  "Internal")
+    field(INPA, "$(P)DrainVoltSetpt")
+    field(INPB, "1.0")
+    field(CALC, "A+B")
+    field(OUT,  "$(P)DrainVoltRBV.HIGH")
+    field(FLNK, "$(P)DrainVoltHiHiCalc")
+}
+
+record(calcout, "$(P)DrainVoltHiHiCalc") {
+    field(DESC, "Drain voltage HIHI calc")
+    field(ASG,  "Internal")
+    field(INPA, "$(P)DrainVoltSetpt")
+    field(INPB, "2.0")
+    field(CALC, "A+B")
+    field(OUT,  "$(P)DrainVoltRBV.HIHI PP")
 }
 
 # --- Drive (input) power -------------------------------------------------------------
