@@ -205,11 +205,12 @@ pattern
 }
 
 file "ssa_RK_common.template" {
-{none}
+pattern
+{TYPE}
+{   0}
 }
 
 file "ssa_RK_CA3900_extras.template" {
 {none}
 }
-
 

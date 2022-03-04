@@ -141,11 +141,12 @@ pattern
 }
 
 file "ssa_RK_common.template" {
-{none}
+pattern
+{TYPE}
+{   1}
 }
 
 file "ssa_RK_CA1300_extras.template" {
 {none}
 }
-
 

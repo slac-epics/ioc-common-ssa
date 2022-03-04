@@ -1,4 +1,6 @@
-# --- These records are used in the sequencer program -----------
+# --- These records are common to all SSAs -----------
+
+# --- Sequencer records -------------
 record(bo, "$(P)FaultReset"){
     field(DESC, "Fault Reset")
     field(ZNAM, "Standby")
@@ -77,6 +79,25 @@ record(mbbi, "$(P)StatusMsg") {
     field(TVST, "Resetting Processor...")
     field(TVSV, "MINOR")
     field(FLNK, "$(P)PowerOnStatusCalc")
+}
+
+# --- Other common records --------
+record(mbbo, "$(P)Type") {
+    field(DESC, "SSA type/model")
+    field(ZRVL, "0")
+    field(ZRST, "RK CA3900")
+    field(ONVL, "1")
+    field(ONST, "RK CA1300")
+    field(TWVL, "2")
+    field(TWST, "RK CA1300 4.6 kW")
+    field(THVL, "3")
+    field(THST, "RK CA1300 7 kW")
+    field(FRVL, "4")
+    field(FRST, "RK CA186")
+    field(FVVL, "5")
+    field(FVST, "RK CA199")
+    field(VAL,  "$(TYPE=0)")
+    field(PINI, "1")
 }
 
 record(calc, "$(P)PowerOnStatusCalc"){

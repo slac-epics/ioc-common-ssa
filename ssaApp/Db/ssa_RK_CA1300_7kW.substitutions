@@ -194,11 +194,12 @@ pattern
 }
 
 file "ssa_RK_common.template" {
-{none}
+pattern
+{TYPE}
+{   3}
 }
 
 file "ssa_RK_CA1300_7kW_extras.template" {
 {none}
 }
-
 
