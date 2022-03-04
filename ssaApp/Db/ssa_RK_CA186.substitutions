@@ -197,6 +197,11 @@ pattern
 }
 
 #------------------------------------------------------------------------------------------
+file "ssa_RK_common.template" {
+pattern
+{TYPE}
+{   4}
+}
 
 file "ssa_RK_CA186_extras.template" {
 {none}
