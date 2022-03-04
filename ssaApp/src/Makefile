@@ -53,7 +53,6 @@ $(PROD_NAME)_SRCS_DEFAULT += $(PROD_NAME)Main.cpp
 $(PROD_NAME)_SRCS += $(PROD_NAME)ASub.c
 $(PROD_NAME)_SRCS += $(PROD_NAME)Seq_RK_CA1300.st
 $(PROD_NAME)_SRCS += $(PROD_NAME)Seq_RK_CA186.st
-$(PROD_NAME)_SRCS += $(PROD_NAME)Seq_RK_CA3900.st
 
 # =====================================================
 # Link in the code from other libraries
