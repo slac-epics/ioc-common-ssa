@@ -132,24 +132,32 @@ ss ssa_state_check {
             statusMsg = 3;
             pvPut(statusMsg);
         }
+
         when (faultCond) {
         } state faultedState
+
         when (!powerOn && !enabledCond && !faultCond) {
         } state ssaOffState
+
         when (powerOn && !enabledCond && !faultCond) {
         } state poweringOnState
+
         when (powerOn && enabledCond) {
             powerOn = 0;
             pvPut(powerOn);
         } state ssaOnState
+
         when (faultReset) {
             faultReset = 0;
             pvPut(faultReset);
         } state ssaOnState
+
         when (powerOff) {
         } state poweringOffState
+
         when (systemReboot) {
         } state sysRebootState
+
         when (xPortReboot) {
         } state xPortRebootState
     }
@@ -161,24 +169,32 @@ ss ssa_state_check {
             statusMsg = 2;
             pvPut(statusMsg);
         }
+
         when (enabledCond && !faultCond) {
         } state ssaOnState
+
         when (faultCond) {
         } state faultedState
+
         when (faultReset && faultCond) {
         } state faultResetState
+
         when (faultReset && !faultCond) {
             faultReset = 0;
             pvPut(faultReset);
         } state ssaOffState
+
         when (powerOn && notEnabledOrFaultCond) {
         } state poweringOnState
+
         when (powerOff) {
             powerOff = 0;
             pvPut(powerOff);
         } state ssaOffState
+
         when (systemReboot) {
         } state sysRebootState
+
         when (xPortReboot) {
         } state xPortRebootState
     }
@@ -187,24 +203,31 @@ ss ssa_state_check {
     /* SSA is off: External or internal fault. SSA internally disables DC & RF when this happens. */
         entry {
             if (DEBUG) printf("STATE: faultedState\n");
-            errlogPrintf("[%s] SSA faulted (%s)\n", timestamp(), macValueGet("P"));
+            errlogPrintf("[%s] INFO: SSA faulted (%s)\n", timestamp(), macValueGet("P"));
             statusMsg = 1;
             pvPut(statusMsg);
         }
+
         when (enabledCond && !faultCond) {
         } state ssaOnState
+
         when (!enabledCond && !faultCond) {
         } state ssaOffState
+
         when (faultReset && faultCond) {
         } state faultResetState
+
         when (powerOn && notEnabledOrFaultCond) {
         } state poweringOnState
+
         when (powerOff) {
             powerOff = 0;
             pvPut(powerOff);
         } state ssaOffState
+
         when (systemReboot) {
         } state sysRebootState
+
         when (xPortReboot) {
         } state xPortRebootState
     }
@@ -215,48 +238,58 @@ ss ssa_state_check {
         entry {
             if (DEBUG) printf("STATE: faultResetState\n");
         }
+
         when (!efTest(resetFlag) && faultCond) {
             if (DEBUG) printf("Resetting...\n");
-            errlogPrintf("[%s] Resetting SSA faults (%s)\n", timestamp(), macValueGet("P"));
+            errlogPrintf("[%s] INFO: Resetting SSA faults (%s)\n", timestamp(), macValueGet("P"));
             statusMsg = 4;
             pvPut(statusMsg);
+
             if (dcEnableRBV) {
                 if (DEBUG) printf("dcDisable\n");
                 dcEnable = 0;
                 pvPut(dcEnable, SYNC);
             }
+
             if (rfEnableRBV) {
                 if (DEBUG) printf("rfDisable\n");
                 rfEnable = 0;
                 pvPut(rfEnable, SYNC);
             }
+
             if (faultIntCond) {
                 if (DEBUG) printf("faultIntReset\n");
                 faultIntReset = 1;
                 pvPut(faultIntReset, SYNC);
             }
+
             if (faultExtCond) {
                 faultExtReset = 1;
                 pvPut(faultExtReset, SYNC);
                 if (DEBUG) printf("faultExtReset\n");
             }
+
             if (warningCond) {
                 warningReset = 1;
                 pvPut(warningReset, SYNC);
                 if (DEBUG) printf("warningReset\n");
             }
+
             efSet(resetFlag);
         } state faultResetState
+
         when (delay(resetTimeout) && efTest(resetFlag) && faultCond) {
             faultReset = 0;
             pvPut(faultReset);
             efClear(resetFlag);
         } state faultResetFailState
+
         when (faultReset && efTest(resetFlag) && !faultCond) {
             faultReset = 0;
             pvPut(faultReset);
             efClear(resetFlag);
         } state ssaOnState
+
         when (delay(powerOnWait) && powerOn && efTest(resetFlag) && !faultCond) {
             efClear(resetFlag);
         } state poweringOnState
@@ -266,9 +299,11 @@ ss ssa_state_check {
     /* Fault reset failed: Wait a bit and then transition back to faulted state. */
         entry {
             if (DEBUG) printf("STATE: faultResetFailState\n");
+            errlogPrintf("[%s] WARNING: Fault reset failed (%s)\n", timestamp(), macValueGet("P"));
             statusMsg = 7;
             pvPut(statusMsg);
         }
+
         when (delay(failWait)) {
             if (powerOn) {
                 powerOn = 0;
@@ -282,24 +317,32 @@ ss ssa_state_check {
         entry {
             if (DEBUG) printf("STATE: poweringOnState\n");
         }
+
         when (faultCond) {
         } state faultResetState
+
         when (!efTest(powerOnFlag)) {
             if (DEBUG) printf("Powering on...\n");
-            errlogPrintf("[%s] Powering SSA on (%s)\n", timestamp(), macValueGet("P"));
+            errlogPrintf("[%s] INFO: Powering SSA on (%s)\n", timestamp(), macValueGet("P"));
             statusMsg = 5;
             pvPut(statusMsg);
+
             if (!dcEnableRBV) {
                 if (DEBUG) printf("dcEnable\n");
                 dcEnable = 1;
                 pvPut(dcEnable, SYNC);
             }
-            // The epicsThreadSleep below is temporary...
+
+            // Wait for all 31 modules to turn on
+            // The epicsThreadSleep below is ugly.
+            // TODO: Is there a better way to check than testing each module's power status or sleeping?
+            // I think they power up in a random order, so this is tricky.
             epicsThreadSleep(20.0);
-            // TODO: Wait for modules to turn on...is there a better way to check than testing each module's power PV or sleeping?
+
             if (DEBUG) printf("psVoltProc\n");
             psVoltProc = 1;
             pvPut(psVoltProc, SYNC);
+
             if (!rfEnableRBV) {
                 if (DEBUG) printf("rfEnable\n");
                 rfEnable = 1;
@@ -307,12 +350,15 @@ ss ssa_state_check {
             }
             efSet(powerOnFlag);
         } state poweringOnState
+
         when (powerOn && delay(powerOnTimeout) && efTest(powerOnFlag) && !enabledCond) {
             powerOn = 0;
             pvPut(powerOn);
             efClear(powerOnFlag);
         } state powerOnFailState
+
         // TODO: Do DC & RF read back enabled after all modules are powered on?  Or are they independent? 
+
         when (powerOn && efTest(powerOnFlag) && enabledCond) {
             powerOn = 0;
             pvPut(powerOn);
@@ -324,9 +370,11 @@ ss ssa_state_check {
     /* Power on failed: Wait a bit and then transition back to Off state. */
         entry {
             if (DEBUG) printf("STATE: powerOnFailState\n");
+            errlogPrintf("[%s] WARNING: Power on failed (%s)\n", timestamp(), macValueGet("P"));
             statusMsg = 8;
             pvPut(statusMsg);
         }
+
         when (delay(failWait)) {
         } state ssaOffState
     }
@@ -338,13 +386,15 @@ ss ssa_state_check {
             statusMsg = 6;
             pvPut(statusMsg);
         }
+
         when (!efTest(powerOffFlag)) {
-            errlogPrintf("[%s] Powering SSA off (%s)\n", timestamp(), macValueGet("P"));
+            errlogPrintf("[%s] INFO: Powering SSA off (%s)\n", timestamp(), macValueGet("P"));
             if (rfEnableRBV) {
                 rfEnable = 0;
                 pvPut(rfEnable, SYNC);
                 if (DEBUG) printf("rfDisable\n");
             }
+
             if (dcEnableRBV) {
                 dcEnable = 0;
                 pvPut(dcEnable, SYNC);
@@ -352,11 +402,13 @@ ss ssa_state_check {
             }
             efSet(powerOffFlag);
         } state poweringOffState
+
         when (powerOff && delay(powerOffTimeout) && efTest(powerOffFlag) && enabledCond) {
             powerOff = 0;
             pvPut(powerOff);
             efClear(powerOffFlag);
         } state powerOffFailState
+
         when (powerOff && efTest(powerOffFlag) && !enabledCond) {
             powerOff = 0;
             pvPut(powerOff);
@@ -368,9 +420,11 @@ ss ssa_state_check {
     /* Power off failed: Wait a bit and then transition back to On state. */
         entry {
             if (DEBUG) printf("STATE: powerOffFailState\n");
+            errlogPrintf("[%s] WARNING: Power off failed (%s)\n", timestamp(), macValueGet("P"));
             statusMsg = 9;
             pvPut(statusMsg);
         }
+
         when (delay(failWait)) {
         } state ssaOnState
     }
@@ -379,8 +433,9 @@ ss ssa_state_check {
     /* System reboot: Execute system reboot, then transition back to On state. */
         entry {
             if (DEBUG) printf("STATE: sysReboot\n");
-            errlogPrintf("[%s] SSA sysReboot (%s)\n", timestamp(), macValueGet("P"));
+            errlogPrintf("[%s] INFO: SSA sysReboot (%s)\n", timestamp(), macValueGet("P"));
         }
+
         when (!efTest(sysRebootFlag)) {
             statusMsg = 10;
             pvPut(statusMsg);
@@ -388,6 +443,7 @@ ss ssa_state_check {
             pvPut(sysRebootReg, SYNC);
             efSet(sysRebootFlag);
         } state sysRebootState
+
         when (delay(sysRebootTimeout) && efTest(sysRebootFlag)) {
             systemReboot = 0;
             pvPut(systemReboot);
@@ -399,8 +455,9 @@ ss ssa_state_check {
     /* Lantronix X-port reboot: Execute reboot, then transition back to On state. */
         entry {
             if (DEBUG) printf("STATE: xPortReboot\n");
-            errlogPrintf("[%s] SSA X-port reboot (%s)\n", timestamp(), macValueGet("P"));
+            errlogPrintf("[%s] INFO: SSA X-port reboot (%s)\n", timestamp(), macValueGet("P"));
         }
+
         when (!efTest(xPortRebootFlag)) {
             statusMsg = 11;
             pvPut(statusMsg);
@@ -408,6 +465,7 @@ ss ssa_state_check {
             pvPut(xPortRebootReg, SYNC);
             efSet(xPortRebootFlag);
         } state xPortRebootState
+
         when (delay(xPortRebootTimeout) && efTest(xPortRebootFlag)) {
             xPortReboot = 0;
             pvPut(xPortReboot);
