@@ -1,4 +1,4 @@
-# --- These records are common to all SSAs -----------
+# --- These records are common to all R&K SSAs -----------
 
 # --- Sequencer records -------------
 record(bo, "$(P)FaultReset"){
@@ -85,13 +85,13 @@ record(mbbi, "$(P)StatusMsg") {
 record(mbbo, "$(P)Type") {
     field(DESC, "SSA type/model")
     field(ZRVL, "0")
-    field(ZRST, "RK CA3900")
+    field(ZRST, "RK CA1300 7kW")
     field(ONVL, "1")
-    field(ONST, "RK CA1300")
+    field(ONST, "RK CA1300 4.6kW")
     field(TWVL, "2")
-    field(TWST, "RK CA1300 4.6 kW")
+    field(TWST, "RK CA1300")
     field(THVL, "3")
-    field(THST, "RK CA1300 7 kW")
+    field(THST, "RK CA3900")
     field(FRVL, "4")
     field(FRST, "RK CA186")
     field(FVVL, "5")

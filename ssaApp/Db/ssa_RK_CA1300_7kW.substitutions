@@ -196,7 +196,7 @@ pattern
 file "ssa_RK_common.template" {
 pattern
 {TYPE}
-{   3}
+{   0}
 }
 
 file "ssa_RK_CA1300_7kW_extras.template" {

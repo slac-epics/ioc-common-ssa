@@ -115,7 +115,7 @@ int drainVoltProc;
 assign drainVoltProc to "{P}DrainVoltSetpt.PROC";
 
 // Constants --------------------------------
-#define DEBUG 0
+#define DEBUG 1
 #define failWait 5.0  // Time to wait after attempting to reset a fault before we declare failure
 #define resetTimeout 10.0  // Time to wait after attempting to reset a fault before we declare failure
 #define powerOnTimeout 5.0  // Time to wait before we declare power on sequence to be a failure
@@ -133,6 +133,7 @@ assign drainVoltProc to "{P}DrainVoltSetpt.PROC";
 %{ enum status {STAT_UNK, STAT_FLT, STAT_OFF, STAT_ON, STAT_RST, STAT_PWRON, STAT_PWROFF, STAT_RST_FAIL, 
     STAT_PWRON_FAIL, STAT_PWROFF_FAIL, STAT_RBT, STAT_XP_RBT, STAT_PROC_RST};
 }%
+%% enum ssa_type {CA1300_7kW, CA1300_4kW, CA1300, CA3900, CA186};
 
 // Functions ----------------------------------
 %{ static char *timestamp() {
@@ -281,7 +282,7 @@ ss ssa_state_check {
             }
 
             pvGet(ssaType);
-            if (ssaType == 0) {
+            if ((ssaType == CA1300_7kW) && faultCond) {
                 // The RK 7kW SSA needs a delay between resetting internal and external faults.
                 epicsThreadSleep(10.0);
             }
@@ -355,6 +356,21 @@ ss ssa_state_check {
                 pvPut(dcEnable, SYNC);
             }
 
+            // The 7kW SSA has a 90-second countdown timer that starts after enabling DC.
+            // We must wait until this timer is expired before enabling RF and setting the PS voltage.
+            pvGet(ssaType);
+            if (ssaType == CA1300_7kW) {
+                while ((rfCountdown > 0) && (rfCountdown != rfCountdownLast)) {
+                if (DEBUG) printf("ssaType=%d, rfCountdown=%d, rfCountdownLast=%d\n", ssaType, rfCountdown, rfCountdownLast);
+                    rfCountdownLast = rfCountdown;
+                    epicsThreadSleep(5.0);
+                }
+                if (rfCountdown == 0) {
+                    // Needs a bit more time or it will not respond to the next command
+                    epicsThreadSleep(5.0);
+                }
+            }
+
             if (DEBUG) printf("drainVoltProc\n");
             drainVoltProc = 1;
             pvPut(drainVoltProc, SYNC);
@@ -365,18 +381,6 @@ ss ssa_state_check {
                 pvPut(rfEnable, SYNC);
             }
             efSet(powerOnFlag);
-        } state poweringOnState
-
-        when (delay(2.0) && (rfCountdown == 0) && (rfCountdownLast > 0)) {
-            // If the rfCountdown just transitioned to zero, give the SSA a few seconds to enable RF
-            rfCountdownLast = rfCountdown;
-            //epicsThreadSleep(2.0);
-        } state poweringOnState
-
-        when (delay(2.0) && (rfCountdown > 0) && (rfCountdown != rfCountdownLast)) {
-            // Still counting down...
-            rfCountdownLast = rfCountdown;
-            if (DEBUG) printf("rfCountdown=%d, rfCountdownLast=%d\n", rfCountdown, rfCountdownLast);
         } state poweringOnState
 
         when (powerOn && delay(powerOnTimeout) && efTest(powerOnFlag) && !enabledCond) {

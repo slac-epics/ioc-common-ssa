@@ -207,7 +207,7 @@ pattern
 file "ssa_RK_common.template" {
 pattern
 {TYPE}
-{   0}
+{   3}
 }
 
 file "ssa_RK_CA3900_extras.template" {
