@@ -8,11 +8,13 @@
 #
 #--------------------------------------------------------------
 
-R1.1.8: 04-Mar-2022  M. Dunning (mdunning)
+R1.1.8: 14-Mar-2022  M. Dunning (mdunning)
     Add SSA type record.  This is used in the seq routine.
     Enhance seq routine message printing
     Remove unused CA3900 seq file
     Use common records for CA186 SSA
+    Refine 7kW power on and fault reset seq states
+    Add seq debug record
 
 R1.1.7: 28-Feb-2022  M. Dunning (mdunning)
     Add PowerOnStatus PV.  This is a binary PV which simply shows if the SSA is on or not.
