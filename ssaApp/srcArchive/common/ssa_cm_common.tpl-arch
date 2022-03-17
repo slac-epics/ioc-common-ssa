@@ -1,0 +1,10 @@
+# File: ssa_cm_common.tpl-arch
+#
+# Format:  PVNAME     INTERVAL     [ monitor | scan ]
+# Interval is in seconds; default mode is scan
+
+# Name                  Interval Mode
+#----------------------------------------------
+$(P):NumEnabled
+$(P):NumOn
+

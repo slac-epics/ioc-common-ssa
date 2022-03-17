@@ -12,6 +12,51 @@ pattern {P                }
         {ACCL:L0B:0180:SSA}
 }
 
+file  ssa_cm_common.tpl-arch {
+pattern {P                }
+        {ACCL:L0B:0100:SSA}
+        {ACCL:L1B:0200:SSA}
+        {ACCL:L1B:0300:SSA}
+        {ACCL:L1B:H100:SSA}
+        {ACCL:L1B:H200:SSA}
+        {ACCL:L2B:0400:SSA}
+        {ACCL:L2B:0500:SSA}
+        {ACCL:L2B:0600:SSA}
+        {ACCL:L2B:0700:SSA}
+        {ACCL:L2B:0800:SSA}
+        {ACCL:L2B:0900:SSA}
+        {ACCL:L2B:1000:SSA}
+        {ACCL:L2B:1100:SSA}
+        {ACCL:L2B:1200:SSA}
+        {ACCL:L2B:1300:SSA}
+        {ACCL:L2B:1400:SSA}
+        {ACCL:L2B:1500:SSA}
+        {ACCL:L3B:1600:SSA}
+        {ACCL:L3B:1700:SSA}
+        {ACCL:L3B:1800:SSA}
+        {ACCL:L3B:1900:SSA}
+        {ACCL:L3B:2000:SSA}
+        {ACCL:L3B:2100:SSA}
+        {ACCL:L3B:2200:SSA}
+        {ACCL:L3B:2300:SSA}
+        {ACCL:L3B:2400:SSA}
+        {ACCL:L3B:2500:SSA}
+        {ACCL:L3B:2600:SSA}
+        {ACCL:L3B:2700:SSA}
+        {ACCL:L3B:2800:SSA}
+        {ACCL:L3B:2900:SSA}
+        {ACCL:L3B:3000:SSA}
+        {ACCL:L3B:3100:SSA}
+        {ACCL:L3B:3200:SSA}
+        {ACCL:L3B:3300:SSA}
+        {ACCL:L3B:3400:SSA}
+        {ACCL:L3B:3500:SSA}
+}
+
+file  ssa_sys0_common.tpl-arch {
+{None}
+}
+
 file archive_iocAdmin.archive {
 pattern {IOC           }
         {SIOC:L0B:SSA01}

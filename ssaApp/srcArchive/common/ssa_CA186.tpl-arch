@@ -149,4 +149,7 @@ $(P):DrvrFPGAVer   60 monitor
 $(P):PLCVer    60 monitor
 $(P):TFTVer    60 monitor
 $(P):VSWROver  60 monitor
+$(P):Type           60 monitor
+$(P):PowerOnStatus  10 monitor
+
 
