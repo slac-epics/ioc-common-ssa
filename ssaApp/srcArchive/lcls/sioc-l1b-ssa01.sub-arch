@@ -18,6 +18,10 @@ pattern {P                }
         {ACCL:L1B:0360:SSA}
         {ACCL:L1B:0370:SSA}
         {ACCL:L1B:0380:SSA}
+}
+
+file  ssa_CA3900.tpl-arch {
+pattern {P                }
         {ACCL:L1B:H110:SSA}
         {ACCL:L1B:H120:SSA}
         {ACCL:L1B:H130:SSA}
@@ -26,7 +30,6 @@ pattern {P                }
         {ACCL:L1B:H220:SSA}
         {ACCL:L1B:H230:SSA}
         {ACCL:L1B:H240:SSA}
-
 }
 
 file archive_iocAdmin.archive {
