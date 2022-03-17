@@ -1,6 +1,7 @@
 record(ao, "$(P)$(R)") {
     field(DESC, "$(DESC="")")
     field(DTYP, "asynInt32")
+    field(ASG,  "$(ASG)")
     field(OUT,  "@asyn($(PORT) $(OFFSET))MODBUS_DATA")
     field(ASLO, "$(ASLO)")
     field(AOFF, "$(AOFF)")

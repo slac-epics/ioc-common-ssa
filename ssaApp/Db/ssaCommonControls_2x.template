@@ -1,6 +1,7 @@
 
 record(bo, "$(P)$(M)$(N=00:)SSA:$(OUT)All") {
     field(DESC, "SSAs $(OUT)")
+    field(ASG,  "$(ASG)")
     field(ZNAM, "$(ZNAM="")")
     field(ONAM, "$(ONAM="")")
     field(FLNK, "$(P)$(M)$(N=00:)SSA:$(OUT)Seq")
@@ -8,7 +9,7 @@ record(bo, "$(P)$(M)$(N=00:)SSA:$(OUT)All") {
 
 record(seq, "$(P)$(M)$(N=00:)SSA:$(OUT)Seq") {
     field(DESC, "SSAs $(OUT) sequence")
-    field(ASG,  "Internal")
+    field(ASG,  "$(ASG)")
     field(SELM, "Mask")
     field(SELN, "$(MASK=3)")
     field(DLY1, "0")

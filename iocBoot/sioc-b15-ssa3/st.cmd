@@ -5,14 +5,18 @@
 ## Environment variables
 epicsEnvSet("LOCATION", "B15 SSA test stand 3")
 epicsEnvSet("IOC_NAME", "SIOC:B15:SSA3")
+epicsEnvSet("ASG",      "DEFAULT")
 
 < $(TOP)/iocBoot/common/st.cmd.soft
+
+# Set access security
+asSetFilename("${TOP}/iocBoot/common/no_security.acf")
 
 ## Run IOC shell script for each SSA
 #
 # SSA1: SSA3:B15
 # Gun SSA (CA186)
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA186.iocsh", "PORT=SSA3,P=SSA3:B15:,IP=ssa-b15-rf0130,POLLTIME=50")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA186.iocsh", "PORT=SSA3,P=SSA3:B15:,ASG=$(ASG),IP=ssa-b15-rf0130")
 
 
 iocInit()

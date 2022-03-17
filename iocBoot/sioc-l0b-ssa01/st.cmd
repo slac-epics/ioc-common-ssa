@@ -5,6 +5,7 @@
 ## Environment variables
 epicsEnvSet("LOCATION", "L0B CM 01")
 epicsEnvSet("IOC_NAME", "SIOC:L0B:SSA01")
+epicsEnvSet("ASG",      "MCC")
 
 < $(TOP)/iocBoot/common/st.cmd.soft
 
@@ -12,32 +13,32 @@ epicsEnvSet("IOC_NAME", "SIOC:L0B:SSA01")
 ## Run IOC shell script for each SSA
 #
 # SSA1: L0B:0110
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L0B_0110, P=ACCL:L0B:0110:SSA:, IP=ssa-l0b-0110")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L0B_0110,P=ACCL:L0B:0110:SSA:,ASG=$(ASG),IP=ssa-l0b-0110")
 
 # SSA2: L0B:0120
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L0B_0120, P=ACCL:L0B:0120:SSA:, IP=ssa-l0b-0120")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L0B_0120,P=ACCL:L0B:0120:SSA:,ASG=$(ASG),IP=ssa-l0b-0120")
 
 # SSA3: L0B:0130
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L0B_0130, P=ACCL:L0B:0130:SSA:, IP=ssa-l0b-0130")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L0B_0130,P=ACCL:L0B:0130:SSA:,ASG=$(ASG),IP=ssa-l0b-0130")
 
 # SSA4: L0B:0140
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L0B_0140, P=ACCL:L0B:0140:SSA:, IP=ssa-l0b-0140")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L0B_0140,P=ACCL:L0B:0140:SSA:,ASG=$(ASG),IP=ssa-l0b-0140")
 
 # SSA5: L0B:0150
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L0B_0150, P=ACCL:L0B:0150:SSA:, IP=ssa-l0b-0150")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L0B_0150,P=ACCL:L0B:0150:SSA:,ASG=$(ASG),IP=ssa-l0b-0150")
 
 # SSA6: L0B:0160
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L0B_0160, P=ACCL:L0B:0160:SSA:, IP=ssa-l0b-0160")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L0B_0160,P=ACCL:L0B:0160:SSA:,ASG=$(ASG),IP=ssa-l0b-0160")
 
 # SSA7: L0B:0170
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L0B_0170, P=ACCL:L0B:0170:SSA:, IP=ssa-l0b-0170")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L0B_0170,P=ACCL:L0B:0170:SSA:,ASG=$(ASG),IP=ssa-l0b-0170")
 
 # SSA8: L0B:0180
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L0B_0180, P=ACCL:L0B:0180:SSA:, IP=ssa-l0b-0180")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L0B_0180,P=ACCL:L0B:0180:SSA:,ASG=$(ASG),IP=ssa-l0b-0180")
 
 
 # Load common SSA databases
-dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L0B:, M=01")
+dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L0B:,M=01,ASG=$(ASG)")
 
 # Load SSA stats database
 dbLoadRecords("db/ssa_stats.db")

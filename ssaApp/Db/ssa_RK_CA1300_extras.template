@@ -3,6 +3,7 @@
 # Since this register doesn't exist in this SSA, it must be locked to 0.
 record(longout, "$(P)RFCountdown"){
     field(DESC, "Ready for RF (dummy PV)")
+    field(ASG,  "$(ASG)")
     field(HIGH, "1")
     field(HSV,  "MINOR")
     field(DOL,  "0")
@@ -14,6 +15,7 @@ record(longout, "$(P)RFCountdown"){
 # Since this register doesn't exist in this SSA, it must be locked to 0.
 record(longout, "$(P)CritWarnCode"){
     field(DESC, "Crit warn code (dummy PV)")
+    field(ASG,  "$(ASG)")
     field(HIGH, "1")
     field(HSV,  "MINOR")
     field(DOL,  "0")
@@ -25,6 +27,7 @@ record(longout, "$(P)CritWarnCode"){
 # Since this register doesn't exist in this SSA, it must be locked to 0.
 record(bo, "$(P)ProcReset"){
     field(DESC, "Processor reset (dummy PV)")
+    field(ASG,  "$(ASG)")
     field(ZNAM, "Standby")
     field(ONAM, "Resetting...")
     field(OSV,  "MINOR")
@@ -36,6 +39,7 @@ record(bo, "$(P)ProcReset"){
 # --- Drain Voltage <---> Output Voltage --------------
 record(ao, "$(P)DrainVoltSetpt") {
     field(DESC, "Drain Voltage Setpt [V]")
+    field(ASG,  "$(ASG)")
     field(EGU,  "V")
     field(PREC, "2")
     field(LOPR, "13.5")
@@ -376,5 +380,4 @@ record(calc, "$(P)AlarmSummary") {
     field(INPK, "$(P)WarningCode CP MS")
     field(INPL, "$(P)PSFault CP MS")
 }
-
 

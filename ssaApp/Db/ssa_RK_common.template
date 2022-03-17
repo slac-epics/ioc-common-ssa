@@ -3,36 +3,42 @@
 # --- Sequencer records -------------
 record(bo, "$(P)FaultReset"){
     field(DESC, "Fault Reset")
+    field(ASG,  "$(ASG)")
     field(ZNAM, "Standby")
     field(ONAM, "Resetting...")
 }
 
 record(bo, "$(P)PowerOn"){
     field(DESC, "Power On")
+    field(ASG,  "$(ASG)")
     field(ZNAM, "Standby")
     field(ONAM, "Powering On...")
 }
 
 record(bo, "$(P)PowerOff"){
     field(DESC, "Power Off")
+    field(ASG,  "$(ASG)")
     field(ZNAM, "Standby")
     field(ONAM, "Powering Off...")
 }
 
 record(bo, "$(P)SystemReboot"){
     field(DESC, "System Reboot")
+    field(ASG,  "$(ASG)")
     field(ZNAM, "Standby")
     field(ONAM, "Rebooting...")
 }
 
 record(bo, "$(P)XPortReboot"){
     field(DESC, "X-Port Reboot")
+    field(ASG,  "$(ASG)")
     field(ZNAM, "Standby")
     field(ONAM, "Rebooting...")
 }
 
 record(bo, "$(P)ProcessorReset"){
     field(DESC, "Processor Reset")
+    field(ASG,  "$(ASG)")
     field(ZNAM, "Standby")
     field(ONAM, "Resetting...")
 }

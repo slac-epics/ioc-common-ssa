@@ -2,6 +2,7 @@
 # --- Drain Voltage <---> Output Voltage --------------
 record(ao, "$(P)DrainVoltSetpt") {
     field(DESC, "Drain Voltage Setpt [V]")
+    field(ASG,  "$(ASG)")
     field(EGU,  "V")
     field(PREC, "2")
     field(LOPR, "18")

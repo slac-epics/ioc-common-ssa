@@ -5,6 +5,7 @@
 ## Environment variables
 epicsEnvSet("LOCATION", "GUNB")
 epicsEnvSet("IOC_NAME", "SIOC:GUNB:SSA01")
+epicsEnvSet("ASG",      "MCC")
 
 < $(TOP)/iocBoot/common/st.cmd.soft
 
@@ -12,14 +13,14 @@ epicsEnvSet("IOC_NAME", "SIOC:GUNB:SSA01")
 ## Run IOC shell script for each SSA
 #
 # SSA1: GUN:GUNB:100:SSA1
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA186.iocsh", "PORT=GUNB_SSA1,P=GUN:GUNB:100:SSA1:,IP=ssa-gunb-100-1,POLLTIME=50")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA186.iocsh", "PORT=GUNB_SSA1,P=GUN:GUNB:100:SSA1:,ASG=$(ASG),IP=ssa-gunb-100-1")
 
 # SSA2: GUN:GUNB:100:SSA2
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA186.iocsh", "PORT=GUNB_SSA2,P=GUN:GUNB:100:SSA2:,IP=ssa-gunb-100-2,POLLTIME=50")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA186.iocsh", "PORT=GUNB_SSA2,P=GUN:GUNB:100:SSA2:,ASG=$(ASG),IP=ssa-gunb-100-2")
 
 
 # Load common SSA databases
-dbLoadRecords("db/gunCommon.db", "P=GUN:GUNB:100:")
+dbLoadRecords("db/gunCommon.db", "P=GUN:GUNB:100:,ASG=$(ASG)")
 
 
 iocInit()
