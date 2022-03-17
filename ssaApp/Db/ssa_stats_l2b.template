@@ -1,0 +1,73 @@
+
+record(calc, "$(P)1:SSA:NumEnabledCalc"){
+    field(DESC, "Number of SSAs enabled calc")
+    field(INPA, "$(P)0400:SSA:NumEnabled CP")
+    field(INPB, "$(P)0500:SSA:NumEnabled CP")
+    field(INPC, "$(P)0600:SSA:NumEnabled CP")
+    field(INPD, "$(P)0700:SSA:NumEnabled CP")
+    field(INPE, "$(P)0800:SSA:NumEnabled CP")
+    field(INPF, "$(P)0900:SSA:NumEnabled CP")
+    field(INPG, "$(P)1000:SSA:NumEnabled CP")
+    field(INPH, "$(P)1100:SSA:NumEnabled CP")
+    field(INPI, "$(P)1200:SSA:NumEnabled CP")
+    field(INPJ, "$(P)1300:SSA:NumEnabled CP")
+    field(INPK, "$(P)1400:SSA:NumEnabled CP")
+    field(INPL, "$(P)1500:SSA:NumEnabled CP")
+    field(CALC, "A+B+C+D+E+F+G+H+I+J+K+L")
+    field(FLNK, "$(P)1:SSA:NumEnabled")
+}
+
+record(calc, "$(P)1:SSA:NumOnCalc"){
+    field(DESC, "Number of SSAs On calc")
+    field(INPA, "$(P)0400:SSA:NumOn CP")
+    field(INPB, "$(P)0500:SSA:NumOn CP")
+    field(INPC, "$(P)0600:SSA:NumOn CP")
+    field(INPD, "$(P)0700:SSA:NumOn CP")
+    field(INPE, "$(P)0800:SSA:NumOn CP")
+    field(INPF, "$(P)0900:SSA:NumOn CP")
+    field(INPG, "$(P)1000:SSA:NumOn CP")
+    field(INPH, "$(P)1100:SSA:NumOn CP")
+    field(INPI, "$(P)1200:SSA:NumOn CP")
+    field(INPJ, "$(P)1300:SSA:NumOn CP")
+    field(INPK, "$(P)1400:SSA:NumOn CP")
+    field(INPL, "$(P)1500:SSA:NumOn CP")
+    field(CALC, "A+B+C+D+E+F+G+H+I+J+K+L")
+    field(FLNK, "$(P)1:SSA:NumOn")
+}
+
+record(calc, "$(P)1:SSA:NumCMEnabledCalc"){
+    field(DESC, "Number of CMs Enabled calc")
+    field(INPA, "$(P)0400:SSA:AnyEnabled CP")
+    field(INPB, "$(P)0500:SSA:AnyEnabled CP")
+    field(INPC, "$(P)0600:SSA:AnyEnabled CP")
+    field(INPD, "$(P)0700:SSA:AnyEnabled CP")
+    field(INPE, "$(P)0800:SSA:AnyEnabled CP")
+    field(INPF, "$(P)0900:SSA:AnyEnabled CP")
+    field(INPG, "$(P)1000:SSA:AnyEnabled CP")
+    field(INPH, "$(P)1100:SSA:AnyEnabled CP")
+    field(INPI, "$(P)1200:SSA:AnyEnabled CP")
+    field(INPJ, "$(P)1300:SSA:AnyEnabled CP")
+    field(INPK, "$(P)1400:SSA:AnyEnabled CP")
+    field(INPL, "$(P)1500:SSA:AnyEnabled CP")
+    field(CALC, "A+B+C+D+E+F+G+H+I+J+K+L")
+    field(FLNK, "$(P)1:SSA:NumCMEnabled")
+}
+
+record(calc, "$(P)1:SSA:NumCMOnCalc"){
+    field(DESC, "Number of CMs On calc")
+    field(INPA, "$(P)0400:SSA:AnyOn CP")
+    field(INPB, "$(P)0500:SSA:AnyOn CP")
+    field(INPC, "$(P)0600:SSA:AnyOn CP")
+    field(INPD, "$(P)0700:SSA:AnyOn CP")
+    field(INPE, "$(P)0800:SSA:AnyOn CP")
+    field(INPF, "$(P)0900:SSA:AnyOn CP")
+    field(INPG, "$(P)1000:SSA:AnyOn CP")
+    field(INPH, "$(P)1100:SSA:AnyOn CP")
+    field(INPI, "$(P)1200:SSA:AnyOn CP")
+    field(INPJ, "$(P)1300:SSA:AnyOn CP")
+    field(INPK, "$(P)1400:SSA:AnyOn CP")
+    field(INPL, "$(P)1500:SSA:AnyOn CP")
+    field(CALC, "A+B+C+D+E+F+G+H+I+J+K+L")
+    field(FLNK, "$(P)1:SSA:NumCMOn")
+}
+

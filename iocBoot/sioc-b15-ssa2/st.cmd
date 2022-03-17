@@ -8,6 +8,10 @@ epicsEnvSet("IOC_NAME", "SIOC:B15:SSA2")
 
 < $(TOP)/iocBoot/common/st.cmd.soft
 
+# Reset access security
+#asSetFilename("${TOP}/iocBoot/common/srf_permit_test.acf")
+asSetFilename("${TOP}/iocBoot/common/no_security.acf")
+
 ## Run IOC shell script for each SSA
 #
 # SSA1: L1B:0220

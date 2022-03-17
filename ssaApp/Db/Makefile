@@ -34,6 +34,8 @@ DB += buncherCommon.db
 DB += cryomoduleCommon.db
 DB += hlCommon.db
 
+DB += ssa_stats.db
+
 # Install Common databases needed by All IOCs
 # ========================================================
 # Install databases from iocAdmin package

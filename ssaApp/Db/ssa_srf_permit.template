@@ -1,0 +1,81 @@
+
+# This set of four records does the following:
+# - Allows writing to SRFPermitRBV only if the SSA RF enable is off
+# - Keeps the SRFPermit setpoint in sync with the RBV
+# - Autosaves the actual (RBV) value so it persists across IOC reboots
+record(bo, "$(P)SRFPermit"){
+    field(DESC, "Set SRF permit")
+    field(ASG,  "$(ASG1="")")
+    field(ZNAM, "Disable")
+    field(ONAM, "Enable")
+    field(OUT,  "$(P)SRFPermitWrite PP")
+}
+
+record(bo, "$(P)SRFPermitWrite"){
+    field(DESC, "Set SRF permit")
+    field(ASG,  "$(ASG1="")")
+    field(ZNAM, "Disable")
+    field(ONAM, "Enable")
+    field(SDIS, "$(P)SRFPermitSync.PACT")
+    field(DISV, "1")
+    field(FLNK, "$(P)SRFPermitCalc")
+}
+
+record(calcout, "$(P)SRFPermitCalc"){
+    field(DESC, "Set SRF permit calc")
+    field(ASG,  "$(ASG1="")")
+    field(INPA, "$(P)RFEnableRBV")
+    field(INPB, "$(P)SRFPermit")
+    field(CALC, "A")
+    field(OOPT, "When Zero")
+    field(DOPT, "Use OCAL")
+    field(OCAL, "B")
+    field(OUT,  "$(P)SRFPermitRBV PP")
+    field(FLNK, "$(P)SRFPermitRBV")
+}
+
+record(bi, "$(P)SRFPermitRBV"){
+    field(DESC, "SRF permit readback")
+    field(ASG,  "$(ASG1="")")
+    field(ZNAM, "Disabled")
+    field(ONAM, "Enabled")
+    field(OSV,  "MINOR")
+    field(FLNK, "$(P)SRFPermitSync")
+    field(PINI, "1")
+    info(autosaveFields, "VAL")
+}
+
+record(bo, "$(P)SRFPermitSync") {
+    field(DESC, "SRF permit sync")
+    field(ASG,  "$(ASG1="")")
+    field(DOL,  "$(P)SRFPermitRBV NPP")
+    field(OMSL, "closed_loop")
+    field(OUT,  "$(P)SRFPermit PP")
+}
+
+#----------------------------------------------------------------
+# This used to be the modbus record; now a soft record
+record(bo, "$(P)RFEnable"){
+    field(DESC, "RF Enable/Disable")
+    field(ASG,  "$(ASG2="")")
+    field(ZNAM, "Disable")
+    field(ONAM, "Enable")
+    field(VAL,  "0")
+    field(PINI, "1")
+    field(FLNK, "$(P)RFEnableCalc")
+    info(autosaveFields, "VAL")
+}
+
+# This writes to the modbus record, but only if the permit is enabled
+record(calcout, "$(P)RFEnableCalc"){
+    field(DESC, "RF Enable/Disable calc")
+    field(ASG,  "$(ASG2="")")
+    field(INPA, "$(P)SRFPermitRBV")
+    field(INPB, "$(P)RFEnable")
+    field(CALC, "A")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OCAL, "B")
+    field(OUT,  "$(P)RFEnableWrite PP")
+}
+

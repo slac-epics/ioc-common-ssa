@@ -1,0 +1,29 @@
+
+record(calc, "$(P)1:SSA:NumEnabledCalc"){
+    field(DESC, "Number of SSAs enabled calc")
+    field(INPA, "$(P)0100:SSA:NumEnabled CP")
+    field(CALC, "A")
+    field(FLNK, "$(P)1:SSA:NumEnabled")
+}
+
+record(calc, "$(P)1:SSA:NumOnCalc"){
+    field(DESC, "Number of SSAs On calc")
+    field(INPA, "$(P)0100:SSA:NumOn CP")
+    field(CALC, "A")
+    field(FLNK, "$(P)1:SSA:NumOn")
+}
+
+record(calc, "$(P)1:SSA:NumCMEnabledCalc"){
+    field(DESC, "Number of CMs Enabled calc")
+    field(INPA, "$(P)0100:SSA:AnyEnabled CP")
+    field(CALC, "A")
+    field(FLNK, "$(P)1:SSA:NumCMEnabled")
+}
+
+record(calc, "$(P)1:SSA:NumCMOnCalc"){
+    field(DESC, "Number of CMs On calc")
+    field(INPA, "$(P)0100:SSA:AnyOn CP")
+    field(CALC, "A")
+    field(FLNK, "$(P)1:SSA:NumCMOn")
+}
+

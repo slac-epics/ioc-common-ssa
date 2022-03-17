@@ -1,0 +1,73 @@
+
+record(longin, "$(P)SSA:NumEnabled"){
+    field(DESC, "Number of SSAs enabled")
+    field(INP,  "$(P)SSA:NumEnabledCalc")
+    field(LOLO, "$(LOLO="")")
+    field(LOW,  "$(LOW="")")
+    field(HIGH, "$(HIGH="1")")
+    field(HIHI, "$(HIHI="")")
+    field(LLSV, "$(LLSV=NO_ALARM)")
+    field(LSV,  "$(LSV=NO_ALARM)")
+    field(HSV,  "$(HSV=MINOR)")
+    field(HHSV, "$(HHSV=NO_ALARM)")
+    field(FLNK, "$(P)SSA:AnyEnabled")
+}
+
+record(bi, "$(P)SSA:AnyEnabled"){
+    field(DESC, "Any SSA enabled")
+    field(DTYP, "Raw Soft Channel")
+    field(INP,  "$(P)SSA:NumEnabled")
+    field(ZNAM, "No")
+    field(ONAM, "Yes")
+    field(OSV,  "MINOR")
+}
+
+record(longin, "$(P)SSA:NumOn"){
+    field(DESC, "Number of SSAs On")
+    field(INP,  "$(P)SSA:NumOnCalc")
+    field(LOLO, "$(LOLO="")")
+    field(LOW,  "$(LOW="")")
+    field(HIGH, "$(HIGH="1")")
+    field(HIHI, "$(HIHI="")")
+    field(LLSV, "$(LLSV=NO_ALARM)")
+    field(LSV,  "$(LSV=NO_ALARM)")
+    field(HSV,  "$(HSV=MINOR)")
+    field(HHSV, "$(HHSV=NO_ALARM)")
+    field(FLNK, "$(P)SSA:AnyOn")
+}
+
+record(bi, "$(P)SSA:AnyOn"){
+    field(DESC, "Any SSA On")
+    field(DTYP, "Raw Soft Channel")
+    field(INP,  "$(P)SSA:NumOn")
+    field(ZNAM, "No")
+    field(ONAM, "Yes")
+    field(OSV,  "MINOR")
+}
+
+record(longin, "$(P)SSA:NumCMEnabled"){
+    field(DESC, "Number of CMs Enabled")
+    field(INP,  "$(P)SSA:NumCMEnabledCalc")
+    field(LOLO, "$(LOLO="")")
+    field(LOW,  "$(LOW="")")
+    field(HIGH, "$(HIGH="4")")
+    field(HIHI, "$(HIHI="5")")
+    field(LLSV, "$(LLSV=NO_ALARM)")
+    field(LSV,  "$(LSV=NO_ALARM)")
+    field(HSV,  "$(HSV=MINOR)")
+    field(HHSV, "$(HHSV=MAJOR)")
+}
+
+record(longin, "$(P)SSA:NumCMOn"){
+    field(DESC, "Number of CMs On")
+    field(INP,  "$(P)SSA:NumCMOnCalc")
+    field(LOLO, "$(LOLO="")")
+    field(LOW,  "$(LOW="")")
+    field(HIGH, "$(HIGH="4")")
+    field(HIHI, "$(HIHI="5")")
+    field(LLSV, "$(LLSV=NO_ALARM)")
+    field(LSV,  "$(LSV=NO_ALARM)")
+    field(HSV,  "$(HSV=MINOR)")
+    field(HHSV, "$(HHSV=MAJOR)")
+}
+

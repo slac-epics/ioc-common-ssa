@@ -1,0 +1,21 @@
+# Access Security File
+
+UAG(uag1) {mdunning}
+HAG(hag1) {ar-floyd}
+HAG(hag2) {lcls-dev3}
+
+ASG(DEFAULT) {
+    RULE(1,READ) 
+    RULE(1,WRITE) 
+}
+
+ASG(MCC) {
+    RULE(1,READ) 
+    RULE(1,WRITE)
+}
+
+ASG(EOICDESK) {
+    RULE(1,READ) 
+    RULE(1,WRITE)
+}
+

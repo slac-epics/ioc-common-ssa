@@ -1,0 +1,91 @@
+
+file "ssa_stats_cm.template" {
+pattern
+{        P,  M}
+{ACCL:L0B:, 01}
+#
+{ACCL:L1B:, 02}
+{ACCL:L1B:, 03}
+#
+{ACCL:L2B:, 04}
+{ACCL:L2B:, 05}
+{ACCL:L2B:, 06}
+{ACCL:L2B:, 07}
+{ACCL:L2B:, 08}
+{ACCL:L2B:, 09}
+{ACCL:L2B:, 10}
+{ACCL:L2B:, 11}
+{ACCL:L2B:, 12}
+{ACCL:L2B:, 13}
+{ACCL:L2B:, 14}
+{ACCL:L2B:, 15}
+#
+{ACCL:L3B:, 16}
+{ACCL:L3B:, 17}
+{ACCL:L3B:, 18}
+{ACCL:L3B:, 19}
+{ACCL:L3B:, 20}
+{ACCL:L3B:, 21}
+{ACCL:L3B:, 22}
+{ACCL:L3B:, 23}
+{ACCL:L3B:, 24}
+{ACCL:L3B:, 25}
+{ACCL:L3B:, 26}
+{ACCL:L3B:, 27}
+{ACCL:L3B:, 28}
+{ACCL:L3B:, 29}
+{ACCL:L3B:, 30}
+{ACCL:L3B:, 31}
+{ACCL:L3B:, 32}
+{ACCL:L3B:, 33}
+{ACCL:L3B:, 34}
+{ACCL:L3B:, 35}
+}
+
+file "ssa_stats_hl.template" {
+pattern
+{        P,  M}
+{ACCL:L1B:, H1}
+{ACCL:L1B:, H2}
+}
+
+file "ssa_stats_common.template" {
+pattern
+{            P}
+{  ACCL:L0B:1:}
+{  ACCL:L1B:1:}
+{  ACCL:L2B:1:}
+{  ACCL:L3B:1:}
+{ACCL:SYS0:SC:}
+}
+
+file "ssa_stats_l0b.template" {
+pattern
+{        P}
+{ACCL:L0B:}
+}
+
+file "ssa_stats_l1b.template" {
+pattern
+{        P}
+{ACCL:L1B:}
+}
+
+file "ssa_stats_l2b.template" {
+pattern
+{        P}
+{ACCL:L2B:}
+}
+
+file "ssa_stats_l3b.template" {
+pattern
+{        P}
+{ACCL:L3B:}
+}
+
+file "ssa_stats_sys0.template" {
+pattern
+{         P}
+{ACCL:SYS0:}
+}
+

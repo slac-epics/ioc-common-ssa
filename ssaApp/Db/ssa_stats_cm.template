@@ -1,0 +1,75 @@
+
+record(calc, "$(P)$(M)$(N=00:)SSA:NumEnabledCalc"){
+    field(DESC, "Number of SSAs enabled calc")
+    field(INPA, "$(P)$(M)$(C1=10):SSA:SRFPermitRBV CP")
+    field(INPB, "$(P)$(M)$(C2=20):SSA:SRFPermitRBV CP")
+    field(INPC, "$(P)$(M)$(C3=30):SSA:SRFPermitRBV CP")
+    field(INPD, "$(P)$(M)$(C4=40):SSA:SRFPermitRBV CP")
+    field(INPE, "$(P)$(M)$(C5=50):SSA:SRFPermitRBV CP")
+    field(INPF, "$(P)$(M)$(C6=60):SSA:SRFPermitRBV CP")
+    field(INPG, "$(P)$(M)$(C7=70):SSA:SRFPermitRBV CP")
+    field(INPH, "$(P)$(M)$(C8=80):SSA:SRFPermitRBV CP")
+    field(CALC, "A+B+C+D+E+F+G+H")
+    field(FLNK, "$(P)$(M)$(N=00:)SSA:NumEnabled")
+}
+
+record(longin, "$(P)$(M)$(N=00:)SSA:NumEnabled"){
+    field(DESC, "Number of SSAs enabled")
+    field(INP,  "$(P)$(M)$(N=00:)SSA:NumEnabledCalc")
+    field(LOLO, "$(LOLO="")")
+    field(LOW,  "$(LOW="")")
+    field(HIGH, "$(HIGH="1")")
+    field(HIHI, "$(HIHI="")")
+    field(LLSV, "$(LLSV=NO_ALARM)")
+    field(LSV,  "$(LSV=NO_ALARM)")
+    field(HSV,  "$(HSV=MINOR)")
+    field(HHSV, "$(HHSV=NO_ALARM)")
+    field(FLNK, "$(P)$(M)$(N=00:)SSA:AnyEnabled")
+}
+
+record(bi, "$(P)$(M)$(N=00:)SSA:AnyEnabled"){
+    field(DESC, "Any SSA enabled")
+    field(DTYP, "Raw Soft Channel")
+    field(INP,  "$(P)$(M)$(N=00:)SSA:NumEnabled")
+    field(ZNAM, "No")
+    field(ONAM, "Yes")
+    field(OSV,  "MINOR")
+}
+
+record(calc, "$(P)$(M)$(N=00:)SSA:NumOnCalc"){
+    field(DESC, "Number of SSAs On calc")
+    field(INPA, "$(P)$(M)$(C1=10):SSA:PowerOnStatus CP")
+    field(INPB, "$(P)$(M)$(C2=20):SSA:PowerOnStatus CP")
+    field(INPC, "$(P)$(M)$(C3=30):SSA:PowerOnStatus CP")
+    field(INPD, "$(P)$(M)$(C4=40):SSA:PowerOnStatus CP")
+    field(INPE, "$(P)$(M)$(C5=50):SSA:PowerOnStatus CP")
+    field(INPF, "$(P)$(M)$(C6=60):SSA:PowerOnStatus CP")
+    field(INPG, "$(P)$(M)$(C7=70):SSA:PowerOnStatus CP")
+    field(INPH, "$(P)$(M)$(C8=80):SSA:PowerOnStatus CP")
+    field(CALC, "A+B+C+D+E+F+G+H")
+    field(FLNK, "$(P)$(M)$(N=00:)SSA:NumOn")
+}
+
+record(longin, "$(P)$(M)$(N=00:)SSA:NumOn"){
+    field(DESC, "Number of SSAs On")
+    field(INP,  "$(P)$(M)$(N=00:)SSA:NumOnCalc")
+    field(LOLO, "$(LOLO="")")
+    field(LOW,  "$(LOW="")")
+    field(HIGH, "$(HIGH="1")")
+    field(HIHI, "$(HIHI="")")
+    field(LLSV, "$(LLSV=NO_ALARM)")
+    field(LSV,  "$(LSV=NO_ALARM)")
+    field(HSV,  "$(HSV=MINOR)")
+    field(HHSV, "$(HHSV=NO_ALARM)")
+    field(FLNK, "$(P)$(M)$(N=00:)SSA:AnyOn")
+}
+
+record(bi, "$(P)$(M)$(N=00:)SSA:AnyOn"){
+    field(DESC, "Any SSA On")
+    field(DTYP, "Raw Soft Channel")
+    field(INP,  "$(P)$(M)$(N=00:)SSA:NumOn")
+    field(ZNAM, "No")
+    field(ONAM, "Yes")
+    field(OSV,  "MINOR")
+}
+

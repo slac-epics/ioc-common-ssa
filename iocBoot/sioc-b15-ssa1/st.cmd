@@ -8,11 +8,18 @@ epicsEnvSet("IOC_NAME", "SIOC:B15:SSA1")
 
 < $(TOP)/iocBoot/common/st.cmd.soft
 
+# Set access security
+#asSetFilename("${TOP}/iocBoot/common/srf_permit_test.acf")
+asSetFilename("${TOP}/iocBoot/common/no_security.acf")
+
 ## Run IOC shell script for each SSA
 #
 # SSA1: L1B:0210
 # 3.8 kW (cryomodule)
 iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L1B_0210, P=ACCL:L1B:0210:SSA:, IP=ssa-b15-rf0110")
+
+# Load SSA stats database
+dbLoadRecords("db/ssa_stats.db")
 
 
 iocInit()

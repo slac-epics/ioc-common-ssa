@@ -39,6 +39,9 @@ iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L0B_0180, P=ACC
 # Load common SSA databases
 dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L0B:, M=01")
 
+# Load SSA stats database
+dbLoadRecords("db/ssa_stats.db")
+
 
 iocInit()
 
