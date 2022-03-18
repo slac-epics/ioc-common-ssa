@@ -1,0 +1,15 @@
+# Archive list for sioc-gunb-ssa02
+
+file  ssa_CA1300.tpl-arch { 
+pattern {P                 }
+        {ACCL:GUNB:455:SSA1}
+        {ACCL:GUNB:455:SSA2}
+        {ACCL:GUNB:455:SSA3}
+        {ACCL:GUNB:455:SSA4}
+}
+
+file archive_iocAdmin.archive {
+pattern {IOC            }
+        {SIOC:GUNB:SSA02}
+}
+
