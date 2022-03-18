@@ -33,6 +33,7 @@ DB += gunCommon.db
 DB += buncherCommon.db
 DB += cryomoduleCommon.db
 DB += hlCommon.db
+DB += ssa_sys0_common.db
 
 DB += ssa_stats.db
 

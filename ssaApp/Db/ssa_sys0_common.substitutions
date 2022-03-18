@@ -1,0 +1,11 @@
+
+# Common controls for sys0 (all SC linac) SSAs.
+# Required macros:
+#   OUT: PV attribute
+
+file "ssaCommonControls_sys0.template" {
+pattern
+{     OUT,      ZNAM,        ONAM, DLY}
+{PowerOff, "Standby", "Power Off", 0.1}
+}
+

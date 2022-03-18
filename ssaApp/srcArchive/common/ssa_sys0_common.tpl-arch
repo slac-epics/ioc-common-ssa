@@ -5,24 +5,26 @@
 
 # Name                  Interval Mode
 #----------------------------------------------
-ACCL:L0B:1:SSA:NumEnabled        1 monitor
-ACCL:L0B:1:SSA:NumOn             1 monitor
-ACCL:L0B:1:SSA:NumCMEnabled      1 monitor
-ACCL:L0B:1:SSA:NumCMOn           1 monitor
-ACCL:L1B:1:SSA:NumEnabled        1 monitor
-ACCL:L1B:1:SSA:NumOn             1 monitor
-ACCL:L1B:1:SSA:NumCMEnabled      1 monitor
-ACCL:L1B:1:SSA:NumCMOn           1 monitor
-ACCL:L2B:1:SSA:NumEnabled        1 monitor
-ACCL:L2B:1:SSA:NumOn             1 monitor
-ACCL:L2B:1:SSA:NumCMEnabled      1 monitor
-ACCL:L2B:1:SSA:NumCMOn           1 monitor
-ACCL:L3B:1:SSA:NumEnabled        1 monitor
-ACCL:L3B:1:SSA:NumOn             1 monitor
-ACCL:L3B:1:SSA:NumCMEnabled      1 monitor
-ACCL:L3B:1:SSA:NumCMOn           1 monitor
-ACCL:SYS0:SC:SSA:NumEnabled      1 monitor
-ACCL:SYS0:SC:SSA:NumOn           1 monitor
-ACCL:SYS0:SC:SSA:NumCMEnabled    1 monitor
-ACCL:SYS0:SC:SSA:NumCMOn         1 monitor
+ACCL:L0B:1:SSA:NumEnabled         1 monitor
+ACCL:L0B:1:SSA:NumOn              1 monitor
+ACCL:L0B:1:SSA:NumCMEnabled       1 monitor
+ACCL:L0B:1:SSA:NumCMOn            1 monitor
+ACCL:L1B:1:SSA:NumEnabled         1 monitor
+ACCL:L1B:1:SSA:NumOn              1 monitor
+ACCL:L1B:1:SSA:NumCMEnabled       1 monitor
+ACCL:L1B:1:SSA:NumCMOn            1 monitor
+ACCL:L2B:1:SSA:NumEnabled         1 monitor
+ACCL:L2B:1:SSA:NumOn              1 monitor
+ACCL:L2B:1:SSA:NumCMEnabled       1 monitor
+ACCL:L2B:1:SSA:NumCMOn            1 monitor
+ACCL:L3B:1:SSA:NumEnabled         1 monitor
+ACCL:L3B:1:SSA:NumOn              1 monitor
+ACCL:L3B:1:SSA:NumCMEnabled       1 monitor
+ACCL:L3B:1:SSA:NumCMOn            1 monitor
+ACCL:SYS0:SC:SSA:NumEnabled       1 monitor
+ACCL:SYS0:SC:SSA:NumOn            1 monitor
+ACCL:SYS0:SC:SSA:NumCMEnabled     1 monitor
+ACCL:SYS0:SC:SSA:NumCMOn          1 monitor
+ACCL:SYS0:SC:SSA:PowerOffAll      1 monitor
+ACCL:SYS0:SC:SSA:PowerOffAllAbort 1 monitor
 

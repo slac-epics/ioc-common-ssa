@@ -22,6 +22,21 @@ iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L1B_0210,P=ACCL
 # Load SSA stats database
 dbLoadRecords("db/ssa_stats.db")
 
+# Load common databases
+dbLoadRecords("db/ssa_sys0_common.db", "ASG=$(ASG)")
+
+# Simulation (for testing only - fake SSAs and global controls)
+# Load common SSA databases
+dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L0B:,M=01,ASG=$(ASG)")
+#dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L1B:,M=02,ASG=$(ASG)")
+dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L1B:,M=03,ASG=$(ASG)")
+dbLoadRecords("db/hlCommon.db", "P=ACCL:L1B:,M=H1,ASG=$(ASG)")
+dbLoadRecords("db/hlCommon.db", "P=ACCL:L1B:,M=H2,ASG=$(ASG)")
+dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L2B:,M=04,ASG=$(ASG)")
+dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L2B:,M=05,ASG=$(ASG)")
+dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L2B:,M=06,ASG=$(ASG)")
+dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L2B:,M=07,ASG=$(ASG)")
+
 
 iocInit()
 
@@ -37,6 +52,9 @@ caPutLogShow(2)
 #
 # SSA1: L1B:0210
 seq(seq_ssa_CA1300, "P=ACCL:L1B:0210:SSA:")
+epicsThreadSleep(0.5)
+
+seq(seq_ssa_sys0_common, "P=ACCL:SYS0:SC:SSA:")
 epicsThreadSleep(0.5)
 
 # Autosave start

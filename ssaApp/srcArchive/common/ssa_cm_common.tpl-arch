@@ -5,6 +5,9 @@
 
 # Name                  Interval Mode
 #----------------------------------------------
-$(P):NumEnabled
-$(P):NumOn
+$(P):NumEnabled      1 monitor
+$(P):NumOn           1 monitor
+$(P):PowerOnAll      1 monitor
+$(P):PowerOffAll     1 monitor
+$(P):FaultResetAll   1 monitor
 

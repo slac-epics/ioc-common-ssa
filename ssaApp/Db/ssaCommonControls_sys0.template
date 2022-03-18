@@ -1,0 +1,15 @@
+
+record(bo, "ACCL:SYS0:SC:SSA:$(OUT)All") {
+    field(DESC, "All SSAs $(OUT)")
+    field(ASG,  "$(ASG)")
+    field(ZNAM, "$(ZNAM="Standby")")
+    field(ONAM, "$(ONAM="$(OUT)")")
+}
+
+record(bo, "ACCL:SYS0:SC:SSA:$(OUT)AllAbort") {
+    field(DESC, "All SSAs $(OUT) abort")
+    field(ASG,  "$(ASG)")
+    field(ZNAM, "Standby")
+    field(ONAM, "Abort")
+}
+
