@@ -37,11 +37,14 @@ iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L0B_0170,P=ACCL
 iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L0B_0180,P=ACCL:L0B:0180:SSA:,ASG=$(ASG),IP=ssa-l0b-0180")
 
 
-# Load common SSA databases
+# Load common CM databases
 dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L0B:,M=01,ASG=$(ASG)")
 
 # Load SSA stats database
 dbLoadRecords("db/ssa_stats.db")
+
+# Load sys0 common database
+dbLoadRecords("db/ssa_sys0_common.db", "ASG=$(ASG)")
 
 
 iocInit()
@@ -87,6 +90,10 @@ epicsThreadSleep(0.25)
 
 # SSA8: L0B:0180
 seq(seq_ssa_CA1300, "P=ACCL:L0B:0180:SSA:")
+epicsThreadSleep(0.25)
+
+# Common sys0 routine
+seq(seq_ssa_sys0_common, "P=ACCL:SYS0:SC:SSA:")
 epicsThreadSleep(0.25)
 
 
