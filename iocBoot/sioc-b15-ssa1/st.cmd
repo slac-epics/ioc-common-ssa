@@ -17,7 +17,7 @@ asSetFilename("${TOP}/iocBoot/common/no_security.acf")
 #
 # SSA1: L1B:0210
 # 3.8 kW (cryomodule)
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L1B_0210,P=ACCL:L1B:0210:SSA:,ASG=$(ASG),IP=ssa-b15-rf0110")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L1B_0210,P=ACCL:L1B:0210:SSA:,CAV1=1,ASG=$(ASG),IP=ssa-b15-rf0110")
 
 # Load SSA stats database
 dbLoadRecords("db/ssa_stats.db")

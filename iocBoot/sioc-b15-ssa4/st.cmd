@@ -16,7 +16,7 @@ asSetFilename("${TOP}/iocBoot/common/no_security.acf")
 #
 # SSA4: L1B:H240
 # 3.9 GHz (HL)
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA3900.iocsh", "PORT=L1B_H240,P=ACCL:L1B:H240:SSA:,ASG=$(ASG),IP=ssa-b15-rf0140")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA3900.iocsh", "PORT=L1B_H240,P=ACCL:L1B:H240:SSA:,CAV1=4,CAV2=8,ASG=$(ASG),IP=ssa-b15-rf0140")
 
 
 iocInit()
