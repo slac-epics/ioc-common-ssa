@@ -29,13 +29,18 @@ DB += ssa_RK_CA199.db
 #DB += ssa_BBEF.db
 DB += ssa_RK_CA3900.db
 
+# Common SSA controls
 DB += gunCommon.db
 DB += buncherCommon.db
 DB += cryomoduleCommon.db
 DB += hlCommon.db
 DB += ssa_sys0_common.db
 
+# SSA stats: for CM, machine area, and entire linac
 DB += ssa_stats.db
+
+# Simulated SSAs: for development testing
+DB += ssa_sim.db
 
 # Install Common databases needed by All IOCs
 # ========================================================

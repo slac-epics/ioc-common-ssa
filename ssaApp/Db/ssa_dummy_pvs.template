@@ -1,0 +1,103 @@
+
+record(longin, "$(P)ErrCodeInt"){
+}
+
+record(seq, "$(P)FaultIntReset"){
+    field(DLY1, "2")
+    field(DOL1, "0")
+    field(LNK1, "$(P)ErrCodeInt PP")
+}
+
+#------------------------------------------------------
+record(longin, "$(P)ErrCodeExt"){
+}
+
+record(seq, "$(P)FaultExtReset"){
+    field(DLY1, "2")
+    field(DOL1, "0")
+    field(LNK1, "$(P)ErrCodeExt PP")
+}
+
+#------------------------------------------------------
+record(calcout, "$(P)PowerOnCalc"){
+    field(INPA, "$(P)PowerOn CP")
+    field(CALC, "A")
+    field(OOPT, "Transition To Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OCAL, "3")
+    field(OUT,  "$(P)StatusMsg PP")
+}
+
+record(calcout, "$(P)PowerOffCalc"){
+    field(INPA, "$(P)PowerOff CP")
+    field(CALC, "A")
+    field(OOPT, "Transition To Non-zero")
+    field(DOPT, "Use OCAL")
+    field(OCAL, "2")
+    field(OUT,  "$(P)StatusMsg PP")
+}
+
+#------------------------------------------------------
+record(bi, "$(P)ACEnableRBV"){
+    field(ZNAM, "Disabled")
+    field(ONAM, "Enabled")
+}
+
+record(bo, "$(P)ACEnable"){
+    field(FLNK, "$(P)ACEnableSeq")
+    field(ZNAM, "Disable")
+    field(ONAM, "Enable")
+}
+
+record(seq, "$(P)ACEnableSeq"){
+    field(DLY1, "2")
+    field(DOL1, "$(P)ACEnable")
+    field(LNK1, "$(P)ACEnableRBV PP")
+}
+
+#------------------------------------------------------
+record(bi, "$(P)DCEnableRBV"){
+    field(ZNAM, "Disabled")
+    field(ONAM, "Enabled")
+}
+
+record(bo, "$(P)DCEnable"){
+    field(ZNAM, "Disable")
+    field(ONAM, "Enable")
+    field(FLNK, "$(P)DCEnableSeq")
+}
+
+record(seq, "$(P)DCEnableSeq"){
+    field(DLY1, "2")
+    field(DOL1, "$(P)DCEnable")
+    field(LNK1, "$(P)DCEnableRBV PP")
+}
+
+#------------------------------------------------------
+
+# This would be the new modbus record that writes to the HW
+record(bo, "$(P)RFEnableWrite"){
+    field(ZNAM, "Disable")
+    field(ONAM, "Enable")
+    field(FLNK, "$(P)RFEnableSeq")
+}
+
+record(seq, "$(P)RFEnableSeq"){
+    field(DLY1, "0.5")
+    field(DOL1, "$(P)RFEnableWrite")
+    field(LNK1, "$(P)RFEnableRBV PP")
+}
+
+record(bi, "$(P)RFEnableRBV"){
+    field(ZNAM, "Disabled")
+    field(ONAM, "Enabled")
+    field(PINI, "1")
+    info(autosaveFields, "VAL")
+}
+
+record(calcout, "$(P)RFEnableAuto"){
+    field(INPA, "$(P)StatusMsg CP")
+    field(CALC, "A=3")
+    field(OUT,  "$(P)RFEnable PP")
+}
+

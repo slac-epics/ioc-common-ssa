@@ -25,8 +25,8 @@ dbLoadRecords("db/ssa_stats.db")
 # Load common databases
 dbLoadRecords("db/ssa_sys0_common.db", "ASG=$(ASG)")
 
-# Simulation (for testing only - fake SSAs and global controls)
-# Load common SSA databases
+# Simulation (for testing only - simulated SSAs and global controls)
+dbLoadRecords("db/ssa_sim.db", "ASG=$(ASG)")
 dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L0B:,M=01,ASG=$(ASG)")
 #dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L1B:,M=02,ASG=$(ASG)")
 dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L1B:,M=03,ASG=$(ASG)")
