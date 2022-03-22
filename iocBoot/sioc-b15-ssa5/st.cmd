@@ -16,7 +16,7 @@ asSetFilename("${TOP}/iocBoot/common/no_security.acf")
 #
 # SSA1: L1B:0250
 # 3.8 kW (cryomodule)
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L1B_0250,P=ACCL:L1B:0250:SSA:,CAV1=5,ASG=$(ASG),IP=ssa-b15-rf0150")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L1B_0250,P=ACCL:L1B:0250:SSA:,CM=02,CAV1=5,ASG=$(ASG),IP=ssa-b15-rf0150")
 
 
 iocInit()

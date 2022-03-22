@@ -119,7 +119,7 @@ asynSetTraceIOMask("$(PORT)_inw00", 0, 0x4)
 asynSetTraceIOTruncateSize("$(PORT)_inw00", 0, 512)
 
 # Load records
-dbLoadRecords("db/ssa_RK_CA186.db", "P=$(P),CAV1=$(CAV1=None),CAV2=$(CAV2=None),PORT_P=$(PORT),ASG=$(ASG)")
+dbLoadRecords("db/ssa_RK_CA186.db", "P=$(P),CM=$(CM=None),CAV1=$(CAV1=None),CAV2=$(CAV2=None),PORT_P=$(PORT),ASG=$(ASG)")
 dbLoadRecords("db/ssa_RK_CA186_modules.db", "P=$(P),PORT_P=$(PORT),ASG=$(ASG)")
 
 # Just in case

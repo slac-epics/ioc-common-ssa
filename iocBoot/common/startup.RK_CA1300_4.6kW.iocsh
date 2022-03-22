@@ -67,7 +67,7 @@ asynSetTraceIOTruncateSize("$(PORT)_inw1", 0, 512)
 asynSetTraceIOTruncateSize("$(PORT)_inw2", 0, 512)
 
 # Load records
-dbLoadRecords("db/ssa_RK_CA1300_4.6kW.db", "P=$(P),CAV1=$(CAV1=None),CAV2=$(CAV2=None),PORT_P=$(PORT),ASG=$(ASG)")
+dbLoadRecords("db/ssa_RK_CA1300_4.6kW.db", "P=$(P),CM=$(CM=None),CAV1=$(CAV1=None),CAV2=$(CAV2=None),PORT_P=$(PORT),ASG=$(ASG)")
 
 # Just in case
 epicsThreadSleep(0.25)

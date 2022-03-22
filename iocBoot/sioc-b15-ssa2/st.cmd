@@ -16,7 +16,7 @@ asSetFilename("${TOP}/iocBoot/common/no_security.acf")
 ## Run IOC shell script for each SSA
 #
 # SSA1: L1B:0220
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L1B_0220,P=ACCL:L1B:0220:SSA:,CAV1=2,ASG=$(ASG),IP=ssa-b15-rf0120")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L1B_0220,P=ACCL:L1B:0220:SSA:,CM=02,CAV1=2,ASG=$(ASG),IP=ssa-b15-rf0120")
 
 
 iocInit()

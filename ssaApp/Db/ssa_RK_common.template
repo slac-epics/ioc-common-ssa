@@ -128,6 +128,12 @@ record(bi, "$(P)PowerOnStatus"){
     field(ONAM, "On")
 }
 
+record(stringout, "$(P)Cryomodule"){
+    field(DESC, "SSA CM mapping")
+    field(VAL,  "$(CM)")
+    field(PINI, "1")
+}
+
 record(stringout, "$(P)Cav1"){
     field(DESC, "SSA cavity mapping")
     field(VAL,  "$(CAV1)")
