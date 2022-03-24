@@ -1,0 +1,102 @@
+# bkh40.substitutions
+# BK9000 + KL1408 + KL2408 + 5x KL3102 + KL3222 + KL3314 + KL9010
+#-----------------------------------------------------------------
+
+file bkhBi.db {
+pattern
+    {ADDR,            R, ATTR,     DESC,          PORT,      ZSV,      OSV}
+    {   0, 1408_01_CH01,    Q, "Chan 01", $(M)_1408_01, NO_ALARM, NO_ALARM}
+    {   1, 1408_01_CH02,    Q, "Chan 02", $(M)_1408_01, NO_ALARM, NO_ALARM}
+    {   2, 1408_01_CH03,    Q, "Chan 03", $(M)_1408_01, NO_ALARM, NO_ALARM}
+    {   3, 1408_01_CH04,    Q, "Chan 04", $(M)_1408_01, NO_ALARM, NO_ALARM}
+    {   4, 1408_01_CH05,    Q, "Chan 05", $(M)_1408_01, NO_ALARM, NO_ALARM}
+    {   5, 1408_01_CH06,    Q, "Chan 06", $(M)_1408_01, NO_ALARM, NO_ALARM}
+    {   6, 1408_01_CH07,    Q, "Chan 07", $(M)_1408_01, NO_ALARM, NO_ALARM}
+    {   7, 1408_01_CH08,    Q, "Chan 08", $(M)_1408_01, NO_ALARM, NO_ALARM}
+}
+
+file bkhBo.db {
+pattern
+    {ADDR,            R, ATTR,      DESC,         PORT}
+    {   0, 2408_01_CH01,    Q, "Chan 01", $(M)_2408_01}
+    {   1, 2408_01_CH02,    Q, "Chan 02", $(M)_2408_01}
+    {   2, 2408_01_CH03,    Q, "Chan 03", $(M)_2408_01}
+    {   3, 2408_01_CH04,    Q, "Chan 04", $(M)_2408_01}
+    {   4, 2408_01_CH05,    Q, "Chan 05", $(M)_2408_01}
+    {   5, 2408_01_CH06,    Q, "Chan 06", $(M)_2408_01}
+    {   6, 2408_01_CH07,    Q, "Chan 07", $(M)_2408_01}
+    {   7, 2408_01_CH08,    Q, "Chan 08", $(M)_2408_01}
+}
+
+file bkhAi.db {
+pattern
+    {ADDR,            R, ATTR,      DESC,         PORT, EGU, EOFF,        ESLO, PREC,  LOLO,   LOW,  HIGH,  HIHI,     LLSV,      LSV,      HSV,     HHSV}
+    {   0, 3102_01_CH01,    V, "Chan 01", $(M)_3102_01,   V,    0, 0.000305185,    3, -10.0,  -9.8,   9.8,  10.0,    MAJOR,    MINOR,    MINOR,    MAJOR}
+    {   1, 3102_01_CH02,    V, "Chan 02", $(M)_3102_01,   V,    0, 0.000305185,    3, -10.0,  -9.8,   9.8,  10.0,    MAJOR,    MINOR,    MINOR,    MAJOR}
+    {   2, 3102_01_CH03,    V, "Chan 03", $(M)_3102_01,   V,    0, 0.000305185,    3, -10.0,  -9.8,   9.8,  10.0,    MAJOR,    MINOR,    MINOR,    MAJOR}
+    {   3, 3102_01_CH04,    V, "Chan 04", $(M)_3102_01,   V,    0, 0.000305185,    3, -10.0,  -9.8,   9.8,  10.0,    MAJOR,    MINOR,    MINOR,    MAJOR}
+    {   4, 3102_01_CH05,    V, "Chan 05", $(M)_3102_01,   V,    0, 0.000305185,    3, -10.0,  -9.8,   9.8,  10.0,    MAJOR,    MINOR,    MINOR,    MAJOR}
+    {   5, 3102_01_CH06,    V, "Chan 06", $(M)_3102_01,   V,    0, 0.000305185,    3, -10.0,  -9.8,   9.8,  10.0,    MAJOR,    MINOR,    MINOR,    MAJOR}
+    {   6, 3102_01_CH07,    V, "Chan 07", $(M)_3102_01,   V,    0, 0.000305185,    3, -10.0,  -9.8,   9.8,  10.0,    MAJOR,    MINOR,    MINOR,    MAJOR}
+    {   7, 3102_01_CH08,    V, "Chan 08", $(M)_3102_01,   V,    0, 0.000305185,    3, -10.0,  -9.8,   9.8,  10.0,    MAJOR,    MINOR,    MINOR,    MAJOR}
+    {   8, 3102_01_CH09,    V, "Chan 09", $(M)_3102_01,   V,    0, 0.000305185,    3, -10.0,  -9.8,   9.8,  10.0,    MAJOR,    MINOR,    MINOR,    MAJOR}
+    {   9, 3102_01_CH10,    V, "Chan 10", $(M)_3102_01,   V,    0, 0.000305185,    3, -10.0,  -9.8,   9.8,  10.0,    MAJOR,    MINOR,    MINOR,    MAJOR}
+}
+
+file bkhTemp.db {
+pattern
+    {ADDR,            R,      DESC,         PORT, EGU,       CALC, EGU_ALT, ESLO, PREC,  LOLO,   LOW,  HIGH,  HIHI,     LLSV,      LSV,      HSV,     HHSV}
+    {   0, 3222_01_CH01, "Chan 01", $(M)_3222_01,   C, "A*1.8+32",       F, 0.01,    2,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM}
+    {   1, 3222_01_CH02, "Chan 02", $(M)_3222_01,   C, "A*1.8+32",       F, 0.01,    2,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM}
+}
+
+file bkhTemp.db {
+pattern
+    {ADDR,            R,      DESC,         PORT, EGU,       CALC, EGU_ALT, ESLO, PREC,  LOLO,   LOW,  HIGH,  HIHI,     LLSV,      LSV,      HSV,     HHSV}
+    {   0, 3314_01_CH01, "Chan 01", $(M)_3314_01,   C, "A*1.8+32",       F,  0.1,    2,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM}
+    {   1, 3314_01_CH02, "Chan 02", $(M)_3314_01,   C, "A*1.8+32",       F,  0.1,    2,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM}
+    {   2, 3314_01_CH03, "Chan 03", $(M)_3314_01,   C, "A*1.8+32",       F,  0.1,    2,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM}
+    {   3, 3314_01_CH04, "Chan 04", $(M)_3314_01,   C, "A*1.8+32",       F,  0.1,    2,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM}
+}
+
+file readwrite.db {
+pattern
+    {    MOD,         PORT}
+    {3222_01, $(M)_3222_01}
+    {3102_01, $(M)_3102_01}
+    {3314_01, $(M)_3314_01}
+}
+
+file bkhAErr.db {
+pattern
+    {    MOD,         PORT}
+    {1408_01, $(M)_1408_01}
+    {2408_01, $(M)_2408_01}
+    {3222_01, $(M)_3222_01}
+    {3102_01, $(M)_3102_01}
+    {3314_01, $(M)_3314_01}
+}
+
+# For bus coupler
+file bk9000.db {
+pattern
+    {     DPORT,        RPORT,        WPORT}
+    {$(M)_DEBUG, $(M)_BK9000R, $(M)_BK9000W}
+}
+
+# Conversions --------------------------------
+file ai_convert_autosave.template {
+pattern
+    {                    INPV,                 OUTPV,                DESC,   C0,   C1,   C2,   C3,   C4,   EGU, PREC, LOLO, LOW, HIGH, HIHI,     LLSV,      LSV,      HSV,     HHSV}
+    {"$(P):3102_01_CH01_V MS", "$(P):3102_01_CH01_C", "Chan 01 converted", 0.00, 1.00, 0.00, 0.00, 0.00, "egu",    2,   "",  "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM}
+    {"$(P):3102_01_CH02_V MS", "$(P):3102_01_CH02_C", "Chan 02 converted", 0.00, 1.00, 0.00, 0.00, 0.00, "egu",    2,   "",  "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM}
+    {"$(P):3102_01_CH03_V MS", "$(P):3102_01_CH03_C", "Chan 03 converted", 0.00, 1.00, 0.00, 0.00, 0.00, "egu",    2,   "",  "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM}
+    {"$(P):3102_01_CH04_V MS", "$(P):3102_01_CH04_C", "Chan 04 converted", 0.00, 1.00, 0.00, 0.00, 0.00, "egu",    2,   "",  "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM}
+    {"$(P):3102_01_CH05_V MS", "$(P):3102_01_CH05_C", "Chan 05 converted", 0.00, 1.00, 0.00, 0.00, 0.00, "egu",    2,   "",  "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM}
+    {"$(P):3102_01_CH06_V MS", "$(P):3102_01_CH06_C", "Chan 06 converted", 0.00, 1.00, 0.00, 0.00, 0.00, "egu",    2,   "",  "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM}
+    {"$(P):3102_01_CH07_V MS", "$(P):3102_01_CH07_C", "Chan 07 converted", 0.00, 1.00, 0.00, 0.00, 0.00, "egu",    2,   "",  "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM}
+    {"$(P):3102_01_CH08_V MS", "$(P):3102_01_CH08_C", "Chan 08 converted", 0.00, 1.00, 0.00, 0.00, 0.00, "egu",    2,   "",  "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM}
+    {"$(P):3102_01_CH09_V MS", "$(P):3102_01_CH09_C", "Chan 09 converted", 0.00, 1.00, 0.00, 0.00, 0.00, "egu",    2,   "",  "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM}
+    {"$(P):3102_01_CH10_V MS", "$(P):3102_01_CH10_C", "Chan 10 converted", 0.00, 1.00, 0.00, 0.00, 0.00, "egu",    2,   "",  "",   "",   "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM}
+}
+

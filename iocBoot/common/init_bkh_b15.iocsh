@@ -1,0 +1,43 @@
+# Beckhoff config for b15 SSA test area
+# 20220323 mdunning
+#
+# Required macros:
+#  BKH_PORT - Asyn port name
+#  BKH_IP - Bus coupler node name or IP address 
+#
+# This file should be executed from the ioc shell like so:
+#  iocshLoad(filename, macros)
+#  For example:
+#  iocshLoad("$(TOP)/iocBoot/common/init_bkh_ms02.iocsh", "BKH_PORT=BKH02,BKH_IP=apc-sys0-ms02")
+
+drvAsynIPPortConfigure("$(BKH_PORT)_IP", "$(BKH_IP):502", 0,0,1)
+modbusInterposeConfig("$(BKH_PORT)_IP", 0, 1000)
+#
+# drvMBusConfig(port, octetPort, slave, addr, len, dtype, msec)
+drvMBusConfig("$(BKH_PORT)", "$(BKH_PORT)_IP", 0, 0, 125, 0, 10)
+#
+# drvBkhAsynConfig(port, modbusPort, id, func, addr, len, nch, msec)
+# port is the asyn port name for the driver (pick a unique short name for each module)
+# modbusPort is the modbus port name used in drvMBusConfig()
+# id is a unique module type identifier: 0 - coupler, 1 - analogSigned,
+#     2 - analogUnsigned, 3 - digitalIn, 4 - digitalOut, 5 - motor.
+# func is the modbus function (e.g. 5 - digitalOut, 2 - digitalIn, 3 - analog In/Out)
+# addr is the modbus starting address of the memory image (group all modules of the same modbus function together)
+# len is the length of the memory image, in bits (digital modules) or 16 bit words (analog modules)
+# nch is the number of channels
+# msec is poll routine timeout in milliseconds
+#
+# These are standard bus coupler commands
+drvBkhAsynConfig("$(BKH_PORT)_DEBUG",   "$(BKH_PORT)", 0, 3,      0, 125,  2,    0)
+drvBkhAsynConfig("$(BKH_PORT)_BK9000R", "$(BKH_PORT)", 0, 3, 0x1000,  33, 33,    0)
+drvBkhAsynConfig("$(BKH_PORT)_BK9000W", "$(BKH_PORT)", 0, 3, 0x110a,  26, 26,    0)
+#
+# These are for the bus terminals
+drvBkhAsynConfig("$(BKH_PORT)_1408_01", "$(BKH_PORT)", 3, 2,      0,   8,  8,  250)
+drvBkhAsynConfig("$(BKH_PORT)_2408_01", "$(BKH_PORT)", 4, 5,      0,   8,  8,    0)
+drvBkhAsynConfig("$(BKH_PORT)_3222_01", "$(BKH_PORT)", 1, 3,      0,   4,  2,  250)
+drvBkhAsynConfig("$(BKH_PORT)_3102_01", "$(BKH_PORT)", 1, 3,      4,  20, 10,  250)
+drvBkhAsynConfig("$(BKH_PORT)_3314_01", "$(BKH_PORT)", 1, 3,     24,   8,  4,  250)
+
+# End of file
+

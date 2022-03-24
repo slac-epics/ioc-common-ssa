@@ -23,6 +23,7 @@ $(PROD_NAME)_DBD += devIocStats.dbd
 $(PROD_NAME)_DBD += asSupport.dbd
 $(PROD_NAME)_DBD += caPutLog.dbd
 $(PROD_NAME)_DBD += system.dbd
+$(PROD_NAME)_DBD += drvBkhAsyn.dbd
 
 $(PROD_NAME)_DBD += $(PROD_NAME)ASubSupport.dbd
 $(PROD_NAME)_DBD += $(PROD_NAME)SeqSupport.dbd
@@ -61,6 +62,7 @@ $(PROD_NAME)_SRCS += $(PROD_NAME)Seq_sys0_common.st
 $(PROD_NAME)_LIBS += devIocStats
 $(PROD_NAME)_LIBS += autosave
 $(PROD_NAME)_LIBS += caPutLog
+$(PROD_NAME)_LIBS += bkhAsyn
 $(PROD_NAME)_LIBS += modbus
 $(PROD_NAME)_LIBS += asyn
 

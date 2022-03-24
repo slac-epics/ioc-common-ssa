@@ -8,6 +8,7 @@ include $(TOP)/configure/CONFIG
 #DB_OPT = YES
 
 DB_INSTALLS += $(ASYN)/db/asynRecord.db
+DB_INSTALLS += $(ASYN)/db/asynRecord.db
 DB_INSTALLS += $(MODBUS)/db/bo_word.template
 DB_INSTALLS += $(MODBUS)/db/longout.template
 DB_INSTALLS += $(MODBUS)/db/bi_word.template
@@ -17,9 +18,6 @@ DB_INSTALLS += $(MODBUS)/db/bi_word.template
 DB_INSTALLS += $(MODBUS)/db/statistics.template
 DB_INSTALLS += $(MODBUS)/db/poll_delay.template
 
-#----------------------------------------------------
-# Create and install (or just install)
-# databases, templates, substitutions like this
 DB += ssa_RK_CA1300.db
 DB += ssa_RK_CA1300_4.6kW.db
 DB += ssa_RK_CA1300_7kW.db
@@ -41,6 +39,9 @@ DB += ssa_stats.db
 
 # Simulated SSAs: for development testing
 DB += ssa_sim.db
+
+# B15 beckhoff
+DB += bkh_b15.db
 
 # Install Common databases needed by All IOCs
 # ========================================================
