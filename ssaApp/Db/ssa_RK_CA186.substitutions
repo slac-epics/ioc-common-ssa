@@ -125,7 +125,7 @@ pattern
 file "ai_slope.template" {
 pattern
 {               R,                     DESC,            PORT, OFFSET,   AOFF,    ASLO, PREC,   LOLO,    LOW,   HIGH,   HIHI,     LLSV,      LSV,      HSV,     HHSV,     EGU,       SCAN}
-{       PSVoltRBV,     "Output Voltage RBV", $(PORT_P)_inw00,     34,    0.0,     0.1,    1,     "",     "",   44.8,   45.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "V", "I/O Intr"}
+{       PSVoltRBV,     "Output Voltage RBV", $(PORT_P)_inw00,     34,    0.0,     0.1,    1,     "",     "",   47.0,   48.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "V", "I/O Intr"}
 {   FwdPwrAlLmRBV,  "Fwd Pwr Alarm Lim RBV", $(PORT_P)_inw00,     35,    0.0,    0.01,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,    "kW", "I/O Intr"}
 {   RefPwrAlLmRBV,  "Ref Pwr Alarm Lim RBV", $(PORT_P)_inw00,     36,    0.0,    0.01,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,    "kW", "I/O Intr"}
 { LCWOutTempLmRBV,   "LCW Out Temp Lim RBV", $(PORT_P)_inw00,     37,    0.0,     0.1,    1,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,  "degC", "I/O Intr"}
