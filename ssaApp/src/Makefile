@@ -20,6 +20,8 @@ $(PROD_NAME)_DBD += asyn.dbd
 $(PROD_NAME)_DBD += drvAsynIPPort.dbd
 $(PROD_NAME)_DBD += modbusSupport.dbd
 $(PROD_NAME)_DBD += devIocStats.dbd
+$(PROD_NAME)_DBD += iocAdmin.dbd
+$(PROD_NAME)_DBD += devSeqCar.dbd
 $(PROD_NAME)_DBD += asSupport.dbd
 $(PROD_NAME)_DBD += caPutLog.dbd
 $(PROD_NAME)_DBD += system.dbd
@@ -75,7 +77,7 @@ endif
 # in the <top>/configure/RELEASE file
 #
 ifneq ($(SNCSEQ),)
-$(PROD_NAME)_LIBS += seq pv
+$(PROD_NAME)_LIBS += seqCar seq pv
 endif
 
 $(PROD_NAME)_LIBS += $(EPICS_BASE_IOC_LIBS)

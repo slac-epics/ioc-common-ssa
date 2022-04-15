@@ -23,8 +23,7 @@ dbLoadRecords("db/iocAdminScanMon.db", "IOC=${IOC_NAME}")
 dbLoadRecords("db/iocRelease.db", "IOC=${IOC_NAME}")
 
 # Sequencer
-# This is currently broken...should fix but not high priority
-#dbLoadRecords("db/devSeqCar.db", "SIOC=${IOC_NAME}")
+dbLoadRecords("db/devSeqCar.db", "SIOC=${IOC_NAME}")
 
 # Autosave initialization
 < $(TOP)/iocBoot/common/autosave_init.cmd
