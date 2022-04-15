@@ -40,5 +40,7 @@ epicsThreadSleep(0.5)
 
 cd $(TOP)
 
+dbpf("ACCL:L1B:0250:SSA:SeqDebug", 1)
+
 # End of file
 
