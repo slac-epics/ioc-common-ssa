@@ -49,7 +49,7 @@ record(mbbi, "$(P)StatusMsg") {
     field(ZRST, "Unknown")
     field(ZRSV, "MINOR")
     field(ONVL, "1")
-    field(ONST, "Faulted")
+    field(ONST, "SSA Faulted")
     field(ONSV, "MAJOR")
     field(TWVL, "2")
     field(TWST, "SSA Off")
