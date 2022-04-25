@@ -43,19 +43,19 @@ caPutLogShow(2)
 # This must be done after iocInit
 #
 # SSA1: ACCL:GUNB:455:SSA1
-seq(seq_ssa_CA1300, "P=ACCL:GUNB:455:SSA1:")
+seq(seq_ssa_RK_CA, "P=ACCL:GUNB:455:SSA1:")
 epicsThreadSleep(0.25)
 
 # SSA2: ACCL:GUNB:455:SSA2
-seq(seq_ssa_CA1300, "P=ACCL:GUNB:455:SSA2:")
+seq(seq_ssa_RK_CA, "P=ACCL:GUNB:455:SSA2:")
 epicsThreadSleep(0.25)
 
 # SSA3: ACCL:GUNB:455:SSA3
-seq(seq_ssa_CA1300, "P=ACCL:GUNB:455:SSA3:")
+seq(seq_ssa_RK_CA, "P=ACCL:GUNB:455:SSA3:")
 epicsThreadSleep(0.25)
 
 # SSA4: ACCL:GUNB:455:SSA4
-seq(seq_ssa_CA1300, "P=ACCL:GUNB:455:SSA4:")
+seq(seq_ssa_RK_CA, "P=ACCL:GUNB:455:SSA4:")
 epicsThreadSleep(0.25)
 
 

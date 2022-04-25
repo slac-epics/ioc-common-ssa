@@ -1,6 +1,6 @@
 
-# This is a dummy PV so that we can share the CA1300 sequencer routine.
-# Since this register doesn't exist in this SSA, it must be locked to 0.
+# This is a dummy PV so that all R&K SSAs can share the same sequencer routine.
+# Since this register doesn't exist in this SSA, it should be set to 0.
 record(longout, "$(P)RFCountdown"){
     field(DESC, "Ready for RF (dummy PV)")
     field(ASG,  "$(ASG)")
@@ -11,8 +11,8 @@ record(longout, "$(P)RFCountdown"){
     field(PINI, "1")
 }
 
-# This is a dummy PV so that we can share the CA1300 sequencer routine.
-# Since this register doesn't exist in this SSA, it must be locked to 0.
+# This is a dummy PV so that all R&K SSAs can share the same sequencer routine.
+# Since this register doesn't exist in this SSA, it should be set to 0.
 record(longout, "$(P)CritWarnCode"){
     field(DESC, "Crit warn code (dummy PV)")
     field(ASG,  "$(ASG)")
@@ -23,8 +23,8 @@ record(longout, "$(P)CritWarnCode"){
     field(PINI, "1")
 }
 
-# This is a dummy PV so that we can share the CA1300 sequencer routine.
-# Since this register doesn't exist in this SSA, it must be locked to 0.
+# This is a dummy PV so that all R&K SSAs can share the same sequencer routine.
+# Since this register doesn't exist in this SSA, it should be set to 0.
 record(bo, "$(P)ProcReset"){
     field(DESC, "Processor reset (dummy PV)")
     field(ASG,  "$(ASG)")
@@ -32,6 +32,19 @@ record(bo, "$(P)ProcReset"){
     field(ONAM, "Resetting...")
     field(OSV,  "MINOR")
     field(DOL,  "0")
+    field(OMSL, "closed_loop")
+    field(PINI, "1")
+}
+
+# This is a dummy PV so that all R&K SSAs can share the same sequencer routine.
+# Since this register doesn't exist in this SSA, it should be set to 1.
+record(bo, "$(P)ModuleOnSum"){
+    field(DESC, "Module on sum (dummy PV)")
+    field(ASG,  "$(ASG)")
+    field(ZNAM, "NotAllOn")
+    field(ONAM, "AllOn")
+    field(ZSV,  "MAJOR")
+    field(DOL,  "1")
     field(OMSL, "closed_loop")
     field(PINI, "1")
 }

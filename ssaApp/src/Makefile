@@ -54,7 +54,7 @@ $(PROD_NAME)_SRCS_DEFAULT += $(PROD_NAME)Main.cpp
 # For example, subroutines
 # ========================================================================
 $(PROD_NAME)_SRCS += $(PROD_NAME)ASub.c
-$(PROD_NAME)_SRCS += $(PROD_NAME)Seq_RK_CA1300.st
+$(PROD_NAME)_SRCS += $(PROD_NAME)Seq_RK_CA.st
 $(PROD_NAME)_SRCS += $(PROD_NAME)Seq_RK_CA186.st
 $(PROD_NAME)_SRCS += $(PROD_NAME)Seq_sys0_common.st
 

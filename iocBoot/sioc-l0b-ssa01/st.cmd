@@ -61,35 +61,35 @@ caPutLogShow(2)
 # This must be done after iocInit
 #
 # SSA1: L0B:0110
-seq(seq_ssa_CA1300, "P=ACCL:L0B:0110:SSA:")
+seq(seq_ssa_RK_CA, "P=ACCL:L0B:0110:SSA:")
 epicsThreadSleep(0.25)
 
 # SSA2: L0B:0120
-seq(seq_ssa_CA1300, "P=ACCL:L0B:0120:SSA:")
+seq(seq_ssa_RK_CA, "P=ACCL:L0B:0120:SSA:")
 epicsThreadSleep(0.25)
 
 # SSA3: L0B:0130
-seq(seq_ssa_CA1300, "P=ACCL:L0B:0130:SSA:")
+seq(seq_ssa_RK_CA, "P=ACCL:L0B:0130:SSA:")
 epicsThreadSleep(0.25)
 
 # SSA4: L0B:0140
-seq(seq_ssa_CA1300, "P=ACCL:L0B:0140:SSA:")
+seq(seq_ssa_RK_CA, "P=ACCL:L0B:0140:SSA:")
 epicsThreadSleep(0.25)
 
 # SSA5: L0B:0150
-seq(seq_ssa_CA1300, "P=ACCL:L0B:0150:SSA:")
+seq(seq_ssa_RK_CA, "P=ACCL:L0B:0150:SSA:")
 epicsThreadSleep(0.25)
 
 # SSA6: L0B:0160
-seq(seq_ssa_CA1300, "P=ACCL:L0B:0160:SSA:")
+seq(seq_ssa_RK_CA, "P=ACCL:L0B:0160:SSA:")
 epicsThreadSleep(0.25)
 
 # SSA7: L0B:0170
-seq(seq_ssa_CA1300, "P=ACCL:L0B:0170:SSA:")
+seq(seq_ssa_RK_CA, "P=ACCL:L0B:0170:SSA:")
 epicsThreadSleep(0.25)
 
 # SSA8: L0B:0180
-seq(seq_ssa_CA1300, "P=ACCL:L0B:0180:SSA:")
+seq(seq_ssa_RK_CA, "P=ACCL:L0B:0180:SSA:")
 epicsThreadSleep(0.25)
 
 # Common sys0 routine

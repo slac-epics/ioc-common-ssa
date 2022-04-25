@@ -32,13 +32,15 @@ caPutLogShow(2)
 # This must be done after iocInit
 #
 # SSA1: SSA3:B15
-seq(seq_ssa_CA186, "P=SSA3:B15:")
+seq(seq_ssa_RK_CA, "P=SSA3:B15:")
 epicsThreadSleep(0.5)
 
 # Autosave start
 < $(TOP)/iocBoot/common/autosave_start.cmd
 
 cd $(TOP)
+
+dbpf("SSA3:B15:SeqDebug", 1)
 
 # End of file
 

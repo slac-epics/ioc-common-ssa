@@ -51,7 +51,7 @@ caPutLogShow(2)
 # This must be done after iocInit
 #
 # SSA1: L1B:0210
-seq(seq_ssa_CA1300, "P=ACCL:L1B:0210:SSA:")
+seq(seq_ssa_RK_CA, "P=ACCL:L1B:0210:SSA:")
 epicsThreadSleep(0.5)
 
 seq(seq_ssa_sys0_common, "P=ACCL:SYS0:SC:SSA:")

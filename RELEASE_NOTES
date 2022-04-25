@@ -8,6 +8,9 @@
 #
 #--------------------------------------------------------------
 
+R1.2.0: 25-Apr-2022  M. Dunning (mdunning)
+    Merge CA1300 and CA186 seq routines into a single common routine
+
 R1.1.14: 15-Apr-2022  M. Dunning (mdunning)
     CA1300 sequencer routine: add retries and an init state; clean up faultReset/powerOn/powerOff states
     Add devSeqCar support

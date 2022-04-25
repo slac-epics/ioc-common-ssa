@@ -84,6 +84,9 @@ record(mbbi, "$(P)StatusMsg") {
     field(TVVL, "12")
     field(TVST, "Resetting Processor...")
     field(TVSV, "MINOR")
+    field(TTVL, "13")
+    field(TTST, "SSA Offline")
+    field(TTSV, "INVALID")
     field(FLNK, "$(P)PowerOnStatusCalc")
 }
 

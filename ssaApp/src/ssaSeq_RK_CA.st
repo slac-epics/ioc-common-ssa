@@ -1,4 +1,4 @@
-program seq_ssa_CA1300
+program seq_ssa_RK_CA
 
 /*----------------------------------------------------------------*/
 /*
@@ -50,11 +50,6 @@ assign rfEnable to "{P}RFEnable";
 int rfEnableCount;
 int rfDisableCount;
 
-//evflag ssaOnFlag;
-//sync rfEnableRBV ssaOnFlag;
-//sync dcEnableRBV ssaOnFlag;
-//sync acEnableRBV ssaOnFlag;
-
 int rfCountdown;
 assign rfCountdown to "{P}RFCountdown";
 monitor rfCountdown;
@@ -64,17 +59,9 @@ int faultInt;
 assign faultInt to "{P}ErrCodeInt";
 monitor faultInt;
 
-int faultIntReset;
-assign faultIntReset to "{P}FaultIntReset";
-int faultIntResetCount;
-
 int faultExt;
 assign faultExt to "{P}ErrCodeExt";
 monitor faultExt;
-
-int faultExtReset;
-assign faultExtReset to "{P}FaultExtReset";
-int faultExtResetCount;
 
 int warningCode;
 assign warningCode to "{P}WarningCode";
@@ -84,8 +71,17 @@ int critWarningCode;
 assign critWarningCode to "{P}CritWarnCode";
 monitor critWarningCode;
 
+int faultIntReset;
+assign faultIntReset to "{P}FaultIntReset";
+int faultIntResetCount;
+
+int faultExtReset;
+assign faultExtReset to "{P}FaultExtReset";
+int faultExtResetCount;
+
 int warningReset;
 assign warningReset to "{P}WarningReset";
+int warningResetCount;
 
 int statusMsg;
 assign statusMsg to "{P}StatusMsg";
@@ -101,6 +97,11 @@ monitor powerOn;
 int powerOff;
 assign powerOff to "{P}PowerOff";
 monitor powerOff;
+
+int allModulesOn;
+assign allModulesOn to "{P}ModuleOnSum";
+monitor allModulesOn;
+int moduleOnCount;
 
 int systemReboot;
 assign systemReboot to "{P}SystemReboot";
@@ -131,6 +132,11 @@ evflag drainVoltFlag;
 #define failWait 5.0  // Time to wait after attempting to reset a fault before we declare failure
 #define resetTimeout 10.0  // Time to wait after attempting to reset a fault before we declare failure
 #define powerOnTimeout 10.0  // Time to wait before we declare power on sequence to be a failure
+#define dcEnableWait 0.5  // Time to wait between DC enable loop checks
+#define rfEnableWait (powerOnTimeout-1.0)  // Time to wait between DC enable and RF enable (must be < powerOnTimeout)
+#define rfCountdownWait 2.5  // Time to wait between rfCountdown loop checks
+#define drainVoltWait 1.0  // Time to wait between DC enable and setting drain voltage
+#define moduleOnWait 2.0  // Time to wait between moduleOn loop checks
 #define powerOnWait 2.0  // Time to wait in faultResetState before going to poweringOnState
 #define powerOffTimeout 5.0  // Time to wait in poweringOffState before going to powerOffFailState
 #define sysRebootTimeout 6.0  // Time to wait after sysReboot before we go to ssaOnState
@@ -139,17 +145,20 @@ evflag drainVoltFlag;
 #define isFaulted (faultInt || faultExt || critWarningCode)
 #define isOn (acEnableRBV && dcEnableRBV && rfEnableRBV)
 #define isOff (!acEnableRBV || (!dcEnableRBV && !rfEnableRBV))
+#define isOffline ((pvSeverity(dcEnableRBV) == pvSevrINVALID) && (pvSeverity(rfEnableRBV) == pvSevrINVALID))
 #define dcEnableRetries 2
 #define rfEnableRetries 2
 #define dcDisableRetries 1
 #define rfDisableRetries 1
 #define faultIntResetRetries 2
 #define faultExtResetRetries 2
+#define warningResetRetries 1
+#define moduleOnRetries 10
 
 // Variables --------------------------------
 %% static char tsbuffer[64];  // For timestamp
 %{ enum status {STAT_UNK, STAT_FLT, STAT_OFF, STAT_ON, STAT_RST, STAT_PWRON, STAT_PWROFF, STAT_RST_FAIL, 
-    STAT_PWRON_FAIL, STAT_PWROFF_FAIL, STAT_RBT, STAT_XP_RBT, STAT_PROC_RST};
+    STAT_PWRON_FAIL, STAT_PWROFF_FAIL, STAT_RBT, STAT_XP_RBT, STAT_PROC_RST, STAT_OFFLINE};
 }%
 %% enum ssa_type {CA1300_7kW, CA1300_4kW, CA1300, CA3900, CA186};
 
@@ -195,6 +204,9 @@ ss ssa_state_check {
             }
         }
 
+        when (isOffline) {
+        } state ssaOfflineState
+
         when (isFaulted) {
         } state ssaFaultedState
 
@@ -213,6 +225,9 @@ ss ssa_state_check {
             statusMsg = STAT_ON;
             pvPut(statusMsg);
         }
+
+        when (isOffline) {
+        } state ssaOfflineState
 
         when (isFaulted) {
         } state ssaFaultedState
@@ -254,6 +269,9 @@ ss ssa_state_check {
             pvPut(statusMsg);
         }
 
+        when (isOffline) {
+        } state ssaOfflineState
+
         when (isOn) {
         } state ssaOnState
 
@@ -289,6 +307,33 @@ ss ssa_state_check {
         } state procResetState
     }
 
+    state ssaOfflineState {
+    /* SSA is offline */
+        entry {
+            if (seqDebug) printf("[%s] DEBUG: STATE: ssaOfflineState\n", timestamp());
+            statusMsg = STAT_OFFLINE;
+            pvPut(statusMsg);
+        }
+
+        when (powerOn) {
+            powerOn = 0;
+            pvPut(powerOn);
+        } state ssaOfflineState
+
+        when (powerOff) {
+            powerOff = 0;
+            pvPut(powerOff);
+        } state ssaOfflineState
+
+        when (faultReset) {
+            faultReset = 0;
+            pvPut(faultReset);
+        } state ssaOfflineState
+
+        when (!isOffline) {
+        } state initState
+    }
+
     state ssaFaultedState {
     /* SSA is off: External or internal fault. SSA internally disables DC & RF when this happens. */
         entry {
@@ -297,6 +342,9 @@ ss ssa_state_check {
             statusMsg = STAT_FLT;
             pvPut(statusMsg);
         }
+
+        when (isOffline) {
+        } state ssaOfflineState
 
         when (!isFaulted) {
         } state initState
@@ -334,6 +382,17 @@ ss ssa_state_check {
             pvGet(ssaType);
             faultIntResetCount = 0;
             faultExtResetCount = 0;
+            warningResetCount = 0;
+            if (dcEnableRBV) {
+                if (seqDebug) printf("[%s] DEBUG: dcDisable\n", timestamp());
+                dcEnable = 0;
+                pvPut(dcEnable, SYNC);
+            }
+            if (rfEnableRBV) {
+                if (seqDebug) printf("[%s] DEBUG: rfDisable\n", timestamp());
+                rfEnable = 0;
+                pvPut(rfEnable, SYNC);
+            }
         }
 
         when (delay(0.5) && faultInt && (faultIntResetCount <= faultIntResetRetries)) {
@@ -356,10 +415,11 @@ ss ssa_state_check {
             faultExtResetCount++;
         } state faultResetState
 
-        when (delay(0.5) && (warningCode || critWarningCode)) {
-            if (seqDebug) printf("[%s] DEBUG: warningReset\n", timestamp());
+        when (delay(1.0) && (warningCode || critWarningCode) && (warningResetCount <= warningResetRetries)) {
+            if (seqDebug) printf("[%s] DEBUG: warningReset, warningResetCount=%d\n", timestamp(), warningResetCount);
             warningReset = 1;
             pvPut(warningReset, SYNC);
+            warningResetCount++;
         } state faultResetState
 
         when (delay(resetTimeout) && isFaulted) {
@@ -402,31 +462,35 @@ ss ssa_state_check {
             pvPut(statusMsg);
             dcEnableCount = 0;
             rfEnableCount = 0;
+            moduleOnCount = 0;
             pvGet(ssaType);
         }
 
-        when (!dcEnableRBV && !dcEnableCount) {
+        when (delay(dcEnableWait) && !dcEnableRBV && (dcEnableCount <= dcEnableRetries)) {
             if (seqDebug) printf("[%s] DEBUG: DC enable: dcEnableCount=%d\n", timestamp(), dcEnableCount);
             dcEnable = 1;
             pvPut(dcEnable, SYNC);
             dcEnableCount++;
         } state poweringOnState
 
-        when (delay(0.5) && !dcEnableRBV && dcEnableCount && (dcEnableCount <= dcEnableRetries)) {
-            if (seqDebug) printf("[%s] DEBUG: DC enable: dcEnableCount=%d\n", timestamp(), dcEnableCount);
-            dcEnable = 1;
-            pvPut(dcEnable, SYNC);
-            dcEnableCount++;
-        } state poweringOnState
-
-        when (delay(2.5) && (ssaType == CA1300_7kW) && (rfCountdown > 0) && (rfCountdown != rfCountdownLast)) {
+        when (delay(rfCountdownWait) && (ssaType == CA1300_7kW) && (rfCountdown > 0) && (rfCountdown != rfCountdownLast)) {
             // The 7kW SSA has a 90-second countdown timer that starts after enabling DC.
             // We must wait until this timer is expired before enabling RF and setting the PS voltage.
-            if (seqDebug) printf("[%s] DEBUG: ssaType=%d, rfCountdown=%d, rfCountdownLast=%d\n", timestamp(), ssaType, rfCountdown, rfCountdownLast);
+            if (seqDebug) printf("[%s] DEBUG: ssaType=%d, rfCountdown=%d, rfCountdownLast=%d\n", timestamp(), 
+                    ssaType, rfCountdown, rfCountdownLast);
             rfCountdownLast = rfCountdown;
         } state poweringOnState
 
-        when (delay(1.0) && dcEnableRBV && !efTest(drainVoltFlag) && (rfCountdown == 0)) {
+        when (delay(moduleOnWait) && (ssaType == CA186) && !allModulesOn && (moduleOnCount < moduleOnRetries)) {
+            // The CA186 SSA needs ~20 sec for all modules to power on, after enabling DC.
+            // The allModulesOn PV should tell us when all modules are on.
+            if (seqDebug) printf("[%s] DEBUG: ssaType=%d, allModulesOn=%d, moduleOnCount=%d\n", timestamp(), 
+                    ssaType, allModulesOn, moduleOnCount);
+            moduleOnCount++;
+        } state poweringOnState
+
+        when (delay(drainVoltWait) && dcEnableRBV && !efTest(drainVoltFlag) && (rfCountdown == 0)
+                && allModulesOn) {
             if (ssaType == CA1300_7kW) {
                 // The 7kW needs a bit more time or it will not respond to the next command
                 epicsThreadSleep(5.0);
@@ -437,7 +501,8 @@ ss ssa_state_check {
             efSet(drainVoltFlag);
         } state poweringOnState
 
-        when (delay(powerOnTimeout-2.0) && dcEnableRBV && efTest(drainVoltFlag)  && (rfCountdown == 0) && !rfEnableRBV && (rfEnableCount <= rfEnableRetries)) {
+        when (delay(rfEnableWait) && dcEnableRBV && efTest(drainVoltFlag) && (rfCountdown == 0) 
+                && !rfEnableRBV && allModulesOn && (rfEnableCount <= rfEnableRetries)) {
             if (seqDebug) printf("[%s] DEBUG: RF enable: rfEnableCount=%d\n", timestamp(), rfEnableCount);
             rfEnable = 1;
             pvPut(rfEnable, SYNC);

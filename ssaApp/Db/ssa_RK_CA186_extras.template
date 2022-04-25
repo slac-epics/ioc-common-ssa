@@ -1,4 +1,65 @@
 
+# This is a dummy PV so that all R&K SSAs can share the same sequencer routine.
+# Since this register doesn't exist in this SSA, it should be set to 0.
+record(longout, "$(P)RFCountdown"){
+    field(DESC, "Ready for RF (dummy PV)")
+    field(ASG,  "$(ASG)")
+    field(HIGH, "1")
+    field(HSV,  "MINOR")
+    field(DOL,  "0")
+    field(OMSL, "closed_loop")
+    field(PINI, "1")
+}
+
+# This is a dummy PV so that all R&K SSAs can share the same sequencer routine.
+# Since this register doesn't exist in this SSA, it should be set to 0.
+record(longout, "$(P)CritWarnCode"){
+    field(DESC, "Crit warn code (dummy PV)")
+    field(ASG,  "$(ASG)")
+    field(HIGH, "1")
+    field(HSV,  "MINOR")
+    field(DOL,  "0")
+    field(OMSL, "closed_loop")
+    field(PINI, "1")
+}
+
+# This is a dummy PV so that all R&K SSAs can share the same sequencer routine.
+# Since this register doesn't exist in this SSA, it should be set to 0.
+record(bo, "$(P)ProcReset"){
+    field(DESC, "Processor reset (dummy PV)")
+    field(ASG,  "$(ASG)")
+    field(ZNAM, "Standby")
+    field(ONAM, "Resetting...")
+    field(OSV,  "MINOR")
+    field(DOL,  "0")
+    field(OMSL, "closed_loop")
+    field(PINI, "1")
+}
+
+# This is a dummy PV so that all R&K SSAs can share the same sequencer routine.
+record(calc, "$(P)ErrCodeInt"){
+    field(DESC, "Int. error code (dummy PV)")
+    field(ASG,  "$(ASG)")
+    field(INPA, "$(P)FaultInt CP MS")
+    field(CALC, "!A")
+}
+
+# This is a dummy PV so that all R&K SSAs can share the same sequencer routine.
+record(calc, "$(P)ErrCodeExt"){
+    field(DESC, "Ext. error code (dummy PV)")
+    field(ASG,  "$(ASG)")
+    field(INPA, "$(P)FaultExt CP MS")
+    field(CALC, "!A")
+}
+
+# This is a dummy PV so that all R&K SSAs can share the same sequencer routine.
+record(calc, "$(P)WarningCode"){
+    field(DESC, "Warning code (dummy PV)")
+    field(ASG,  "$(ASG)")
+    field(INPA, "$(P)Warning CP MS")
+    field(CALC, "!A")
+}
+
 # --- Drain Voltage <---> Output Voltage --------------
 # This model doesn't have a conversion table, so I'm inferring this by setting
 # reg. 3 and reading back reg. 35
@@ -79,6 +140,77 @@ record(calcout, "$(P)DrainVoltHiHiCalc") {
     field(INPB, "2.0")
     field(CALC, "A+B")
     field(OUT,  "$(P)DrainVoltRBV.HIHI PP")
+}
+
+# --- Module summary -------------------------------------------------------------
+record(calc, "$(P)ModuleOnSum1Calc") {
+    field(DESC, "Module on summary")
+    field(ASG,  "Internal")
+    field(INPA, "$(P)M00_PwrStat NPP MS")
+    field(INPB, "$(P)M01_PwrStat NPP MS")
+    field(INPC, "$(P)M02_PwrStat NPP MS")
+    field(INPD, "$(P)M03_PwrStat NPP MS")
+    field(INPE, "$(P)M04_PwrStat NPP MS")
+    field(INPF, "$(P)M05_PwrStat NPP MS")
+    field(INPG, "$(P)M06_PwrStat NPP MS")
+    field(INPH, "$(P)M07_PwrStat NPP MS")
+    field(INPI, "$(P)M08_PwrStat NPP MS")
+    field(INPJ, "$(P)M09_PwrStat NPP MS")
+    field(INPK, "$(P)M10_PwrStat NPP MS")
+    field(INPL, "$(P)M11_PwrStat NPP MS")
+    field(CALC, "A&&B&&C&&D&&E&&F&&G&&H&&I&&J&&K&&L")
+    field(SCAN, "1 second")
+    field(FLNK, "$(P)ModuleOnSum2Calc")
+}
+
+record(calc, "$(P)ModuleOnSum2Calc") {
+    field(DESC, "Module on summary")
+    field(ASG,  "Internal")
+    field(INPA, "$(P)M12_PwrStat NPP MS")
+    field(INPB, "$(P)M13_PwrStat NPP MS")
+    field(INPC, "$(P)M14_PwrStat NPP MS")
+    field(INPD, "$(P)M15_PwrStat NPP MS")
+    field(INPE, "$(P)M16_PwrStat NPP MS")
+    field(INPF, "$(P)M17_PwrStat NPP MS")
+    field(INPG, "$(P)M18_PwrStat NPP MS")
+    field(INPH, "$(P)M19_PwrStat NPP MS")
+    field(INPI, "$(P)M20_PwrStat NPP MS")
+    field(INPJ, "$(P)M21_PwrStat NPP MS")
+    field(INPK, "$(P)M22_PwrStat NPP MS")
+    field(INPL, "$(P)M23_PwrStat NPP MS")
+    field(CALC, "A&&B&&C&&D&&E&&F&&G&&H&&I&&J&&K&&L")
+    field(FLNK, "$(P)ModuleOnSum3Calc")
+}
+
+record(calc, "$(P)ModuleOnSum3Calc") {
+    field(DESC, "Module on summary")
+    field(ASG,  "Internal")
+    field(INPA, "$(P)M24_PwrStat NPP MS")
+    field(INPB, "$(P)M25_PwrStat NPP MS")
+    field(INPC, "$(P)M26_PwrStat NPP MS")
+    field(INPD, "$(P)M27_PwrStat NPP MS")
+    field(INPE, "$(P)M28_PwrStat NPP MS")
+    field(INPF, "$(P)M29_PwrStat NPP MS")
+    field(INPG, "$(P)M30_PwrStat NPP MS")
+    field(CALC, "A&&B&&C&&D&&E&&F&&G")
+    field(FLNK, "$(P)ModuleOnSumCalc")
+}
+
+record(calc, "$(P)ModuleOnSumCalc") {
+    field(DESC, "Module on summary")
+    field(ASG,  "Internal")
+    field(INPA, "$(P)ModuleOnSum1Calc NPP MS")
+    field(INPB, "$(P)ModuleOnSum2Calc NPP MS")
+    field(INPC, "$(P)ModuleOnSum3Calc NPP MS")
+    field(CALC, "A&&B&&C")
+    field(FLNK, "$(P)ModuleOnSum")
+}
+
+record(bi, "$(P)ModuleOnSum") {
+    field(DESC, "Module on summary")
+    field(INP,  "$(P)ModuleOnSumCalc NPP MS")
+    field(ZNAM, "NotAllOn")
+    field(ONAM, "AllOn")
 }
 
 # --- Fault messages -------------------------------------------------------------

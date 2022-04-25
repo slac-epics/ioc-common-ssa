@@ -130,131 +130,131 @@ caPutLogShow(2)
 # This must be done after iocInit
 #
 # SSA1: L2B:0410
-seq(seq_ssa_CA1300, "P=ACCL:L2B:0410:SSA:")
+seq(seq_ssa_RK_CA, "P=ACCL:L2B:0410:SSA:")
 epicsThreadSleep(0.25)
 
 # SSA2: L2B:0420
-seq(seq_ssa_CA1300, "P=ACCL:L2B:0420:SSA:")
+seq(seq_ssa_RK_CA, "P=ACCL:L2B:0420:SSA:")
 epicsThreadSleep(0.25)
 
 # SSA3: L2B:0430
-seq(seq_ssa_CA1300, "P=ACCL:L2B:0430:SSA:")
+seq(seq_ssa_RK_CA, "P=ACCL:L2B:0430:SSA:")
 epicsThreadSleep(0.25)
 
 # SSA4: L2B:0440
-seq(seq_ssa_CA1300, "P=ACCL:L2B:0440:SSA:")
+seq(seq_ssa_RK_CA, "P=ACCL:L2B:0440:SSA:")
 epicsThreadSleep(0.25)
 
 # SSA5: L2B:0450
-seq(seq_ssa_CA1300, "P=ACCL:L2B:0450:SSA:")
+seq(seq_ssa_RK_CA, "P=ACCL:L2B:0450:SSA:")
 epicsThreadSleep(0.25)
 
 # SSA6: L2B:0460
-seq(seq_ssa_CA1300, "P=ACCL:L2B:0460:SSA:")
+seq(seq_ssa_RK_CA, "P=ACCL:L2B:0460:SSA:")
 epicsThreadSleep(0.25)
 
 # SSA7: L2B:0470
-seq(seq_ssa_CA1300, "P=ACCL:L2B:0470:SSA:")
+seq(seq_ssa_RK_CA, "P=ACCL:L2B:0470:SSA:")
 epicsThreadSleep(0.25)
 
 # SSA8: L2B:0480
-seq(seq_ssa_CA1300, "P=ACCL:L2B:0480:SSA:")
+seq(seq_ssa_RK_CA, "P=ACCL:L2B:0480:SSA:")
 epicsThreadSleep(0.25)
 
 # SSA9: L2B:0510
-seq(seq_ssa_CA1300, "P=ACCL:L2B:0510:SSA:")
+seq(seq_ssa_RK_CA, "P=ACCL:L2B:0510:SSA:")
 epicsThreadSleep(0.25)
 
 # SSA10: L2B:0520
-seq(seq_ssa_CA1300, "P=ACCL:L2B:0520:SSA:")
+seq(seq_ssa_RK_CA, "P=ACCL:L2B:0520:SSA:")
 epicsThreadSleep(0.25)
 
 # SSA11: L2B:0530
-seq(seq_ssa_CA1300, "P=ACCL:L2B:0530:SSA:")
+seq(seq_ssa_RK_CA, "P=ACCL:L2B:0530:SSA:")
 epicsThreadSleep(0.25)
 
 # SSA12: L2B:0540
-seq(seq_ssa_CA1300, "P=ACCL:L2B:0540:SSA:")
+seq(seq_ssa_RK_CA, "P=ACCL:L2B:0540:SSA:")
 epicsThreadSleep(0.25)
 
 # SSA13: L2B:0550
-seq(seq_ssa_CA1300, "P=ACCL:L2B:0550:SSA:")
+seq(seq_ssa_RK_CA, "P=ACCL:L2B:0550:SSA:")
 epicsThreadSleep(0.25)
 
 # SSA14: L2B:0560
-seq(seq_ssa_CA1300, "P=ACCL:L2B:0560:SSA:")
+seq(seq_ssa_RK_CA, "P=ACCL:L2B:0560:SSA:")
 epicsThreadSleep(0.25)
 
 # SSA15: L2B:0570
-seq(seq_ssa_CA1300, "P=ACCL:L2B:0570:SSA:")
+seq(seq_ssa_RK_CA, "P=ACCL:L2B:0570:SSA:")
 epicsThreadSleep(0.25)
 
 # SSA16: L2B:0580
-seq(seq_ssa_CA1300, "P=ACCL:L2B:0580:SSA:")
+seq(seq_ssa_RK_CA, "P=ACCL:L2B:0580:SSA:")
 epicsThreadSleep(0.25)
 
 # SSA17: L2B:0610
-seq(seq_ssa_CA1300, "P=ACCL:L2B:0610:SSA:")
+seq(seq_ssa_RK_CA, "P=ACCL:L2B:0610:SSA:")
 epicsThreadSleep(0.25)
 
 # SSA18: L2B:0620
-seq(seq_ssa_CA1300, "P=ACCL:L2B:0620:SSA:")
+seq(seq_ssa_RK_CA, "P=ACCL:L2B:0620:SSA:")
 epicsThreadSleep(0.25)
 
 # SSA19: L2B:0630
-seq(seq_ssa_CA1300, "P=ACCL:L2B:0630:SSA:")
+seq(seq_ssa_RK_CA, "P=ACCL:L2B:0630:SSA:")
 epicsThreadSleep(0.25)
 
 # SSA20: L2B:0640
-seq(seq_ssa_CA1300, "P=ACCL:L2B:0640:SSA:")
+seq(seq_ssa_RK_CA, "P=ACCL:L2B:0640:SSA:")
 epicsThreadSleep(0.25)
 
 # SSA21: L2B:0650
-seq(seq_ssa_CA1300, "P=ACCL:L2B:0650:SSA:")
+seq(seq_ssa_RK_CA, "P=ACCL:L2B:0650:SSA:")
 epicsThreadSleep(0.25)
 
 # SSA22: L2B:0660
-seq(seq_ssa_CA1300, "P=ACCL:L2B:0660:SSA:")
+seq(seq_ssa_RK_CA, "P=ACCL:L2B:0660:SSA:")
 epicsThreadSleep(0.25)
 
 # SSA23: L2B:0670
-seq(seq_ssa_CA1300, "P=ACCL:L2B:0670:SSA:")
+seq(seq_ssa_RK_CA, "P=ACCL:L2B:0670:SSA:")
 epicsThreadSleep(0.25)
 
 # SSA24: L2B:0680
-seq(seq_ssa_CA1300, "P=ACCL:L2B:0680:SSA:")
+seq(seq_ssa_RK_CA, "P=ACCL:L2B:0680:SSA:")
 epicsThreadSleep(0.25)
 
 # SSA25: L2B:0710
-seq(seq_ssa_CA1300, "P=ACCL:L2B:0710:SSA:")
+seq(seq_ssa_RK_CA, "P=ACCL:L2B:0710:SSA:")
 epicsThreadSleep(0.25)
 
 # SSA26: L2B:0720
-seq(seq_ssa_CA1300, "P=ACCL:L2B:0720:SSA:")
+seq(seq_ssa_RK_CA, "P=ACCL:L2B:0720:SSA:")
 epicsThreadSleep(0.25)
 
 # SSA27: L2B:0730
-seq(seq_ssa_CA1300, "P=ACCL:L2B:0730:SSA:")
+seq(seq_ssa_RK_CA, "P=ACCL:L2B:0730:SSA:")
 epicsThreadSleep(0.25)
 
 # SSA28: L2B:0740
-seq(seq_ssa_CA1300, "P=ACCL:L2B:0740:SSA:")
+seq(seq_ssa_RK_CA, "P=ACCL:L2B:0740:SSA:")
 epicsThreadSleep(0.25)
 
 # SSA29: L2B:0750
-seq(seq_ssa_CA1300, "P=ACCL:L2B:0750:SSA:")
+seq(seq_ssa_RK_CA, "P=ACCL:L2B:0750:SSA:")
 epicsThreadSleep(0.25)
 
 # SSA30: L2B:0760
-seq(seq_ssa_CA1300, "P=ACCL:L2B:0760:SSA:")
+seq(seq_ssa_RK_CA, "P=ACCL:L2B:0760:SSA:")
 epicsThreadSleep(0.25)
 
 # SSA31: L2B:0770
-seq(seq_ssa_CA1300, "P=ACCL:L2B:0770:SSA:")
+seq(seq_ssa_RK_CA, "P=ACCL:L2B:0770:SSA:")
 epicsThreadSleep(0.25)
 
 # SSA32: L2B:0780
-seq(seq_ssa_CA1300, "P=ACCL:L2B:0780:SSA:")
+seq(seq_ssa_RK_CA, "P=ACCL:L2B:0780:SSA:")
 epicsThreadSleep(0.25)
 
 

@@ -37,11 +37,11 @@ caPutLogShow(2)
 # This must be done after iocInit
 #
 # SSA1: GUN:GUNB:100:SSA1
-seq(seq_ssa_CA186, "P=GUN:GUNB:100:SSA1:")
+seq(seq_ssa_RK_CA, "P=GUN:GUNB:100:SSA1:")
 epicsThreadSleep(0.25)
 
 # SSA2: GUN:GUNB:100:SSA2
-seq(seq_ssa_CA186, "P=GUN:GUNB:100:SSA2:")
+seq(seq_ssa_RK_CA, "P=GUN:GUNB:100:SSA2:")
 epicsThreadSleep(0.25)
 
 
