@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 30
-y 134
+x 724
+y 281
 w 1340
 h 1096
 font "helvetica-medium-r-12.0"
@@ -350,9 +350,9 @@ major 4
 minor 0
 release 0
 x 928
-y 960
+y 952
 w 400
-h 124
+h 132
 lineColor index 14
 fillColor index 51
 lineWidth 2
@@ -390,6 +390,7 @@ bgColor index 3
 value {
   "Monitor"
 }
+border
 endObjectProperties
 
 # (Static Text)
@@ -409,6 +410,7 @@ bgColor index 3
 value {
   "Control"
 }
+border
 endObjectProperties
 
 # (Shell Command)
@@ -417,9 +419,9 @@ beginObjectProperties
 major 4
 minor 3
 release 0
-x 1188
-y 1012
-w 124
+x 1172
+y 1020
+w 148
 h 24
 fgColor index 14
 bgColor index 4
@@ -440,9 +442,9 @@ beginObjectProperties
 major 4
 minor 3
 release 0
-x 1188
-y 1044
-w 124
+x 1172
+y 1052
+w 148
 h 24
 fgColor index 14
 bgColor index 4
@@ -453,7 +455,7 @@ buttonLabel "Archive Viewer..."
 multipleInstances
 numCmds 1
 command {
-  0 "lcls2arch"
+  0 "lclsarch"
 }
 endObjectProperties
 
@@ -472,7 +474,7 @@ fgColor index 13
 bgColor index 2
 useDisplayBg
 value {
-  "LCLS HE (7 kW) Cryomodule (1.3 GHz) SSA - Experts Only"
+  "LCLS 7 kW (1.3 GHz) SSA - Experts Only"
 }
 endObjectProperties
 
@@ -493,25 +495,6 @@ botShadowColor index 13
 label "EXIT"
 font "helvetica-bold-r-18.0"
 3d
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 24
-y 40
-w 404
-h 24
-font "helvetica-bold-r-14.0"
-fgColor index 27
-bgColor index 2
-useDisplayBg
-value {
-  "$(P)"
-}
 endObjectProperties
 
 # (Text Monitor)
@@ -692,6 +675,7 @@ bgColor index 3
 value {
   "Faults - Errors - Warnings"
 }
+border
 endObjectProperties
 
 # (Text Control)
@@ -915,9 +899,9 @@ beginObjectProperties
 major 4
 minor 4
 release 0
-x 1188
-y 980
-w 124
+x 1172
+y 988
+w 148
 h 24
 fgColor index 14
 bgColor index 51
@@ -1462,7 +1446,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 948
+x 940
 y 992
 w 216
 h 48
@@ -1475,7 +1459,7 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 1124
+x 1116
 y 1024
 w 40
 h 16
@@ -1497,7 +1481,7 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 1080
+x 1072
 y 1024
 w 40
 h 16
@@ -1519,7 +1503,7 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 1036
+x 1028
 y 1024
 w 40
 h 16
@@ -1541,7 +1525,7 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 992
+x 984
 y 1024
 w 40
 h 16
@@ -1563,7 +1547,7 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 948
+x 940
 y 1024
 w 40
 h 16
@@ -1585,7 +1569,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 1124
+x 1116
 y 1008
 w 38
 h 16
@@ -1604,7 +1588,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 1080
+x 1072
 y 1008
 w 27
 h 16
@@ -1623,7 +1607,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 1036
+x 1028
 y 1008
 w 23
 h 16
@@ -1642,7 +1626,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 992
+x 984
 y 1008
 w 36
 h 16
@@ -1661,7 +1645,7 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 948
+x 940
 y 1024
 w 40
 h 16
@@ -1669,6 +1653,7 @@ controlPv "$(P):CalYearRBV"
 format "hex"
 font "helvetica-medium-r-12.0"
 fgColor index 15
+fgAlarm
 bgColor index 14
 nullColor index 32
 smartRefresh
@@ -1684,7 +1669,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 948
+x 940
 y 1008
 w 27
 h 16
@@ -1703,7 +1688,7 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 992
+x 984
 y 1024
 w 40
 h 16
@@ -1711,6 +1696,7 @@ controlPv "$(P):CalMonthRBV"
 format "hex"
 font "helvetica-medium-r-12.0"
 fgColor index 15
+fgAlarm
 bgColor index 14
 nullColor index 32
 smartRefresh
@@ -1726,7 +1712,7 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 1036
+x 1028
 y 1024
 w 40
 h 16
@@ -1734,6 +1720,7 @@ controlPv "$(P):CalDayRBV"
 format "hex"
 font "helvetica-medium-r-12.0"
 fgColor index 15
+fgAlarm
 bgColor index 14
 nullColor index 32
 smartRefresh
@@ -1749,7 +1736,7 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 1080
+x 1072
 y 1024
 w 40
 h 16
@@ -1757,6 +1744,7 @@ controlPv "$(P):CalHourRBV"
 format "hex"
 font "helvetica-medium-r-12.0"
 fgColor index 15
+fgAlarm
 bgColor index 14
 nullColor index 32
 smartRefresh
@@ -1772,7 +1760,7 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 1124
+x 1116
 y 1024
 w 40
 h 16
@@ -1780,6 +1768,7 @@ controlPv "$(P):CalMinRBV"
 format "hex"
 font "helvetica-medium-r-12.0"
 fgColor index 15
+fgAlarm
 bgColor index 14
 nullColor index 32
 smartRefresh
@@ -1795,7 +1784,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 948
+x 940
 y 992
 w 160
 h 16
@@ -2710,32 +2699,6 @@ lineAlarm
 fillColor index 51
 lineWidth 3
 alarmPv "$(P):FanAlarmSum.SEVR"
-endObjectProperties
-
-# (Related Display)
-object relatedDisplayClass
-beginObjectProperties
-major 4
-minor 4
-release 0
-x 1112
-y 8
-w 112
-h 28
-fgColor index 14
-bgColor index 4
-topShadowColor index 1
-botShadowColor index 11
-font "helvetica-medium-r-12.0"
-buttonLabel "All 8 SSAs..."
-numPvs 4
-numDsps 1
-displayFileName {
-  0 "rf_srf_ssa_cm"
-}
-setPosition {
-  0 "parentWindow"
-}
 endObjectProperties
 
 # (Text Monitor)
@@ -6791,6 +6754,7 @@ h 16
 controlPv "$(P):SSA_SWVer"
 font "helvetica-medium-r-12.0"
 fgColor index 15
+fgAlarm
 bgColor index 14
 nullColor index 32
 useHexPrefix
@@ -6835,6 +6799,7 @@ h 16
 controlPv "$(P):SDCPU_SWVer"
 font "helvetica-medium-r-12.0"
 fgColor index 15
+fgAlarm
 bgColor index 14
 nullColor index 32
 useHexPrefix
@@ -11593,5 +11558,207 @@ nullColor index 14
 useHexPrefix
 newPos
 objType "monitors"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 24
+y 40
+w 240
+h 24
+font "helvetica-bold-r-14.0"
+fgColor index 27
+bgColor index 2
+useDisplayBg
+value {
+  "$(P)"
+}
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 580
+y 12
+w 172
+h 48
+
+beginGroup
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 708
+y 12
+w 44
+h 24
+controlPv "$(P):Cryomodule"
+font "helvetica-bold-r-18.0"
+fgColor index 14
+bgColor index 51
+useDisplayBg
+limitsFromDb
+nullColor index 14
+useHexPrefix
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 580
+y 12
+w 120
+h 24
+font "helvetica-bold-r-18.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 2
+useDisplayBg
+value {
+  "Cryomodule:"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 580
+y 36
+w 120
+h 24
+font "helvetica-bold-r-18.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 2
+useDisplayBg
+value {
+  "Cavity:"
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 708
+y 36
+w 44
+h 24
+controlPv "$(P):Cav1"
+font "helvetica-bold-r-18.0"
+fgColor index 14
+bgColor index 51
+useDisplayBg
+limitsFromDb
+nullColor index 14
+useHexPrefix
+newPos
+objType "monitors"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 376
+y 84
+w 100
+h 16
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 3
+value {
+  "Expert Control"
+}
+border
+endObjectProperties
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1228
+y 960
+w 92
+h 20
+fgColor index 14
+bgColor index 51
+selectColor index 51
+inconsistentColor index 8
+topShadowColor index 50
+botShadowColor index 10
+controlPv "$(P):SeqDebug"
+indicatorPv "$(P):SeqDebug"
+font "helvetica-medium-r-12.0"
+orientation "horizontal"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 1156
+y 960
+w 64
+h 20
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 51
+useDisplayBg
+value {
+  "Seq debug"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 940
+y 944
+w 52
+h 16
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 3
+value {
+  "Debug"
+}
+border
 endObjectProperties
 

@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 347
-y 199
+x 350
+y 228
 w 660
 h 324
 font "helvetica-medium-r-12.0"
@@ -130,7 +130,6 @@ nullColor index 14
 smartRefresh
 fastUpdate
 useHexPrefix
-useAlarmBorder
 newPos
 objType "controls"
 endObjectProperties
@@ -248,7 +247,6 @@ nullColor index 14
 smartRefresh
 fastUpdate
 useHexPrefix
-useAlarmBorder
 newPos
 objType "controls"
 endObjectProperties

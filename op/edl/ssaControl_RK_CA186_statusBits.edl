@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 550
-y 186
+x 553
+y 215
 w 1280
 h 620
 font "helvetica-medium-r-12.0"
@@ -123,6 +123,7 @@ controlPv "$(P):ConfigStat"
 format "hex"
 font "helvetica-medium-r-12.0"
 fgColor index 15
+fgAlarm
 bgColor index 14
 limitsFromDb
 nullColor index 14
@@ -225,6 +226,7 @@ controlPv "$(P):CtlIO1Warn"
 format "hex"
 font "helvetica-medium-r-12.0"
 fgColor index 15
+fgAlarm
 bgColor index 14
 limitsFromDb
 nullColor index 14
@@ -331,6 +333,7 @@ controlPv "$(P):CtlIO2Warn"
 format "hex"
 font "helvetica-medium-r-12.0"
 fgColor index 15
+fgAlarm
 bgColor index 14
 limitsFromDb
 nullColor index 14
@@ -437,6 +440,7 @@ controlPv "$(P):CtlIO3Warn"
 format "hex"
 font "helvetica-medium-r-12.0"
 fgColor index 15
+fgAlarm
 bgColor index 14
 limitsFromDb
 nullColor index 14
@@ -543,6 +547,7 @@ controlPv "$(P):Comm_WE1Warn"
 format "hex"
 font "helvetica-medium-r-12.0"
 fgColor index 15
+fgAlarm
 bgColor index 14
 limitsFromDb
 nullColor index 14
@@ -657,6 +662,7 @@ controlPv "$(P):Comm_WE2Warn"
 format "hex"
 font "helvetica-medium-r-12.0"
 fgColor index 15
+fgAlarm
 bgColor index 14
 limitsFromDb
 nullColor index 14
@@ -771,6 +777,7 @@ controlPv "$(P):FPGA_RE1Warn"
 format "hex"
 font "helvetica-medium-r-12.0"
 fgColor index 15
+fgAlarm
 bgColor index 14
 limitsFromDb
 nullColor index 14
@@ -885,6 +892,7 @@ controlPv "$(P):FPGA_RE2Warn"
 format "hex"
 font "helvetica-medium-r-12.0"
 fgColor index 15
+fgAlarm
 bgColor index 14
 limitsFromDb
 nullColor index 14
@@ -999,6 +1007,7 @@ controlPv "$(P):DrvrHiADWarn"
 format "hex"
 font "helvetica-medium-r-12.0"
 fgColor index 15
+fgAlarm
 bgColor index 14
 limitsFromDb
 nullColor index 14
@@ -1106,6 +1115,7 @@ controlPv "$(P):DrvrLoADWarn"
 format "hex"
 font "helvetica-medium-r-12.0"
 fgColor index 15
+fgAlarm
 bgColor index 14
 limitsFromDb
 nullColor index 14
@@ -1213,6 +1223,7 @@ controlPv "$(P):DrvrIO1Intlk"
 format "hex"
 font "helvetica-medium-r-12.0"
 fgColor index 15
+fgAlarm
 bgColor index 14
 limitsFromDb
 nullColor index 14
@@ -1319,6 +1330,7 @@ controlPv "$(P):DrvrIO1Warn"
 format "hex"
 font "helvetica-medium-r-12.0"
 fgColor index 15
+fgAlarm
 bgColor index 14
 limitsFromDb
 nullColor index 14
@@ -1425,6 +1437,7 @@ controlPv "$(P):DrvrIO2Warn"
 format "hex"
 font "helvetica-medium-r-12.0"
 fgColor index 15
+fgAlarm
 bgColor index 14
 limitsFromDb
 nullColor index 14

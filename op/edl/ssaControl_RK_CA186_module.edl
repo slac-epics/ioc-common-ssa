@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 521
-y 136
+x 524
+y 165
 w 700
 h 600
 font "helvetica-medium-r-12.0"
@@ -1122,6 +1122,7 @@ controlPv "$(P):$(MOD)_IO2Warn"
 format "hex"
 font "helvetica-medium-r-12.0"
 fgColor index 15
+fgAlarm
 bgColor index 14
 limitsFromDb
 nullColor index 14
@@ -1228,6 +1229,7 @@ controlPv "$(P):$(MOD)_IO1Warn"
 format "hex"
 font "helvetica-medium-r-12.0"
 fgColor index 15
+fgAlarm
 bgColor index 14
 limitsFromDb
 nullColor index 14
@@ -1334,6 +1336,7 @@ controlPv "$(P):$(MOD)_IO1Intlk"
 format "hex"
 font "helvetica-medium-r-12.0"
 fgColor index 15
+fgAlarm
 bgColor index 14
 limitsFromDb
 nullColor index 14
@@ -1440,6 +1443,7 @@ controlPv "$(P):$(MOD)_LoADWarn"
 format "hex"
 font "helvetica-medium-r-12.0"
 fgColor index 15
+fgAlarm
 bgColor index 14
 limitsFromDb
 nullColor index 14
@@ -1547,6 +1551,7 @@ controlPv "$(P):$(MOD)_HiADWarn"
 format "hex"
 font "helvetica-medium-r-12.0"
 fgColor index 15
+fgAlarm
 bgColor index 14
 limitsFromDb
 nullColor index 14
