@@ -39,11 +39,6 @@ endif
 #$(PROD_NAME)_DBD += evrSupport.dbd
 #$(PROD_NAME)_DBD += devMrfEr.dbd
 
-# Breakpoint tables for power conversion
-$(PROD_NAME)_DBD += bptSsaPwrFwd.dbd
-$(PROD_NAME)_DBD += bptSsaPwrRef.dbd
-$(PROD_NAME)_DBD += bptSsaPwrDrv.dbd
-
 # ======================================================================
 # <name>_registerRecordDeviceDriver.cpp will be created from <name>.dbd
 $(PROD_NAME)_SRCS += $(PROD_NAME)_registerRecordDeviceDriver.cpp
