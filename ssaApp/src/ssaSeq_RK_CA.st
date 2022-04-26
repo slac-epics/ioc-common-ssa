@@ -14,6 +14,7 @@ CA186 (LCLS SC GUNB)
 
 M. Dunning (mdunning@slac.stanford.edu)
 */
+/*----------------------------------------------------------------*/
 
 %%#include <epicsTime.h>   // timestamps
 %%#include <errlog.h>      // errlogPrintf
