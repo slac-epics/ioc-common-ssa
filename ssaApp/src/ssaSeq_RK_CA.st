@@ -2,23 +2,24 @@ program seq_ssa_RK_CA
 
 /*----------------------------------------------------------------*/
 /*
-This sequencer routine controls SSA states by monitoring inputs, which can 
-come from SSA readbacks (e.g. interlocks), or user-generated input 
-(e.g. On/Off buttons).
+This sequencer routine controls SSA states by reading/writing SSA registers,
+and responding to user inputs (e.g. On/Off buttons).
 
-This routine should work for the following SSAs:
-CA1300 3.8 kW (standard cryo)
-CA1300 4.6 kW (HE)
-CA1300 7 kW (HE)
-CA3900 (HL)
+This routine should work for the following SSAs, assuming the db files in this app are used.
+CA1300 3.8 kW (LCLS SC buncher & standard cryomodule)
+CA1300 4.6 kW (LCLS SC & LCLS SC HE)
+CA1300 7 kW (LCLS SC & LCLS SC HE)
+CA3900 (LCLS SC HL)
+CA186 (LCLS SC GUNB)
+
+M. Dunning (mdunning@slac.stanford.edu)
 */
 
 %%#include <epicsTime.h>   // timestamps
 %%#include <errlog.h>      // errlogPrintf
 
-/*----------------------------------------------------------------*/
+/* Sequencer options ---------------------------------------------*/
 option +r;  /* one sequence task per ssa */
-
 /*----------------------------------------------------------------*/
 
 int ssaType;
