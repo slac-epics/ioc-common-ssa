@@ -151,5 +151,5 @@ $(P):TFTVer    60 monitor
 $(P):VSWROver  60 monitor
 $(P):Type           60 monitor
 $(P):PowerOnStatus  10 monitor
-
+$(P):ModuleOnSum    10 monitor
 

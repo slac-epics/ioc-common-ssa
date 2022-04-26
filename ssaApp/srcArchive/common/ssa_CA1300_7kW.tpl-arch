@@ -192,6 +192,7 @@ $(P):SubSWVer0    60 monitor
 $(P):SubSWVer1    60 monitor
 $(P):Type           60 monitor
 $(P):PowerOnStatus  10 monitor
+$(P):ModuleOnSum    10 monitor
 #
 $(P):SRFPermit     1 monitor
 $(P):SRFPermitRBV  1 monitor
