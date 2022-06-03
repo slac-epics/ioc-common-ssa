@@ -2,10 +2,10 @@ program seq_ssa_RK_CA
 
 /*----------------------------------------------------------------*/
 /*
-This sequencer routine controls SSA states by reading/writing SSA registers,
+Controls SSA states by reading/writing SSA registers
 and responding to user inputs (e.g. On/Off buttons).
 
-This routine should work for the following SSAs, assuming the db files in this app are used.
+This routine should work for the following SSAs:
 CA1300 3.8 kW (LCLS SC buncher & standard cryomodule)
 CA1300 4.6 kW (LCLS SC & LCLS SC HE)
 CA1300 7 kW (LCLS SC & LCLS SC HE)
@@ -95,6 +95,8 @@ monitor faultReset;
 int powerOn;
 assign powerOn to "{P}PowerOn";
 monitor powerOn;
+evflag powerOnFlag;
+sync powerOn powerOnFlag;
 
 int powerOff;
 assign powerOff to "{P}PowerOff";
@@ -345,11 +347,11 @@ ss ssa_state_check {
             pvPut(statusMsg);
         }
 
-        when (isOffline) {
-        } state ssaOfflineState
-
         when (!isFaulted) {
         } state initState
+
+        when (isOffline) {
+        } state ssaOfflineState
 
         when (faultReset) {
         } state faultResetState
@@ -397,6 +399,12 @@ ss ssa_state_check {
             }
         }
 
+        // Normal fault reset; not part of power on routine
+        when (!isFaulted && !efTest(powerOnFlag)) {
+            faultReset = 0;
+            pvPut(faultReset);
+        } state initState
+
         when (delay(0.5) && faultInt && (faultIntResetCount <= faultIntResetRetries)) {
             if (seqDebug) printf("[%s] DEBUG: faultIntReset, faultIntResetCount=%d\n", timestamp(), faultIntResetCount);
             faultIntReset = 1;
@@ -424,18 +432,14 @@ ss ssa_state_check {
             warningResetCount++;
         } state faultResetState
 
+        // Part of power on routine: if faults are clear, transition to poweringOnState
+        when (delay(powerOnWait) && !isFaulted && efTest(powerOnFlag)) {
+        } state poweringOnState
+
         when (delay(resetTimeout) && isFaulted) {
             faultReset = 0;
             pvPut(faultReset);
         } state faultResetFailState
-
-        when (faultReset && !isFaulted) {
-            faultReset = 0;
-            pvPut(faultReset);
-        } state initState
-
-        when (delay(powerOnWait) && powerOn && !isFaulted) {
-        } state poweringOnState
     }
 
     state faultResetFailState {
@@ -467,6 +471,17 @@ ss ssa_state_check {
             moduleOnCount = 0;
             pvGet(ssaType);
         }
+
+        when (isOn) {
+            powerOn = 0;
+            pvPut(powerOn);
+        } state ssaOnState
+
+        when (powerOff) {
+            // In case we want to bail and go to power off state
+            powerOn = 0;
+            pvPut(powerOn);
+        } state poweringOffState
 
         when (delay(dcEnableWait) && !dcEnableRBV && (dcEnableCount <= dcEnableRetries)) {
             if (seqDebug) printf("[%s] DEBUG: DC enable: dcEnableCount=%d\n", timestamp(), dcEnableCount);
@@ -511,18 +526,14 @@ ss ssa_state_check {
             rfEnableCount++;
         } state poweringOnState
 
-        when (powerOn && isOn) {
-            powerOn = 0;
-            pvPut(powerOn);
-        } state ssaOnState
-
-        when (powerOn && delay(powerOnTimeout) && !isOn) {
+        when (delay(powerOnTimeout) && !isOn) {
             powerOn = 0;
             pvPut(powerOn);
         } state powerOnFailState
 
         exit {
             efClear(drainVoltFlag);
+            efClear(powerOnFlag);
         }
     }
     
@@ -550,6 +561,11 @@ ss ssa_state_check {
             rfDisableCount = 0;
         }
 
+        when (isOff) {
+            powerOff = 0;
+            pvPut(powerOff);
+        } state ssaOffState
+
         when (delay(0.5) && rfEnableRBV && (rfDisableCount <= rfDisableRetries)) {
             if (seqDebug) printf("[%s] DEBUG: rfDisable, rfDisableCount=%d\n", timestamp(), rfDisableCount);
             rfEnable = 0;
@@ -564,12 +580,7 @@ ss ssa_state_check {
             dcDisableCount++;
         } state poweringOffState
 
-        when (powerOff && isOff) {
-            powerOff = 0;
-            pvPut(powerOff);
-        } state ssaOffState
-
-        when (powerOff && delay(powerOffTimeout) && isOn) {
+        when (delay(powerOffTimeout) && isOn) {
             powerOff = 0;
             pvPut(powerOff);
         } state powerOffFailState

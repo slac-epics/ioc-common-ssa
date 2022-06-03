@@ -1,12 +1,13 @@
-
 #==============================================================
-#
 #  Name: RELEASE_NOTES
 #
 #  Rem:  This file describes release notes for
 #        the ssa IOC Application.
-#
 #--------------------------------------------------------------
+
+R1.2.1  3-Jun-2022  M. Dunning (mdunning)
+    Make seq routine resilient to multiple button pushes
+    Rename ssa_modules.py -> make_ssa_module_subs_file.py    
 
 R1.2.0: 25-Apr-2022  M. Dunning (mdunning)
     Merge CA1300 and CA186 seq routines into a single common routine
