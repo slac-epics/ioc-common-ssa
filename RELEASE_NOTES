@@ -5,6 +5,9 @@
 #        the ssa IOC Application.
 #--------------------------------------------------------------
 
+R1.2.2  13-Jun-2022  M. Dunning (mdunning)
+    Update lerf IOCs
+
 R1.2.1  3-Jun-2022  M. Dunning (mdunning)
     Make seq routine resilient to multiple button pushes
     Rename ssa_modules.py -> make_ssa_module_subs_file.py    

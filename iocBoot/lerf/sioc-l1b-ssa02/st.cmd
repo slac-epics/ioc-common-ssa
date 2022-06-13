@@ -15,7 +15,8 @@ ssa_registerRecordDeviceDriver(pdbbase)
 ## Set up environment variables
 epicsEnvSet("ENGINEER", "Sonya Hoobler")
 epicsEnvSet("LOCATION", "L1B Cryomodule 3")
-epicsEnvSet("IOC_P",    "SIOC:L1B:SSA02")
+epicsEnvSet("IOC_NAME", "SIOC:L1B:SSA02")
+epicsEnvSet("ASG",      "DEFAULT")
 
 ## Tag log messages with IOC name
 # How to escape the "sioc-l1b-ssa02" as the PERL program
@@ -23,72 +24,47 @@ epicsEnvSet("IOC_P",    "SIOC:L1B:SSA02")
 # So, uncomment the following and remove the backslash
 epicsEnvSet("EPICS_IOC_LOG_CLIENT_INET","${IOC}")
 
+# Set access security
+asSetFilename("${TOP}/iocBoot/common/no_security.acf")
 
-## The following two environment variables should be set for each SSA
-# epicsEnvSet("P",        "<pv_prefix>")
-# epicsEnvSet("IP",       "<ssa_ip_address>")
+
+## Run IOC shell script for each SSA
 #
-## Source the following file for each SSA after setting the two environment variables P and IP
-# < iocBoot/common/startup.modbus_RK_CA1300.cmd
-#
-## Load record instances for each SSA, after setting the environment variable P
-# dbLoadRecords("db/ssa_RK_CA1300.db", "P=$(P)")
+# SSA1: L1B:0310
+# 7kW (HE)
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L1B_0310,P=ACCL:L1B:0310:SSA:,CM=03,CAV1=1,ASG=$(ASG),IP=lcls-ssa21")
 
-# SSA1: L1B:0210
-epicsEnvSet("P",        "ACCL:L1B:0310:SSA:")
-epicsEnvSet("IP",       "lcls-ssa21")
-< iocBoot/common/startup.modbus_RK_CA1300.cmd
-dbLoadRecords("db/ssa_RK_CA1300.db", "P=$(P)")
-epicsThreadSleep(0.5)
+# SSA1: L1B:0320
+# 7kW (HE)
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L1B_0320,P=ACCL:L1B:0320:SSA:,CM=03,CAV1=2,ASG=$(ASG),IP=lcls-ssa22")
 
-# SSA2: L1B:0220
-epicsEnvSet("P",        "ACCL:L1B:0320:SSA:")
-epicsEnvSet("IP",       "lcls-ssa22")
-< iocBoot/common/startup.modbus_RK_CA1300.cmd
-dbLoadRecords("db/ssa_RK_CA1300.db", "P=$(P)")
-epicsThreadSleep(0.5)
+# SSA1: L1B:0330
+# 7kW (HE)
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L1B_0330,P=ACCL:L1B:0330:SSA:,CM=03,CAV1=3,ASG=$(ASG),IP=lcls-ssa23")
 
-# SSA2: L1B:0230
-epicsEnvSet("P",        "ACCL:L1B:0330:SSA:")
-epicsEnvSet("IP",       "lcls-ssa23")
-< iocBoot/common/startup.modbus_RK_CA1300.cmd
-dbLoadRecords("db/ssa_RK_CA1300.db", "P=$(P)")
-epicsThreadSleep(0.5)
+# SSA1: L1B:0340
+# 7kW (HE)
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L1B_0340,P=ACCL:L1B:0340:SSA:,CM=03,CAV1=4,ASG=$(ASG),IP=lcls-ssa24")
 
-# SSA2: L1B:0240
-epicsEnvSet("P",        "ACCL:L1B:0340:SSA:")
-epicsEnvSet("IP",       "lcls-ssa24")
-< iocBoot/common/startup.modbus_RK_CA1300.cmd
-dbLoadRecords("db/ssa_RK_CA1300.db", "P=$(P)")
-epicsThreadSleep(0.5)
+# SSA1: L1B:0350
+# 7kW (HE)
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L1B_0350,P=ACCL:L1B:0350:SSA:,CM=03,CAV1=5,ASG=$(ASG),IP=lcls-ssa25")
 
-# SSA2: L1B:0250
-epicsEnvSet("P",        "ACCL:L1B:0350:SSA:")
-epicsEnvSet("IP",       "lcls-ssa25")
-< iocBoot/common/startup.modbus_RK_CA1300.cmd
-dbLoadRecords("db/ssa_RK_CA1300.db", "P=$(P)")
-epicsThreadSleep(0.5)
+# SSA1: L1B:0360
+# 7kW (HE)
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L1B_0360,P=ACCL:L1B:0360:SSA:,CM=03,CAV1=6,ASG=$(ASG),IP=lcls-ssa26")
 
-# SSA2: L1B:0260
-epicsEnvSet("P",        "ACCL:L1B:0360:SSA:")
-epicsEnvSet("IP",       "lcls-ssa26")
-< iocBoot/common/startup.modbus_RK_CA1300.cmd
-dbLoadRecords("db/ssa_RK_CA1300.db", "P=$(P)")
-epicsThreadSleep(0.5)
+# SSA1: L1B:0370
+# 7kW (HE)
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L1B_0370,P=ACCL:L1B:0370:SSA:,CM=03,CAV1=7,ASG=$(ASG),IP=lcls-ssa27")
 
-# SSA2: L1B:0270
-epicsEnvSet("P",        "ACCL:L1B:0370:SSA:")
-epicsEnvSet("IP",       "lcls-ssa27")
-< iocBoot/common/startup.modbus_RK_CA1300.cmd
-dbLoadRecords("db/ssa_RK_CA1300.db", "P=$(P)")
-epicsThreadSleep(0.5)
+# SSA1: L1B:0380
+# 7kW (HE)
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L1B_0380,P=ACCL:L1B:0380:SSA:,CM=03,CAV1=8,ASG=$(ASG),IP=lcls-ssa28")
 
-# SSA2: L1B:0280
-epicsEnvSet("P",        "ACCL:L1B:0380:SSA:")
-epicsEnvSet("IP",       "lcls-ssa28")
-< iocBoot/common/startup.modbus_RK_CA1300.cmd
-dbLoadRecords("db/ssa_RK_CA1300.db", "P=$(P)")
-epicsThreadSleep(0.5)
+# Load common databases
+dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L1B:,M=03,ASG=$(ASG)")
+
 
 # =====================================================================
 # Load iocAdmin databases to support IOC Health and monitoring
@@ -161,36 +137,36 @@ caPutLogShow(2)
 ## Start sequence programs, one for each SSA
 # This must be done after iocInit
 #
-# SSA1: L1B:0210
-seq(seq_ssa_CA1300, "P=ACCL:L1B:0310:SSA:")
+# SSA1: L1B:0310
+seq(seq_ssa_RK_CA, "P=ACCL:L1B:0310:SSA:")
 epicsThreadSleep(0.5)
 
-# SSA2: L1B:0220
-seq(seq_ssa_CA1300, "P=ACCL:L1B:0320:SSA:")
+# SSA2: L1B:0320
+seq(seq_ssa_RK_CA, "P=ACCL:L1B:0320:SSA:")
 epicsThreadSleep(0.5)
 
-# SSA3: L1B:0220
-seq(seq_ssa_CA1300, "P=ACCL:L1B:0330:SSA:")
+# SSA3: L1B:0320
+seq(seq_ssa_RK_CA, "P=ACCL:L1B:0330:SSA:")
 epicsThreadSleep(0.5)
 
-# SSA4: L1B:0220
-seq(seq_ssa_CA1300, "P=ACCL:L1B:0340:SSA:")
+# SSA4: L1B:0320
+seq(seq_ssa_RK_CA, "P=ACCL:L1B:0340:SSA:")
 epicsThreadSleep(0.5)
 
-# SSA5: L1B:0220
-seq(seq_ssa_CA1300, "P=ACCL:L1B:0350:SSA:")
+# SSA5: L1B:0320
+seq(seq_ssa_RK_CA, "P=ACCL:L1B:0350:SSA:")
 epicsThreadSleep(0.5)
 
-# SSA6: L1B:0220
-seq(seq_ssa_CA1300, "P=ACCL:L1B:0360:SSA:")
+# SSA6: L1B:0320
+seq(seq_ssa_RK_CA, "P=ACCL:L1B:0360:SSA:")
 epicsThreadSleep(0.5)
 
-# SSA7: L1B:0220
-seq(seq_ssa_CA1300, "P=ACCL:L1B:0370:SSA:")
+# SSA7: L1B:0320
+seq(seq_ssa_RK_CA, "P=ACCL:L1B:0370:SSA:")
 epicsThreadSleep(0.5)
 
-# SSA8: L1B:0220
-seq(seq_ssa_CA1300, "P=ACCL:L1B:0380:SSA:")
+# SSA8: L1B:0320
+seq(seq_ssa_RK_CA, "P=ACCL:L1B:0380:SSA:")
 epicsThreadSleep(0.5)
 
 ## Start autosave process:
@@ -198,4 +174,17 @@ cd("${IOC_DATA}/${IOC}/autosave-req")
 makeAutosaveFiles()
 create_monitor_set("info_settings.req", 20, "")
 
+cd $(TOP)
+
+# Enable SRF permits
+dbpf("ACCL:L1B:0310:SSA:SRFPermit", 1)
+dbpf("ACCL:L1B:0320:SSA:SRFPermit", 1)
+dbpf("ACCL:L1B:0330:SSA:SRFPermit", 1)
+dbpf("ACCL:L1B:0340:SSA:SRFPermit", 1)
+dbpf("ACCL:L1B:0350:SSA:SRFPermit", 1)
+dbpf("ACCL:L1B:0360:SSA:SRFPermit", 1)
+dbpf("ACCL:L1B:0370:SSA:SRFPermit", 1)
+dbpf("ACCL:L1B:0380:SSA:SRFPermit", 1)
+
+# End of file
 
