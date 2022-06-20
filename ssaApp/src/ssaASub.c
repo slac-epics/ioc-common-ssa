@@ -14,9 +14,9 @@ Takes an integer error code as input, and displays a string message as output.
     < 40 chars; otherwise we should use a waveform record.
  *----------------------------------------------------------------------------*/
     unsigned int *errCode = (unsigned int *)prec->a;
-    char *errMsg;
+    char *errMsg = NULL;
 
-    if (*errCode == 0) errMsg = "No error";
+    if      (*errCode ==   0) errMsg = "No error";
     else if (*errCode ==   1) errMsg = "DA Unit-1 Current";
     else if (*errCode ==   2) errMsg = "DA Unit-2 Current";
     else if (*errCode ==  21) errMsg = "DA Unit-1 PS Voltage";
@@ -97,21 +97,21 @@ Takes an integer error code as input, and displays a string message as output.
     else if (*errCode == 501) errMsg = "Forward Pwr";
     else if (*errCode == 502) errMsg = "Water Leak Status";
     else if (*errCode == 503) errMsg = "Ctrl Unit Fan Rot Spd";
-    else if (*errCode == 511) errMsg = "Ext. Fault No.1 24V Permit Line";
+    else if (*errCode == 511) errMsg = "Ext. Fault 1 (NIRP)";
     else if (*errCode == 512) errMsg = "Ext. Fault No.2 24V Permit Line";
-    else if (*errCode == 513) errMsg = "Ext. Fault 1 & 2 24V Permit Line";
+    else if (*errCode == 513) errMsg = "Ext. Faults 1 & 2 (NIRP)";
     else if (*errCode == 514) errMsg = "Ext. Fault No.3 24V Permit Line";
-    else if (*errCode == 515) errMsg = "Ext. Fault 1 & 3 24V Permit Line";
-    else if (*errCode == 516) errMsg = "Ext. Fault 2 & 3 24V Permit Line";
-    else if (*errCode == 517) errMsg = "Ext. Fault 1,2,3 24V Permit Line";
+    else if (*errCode == 515) errMsg = "Ext. Faults 1 & 3 (NIRP)";
+    else if (*errCode == 516) errMsg = "Ext. Faults 2 & 3 24V Permit Line";
+    else if (*errCode == 517) errMsg = "Ext. Faults 1,2,3 (NIRP)";
     else if (*errCode == 518) errMsg = "Ext. Fault No.4 24V Permit Line";
-    else if (*errCode == 519) errMsg = "Ext. Fault 1 & 4 24V Permit Line";
-    else if (*errCode == 520) errMsg = "Ext. Fault 2 & 4 24V Permit Line";
-    else if (*errCode == 521) errMsg = "Ext. Fault 1,2,4 24V Permit Line";
-    else if (*errCode == 522) errMsg = "Ext. Fault 3 & 4 24V Permit Line";
-    else if (*errCode == 523) errMsg = "Ext. Fault 1,3,4 24V Permit Line";
-    else if (*errCode == 524) errMsg = "Ext. Fault 2,3,4 24V Permit Line";
-    else if (*errCode == 525) errMsg = "Ext. Fault 1,2,3,4 24V Permit Line";
+    else if (*errCode == 519) errMsg = "Ext. Faults 1 & 4 (NIRP)";
+    else if (*errCode == 520) errMsg = "Ext. Faults 2 & 4 24V Permit Line";
+    else if (*errCode == 521) errMsg = "Ext. Faults 1,2,4 (NIRP)";
+    else if (*errCode == 522) errMsg = "Ext. Faults 3 & 4 24V Permit Line";
+    else if (*errCode == 523) errMsg = "Ext. Faults 1,3,4 (NIRP)";
+    else if (*errCode == 524) errMsg = "Ext. Faults 2,3,4 24V Permit Line";
+    else if (*errCode == 525) errMsg = "Ext. Faults 1,2,3,4 (NIRP)";
     else if (*errCode == 530) errMsg = "Reflected Pwr";
     else if (*errCode == 550) errMsg = "Ctrl Unit Air Temp";
     else if (*errCode == 560) errMsg = "Thermostat Status";
@@ -121,7 +121,11 @@ Takes an integer error code as input, and displays a string message as output.
     
     //printf("errCode=%d, errMsg=%s\n", *errCode, errMsg);
 
-    if (errMsg) prec->vala = errMsg;
+    if (errMsg) {
+        prec->vala = errMsg;
+    } else {
+        return -1;
+    }
 
     return 0;
 }
@@ -133,9 +137,9 @@ Takes an integer error code as input, and displays a string message as output.
     < 40 chars; otherwise we should use a waveform record.
  *----------------------------------------------------------------------------*/
     unsigned int *errCode = (unsigned int *)prec->a;
-    char *errMsg;
+    char *errMsg = NULL;
 
-    if (*errCode == 0) errMsg = "No error";
+    if      (*errCode ==   0) errMsg = "No error";
     else if (*errCode ==   1) errMsg = "DA PreAMP Current";
     else if (*errCode ==   2) errMsg = "DA Current 1";
     else if (*errCode ==   3) errMsg = "DA Current 2";
@@ -218,21 +222,21 @@ Takes an integer error code as input, and displays a string message as output.
     else if (*errCode == 502) errMsg = "Water Leak Status";
     else if (*errCode == 503) errMsg = "RF Ctrl Unit Fan Speed";
     else if (*errCode == 504) errMsg = "Ready for RF (timer)";
-    else if (*errCode == 511) errMsg = "Ext. Fault No.1 24V Permit Line";
+    else if (*errCode == 511) errMsg = "Ext. Fault 1 (NIRP)";
     else if (*errCode == 512) errMsg = "Ext. Fault No.2 24V Permit Line";
-    else if (*errCode == 513) errMsg = "Ext. Fault 1 & 2 24V Permit Line";
+    else if (*errCode == 513) errMsg = "Ext. Faults 1 & 2 (NIRP)";
     else if (*errCode == 514) errMsg = "Ext. Fault No.3 24V Permit Line";
-    else if (*errCode == 515) errMsg = "Ext. Fault 1 & 3 24V Permit Line";
-    else if (*errCode == 516) errMsg = "Ext. Fault 2 & 3 24V Permit Line";
-    else if (*errCode == 517) errMsg = "Ext. Fault 1,2,3 24V Permit Line";
+    else if (*errCode == 515) errMsg = "Ext. Faults 1 & 3 (NIRP)";
+    else if (*errCode == 516) errMsg = "Ext. Faults 2 & 3 24V Permit Line";
+    else if (*errCode == 517) errMsg = "Ext. Faults 1,2,3 (NIRP)";
     else if (*errCode == 518) errMsg = "Ext. Fault No.4 24V Permit Line";
-    else if (*errCode == 519) errMsg = "Ext. Fault 1 & 4 24V Permit Line";
-    else if (*errCode == 520) errMsg = "Ext. Fault 2 & 4 24V Permit Line";
+    else if (*errCode == 519) errMsg = "Ext. Faults 1 & 4 (NIRP)";
+    else if (*errCode == 520) errMsg = "Ext. Faults 2 & 4 24V Permit Line";
     else if (*errCode == 521) errMsg = "Main CPU PCB Input +12VDC";
     else if (*errCode == 522) errMsg = "Main CPU PCB Input +24VDC";
-//    else if (*errCode == 523) errMsg = "Ext. Fault 1,3,4 24V Permit Line";
-//    else if (*errCode == 524) errMsg = "Ext. Fault 2,3,4 24V Permit Line";
-//    else if (*errCode == 525) errMsg = "Ext. Fault 1,2,3,4 24V Permit Line";
+    else if (*errCode == 523) errMsg = "Ext. Faults 1,3,4 (NIRP)";
+    else if (*errCode == 524) errMsg = "Ext. Faults 2,3,4 24V Permit Line";
+    else if (*errCode == 525) errMsg = "Ext. Faults 1,2,3,4 (NIRP)";
     else if (*errCode == 530) errMsg = "Reflected Pwr";
     else if (*errCode == 541) errMsg = "microSD Status (Master)";
     else if (*errCode == 542) errMsg = "microSD Status (Slave)";
@@ -283,7 +287,11 @@ Takes an integer error code as input, and displays a string message as output.
     
     //printf("errCode=%d, errMsg=%s\n", *errCode, errMsg);
 
-    if (errMsg) prec->vala = errMsg;
+    if (errMsg) {
+        prec->vala = errMsg;
+    } else {
+        return -1;
+    }
 
     return 0;
 }
@@ -295,9 +303,9 @@ Takes an integer error code as input, and displays a string message as output.
     < 40 chars; otherwise we should use a waveform record.
  *----------------------------------------------------------------------------*/
     unsigned int *errCode = (unsigned int *)prec->a;
-    char *errMsg;
+    char *errMsg = NULL;
 
-    if (*errCode == 0) errMsg = "No error";
+    if      (*errCode ==   0) errMsg = "No error";
     else if (*errCode == 100) errMsg = "Input Power";
     else if (*errCode == 101) errMsg = "Forward Power";
     else if (*errCode == 102) errMsg = "Refelected Power";
@@ -317,12 +325,15 @@ Takes an integer error code as input, and displays a string message as output.
     else if (*errCode > 400 && *errCode < 449) errMsg = "AC/DC Power Supply";
     else if (*errCode == 500) errMsg = "Water Flow";
     else if (*errCode == 501) errMsg = "Water Leak";
-
     else errMsg = "Unknown error code";
     
-    printf("errCode=%d, errMsg=%s\n", *errCode, errMsg);
+    //printf("errCode=%d, errMsg=%s\n", *errCode, errMsg);
 
-    if (errMsg) prec->vala = errMsg;
+    if (errMsg) {
+        prec->vala = errMsg;
+    } else {
+        return -1;
+    }
 
     return 0;
 }
@@ -334,9 +345,9 @@ Takes an integer error code as input, and displays a string message as output.
     < 40 chars; otherwise we should use a waveform record.
  *----------------------------------------------------------------------------*/
     unsigned int *errCode = (unsigned int *)prec->a;
-    char *errMsg;
+    char *errMsg = NULL;
 
-    if (*errCode == 0) errMsg = "No error";
+    if      (*errCode ==   0) errMsg = "No error";
     else if (*errCode ==   1) errMsg = "480VAC L1 Status";
     else if (*errCode ==   2) errMsg = "480VAC L2 Status";
     else if (*errCode ==   3) errMsg = "480VAC L3 Status";
@@ -353,7 +364,6 @@ Takes an integer error code as input, and displays a string message as output.
     else if (*errCode ==  35) errMsg = "PS Unit Fan1 Spd";
     else if (*errCode ==  36) errMsg = "PS Unit Fan2 Spd";
     else if (*errCode ==  37) errMsg = "PS Unit Fan3 Spd";
-    
     else if (*errCode == 101) errMsg = "FA1 Current 1";
     else if (*errCode == 102) errMsg = "FA1 Current 2";
     else if (*errCode == 103) errMsg = "FA1 Current 3";
@@ -376,7 +386,6 @@ Takes an integer error code as input, and displays a string message as output.
     else if (*errCode == 141) errMsg = "FA1 Heat Sink Temp";
     else if (*errCode == 142) errMsg = "FA1 Thermostat";
     else if (*errCode == 151) errMsg = "FA1 Fan Spd";
-    
     else if (*errCode == 201) errMsg = "FA2 Current 1";
     else if (*errCode == 202) errMsg = "FA2 Current 2";
     else if (*errCode == 203) errMsg = "FA2 Current 3";
@@ -399,7 +408,6 @@ Takes an integer error code as input, and displays a string message as output.
     else if (*errCode == 241) errMsg = "FA2 Heat Sink Temp";
     else if (*errCode == 242) errMsg = "FA2 Thermostat";
     else if (*errCode == 251) errMsg = "FA2 Fan Spd";
-    
     else if (*errCode == 301) errMsg = "FA3 Current 1";
     else if (*errCode == 302) errMsg = "FA3 Current 2";
     else if (*errCode == 303) errMsg = "FA3 Current 3";
@@ -422,7 +430,6 @@ Takes an integer error code as input, and displays a string message as output.
     else if (*errCode == 341) errMsg = "FA3 Heat Sink Temp";
     else if (*errCode == 342) errMsg = "FA3 Thermostat";
     else if (*errCode == 351) errMsg = "FA3 Fan Spd";
-    
     else if (*errCode == 401) errMsg = "FA4 Current 1";
     else if (*errCode == 402) errMsg = "FA4 Current 2";
     else if (*errCode == 403) errMsg = "FA4 Current 3";
@@ -445,7 +452,6 @@ Takes an integer error code as input, and displays a string message as output.
     else if (*errCode == 441) errMsg = "FA4 Heat Sink Temp";
     else if (*errCode == 442) errMsg = "FA4 Thermostat";
     else if (*errCode == 451) errMsg = "FA4 Fan Spd";
-    
     else if (*errCode == 501) errMsg = "Input Drive Power 1";
     else if (*errCode == 502) errMsg = "Forward Power 1";
     else if (*errCode == 503) errMsg = "Reflected Power 1";
@@ -456,7 +462,7 @@ Takes an integer error code as input, and displays a string message as output.
     else if (*errCode == 508) errMsg = "Pre Amp Current 2";
     else if (*errCode == 509) errMsg = "+12 Volts";
     else if (*errCode == 510) errMsg = "-12 Volts";
-    else if (*errCode == 511) errMsg = "Ext. Fault No.1 24V Permit Line";
+    else if (*errCode == 511) errMsg = "Ext. Fault 1 (NIRP)";
     else if (*errCode == 512) errMsg = "Ext. Fault No.2 24V Permit Line";
     //else if (*errCode == 513) errMsg = "Ext. Fault 1 & 2 24V Permit Line";
     else if (*errCode == 514) errMsg = "Ext. Fault No.3 24V Permit Line";
@@ -470,7 +476,7 @@ Takes an integer error code as input, and displays a string message as output.
     //else if (*errCode == 522) errMsg = "Ext. Fault 3 & 4 24V Permit Line";
     //else if (*errCode == 523) errMsg = "Ext. Fault 1,3,4 24V Permit Line";
     //else if (*errCode == 524) errMsg = "Ext. Fault 2,3,4 24V Permit Line";
-    //else if (*errCode == 525) errMsg = "Ext. Fault 1,2,3,4 24V Permit Line";
+    else if (*errCode == 525) errMsg = "Ext. Faults 1,2,3,4 (NIRP)";
     else if (*errCode == 521) errMsg = "+24 Volts";
     else if (*errCode == 531) errMsg = "Water Leak Status";
     else if (*errCode == 541) errMsg = "Ctrl Unit Air Temp";
@@ -484,7 +490,11 @@ Takes an integer error code as input, and displays a string message as output.
     
     //printf("errCode=%d, errMsg=%s\n", *errCode, errMsg);
 
-    if (errMsg) prec->vala = errMsg;
+    if (errMsg) {
+        prec->vala = errMsg;
+    } else {
+        return -1;
+    }
 
     return 0;
 }
