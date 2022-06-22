@@ -24,9 +24,6 @@ epicsEnvSet("ASG",      "DEFAULT")
 # So, uncomment the following and remove the backslash
 epicsEnvSet("EPICS_IOC_LOG_CLIENT_INET","${IOC}")
 
-# Set access security
-asSetFilename("${TOP}/iocBoot/common/no_security.acf")
-
 
 ## Run IOC shell script for each SSA
 #
@@ -69,14 +66,14 @@ dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L1B:,M=02,ASG=$(ASG)")
 # =====================================================================
 # Load iocAdmin databases to support IOC Health and monitoring
 # =====================================================================
-dbLoadRecords("db/iocAdminSoft.db","IOC=${IOC_P}")
-dbLoadRecords("db/iocAdminScanMon.db","IOC=${IOC_P}")
-dbLoadRecords("db/iocRelease.db","IOC=${IOC_P}")
+dbLoadRecords("db/iocAdminSoft.db","IOC=${IOC_NAME}")
+dbLoadRecords("db/iocAdminScanMon.db","IOC=${IOC_NAME}")
+dbLoadRecords("db/iocRelease.db","IOC=${IOC_NAME}")
 
 # =====================================================================
 # Load database for autosave status
 # =====================================================================
-dbLoadRecords("db/save_restoreStatus.db", "P=${IOC_P}:")
+dbLoadRecords("db/save_restoreStatus.db", "P=${IOC_NAME}:")
 
 
 # =====================================================================
@@ -108,7 +105,7 @@ set_savefile_path("${IOC_DATA}/${IOC}/autosave")
 # Prefix that is use to update save/restore status database
 # records
 # ============================================================
-save_restoreSet_status_prefix("${IOC_P}:")
+save_restoreSet_status_prefix("${IOC_NAME}:")
 
 ## Restore datasets
 set_pass0_restoreFile("info_settings.sav")

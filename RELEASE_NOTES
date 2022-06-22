@@ -5,6 +5,9 @@
 #        the ssa IOC Application.
 #--------------------------------------------------------------
 
+R1.2.4  22-Jun-2022  M. Dunning (mdunning)
+    lerf: Fix incorrect macro
+
 R1.2.3  20-Jun-2022  M. Dunning (mdunning)
     Update external fault messages to include NIRP
 
