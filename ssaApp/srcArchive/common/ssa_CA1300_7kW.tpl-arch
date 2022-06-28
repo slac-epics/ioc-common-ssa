@@ -9,11 +9,8 @@ $(P):480VACStat   1 monitor
 $(P):ACEnableRBV  1 monitor
 $(P):AlarmSummary.SEVR    1 monitor
 $(P):CritWarnCode  1 monitor
-$(P):CtrlAirTemp  1 monitor
-$(P):CtrlFanSpeed 1 monitor
 $(P):CurrAlarmSum.SEVR    1 monitor
 $(P):DACurrAlarmSum.SEVR  1 monitor
-$(P):DA_FanSpeed  1 monitor
 $(P):DA_FwdPwr  1 monitor
 $(P):DA_HSTemp    1 monitor
 $(P):DA_I1    1 monitor
@@ -150,7 +147,6 @@ $(P):MiscAlarmSum.SEVR    1 monitor
 $(P):PowerOff 1 monitor
 $(P):PowerOn  1 monitor
 $(P):ProcessorReset  1 monitor
-$(P):PSAirTemp    1 monitor
 $(P):PSFan1Speed  1 monitor
 $(P):PSFan2Speed  1 monitor
 $(P):PSFault  1 monitor
@@ -182,14 +178,6 @@ $(P):WarningReset 1 monitor
 $(P):WtrLeakStat  1 monitor
 $(P):XPReboot 1 monitor
 $(P):XPortReboot  1 monitor
-$(P):MainSWVer0   60 monitor
-$(P):MainSWVer1   60 monitor
-$(P):PSSWVer0 60 monitor
-$(P):PSSWVer1 60 monitor
-$(P):SDSWVer0 60 monitor
-$(P):SDSWVer1 60 monitor
-$(P):SubSWVer0    60 monitor
-$(P):SubSWVer1    60 monitor
 $(P):Type           60 monitor
 $(P):PowerOnStatus  10 monitor
 $(P):ModuleOnSum    10 monitor
