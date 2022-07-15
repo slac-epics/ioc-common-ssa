@@ -5,6 +5,9 @@
 #        the ssa IOC Application.
 #--------------------------------------------------------------
 
+R1.2.5  15-Jul-2022  M. Dunning (mdunning)
+    Increase CA186 module-on retries
+
 R1.2.4  22-Jun-2022  M. Dunning (mdunning)
     Update 7kW archive file
     lerf: Fix incorrect macro

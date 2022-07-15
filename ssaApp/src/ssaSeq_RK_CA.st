@@ -157,7 +157,7 @@ evflag drainVoltFlag;
 #define faultIntResetRetries 2
 #define faultExtResetRetries 2
 #define warningResetRetries 1
-#define moduleOnRetries 10
+#define moduleOnRetries 15
 
 // Variables --------------------------------
 %% static char tsbuffer[64];  // For timestamp
