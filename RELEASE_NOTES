@@ -5,6 +5,9 @@
 #        the ssa IOC Application.
 #--------------------------------------------------------------
 
+R1.2.6  19-Jul-2022  M. Dunning (mdunning)
+    Increase drainVoltWait delay based on R&K's recommendation
+
 R1.2.5  15-Jul-2022  M. Dunning (mdunning)
     Increase CA186 module-on retries
 

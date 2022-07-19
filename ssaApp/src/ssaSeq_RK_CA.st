@@ -139,7 +139,7 @@ evflag drainVoltFlag;
 #define dcEnableWait 0.5  // Time to wait between DC enable loop checks
 #define rfEnableWait (powerOnTimeout-1.0)  // Time to wait between DC enable and RF enable (must be < powerOnTimeout)
 #define rfCountdownWait 2.5  // Time to wait between rfCountdown loop checks
-#define drainVoltWait 1.0  // Time to wait between DC enable and setting drain voltage
+#define drainVoltWait 3.0  // Time to wait between DC enable and setting drain voltage
 #define moduleOnWait 2.0  // Time to wait between moduleOn loop checks
 #define powerOnWait 2.0  // Time to wait in faultResetState before going to poweringOnState
 #define powerOffTimeout 5.0  // Time to wait in poweringOffState before going to powerOffFailState
