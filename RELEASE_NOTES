@@ -5,6 +5,10 @@
 #        the ssa IOC Application.
 #--------------------------------------------------------------
 
+R1.2.7  16-Dec-2022  M. Dunning (mdunning)
+    Add support for 186MHz 7kW SSA for HE gun
+    CA1300 7kW: add two new registers for main cpu voltages
+
 R1.2.6  19-Jul-2022  M. Dunning (mdunning)
     Increase drainVoltWait delay based on R&K's recommendation
 

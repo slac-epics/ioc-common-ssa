@@ -3,10 +3,10 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 724
-y 281
+x 457
+y 61
 w 1340
-h 1096
+h 1140
 font "helvetica-medium-r-12.0"
 ctlFont "helvetica-medium-r-12.0"
 btnFont "helvetica-medium-r-12.0"
@@ -58,7 +58,7 @@ major 4
 minor 4
 release 0
 x 384
-y 612
+y 656
 w 68
 h 16
 fgColor index 14
@@ -322,7 +322,7 @@ release 0
 x 12
 y 396
 w 1316
-h 688
+h 728
 lineColor index 14
 fillColor index 51
 lineWidth 2
@@ -350,7 +350,7 @@ major 4
 minor 0
 release 0
 x 928
-y 952
+y 992
 w 400
 h 132
 lineColor index 14
@@ -420,7 +420,7 @@ major 4
 minor 3
 release 0
 x 1172
-y 1020
+y 1060
 w 148
 h 24
 fgColor index 14
@@ -443,7 +443,7 @@ major 4
 minor 3
 release 0
 x 1172
-y 1052
+y 1092
 w 148
 h 24
 fgColor index 14
@@ -900,7 +900,7 @@ major 4
 minor 4
 release 0
 x 1172
-y 988
+y 1028
 w 148
 h 24
 fgColor index 14
@@ -1447,7 +1447,7 @@ major 4
 minor 0
 release 0
 x 940
-y 992
+y 1032
 w 216
 h 48
 
@@ -1460,7 +1460,7 @@ major 4
 minor 7
 release 0
 x 1116
-y 1024
+y 1064
 w 40
 h 16
 controlPv "$(P):CalMinSetpt"
@@ -1482,7 +1482,7 @@ major 4
 minor 7
 release 0
 x 1072
-y 1024
+y 1064
 w 40
 h 16
 controlPv "$(P):CalHourSetpt"
@@ -1504,7 +1504,7 @@ major 4
 minor 7
 release 0
 x 1028
-y 1024
+y 1064
 w 40
 h 16
 controlPv "$(P):CalDaySetpt"
@@ -1526,7 +1526,7 @@ major 4
 minor 7
 release 0
 x 984
-y 1024
+y 1064
 w 40
 h 16
 controlPv "$(P):CalMonthSetpt"
@@ -1548,7 +1548,7 @@ major 4
 minor 7
 release 0
 x 940
-y 1024
+y 1064
 w 40
 h 16
 controlPv "$(P):CalYearSetpt"
@@ -1570,7 +1570,7 @@ major 4
 minor 1
 release 1
 x 1116
-y 1008
+y 1048
 w 38
 h 16
 font "helvetica-medium-r-12.0"
@@ -1589,7 +1589,7 @@ major 4
 minor 1
 release 1
 x 1072
-y 1008
+y 1048
 w 27
 h 16
 font "helvetica-medium-r-12.0"
@@ -1608,7 +1608,7 @@ major 4
 minor 1
 release 1
 x 1028
-y 1008
+y 1048
 w 23
 h 16
 font "helvetica-medium-r-12.0"
@@ -1627,7 +1627,7 @@ major 4
 minor 1
 release 1
 x 984
-y 1008
+y 1048
 w 36
 h 16
 font "helvetica-medium-r-12.0"
@@ -1646,7 +1646,7 @@ major 4
 minor 7
 release 0
 x 940
-y 1024
+y 1064
 w 40
 h 16
 controlPv "$(P):CalYearRBV"
@@ -1670,7 +1670,7 @@ major 4
 minor 1
 release 1
 x 940
-y 1008
+y 1048
 w 27
 h 16
 font "helvetica-medium-r-12.0"
@@ -1689,7 +1689,7 @@ major 4
 minor 7
 release 0
 x 984
-y 1024
+y 1064
 w 40
 h 16
 controlPv "$(P):CalMonthRBV"
@@ -1713,7 +1713,7 @@ major 4
 minor 7
 release 0
 x 1028
-y 1024
+y 1064
 w 40
 h 16
 controlPv "$(P):CalDayRBV"
@@ -1737,7 +1737,7 @@ major 4
 minor 7
 release 0
 x 1072
-y 1024
+y 1064
 w 40
 h 16
 controlPv "$(P):CalHourRBV"
@@ -1761,7 +1761,7 @@ major 4
 minor 7
 release 0
 x 1116
-y 1024
+y 1064
 w 40
 h 16
 controlPv "$(P):CalMinRBV"
@@ -1785,7 +1785,7 @@ major 4
 minor 1
 release 1
 x 940
-y 992
+y 1032
 w 160
 h 16
 font "helvetica-bold-r-12.0"
@@ -4515,7 +4515,7 @@ major 4
 minor 4
 release 0
 x 384
-y 464
+y 508
 w 68
 h 16
 fgColor index 14
@@ -4541,7 +4541,7 @@ major 4
 minor 7
 release 0
 x 256
-y 464
+y 508
 w 124
 h 16
 controlPv "$(P):PSSubCPU_24V.DESC"
@@ -4564,7 +4564,7 @@ major 4
 minor 7
 release 0
 x 384
-y 464
+y 508
 w 68
 h 16
 controlPv "$(P):PSSubCPU_24V"
@@ -4589,7 +4589,7 @@ major 4
 minor 4
 release 0
 x 384
-y 572
+y 616
 w 68
 h 16
 fgColor index 14
@@ -4615,7 +4615,7 @@ major 4
 minor 4
 release 0
 x 384
-y 552
+y 596
 w 68
 h 16
 fgColor index 14
@@ -4641,7 +4641,7 @@ major 4
 minor 7
 release 0
 x 384
-y 552
+y 596
 w 68
 h 16
 controlPv "$(P):FA1_PS1_V"
@@ -4666,7 +4666,7 @@ major 4
 minor 7
 release 0
 x 256
-y 552
+y 596
 w 124
 h 16
 controlPv "$(P):FA1_PS1_V.DESC"
@@ -4689,7 +4689,7 @@ major 4
 minor 7
 release 0
 x 384
-y 572
+y 616
 w 68
 h 16
 controlPv "$(P):FA1_PS2_V"
@@ -4714,7 +4714,7 @@ major 4
 minor 7
 release 0
 x 256
-y 572
+y 616
 w 124
 h 16
 controlPv "$(P):FA1_PS2_V.DESC"
@@ -4737,7 +4737,7 @@ major 4
 minor 4
 release 0
 x 384
-y 592
+y 636
 w 68
 h 16
 fgColor index 14
@@ -4763,7 +4763,7 @@ major 4
 minor 7
 release 0
 x 384
-y 592
+y 636
 w 68
 h 16
 controlPv "$(P):FA1_PS3_V"
@@ -4788,7 +4788,7 @@ major 4
 minor 7
 release 0
 x 256
-y 592
+y 636
 w 124
 h 16
 controlPv "$(P):FA1_PS3_V.DESC"
@@ -4811,7 +4811,7 @@ major 4
 minor 7
 release 0
 x 256
-y 612
+y 656
 w 124
 h 16
 controlPv "$(P):FA1_PS4_V.DESC"
@@ -4834,7 +4834,7 @@ major 4
 minor 7
 release 0
 x 384
-y 612
+y 656
 w 68
 h 16
 controlPv "$(P):FA1_PS4_V"
@@ -4859,7 +4859,7 @@ major 4
 minor 4
 release 0
 x 384
-y 632
+y 676
 w 68
 h 16
 fgColor index 14
@@ -4885,7 +4885,7 @@ major 4
 minor 7
 release 0
 x 256
-y 632
+y 676
 w 124
 h 16
 controlPv "$(P):FA1_12V.DESC"
@@ -4908,7 +4908,7 @@ major 4
 minor 7
 release 0
 x 384
-y 632
+y 676
 w 68
 h 16
 controlPv "$(P):FA1_12V"
@@ -7330,7 +7330,7 @@ major 4
 minor 4
 release 0
 x 384
-y 780
+y 824
 w 68
 h 16
 fgColor index 14
@@ -7356,7 +7356,7 @@ major 4
 minor 4
 release 0
 x 384
-y 760
+y 804
 w 68
 h 16
 fgColor index 14
@@ -7382,7 +7382,7 @@ major 4
 minor 4
 release 0
 x 384
-y 676
+y 720
 w 68
 h 16
 fgColor index 14
@@ -7408,7 +7408,7 @@ major 4
 minor 4
 release 0
 x 384
-y 656
+y 700
 w 68
 h 16
 fgColor index 14
@@ -7434,7 +7434,7 @@ major 4
 minor 7
 release 0
 x 384
-y 656
+y 700
 w 68
 h 16
 controlPv "$(P):FA2_PS1_V"
@@ -7459,7 +7459,7 @@ major 4
 minor 7
 release 0
 x 256
-y 656
+y 700
 w 124
 h 16
 controlPv "$(P):FA2_PS1_V.DESC"
@@ -7482,7 +7482,7 @@ major 4
 minor 7
 release 0
 x 384
-y 676
+y 720
 w 68
 h 16
 controlPv "$(P):FA2_PS2_V"
@@ -7507,7 +7507,7 @@ major 4
 minor 7
 release 0
 x 256
-y 676
+y 720
 w 124
 h 16
 controlPv "$(P):FA2_PS2_V.DESC"
@@ -7530,7 +7530,7 @@ major 4
 minor 7
 release 0
 x 384
-y 760
+y 804
 w 68
 h 16
 controlPv "$(P):FA3_PS1_V"
@@ -7555,7 +7555,7 @@ major 4
 minor 7
 release 0
 x 256
-y 760
+y 804
 w 124
 h 16
 controlPv "$(P):FA3_PS1_V.DESC"
@@ -7578,7 +7578,7 @@ major 4
 minor 7
 release 0
 x 384
-y 780
+y 824
 w 68
 h 16
 controlPv "$(P):FA3_PS2_V"
@@ -7603,7 +7603,7 @@ major 4
 minor 7
 release 0
 x 256
-y 780
+y 824
 w 124
 h 16
 controlPv "$(P):FA3_PS2_V.DESC"
@@ -7626,7 +7626,7 @@ major 4
 minor 4
 release 0
 x 384
-y 716
+y 760
 w 68
 h 16
 fgColor index 14
@@ -7652,7 +7652,7 @@ major 4
 minor 4
 release 0
 x 384
-y 696
+y 740
 w 68
 h 16
 fgColor index 14
@@ -7678,7 +7678,7 @@ major 4
 minor 7
 release 0
 x 384
-y 696
+y 740
 w 68
 h 16
 controlPv "$(P):FA2_PS3_V"
@@ -7703,7 +7703,7 @@ major 4
 minor 7
 release 0
 x 256
-y 696
+y 740
 w 124
 h 16
 controlPv "$(P):FA2_PS3_V.DESC"
@@ -7726,7 +7726,7 @@ major 4
 minor 7
 release 0
 x 256
-y 716
+y 760
 w 124
 h 16
 controlPv "$(P):FA2_PS4_V.DESC"
@@ -7749,7 +7749,7 @@ major 4
 minor 7
 release 0
 x 384
-y 716
+y 760
 w 68
 h 16
 controlPv "$(P):FA2_PS4_V"
@@ -7774,7 +7774,7 @@ major 4
 minor 4
 release 0
 x 384
-y 736
+y 780
 w 68
 h 16
 fgColor index 14
@@ -7800,7 +7800,7 @@ major 4
 minor 7
 release 0
 x 256
-y 736
+y 780
 w 124
 h 16
 controlPv "$(P):FA2_12V.DESC"
@@ -7823,7 +7823,7 @@ major 4
 minor 7
 release 0
 x 384
-y 736
+y 780
 w 68
 h 16
 controlPv "$(P):FA2_12V"
@@ -7848,7 +7848,7 @@ major 4
 minor 4
 release 0
 x 384
-y 820
+y 864
 w 68
 h 16
 fgColor index 14
@@ -7874,7 +7874,7 @@ major 4
 minor 4
 release 0
 x 384
-y 800
+y 844
 w 68
 h 16
 fgColor index 14
@@ -7900,7 +7900,7 @@ major 4
 minor 7
 release 0
 x 384
-y 800
+y 844
 w 68
 h 16
 controlPv "$(P):FA3_PS3_V"
@@ -7925,7 +7925,7 @@ major 4
 minor 7
 release 0
 x 256
-y 800
+y 844
 w 124
 h 16
 controlPv "$(P):FA3_PS3_V.DESC"
@@ -7948,7 +7948,7 @@ major 4
 minor 7
 release 0
 x 256
-y 820
+y 864
 w 124
 h 16
 controlPv "$(P):FA3_PS4_V.DESC"
@@ -7971,7 +7971,7 @@ major 4
 minor 7
 release 0
 x 384
-y 820
+y 864
 w 68
 h 16
 controlPv "$(P):FA3_PS4_V"
@@ -7996,7 +7996,7 @@ major 4
 minor 4
 release 0
 x 384
-y 840
+y 884
 w 68
 h 16
 fgColor index 14
@@ -8022,7 +8022,7 @@ major 4
 minor 7
 release 0
 x 256
-y 840
+y 884
 w 124
 h 16
 controlPv "$(P):FA3_12V.DESC"
@@ -8045,7 +8045,7 @@ major 4
 minor 7
 release 0
 x 384
-y 840
+y 884
 w 68
 h 16
 controlPv "$(P):FA3_12V"
@@ -8070,7 +8070,7 @@ major 4
 minor 4
 release 0
 x 384
-y 884
+y 928
 w 68
 h 16
 fgColor index 14
@@ -8096,7 +8096,7 @@ major 4
 minor 4
 release 0
 x 384
-y 864
+y 908
 w 68
 h 16
 fgColor index 14
@@ -8122,7 +8122,7 @@ major 4
 minor 7
 release 0
 x 384
-y 864
+y 908
 w 68
 h 16
 controlPv "$(P):FA4_PS1_V"
@@ -8147,7 +8147,7 @@ major 4
 minor 7
 release 0
 x 256
-y 864
+y 908
 w 124
 h 16
 controlPv "$(P):FA4_PS1_V.DESC"
@@ -8170,7 +8170,7 @@ major 4
 minor 7
 release 0
 x 384
-y 884
+y 928
 w 68
 h 16
 controlPv "$(P):FA4_PS2_V"
@@ -8195,7 +8195,7 @@ major 4
 minor 7
 release 0
 x 256
-y 884
+y 928
 w 124
 h 16
 controlPv "$(P):FA4_PS2_V.DESC"
@@ -8218,7 +8218,7 @@ major 4
 minor 4
 release 0
 x 384
-y 924
+y 968
 w 68
 h 16
 fgColor index 14
@@ -8244,7 +8244,7 @@ major 4
 minor 4
 release 0
 x 384
-y 904
+y 948
 w 68
 h 16
 fgColor index 14
@@ -8270,7 +8270,7 @@ major 4
 minor 7
 release 0
 x 384
-y 904
+y 948
 w 68
 h 16
 controlPv "$(P):FA4_PS3_V"
@@ -8295,7 +8295,7 @@ major 4
 minor 7
 release 0
 x 256
-y 904
+y 948
 w 124
 h 16
 controlPv "$(P):FA4_PS3_V.DESC"
@@ -8318,7 +8318,7 @@ major 4
 minor 7
 release 0
 x 256
-y 924
+y 968
 w 124
 h 16
 controlPv "$(P):FA4_PS4_V.DESC"
@@ -8341,7 +8341,7 @@ major 4
 minor 7
 release 0
 x 384
-y 924
+y 968
 w 68
 h 16
 controlPv "$(P):FA4_PS4_V"
@@ -8366,7 +8366,7 @@ major 4
 minor 4
 release 0
 x 384
-y 944
+y 988
 w 68
 h 16
 fgColor index 14
@@ -8392,7 +8392,7 @@ major 4
 minor 7
 release 0
 x 256
-y 944
+y 988
 w 124
 h 16
 controlPv "$(P):FA4_12V.DESC"
@@ -8415,7 +8415,7 @@ major 4
 minor 7
 release 0
 x 384
-y 944
+y 988
 w 68
 h 16
 controlPv "$(P):FA4_12V"
@@ -8440,7 +8440,7 @@ major 4
 minor 4
 release 0
 x 384
-y 988
+y 1032
 w 68
 h 16
 fgColor index 14
@@ -8466,7 +8466,7 @@ major 4
 minor 4
 release 0
 x 384
-y 968
+y 1012
 w 68
 h 16
 fgColor index 14
@@ -8492,7 +8492,7 @@ major 4
 minor 7
 release 0
 x 384
-y 968
+y 1012
 w 68
 h 16
 controlPv "$(P):FA5_PS1_V"
@@ -8517,7 +8517,7 @@ major 4
 minor 7
 release 0
 x 256
-y 968
+y 1012
 w 124
 h 16
 controlPv "$(P):FA5_PS1_V.DESC"
@@ -8540,7 +8540,7 @@ major 4
 minor 7
 release 0
 x 384
-y 988
+y 1032
 w 68
 h 16
 controlPv "$(P):FA5_PS2_V"
@@ -8565,7 +8565,7 @@ major 4
 minor 7
 release 0
 x 256
-y 988
+y 1032
 w 124
 h 16
 controlPv "$(P):FA5_PS2_V.DESC"
@@ -8588,7 +8588,7 @@ major 4
 minor 4
 release 0
 x 384
-y 1028
+y 1072
 w 68
 h 16
 fgColor index 14
@@ -8614,7 +8614,7 @@ major 4
 minor 4
 release 0
 x 384
-y 1008
+y 1052
 w 68
 h 16
 fgColor index 14
@@ -8640,7 +8640,7 @@ major 4
 minor 7
 release 0
 x 384
-y 1008
+y 1052
 w 68
 h 16
 controlPv "$(P):FA5_PS3_V"
@@ -8665,7 +8665,7 @@ major 4
 minor 7
 release 0
 x 256
-y 1008
+y 1052
 w 124
 h 16
 controlPv "$(P):FA5_PS3_V.DESC"
@@ -8688,7 +8688,7 @@ major 4
 minor 7
 release 0
 x 256
-y 1028
+y 1072
 w 124
 h 16
 controlPv "$(P):FA5_PS4_V.DESC"
@@ -8711,7 +8711,7 @@ major 4
 minor 7
 release 0
 x 384
-y 1028
+y 1072
 w 68
 h 16
 controlPv "$(P):FA5_PS4_V"
@@ -8736,7 +8736,7 @@ major 4
 minor 4
 release 0
 x 384
-y 1048
+y 1092
 w 68
 h 16
 fgColor index 14
@@ -8762,7 +8762,7 @@ major 4
 minor 7
 release 0
 x 256
-y 1048
+y 1092
 w 124
 h 16
 controlPv "$(P):FA5_12V.DESC"
@@ -8785,7 +8785,7 @@ major 4
 minor 7
 release 0
 x 384
-y 1048
+y 1092
 w 68
 h 16
 controlPv "$(P):FA5_12V"
@@ -8810,7 +8810,7 @@ major 4
 minor 4
 release 0
 x 384
-y 488
+y 532
 w 68
 h 16
 fgColor index 14
@@ -8836,7 +8836,7 @@ major 4
 minor 7
 release 0
 x 384
-y 488
+y 532
 w 68
 h 16
 controlPv "$(P):DA_PS1_V"
@@ -8861,7 +8861,7 @@ major 4
 minor 7
 release 0
 x 256
-y 488
+y 532
 w 124
 h 16
 controlPv "$(P):DA_PS1_V.DESC"
@@ -8884,7 +8884,7 @@ major 4
 minor 4
 release 0
 x 384
-y 508
+y 552
 w 68
 h 16
 fgColor index 14
@@ -8910,7 +8910,7 @@ major 4
 minor 7
 release 0
 x 384
-y 508
+y 552
 w 68
 h 16
 controlPv "$(P):DA_PS2_V"
@@ -8935,7 +8935,7 @@ major 4
 minor 7
 release 0
 x 256
-y 508
+y 552
 w 124
 h 16
 controlPv "$(P):DA_PS2_V.DESC"
@@ -8958,7 +8958,7 @@ major 4
 minor 4
 release 0
 x 384
-y 528
+y 572
 w 68
 h 16
 fgColor index 14
@@ -8984,7 +8984,7 @@ major 4
 minor 7
 release 0
 x 256
-y 528
+y 572
 w 124
 h 16
 controlPv "$(P):DA_12V.DESC"
@@ -9007,7 +9007,7 @@ major 4
 minor 7
 release 0
 x 384
-y 528
+y 572
 w 68
 h 16
 controlPv "$(P):DA_12V"
@@ -11707,7 +11707,7 @@ major 4
 minor 0
 release 0
 x 1228
-y 960
+y 1000
 w 92
 h 20
 fgColor index 14
@@ -11729,7 +11729,7 @@ major 4
 minor 1
 release 1
 x 1156
-y 960
+y 1000
 w 64
 h 20
 font "helvetica-medium-r-12.0"
@@ -11749,7 +11749,7 @@ major 4
 minor 1
 release 1
 x 940
-y 944
+y 984
 w 52
 h 16
 font "helvetica-bold-r-12.0"
@@ -11760,5 +11760,153 @@ value {
   "Debug"
 }
 border
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 384
+y 484
+w 68
+h 16
+fgColor index 14
+bgColor index 51
+topShadowColor index 50
+botShadowColor index 10
+font "helvetica-medium-r-12.0"
+invisible
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "ssa_alarmLimits.edl"
+}
+symbols {
+  0 "PV=$(P):MainCPU_24V"
+}
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 384
+y 464
+w 68
+h 16
+fgColor index 14
+bgColor index 51
+topShadowColor index 50
+botShadowColor index 10
+font "helvetica-medium-r-12.0"
+invisible
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "ssa_alarmLimits.edl"
+}
+symbols {
+  0 "PV=$(P):MainCPU_12V"
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 256
+y 464
+w 124
+h 16
+controlPv "$(P):MainCPU_12V.DESC"
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 51
+useDisplayBg
+limitsFromDb
+nullColor index 14
+useHexPrefix
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 384
+y 464
+w 68
+h 16
+controlPv "$(P):MainCPU_12V"
+font "helvetica-medium-r-12.0"
+fgColor index 15
+fgAlarm
+bgColor index 14
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+showUnits
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 384
+y 484
+w 68
+h 16
+controlPv "$(P):MainCPU_24V"
+font "helvetica-medium-r-12.0"
+fgColor index 15
+fgAlarm
+bgColor index 14
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+showUnits
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 256
+y 484
+w 124
+h 16
+controlPv "$(P):MainCPU_24V.DESC"
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 51
+useDisplayBg
+limitsFromDb
+nullColor index 14
+useHexPrefix
+newPos
+objType "monitors"
 endObjectProperties
 

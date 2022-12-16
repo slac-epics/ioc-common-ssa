@@ -120,6 +120,8 @@ file "ai_slope.template" {
 pattern
 {           R,                     DESC,              PORT, OFFSET,   AOFF,   ASLO, PREC, LOLO,  LOW, HIGH, HIHI,     LLSV,      LSV,      HSV,     HHSV,      EGU,       SCAN}
 { MainCPUTemp,      "Main CPU PCB Temp",    $(PORT_P)_inw1,     23,    0.0,    0.1,    1,    4,    8,   55,   60,    MAJOR,    MINOR,    MINOR,    MAJOR,   "degC", "I/O Intr"}
+{ MainCPU_12V,       "Main CPU PCB 12V",    $(PORT_P)_inw1,     24,    0.0,    0.1,    1,  8.0,   "",   "", 16.0,    MAJOR, NO_ALARM, NO_ALARM,    MAJOR,      "V", "I/O Intr"}
+{ MainCPU_24V,       "Main CPU PCB 24V",    $(PORT_P)_inw1,     25,    0.0,    0.1,    1, 20.0,   "",   "", 28.0,    MAJOR, NO_ALARM, NO_ALARM,    MAJOR,      "V", "I/O Intr"}
 {PSSubCPUTemp,    "PS Sub CPU PCB Temp",    $(PORT_P)_inw1,     32,    0.0,    0.1,    1,    4,    8,   55,   60,    MAJOR,    MINOR,    MINOR,    MAJOR,   "degC", "I/O Intr"}
 {PSSubCPU_24V,    "PS Sub CPU Inp. 24V",    $(PORT_P)_inw1,     34,    0.0,    0.1,    1,   20,   21,   27,   28,    MAJOR,    MINOR,    MINOR,    MAJOR,      "V", "I/O Intr"}
 {      FA1_I1,   "Fin. Amp 1 Current 1",    $(PORT_P)_inw1,     39,    0.0,    0.1,    1,   "",   "", 19.5, 20.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,      "A", "I/O Intr"}
