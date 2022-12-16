@@ -143,17 +143,17 @@ Takes an integer error code as input, and displays a string message as output.
     else if (*errCode ==   1) errMsg = "DA PreAMP Current";
     else if (*errCode ==   2) errMsg = "DA Current 1";
     else if (*errCode ==   3) errMsg = "DA Current 2";
-    else if (*errCode ==  11) errMsg = "DA 1-2 FWD";
-    else if (*errCode ==  15) errMsg = "DA 1-2 REF";
+    else if (*errCode ==  11) errMsg = "DA FWD";
+    else if (*errCode ==  15) errMsg = "DA REF";
     else if (*errCode ==  21) errMsg = "DA +12VDC";
-    else if (*errCode ==  22) errMsg = "DA +45VDC 1";
-    else if (*errCode ==  23) errMsg = "DA +45VDC 2";
+    else if (*errCode ==  22) errMsg = "DA PS 1";
+    else if (*errCode ==  23) errMsg = "DA PS 2";
     else if (*errCode ==  31) errMsg = "DA Heat Sink Temp";
     else if (*errCode ==  32) errMsg = "DA FADA Sub CPU PCB Temp";
-    else if (*errCode == 101) errMsg = "FA1 1 Current";
-    else if (*errCode == 102) errMsg = "FA1 2 Current";
-    else if (*errCode == 103) errMsg = "FA1 3 Current";
-    else if (*errCode == 104) errMsg = "FA1 4 Current";
+    else if (*errCode == 101) errMsg = "FA1 Current 1";
+    else if (*errCode == 102) errMsg = "FA1 Current 2";
+    else if (*errCode == 103) errMsg = "FA1 Current 3";
+    else if (*errCode == 104) errMsg = "FA1 Current 4";
     else if (*errCode == 111) errMsg = "FA1 1-2 FWD";
     else if (*errCode == 112) errMsg = "FA1 3-4 FWD";
     else if (*errCode == 115) errMsg = "FA1 1-2 REF";
@@ -283,6 +283,145 @@ Takes an integer error code as input, and displays a string message as output.
     else if (*errCode == 725) errMsg = "FA5 +12VDC";
     else if (*errCode == 731) errMsg = "FA5 Heat Sink Temp";
     else if (*errCode == 732) errMsg = "FA5 FADA Sub CPU PCB Temp";
+    else errMsg = "Unknown error code";
+    
+    //printf("errCode=%d, errMsg=%s\n", *errCode, errMsg);
+
+    if (errMsg) {
+        prec->vala = errMsg;
+    } else {
+        return -1;
+    }
+
+    return 0;
+}
+
+static long asFaultMsg_CA186_7kW(aSubRecord *prec){
+/*------------------------------------------------------------------------------
+Takes an integer error code as input, and displays a string message as output.
+- Since we're using a strinout record for the output, output messages should be 
+    < 40 chars; otherwise we should use a waveform record.
+ *----------------------------------------------------------------------------*/
+    unsigned int *errCode = (unsigned int *)prec->a;
+    char *errMsg = NULL;
+
+    if      (*errCode ==   0) errMsg = "No error";
+    else if (*errCode ==   1) errMsg = "DA PreAMP Current 1";
+    else if (*errCode ==   2) errMsg = "DA PreAMP Current 2";
+    else if (*errCode ==   3) errMsg = "DA Current 1";
+    else if (*errCode ==   4) errMsg = "DA Current 2";
+    else if (*errCode ==  11) errMsg = "DA FWD";
+    else if (*errCode ==  15) errMsg = "DA REF";
+    else if (*errCode ==  21) errMsg = "DA +12VDC";
+    else if (*errCode ==  22) errMsg = "DA PS 1";
+    else if (*errCode ==  23) errMsg = "DA PS 2";
+    else if (*errCode ==  31) errMsg = "DA Heat Sink Temp";
+    else if (*errCode ==  32) errMsg = "DA FADA Sub CPU PCB Temp";
+
+    else if (*errCode == 101) errMsg = "FA1 Current 1";
+    else if (*errCode == 103) errMsg = "FA1 Current 2";
+    else if (*errCode == 111) errMsg = "FA1 1 FWD";
+    else if (*errCode == 112) errMsg = "FA1 2 FWD";
+    else if (*errCode == 115) errMsg = "FA1 1 REF";
+    else if (*errCode == 116) errMsg = "FA1 2 REF";
+    else if (*errCode == 121) errMsg = "FA1 1 +45VDC";
+    else if (*errCode == 123) errMsg = "FA1 2 +45VDC";
+    else if (*errCode == 125) errMsg = "FA1 +12VDC";
+    else if (*errCode == 131) errMsg = "FA1 Heat Sink Temp";
+    else if (*errCode == 132) errMsg = "FA1 FADA Sub CPU PCB Temp";
+
+    else if (*errCode == 201) errMsg = "FA2 Current 1";
+    else if (*errCode == 203) errMsg = "FA2 Current 2";
+    else if (*errCode == 211) errMsg = "FA2 1 FWD";
+    else if (*errCode == 212) errMsg = "FA2 2 FWD";
+    else if (*errCode == 215) errMsg = "FA2 1 REF";
+    else if (*errCode == 216) errMsg = "FA2 2 REF";
+    else if (*errCode == 221) errMsg = "FA2 1 +45VDC";
+    else if (*errCode == 223) errMsg = "FA2 2 +45VDC";
+    else if (*errCode == 225) errMsg = "FA2 +12VDC";
+    else if (*errCode == 231) errMsg = "FA2 Heat Sink Temp";
+    else if (*errCode == 232) errMsg = "FA2 FADA Sub CPU PCB Temp";
+
+    else if (*errCode == 301) errMsg = "FA3 Current 1";
+    else if (*errCode == 303) errMsg = "FA3 Current 2";
+    else if (*errCode == 311) errMsg = "FA3 1 FWD";
+    else if (*errCode == 312) errMsg = "FA3 2 FWD";
+    else if (*errCode == 315) errMsg = "FA3 1 REF";
+    else if (*errCode == 316) errMsg = "FA3 2 REF";
+    else if (*errCode == 321) errMsg = "FA3 1 +45VDC";
+    else if (*errCode == 323) errMsg = "FA3 2 +45VDC";
+    else if (*errCode == 325) errMsg = "FA3 +12VDC";
+    else if (*errCode == 331) errMsg = "FA3 Heat Sink Temp";
+    else if (*errCode == 332) errMsg = "FA3 FADA Sub CPU PCB Temp";
+
+    else if (*errCode == 404) errMsg = "PS Sub CPU PCB Temp";
+    else if (*errCode == 405) errMsg = "Heat Exc. In. Air Temp";
+    else if (*errCode == 406) errMsg = "Heat Exc. Sub CPU PCB Temp";
+    else if (*errCode == 409) errMsg = "Outlet LCW Flow Rate";
+    else if (*errCode == 410) errMsg = "Inlet LCW Temp";
+    else if (*errCode == 411) errMsg = "Outlet LCW Temp";
+    else if (*errCode == 420) errMsg = "PS Fault Status (> 3 Errs)";
+    else if (*errCode == 421) errMsg = "PS Fault Status (PS1)";
+    else if (*errCode == 422) errMsg = "PS Fault Status (PS2)";
+    else if (*errCode == 423) errMsg = "PS Fault Status (PS3)";
+    else if (*errCode == 424) errMsg = "PS Fault Status (PS4)";
+    else if (*errCode == 431) errMsg = "Heat Exc Fan 1 Speed";
+    else if (*errCode == 432) errMsg = "Heat Exc Fan 2 Speed";
+    else if (*errCode == 433) errMsg = "Heat Exc Fan 3 Speed";
+    else if (*errCode == 434) errMsg = "Heat Exc Fan 4 Speed";
+    else if (*errCode == 435) errMsg = "Heat Exc Fan 5 Speed";
+    else if (*errCode == 436) errMsg = "Heat Exc Fan 6 Speed";
+    else if (*errCode == 437) errMsg = "PS Fan 1 Speed";
+    else if (*errCode == 438) errMsg = "PS Fan 2 Speed";
+    else if (*errCode == 442) errMsg = "PS Sub CPU Input +24VDC";
+    else if (*errCode == 500) errMsg = "Input Drive Pwr";
+    else if (*errCode == 501) errMsg = "Forward Pwr";
+    else if (*errCode == 502) errMsg = "Water Leak Status";
+    else if (*errCode == 503) errMsg = "RF Ctrl Unit Fan Speed";
+    else if (*errCode == 504) errMsg = "Ready for RF (timer)";
+    else if (*errCode == 511) errMsg = "Ext. Fault 1 (NIRP)";
+    else if (*errCode == 512) errMsg = "Ext. Fault No.2 24V Permit Line";
+    else if (*errCode == 513) errMsg = "Ext. Faults 1 & 2 (NIRP)";
+    else if (*errCode == 514) errMsg = "Ext. Fault No.3 24V Permit Line";
+    else if (*errCode == 515) errMsg = "Ext. Faults 1 & 3 (NIRP)";
+    else if (*errCode == 516) errMsg = "Ext. Faults 2 & 3 24V Permit Line";
+    else if (*errCode == 517) errMsg = "Ext. Faults 1,2,3 (NIRP)";
+    else if (*errCode == 518) errMsg = "Ext. Fault No.4 24V Permit Line";
+    else if (*errCode == 519) errMsg = "Ext. Faults 1 & 4 (NIRP)";
+    else if (*errCode == 520) errMsg = "Ext. Faults 2 & 4 24V Permit Line";
+    else if (*errCode == 521) errMsg = "Main CPU PCB Input +12VDC";
+    else if (*errCode == 522) errMsg = "Main CPU PCB Input +24VDC";
+    else if (*errCode == 523) errMsg = "Ext. Faults 1,3,4 (NIRP)";
+    else if (*errCode == 524) errMsg = "Ext. Faults 2,3,4 24V Permit Line";
+    else if (*errCode == 525) errMsg = "Ext. Faults 1,2,3,4 (NIRP)";
+    else if (*errCode == 530) errMsg = "Reflected Pwr";
+    else if (*errCode == 541) errMsg = "microSD Status (Master)";
+    else if (*errCode == 542) errMsg = "microSD Status (Slave)";
+    else if (*errCode == 550) errMsg = "Main CPU PCB Temp";
+    else if (*errCode == 560) errMsg = "Thermostat Status";
+    else if (*errCode == 570) errMsg = "120VAC Off or Reboot";
+    else if (*errCode == 580) errMsg = "480VAC Status";
+    else if (*errCode == 591) errMsg = "Debug-SD CPU/Proc Fault";
+    else if (*errCode == 592) errMsg = "PS Sub CPU/Proc Fault";
+    else if (*errCode == 593) errMsg = "FA1 Sub CPU/Proc Fault";
+    else if (*errCode == 594) errMsg = "FA2 Sub CPU/Proc Fault";
+    else if (*errCode == 595) errMsg = "FA3 Sub CPU/Proc Fault";
+    else if (*errCode == 596) errMsg = "FA4 Sub CPU/Proc Fault";
+    else if (*errCode == 598) errMsg = "DA Sub CPU/Proc Fault";
+    else if (*errCode == 599) errMsg = "HE Sub CPU/Proc Fault";
+
+    else if (*errCode == 601) errMsg = "FA4 Current 1";
+    else if (*errCode == 603) errMsg = "FA4 Current 2";
+    else if (*errCode == 611) errMsg = "FA4 1 FWD";
+    else if (*errCode == 612) errMsg = "FA4 2 FWD";
+    else if (*errCode == 615) errMsg = "FA4 1 REF";
+    else if (*errCode == 616) errMsg = "FA4 2 REF";
+    else if (*errCode == 621) errMsg = "FA4 1 +45VDC";
+    else if (*errCode == 623) errMsg = "FA4 2 +45VDC";
+    else if (*errCode == 625) errMsg = "FA4 +12VDC";
+    else if (*errCode == 631) errMsg = "FA4 Heat Sink Temp";
+    else if (*errCode == 632) errMsg = "FA4 FADA Sub CPU PCB Temp";
+
     else errMsg = "Unknown error code";
     
     //printf("errCode=%d, errMsg=%s\n", *errCode, errMsg);
@@ -503,6 +642,7 @@ Takes an integer error code as input, and displays a string message as output.
 
 epicsRegisterFunction(asFaultMsg);
 epicsRegisterFunction(asFaultMsg_CA1300_7kW);
+epicsRegisterFunction(asFaultMsg_CA186_7kW);
 epicsRegisterFunction(asFaultMsg_CA199);
 epicsRegisterFunction(asFaultMsg_CA3900);
 

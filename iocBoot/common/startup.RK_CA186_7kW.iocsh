@@ -1,0 +1,80 @@
+# IOC shell script for R&K CA186 7kW SSA
+# Includes modbus config and db loading
+# Required macros:
+# PORT - asyn port
+# P - PV name prefix
+# IP - IP address or host name 
+
+# Use the following commands for TCP/IP
+# drvAsynIPPortConfigure(const char *portName, const char *hostInfo,
+# 			 unsigned int priority, int noAutoConnect,
+#			 int noProcessEos);
+
+drvAsynIPPortConfigure("$(PORT)", "$(IP):502", 0,0,1)
+dbLoadRecords("db/asynRecord.db","P=$(P), R=ASYN, PORT=$(PORT), ADDR=0,IMAX=0,OMAX=0")
+
+# modbusInterposeConfig(const char *portName, modbusLinkType linkType,
+#			int timeoutMsec, int writeDelayMsec)
+# linkType 0 = TCP/IP
+modbusInterposeConfig("$(PORT)", 0, 1500, 0)
+
+
+# Modbus function code: 3 (Read Holding Registers, 16-bit word access)
+# Start address: 1
+# Access 123 words as inputs
+# Default data type: unsigned integer
+# drvModbusAsynConfigure("portName", "TcpPortName", slaveaddress,
+#			modbusFunctions, modbusStartAddress, modbusLength,
+#			dataType, pollMsec, "plcType")
+#
+drvModbusAsynConfigure("$(PORT)_inw1", "$(PORT)", 0, 3, 1, 123, 0, 500, "RK")
+dbLoadRecords("db/asynRecord.db", "P=$(P), R=ASYN_IN, PORT=$(PORT)_inw1, ADDR=0,IMAX=0,OMAX=0")
+dbLoadRecords("db/statistics.template", "P=$(P), R=ASYN_IN, PORT=$(PORT)_inw1, SCAN=10 second")
+
+# Modbus function code: 3 (Read Holding Registers, 16-bit word access)
+# Start address: 124
+# Access 50 words as inputs
+# Default data type: unsigned integer
+drvModbusAsynConfigure("$(PORT)_inw2", "$(PORT)", 0, 3, 124, 50, 0, 500, "RK")
+dbLoadRecords("db/asynRecord.db", "P=$(P), R=ASYN_IN, PORT=$(PORT)_inw2, ADDR=0,IMAX=0,OMAX=0")
+
+# Modbus function code: 6 (Write Single Register, 16-bit word access)
+# Start address: 1
+# Access 8 words as outputs 
+# Default data type: unsigned integer
+drvModbusAsynConfigure("$(PORT)_outw1", "$(PORT)", 0, 6, 1, 8, 0, 100, "RK")
+dbLoadRecords("db/asynRecord.db","P=$(P), R=ASYN_OUT, PORT=$(PORT)_outw1, ADDR=0,IMAX=0,OMAX=0")
+dbLoadRecords("db/statistics.template", "P=$(P), R=ASYN_OUT, PORT=$(PORT)_outw1, SCAN=10 second")
+
+# Modbus function code: 6 (Write Single Register, 16-bit word access)
+# Start address: 160
+# Access 5 words as outputs 
+# Default data type: unsigned integer
+drvModbusAsynConfigure("$(PORT)_outw2", "$(PORT)", 0, 6, 160, 5, 0, 100, "RK")
+dbLoadRecords("db/asynRecord.db","P=$(P), R=ASYN_OUT, PORT=$(PORT)_outw2, ADDR=0,IMAX=0,OMAX=0")
+
+# Enable ASYN_TRACEIO_HEX on octet server
+asynSetTraceIOMask("$(PORT)", 0, 0x4)
+# Enable ASYN_TRACE_ERROR and ASYN_TRACEIO_DRIVER on octet server
+#asynSetTraceMask("$(PORT)", 0, 0x9)
+# Dump up to 256 bytes in asynTrace
+asynSetTraceIOTruncateSize("$(PORT)", 0, 256)
+
+# Enable ASYN_TRACEIO_HEX on modbus server
+asynSetTraceIOMask("$(PORT)_inw1", 0, 0x4)
+asynSetTraceIOMask("$(PORT)_inw2", 0, 0x4)
+# Enable ASYN_TRACE_FLOW on modbus server
+#asynSetTraceMask("$(PORT)_inw1", 0, 0x11)
+#asynSetTraceMask("$(PORT)_inw2", 0, 0x11)
+# Dump up to 512 bytes in asynTrace
+asynSetTraceIOTruncateSize("$(PORT)_inw1", 0, 512)
+asynSetTraceIOTruncateSize("$(PORT)_inw2", 0, 512)
+
+# Load records
+dbLoadRecords("db/ssa_RK_CA186_7kW.db", "P=$(P),CM=$(CM=None),CAV1=$(CAV1=None),CAV2=$(CAV2=None),PORT_P=$(PORT),ASG=$(ASG)")
+
+# Just in case
+epicsThreadSleep(0.25)
+
+# End of script
+

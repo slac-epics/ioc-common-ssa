@@ -5,12 +5,13 @@ program seq_ssa_RK_CA
 Controls SSA states by reading/writing SSA registers
 and responding to user inputs (e.g. On/Off buttons).
 
-This routine should work for the following SSAs:
+This routine should work for the following R&K SSAs:
 CA1300 3.8 kW (LCLS SC buncher & standard cryomodule)
 CA1300 4.6 kW (LCLS SC & LCLS SC HE)
 CA1300 7 kW (LCLS SC & LCLS SC HE)
 CA3900 (LCLS SC HL)
 CA186 (LCLS SC GUNB)
+CA186 7 kW (LCLS HE Gun)
 
 M. Dunning (mdunning@slac.stanford.edu)
 */

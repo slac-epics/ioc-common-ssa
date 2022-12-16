@@ -1,0 +1,1378 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 77
+y 106
+w 1480
+h 776
+font "helvetica-medium-r-12.0"
+ctlFont "helvetica-medium-r-12.0"
+btnFont "helvetica-medium-r-12.0"
+fgColor index 8
+bgColor index 3
+textColor index 14
+ctlFgColor1 index 14
+ctlFgColor2 index 14
+ctlBgColor1 index 51
+ctlBgColor2 index 8
+topShadowColor index 50
+botShadowColor index 10
+title "SSA: $(P) Fault & Warning Bits"
+showGrid
+snapToGrid
+gridSize 4
+endScreenProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 384
+y 88
+w 1080
+h 668
+lineColor index 14
+fillColor index 51
+lineWidth 2
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 20
+y 88
+w 340
+h 404
+lineColor index 14
+fillColor index 51
+lineWidth 2
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 0
+y 0
+w 1484
+h 68
+lineColor index 13
+fill
+fillColor index 63
+endObjectProperties
+
+# (Exit Button)
+object activeExitButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 1412
+y 8
+w 60
+h 32
+fgColor index 14
+bgColor index 4
+topShadowColor index 1
+botShadowColor index 13
+label "EXIT"
+font "helvetica-bold-r-18.0"
+3d
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 12
+y 8
+w 460
+h 24
+font "helvetica-bold-r-18.0"
+fgColor index 13
+bgColor index 2
+useDisplayBg
+value {
+  "LCLS 7 kW (186 MHz) SSA - Fault & Warning Bits"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 20
+y 36
+w 260
+h 24
+font "helvetica-bold-r-14.0"
+fgColor index 29
+bgColor index 2
+useDisplayBg
+value {
+  "$(P)"
+}
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 56
+y 124
+w 204
+h 48
+
+beginGroup
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 100
+y 148
+w 88
+h 20
+controlPv "$(P):FaultExtStat"
+format "hex"
+font "helvetica-medium-r-12.0"
+fgColor index 15
+fgAlarm
+bgColor index 14
+limitsFromDb
+nullColor index 14
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Byte)
+object ByteClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 196
+y 124
+w 12
+h 48
+controlPv "$(P):FaultExtStat"
+lineColor index 8
+onColor index 20
+offColor index 15
+endian "little"
+numBits 4
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 212
+y 124
+w 48
+h 48
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+useDisplayBg
+value {
+  "External 1"
+  "External 2"
+  "External 3"
+  "External 4"
+}
+autoSize
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 56
+y 128
+w 132
+h 16
+controlPv "$(P):FaultExtStat.DESC"
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 51
+useDisplayBg
+limitsFromDb
+nullColor index 14
+useHexPrefix
+newPos
+objType "monitors"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 32
+y 80
+w 68
+h 16
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 3
+value {
+  "Fault Bits"
+}
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 420
+y 116
+w 302
+h 72
+
+beginGroup
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 420
+y 132
+w 136
+h 16
+controlPv "$(P):RFCUWarnStat.DESC"
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 51
+useDisplayBg
+limitsFromDb
+nullColor index 14
+useHexPrefix
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 468
+y 152
+w 88
+h 20
+controlPv "$(P):RFCUWarnStat"
+font "helvetica-medium-r-12.0"
+fgColor index 15
+fgAlarm
+bgColor index 14
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Byte)
+object ByteClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 564
+y 116
+w 12
+h 72
+controlPv "$(P):RFCUWarnStat"
+lineColor index 8
+onColor index 20
+offColor index 15
+endian "little"
+numBits 6
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 580
+y 116
+w 142
+h 72
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+useDisplayBg
+value {
+  "Input Driver Power"
+  "Forward Power"
+  "Reflected Power"
+  "Main CPU PCB Temp."
+  "Main CPU PCB Volt. +24VDC"
+  "Fan Rotation Speed"
+}
+autoSize
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 420
+y 228
+w 302
+h 72
+
+beginGroup
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 420
+y 244
+w 136
+h 16
+controlPv "$(P):PSWarnStat.DESC"
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 51
+useDisplayBg
+limitsFromDb
+nullColor index 14
+useHexPrefix
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 468
+y 264
+w 88
+h 20
+controlPv "$(P):PSWarnStat"
+font "helvetica-medium-r-12.0"
+fgColor index 15
+fgAlarm
+bgColor index 14
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Byte)
+object ByteClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 564
+y 228
+w 12
+h 72
+controlPv "$(P):PSWarnStat"
+lineColor index 8
+onColor index 20
+offColor index 15
+endian "little"
+numBits 6
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 580
+y 228
+w 152
+h 72
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+useDisplayBg
+value {
+  "-"
+  "PS Sub CPU PCB Temp."
+  "-"
+  "PS Sub CPU PCB Volt.+24VDC"
+  "Fan 1 Rotation Speed"
+  "Fan 2 Rotation Speed"
+}
+autoSize
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 780
+y 432
+w 309
+h 192
+
+beginGroup
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 848
+y 520
+w 88
+h 20
+controlPv "$(P):FA2WarnStat"
+format "hex"
+font "helvetica-medium-r-12.0"
+fgColor index 15
+fgAlarm
+bgColor index 14
+limitsFromDb
+nullColor index 14
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Byte)
+object ByteClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 944
+y 432
+w 12
+h 192
+controlPv "$(P):FA2WarnStat"
+lineColor index 8
+onColor index 20
+offColor index 15
+endian "little"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 960
+y 432
+w 130
+h 192
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+useDisplayBg
+value {
+  "-"
+  "Final AMP Curr. 1"
+  "-"
+  "Final AMP Curr. 2"
+  "-"
+  "FWD 1"
+  "REF 1"
+  "FWD 2"
+  "REF 2"
+  "+45VDC 1"
+  "-"
+  "+45VDC 2"
+  "-"
+  "HeatSink Temp."
+  "DAFA Sub CPU PCB Temp."
+  "+12VDC"
+}
+autoSize
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 780
+y 500
+w 156
+h 16
+controlPv "$(P):FA2WarnStat.DESC"
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 51
+useDisplayBg
+limitsFromDb
+nullColor index 14
+useHexPrefix
+newPos
+objType "monitors"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 400
+y 556
+w 281
+h 156
+
+beginGroup
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 468
+y 644
+w 88
+h 20
+controlPv "$(P):HXWarnStat"
+format "hex"
+font "helvetica-medium-r-12.0"
+fgColor index 15
+fgAlarm
+bgColor index 14
+limitsFromDb
+nullColor index 14
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Byte)
+object ByteClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 564
+y 556
+w 12
+h 156
+controlPv "$(P):HXWarnStat"
+lineColor index 8
+onColor index 20
+offColor index 15
+endian "little"
+numBits 13
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 580
+y 556
+w 101
+h 156
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+useDisplayBg
+value {
+  "-"
+  "HE Sub CPU Temp."
+  "-"
+  "-"
+  "Fan 1 Rotation Speed"
+  "Fan 2 Rotation Speed"
+  "Fan 3 Rotation Speed"
+  "Fan 4 Rotation Speed"
+  "Fan 5 Rotation Speed"
+  "Fan 6 Rotation Speed"
+  "-"
+  "-"
+  "Outlet Flow Rate"
+}
+autoSize
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 400
+y 624
+w 156
+h 16
+controlPv "$(P):HXWarnStat.DESC"
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 51
+useDisplayBg
+limitsFromDb
+nullColor index 14
+useHexPrefix
+newPos
+objType "monitors"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 400
+y 332
+w 309
+h 192
+
+beginGroup
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 468
+y 420
+w 88
+h 20
+controlPv "$(P):DAWarnStat"
+format "hex"
+font "helvetica-medium-r-12.0"
+fgColor index 15
+fgAlarm
+bgColor index 14
+limitsFromDb
+nullColor index 14
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Byte)
+object ByteClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 564
+y 332
+w 12
+h 192
+controlPv "$(P):DAWarnStat"
+lineColor index 8
+onColor index 20
+offColor index 15
+endian "little"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 580
+y 332
+w 130
+h 192
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+useDisplayBg
+value {
+  "Pre Driver AMP Curr."
+  "Driver AMP Curr."
+  "Driver AMP Curr."
+  "-"
+  "-"
+  "FWD"
+  "REF"
+  "-"
+  "-"
+  "+45VDC"
+  "+45VDC"
+  "-"
+  "-"
+  "HeatSink Temp."
+  "DAFA Sub CPU PCB Temp."
+  "+12VDC"
+}
+autoSize
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 400
+y 400
+w 156
+h 16
+controlPv "$(P):DAWarnStat.DESC"
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 51
+useDisplayBg
+limitsFromDb
+nullColor index 14
+useHexPrefix
+newPos
+objType "monitors"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1140
+y 212
+w 309
+h 192
+
+beginGroup
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 1208
+y 299
+w 88
+h 20
+controlPv "$(P):FA3WarnStat"
+format "hex"
+font "helvetica-medium-r-12.0"
+fgColor index 15
+fgAlarm
+bgColor index 14
+limitsFromDb
+nullColor index 14
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Byte)
+object ByteClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1304
+y 211
+w 12
+h 192
+controlPv "$(P):FA3WarnStat"
+lineColor index 8
+onColor index 20
+offColor index 15
+endian "little"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 1320
+y 211
+w 130
+h 192
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+useDisplayBg
+value {
+  "-"
+  "Final AMP Curr. 1"
+  "-"
+  "Final AMP Curr. 2"
+  "-"
+  "FWD 1"
+  "REF 1"
+  "FWD 2"
+  "REF 2"
+  "+45VDC 1"
+  "-"
+  "+45VDC 2"
+  "-"
+  "HeatSink Temp."
+  "DAFA Sub CPU PCB Temp."
+  "+12VDC"
+}
+autoSize
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 1140
+y 279
+w 156
+h 16
+controlPv "$(P):FA3WarnStat.DESC"
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 51
+useDisplayBg
+limitsFromDb
+nullColor index 14
+useHexPrefix
+newPos
+objType "monitors"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1140
+y 432
+w 309
+h 192
+
+beginGroup
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 1208
+y 520
+w 88
+h 20
+controlPv "$(P):FA4WarnStat"
+format "hex"
+font "helvetica-medium-r-12.0"
+fgColor index 15
+fgAlarm
+bgColor index 14
+limitsFromDb
+nullColor index 14
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Byte)
+object ByteClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1304
+y 432
+w 12
+h 192
+controlPv "$(P):FA4WarnStat"
+lineColor index 8
+onColor index 20
+offColor index 15
+endian "little"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 1320
+y 432
+w 130
+h 192
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+useDisplayBg
+value {
+  "-"
+  "Final AMP Curr. 1"
+  "-"
+  "Final AMP Curr. 2"
+  "-"
+  "FWD 1"
+  "REF 1"
+  "FWD 2"
+  "REF 2"
+  "+45VDC 1"
+  "-"
+  "+45VDC 2"
+  "-"
+  "HeatSink Temp."
+  "DAFA Sub CPU PCB Temp."
+  "+12VDC"
+}
+autoSize
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 1140
+y 500
+w 156
+h 16
+controlPv "$(P):FA4WarnStat.DESC"
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 51
+useDisplayBg
+limitsFromDb
+nullColor index 14
+useHexPrefix
+newPos
+objType "monitors"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 396
+y 80
+w 88
+h 16
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 3
+value {
+  "Warning Bits"
+}
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 52
+y 208
+w 261
+h 120
+
+beginGroup
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 52
+y 244
+w 136
+h 16
+controlPv "$(P):FaultPrcStat.DESC"
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 51
+useDisplayBg
+limitsFromDb
+nullColor index 14
+useHexPrefix
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 100
+y 264
+w 88
+h 20
+controlPv "$(P):FaultPrcStat"
+font "helvetica-medium-r-12.0"
+fgColor index 15
+fgAlarm
+bgColor index 14
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Byte)
+object ByteClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 196
+y 208
+w 12
+h 120
+controlPv "$(P):FaultPrcStat"
+lineColor index 8
+onColor index 20
+offColor index 15
+endian "little"
+numBits 10
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 212
+y 208
+w 101
+h 120
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+useDisplayBg
+value {
+  "-"
+  "Debug-SD CPU"
+  "PS Sub CPU"
+  "FA-1 DAFA Sub CPU"
+  "FA-2 DAFA Sub CPU"
+  "FA-3 DAFA Sub CPU"
+  "FA-4 DAFA Sub CPU"
+  "-"
+  "DA DAFA Sub CPU"
+  "HE Sub CPU"
+}
+autoSize
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 52
+y 392
+w 136
+h 16
+controlPv "$(P):PSFaultStat.DESC"
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 51
+useDisplayBg
+limitsFromDb
+nullColor index 14
+useHexPrefix
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 100
+y 412
+w 88
+h 20
+controlPv "$(P):PSFaultStat"
+font "helvetica-medium-r-12.0"
+fgColor index 15
+fgAlarm
+bgColor index 14
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Byte)
+object ByteClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 196
+y 364
+w 12
+h 96
+controlPv "$(P):PSFaultStat"
+lineColor index 8
+onColor index 20
+offColor index 15
+endian "little"
+numBits 8
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 212
+y 364
+w 20
+h 96
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+useDisplayBg
+value {
+  "-"
+  "PS1"
+  "-"
+  "PS2"
+  "-"
+  "PS3"
+  "-"
+  "PS4"
+}
+autoSize
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 780
+y 212
+w 310
+h 192
+
+beginGroup
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 848
+y 300
+w 88
+h 20
+controlPv "$(P):FA1WarnStat"
+format "hex"
+font "helvetica-medium-r-12.0"
+fgColor index 15
+fgAlarm
+bgColor index 14
+limitsFromDb
+nullColor index 14
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Byte)
+object ByteClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 944
+y 212
+w 12
+h 192
+controlPv "$(P):FA1WarnStat"
+lineColor index 8
+onColor index 20
+offColor index 15
+endian "little"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 960
+y 212
+w 130
+h 192
+font "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 51
+useDisplayBg
+value {
+  "-"
+  "Final AMP Curr. 1"
+  "-"
+  "Final AMP Curr. 2"
+  "-"
+  "FWD 1"
+  "REF 1"
+  "FWD 2"
+  "REF 2"
+  "+45VDC 1"
+  "-"
+  "+45VDC 2"
+  "-"
+  "HeatSink Temp."
+  "DAFA Sub CPU PCB Temp."
+  "+12VDC"
+}
+autoSize
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 780
+y 280
+w 156
+h 16
+controlPv "$(P):FA1WarnStat.DESC"
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 51
+useDisplayBg
+limitsFromDb
+nullColor index 14
+useHexPrefix
+newPos
+objType "monitors"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
