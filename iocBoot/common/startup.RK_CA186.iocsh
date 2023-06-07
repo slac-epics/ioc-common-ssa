@@ -86,7 +86,7 @@ dbLoadRecords("db/statistics.template", "P=$(P),R=ASYN_IN,PORT=$(PORT)_inw00,SCA
 # Access 8 words as outputs 
 # Default data type: unsigned integer
 drvModbusAsynConfigure("$(PORT)_outw00", "$(PORT)", 1, 6, 1, 8, 0, 1, "RK")
-dbLoadRecords("db/asynRecord.db", "P=$(P),R=ASYN_OUT,PORT=$(PORT)_outw00,ADDR=0,IMAX=0,OMAX=0")
+dbLoadRecords("db/asynRecord.db", "P=$(P),R=ASYN_OUT0,PORT=$(PORT)_outw00,ADDR=0,IMAX=0,OMAX=0")
 dbLoadRecords("db/statistics.template", "P=$(P),R=ASYN_OUT,PORT=$(PORT)_outw00,SCAN=10 second")
 
 # Modbus function code: 6 (Write Single Register, 16-bit word access)
@@ -94,14 +94,14 @@ dbLoadRecords("db/statistics.template", "P=$(P),R=ASYN_OUT,PORT=$(PORT)_outw00,S
 # Access 4 words as outputs 
 # Default data type: unsigned integer
 drvModbusAsynConfigure("$(PORT)_outw01", "$(PORT)", 1, 6, 30, 4, 0, 1, "RK")
-dbLoadRecords("db/asynRecord.db", "P=$(P),R=ASYN_OUT,PORT=$(PORT)_outw01,ADDR=0,IMAX=0,OMAX=0")
+dbLoadRecords("db/asynRecord.db", "P=$(P),R=ASYN_OUT1,PORT=$(PORT)_outw01,ADDR=0,IMAX=0,OMAX=0")
 
 # Modbus function code: 6 (Write Single Register, 16-bit word access)
 # Start address: 93
 # Access 6 words as outputs 
 # Default data type: unsigned integer
 drvModbusAsynConfigure("$(PORT)_outw02", "$(PORT)", 1, 6, 93, 6, 0, 1, "RK")
-dbLoadRecords("db/asynRecord.db", "P=$(P),R=ASYN_OUT,PORT=$(PORT)_outw02,ADDR=0,IMAX=0,OMAX=0")
+dbLoadRecords("db/asynRecord.db", "P=$(P),R=ASYN_OUT2,PORT=$(PORT)_outw02,ADDR=0,IMAX=0,OMAX=0")
 
 
 # Enable ASYN_TRACEIO_HEX on octet server

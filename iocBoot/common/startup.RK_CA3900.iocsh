@@ -28,7 +28,7 @@ modbusInterposeConfig("$(PORT)", 0, 1500, 0)
 #			dataType, pollMsec, "plcType")
 #
 drvModbusAsynConfigure("$(PORT)_inw1", "$(PORT)", 0, 3, 1, 125, 0, 500, "RK")
-dbLoadRecords("db/asynRecord.db", "P=$(P), R=ASYN_IN, PORT=$(PORT)_inw1, ADDR=0,IMAX=0,OMAX=0")
+dbLoadRecords("db/asynRecord.db", "P=$(P), R=ASYN_IN1, PORT=$(PORT)_inw1, ADDR=0,IMAX=0,OMAX=0")
 dbLoadRecords("db/statistics.template", "P=$(P), R=ASYN_IN, PORT=$(PORT)_inw1, SCAN=10 second")
 
 # Modbus function code: 3 (Read Holding Registers, 16-bit word access)
@@ -36,21 +36,21 @@ dbLoadRecords("db/statistics.template", "P=$(P), R=ASYN_IN, PORT=$(PORT)_inw1, S
 # Access 16 words as inputs
 # Default data type: unsigned integer
 drvModbusAsynConfigure("$(PORT)_inw2", "$(PORT)", 0, 3, 125, 16, 0, 5000, "RK")
-dbLoadRecords("db/asynRecord.db", "P=$(P), R=ASYN_IN, PORT=$(PORT)_inw2, ADDR=0,IMAX=0,OMAX=0")
+dbLoadRecords("db/asynRecord.db", "P=$(P), R=ASYN_IN2, PORT=$(PORT)_inw2, ADDR=0,IMAX=0,OMAX=0")
 
 # Modbus function code: 3 (Read Holding Registers, 16-bit word access)
 # Start address: 171
 # Access 20 words as inputs
 # Default data type: unsigned integer
 drvModbusAsynConfigure("$(PORT)_inw3", "$(PORT)", 0, 3, 171, 20, 0, 5000, "RK")
-dbLoadRecords("db/asynRecord.db", "P=$(P), R=ASYN_IN, PORT=$(PORT)_inw3, ADDR=0,IMAX=0,OMAX=0")
+dbLoadRecords("db/asynRecord.db", "P=$(P), R=ASYN_IN3, PORT=$(PORT)_inw3, ADDR=0,IMAX=0,OMAX=0")
 
 # Modbus function code: 6 (Write Single Register, 16-bit word access)
 # Start address: 1
 # Access 7 words as outputs 
 # Default data type: unsigned integer
 drvModbusAsynConfigure("$(PORT)_outw1", "$(PORT)", 0, 6, 1, 7, 0, 100, "RK")
-dbLoadRecords("db/asynRecord.db","P=$(P), R=ASYN_OUT, PORT=$(PORT)_outw1, ADDR=0,IMAX=0,OMAX=0")
+dbLoadRecords("db/asynRecord.db","P=$(P), R=ASYN_OUT1, PORT=$(PORT)_outw1, ADDR=0,IMAX=0,OMAX=0")
 dbLoadRecords("db/statistics.template", "P=$(P), R=ASYN_OUT, PORT=$(PORT)_outw1, SCAN=10 second")
 
 # Modbus function code: 6 (Write Single Register, 16-bit word access)
@@ -58,7 +58,7 @@ dbLoadRecords("db/statistics.template", "P=$(P), R=ASYN_OUT, PORT=$(PORT)_outw1,
 # Access 5 words as outputs 
 # Default data type: unsigned integer
 drvModbusAsynConfigure("$(PORT)_outw2", "$(PORT)", 0, 6, 128, 5, 0, 100, "RK")
-dbLoadRecords("db/asynRecord.db","P=$(P), R=ASYN_OUT, PORT=$(PORT)_outw2, ADDR=0,IMAX=0,OMAX=0")
+dbLoadRecords("db/asynRecord.db","P=$(P), R=ASYN_OUT2, PORT=$(PORT)_outw2, ADDR=0,IMAX=0,OMAX=0")
 
 # Enable ASYN_TRACEIO_HEX on octet server
 asynSetTraceIOMask("$(PORT)", 0, 0x4)
