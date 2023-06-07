@@ -21,14 +21,20 @@ $(PROD_NAME)_DBD += drvAsynIPPort.dbd
 $(PROD_NAME)_DBD += modbusSupport.dbd
 $(PROD_NAME)_DBD += devIocStats.dbd
 $(PROD_NAME)_DBD += iocAdmin.dbd
+ifdef SNCSEQ
 $(PROD_NAME)_DBD += devSeqCar.dbd
+endif
 $(PROD_NAME)_DBD += asSupport.dbd
 $(PROD_NAME)_DBD += caPutLog.dbd
 $(PROD_NAME)_DBD += system.dbd
+ifdef BKHASYN
 $(PROD_NAME)_DBD += drvBkhAsyn.dbd
+endif
 
 $(PROD_NAME)_DBD += $(PROD_NAME)ASubSupport.dbd
+ifdef SNCSEQ
 $(PROD_NAME)_DBD += $(PROD_NAME)SeqSupport.dbd
+endif
 
 ifdef EPICS_QSRV_MAJOR_VERSION
 $(PROD_NAME)_DBD += PVAServerRegister.dbd
@@ -49,8 +55,10 @@ $(PROD_NAME)_SRCS_DEFAULT += $(PROD_NAME)Main.cpp
 # For example, subroutines
 # ========================================================================
 $(PROD_NAME)_SRCS += $(PROD_NAME)ASub.c
+ifdef SNCSEQ
 $(PROD_NAME)_SRCS += $(PROD_NAME)Seq_RK_CA.st
 $(PROD_NAME)_SRCS += $(PROD_NAME)Seq_sys0_common.st
+endif
 
 # =====================================================
 # Link in the code from other libraries
@@ -58,7 +66,9 @@ $(PROD_NAME)_SRCS += $(PROD_NAME)Seq_sys0_common.st
 $(PROD_NAME)_LIBS += devIocStats
 $(PROD_NAME)_LIBS += autosave
 $(PROD_NAME)_LIBS += caPutLog
+ifdef BKHASYN
 $(PROD_NAME)_LIBS += bkhAsyn
+endif
 $(PROD_NAME)_LIBS += modbus
 $(PROD_NAME)_LIBS += asyn
 
@@ -69,8 +79,7 @@ endif
 
 # NOTE: To build SNL programs, SNCSEQ must be defined
 # in the <top>/configure/RELEASE file
-#
-ifneq ($(SNCSEQ),)
+ifdef SNCSEQ
 $(PROD_NAME)_LIBS += seqCar seq pv
 endif
 

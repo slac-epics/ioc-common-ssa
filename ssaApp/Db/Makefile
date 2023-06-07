@@ -18,7 +18,9 @@ DB_INSTALLS += $(IOCADMIN)/db/iocScanMon.db
 IOCRELEASE_DB += iocRelease.db
 
 # Sequencer
+ifdef SNCSEQ
 DB_INSTALLS += $(SNCSEQ)/db/devSeqCar.db
+endif
 
 # Autosave
 DB_INSTALLS += $(AUTOSAVE)/db/save_restoreStatus.db
@@ -31,6 +33,18 @@ DB_INSTALLS += $(MODBUS)/db/longout.template
 DB_INSTALLS += $(MODBUS)/db/bi_word.template
 DB_INSTALLS += $(MODBUS)/db/statistics.template
 DB_INSTALLS += $(MODBUS)/db/poll_delay.template
+
+# bkhAsyn
+ifdef BKHASYN
+DB_INSTALLS += $(BKHASYN)/db/bkhBi.db
+DB_INSTALLS += $(BKHASYN)/db/bkhBo.db
+DB_INSTALLS += $(BKHASYN)/db/bkhAi.db
+DB_INSTALLS += $(BKHASYN)/db/bkhTemp.db
+DB_INSTALLS += $(BKHASYN)/db/readwrite.db
+DB_INSTALLS += $(BKHASYN)/db/bkhAErr.db
+DB_INSTALLS += $(BKHASYN)/db/bk9000.db
+DB_INSTALLS += $(BKHASYN)/db/ai_convert_autosave.template
+endif
 
 # SSAs
 DB += ssa_RK_CA1300.db
@@ -57,7 +71,9 @@ DB += ssa_stats.db
 DB += ssa_sim.db
 
 # B15 beckhoff
+ifdef BKHASYN
 DB += bkh_b15.db
+endif
 # =======================================================================
 
 include $(TOP)/configure/RULES
