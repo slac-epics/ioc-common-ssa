@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 24
-y 66
+x 3
+y 68
 w 1340
 h 856
 font "helvetica-medium-r-12.0"
@@ -7938,107 +7938,6 @@ value {
 }
 endObjectProperties
 
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 580
-y 12
-w 172
-h 48
-
-beginGroup
-
-# (Text Monitor)
-object activeXTextDspClass:noedit
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 708
-y 12
-w 44
-h 24
-controlPv "$(P):Cryomodule"
-font "helvetica-bold-r-18.0"
-fgColor index 14
-bgColor index 51
-useDisplayBg
-limitsFromDb
-nullColor index 14
-useHexPrefix
-newPos
-objType "monitors"
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 580
-y 12
-w 120
-h 24
-font "helvetica-bold-r-18.0"
-fontAlign "right"
-fgColor index 14
-bgColor index 2
-useDisplayBg
-value {
-  "Cryomodule:"
-}
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 580
-y 36
-w 120
-h 24
-font "helvetica-bold-r-18.0"
-fontAlign "right"
-fgColor index 14
-bgColor index 2
-useDisplayBg
-value {
-  "Cavity:"
-}
-endObjectProperties
-
-# (Text Monitor)
-object activeXTextDspClass:noedit
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 708
-y 36
-w 44
-h 24
-controlPv "$(P):Cav1"
-font "helvetica-bold-r-18.0"
-fgColor index 14
-bgColor index 51
-useDisplayBg
-limitsFromDb
-nullColor index 14
-useHexPrefix
-newPos
-objType "monitors"
-endObjectProperties
-
-endGroup
-
-endObjectProperties
-
 # (Static Text)
 object activeXTextClass
 beginObjectProperties
@@ -8119,5 +8018,89 @@ value {
   "Debug"
 }
 border
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 708
+y 12
+w 56
+h 24
+controlPv "$(P):Cryomodule"
+font "helvetica-bold-r-18.0"
+fgColor index 14
+bgColor index 51
+useDisplayBg
+limitsFromDb
+nullColor index 14
+useHexPrefix
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 580
+y 12
+w 120
+h 24
+font "helvetica-bold-r-18.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 2
+useDisplayBg
+value {
+  "Cryomodule:"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 580
+y 36
+w 120
+h 24
+font "helvetica-bold-r-18.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 2
+useDisplayBg
+value {
+  "Cavity:"
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 708
+y 36
+w 56
+h 24
+controlPv "$(P):Cav1"
+font "helvetica-bold-r-18.0"
+fgColor index 14
+bgColor index 51
+useDisplayBg
+limitsFromDb
+nullColor index 14
+useHexPrefix
+newPos
+objType "monitors"
 endObjectProperties
 
