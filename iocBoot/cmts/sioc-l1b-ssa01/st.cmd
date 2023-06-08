@@ -46,35 +46,35 @@ asSetFilename($(TOP)/iocBoot/common/no_security.acf)
 #
 # SSA1: L1B:H110
 # 7kW (cryomodule)
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L1B_H110,P=ACCL:L1B:H110:SSA:,CM=H1,CAV1=1,ASG=$(ASG),IP=lcls-ssa11")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L1B_H110,P=ACCL:L1B:H110:SSA:,CM=H1,CAV1=1,ASG=$(ASG),IP=131.225.142.240")
 
 # SSA2: L1B:H120
 # 7kW (cryomodule)
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L1B_H120,P=ACCL:L1B:H120:SSA:,CM=H1,CAV1=2,ASG=$(ASG),IP=lcls-ssa12")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L1B_H120,P=ACCL:L1B:H120:SSA:,CM=H1,CAV1=2,ASG=$(ASG),IP=131.225.142.191")
 
 # SSA3: L1B:H130
 # 7kW (cryomodule)
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L1B_H130,P=ACCL:L1B:H130:SSA:,CM=H1,CAV1=3,ASG=$(ASG),IP=lcls-ssa13")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L1B_H130,P=ACCL:L1B:H130:SSA:,CM=H1,CAV1=3,ASG=$(ASG),IP=131.225.142.241")
 
 # SSA4: L1B:H140
 # 7kW (cryomodule)
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L1B_H140,P=ACCL:L1B:H140:SSA:,CM=H1,CAV1=4,ASG=$(ASG),IP=lcls-ssa14")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L1B_H140,P=ACCL:L1B:H140:SSA:,CM=H1,CAV1=4,ASG=$(ASG),IP=131.225.142.199")
 
 # SSA5: L1B:H150
 # 7kW (cryomodule)
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L1B_H150,P=ACCL:L1B:H150:SSA:,CM=H1,CAV1=5,ASG=$(ASG),IP=lcls-ssa15")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L1B_H150,P=ACCL:L1B:H150:SSA:,CM=H1,CAV1=5,ASG=$(ASG),IP=131.225.142.242")
 
 # SSA6: L1B:H160
 # 7kW (cryomodule)
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L1B_H160,P=ACCL:L1B:H160:SSA:,CM=H1,CAV1=6,ASG=$(ASG),IP=lcls-ssa16")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L1B_H160,P=ACCL:L1B:H160:SSA:,CM=H1,CAV1=6,ASG=$(ASG),IP=131.225.142.216")
 
 # SSA7: L1B:H170
 # 7kW (cryomodule)
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L1B_H170,P=ACCL:L1B:H170:SSA:,CM=H1,CAV1=7,ASG=$(ASG),IP=lcls-ssa17")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L1B_H170,P=ACCL:L1B:H170:SSA:,CM=H1,CAV1=7,ASG=$(ASG),IP=131.225.142.243")
 
 # SSA8: L1B:H180
 # 7kW (cryomodule)
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L1B_H180,P=ACCL:L1B:H180:SSA:,CM=H1,CAV1=8,ASG=$(ASG),IP=lcls-ssa18")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L1B_H180,P=ACCL:L1B:H180:SSA:,CM=H1,CAV1=8,ASG=$(ASG),IP=131.225.118.57")
 
 # Load common databases
 dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L1B:,M=H1,ASG=$(ASG)")
