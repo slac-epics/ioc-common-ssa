@@ -5,6 +5,13 @@
 #        the ssa IOC Application.
 #--------------------------------------------------------------
 
+R1.2.8  07-Jun-2023  M. Dunning (mdunning)
+    Add cmts IOC for Fermilab testing
+    Make BKHASYN and SNCSEQ optional
+    Fix asynRecord names
+    Update screens
+    Use EPICS_HOST_ARCH for IOC Makefiles
+
 R1.2.7  16-Dec-2022  M. Dunning (mdunning)
     Add support for 186MHz 7kW SSA for HE gun
     CA1300 7kW: add two new registers for main cpu voltages
