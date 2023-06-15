@@ -1,0 +1,85 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 674
+y 243
+w 304
+h 140
+font "helvetica-medium-r-12.0"
+ctlFont "helvetica-medium-r-12.0"
+btnFont "helvetica-medium-r-12.0"
+fgColor index 8
+bgColor index 60
+textColor index 14
+ctlFgColor1 index 25
+ctlFgColor2 index 18
+ctlBgColor1 index 4
+ctlBgColor2 index 4
+topShadowColor index 1
+botShadowColor index 11
+showGrid
+snapToGrid
+gridSize 4
+endScreenProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 12
+y 12
+w 280
+h 120
+lineColor index 14
+fillColor index 4
+lineWidth 2
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 24
+y 28
+w 252
+h 96
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "This button does the following:"
+  "  1) Reset internal and external faults "
+  "  2) Set DC enable"
+  "  3) Set Drain Voltage setpoint"
+  "  4) Set RF enable"
+  ""
+  "This will turn on the SSA."
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 24
+y 4
+w 92
+h 16
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 60
+value {
+  "SSA On Help"
+}
+endObjectProperties
+
