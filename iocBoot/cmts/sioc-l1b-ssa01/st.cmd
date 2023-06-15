@@ -14,9 +14,10 @@ ssa_registerRecordDeviceDriver(pdbbase)
 
 ## Set up environment variables
 epicsEnvSet("ENGINEER", "Sonya Hoobler")
-epicsEnvSet("LOCATION", "L1B Cryomodule 2")
+epicsEnvSet("LOCATION", "CMTS-1 LCLS2 Cryomodule H1")
 epicsEnvSet("IOC_NAME", "SIOC:L1B:SSA01")
 epicsEnvSet("ASG",      "DEFAULT")
+epicsEnvSet("IOC_DATA", "/home/lcls-data")
 
 ## Tag log messages with IOC name
 #epicsEnvSet("EPICS_IOC_LOG_CLIENT_INET", "${IOC}")
@@ -24,7 +25,7 @@ epicsEnvSet("ASG",      "DEFAULT")
 # =====================================================================
 # Load iocAdmin databases to support IOC Health and monitoring
 # =====================================================================
-#dbLoadRecords("db/iocAdminSoft.db", "IOC=${IOC_NAME}")
+dbLoadRecords("db/iocAdminSoft.db", "IOC=${IOC_NAME}")
 #dbLoadRecords("db/iocAdminScanMon.db", "IOC=${IOC_NAME}")
 #dbLoadRecords("db/iocRelease.db", "IOC=${IOC_NAME}")
 
