@@ -5,6 +5,10 @@
 #        the ssa IOC Application.
 #--------------------------------------------------------------
 
+R1.2.9  15-Jun-2023  S. Hoobler (sonya)
+    Update cmts IOC for Fermilab testing
+    Add SSA on/off/reset help EDM displays
+
 R1.2.8  07-Jun-2023  M. Dunning (mdunning)
     Add cmts IOC for Fermilab testing
     Make BKHASYN and SNCSEQ optional
