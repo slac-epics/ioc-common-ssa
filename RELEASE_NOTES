@@ -5,6 +5,9 @@
 #        the ssa IOC Application.
 #--------------------------------------------------------------
 
+R1.2.10  25-Jul-2023  M. Dunning (mdunning)
+    Update 7kW archive list
+
 R1.2.9  15-Jun-2023  S. Hoobler (sonya)
     Update cmts IOC for Fermilab testing
     Add SSA on/off/reset help EDM displays
