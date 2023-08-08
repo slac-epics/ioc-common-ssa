@@ -28,6 +28,9 @@ caPutLogInit("${EPICS_CA_PUT_LOG_ADDR}")
 caPutLogShow(2)
 # =====================================================
 
+dbpf("ACCL:L1B:0220:SSA:SeqDebug", 1)
+epicsThreadSleep(0.5)
+
 ## Start sequence programs, one for each SSA
 # This must be done after iocInit
 #
@@ -39,8 +42,6 @@ epicsThreadSleep(0.5)
 < $(TOP)/iocBoot/common/autosave_start.cmd
 
 cd $(TOP)
-
-dbpf("ACCL:L1B:0220:SSA:SeqDebug", 1)
 
 # End of file
 
