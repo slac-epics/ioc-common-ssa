@@ -183,6 +183,11 @@ ss ssa_state_check {
         entry {
             if (seqDebug) printf("[%s] DEBUG: STATE: initState\n", timestamp());
             // Clear all pending actions
+            efClear(powerOnFlag);
+            efClear(sysRebootFlag);
+            efClear(xPortRebootFlag);
+            efClear(procResetFlag);
+            efClear(drainVoltFlag);
             if (powerOn) {
                 powerOn = 0;
                 pvPut(powerOn);
@@ -227,6 +232,7 @@ ss ssa_state_check {
     /* SSA is on and running: No faults; DC and RF are enabled. */
         entry {
             if (seqDebug) printf("[%s] DEBUG: STATE: ssaOnState\n", timestamp());
+            efClear(powerOnFlag);
             statusMsg = STAT_ON;
             pvPut(statusMsg);
         }
@@ -270,6 +276,7 @@ ss ssa_state_check {
     /* SSA is off: No faults, but DC and/or RF disabled. */
         entry {
             if (seqDebug) printf("[%s] DEBUG: STATE: ssaOffState\n", timestamp());
+            efClear(powerOnFlag);
             statusMsg = STAT_OFF;
             pvPut(statusMsg);
         }
@@ -316,6 +323,7 @@ ss ssa_state_check {
     /* SSA is offline */
         entry {
             if (seqDebug) printf("[%s] DEBUG: STATE: ssaOfflineState\n", timestamp());
+            efClear(powerOnFlag);
             statusMsg = STAT_OFFLINE;
             pvPut(statusMsg);
         }
@@ -344,6 +352,7 @@ ss ssa_state_check {
         entry {
             if (seqDebug) printf("[%s] DEBUG: STATE: ssaFaultedState\n", timestamp());
             errlogPrintf("[%s] WARNING: SSA faulted (%s)\n", timestamp(), macValueGet("P"));
+            efClear(powerOnFlag);
             statusMsg = STAT_FLT;
             pvPut(statusMsg);
         }
@@ -382,6 +391,7 @@ ss ssa_state_check {
         entry {
             if (seqDebug) printf("[%s] DEBUG: STATE: faultResetState\n", timestamp());
             errlogPrintf("[%s] INFO: Resetting SSA faults (%s)\n", timestamp(), macValueGet("P"));
+            if (seqDebug) printf("[%s] DEBUG: powerOnFlag=%d\n", timestamp(), efTest(powerOnFlag));
             statusMsg = STAT_RST;
             pvPut(statusMsg);
             pvGet(ssaType);
@@ -441,6 +451,10 @@ ss ssa_state_check {
             faultReset = 0;
             pvPut(faultReset);
         } state faultResetFailState
+        
+        exit {
+            efClear(powerOnFlag);
+        }
     }
 
     state faultResetFailState {
@@ -456,8 +470,13 @@ ss ssa_state_check {
             if (powerOn) {
                 powerOn = 0;
                 pvPut(powerOn);
+                efClear(powerOnFlag);
             }
         } state ssaFaultedState
+        
+        exit {
+            efClear(powerOnFlag);
+        }
     }
 
     state poweringOnState {
@@ -549,6 +568,10 @@ ss ssa_state_check {
 
         when (delay(failWait)) {
         } state ssaOffState
+        
+        exit {
+            efClear(powerOnFlag);
+        }
     }
     
     state poweringOffState {
@@ -585,6 +608,10 @@ ss ssa_state_check {
             powerOff = 0;
             pvPut(powerOff);
         } state powerOffFailState
+        
+        exit {
+            efClear(powerOnFlag);
+        }
     }
     
     state powerOffFailState {
@@ -598,6 +625,10 @@ ss ssa_state_check {
 
         when (delay(failWait)) {
         } state initState
+        
+        exit {
+            efClear(powerOnFlag);
+        }
     }
     
     state sysRebootState {

@@ -5,6 +5,12 @@
 #        the ssa IOC Application.
 #--------------------------------------------------------------
 
+R1.2.11  08-Aug-2023  M. Dunning (mdunning)
+    Bug fix: In seq routine, ensure powerOn event flag is cleared.
+        If not cleared, SSA would turn on when fault reset button was pushed.
+    Prod IOCs: rhel6 -> rhel7
+    Dev IOCs: Enable seq debug before seq routine is loaded
+
 R1.2.10  25-Jul-2023  M. Dunning (mdunning)
     Update 7kW archive list
 
