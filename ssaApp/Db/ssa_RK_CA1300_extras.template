@@ -89,6 +89,10 @@ record(ai, "$(P)DrainVoltRBV") {
     field(INP, "$(P)DrainVoltRBVCalc MS")
     field(EGU,  "V")
     field(PREC, "2")
+    field(LLSV, "$(LLSV=MAJOR)")
+    field(LSV,  "$(LSV=MINOR)")
+    field(HSV,  "$(HSV=MINOR)")
+    field(HHSV, "$(HHSV=MAJOR)")
 # Alarm limits are set dynamically with the records below.
 }
 

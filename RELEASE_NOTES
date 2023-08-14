@@ -5,6 +5,9 @@
 #        the ssa IOC Application.
 #--------------------------------------------------------------
 
+R1.2.12  14-Aug-2023  M. Dunning (mdunning)
+    Add alarm severities for DrainVoltRBV
+
 R1.2.11  08-Aug-2023  M. Dunning (mdunning)
     Bug fix: In seq routine, ensure powerOn event flag is cleared.
         If not cleared, SSA would turn on when fault reset button was pushed.
