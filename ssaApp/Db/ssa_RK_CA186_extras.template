@@ -60,92 +60,6 @@ record(calc, "$(P)WarningCode"){
     field(CALC, "!A")
 }
 
-# --- Drain Voltage <---> Output Voltage --------------
-# This model doesn't have a conversion table, so I'm inferring this by setting
-# reg. 3 and reading back reg. 35
-record(ao, "$(P)DrainVoltSetpt") {
-    field(DESC, "Drain Voltage Setpt [V]")
-    field(ASG,  "$(ASG)")
-    field(EGU,  "V")
-    field(PREC, "2")
-    field(LOPR, "13.4")
-    field(HOPR, "45")
-    field(DRVL, "13.4")
-    field(DRVH, "45")
-    field(FLNK, "$(P)DrainVCalc")
-    info(autosaveFields, "VAL")
-}
-
-record(calcout, "$(P)DrainVCalc") {
-    field(DESC, "Drain to output voltage conversion")
-    field(ASG,  "Internal")
-    field(INPA, "$(P)DrainVoltSetpt")
-    field(INPB, "51.998")
-    field(INPC, "2.262")
-    field(CALC, "(A*B) + C")
-    field(OUT,  "$(P)PSVoltSetpt PP")
-    field(FLNK, "$(P)DrainVoltLoLoCalc")
-}
-
-record(calc, "$(P)DrainVoltRBVCalc") {
-    field(DESC, "Drain voltage RBV calc")
-    field(ASG,  "Internal")
-    field(INPA, "$(P)PSVoltRBV CPP MS")
-    field(CALC, "A")
-    field(FLNK, "$(P)DrainVoltRBV")
-}
-
-record(ai, "$(P)DrainVoltRBV") {
-    field(DESC, "Drain Voltage RBV")
-    field(INP, "$(P)DrainVoltRBVCalc MS")
-    field(EGU,  "V")
-    field(PREC, "2")
-    field(LLSV, "$(LLSV=MAJOR)")
-    field(LSV,  "$(LSV=MINOR)")
-    field(HSV,  "$(HSV=MINOR)")
-    field(HHSV, "$(HHSV=MAJOR)")
-# Alarm limits are set dynamically with the records below.
-}
-
-record(calcout, "$(P)DrainVoltLoLoCalc") {
-    field(DESC, "Drain voltage LOLO calc")
-    field(ASG,  "Internal")
-    field(INPA, "$(P)DrainVoltSetpt")
-    field(INPB, "-2.0")
-    field(CALC, "A+B")
-    field(OUT,  "$(P)DrainVoltRBV.LOLO")
-    field(FLNK, "$(P)DrainVoltLowCalc")
-}
-
-record(calcout, "$(P)DrainVoltLowCalc") {
-    field(DESC, "Drain voltage LOW calc")
-    field(ASG,  "Internal")
-    field(INPA, "$(P)DrainVoltSetpt")
-    field(INPB, "-1.0")
-    field(CALC, "A+B")
-    field(OUT,  "$(P)DrainVoltRBV.LOW")
-    field(FLNK, "$(P)DrainVoltHighCalc")
-}
-
-record(calcout, "$(P)DrainVoltHighCalc") {
-    field(DESC, "Drain voltage HIGH calc")
-    field(ASG,  "Internal")
-    field(INPA, "$(P)DrainVoltSetpt")
-    field(INPB, "1.0")
-    field(CALC, "A+B")
-    field(OUT,  "$(P)DrainVoltRBV.HIGH")
-    field(FLNK, "$(P)DrainVoltHiHiCalc")
-}
-
-record(calcout, "$(P)DrainVoltHiHiCalc") {
-    field(DESC, "Drain voltage HIHI calc")
-    field(ASG,  "Internal")
-    field(INPA, "$(P)DrainVoltSetpt")
-    field(INPB, "2.0")
-    field(CALC, "A+B")
-    field(OUT,  "$(P)DrainVoltRBV.HIHI PP")
-}
-
 # --- Module summary -------------------------------------------------------------
 record(calc, "$(P)ModuleOnSum1Calc") {
     field(DESC, "Module on summary")
@@ -418,8 +332,11 @@ record(calc, "$(P)AlarmSummary") {
     field(INPA, "$(P)MiscAlarmSum MS")
     field(INPB, "$(P)VoltAlarmSum MS")
     field(INPC, "$(P)CurrAlarmSum MS")
-    field(INPE, "$(P)TempAlarmSum MS")
-    field(INPF, "$(P)FanAlarmSum MS")
-    field(INPG, "$(P)ModuleAlarmSum MS")
+    field(INPD, "$(P)TempAlarmSum MS")
+    field(INPE, "$(P)FanAlarmSum MS")
+    field(INPF, "$(P)ModuleAlarmSum MS")
+    field(INPG, "$(P)DrainVoltError CP MS")
+    field(INPH, "$(P)DrainVoltSetpt CP MS")
+    field(INPI, "$(P)DrainVoltRBV CP MS")
 }
 

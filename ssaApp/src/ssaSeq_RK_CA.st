@@ -19,6 +19,7 @@ M. Dunning (mdunning@slac.stanford.edu)
 
 %%#include <epicsTime.h>   // timestamps
 %%#include <errlog.h>      // errlogPrintf
+%%#include <alarm.h>       // alarm severity strings
 
 /* Sequencer options ---------------------------------------------*/
 option +r;  /* one sequence task per ssa */
@@ -133,6 +134,24 @@ int drainVoltProc;
 assign drainVoltProc to "{P}DrainVoltSetpt.PROC";
 evflag drainVoltFlag;
 
+int drainVoltRbvLsv;
+assign drainVoltRbvLsv to "{P}DrainVoltRBV.LSV";
+
+int drainVoltRbvLlsv;
+assign drainVoltRbvLlsv to "{P}DrainVoltRBV.LLSV";
+
+int drainVoltRbvHsv;
+assign drainVoltRbvHsv to "{P}DrainVoltRBV.HSV";
+
+int drainVoltRbvHhsv;
+assign drainVoltRbvHhsv to "{P}DrainVoltRBV.HHSV";
+
+int drainVoltErrorOnsv;
+assign drainVoltErrorOnsv to "{P}DrainVoltError.ONSV";
+
+int drainVoltErrorTwsv;
+assign drainVoltErrorTwsv to "{P}DrainVoltError.TWSV";
+
 // Constants --------------------------------
 #define failWait 5.0  // Time to wait after attempting to reset a fault before we declare failure
 #define resetTimeout 10.0  // Time to wait after attempting to reset a fault before we declare failure
@@ -188,6 +207,19 @@ ss ssa_state_check {
             efClear(xPortRebootFlag);
             efClear(procResetFlag);
             efClear(drainVoltFlag);
+            // Disable drain volt alarms
+            drainVoltRbvLlsv = NO_ALARM;
+            pvPut(drainVoltRbvLlsv);
+            drainVoltRbvLsv = NO_ALARM;
+            pvPut(drainVoltRbvLsv);
+            drainVoltRbvHsv = NO_ALARM;
+            pvPut(drainVoltRbvHsv);
+            drainVoltRbvHhsv = NO_ALARM;
+            pvPut(drainVoltRbvHhsv);
+            drainVoltErrorOnsv = NO_ALARM;
+            pvPut(drainVoltErrorOnsv, SYNC);
+            drainVoltErrorTwsv = NO_ALARM;
+            pvPut(drainVoltErrorTwsv, SYNC);
             if (powerOn) {
                 powerOn = 0;
                 pvPut(powerOn);
@@ -235,6 +267,19 @@ ss ssa_state_check {
             efClear(powerOnFlag);
             statusMsg = STAT_ON;
             pvPut(statusMsg);
+            // Enable drain volt alarms
+            drainVoltRbvLlsv = MAJOR_ALARM;
+            pvPut(drainVoltRbvLlsv);
+            drainVoltRbvLsv = MINOR_ALARM;
+            pvPut(drainVoltRbvLsv);
+            drainVoltRbvHsv = MINOR_ALARM;
+            pvPut(drainVoltRbvHsv);
+            drainVoltRbvHhsv = MAJOR_ALARM;
+            pvPut(drainVoltRbvHhsv);
+            drainVoltErrorOnsv = MINOR_ALARM;
+            pvPut(drainVoltErrorOnsv);
+            drainVoltErrorTwsv = MAJOR_ALARM;
+            pvPut(drainVoltErrorTwsv);
         }
 
         when (isOffline) {
@@ -270,6 +315,22 @@ ss ssa_state_check {
 
         when (procReset) {
         } state procResetState
+
+        exit {
+            // Disable drain volt alarms
+            drainVoltRbvLlsv = NO_ALARM;
+            pvPut(drainVoltRbvLlsv);
+            drainVoltRbvLsv = NO_ALARM;
+            pvPut(drainVoltRbvLsv);
+            drainVoltRbvHsv = NO_ALARM;
+            pvPut(drainVoltRbvHsv);
+            drainVoltRbvHhsv = NO_ALARM;
+            pvPut(drainVoltRbvHhsv);
+            drainVoltErrorOnsv = NO_ALARM;
+            pvPut(drainVoltErrorOnsv);
+            drainVoltErrorTwsv = NO_ALARM;
+            pvPut(drainVoltErrorTwsv);
+        }
     }
 
     state ssaOffState {

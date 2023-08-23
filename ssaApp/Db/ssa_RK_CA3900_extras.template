@@ -62,7 +62,8 @@ record(bo, "$(P)ModuleOnSum"){
     field(PINI, "1")
 }
 
-# --- Drain Voltage <---> Output Voltage (this is currently not used for the CA3900)
+# --- Drain Voltage <---> Output Voltage --------
+# This is currently not used for the CA3900, but records are still needed for common sequencer routine.
 record(ao, "$(P)DrainVoltSetpt") {
     field(DESC, "Drain Voltage Setpt [V]")
     field(ASG,  "$(ASG)")
@@ -527,20 +528,18 @@ record(calc, "$(P)FanAlarmSum") {
     field(FLNK, "$(P)AlarmSummary")
 }
 
-record(calc, "$(P)AlarmSummary0") {
-    field(DESC, "Alarm Summary 0")
-    field(INPA, "$(P)DCEnableRBV CP MS")
-    field(INPB, "$(P)RFEnableRBV CP MS")
-    field(INPC, "$(P)ErrCodeInt CP MS")
-    field(INPD, "$(P)ErrCodeExt CP MS")
-    field(INPE, "$(P)FaultSum CP MS")
-    field(INPF, "$(P)WarningSum CP MS")
-    field(INPG, "$(P)WarningCode CP MS")
-    field(INPH, "$(P)PSFault CP MS")
-    field(INPI, "$(P)PSFaultStat CP MS")
-    field(INPJ, "$(P)FaultStat1 CP MS")
-    field(INPK, "$(P)FaultStat2 CP MS")
-    field(INPL, "$(P)FaultStat3 CP MS")
+record(calc, "$(P)FaultAlarmSum") {
+    field(DESC, "Fault Alarm Sum")
+    field(INPA, "$(P)ErrCodeInt CP MS")
+    field(INPB, "$(P)ErrCodeExt CP MS")
+    field(INPC, "$(P)FaultSum CP MS")
+    field(INPD, "$(P)WarningSum CP MS")
+    field(INPE, "$(P)WarningCode CP MS")
+    field(INPF, "$(P)PSFault CP MS")
+    field(INPG, "$(P)PSFaultStat CP MS")
+    field(INPH, "$(P)FaultStat1 CP MS")
+    field(INPI, "$(P)FaultStat2 CP MS")
+    field(INPJ, "$(P)FaultStat3 CP MS")
     field(FLNK, "$(P)AlarmSummary")
 }
 
@@ -552,6 +551,8 @@ record(calc, "$(P)AlarmSummary") {
     field(INPD, "$(P)PwrAlarmSum MS")
     field(INPE, "$(P)TempAlarmSum MS")
     field(INPF, "$(P)FanAlarmSum MS")
-    field(INPG, "$(P)AlarmSummary0 MS")
+    field(INPG, "$(P)FaultAlarmSum MS")
+    field(INPH, "$(P)DCEnableRBV CP MS")
+    field(INPI, "$(P)RFEnableRBV CP MS")
 }
 

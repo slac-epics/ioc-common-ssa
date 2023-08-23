@@ -12,93 +12,6 @@ record(bo, "$(P)ModuleOnSum"){
     field(PINI, "1")
 }
 
-# --- Drain Voltage <---> Output Voltage --------------
-record(ao, "$(P)DrainVoltSetpt") {
-    field(DESC, "Drain Voltage Setpt [V]")
-    field(ASG,  "$(ASG)")
-    field(EGU,  "V")
-    field(PREC, "2")
-    field(LOPR, "18")
-    field(HOPR, "48")
-    field(DRVL, "18")
-    field(DRVH, "48")
-    field(FLNK, "$(P)DrainVCalc")
-    info(autosaveFields, "VAL")
-}
-
-record(calcout, "$(P)DrainVCalc") {
-    field(DESC, "Drain to output voltage conversion")
-    field(ASG,  "Internal")
-    field(INPA, "$(P)DrainVoltSetpt")
-    field(INPB, "66.27")
-    field(INPC, "-1098")
-    field(CALC, "A*B + C")
-    field(OUT,  "$(P)PSVoltSetpt PP")
-}
-
-record(calc, "$(P)DrainVoltRBVCalc") {
-    field(DESC, "Drain voltage calc")
-    field(ASG,  "Internal")
-    field(INPA, "$(P)PSVoltRBV CPP MS")
-    field(INPB, "0.0151")
-    field(INPC, "16.57")
-    field(EGU,  "V")
-    field(PREC, "2")
-    field(CALC, "A*B + C")
-    field(FLNK, "$(P)DrainVoltRBV")
-}
-
-record(ai, "$(P)DrainVoltRBV") {
-    field(DESC, "Drain voltage RBV")
-    field(INP, "$(P)DrainVoltRBVCalc MS")
-    field(EGU,  "V")
-    field(PREC, "2")
-    field(LLSV, "$(LLSV=MAJOR)")
-    field(LSV,  "$(LSV=MINOR)")
-    field(HSV,  "$(HSV=MINOR)")
-    field(HHSV, "$(HHSV=MAJOR)")
-# Alarm limits are set dynamically with the records below.
-}
-
-record(calcout, "$(P)DrainVoltLoLoCalc") {
-    field(DESC, "Drain voltage LOLO calc")
-    field(ASG,  "Internal")
-    field(INPA, "$(P)DrainVoltSetpt")
-    field(INPB, "-2.0")
-    field(CALC, "A+B")
-    field(OUT,  "$(P)DrainVoltRBV.LOLO")
-    field(FLNK, "$(P)DrainVoltLowCalc")
-}
-
-record(calcout, "$(P)DrainVoltLowCalc") {
-    field(DESC, "Drain voltage LOW calc")
-    field(ASG,  "Internal")
-    field(INPA, "$(P)DrainVoltSetpt")
-    field(INPB, "-1.0")
-    field(CALC, "A+B")
-    field(OUT,  "$(P)DrainVoltRBV.LOW")
-    field(FLNK, "$(P)DrainVoltHighCalc")
-}
-
-record(calcout, "$(P)DrainVoltHighCalc") {
-    field(DESC, "Drain voltage HIGH calc")
-    field(ASG,  "Internal")
-    field(INPA, "$(P)DrainVoltSetpt")
-    field(INPB, "1.0")
-    field(CALC, "A+B")
-    field(OUT,  "$(P)DrainVoltRBV.HIGH")
-    field(FLNK, "$(P)DrainVoltHiHiCalc")
-}
-
-record(calcout, "$(P)DrainVoltHiHiCalc") {
-    field(DESC, "Drain voltage HIHI calc")
-    field(ASG,  "Internal")
-    field(INPA, "$(P)DrainVoltSetpt")
-    field(INPB, "2.0")
-    field(CALC, "A+B")
-    field(OUT,  "$(P)DrainVoltRBV.HIHI PP")
-}
-
 # --- Drive (input) power -------------------------------------------------------------
 record(calc, "$(P)DrvPwr_dBm") {
     field(DESC, "Drive power [dBm]")
@@ -245,34 +158,6 @@ record(calc, "$(P)MiscAlarmSum") {
     field(INPF, "$(P)LCWOutFlow CP MS")
     field(INPG, "$(P)SDCardStat CP MS")
     field(INPH, "$(P)RFCountdown CP MS")
-    field(FLNK, "$(P)AlarmSummary")
-}
-
-record(calc, "$(P)MiscAlarmSum2") {
-    field(DESC, "Misc Alarm Sum")
-    field(INPA, "$(P)DCEnableRBV CP MS")
-    field(INPB, "$(P)RFEnableRBV CP MS")
-    field(INPC, "$(P)ErrCodeInt CP MS")
-    field(INPD, "$(P)ErrCodeExt CP MS")
-    field(INPE, "$(P)WarningCode CP MS")
-    field(INPF, "$(P)PSFaultStat CP MS")
-    field(INPG, "$(P)PSFaultCnt CP MS")
-    field(INPH, "$(P)FaultExtStat CP MS")
-    field(INPI, "$(P)FaultPrcStat CP MS")
-    field(FLNK, "$(P)AlarmSummary")
-}
-
-record(calc, "$(P)MiscAlarmSum3") {
-    field(DESC, "Misc Alarm Sum")
-    field(INPA, "$(P)RFCUWarnStat CP MS")
-    field(INPB, "$(P)PSWarnStat CP MS")
-    field(INPC, "$(P)FA1WarnStat CP MS")
-    field(INPD, "$(P)FA2WarnStat CP MS")
-    field(INPE, "$(P)FA3WarnStat CP MS")
-    field(INPF, "$(P)FA4WarnStat CP MS")
-    field(INPG, "$(P)FA5WarnStat CP MS")
-    field(INPH, "$(P)DAWarnStat CP MS")
-    field(INPI, "$(P)HXWarnStat CP MS")
     field(FLNK, "$(P)AlarmSummary")
 }
 
@@ -519,6 +404,32 @@ record(calc, "$(P)FanAlarmSum") {
     field(FLNK, "$(P)AlarmSummary")
 }
 
+record(calc, "$(P)FaultAlarmSum1") {
+    field(DESC, "Fault Alarm Sum")
+    field(INPA, "$(P)ErrCodeInt CP MS")
+    field(INPB, "$(P)ErrCodeExt CP MS")
+    field(INPC, "$(P)WarningCode CP MS")
+    field(INPD, "$(P)PSFaultStat CP MS")
+    field(INPE, "$(P)PSFaultCnt CP MS")
+    field(INPF, "$(P)FaultExtStat CP MS")
+    field(INPG, "$(P)FaultPrcStat CP MS")
+    field(INPH, "$(P)DrainVoltError CP MS")
+    field(FLNK, "$(P)AlarmSummary")
+}
+
+record(calc, "$(P)FaultAlarmSum2") {
+    field(DESC, "Fault Alarm Sum")
+    field(INPA, "$(P)RFCUWarnStat CP MS")
+    field(INPB, "$(P)PSWarnStat CP MS")
+    field(INPC, "$(P)FA1WarnStat CP MS")
+    field(INPD, "$(P)FA2WarnStat CP MS")
+    field(INPE, "$(P)FA3WarnStat CP MS")
+    field(INPF, "$(P)FA4WarnStat CP MS")
+    field(INPG, "$(P)DAWarnStat CP MS")
+    field(INPH, "$(P)HXWarnStat CP MS")
+    field(FLNK, "$(P)AlarmSummary")
+}
+
 record(calc, "$(P)AlarmSummary") {
     field(DESC, "Alarm Summary")
     field(INPA, "$(P)MiscAlarmSum MS")
@@ -527,8 +438,11 @@ record(calc, "$(P)AlarmSummary") {
     field(INPD, "$(P)PwrAlarmSum MS")
     field(INPE, "$(P)TempAlarmSum MS")
     field(INPF, "$(P)FanAlarmSum MS")
-    field(INPG, "$(P)MiscAlarmSum2 MS")
-    field(INPH, "$(P)MiscAlarmSum3 MS")
+    field(INPG, "$(P)FaultAlarmSum1 MS")
+    field(INPH, "$(P)FaultAlarmSum2 MS")
+    field(INPI, "$(P)DCEnableRBV CP MS")
+    field(INPJ, "$(P)RFEnableRBV CP MS")
+    field(INPK, "$(P)DrainVoltSetpt CP MS")
+    field(INPL, "$(P)DrainVoltRBV CP MS")
 }
-
 

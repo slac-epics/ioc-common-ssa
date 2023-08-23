@@ -24,6 +24,7 @@ $(P):CtrlFan2Spd   1 monitor
 $(P):CurrAlarmSum.SEVR 1 monitor
 $(P):DCEnable  1 monitor
 $(P):DCEnableRBV   1 monitor
+$(P):DrainVoltError 1 monitor
 $(P):DrainVoltRBV  1 monitor
 $(P):DrainVoltRBVCalc  1 monitor
 $(P):DrainVoltSetpt    1 monitor

@@ -146,8 +146,12 @@ pattern
 {   2}
 }
 
+file "ssa_RK_drainVoltage.template" {
+{}
+}
+
 file "ssa_RK_CA1300_extras.template" {
-{none}
+{}
 }
 
 # This is for commissioning - it allows SSAs to be turned on only if a special "SRFPermit" PV is enabled.

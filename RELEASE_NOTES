@@ -5,6 +5,10 @@
 #        the ssa IOC Application.
 #--------------------------------------------------------------
 
+R1.2.13  23-Aug-2023  M. Dunning (mdunning)
+    Add more general drain voltage alarm; split off records into separate subs file
+    Upgrade support modules
+
 R1.2.12  14-Aug-2023  M. Dunning (mdunning)
     Add alarm severities for DrainVoltRBV
 

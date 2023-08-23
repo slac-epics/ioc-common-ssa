@@ -203,8 +203,13 @@ pattern
 {   4}
 }
 
-file "ssa_RK_CA186_extras.template" {
-{none}
+file "ssa_RK_drainVoltage.template" {
+pattern
+{DVLOPR, DVDRVL, DVHOPR, DVDRVH, DVSLOP1, DVOFF1, DVSLOP2, DVOFF2}
+{  13.4,   13.4,   45.0,   45.0,  51.998,  2.262,     1.0,    0.0}
 }
 
+file "ssa_RK_CA186_extras.template" {
+{}
+}
 
