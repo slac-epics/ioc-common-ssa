@@ -96,7 +96,7 @@ record(seq, "$(P)DrainVoltSevrSeqOff") {
     field(LNK6, "$(P)DrainVoltError.TWSV")
     field(LNK7, "$(P)DrainVoltLoLoCalc.PROC")
     field(LNK8, "$(P)DrainVoltError.PROC")
-    field(DLY9, "2.0")
+    field(DLY9, "3.0")
     field(LNK9, "$(P)DrainVoltSevrSeqOn.PROC")
 }
 
