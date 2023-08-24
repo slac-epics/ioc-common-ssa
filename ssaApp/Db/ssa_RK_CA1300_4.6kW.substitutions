@@ -156,6 +156,12 @@ file "ssa_RK_drainVoltage.template" {
 {}
 }
 
+file "ssa_drivePower.template" {
+pattern
+{   C0_1,   C1_1,      C2_1,    C3_1,       C4_1,   C0_2,     C1_2,     C2_2}
+{-15.618, 0.0296, -1.977E-5, 7.43E-9, -1.095E-12, 0.0404, 3.147E-5, 1.065E-6}
+}
+
 file "ssa_RK_CA1300_4.6kW_extras.template" {
 {}
 }

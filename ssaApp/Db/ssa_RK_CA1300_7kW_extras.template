@@ -12,32 +12,6 @@ record(bo, "$(P)ModuleOnSum"){
     field(PINI, "1")
 }
 
-# --- Drive (input) power -------------------------------------------------------------
-record(calc, "$(P)DrvPwr_dBm") {
-    field(DESC, "Drive power [dBm]")
-    field(INPA, "$(P)DrvPwr CP MS")
-    field(INPB, "-3.91E-12")
-    field(INPC, "1.979E-8")
-    field(INPD, "-3.892E-5")
-    field(INPE, "0.0425")
-    field(INPF, "-15.05")
-    field(EGU,  "dBm")
-    field(PREC, "1")
-    field(CALC, "A^4*B+A^3*C+A^2*D+A*E+F")
-    field(FLNK, "$(P)DrvPwr_mW")
-}
-
-record(calc, "$(P)DrvPwr_mW") {
-    field(DESC, "Drive power [mW]")
-    field(INPA, "$(P)DrvPwr MS")
-    field(INPB, "2.927E-6")
-    field(INPC, "2.386E-4")
-    field(INPD, "0.1014")
-    field(EGU,  "mW")
-    field(PREC, "1")
-    field(CALC, "A^2*B+A*C+D")
-}
-
 # --- Fault messages -------------------------------------------------------------
 record(aSub, "$(P)FaultIntAsub"){
     field(DESC, "Internal fault message aSub")
