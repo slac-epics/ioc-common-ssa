@@ -69,120 +69,24 @@ record(ao, "$(P)DrainVoltSetpt") {
     field(ASG,  "$(ASG)")
     field(EGU,  "V")
     field(PREC, "2")
-    field(LOPR, "13.5")
-    field(HOPR, "48")
-    field(DRVL, "13.5")
-    field(DRVH, "48")
-    field(FLNK, "$(P)DrainVCalc")
-    info(autosaveFields, "VAL")
-}
-
-record(calcout, "$(P)DrainVCalc") {
-    field(DESC, "Drain to output voltage conversion")
-    field(ASG,  "Internal")
-    field(INPA, "$(P)DrainVoltSetpt")
-    field(INPB, "131")
-    field(INPC, "2.5")
-    field(CALC, "(A*B)/C")
-}
-
-record(calc, "$(P)DrainVoltRBVCalc") {
-    field(DESC, "Drain voltage calc")
-    field(ASG,  "Internal")
-    field(INPA, "$(P)PSVoltRBV1 CPP MS")
-    field(INPD, "$(P)PSVoltRBV2 CPP MS")
-    field(INPB, "131")
-    field(INPC, "2.5")
-    field(EGU,  "V")
-    field(PREC, "2")
-    field(CALC, "(((A+D)/2)*C)/B")
-    field(FLNK, "$(P)DrainVoltRBV")
 }
 
 record(ai, "$(P)DrainVoltRBV") {
     field(DESC, "Drain voltage RBV")
-    field(INP, "$(P)DrainVoltRBVCalc MS")
     field(EGU,  "V")
     field(PREC, "2")
 }
 
-# --- Dynamic PSVoltRBV alarm limits, based on PSVoltSetpt ---
-record(calcout, "$(P)PSVolt1LoLoCalc") {
-    field(DESC, "Drain voltage LOLO calc")
-    field(ASG,  "Internal")
-    field(INPA, "$(P)PSVoltSetpt1 CP")
-    field(INPB, "-60.0")
-    field(CALC, "A+B")
-    field(OUT,  "$(P)PSVoltRBV1.LOLO PP")
-    field(FLNK, "$(P)PSVolt1LowCalc")
-}
-
-record(calcout, "$(P)PSVolt1LowCalc") {
-    field(DESC, "Drain voltage LOW calc")
-    field(ASG,  "Internal")
-    field(INPA, "$(P)PSVoltSetpt1")
-    field(INPB, "-30.0")
-    field(CALC, "A+B")
-    field(OUT,  "$(P)PSVoltRBV1.LOW PP")
-    field(FLNK, "$(P)PSVolt1HighCalc")
-}
-
-record(calcout, "$(P)PSVolt1HighCalc") {
-    field(DESC, "Drain voltage HIGH calc")
-    field(ASG,  "Internal")
-    field(INPA, "$(P)PSVoltSetpt1")
-    field(INPB, "30.0")
-    field(CALC, "A+B")
-    field(OUT,  "$(P)PSVoltRBV1.HIGH PP")
-    field(FLNK, "$(P)PSVolt1HiHiCalc")
-}
-
-record(calcout, "$(P)PSVolt1HiHiCalc") {
-    field(DESC, "Drain voltage HIHI calc")
-    field(ASG,  "Internal")
-    field(INPA, "$(P)PSVoltSetpt1")
-    field(INPB, "60.0")
-    field(CALC, "A+B")
-    field(OUT,  "$(P)PSVoltRBV1.HIHI PP")
-}
-
-record(calcout, "$(P)PSVolt2LoLoCalc") {
-    field(DESC, "Drain voltage LOLO calc")
-    field(ASG,  "Internal")
-    field(INPA, "$(P)PSVoltSetpt2 CP")
-    field(INPB, "-60.0")
-    field(CALC, "A+B")
-    field(OUT,  "$(P)PSVoltRBV2.LOLO PP")
-    field(FLNK, "$(P)PSVolt2LowCalc")
-}
-
-record(calcout, "$(P)PSVolt2LowCalc") {
-    field(DESC, "Drain voltage LOW calc")
-    field(ASG,  "Internal")
-    field(INPA, "$(P)PSVoltSetpt2")
-    field(INPB, "-30.0")
-    field(CALC, "A+B")
-    field(OUT,  "$(P)PSVoltRBV2.LOW PP")
-    field(FLNK, "$(P)PSVolt2HighCalc")
-}
-
-record(calcout, "$(P)PSVolt2HighCalc") {
-    field(DESC, "Drain voltage HIGH calc")
-    field(ASG,  "Internal")
-    field(INPA, "$(P)PSVoltSetpt2")
-    field(INPB, "30.0")
-    field(CALC, "A+B")
-    field(OUT,  "$(P)PSVoltRBV2.HIGH PP")
-    field(FLNK, "$(P)PSVolt2HiHiCalc")
-}
-
-record(calcout, "$(P)PSVolt2HiHiCalc") {
-    field(DESC, "Drain voltage HIHI calc")
-    field(ASG,  "Internal")
-    field(INPA, "$(P)PSVoltSetpt2")
-    field(INPB, "60.0")
-    field(CALC, "A+B")
-    field(OUT,  "$(P)PSVoltRBV2.HIHI PP")
+record(mbbi, "$(P)DrainVoltError") {
+    field(DESC, "Drain volt error")
+    field(ZRVL, "0")
+    field(ZRST, "OK")
+    field(ONVL, "1")
+    field(ONST, "Warning")
+    field(ONSV, "MINOR")
+    field(TWVL, "2")
+    field(TWST, "Error")
+    field(TWSV, "MAJOR")
 }
 
 # --- Fault messages -------------------------------------------------------------
