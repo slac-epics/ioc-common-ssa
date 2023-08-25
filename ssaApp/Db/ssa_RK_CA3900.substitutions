@@ -42,8 +42,8 @@ pattern
 file "longin_custom.template" {
 pattern
 {           R,                     DESC,              PORT, OFFSET,  LOLO,   LOW,  HIGH,  HIHI,     LLSV,      LSV,      HSV,     HHSV,      EGU,       SCAN}
-{  PSVoltRBV1,         "PS Out Volts 1",    $(PORT_P)_inw1,      2,    "",    "",  2620,  2650,    MAJOR,    MINOR,    MINOR,    MAJOR,     "mV", "I/O Intr"}
-{  PSVoltRBV2,         "PS Out Volts 2",    $(PORT_P)_inw1,      3,    "",    "",  2620,  2650,    MAJOR,    MINOR,    MINOR,    MAJOR,     "mV", "I/O Intr"}
+{  PSVoltRBV1,         "PS Out Volts 1",    $(PORT_P)_inw1,      2,    "",    "",  2620,  2650, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "mV", "I/O Intr"}
+{  PSVoltRBV2,         "PS Out Volts 2",    $(PORT_P)_inw1,      3,    "",    "",  2620,  2650, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "mV", "I/O Intr"}
 {    FaultSum,  "Fault Sum (Int + Ext)",    $(PORT_P)_inw1,      9,    "",    "",    "",     1, NO_ALARM, NO_ALARM, NO_ALARM,    MAJOR,       "", "I/O Intr"}
 {  WarningSum,            "Warning Sum",    $(PORT_P)_inw1,     10,    "",    "",     1,    "", NO_ALARM, NO_ALARM,    MINOR, NO_ALARM,       "", "I/O Intr"}
 {  ErrCodeInt,    "Internal Error Code",    $(PORT_P)_inw1,     12,    "",    "",    "",     1, NO_ALARM, NO_ALARM, NO_ALARM,    MAJOR,       "", "I/O Intr"}
