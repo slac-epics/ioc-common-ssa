@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 524
-y 165
+x 735
+y 60
 w 700
 h 600
 font "helvetica-medium-r-12.0"
@@ -1273,9 +1273,9 @@ useDisplayBg
 value {
   "-"
   "Thermostat (Xfrmr)"
-  "-"
-  "-"
-  "-"
+  "PS1 Alarm"
+  "PS2 Alarm"
+  "PS3 Alarm"
   "-"
   "-"
 }
@@ -1478,20 +1478,20 @@ minor 1
 release 1
 x 544
 y 192
-w 99
+w 100
 h 96
 font "helvetica-medium-r-10.0"
 fgColor index 14
 bgColor index 51
 useDisplayBg
 value {
-  "Gain Amp Drain Volt"
-  "Drive Amp Drain Volt"
+  "SSA Drain Volt"
+  "-"
   "PS1 DC Out Volt"
   "PS2 DC Out Volt"
-  "-"
+  "PS3 DC Out Volt"
   "LCW Heat Sink Temp"
-  "SSA Mod Air Temp"
+  "SSA Module Air Temp"
   "-"
 }
 autoSize
@@ -1595,11 +1595,11 @@ useDisplayBg
 value {
   "-"
   "-"
-  "Gain Amp Current"
-  "Driver Amp Current"
+  "Dev1 Drain Current"
+  "Dev2 Drain Current"
   "PS1 DC Out Current"
   "PS2 DC Out Current"
-  "-"
+  "PS3 DC Out Current"
   "-"
 }
 autoSize

@@ -35,8 +35,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 965
-y 75
+x 126
+y 60
 w 1436
 h 900
 font "helvetica-medium-r-12.0"
@@ -56,6 +56,40 @@ showGrid
 snapToGrid
 gridSize 4
 endScreenProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1200
+y 296
+w 200
+h 44
+lineColor index 15
+lineAlarm
+fillColor index 51
+lineWidth 2
+alarmPv "$(P):HSAlarmSum.SEVR"
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 184
+y 272
+w 176
+h 28
+lineColor index 3
+lineAlarm
+fillColor index 51
+lineWidth 2
+alarmPv "$(P):DrainVoltError.SEVR"
+endObjectProperties
 
 # (Related Display)
 object relatedDisplayClass
@@ -6630,7 +6664,7 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 24
+x 32
 y 420
 w 132
 h 16
@@ -6906,7 +6940,7 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 24
+x 32
 y 448
 w 132
 h 16
@@ -6929,7 +6963,7 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 24
+x 32
 y 468
 w 132
 h 16
@@ -6952,7 +6986,7 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 24
+x 32
 y 488
 w 132
 h 16
@@ -7921,9 +7955,9 @@ beginObjectProperties
 major 4
 minor 4
 release 0
-x 1180
+x 1200
 y 296
-w 220
+w 200
 h 44
 fgColor index 14
 bgColor index 51
@@ -8040,9 +8074,9 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 1188
+x 1212
 y 300
-w 140
+w 116
 h 16
 controlPv "$(P):HeatSinkThm1.DESC"
 font "helvetica-medium-r-12.0"
@@ -8063,9 +8097,9 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 1188
+x 1212
 y 320
-w 140
+w 116
 h 16
 controlPv "$(P):HeatSinkThm2.DESC"
 font "helvetica-medium-r-12.0"
@@ -9834,5 +9868,85 @@ nullColor index 14
 useHexPrefix
 newPos
 objType "monitors"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 176
+y 304
+w 192
+h 16
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 176
+y 304
+w 192
+h 16
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 20
+bgColor index 51
+useDisplayBg
+visPv "$(P):DrainVoltError.SEVR"
+visMin "2"
+visMax "3"
+value {
+  "Drain Voltage Error"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 176
+y 304
+w 192
+h 16
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 35
+bgColor index 51
+useDisplayBg
+visPv "$(P):DrainVoltError.SEVR"
+visMin "1"
+visMax "2"
+value {
+  "Drain Voltage Warning"
+}
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 324
+y 532
+w 180
+h 36
+lineColor index 15
+lineAlarm
+fillColor index 51
+lineWidth 2
+alarmPv "$(P):WarningAlarmSum.SEVR"
 endObjectProperties
 

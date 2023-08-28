@@ -3,10 +3,10 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 1136
-y 60
-w 1088
-h 984
+x 1375
+y 115
+w 1352
+h 1192
 font "helvetica-medium-r-12.0"
 ctlFont "helvetica-medium-r-12.0"
 btnFont "helvetica-medium-r-12.0"
@@ -30,9 +30,39 @@ beginObjectProperties
 major 4
 minor 0
 release 0
+x 384
+y 92
+w 948
+h 1080
+lineColor index 14
+fillColor index 51
+lineWidth 2
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 20
+y 92
+w 340
+h 696
+lineColor index 14
+fillColor index 51
+lineWidth 2
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
 x 0
 y 0
-w 1296
+w 1352
 h 68
 lineColor index 13
 fill
@@ -45,7 +75,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 1020
+x 1288
 y 4
 w 60
 h 32
@@ -102,8 +132,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 40
-y 88
+x 60
+y 108
 w 200
 h 192
 
@@ -115,8 +145,8 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 60
-y 176
+x 80
+y 196
 w 88
 h 20
 controlPv "$(P):FaultStat1"
@@ -141,8 +171,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 156
-y 88
+x 176
+y 108
 w 12
 h 192
 controlPv "$(P):FaultStat1"
@@ -158,8 +188,8 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 172
-y 88
+x 192
+y 108
 w 68
 h 192
 font "helvetica-medium-r-10.0"
@@ -193,8 +223,8 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 40
-y 156
+x 60
+y 176
 w 108
 h 16
 controlPv "$(P):FaultStat1.DESC"
@@ -220,8 +250,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 292
-y 88
+x 56
+y 324
 w 252
 h 192
 
@@ -233,8 +263,8 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 316
-y 176
+x 80
+y 412
 w 88
 h 20
 controlPv "$(P):FaultStat2"
@@ -259,8 +289,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 412
-y 88
+x 176
+y 324
 w 12
 h 192
 controlPv "$(P):FaultStat2"
@@ -276,8 +306,8 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 428
-y 88
+x 192
+y 324
 w 116
 h 192
 font "helvetica-medium-r-10.0"
@@ -311,8 +341,8 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 292
-y 156
+x 56
+y 392
 w 112
 h 16
 controlPv "$(P):FaultStat2.DESC"
@@ -338,8 +368,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 588
-y 88
+x 56
+y 540
 w 252
 h 192
 
@@ -351,8 +381,8 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 612
-y 176
+x 80
+y 628
 w 88
 h 20
 controlPv "$(P):FaultStat3"
@@ -377,8 +407,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 708
-y 88
+x 176
+y 540
 w 12
 h 192
 controlPv "$(P):FaultStat3"
@@ -394,8 +424,8 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 724
-y 88
+x 192
+y 540
 w 53
 h 192
 font "helvetica-medium-r-10.0"
@@ -429,8 +459,8 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 588
-y 156
+x 56
+y 608
 w 112
 h 16
 controlPv "$(P):FaultStat3.DESC"
@@ -456,8 +486,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 848
-y 92
+x 412
+y 116
 w 200
 h 192
 
@@ -469,8 +499,8 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 868
-y 180
+x 432
+y 204
 w 88
 h 20
 controlPv "$(P):CtrlWarnStat"
@@ -495,8 +525,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 964
-y 92
+x 528
+y 116
 w 12
 h 192
 controlPv "$(P):CtrlWarnStat"
@@ -512,8 +542,8 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 980
-y 92
+x 544
+y 116
 w 85
 h 180
 font "helvetica-medium-r-10.0"
@@ -546,8 +576,8 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 848
-y 160
+x 412
+y 184
 w 108
 h 16
 controlPv "$(P):CtrlWarnStat.DESC"
@@ -573,8 +603,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 272
-y 312
+x 980
+y 116
 w 266
 h 192
 
@@ -586,8 +616,8 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 316
-y 400
+x 1024
+y 204
 w 88
 h 20
 controlPv "$(P):FA1WarnStat2"
@@ -612,8 +642,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 412
-y 312
+x 1120
+y 116
 w 12
 h 192
 controlPv "$(P):FA1WarnStat2"
@@ -629,8 +659,8 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 428
-y 312
+x 1136
+y 116
 w 72
 h 192
 font "helvetica-medium-r-10.0"
@@ -664,8 +694,8 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 272
-y 380
+x 980
+y 184
 w 132
 h 16
 controlPv "$(P):FA1WarnStat2.DESC"
@@ -691,8 +721,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 568
-y 316
+x 696
+y 328
 w 266
 h 192
 
@@ -704,8 +734,8 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 612
-y 404
+x 740
+y 416
 w 88
 h 20
 controlPv "$(P):FA2WarnStat1"
@@ -730,8 +760,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 708
-y 316
+x 836
+y 328
 w 12
 h 192
 controlPv "$(P):FA2WarnStat1"
@@ -747,8 +777,8 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 724
-y 316
+x 852
+y 328
 w 88
 h 192
 font "helvetica-medium-r-10.0"
@@ -782,8 +812,8 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 568
-y 384
+x 696
+y 396
 w 132
 h 16
 controlPv "$(P):FA2WarnStat1.DESC"
@@ -809,8 +839,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 16
-y 312
+x 696
+y 116
 w 266
 h 192
 
@@ -822,8 +852,8 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 60
-y 400
+x 740
+y 204
 w 88
 h 20
 controlPv "$(P):FA1WarnStat1"
@@ -848,8 +878,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 156
-y 312
+x 836
+y 116
 w 12
 h 192
 controlPv "$(P):FA1WarnStat1"
@@ -865,8 +895,8 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 172
-y 312
+x 852
+y 116
 w 88
 h 192
 font "helvetica-medium-r-10.0"
@@ -900,8 +930,8 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 16
-y 380
+x 696
+y 184
 w 132
 h 16
 controlPv "$(P):FA1WarnStat1.DESC"
@@ -927,8 +957,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 824
-y 316
+x 980
+y 328
 w 266
 h 192
 
@@ -940,8 +970,8 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 868
-y 404
+x 1024
+y 416
 w 88
 h 20
 controlPv "$(P):FA2WarnStat2"
@@ -966,8 +996,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 964
-y 316
+x 1120
+y 328
 w 12
 h 192
 controlPv "$(P):FA2WarnStat2"
@@ -983,8 +1013,8 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 980
-y 316
+x 1136
+y 328
 w 72
 h 192
 font "helvetica-medium-r-10.0"
@@ -1018,8 +1048,8 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 824
-y 384
+x 980
+y 396
 w 132
 h 16
 controlPv "$(P):FA2WarnStat2.DESC"
@@ -1045,7 +1075,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 272
+x 980
 y 540
 w 266
 h 192
@@ -1058,7 +1088,7 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 316
+x 1024
 y 628
 w 88
 h 20
@@ -1084,7 +1114,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 412
+x 1120
 y 540
 w 12
 h 192
@@ -1101,7 +1131,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 428
+x 1136
 y 540
 w 72
 h 192
@@ -1136,7 +1166,7 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 272
+x 980
 y 608
 w 132
 h 16
@@ -1163,8 +1193,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 568
-y 544
+x 696
+y 752
 w 266
 h 192
 
@@ -1176,8 +1206,8 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 612
-y 632
+x 740
+y 840
 w 88
 h 20
 controlPv "$(P):FA4WarnStat1"
@@ -1202,8 +1232,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 708
-y 544
+x 836
+y 752
 w 12
 h 192
 controlPv "$(P):FA4WarnStat1"
@@ -1219,8 +1249,8 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 724
-y 544
+x 852
+y 752
 w 88
 h 192
 font "helvetica-medium-r-10.0"
@@ -1254,8 +1284,8 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 568
-y 612
+x 696
+y 820
 w 132
 h 16
 controlPv "$(P):FA4WarnStat1.DESC"
@@ -1281,7 +1311,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 16
+x 696
 y 540
 w 266
 h 192
@@ -1294,7 +1324,7 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 60
+x 740
 y 628
 w 88
 h 20
@@ -1320,7 +1350,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 156
+x 836
 y 540
 w 12
 h 192
@@ -1337,7 +1367,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 172
+x 852
 y 540
 w 88
 h 192
@@ -1372,7 +1402,7 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 16
+x 696
 y 608
 w 132
 h 16
@@ -1399,8 +1429,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 824
-y 544
+x 980
+y 752
 w 266
 h 192
 
@@ -1412,8 +1442,8 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 868
-y 632
+x 1024
+y 840
 w 88
 h 20
 controlPv "$(P):FA4WarnStat2"
@@ -1438,8 +1468,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 964
-y 544
+x 1120
+y 752
 w 12
 h 192
 controlPv "$(P):FA4WarnStat2"
@@ -1455,8 +1485,8 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 980
-y 544
+x 1136
+y 752
 w 72
 h 192
 font "helvetica-medium-r-10.0"
@@ -1490,8 +1520,8 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 824
-y 612
+x 980
+y 820
 w 132
 h 16
 controlPv "$(P):FA4WarnStat2.DESC"
@@ -1517,8 +1547,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 16
-y 764
+x 696
+y 964
 w 229
 h 192
 
@@ -1530,8 +1560,8 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 60
-y 852
+x 740
+y 1052
 w 88
 h 20
 controlPv "$(P):PSWarnStat1"
@@ -1556,8 +1586,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 156
-y 764
+x 836
+y 964
 w 12
 h 192
 controlPv "$(P):PSWarnStat1"
@@ -1573,8 +1603,8 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 172
-y 764
+x 852
+y 964
 w 73
 h 192
 font "helvetica-medium-r-10.0"
@@ -1608,8 +1638,8 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 16
-y 832
+x 696
+y 1032
 w 132
 h 16
 controlPv "$(P):PSWarnStat1.DESC"
@@ -1635,8 +1665,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 272
-y 764
+x 980
+y 964
 w 289
 h 192
 
@@ -1648,8 +1678,8 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 316
-y 852
+x 1024
+y 1052
 w 88
 h 20
 controlPv "$(P):PSWarnStat2"
@@ -1674,8 +1704,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 412
-y 764
+x 1120
+y 964
 w 12
 h 192
 controlPv "$(P):PSWarnStat2"
@@ -1691,8 +1721,8 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 428
-y 764
+x 1136
+y 964
 w 133
 h 192
 font "helvetica-medium-r-10.0"
@@ -1726,8 +1756,8 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 272
-y 832
+x 980
+y 1032
 w 132
 h 16
 controlPv "$(P):PSWarnStat2.DESC"
@@ -1745,5 +1775,43 @@ endObjectProperties
 
 endGroup
 
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 32
+y 84
+w 68
+h 16
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 3
+value {
+  "Fault Bits"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 396
+y 84
+w 88
+h 16
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 3
+value {
+  "Warning Bits"
+}
 endObjectProperties
 

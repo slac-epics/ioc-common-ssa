@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 26
-y 98
+x 1445
+y 99
 w 1660
 h 988
 font "helvetica-medium-r-12.0"
@@ -10776,7 +10776,7 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 820
+x 816
 y 280
 w 92
 h 16
@@ -11323,5 +11323,22 @@ value {
   "Common PS"
 }
 border
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1392
+y 172
+w 184
+h 36
+lineColor index 15
+lineAlarm
+fillColor index 51
+lineWidth 2
+alarmPv "$(P):FaultWarnAlarmSum.SEVR"
 endObjectProperties
 

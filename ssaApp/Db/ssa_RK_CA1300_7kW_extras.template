@@ -383,24 +383,37 @@ record(calc, "$(P)FaultAlarmSum1") {
     field(INPA, "$(P)ErrCodeInt CP MS")
     field(INPB, "$(P)ErrCodeExt CP MS")
     field(INPC, "$(P)WarningCode CP MS")
-    field(INPD, "$(P)PSFaultStat CP MS")
-    field(INPE, "$(P)PSFaultCnt CP MS")
-    field(INPF, "$(P)FaultExtStat CP MS")
-    field(INPG, "$(P)FaultPrcStat CP MS")
-    field(INPH, "$(P)DrainVoltError CP MS")
+    field(INPD, "$(P)PSFaultCnt CP MS")
+    field(INPE, "$(P)DrainVoltError CP MS")
     field(FLNK, "$(P)AlarmSummary")
 }
 
 record(calc, "$(P)FaultAlarmSum2") {
     field(DESC, "Fault Alarm Sum")
+    field(INPA, "$(P)PSFaultStat CP MS")
+    field(INPB, "$(P)FaultExtStat CP MS")
+    field(INPC, "$(P)FaultPrcStat CP MS")
+    field(FLNK, "$(P)FaultWarnAlarmSum")
+}
+
+record(calc, "$(P)WarnAlarmSum") {
+    field(DESC, "Warning Alarm Sum")
     field(INPA, "$(P)RFCUWarnStat CP MS")
     field(INPB, "$(P)PSWarnStat CP MS")
     field(INPC, "$(P)FA1WarnStat CP MS")
     field(INPD, "$(P)FA2WarnStat CP MS")
     field(INPE, "$(P)FA3WarnStat CP MS")
     field(INPF, "$(P)FA4WarnStat CP MS")
-    field(INPG, "$(P)DAWarnStat CP MS")
-    field(INPH, "$(P)HXWarnStat CP MS")
+    field(INPG, "$(P)FA5WarnStat CP MS")
+    field(INPH, "$(P)DAWarnStat CP MS")
+    field(INPI, "$(P)HXWarnStat CP MS")
+    field(FLNK, "$(P)FaultWarnAlarmSum")
+}
+
+record(calc, "$(P)FaultWarnAlarmSum") {
+    field(DESC, "Fault Alarm Sum")
+    field(INPA, "$(P)FaultAlarmSum2 MS")
+    field(INPB, "$(P)WarnAlarmSum MS")
     field(FLNK, "$(P)AlarmSummary")
 }
 
@@ -413,7 +426,7 @@ record(calc, "$(P)AlarmSummary") {
     field(INPE, "$(P)TempAlarmSum MS")
     field(INPF, "$(P)FanAlarmSum MS")
     field(INPG, "$(P)FaultAlarmSum1 MS")
-    field(INPH, "$(P)FaultAlarmSum2 MS")
+    field(INPH, "$(P)FaultWarnAlarmSum MS")
     field(INPI, "$(P)DCEnableRBV CP MS")
     field(INPJ, "$(P)RFEnableRBV CP MS")
     field(INPK, "$(P)DrainVoltSetpt CP MS")

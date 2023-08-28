@@ -381,6 +381,37 @@ record(calc, "$(P)FanAlarmSum") {
     field(FLNK, "$(P)AlarmSummary")
 }
 
+record(calc, "$(P)FaultAlarmSum1") {
+    field(DESC, "Fault Alarm Sum")
+    field(INPA, "$(P)FaultStat1 CP MS")
+    field(INPB, "$(P)FaultStat2 CP MS")
+    field(INPC, "$(P)FaultStat3 CP MS")
+    field(FLNK, "$(P)FaultWarnAlarmSum")
+}
+
+record(calc, "$(P)WarningAlarmSum") {
+    field(DESC, "Warning Alarm Sum")
+    field(INPA, "$(P)CtrlWarnStat CP MS")
+    field(INPB, "$(P)FA1WarnStat1 CP MS")
+    field(INPC, "$(P)FA1WarnStat2 CP MS")
+    field(INPD, "$(P)FA2WarnStat1 CP MS")
+    field(INPE, "$(P)FA2WarnStat2 CP MS")
+    field(INPF, "$(P)FA3WarnStat1 CP MS")
+    field(INPG, "$(P)FA3WarnStat2 CP MS")
+    field(INPH, "$(P)FA4WarnStat1 CP MS")
+    field(INPI, "$(P)FA4WarnStat2 CP MS")
+    field(INPJ, "$(P)PSWarnStat1 CP MS")
+    field(INPK, "$(P)PSWarnStat2 CP MS")
+    field(FLNK, "$(P)FaultWarnAlarmSum")
+}
+
+record(calc, "$(P)FaultWarnAlarmSum") {
+    field(DESC, "Fault/Warn Alarm Sum")
+    field(INPA, "$(P)FaultAlarmSum1 MS")
+    field(INPB, "$(P)WarningAlarmSum MS")
+    field(FLNK, "$(P)FaultAlarmSum")
+}
+
 record(calc, "$(P)FaultAlarmSum") {
     field(DESC, "Fault Alarm Sum")
     field(INPA, "$(P)ErrCodeInt CP MS")
@@ -390,9 +421,7 @@ record(calc, "$(P)FaultAlarmSum") {
     field(INPE, "$(P)WarningCode CP MS")
     field(INPF, "$(P)PSFault CP MS")
     field(INPG, "$(P)PSFaultStat CP MS")
-    field(INPH, "$(P)FaultStat1 CP MS")
-    field(INPI, "$(P)FaultStat2 CP MS")
-    field(INPJ, "$(P)FaultStat3 CP MS")
+    field(INPH, "$(P)FaultWarnAlarmSum MS")
     field(FLNK, "$(P)AlarmSummary")
 }
 

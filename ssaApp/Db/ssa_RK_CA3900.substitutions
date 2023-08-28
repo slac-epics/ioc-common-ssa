@@ -114,20 +114,20 @@ pattern
 {  LastRbt_YM,     "Last Reboot Yr/Mon",    $(PORT_P)_inw3,      3,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
 {  LastRbt_DH,     "Last Reboot Day/Hr",    $(PORT_P)_inw3,      4,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
 {  LastRbt_ms,      "Last Reboot Min/S",    $(PORT_P)_inw3,      5,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
-{  FaultStat1,         "Fault Status 1",    $(PORT_P)_inw3,      6,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
-{  FaultStat2,         "Fault Status 2",    $(PORT_P)_inw3,      7,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
-{  FaultStat3,         "Fault Status 3",    $(PORT_P)_inw3,      8,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
-{CtrlWarnStat,     "Ctrl. Unit Warning",    $(PORT_P)_inw3,      9,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
-{FA1WarnStat1,   "Fin. Amp 1 Warning 1",    $(PORT_P)_inw3,     10,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
-{FA1WarnStat2,   "Fin. Amp 1 Warning 2",    $(PORT_P)_inw3,     11,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
-{FA2WarnStat1,   "Fin. Amp 2 Warning 1",    $(PORT_P)_inw3,     12,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
-{FA2WarnStat2,   "Fin. Amp 2 Warning 2",    $(PORT_P)_inw3,     13,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
-{FA3WarnStat1,   "Fin. Amp 3 Warning 1",    $(PORT_P)_inw3,     14,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
-{FA3WarnStat2,   "Fin. Amp 3 Warning 2",    $(PORT_P)_inw3,     15,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
-{FA4WarnStat1,   "Fin. Amp 4 Warning 1",    $(PORT_P)_inw3,     16,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
-{FA4WarnStat2,   "Fin. Amp 4 Warning 2",    $(PORT_P)_inw3,     17,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
-{ PSWarnStat1,  "Power Suply Warning 1",    $(PORT_P)_inw3,     18,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
-{ PSWarnStat2,  "Power Suply Warning 2",    $(PORT_P)_inw3,     19,    "",    "",    "",    "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,       "", "I/O Intr"}
+{  FaultStat1,         "Fault Status 1",    $(PORT_P)_inw3,      6,    "",    "",    "",     1, NO_ALARM, NO_ALARM, NO_ALARM,    MAJOR,       "", "I/O Intr"}
+{  FaultStat2,         "Fault Status 2",    $(PORT_P)_inw3,      7,    "",    "",    "",     1, NO_ALARM, NO_ALARM, NO_ALARM,    MAJOR,       "", "I/O Intr"}
+{  FaultStat3,         "Fault Status 3",    $(PORT_P)_inw3,      8,    "",    "",    "",     1, NO_ALARM, NO_ALARM, NO_ALARM,    MAJOR,       "", "I/O Intr"}
+{CtrlWarnStat,     "Ctrl. Unit Warning",    $(PORT_P)_inw3,      9,    "",    "",     1,    "", NO_ALARM, NO_ALARM,    MINOR, NO_ALARM,       "", "I/O Intr"}
+{FA1WarnStat1,   "Fin. Amp 1 Warning 1",    $(PORT_P)_inw3,     10,    "",    "",     1,    "", NO_ALARM, NO_ALARM,    MINOR, NO_ALARM,       "", "I/O Intr"}
+{FA1WarnStat2,   "Fin. Amp 1 Warning 2",    $(PORT_P)_inw3,     11,    "",    "",     1,    "", NO_ALARM, NO_ALARM,    MINOR, NO_ALARM,       "", "I/O Intr"}
+{FA2WarnStat1,   "Fin. Amp 2 Warning 1",    $(PORT_P)_inw3,     12,    "",    "",     1,    "", NO_ALARM, NO_ALARM,    MINOR, NO_ALARM,       "", "I/O Intr"}
+{FA2WarnStat2,   "Fin. Amp 2 Warning 2",    $(PORT_P)_inw3,     13,    "",    "",     1,    "", NO_ALARM, NO_ALARM,    MINOR, NO_ALARM,       "", "I/O Intr"}
+{FA3WarnStat1,   "Fin. Amp 3 Warning 1",    $(PORT_P)_inw3,     14,    "",    "",     1,    "", NO_ALARM, NO_ALARM,    MINOR, NO_ALARM,       "", "I/O Intr"}
+{FA3WarnStat2,   "Fin. Amp 3 Warning 2",    $(PORT_P)_inw3,     15,    "",    "",     1,    "", NO_ALARM, NO_ALARM,    MINOR, NO_ALARM,       "", "I/O Intr"}
+{FA4WarnStat1,   "Fin. Amp 4 Warning 1",    $(PORT_P)_inw3,     16,    "",    "",     1,    "", NO_ALARM, NO_ALARM,    MINOR, NO_ALARM,       "", "I/O Intr"}
+{FA4WarnStat2,   "Fin. Amp 4 Warning 2",    $(PORT_P)_inw3,     17,    "",    "",     1,    "", NO_ALARM, NO_ALARM,    MINOR, NO_ALARM,       "", "I/O Intr"}
+{ PSWarnStat1,  "Power Suply Warning 1",    $(PORT_P)_inw3,     18,    "",    "",     1,    "", NO_ALARM, NO_ALARM,    MINOR, NO_ALARM,       "", "I/O Intr"}
+{ PSWarnStat2,  "Power Suply Warning 2",    $(PORT_P)_inw3,     19,    "",    "",     1,    "", NO_ALARM, NO_ALARM,    MINOR, NO_ALARM,       "", "I/O Intr"}
 }
 
 # Integer inputs converted to floats, modbus function code 3.
