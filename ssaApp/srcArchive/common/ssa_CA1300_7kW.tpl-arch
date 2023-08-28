@@ -125,6 +125,8 @@ $(P):FA5_PS4_V    1 monitor
 $(P):FA5_RefPwr1 1 monitor
 $(P):FA5_RefPwr2 1 monitor
 $(P):FanAlarmSum.SEVR 1 monitor
+$(P):FaultAlarmSum1.SEVR 1 monitor
+$(P):FaultAlarmSum2.SEVR 1 monitor
 $(P):FaultExtReset    1 monitor
 $(P):FaultExtStat    1 monitor
 $(P):FaultIntReset    1 monitor
@@ -146,6 +148,8 @@ $(P):LCWInTemp    1 monitor
 $(P):LCWOutFlow   1 monitor
 $(P):LCWOutTemp   1 monitor
 $(P):MainCPUTemp   1 monitor
+$(P):MainCPU_12V   1 monitor
+$(P):MainCPU_24V   1 monitor
 $(P):MiscAlarmSum.SEVR    1 monitor
 $(P):ModuleOnSum    10 monitor
 $(P):PSFan1Speed  1 monitor

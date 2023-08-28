@@ -123,10 +123,12 @@ $(P):LCWOutTempLmRBV   1 monitor
 $(P):MiscAlarmSum.SEVR 1 monitor
 $(P):MiscAlarmSum1 1 monitor
 $(P):MiscAlarmSum2 1 monitor
+$(P):ModuleOnSum    10 monitor
 $(P):PSVoltRBV 1 monitor
 $(P):PSVoltSetpt   1 monitor
 $(P):PowerOff  1 monitor
 $(P):PowerOn   1 monitor
+$(P):PowerOnStatus  10 monitor
 $(P):PulseMode 1 monitor
 $(P):RFEnable  1 monitor
 $(P):RFEnableRBV   1 monitor
@@ -139,6 +141,7 @@ $(P):SysAirTemp    1 monitor
 $(P):SysReboot 1 monitor
 $(P):SystemReboot  1 monitor
 $(P):TempAlarmSum.SEVR 1 monitor
+$(P):Type           60 monitor
 $(P):VoltAlarmSum.SEVR 1 monitor
 $(P):Warning   1 monitor
 $(P):WarningReset  1 monitor
@@ -150,7 +153,4 @@ $(P):DrvrFPGAVer   60 monitor
 $(P):PLCVer    60 monitor
 $(P):TFTVer    60 monitor
 $(P):VSWROver  60 monitor
-$(P):Type           60 monitor
-$(P):PowerOnStatus  10 monitor
-$(P):ModuleOnSum    10 monitor
 
