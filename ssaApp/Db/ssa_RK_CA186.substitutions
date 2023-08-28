@@ -48,7 +48,7 @@ pattern
  {   RFEnableRBV,            "RF Enabled", $(PORT_P)_inw00,     11, 0x0001,   "Disabled",  "Enabled",    MINOR, NO_ALARM, "I/O Intr"}
  {      FaultInt, "Internal Fault Status", $(PORT_P)_inw00,     12, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
  {      FaultExt, "External Fault Status", $(PORT_P)_inw00,     13, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
- {       Warning,        "Warning Status", $(PORT_P)_inw00,     14, 0x0001,      "Fault",       "OK",    MAJOR, NO_ALARM, "I/O Intr"}
+ {       Warning,        "Warning Status", $(PORT_P)_inw00,     14, 0x0001,    "Warning",       "OK",    MINOR, NO_ALARM, "I/O Intr"}
  { WireCheckStat,     "Wire Check Status", $(PORT_P)_inw00,     21, 0x0001, "Incomplete", "Complete",    MINOR, NO_ALARM, "I/O Intr"}
  {  APD_ATT_Stat,        "APD/ATT Status", $(PORT_P)_inw00,     23, 0x0001,        "APD",      "ATT", NO_ALARM, NO_ALARM, "I/O Intr"}
  {      VSWROver,           "VSWR Status", $(PORT_P)_inw01,     79, 0x0001,       "Over",    "Below",    MINOR, NO_ALARM, "I/O Intr"}
@@ -87,28 +87,28 @@ pattern
 # Integer inputs, modbus function code 3.
 file "longin_custom.template" {
 pattern
-{           R,                       DESC,            PORT, OFFSET,   LOLO,    LOW,   HIGH,   HIHI,     LLSV,      LSV,      HSV,     HHSV,     EGU,       SCAN}
-{  ConfigStat,            "Config Status", $(PORT_P)_inw00,     22,     "",      0,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
-{  CtlIO1Warn,  "Ctrl Unit I/O 1 Warning", $(PORT_P)_inw01,     25,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
-{  CtlIO2Warn,  "Ctrl Unit I/O 2 Warning", $(PORT_P)_inw01,     26,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
-{  CtlIO3Warn,  "Ctrl Unit I/O 3 Warning", $(PORT_P)_inw01,     27,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
-{Comm_WE1Warn,      "Comm Wire 1 Warning", $(PORT_P)_inw01,     89,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
-{Comm_WE2Warn,      "Comm Wire 2 Warning", $(PORT_P)_inw01,     90,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
-{FPGA_RE1Warn,  "FPGA Response 1 Warning", $(PORT_P)_inw01,     93,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
-{FPGA_RE2Warn,  "FPGA Response 2 Warning", $(PORT_P)_inw01,     94,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
-{DrvrHiADWarn,    "Driver Hi A/D Warning", $(PORT_P)_inw02,      8,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
-{DrvrLoADWarn,    "Driver Lo A/D Warning", $(PORT_P)_inw02,     18,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
-{DrvrIO1Intlk,   "Driver I/O 1 Interlock", $(PORT_P)_inw02,     22,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
-{ DrvrIO1Warn,     "Driver I/O 1 Warning", $(PORT_P)_inw02,     25,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
-{ DrvrIO2Warn,     "Driver I/O 1 Warning", $(PORT_P)_inw02,     26,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
-{HeatSinkThm1,        "Heat Sink 1 Fault", $(PORT_P)_inw40,     34,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
-{HeatSinkThm2,        "Heat Sink 2 Fault", $(PORT_P)_inw40,     35,      0,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
-{  CalYearRBV,        "Cal Year Readback", $(PORT_P)_inw00,     15,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
-{ CalMonthRBV,       "Cal Month Readback", $(PORT_P)_inw00,     16,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
-{   CalDayRBV,         "Cal Day Readback", $(PORT_P)_inw00,     17,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
-{  CalHourRBV,        "Cal Hour Readback", $(PORT_P)_inw00,     18,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
-{   CalMinRBV,      "Cal Minute Readback", $(PORT_P)_inw00,     19,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
-{   CalSecRBV,      "Cal Second Readback", $(PORT_P)_inw00,     20,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,      "", "I/O Intr"}
+{           R,                       DESC,            PORT, OFFSET,   LOLO,    LOW,   HIGH,   HIHI,     LLSV,      LSV,      HSV,     HHSV, EGU,       SCAN}
+{  ConfigStat,            "Config Status", $(PORT_P)_inw00,     22,     "",      6,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,  "", "I/O Intr"}
+{  CtlIO1Warn,  "Ctrl Unit I/O 1 Warning", $(PORT_P)_inw01,     25,     "",  0xffe,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,  "", "I/O Intr"}
+{  CtlIO2Warn,  "Ctrl Unit I/O 2 Warning", $(PORT_P)_inw01,     26,     "",  0xffe,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,  "", "I/O Intr"}
+{  CtlIO3Warn,  "Ctrl Unit I/O 3 Warning", $(PORT_P)_inw01,     27,     "",  0xffe,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,  "", "I/O Intr"}
+{Comm_WE1Warn,      "Comm Wire 1 Warning", $(PORT_P)_inw01,     89,     "", 0xfffe,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,  "", "I/O Intr"}
+{Comm_WE2Warn,      "Comm Wire 2 Warning", $(PORT_P)_inw01,     90,     "", 0xfffe,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,  "", "I/O Intr"}
+{FPGA_RE1Warn,  "FPGA Response 1 Warning", $(PORT_P)_inw01,     93,     "", 0xfffe,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,  "", "I/O Intr"}
+{FPGA_RE2Warn,  "FPGA Response 2 Warning", $(PORT_P)_inw01,     94,     "", 0xfffe,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,  "", "I/O Intr"}
+{DrvrHiADWarn,    "Driver Hi A/D Warning", $(PORT_P)_inw02,      8,     "",  0xffe,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,  "", "I/O Intr"}
+{DrvrLoADWarn,    "Driver Lo A/D Warning", $(PORT_P)_inw02,     18,     "",  0xffe,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,  "", "I/O Intr"}
+{DrvrIO1Intlk,   "Driver I/O 1 Interlock", $(PORT_P)_inw02,     22,     "",  0xffe,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,  "", "I/O Intr"}
+{ DrvrIO1Warn,     "Driver I/O 1 Warning", $(PORT_P)_inw02,     25,     "",  0xffe,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,  "", "I/O Intr"}
+{ DrvrIO2Warn,     "Driver I/O 2 Warning", $(PORT_P)_inw02,     26,     "",  0xffe,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,  "", "I/O Intr"}
+{HeatSinkThm1,        "Heat Sink 1 Fault", $(PORT_P)_inw40,     34, 0xfffe,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,  "", "I/O Intr"}
+{HeatSinkThm2,        "Heat Sink 2 Fault", $(PORT_P)_inw40,     35, 0xfffe,     "",     "",     "",    MAJOR, NO_ALARM, NO_ALARM, NO_ALARM,  "", "I/O Intr"}
+{  CalYearRBV,        "Cal Year Readback", $(PORT_P)_inw00,     15,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,  "", "I/O Intr"}
+{ CalMonthRBV,       "Cal Month Readback", $(PORT_P)_inw00,     16,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,  "", "I/O Intr"}
+{   CalDayRBV,         "Cal Day Readback", $(PORT_P)_inw00,     17,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,  "", "I/O Intr"}
+{  CalHourRBV,        "Cal Hour Readback", $(PORT_P)_inw00,     18,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,  "", "I/O Intr"}
+{   CalMinRBV,      "Cal Minute Readback", $(PORT_P)_inw00,     19,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,  "", "I/O Intr"}
+{   CalSecRBV,      "Cal Second Readback", $(PORT_P)_inw00,     20,     "",     "",     "",     "", NO_ALARM, NO_ALARM, NO_ALARM, NO_ALARM,  "", "I/O Intr"}
 }
 
 # Unsigned integer inputs converted to floats, modbus function code 3.
@@ -165,9 +165,9 @@ pattern
 {       DrvrPS1_I,    "PS 1 DC Out Current", $(PORT_P)_inw02,      3,    0.0, 0.00106,    1,     "",     "",    2.0,    2.2, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
 {       DrvrPS2_I,    "PS 2 DC Out Current", $(PORT_P)_inw02,      4,    0.0, 0.00106,    1,     "",     "",    1.8,    2.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,     "A", "I/O Intr"}
 {   DrvrGainDrn_V, "Gain Amp Drain Voltage", $(PORT_P)_inw02,      9,    0.0, 0.00568,    1,     "",   10.0,   13.5,   14.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
-{       DrvrDrn_V, "Drvr Amp Drain Voltage", $(PORT_P)_inw02,     10,    0.0, 0.01719,    1,     "",   43.0,   45.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{       DrvrDrn_V, "Drvr Amp Drain Voltage", $(PORT_P)_inw02,     10,    0.0, 0.01719,    1,     "",   43.0,   49.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
 {       DrvrPS1_V,    "PS 1 DC Out Voltage", $(PORT_P)_inw02,     11,    0.0, 0.00568,    1,     "",   10.0,   13.5,   14.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
-{       DrvrPS2_V,    "PS 2 DC Out Voltage", $(PORT_P)_inw02,     12,    0.0, 0.01719,    1,     "",   43.0,   48.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
+{       DrvrPS2_V,    "PS 2 DC Out Voltage", $(PORT_P)_inw02,     12,    0.0, 0.01719,    1,     "",   43.0,   49.0,   50.0, NO_ALARM,    MINOR,    MINOR,    MAJOR,   "VDC", "I/O Intr"}
 {   DrvrLCWHSTemp,     "LCW Heat Sink Temp", $(PORT_P)_inw02,     14, -39.24,  0.0392,    1,     "",     "",   50.0,   52.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
 {     DrvrAirTemp,        "Driver Air Temp", $(PORT_P)_inw02,     15, -39.24,  0.0392,    1,     "",     "",   48.0,   50.0, NO_ALARM, NO_ALARM,    MINOR,    MAJOR,  "degC", "I/O Intr"}
 {  DrvrTx1Fan1Spd,      "Trfmr 1 Fan 1 Spd", $(PORT_P)_inw02,     37,    0.0,     4.0,    1,     "",   6080,     "",     "", NO_ALARM,    MINOR, NO_ALARM, NO_ALARM,   "rpm", "I/O Intr"}
