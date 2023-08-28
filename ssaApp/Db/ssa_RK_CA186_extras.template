@@ -327,6 +327,63 @@ record(calc, "$(P)ModuleAlarmSum") {
     field(FLNK, "$(P)AlarmSummary")
 }
 
+record(calc, "$(P)FaultAlarmSum1") {
+    field(DESC, "Fault Alarm Sum")
+    field(INPA, "$(P)FaultInt CP MS")
+    field(INPB, "$(P)FaultExt CP MS")
+#    field(INPC, "$(P)Warning CP MS")  # Until this is fixed by R&K
+    field(INPD, "$(P)FaultExt1 CP MS")
+    field(INPE, "$(P)FaultExt2 CP MS")
+    field(INPF, "$(P)FaultExt3 CP MS")
+    field(INPG, "$(P)FaultExt4 CP MS")
+    field(INPH, "$(P)FaultExt5 CP MS")
+    field(INPI, "$(P)FaultExt6 CP MS")
+    field(INPJ, "$(P)FaultInt1 CP MS")
+    field(INPK, "$(P)FaultCtlCktBrk CP MS")
+    field(INPL, "$(P)Fault480_UV CP MS")
+    field(FLNK, "$(P)FaultAlarmSum")
+}
+
+record(calc, "$(P)FaultAlarmSum2") {
+    field(DESC, "Fault Alarm Sum")
+    field(INPA, "$(P)Fault480_VW CP MS")
+    field(INPB, "$(P)Fault480_UW CP MS")
+    field(INPC, "$(P)FaultDrvPwr CP MS")
+    field(INPD, "$(P)FaultFwdPwr CP MS")
+    field(INPE, "$(P)FaultRefPwr CP MS")
+    field(INPF, "$(P)FaultLCWFlow CP MS")
+    field(INPG, "$(P)FaultLCWLeak CP MS")
+    field(INPH, "$(P)FaultThermo CP MS")
+    field(INPI, "$(P)FaultAlarmBus CP MS")
+    field(INPJ, "$(P)FaultFanPS CP MS")
+    field(INPK, "$(P)FaultSysAirTemp CP MS")
+    field(INPL, "$(P)FaultLCWInTemp CP MS")
+    field(FLNK, "$(P)FaultAlarmSum")
+}
+
+record(calc, "$(P)FaultAlarmSum3") {
+    field(DESC, "Fault Alarm Sum")
+    field(INPA, "$(P)FaultLCWOutTemp CP MS")
+    field(INPB, "$(P)FaultHX1Temp CP MS")
+    field(INPC, "$(P)FaultHX2Temp CP MS")
+    field(INPD, "$(P)FaultCtlAirTemp CP MS")
+    field(INPE, "$(P)FaultRadCmbTemp CP MS")
+    field(INPF, "$(P)FaultCommError CP MS")
+    field(INPG, "$(P)FaultFPGA CP MS")
+    field(INPH, "$(P)HeatSinkThm1 CP MS")
+    field(INPI, "$(P)HeatSinkThm2 CP MS")
+    field(INPJ, "$(P)DrainVoltError CP MS")
+    field(FLNK, "$(P)FaultAlarmSum")
+}
+
+record(calc, "$(P)FaultAlarmSum") {
+    field(DESC, "Fault Alarm Sum")
+    field(INPA, "FaultAlarmSum1 MS")
+    field(INPB, "FaultAlarmSum2 MS")
+    field(INPC, "FaultAlarmSum3 MS")
+    field(FLNK, "$(P)AlarmSummary")
+}
+
 record(calc, "$(P)AlarmSummary") {
     field(DESC, "Alarm Summary")
     field(INPA, "$(P)MiscAlarmSum MS")
@@ -335,7 +392,7 @@ record(calc, "$(P)AlarmSummary") {
     field(INPD, "$(P)TempAlarmSum MS")
     field(INPE, "$(P)FanAlarmSum MS")
     field(INPF, "$(P)ModuleAlarmSum MS")
-    field(INPG, "$(P)DrainVoltError CP MS")
+    field(INPG, "$(P)FaultAlarmSum MS")
     field(INPH, "$(P)DrainVoltSetpt CP MS")
     field(INPI, "$(P)DrainVoltRBV CP MS")
 }
