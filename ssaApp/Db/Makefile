@@ -27,7 +27,6 @@ DB_INSTALLS += $(AUTOSAVE)/db/save_restoreStatus.db
 
 # Modbus
 DB_INSTALLS += $(ASYN)/db/asynRecord.db
-DB_INSTALLS += $(ASYN)/db/asynRecord.db
 DB_INSTALLS += $(MODBUS)/db/bo_word.template
 DB_INSTALLS += $(MODBUS)/db/longout.template
 DB_INSTALLS += $(MODBUS)/db/bi_word.template
