@@ -190,8 +190,4 @@ $(P):WarningReset 1 monitor
 $(P):WtrLeakStat  1 monitor
 $(P):XPReboot 1 monitor
 $(P):XPortReboot  1 monitor
-#
-$(P):SRFPermit     1 monitor
-$(P):SRFPermitRBV  1 monitor
-$(P):RFEnableWrite 1 monitor
 

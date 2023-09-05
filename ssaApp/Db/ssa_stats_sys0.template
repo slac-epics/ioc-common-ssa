@@ -1,14 +1,4 @@
 
-record(calc, "$(P)SC:SSA:NumEnabledCalc"){
-    field(DESC, "Number of SSAs enabled calc")
-    field(INPA, "ACCL:L0B:1:SSA:NumEnabled CP")
-    field(INPB, "ACCL:L1B:1:SSA:NumEnabled CP")
-    field(INPC, "ACCL:L2B:1:SSA:NumEnabled CP")
-    field(INPD, "ACCL:L3B:1:SSA:NumEnabled CP")
-    field(CALC, "A+B+C+D")
-    field(FLNK, "$(P)SC:SSA:NumEnabled")
-}
-
 record(calc, "$(P)SC:SSA:NumOnCalc"){
     field(DESC, "Number of SSAs On calc")
     field(INPA, "ACCL:L0B:1:SSA:NumOn CP")
@@ -17,25 +7,5 @@ record(calc, "$(P)SC:SSA:NumOnCalc"){
     field(INPD, "ACCL:L3B:1:SSA:NumOn CP")
     field(CALC, "A+B+C+D")
     field(FLNK, "$(P)SC:SSA:NumOn")
-}
-
-record(calc, "$(P)SC:SSA:NumCMEnabledCalc"){
-    field(DESC, "Number of SSAs Enabled calc")
-    field(INPA, "ACCL:L0B:1:SSA:NumCMEnabled CP")
-    field(INPB, "ACCL:L1B:1:SSA:NumCMEnabled CP")
-    field(INPC, "ACCL:L2B:1:SSA:NumCMEnabled CP")
-    field(INPD, "ACCL:L3B:1:SSA:NumCMEnabled CP")
-    field(CALC, "A+B+C+D")
-    field(FLNK, "$(P)SC:SSA:NumCMEnabled")
-}
-
-record(calc, "$(P)SC:SSA:NumCMOnCalc"){
-    field(DESC, "Number of SSAs On calc")
-    field(INPA, "ACCL:L0B:1:SSA:NumCMOn CP")
-    field(INPB, "ACCL:L1B:1:SSA:NumCMOn CP")
-    field(INPC, "ACCL:L2B:1:SSA:NumCMOn CP")
-    field(INPD, "ACCL:L3B:1:SSA:NumCMOn CP")
-    field(CALC, "A+B+C+D")
-    field(FLNK, "$(P)SC:SSA:NumCMOn")
 }
 

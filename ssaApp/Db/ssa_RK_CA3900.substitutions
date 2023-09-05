@@ -5,7 +5,7 @@ file "bo_word_custom.template" {
 pattern
 {            R,                    DESC,              PORT, OFFSET,   MASK,      ZNAM,     ONAM}
 {     DCEnable,     "DC Enable/Disable",   $(PORT_P)_outw1,      0, 0x0001, "Disable", "Enable"}
-{RFEnableWrite,     "RF Enable/Disable",   $(PORT_P)_outw1,      1, 0x0001, "Disable", "Enable"}
+{     RFEnable,     "RF Enable/Disable",   $(PORT_P)_outw1,      1, 0x0001, "Disable", "Enable"}
 {FaultIntReset,  "Internal Fault Reset",   $(PORT_P)_outw1,      4, 0x0001,        "",  "Reset"}
 {FaultExtReset,  "External Fault Reset",   $(PORT_P)_outw1,      4, 0x0002,        "",  "Reset"}
 { WarningReset,         "Warning Reset",   $(PORT_P)_outw1,      4, 0x0004,        "",  "Reset"}
@@ -219,13 +219,5 @@ pattern
 
 file "ssa_RK_CA3900_extras.template" {
 {}
-}
-
-# This is for commissioning - it allows SSAs to be turned on only if a special "SRFPermit" PV is enabled.
-# In conjunction with this db file, the "RFEnable" setpoint PV must be changed to "RFEnableWrite".
-file "ssa_srf_permit.template" {
-pattern
-{     ASG1, ASG2}
-{ EOICDESK,  MCC}
 }
 
