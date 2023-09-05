@@ -125,10 +125,11 @@ record(calc, "$(P)ModuleOnSumCalc") {
 }
 
 record(bi, "$(P)ModuleOnSum") {
-    field(DESC, "Module on summary")
+    field(DESC, "Module On Sum")
     field(INP,  "$(P)ModuleOnSumCalc NPP MS")
-    field(ZNAM, "NotAllOn")
-    field(ONAM, "AllOn")
+    field(ZNAM, "Not All On")
+    field(ZSV,  "MINOR")
+    field(ONAM, "All On")
 }
 
 # --- Fault messages -------------------------------------------------------------
@@ -319,6 +320,14 @@ record(calc, "$(P)ModuleAlarmSum3") {
     field(FLNK, "$(P)ModuleAlarmSum")
 }
 
+record(calc, "$(P)ModuleAlarmSum") {
+    field(DESC, "Module Alarm Sum")
+    field(INPA, "$(P)ModuleAlarmSum1.SEVR MS")
+    field(INPB, "$(P)ModuleAlarmSum2.SEVR MS")
+    field(INPC, "$(P)ModuleAlarmSum3.SEVR MS")
+    field(FLNK, "$(P)AlarmSummary")
+}
+
 record(calc, "$(P)WarningAlarmSum1") {
     field(DESC, "Warning Alarm Sum")
     field(INPA, "$(P)CtlIO1Warn.SEVR CP MS")
@@ -346,14 +355,6 @@ record(calc, "$(P)WarningAlarmSum") {
     field(DESC, "Warning Alarm Sum")
     field(INPA, "$(P)WarningAlarmSum1 MS")
     field(INPB, "$(P)WarningAlarmSum2 MS")
-    field(FLNK, "$(P)AlarmSummary")
-}
-
-record(calc, "$(P)ModuleAlarmSum") {
-    field(DESC, "Fan Alarm Sum")
-    field(INPA, "$(P)ModuleAlarmSum1.SEVR MS")
-    field(INPB, "$(P)ModuleAlarmSum2.SEVR MS")
-    field(INPC, "$(P)ModuleAlarmSum3.SEVR MS")
     field(FLNK, "$(P)AlarmSummary")
 }
 
