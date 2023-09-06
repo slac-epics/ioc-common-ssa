@@ -4,7 +4,7 @@ record(longin, "$(P)SSA:NumOn"){
     field(INP,  "$(P)SSA:NumOnCalc")
     field(LOLO, "$(LOLO="")")
     field(LOW,  "$(LOW="")")
-    field(HIGH, "$(HIGH="1")")
+    field(HIGH, "$(HIGH="")")
     field(HIHI, "$(HIHI="")")
     field(LLSV, "$(LLSV=NO_ALARM)")
     field(LSV,  "$(LSV=NO_ALARM)")
@@ -19,5 +19,31 @@ record(bi, "$(P)SSA:AnyOn"){
     field(INP,  "$(P)SSA:NumOn")
     field(ZNAM, "No")
     field(ONAM, "Yes")
+}
+
+record(longin, "$(P)SSA:NumOff"){
+    field(DESC, "Number of SSAs Off")
+    field(INP,  "$(P)SSA:NumOffCalc")
+    field(LOLO, "$(LOLO="")")
+    field(LOW,  "$(LOW="")")
+    field(HIGH, "$(HIGH="")")
+    field(HIHI, "$(HIHI="")")
+    field(LLSV, "$(LLSV=NO_ALARM)")
+    field(LSV,  "$(LSV=NO_ALARM)")
+    field(HSV,  "$(HSV=NO_ALARM)")
+    field(HHSV, "$(HHSV=NO_ALARM)")
+}
+
+record(longin, "$(P)SSA:NumFaulted"){
+    field(DESC, "Number of SSAs Faulted")
+    field(INP,  "$(P)SSA:NumFaultedCalc")
+    field(LOLO, "$(LOLO="")")
+    field(LOW,  "$(LOW="")")
+    field(HIGH, "$(HIGH="")")
+    field(HIHI, "$(HIHI="")")
+    field(LLSV, "$(LLSV=NO_ALARM)")
+    field(LSV,  "$(LSV=NO_ALARM)")
+    field(HSV,  "$(HSV=NO_ALARM)")
+    field(HHSV, "$(HHSV=NO_ALARM)")
 }
 

@@ -1,6 +1,6 @@
 
 record(calc, "$(P)$(M)$(N=00:)SSA:NumOnCalc"){
-    field(DESC, "Number of SSAs On calc")
+    field(DESC, "Number of SSAs On")
     field(INPA, "$(P)$(M)$(C1=10):SSA:PowerOnStatus CP")
     field(INPB, "$(P)$(M)$(C2=20):SSA:PowerOnStatus CP")
     field(INPC, "$(P)$(M)$(C3=30):SSA:PowerOnStatus CP")
@@ -33,5 +33,59 @@ record(bi, "$(P)$(M)$(N=00:)SSA:AnyOn"){
     field(INP,  "$(P)$(M)$(N=00:)SSA:NumOn")
     field(ZNAM, "No")
     field(ONAM, "Yes")
+}
+
+record(calc, "$(P)$(M)$(N=00:)SSA:NumOffCalc"){
+    field(DESC, "Number of SSAs Off")
+    field(INPA, "$(P)$(M)$(C1=10):SSA:PowerOffStatus CP")
+    field(INPB, "$(P)$(M)$(C2=20):SSA:PowerOffStatus CP")
+    field(INPC, "$(P)$(M)$(C3=30):SSA:PowerOffStatus CP")
+    field(INPD, "$(P)$(M)$(C4=40):SSA:PowerOffStatus CP")
+    field(INPE, "$(P)$(M)$(C5=50):SSA:PowerOffStatus CP")
+    field(INPF, "$(P)$(M)$(C6=60):SSA:PowerOffStatus CP")
+    field(INPG, "$(P)$(M)$(C7=70):SSA:PowerOffStatus CP")
+    field(INPH, "$(P)$(M)$(C8=80):SSA:PowerOffStatus CP")
+    field(CALC, "A+B+C+D+E+F+G+H")
+    field(FLNK, "$(P)$(M)$(N=00:)SSA:NumOff")
+}
+
+record(longin, "$(P)$(M)$(N=00:)SSA:NumOff"){
+    field(DESC, "Number of SSAs Off")
+    field(INP,  "$(P)$(M)$(N=00:)SSA:NumOffCalc")
+    field(LOLO, "$(LOLO="")")
+    field(LOW,  "$(LOW="")")
+    field(HIGH, "$(HIGH="")")
+    field(HIHI, "$(HIHI="")")
+    field(LLSV, "$(LLSV=NO_ALARM)")
+    field(LSV,  "$(LSV=NO_ALARM)")
+    field(HSV,  "$(HSV=NO_ALARM)")
+    field(HHSV, "$(HHSV=NO_ALARM)")
+}
+
+record(calc, "$(P)$(M)$(N=00:)SSA:NumFaultedCalc"){
+    field(DESC, "Number of SSAs Faulted")
+    field(INPA, "$(P)$(M)$(C1=10):SSA:FaultedStatus CP")
+    field(INPB, "$(P)$(M)$(C2=20):SSA:FaultedStatus CP")
+    field(INPC, "$(P)$(M)$(C3=30):SSA:FaultedStatus CP")
+    field(INPD, "$(P)$(M)$(C4=40):SSA:FaultedStatus CP")
+    field(INPE, "$(P)$(M)$(C5=50):SSA:FaultedStatus CP")
+    field(INPF, "$(P)$(M)$(C6=60):SSA:FaultedStatus CP")
+    field(INPG, "$(P)$(M)$(C7=70):SSA:FaultedStatus CP")
+    field(INPH, "$(P)$(M)$(C8=80):SSA:FaultedStatus CP")
+    field(CALC, "A+B+C+D+E+F+G+H")
+    field(FLNK, "$(P)$(M)$(N=00:)SSA:NumFaulted")
+}
+
+record(longin, "$(P)$(M)$(N=00:)SSA:NumFaulted"){
+    field(DESC, "Number of SSAs Faulted")
+    field(INP,  "$(P)$(M)$(N=00:)SSA:NumFaultedCalc")
+    field(LOLO, "$(LOLO="")")
+    field(LOW,  "$(LOW="")")
+    field(HIGH, "$(HIGH="")")
+    field(HIHI, "$(HIHI="")")
+    field(LLSV, "$(LLSV=NO_ALARM)")
+    field(LSV,  "$(LSV=NO_ALARM)")
+    field(HSV,  "$(HSV=NO_ALARM)")
+    field(HHSV, "$(HHSV=NO_ALARM)")
 }
 

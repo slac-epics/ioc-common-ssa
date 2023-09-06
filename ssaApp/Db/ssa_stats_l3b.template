@@ -1,6 +1,6 @@
 
 record(calc, "$(P)1:SSA:NumOnCalc1"){
-    field(DESC, "Number of SSAs On calc")
+    field(DESC, "Number of SSAs On")
     field(INPA, "$(P)1600:SSA:NumOn CP")
     field(INPB, "$(P)1700:SSA:NumOn CP")
     field(INPC, "$(P)1800:SSA:NumOn CP")
@@ -18,7 +18,7 @@ record(calc, "$(P)1:SSA:NumOnCalc1"){
 }
 
 record(calc, "$(P)1:SSA:NumOnCalc2"){
-    field(DESC, "Number of SSAs On calc")
+    field(DESC, "Number of SSAs On")
     field(INPA, "$(P)2800:SSA:NumOn CP")
     field(INPB, "$(P)2900:SSA:NumOn CP")
     field(INPC, "$(P)3000:SSA:NumOn CP")
@@ -32,10 +32,90 @@ record(calc, "$(P)1:SSA:NumOnCalc2"){
 }
 
 record(calc, "$(P)1:SSA:NumOnCalc"){
-    field(DESC, "Number of SSAs On calc")
+    field(DESC, "Number of SSAs On")
     field(INPA, "$(P)1:SSA:NumOnCalc1")
     field(INPB, "$(P)1:SSA:NumOnCalc2")
     field(CALC, "A+B")
     field(FLNK, "$(P)1:SSA:NumOn")
+}
+
+record(calc, "$(P)1:SSA:NumOffCalc1"){
+    field(DESC, "Number of SSAs Off")
+    field(INPA, "$(P)1600:SSA:NumOff CP")
+    field(INPB, "$(P)1700:SSA:NumOff CP")
+    field(INPC, "$(P)1800:SSA:NumOff CP")
+    field(INPD, "$(P)1900:SSA:NumOff CP")
+    field(INPE, "$(P)2000:SSA:NumOff CP")
+    field(INPF, "$(P)2100:SSA:NumOff CP")
+    field(INPG, "$(P)2200:SSA:NumOff CP")
+    field(INPH, "$(P)2300:SSA:NumOff CP")
+    field(INPI, "$(P)2400:SSA:NumOff CP")
+    field(INPJ, "$(P)2500:SSA:NumOff CP")
+    field(INPK, "$(P)2600:SSA:NumOff CP")
+    field(INPL, "$(P)2700:SSA:NumOff CP")
+    field(CALC, "A+B+C+D+E+F+G+H+I+J+K+L")
+    field(FLNK, "$(P)1:SSA:NumOffCalc")
+}
+
+record(calc, "$(P)1:SSA:NumOffCalc2"){
+    field(DESC, "Number of SSAs Off")
+    field(INPA, "$(P)2800:SSA:NumOff CP")
+    field(INPB, "$(P)2900:SSA:NumOff CP")
+    field(INPC, "$(P)3000:SSA:NumOff CP")
+    field(INPD, "$(P)3100:SSA:NumOff CP")
+    field(INPE, "$(P)3200:SSA:NumOff CP")
+    field(INPF, "$(P)3300:SSA:NumOff CP")
+    field(INPG, "$(P)3400:SSA:NumOff CP")
+    field(INPH, "$(P)3500:SSA:NumOff CP")
+    field(CALC, "A+B+C+D+E+F+G+H")
+    field(FLNK, "$(P)1:SSA:NumOffCalc")
+}
+
+record(calc, "$(P)1:SSA:NumOffCalc"){
+    field(DESC, "Number of SSAs Off")
+    field(INPA, "$(P)1:SSA:NumOffCalc1")
+    field(INPB, "$(P)1:SSA:NumOffCalc2")
+    field(CALC, "A+B")
+    field(FLNK, "$(P)1:SSA:NumOff")
+}
+
+record(calc, "$(P)1:SSA:NumFaultedCalc1"){
+    field(DESC, "Number of SSAs Faulted")
+    field(INPA, "$(P)1600:SSA:NumFaulted CP")
+    field(INPB, "$(P)1700:SSA:NumFaulted CP")
+    field(INPC, "$(P)1800:SSA:NumFaulted CP")
+    field(INPD, "$(P)1900:SSA:NumFaulted CP")
+    field(INPE, "$(P)2000:SSA:NumFaulted CP")
+    field(INPF, "$(P)2100:SSA:NumFaulted CP")
+    field(INPG, "$(P)2200:SSA:NumFaulted CP")
+    field(INPH, "$(P)2300:SSA:NumFaulted CP")
+    field(INPI, "$(P)2400:SSA:NumFaulted CP")
+    field(INPJ, "$(P)2500:SSA:NumFaulted CP")
+    field(INPK, "$(P)2600:SSA:NumFaulted CP")
+    field(INPL, "$(P)2700:SSA:NumFaulted CP")
+    field(CALC, "A+B+C+D+E+F+G+H+I+J+K+L")
+    field(FLNK, "$(P)1:SSA:NumFaultedCalc")
+}
+
+record(calc, "$(P)1:SSA:NumFaultedCalc2"){
+    field(DESC, "Number of SSAs Faulted")
+    field(INPA, "$(P)2800:SSA:NumFaulted CP")
+    field(INPB, "$(P)2900:SSA:NumFaulted CP")
+    field(INPC, "$(P)3000:SSA:NumFaulted CP")
+    field(INPD, "$(P)3100:SSA:NumFaulted CP")
+    field(INPE, "$(P)3200:SSA:NumFaulted CP")
+    field(INPF, "$(P)3300:SSA:NumFaulted CP")
+    field(INPG, "$(P)3400:SSA:NumFaulted CP")
+    field(INPH, "$(P)3500:SSA:NumFaulted CP")
+    field(CALC, "A+B+C+D+E+F+G+H")
+    field(FLNK, "$(P)1:SSA:NumFaultedCalc")
+}
+
+record(calc, "$(P)1:SSA:NumFaultedCalc"){
+    field(DESC, "Number of SSAs Faulted")
+    field(INPA, "$(P)1:SSA:NumFaultedCalc1")
+    field(INPB, "$(P)1:SSA:NumFaultedCalc2")
+    field(CALC, "A+B")
+    field(FLNK, "$(P)1:SSA:NumFaulted")
 }
 

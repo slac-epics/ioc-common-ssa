@@ -1,11 +1,31 @@
 
 record(calc, "$(P)1:SSA:NumOnCalc"){
-    field(DESC, "Number of SSAs On calc")
+    field(DESC, "Number of SSAs On")
     field(INPA, "$(P)0200:SSA:NumOn CP")
     field(INPB, "$(P)0300:SSA:NumOn CP")
     field(INPC, "$(P)H100:SSA:NumOn CP")
     field(INPD, "$(P)H200:SSA:NumOn CP")
     field(CALC, "A+B+C+D")
     field(FLNK, "$(P)1:SSA:NumOn")
+}
+
+record(calc, "$(P)1:SSA:NumOffCalc"){
+    field(DESC, "Number of SSAs Off")
+    field(INPA, "$(P)0200:SSA:NumOff CP")
+    field(INPB, "$(P)0300:SSA:NumOff CP")
+    field(INPC, "$(P)H100:SSA:NumOff CP")
+    field(INPD, "$(P)H200:SSA:NumOff CP")
+    field(CALC, "A+B+C+D")
+    field(FLNK, "$(P)1:SSA:NumOff")
+}
+
+record(calc, "$(P)1:SSA:NumFaultedCalc"){
+    field(DESC, "Number of SSAs Faulted")
+    field(INPA, "$(P)0200:SSA:NumFaulted CP")
+    field(INPB, "$(P)0300:SSA:NumFaulted CP")
+    field(INPC, "$(P)H100:SSA:NumFaulted CP")
+    field(INPD, "$(P)H200:SSA:NumFaulted CP")
+    field(CALC, "A+B+C+D")
+    field(FLNK, "$(P)1:SSA:NumFaulted")
 }
 

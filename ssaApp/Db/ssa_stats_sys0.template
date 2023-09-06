@@ -1,11 +1,31 @@
 
 record(calc, "$(P)SC:SSA:NumOnCalc"){
-    field(DESC, "Number of SSAs On calc")
+    field(DESC, "Number of SSAs On")
     field(INPA, "ACCL:L0B:1:SSA:NumOn CP")
     field(INPB, "ACCL:L1B:1:SSA:NumOn CP")
     field(INPC, "ACCL:L2B:1:SSA:NumOn CP")
     field(INPD, "ACCL:L3B:1:SSA:NumOn CP")
     field(CALC, "A+B+C+D")
     field(FLNK, "$(P)SC:SSA:NumOn")
+}
+
+record(calc, "$(P)SC:SSA:NumOffCalc"){
+    field(DESC, "Number of SSAs Off")
+    field(INPA, "ACCL:L0B:1:SSA:NumOff CP")
+    field(INPB, "ACCL:L1B:1:SSA:NumOff CP")
+    field(INPC, "ACCL:L2B:1:SSA:NumOff CP")
+    field(INPD, "ACCL:L3B:1:SSA:NumOff CP")
+    field(CALC, "A+B+C+D")
+    field(FLNK, "$(P)SC:SSA:NumOff")
+}
+
+record(calc, "$(P)SC:SSA:NumFaultedCalc"){
+    field(DESC, "Number of SSAs Faulted")
+    field(INPA, "ACCL:L0B:1:SSA:NumFaulted CP")
+    field(INPB, "ACCL:L1B:1:SSA:NumFaulted CP")
+    field(INPC, "ACCL:L2B:1:SSA:NumFaulted CP")
+    field(INPD, "ACCL:L3B:1:SSA:NumFaulted CP")
+    field(CALC, "A+B+C+D")
+    field(FLNK, "$(P)SC:SSA:NumFaulted")
 }
 
