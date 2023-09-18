@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 735
-y 60
+x 738
+y 89
 w 700
 h 600
 font "helvetica-medium-r-12.0"
@@ -19,6 +19,7 @@ ctlBgColor1 index 51
 ctlBgColor2 index 8
 topShadowColor index 50
 botShadowColor index 10
+title "SSA module: $(P) $(MOD)"
 showGrid
 snapToGrid
 gridSize 4

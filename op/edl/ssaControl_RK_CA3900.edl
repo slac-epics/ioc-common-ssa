@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 1445
-y 99
+x 1448
+y 128
 w 1660
 h 988
 font "helvetica-medium-r-12.0"
@@ -10914,6 +10914,7 @@ h 16
 lineColor index 14
 fill
 fillColor index 46
+fillAlarm
 visPv "$(P):480VACStat.SEVR"
 visMin "3"
 visMax "4"
