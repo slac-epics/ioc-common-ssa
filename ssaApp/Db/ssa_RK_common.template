@@ -87,7 +87,6 @@ record(mbbi, "$(P)StatusMsg") {
     field(TTVL, "13")
     field(TTST, "SSA Offline")
     field(TTSV, "INVALID")
-    field(FLNK, "$(P)PowerOnStatusCalc")
 }
 
 record(bo, "$(P)SeqDebug"){
@@ -96,6 +95,49 @@ record(bo, "$(P)SeqDebug"){
     field(ONAM, "On")
     field(VAL,  "0")
     field(PINI, "1")
+}
+
+# --- On/Off/Faulted status --------
+record(calc, "$(P)PowerOnStatusCalc"){
+    field(DESC, "Power On status calc")
+    field(INPA, "$(P)StatusMsg CP")
+    field(CALC, "A=3")
+    field(FLNK, "$(P)PowerOnStatus")
+}
+
+record(bi, "$(P)PowerOnStatus"){
+    field(DESC, "Power On status")
+    field(INP,  "$(P)PowerOnStatusCalc")
+    field(ZNAM, "Not On")
+    field(ONAM, "On")
+}
+
+record(calc, "$(P)PowerOffStatusCalc"){
+    field(DESC, "Power Off status calc")
+    field(INPA, "$(P)StatusMsg CP")
+    field(CALC, "A=2")
+    field(FLNK, "$(P)PowerOffStatus")
+}
+
+record(bi, "$(P)PowerOffStatus"){
+    field(DESC, "Power Off status")
+    field(INP,  "$(P)PowerOffStatusCalc")
+    field(ZNAM, "Not Off")
+    field(ONAM, "Off")
+}
+
+record(calc, "$(P)FaultedStatusCalc"){
+    field(DESC, "Faulted status calc")
+    field(INPA, "$(P)StatusMsg CP")
+    field(CALC, "A=1")
+    field(FLNK, "$(P)FaultedStatus")
+}
+
+record(bi, "$(P)FaultedStatus"){
+    field(DESC, "Faulted status")
+    field(INP,  "$(P)FaultedStatusCalc")
+    field(ZNAM, "Not Faulted")
+    field(ONAM, "Faulted")
 }
 
 # --- Other common records --------
@@ -115,48 +157,6 @@ record(mbbo, "$(P)Type") {
     field(FVST, "RK CA199")
     field(VAL,  "$(TYPE=0)")
     field(PINI, "1")
-}
-
-record(calc, "$(P)PowerOnStatusCalc"){
-    field(DESC, "Power On status calc")
-    field(INPA, "$(P)StatusMsg")
-    field(CALC, "A=3")
-    field(FLNK, "$(P)PowerOnStatus")
-}
-
-record(bi, "$(P)PowerOnStatus"){
-    field(DESC, "Power On status")
-    field(INP,  "$(P)PowerOnStatusCalc")
-    field(ZNAM, "Not On")
-    field(ONAM, "On")
-}
-
-record(calc, "$(P)PowerOffStatusCalc"){
-    field(DESC, "Power Off status calc")
-    field(INPA, "$(P)StatusMsg")
-    field(CALC, "A=2")
-    field(FLNK, "$(P)PowerOffStatus")
-}
-
-record(bi, "$(P)PowerOffStatus"){
-    field(DESC, "Power Off status")
-    field(INP,  "$(P)PowerOffStatusCalc")
-    field(ZNAM, "Not Off")
-    field(ONAM, "Off")
-}
-
-record(calc, "$(P)FaultedStatusCalc"){
-    field(DESC, "Faulted status calc")
-    field(INPA, "$(P)StatusMsg")
-    field(CALC, "A=1")
-    field(FLNK, "$(P)FaultedStatus")
-}
-
-record(bi, "$(P)FaultedStatus"){
-    field(DESC, "Faulted status")
-    field(INP,  "$(P)FaultedStatusCalc")
-    field(ZNAM, "Not Faulted")
-    field(ONAM, "Faulted")
 }
 
 record(stringout, "$(P)Cryomodule"){
