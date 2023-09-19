@@ -40,5 +40,8 @@ dbLoadRecords("db/devSeqCar.db", "SIOC=${IOC_NAME}")
 #==============================================================
 system("cp $(TOP)/archive/${IOC}.archive ${IOC_DATA}/${IOC}/archive/")
 
+# Increase size of callback queue to prevent ring buffer overflows
+callbackSetQueueSize(5000)
+
 # End of file
 

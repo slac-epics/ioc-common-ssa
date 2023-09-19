@@ -9,6 +9,7 @@ R1.2.14  06-Aug-2023  M. Dunning (mdunning)
     Remove SRF permit feature.  This was used for commissioning and is not needed any more.
     Update CA186 module summaries
     Add Off and Faulted counts to stats
+    Increase callback queue size from 2000 to 5000 to prevent overflows
 
 R1.2.13  23-Aug-2023  M. Dunning (mdunning)
     Add more general drain voltage alarm; split off records into separate subs file
