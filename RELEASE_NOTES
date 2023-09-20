@@ -10,6 +10,7 @@ R1.2.14  06-Aug-2023  M. Dunning (mdunning)
     Update CA186 module summaries
     Add Off and Faulted counts to stats
     Increase callback queue size from 2000 to 5000 to prevent overflows
+    Set GUN:GUNB:100:RFCTRL to 0 in gun/buncher PowerOffAll routines, which turns off RF before SSAs
 
 R1.2.13  23-Aug-2023  M. Dunning (mdunning)
     Add more general drain voltage alarm; split off records into separate subs file

@@ -7,9 +7,9 @@
 
 file "ssaCommonControls_4x.template" {
 pattern
-{SSA1, SSA2, SSA3, SSA4,  N,  M,        OUT, DLY}
+{SSA1, SSA2, SSA3, SSA4,  N,  M,        OUT, DLY, MASK, DOL0,                     LNK0, DLY1}
 {SSA1, SSA2, SSA3, SSA4, "", "",    PowerOn, 0.5}
-{SSA1, SSA2, SSA3, SSA4, "", "",   PowerOff, 0.1}
+{SSA1, SSA2, SSA3, SSA4, "", "",   PowerOff, 0.1,   31,    0, "GUN:GUNB:100:RFCTRL PP", 1.25}
 {SSA1, SSA2, SSA3, SSA4, "", "", FaultReset, 0.5}
 }
 
