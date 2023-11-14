@@ -45,6 +45,11 @@ DB_INSTALLS += $(BKHASYN)/db/bk9000.db
 DB_INSTALLS += $(BKHASYN)/db/ai_convert_autosave.template
 endif
 
+# Model GA11424BW200 support
+ifdef RKAMPGA
+DB_INSTALLS += $(RKAMPGA)/db/GA11424BW200.db
+endif
+
 # SSAs
 DB += ssa_RK_CA1300.db
 DB += ssa_RK_CA1300_4.6kW.db

@@ -1,0 +1,39 @@
+# IOC shell script for R&K GA11424BW200 SSA
+# Includes modbus config and db loading
+# Required macros:
+# PORT - asyn port
+# P - PV name prefix
+# IP - IP address or host name 
+
+# Configure the asyn IP port
+# portName, ipAddr, priority, noAutoConnect, noProcessEos
+drvAsynIPPortConfigure("$(PORT)", "$(IP)", 0, 0, 0)
+dbLoadRecords("db/asynRecord.db","P=$(P), R=ASYN, PORT=$(PORT), ADDR=0,IMAX=0,OMAX=0")
+
+# Configure modbus
+# Port name, linkType, timeoutInMsec, writeDelay
+modbusInterposeConfig("$(PORT)", 0, 5000, 0)
+
+# Register map is all holding registers, 0x1 to 0xB, 0x3 to 0xB are read-only.
+
+# drvModbusAsynConfigure(portName, tcpPortName, slaveAddr, modbusFunc, modbusAddrStart, modbusLen, dataType, pollMsec, plcType)
+drvModbusAsynConfigure("$(PORT)_InRegs", "$(PORT)", 0, 3, 1, 11, UINT16, 100, "RK")
+dbLoadRecords("db/asynRecord.db", "P=$(P), R=ASYN_IN, PORT=$(PORT)_InRegs, ADDR=0,IMAX=0,OMAX=0")
+drvModbusAsynConfigure("$(PORT)_OutRegs", "$(PORT)", 0, 6, 1, 2, UINT16, 500, "RK")
+dbLoadRecords("db/asynRecord.db", "P=$(P), R=ASYN_OUT, PORT=$(PORT)_OutRegs, ADDR=0,IMAX=0,OMAX=0")
+
+# Enable ASYN_TRACEIO_HEX on octet server
+asynSetTraceIOMask("$(PORT)", 0, 0x4)
+asynSetTraceIOMask("$(PORT)_InRegs", 0, 0x4)
+asynSetTraceIOMask("$(PORT)_OutRegs", 0, 0x4)
+# Enable ASYN_TRACE_ERROR and ASYN_TRACEIO_DRIVER on octet server for verbose debug output
+#asynSetTraceMask("$(PORT)", 0, 0x9)
+#asynSetTraceMask("$(PORT)_InRegs", 0, 0x9)
+#asynSetTraceMask("$(PORT)_OutRegs", 0, 0x9)
+# Dump up to 256 bytes in asynTrace
+asynSetTraceIOTruncateSize("$(PORT)", 0, 256)
+asynSetTraceIOTruncateSize("$(PORT)_InRegs", 0, 256)
+asynSetTraceIOTruncateSize("$(PORT)_OutRegs", 0, 256)
+
+# Finally, load the records. P is record prefix, PORT is the asyn port
+dbLoadRecords("db/GA11424BW200.db", "P=$(P), INPORT=$(PORT)_InRegs, OUTPORT=$(PORT)_OutRegs")
