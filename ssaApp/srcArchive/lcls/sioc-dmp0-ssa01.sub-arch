@@ -1,0 +1,12 @@
+# Archive list for sioc-l0b-ssa01
+
+file  ssa_GA11424BW200.tpl-arch {
+pattern {P                }
+        {TCAV:DMP0:360:SSA}
+}
+
+file archive_iocAdmin.archive {
+pattern {IOC           }
+        {SIOC:DMP0:SSA01}
+}
+

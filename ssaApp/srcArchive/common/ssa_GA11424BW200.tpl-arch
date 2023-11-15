@@ -1,0 +1,20 @@
+# File: ssa_CA1300.tpl-arch
+#
+# Format:  PVNAME     INTERVAL     [ monitor | scan ]
+# Interval is in seconds; default mode is scan
+
+# Name                  Interval Mode
+#----------------------------------------------
+
+$(P):RFEnable 1 monitor
+$(P):RFEnableRBV 1 monitor
+$(P):FaultIntReset 1 monitor
+$(P):FwdPwr 1 monitor
+$(P):RefPwr 1 monitor
+$(P):FwdPwrFault 1 monitor
+$(P):RefPwrFault 1 monitor
+$(P):TempFault 1 monitor
+$(P):10VPSFault 1 monitor
+$(P):48VPSFault 1 monitor
+$(P):PulseWidthFault 1 monitor
+
