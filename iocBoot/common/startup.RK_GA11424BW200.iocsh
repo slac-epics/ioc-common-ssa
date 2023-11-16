@@ -7,7 +7,7 @@
 
 # Configure the asyn IP port
 # portName, ipAddr, priority, noAutoConnect, noProcessEos
-drvAsynIPPortConfigure("$(PORT)", "$(IP):1502", 0, 0, 0)
+drvAsynIPPortConfigure("$(PORT)", "$(IP):502", 0, 0, 0)
 dbLoadRecords("db/asynRecord.db","P=$(P), R=ASYN, PORT=$(PORT), ADDR=0,IMAX=0,OMAX=0")
 
 # Configure modbus
