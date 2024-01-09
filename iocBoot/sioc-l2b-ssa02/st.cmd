@@ -5,7 +5,7 @@
 ## Environment variables
 epicsEnvSet("LOCATION", "L2B CM 08-11")
 epicsEnvSet("IOC_NAME", "SIOC:L2B:SSA02")
-epicsEnvSet("ASG",      "MCC")
+epicsEnvSet("ASG",      "MCC_SSA")
 
 < $(TOP)/iocBoot/common/st.cmd.soft
 

@@ -5,6 +5,9 @@
 #        the ssa IOC Application.
 #--------------------------------------------------------------
 
+R1.2.16  09-Jan-2024  M. Dunning (mdunning)
+    Update SC linac SSA IOCs to use MCC_ASG.  This is to allow SRF control from ACR extension (laci@lcls-daemon10). 
+
 R1.2.15  14-Nov-2023  G. Brown (gwbrown)
     Add small XTCAV SSA, R&K model GA11424BW200, using rkAmpGA module.
 
