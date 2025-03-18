@@ -589,8 +589,8 @@ ss ssa_state_check {
 
         when (delay(drainVoltWait) && dcEnableRBV && !efTest(drainVoltFlag) && (rfCountdown == 0)
                 && allModulesOn) {
-            if (ssaType == CA1300_7kW) {
-                // The 7kW needs a bit more time or it will not respond to the next command
+            if ((ssaType == CA1300_7kW) || (ssaType == CA186)) {
+                // The 7kW and gun SSAs need a bit more time or they will not respond to the next command
                 epicsThreadSleep(5.0);
             }
             if (seqDebug) printf("[%s] DEBUG: drainVoltProc\n", timestamp());
