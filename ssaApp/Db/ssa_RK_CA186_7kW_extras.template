@@ -122,10 +122,11 @@ record(stringin, "$(P)CritWarnMsg") {
 record(calcout, "$(P)FaultSumCalc") {
     field(DESC, "Fault Summary Calc")
     field(ASG,  "Internal")
-    field(INPA, "$(P)ErrCodeInt CP")
-    field(INPB, "$(P)ErrCodeExt CP")
+    field(INPA, "$(P)ErrCodeInt")
+    field(INPB, "$(P)ErrCodeExt")
     field(CALC, "(A>0 && B>0)?3:(A>0)?1:(B>0)?2:4")
     field(OUT,  "$(P)FaultSummary PP")
+    field(SCAN, "5 second")
 }
 
 record(mbbi, "$(P)FaultSummary") {
