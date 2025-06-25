@@ -5,6 +5,10 @@
 #        the ssa IOC Application.
 #--------------------------------------------------------------
 
+R1.2.18  25-Jun-2025  M. Dunning (mdunning)
+    Update modules to build on rhel9.  Still builds on rhel7.
+    Note that remote repo has been moved to https://github.com/slac-epics/ioc-common-ssa.
+
 R1.2.17  17-Mar-2025  M. Dunning (mdunning)
     All R&K SSAs: Change FaultSumCalc to periodic scanning to prevent race condition
     CA186 (GUNB) SSA: Add additional delay to turn on process
