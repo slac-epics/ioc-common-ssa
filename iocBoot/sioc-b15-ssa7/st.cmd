@@ -1,4 +1,4 @@
-#!../../bin/rhel6-x86_64/ssa
+#!../../bin/rhel9-x86_64/ssa
 
 < envPaths
 
