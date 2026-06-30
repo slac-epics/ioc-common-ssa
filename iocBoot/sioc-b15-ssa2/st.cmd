@@ -15,8 +15,8 @@ asSetFilename("${TOP}/iocBoot/common/no_security.acf")
 
 ## Run IOC shell script for each SSA
 #
-# SSA1: L1B:0220
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L1B_0220,P=ACCL:L1B:0220:SSA:,CM=02,CAV1=2,ASG=$(ASG),IP=ssa-b15-rf0120")
+# SSA1: L1B:0320
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L1B_0320,P=ACCL:L1B:0320:SSA:,CM=03,CAV1=2,ASG=$(ASG),IP=ssa-b15-rf0120")
 
 
 iocInit()
@@ -28,14 +28,14 @@ caPutLogInit("${EPICS_CA_PUT_LOG_ADDR}")
 caPutLogShow(2)
 # =====================================================
 
-dbpf("ACCL:L1B:0220:SSA:SeqDebug", 1)
+dbpf("ACCL:L1B:0320:SSA:SeqDebug", 1)
 epicsThreadSleep(0.5)
 
 ## Start sequence programs, one for each SSA
 # This must be done after iocInit
 #
-# SSA1: L1B:0220
-seq(seq_ssa_RK_CA, "P=ACCL:L1B:0220:SSA:")
+# SSA1: L1B:0320
+seq(seq_ssa_RK_CA, "P=ACCL:L1B:0320:SSA:")
 epicsThreadSleep(0.5)
 
 # Autosave start
