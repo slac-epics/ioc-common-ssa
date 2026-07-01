@@ -20,10 +20,10 @@ asSetFilename("${TOP}/iocBoot/common/no_security.acf")
 iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300.iocsh", "PORT=L1B_0310,P=ACCL:L1B:0310:SSA:,CM=03,CAV1=1,ASG=$(ASG),IP=ssa-b15-rf0110")
 
 # Load SSA stats database
-dbLoadRecords("db/ssa_stats.db")
+#dbLoadRecords("db/ssa_stats.db")
 
 # Load common databases
-#dbLoadRecords("db/ssa_sys0_common.db", "ASG=$(ASG)")
+dbLoadRecords("db/ssa_sys0_common.db", "ASG=$(ASG)")
 
 # Simulation (for testing only - simulated SSAs and global controls)
 #dbLoadRecords("db/ssa_sim.db", "CAV1=0,CAV2=0,CM=0,ASG=$(ASG)")
