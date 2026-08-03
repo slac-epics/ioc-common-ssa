@@ -29,3 +29,14 @@ record(calc, "$(P)SC:SSA:NumFaultedCalc"){
     field(FLNK, "$(P)SC:SSA:NumFaulted")
 }
 
+record(calc, "$(P)SC:SSA:NumOfflineCalc")
+{
+    field(DESC, "Number of SSAs Offline")
+    field(INPA, "ACCL:L0B:1:SSA:NumOffline CP")
+    field(INPB, "ACCL:L1B:1:SSA:NumOffline CP")
+    field(INPC, "ACCL:L2B:1:SSA:NumOffline CP")
+    field(INPD, "ACCL:L3B:1:SSA:NumOffline CP")
+    field(INPE, "ACCL:L4B:1:SSA:NumOffline CP")
+    field(CALC, "A+B+C+D+E")
+    field(FLNK, "$(P)SC:SSA:NumOffline")
+}
