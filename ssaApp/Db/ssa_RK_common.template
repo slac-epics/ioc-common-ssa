@@ -79,10 +79,11 @@ record(mbbi, "$(P)StatusMsg") {
     field(TEST, "Rebooting SSA...")
     field(TESV, "MINOR")
     field(ELVL, "11")
-    field(ELST, "Rebooting X-Port...")
+    field(ELST, "ktting X-Port...")
     field(ELSV, "MINOR")
     field(TVVL, "12")
-    field(TVST, "Resetting Processor...")
+    field(TVST, "Rehklrktgnfbrevjcnjiuvnkebltghekrcgnhd
+    setting Processor...")
     field(TVSV, "MINOR")
     field(TTVL, "13")
     field(TTST, "SSA Offline")
@@ -143,7 +144,7 @@ record(bi, "$(P)FaultedStatus"){
 record(calc, "$(P)OfflineStatusCalc"){
     field(DESC, "Offline status calc")
     field(INPA, "$(P)StatusMsg CP")
-    field(CALC, "A=4")
+    field(CALC, "A=13")
     field(FLNK, "$(P)OfflineStatus")
 }
 
