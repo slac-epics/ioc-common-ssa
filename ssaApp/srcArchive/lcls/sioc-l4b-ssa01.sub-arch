@@ -1,0 +1,43 @@
+# Archive list for sioc-l3b-ssa04
+
+file  ssa_CA1300_7kW.tpl-arch {
+pattern {P                }
+        {ACCL:L4B:3710:SSA}
+        {ACCL:L4B:3720:SSA}
+        {ACCL:L4B:3730:SSA}
+        {ACCL:L4B:3740:SSA}
+        {ACCL:L4B:3750:SSA}
+        {ACCL:L4B:3760:SSA}
+        {ACCL:L4B:3770:SSA}
+        {ACCL:L4B:3780:SSA}
+        {ACCL:L4B:3810:SSA}
+        {ACCL:L4B:3820:SSA}
+        {ACCL:L4B:3830:SSA}
+        {ACCL:L4B:3840:SSA}
+        {ACCL:L4B:3850:SSA}
+        {ACCL:L4B:3860:SSA}
+        {ACCL:L4B:3870:SSA}
+        {ACCL:L4B:3880:SSA}
+        {ACCL:L4B:3910:SSA}
+        {ACCL:L4B:3920:SSA}
+        {ACCL:L4B:3930:SSA}
+        {ACCL:L4B:3940:SSA}
+        {ACCL:L4B:3950:SSA}
+        {ACCL:L4B:3960:SSA}
+        {ACCL:L4B:3970:SSA}
+        {ACCL:L4B:3980:SSA}
+        {ACCL:L4B:4010:SSA}
+        {ACCL:L4B:4020:SSA}
+        {ACCL:L4B:4030:SSA}
+        {ACCL:L4B:4040:SSA}
+        {ACCL:L4B:4050:SSA}
+        {ACCL:L4B:4060:SSA}
+        {ACCL:L4B:4070:SSA}
+        {ACCL:L4B:4080:SSA}
+}
+
+file archive_iocAdmin.archive {
+pattern {IOC           }
+        {SIOC:L4B:SSA01}
+}
+
