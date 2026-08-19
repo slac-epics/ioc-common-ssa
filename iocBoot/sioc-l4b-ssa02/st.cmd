@@ -3,7 +3,7 @@
 < envPaths
 
 ## Environment variables
-epicsEnvSet("LOCATION", "L4B CM 41-44")
+epicsEnvSet("LOCATION", "L4B CM 40-42")
 epicsEnvSet("IOC_NAME", "SIOC:L4B:SSA02")
 epicsEnvSet("ASG",      "MCC_SSA")
 
@@ -12,6 +12,30 @@ epicsEnvSet("ASG",      "MCC_SSA")
 
 ## Run IOC shell script for each SSA
 #
+# SSA25: L4B:4010
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_4010,P=ACCL:L4B:4010:SSA:,CM=40,CAV1=1,ASG=$(ASG),IP=ssa-l4b-4010")
+
+# SSA26: L4B:4020
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_4020,P=ACCL:L4B:4020:SSA:,CM=40,CAV1=2,ASG=$(ASG),IP=ssa-l4b-4020")
+
+# SSA27: L4B:4030
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_4030,P=ACCL:L4B:4030:SSA:,CM=40,CAV1=3,ASG=$(ASG),IP=ssa-l4b-4030")
+
+# SSA28: L4B:4040
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_4040,P=ACCL:L4B:4040:SSA:,CM=40,CAV1=4,ASG=$(ASG),IP=ssa-l4b-4040")
+
+# SSA29: L4B:4050
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_4050,P=ACCL:L4B:4050:SSA:,CM=40,CAV1=5,ASG=$(ASG),IP=ssa-l4b-4050")
+
+# SSA30: L4B:4060
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_4060,P=ACCL:L4B:4060:SSA:,CM=40,CAV1=6,ASG=$(ASG),IP=ssa-l4b-4060")
+
+# SSA31: L4B:4070
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_4070,P=ACCL:L4B:4070:SSA:,CM=40,CAV1=7,ASG=$(ASG),IP=ssa-l4b-4070")
+
+# SSA32: L4B:4080
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_4080,P=ACCL:L4B:4080:SSA:,CM=40,CAV1=8,ASG=$(ASG),IP=ssa-l4b-4080")
+
 # SSA1: L4B:4110
 iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_4110,P=ACCL:L4B:4110:SSA:,CM=41,CAV1=1,ASG=$(ASG),IP=ssa-l4b-4110")
 
@@ -110,10 +134,9 @@ iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_4480,P=
 
 
 # Load common SSA databases
+dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L4B:,M=40,ASG=$(ASG)")
 dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L4B:,M=41,ASG=$(ASG)")
 dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L4B:,M=42,ASG=$(ASG)")
-dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L4B:,M=43,ASG=$(ASG)")
-dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L4B:,M=44,ASG=$(ASG)")
 
 
 iocInit()
@@ -129,6 +152,38 @@ caPutLogShow(2)
 ## Start sequence programs, one for each SSA
 # This must be done after iocInit
 #
+# SSA25: L4B:4010
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:4010:SSA:")
+epicsThreadSleep(0.25)
+
+# SSA26: L4B:4020
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:4020:SSA:")
+epicsThreadSleep(0.25)
+
+# SSA27: L4B:4030
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:4030:SSA:")
+epicsThreadSleep(0.25)
+
+# SSA28: L4B:4040
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:4040:SSA:")
+epicsThreadSleep(0.25)
+
+# SSA29: L4B:4050
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:4050:SSA:")
+epicsThreadSleep(0.25)
+
+# SSA30: L4B:4060
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:4060:SSA:")
+epicsThreadSleep(0.25)
+
+# SSA31: L4B:4070
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:4070:SSA:")
+epicsThreadSleep(0.25)
+
+# SSA32: L4B:4080
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:4080:SSA:")
+epicsThreadSleep(0.25)
+
 # SSA1: L4B:4110
 seq(seq_ssa_RK_CA, "P=ACCL:L4B:4110:SSA:")
 epicsThreadSleep(0.25)
@@ -193,69 +248,6 @@ epicsThreadSleep(0.25)
 seq(seq_ssa_RK_CA, "P=ACCL:L4B:4280:SSA:")
 epicsThreadSleep(0.25)
 
-# SSA17: L4B:4310
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:4310:SSA:")
-epicsThreadSleep(0.25)
-
-# SSA18: L4B:4320
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:4320:SSA:")
-epicsThreadSleep(0.25)
-
-# SSA19: L4B:4330
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:4330:SSA:")
-epicsThreadSleep(0.25)
-
-# SSA20: L4B:4340
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:4340:SSA:")
-epicsThreadSleep(0.25)
-
-# SSA21: L4B:4350
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:4350:SSA:")
-epicsThreadSleep(0.25)
-
-# SSA22: L4B:4360
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:4360:SSA:")
-epicsThreadSleep(0.25)
-
-# SSA23: L4B:4370
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:4370:SSA:")
-epicsThreadSleep(0.25)
-
-# SSA24: L4B:4380
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:4380:SSA:")
-epicsThreadSleep(0.25)
-
-# SSA25: L4B:4410
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:4410:SSA:")
-epicsThreadSleep(0.25)
-
-# SSA26: L4B:4420
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:4420:SSA:")
-epicsThreadSleep(0.25)
-
-# SSA27: L4B:4430
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:4430:SSA:")
-epicsThreadSleep(0.25)
-
-# SSA28: L4B:4440
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:4440:SSA:")
-epicsThreadSleep(0.25)
-
-# SSA29: L4B:4450
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:4450:SSA:")
-epicsThreadSleep(0.25)
-
-# SSA30: L4B:4460
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:4460:SSA:")
-epicsThreadSleep(0.25)
-
-# SSA31: L4B:4470
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:4470:SSA:")
-epicsThreadSleep(0.25)
-
-# SSA32: L4B:4480
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:4480:SSA:")
-epicsThreadSleep(0.25)
 
 
 # Autosave start
