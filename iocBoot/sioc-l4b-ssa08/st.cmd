@@ -3,7 +3,7 @@
 < envPaths
 
 ## Environment variables
-epicsEnvSet("LOCATION", "L4B CM 57-59")
+epicsEnvSet("LOCATION", "L4B CM 58-59")
 epicsEnvSet("IOC_NAME", "SIOC:L4B:SSA06")
 epicsEnvSet("ASG",      "MCC_SSA")
 
@@ -12,30 +12,6 @@ epicsEnvSet("ASG",      "MCC_SSA")
 
 ## Run IOC shell script for each SSA
 #
-# SSA1: L4B:5710
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5710,P=ACCL:L4B:5710:SSA:,CM=57,CAV1=1,ASG=$(ASG),IP=ssa-l4b-5710")
-
-# SSA2: L4B:5720
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5720,P=ACCL:L4B:5720:SSA:,CM=57,CAV1=2,ASG=$(ASG),IP=ssa-l4b-5720")
-
-# SSA3: L4B:5730
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5730,P=ACCL:L4B:5730:SSA:,CM=57,CAV1=3,ASG=$(ASG),IP=ssa-l4b-5730")
-
-# SSA4: L4B:5740
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5740,P=ACCL:L4B:5740:SSA:,CM=57,CAV1=4,ASG=$(ASG),IP=ssa-l4b-5740")
-
-# SSA5: L4B:5750
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5750,P=ACCL:L4B:5750:SSA:,CM=57,CAV1=5,ASG=$(ASG),IP=ssa-l4b-5750")
-
-# SSA6: L4B:5760
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5760,P=ACCL:L4B:5760:SSA:,CM=57,CAV1=6,ASG=$(ASG),IP=ssa-l4b-5760")
-
-# SSA7: L4B:5770
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5770,P=ACCL:L4B:5770:SSA:,CM=57,CAV1=7,ASG=$(ASG),IP=ssa-l4b-5770")
-
-# SSA8: L4B:5780
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5780,P=ACCL:L4B:5780:SSA:,CM=57,CAV1=8,ASG=$(ASG),IP=ssa-l4b-5780")
-
 # SSA9: L4B:5810
 iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5810,P=ACCL:L4B:5810:SSA:,CM=58,CAV1=1,ASG=$(ASG),IP=ssa-l4b-5810")
 
@@ -87,7 +63,6 @@ iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5980,P=
 
 
 # Load common SSA databases
-dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L4B:,M=57,ASG=$(ASG)")
 dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L4B:,M=58,ASG=$(ASG)")
 dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L4B:,M=59,ASG=$(ASG)")
 
@@ -105,38 +80,6 @@ caPutLogShow(2)
 ## Start sequence programs, one for each SSA
 # This must be done after iocInit
 #
-# SSA1: L4B:5710
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:5710:SSA:")
-epicsThreadSleep(0.25)
-
-# SSA2: L4B:5720
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:5720:SSA:")
-epicsThreadSleep(0.25)
-
-# SSA3: L4B:5730
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:5730:SSA:")
-epicsThreadSleep(0.25)
-
-# SSA4: L4B:5740
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:5740:SSA:")
-epicsThreadSleep(0.25)
-
-# SSA5: L4B:5750
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:5750:SSA:")
-epicsThreadSleep(0.25)
-
-# SSA6: L4B:5760
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:5760:SSA:")
-epicsThreadSleep(0.25)
-
-# SSA7: L4B:5770
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:5770:SSA:")
-epicsThreadSleep(0.25)
-
-# SSA8: L4B:5780
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:5780:SSA:")
-epicsThreadSleep(0.25)
-
 # SSA9: L4B:5810
 seq(seq_ssa_RK_CA, "P=ACCL:L4B:5810:SSA:")
 epicsThreadSleep(0.25)

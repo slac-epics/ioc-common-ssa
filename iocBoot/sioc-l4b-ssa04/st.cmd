@@ -108,87 +108,12 @@ iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_4970,P=
 # SSA8: L4B:4980
 iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_4980,P=ACCL:L4B:4980:SSA:,CM=49,CAV1=8,ASG=$(ASG),IP=ssa-l4b-4980")
 
-# SSA9: L4B:5010
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5010,P=ACCL:L4B:5010:SSA:,CM=50,CAV1=1,ASG=$(ASG),IP=ssa-l4b-5010")
-
-# SSA10: L4B:5020
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5020,P=ACCL:L4B:5020:SSA:,CM=50,CAV1=2,ASG=$(ASG),IP=ssa-l4b-5020")
-
-# SSA11: L4B:5030
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5030,P=ACCL:L4B:5030:SSA:,CM=50,CAV1=3,ASG=$(ASG),IP=ssa-l4b-5030")
-
-# SSA12: L4B:5040
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5040,P=ACCL:L4B:5040:SSA:,CM=50,CAV1=4,ASG=$(ASG),IP=ssa-l4b-5040")
-
-# SSA13: L4B:5050
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5050,P=ACCL:L4B:5050:SSA:,CM=50,CAV1=5,ASG=$(ASG),IP=ssa-l4b-5050")
-
-# SSA14: L4B:5060
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5060,P=ACCL:L4B:5060:SSA:,CM=50,CAV1=6,ASG=$(ASG),IP=ssa-l4b-5060")
-
-# SSA15: L4B:5070
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5070,P=ACCL:L4B:5070:SSA:,CM=50,CAV1=7,ASG=$(ASG),IP=ssa-l4b-5070")
-
-# SSA16: L4B:5080
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5080,P=ACCL:L4B:5080:SSA:,CM=50,CAV1=8,ASG=$(ASG),IP=ssa-l4b-5080")
-
-# SSA17: L4B:5110
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5110,P=ACCL:L4B:5110:SSA:,CM=51,CAV1=1,ASG=$(ASG),IP=ssa-l4b-5110")
-
-# SSA18: L4B:5120
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5120,P=ACCL:L4B:5120:SSA:,CM=51,CAV1=2,ASG=$(ASG),IP=ssa-l4b-5120")
-
-# SSA19: L4B:5130
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5130,P=ACCL:L4B:5130:SSA:,CM=51,CAV1=3,ASG=$(ASG),IP=ssa-l4b-5130")
-
-# SSA20: L4B:5140
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5140,P=ACCL:L4B:5140:SSA:,CM=51,CAV1=4,ASG=$(ASG),IP=ssa-l4b-5140")
-
-# SSA21: L4B:5150
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5150,P=ACCL:L4B:5150:SSA:,CM=51,CAV1=5,ASG=$(ASG),IP=ssa-l4b-5150")
-
-# SSA22: L4B:5160
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5160,P=ACCL:L4B:5160:SSA:,CM=51,CAV1=6,ASG=$(ASG),IP=ssa-l4b-5160")
-
-# SSA23: L4B:5170
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5170,P=ACCL:L4B:5170:SSA:,CM=51,CAV1=7,ASG=$(ASG),IP=ssa-l4b-5170")
-
-# SSA24: L4B:5180
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5180,P=ACCL:L4B:5180:SSA:,CM=51,CAV1=8,ASG=$(ASG),IP=ssa-l4b-5180")
-
-# SSA25: L4B:5210
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5210,P=ACCL:L4B:5210:SSA:,CM=52,CAV1=1,ASG=$(ASG),IP=ssa-l4b-5210")
-
-# SSA26: L4B:5220
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5220,P=ACCL:L4B:5220:SSA:,CM=52,CAV1=2,ASG=$(ASG),IP=ssa-l4b-5220")
-
-# SSA27: L4B:5230
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5230,P=ACCL:L4B:5230:SSA:,CM=52,CAV1=3,ASG=$(ASG),IP=ssa-l4b-5230")
-
-# SSA28: L4B:5240
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5240,P=ACCL:L4B:5240:SSA:,CM=52,CAV1=4,ASG=$(ASG),IP=ssa-l4b-5240")
-
-# SSA29: L4B:5250
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5250,P=ACCL:L4B:5250:SSA:,CM=52,CAV1=5,ASG=$(ASG),IP=ssa-l4b-5250")
-
-# SSA30: L4B:5260
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5260,P=ACCL:L4B:5260:SSA:,CM=52,CAV1=6,ASG=$(ASG),IP=ssa-l4b-5260")
-
-# SSA31: L4B:5270
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5270,P=ACCL:L4B:5270:SSA:,CM=52,CAV1=7,ASG=$(ASG),IP=ssa-l4b-5270")
-
-# SSA32: L4B:5280
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5280,P=ACCL:L4B:5280:SSA:,CM=52,CAV1=8,ASG=$(ASG),IP=ssa-l4b-5280")
 
 
 # Load common SSA databases
 dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L4B:,M=46,ASG=$(ASG)")
 dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L4B:,M=47,ASG=$(ASG)")
 dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L4B:,M=48,ASG=$(ASG)")
-dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L4B:,M=49,ASG=$(ASG)")
-dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L4B:,M=50,ASG=$(ASG)")
-dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L4B:,M=51,ASG=$(ASG)")
-dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L4B:,M=52,ASG=$(ASG)")
 
 
 iocInit()
@@ -204,132 +129,102 @@ caPutLogShow(2)
 ## Start sequence programs, one for each SSA
 # This must be done after iocInit
 #
-# SSA1: L4B:4910
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:4910:SSA:")
+
+# SSA9: L4B:4610
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:4610:SSA:")
 epicsThreadSleep(0.25)
 
-# SSA2: L4B:4920
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:4920:SSA:")
+# SSA10: L4B:4620
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:4620:SSA:")
 epicsThreadSleep(0.25)
 
-# SSA3: L4B:4930
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:4930:SSA:")
+# SSA11: L4B:4630
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:4630:SSA:")
 epicsThreadSleep(0.25)
 
-# SSA4: L4B:4940
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:4940:SSA:")
+# SSA12: L4B:4640
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:4640:SSA:")
 epicsThreadSleep(0.25)
 
-# SSA5: L4B:4950
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:4950:SSA:")
+# SSA13: L4B:4650
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:4650:SSA:")
 epicsThreadSleep(0.25)
 
-# SSA6: L4B:4960
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:4960:SSA:")
+# SSA14: L4B:4660
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:4660:SSA:")
 epicsThreadSleep(0.25)
 
-# SSA7: L4B:4970
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:4970:SSA:")
+# SSA15: L4B:4670
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:4670:SSA:")
 epicsThreadSleep(0.25)
 
-# SSA8: L4B:4980
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:4980:SSA:")
+# SSA16: L4B:4680
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:4680:SSA:")
 epicsThreadSleep(0.25)
 
-# SSA9: L4B:5010
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:5010:SSA:")
+# SSA17: L4B:4710
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:4710:SSA:")
 epicsThreadSleep(0.25)
 
-# SSA10: L4B:5020
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:5020:SSA:")
+# SSA18: L4B:4720
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:4720:SSA:")
 epicsThreadSleep(0.25)
 
-# SSA11: L4B:5030
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:5030:SSA:")
+# SSA19: L4B:4730
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:4730:SSA:")
 epicsThreadSleep(0.25)
 
-# SSA12: L4B:5040
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:5040:SSA:")
+# SSA20: L4B:4740
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:4740:SSA:")
 epicsThreadSleep(0.25)
 
-# SSA13: L4B:5050
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:5050:SSA:")
+# SSA21: L4B:4750
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:4750:SSA:")
 epicsThreadSleep(0.25)
 
-# SSA14: L4B:5060
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:5060:SSA:")
+# SSA22: L4B:4760
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:4760:SSA:")
 epicsThreadSleep(0.25)
 
-# SSA15: L4B:5070
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:5070:SSA:")
+
+# SSA23: L4B:4770
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:4770:SSA:")
 epicsThreadSleep(0.25)
 
-# SSA16: L4B:5080
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:5080:SSA:")
+# SSA24: L4B:4780
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:4780:SSA:")
 epicsThreadSleep(0.25)
 
-# SSA17: L4B:5110
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:5110:SSA:")
+# SSA25: L4B:4810
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:4810:SSA:")
 epicsThreadSleep(0.25)
 
-# SSA18: L4B:5120
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:5120:SSA:")
+# SSA26: L4B:4820
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:4820:SSA:")
 epicsThreadSleep(0.25)
 
-# SSA19: L4B:5130
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:5130:SSA:")
+# SSA27: L4B:4830
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:4830:SSA:")
 epicsThreadSleep(0.25)
 
-# SSA20: L4B:5140
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:5140:SSA:")
+# SSA28: L4B:4840
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:4840:SSA:")
 epicsThreadSleep(0.25)
 
-# SSA21: L4B:5150
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:5150:SSA:")
+# SSA29: L4B:4850
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:4850:SSA:")
 epicsThreadSleep(0.25)
 
-# SSA22: L4B:5160
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:5160:SSA:")
+# SSA30: L4B:4860
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:4860:SSA:")
 epicsThreadSleep(0.25)
 
-# SSA23: L4B:5170
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:5170:SSA:")
+# SSA31: L4B:4870
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:4870:SSA:")
 epicsThreadSleep(0.25)
 
-# SSA24: L4B:5180
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:5180:SSA:")
-epicsThreadSleep(0.25)
-
-# SSA25: L4B:5210
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:5210:SSA:")
-epicsThreadSleep(0.25)
-
-# SSA26: L4B:5220
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:5220:SSA:")
-epicsThreadSleep(0.25)
-
-# SSA27: L4B:5230
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:5230:SSA:")
-epicsThreadSleep(0.25)
-
-# SSA28: L4B:5240
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:5240:SSA:")
-epicsThreadSleep(0.25)
-
-# SSA29: L4B:5250
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:5250:SSA:")
-epicsThreadSleep(0.25)
-
-# SSA30: L4B:5260
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:5260:SSA:")
-epicsThreadSleep(0.25)
-
-# SSA31: L4B:5270
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:5270:SSA:")
-epicsThreadSleep(0.25)
-
-# SSA32: L4B:5280
-seq(seq_ssa_RK_CA, "P=ACCL:L4B:5280:SSA:")
+# SSA32: L4B:4880
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:4880:SSA:")
 epicsThreadSleep(0.25)
 
 
