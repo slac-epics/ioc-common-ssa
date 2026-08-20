@@ -3,7 +3,7 @@
 < envPaths
 
 ## Environment variables
-epicsEnvSet("LOCATION", "L4B CM 57-55")
+epicsEnvSet("LOCATION", "L4B CM 55-57")
 epicsEnvSet("IOC_NAME", "SIOC:L4B:SSA06")
 epicsEnvSet("ASG",      "MCC_SSA")
 
@@ -87,9 +87,9 @@ iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5980,P=
 
 
 # Load common SSA databases
+dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L4B:,M=55,ASG=$(ASG)")
+dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L4B:,M=56,ASG=$(ASG)")
 dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L4B:,M=57,ASG=$(ASG)")
-dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L4B:,M=58,ASG=$(ASG)")
-dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L4B:,M=59,ASG=$(ASG)")
 
 
 iocInit()
