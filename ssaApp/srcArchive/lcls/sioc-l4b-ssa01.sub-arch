@@ -1,4 +1,4 @@
-# Archive list for sioc-l3b-ssa04
+# Archive list for sioc-l4b-ssa01
 
 file  ssa_CA1300_7kW.tpl-arch {
 pattern {P                }
@@ -26,14 +26,6 @@ pattern {P                }
         {ACCL:L4B:3960:SSA}
         {ACCL:L4B:3970:SSA}
         {ACCL:L4B:3980:SSA}
-        {ACCL:L4B:4010:SSA}
-        {ACCL:L4B:4020:SSA}
-        {ACCL:L4B:4030:SSA}
-        {ACCL:L4B:4040:SSA}
-        {ACCL:L4B:4050:SSA}
-        {ACCL:L4B:4060:SSA}
-        {ACCL:L4B:4070:SSA}
-        {ACCL:L4B:4080:SSA}
 }
 
 file archive_iocAdmin.archive {

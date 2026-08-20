@@ -79,11 +79,10 @@ record(mbbi, "$(P)StatusMsg") {
     field(TEST, "Rebooting SSA...")
     field(TESV, "MINOR")
     field(ELVL, "11")
-    field(ELST, "ktting X-Port...")
+    field(ELST, "Rebooting X-Port...")
     field(ELSV, "MINOR")
     field(TVVL, "12")
-    field(TVST, "Rehklrktgnfbrevjcnjiuvnkebltghekrcgnhd
-    setting Processor...")
+    field(TVST, "Resetting Processor...")
     field(TVSV, "MINOR")
     field(TTVL, "13")
     field(TTST, "SSA Offline")

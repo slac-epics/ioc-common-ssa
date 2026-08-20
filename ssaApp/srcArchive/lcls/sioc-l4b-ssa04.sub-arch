@@ -1,39 +1,31 @@
-# Archive list for sioc-l3b-ssa04
+# Archive list for sioc-l4b-ssa04
 
 file  ssa_CA1300_7kW.tpl-arch {
 pattern {P                }
-        {ACCL:L4B:4910:SSA}
-        {ACCL:L4B:4920:SSA}
-        {ACCL:L4B:4930:SSA}
-        {ACCL:L4B:4940:SSA}
-        {ACCL:L4B:4950:SSA}
-        {ACCL:L4B:4960:SSA}
-        {ACCL:L4B:4970:SSA}
-        {ACCL:L4B:4980:SSA}
-        {ACCL:L4B:5010:SSA}
-        {ACCL:L4B:5020:SSA}
-        {ACCL:L4B:5030:SSA}
-        {ACCL:L4B:5040:SSA}
-        {ACCL:L4B:5050:SSA}
-        {ACCL:L4B:5060:SSA}
-        {ACCL:L4B:5070:SSA}
-        {ACCL:L4B:5080:SSA}
-        {ACCL:L4B:5110:SSA}
-        {ACCL:L4B:5120:SSA}
-        {ACCL:L4B:5130:SSA}
-        {ACCL:L4B:5140:SSA}
-        {ACCL:L4B:5150:SSA}
-        {ACCL:L4B:5160:SSA}
-        {ACCL:L4B:5170:SSA}
-        {ACCL:L4B:5180:SSA}
-        {ACCL:L4B:5210:SSA}
-        {ACCL:L4B:5220:SSA}
-        {ACCL:L4B:5230:SSA}
-        {ACCL:L4B:5240:SSA}
-        {ACCL:L4B:5250:SSA}
-        {ACCL:L4B:5260:SSA}
-        {ACCL:L4B:5270:SSA}
-        {ACCL:L4B:5280:SSA}
+        {ACCL:L4B:4610:SSA}
+        {ACCL:L4B:4620:SSA}
+        {ACCL:L4B:4630:SSA}
+        {ACCL:L4B:4640:SSA}
+        {ACCL:L4B:4650:SSA}
+        {ACCL:L4B:4660:SSA}
+        {ACCL:L4B:4670:SSA}
+        {ACCL:L4B:4680:SSA}
+        {ACCL:L4B:4710:SSA}
+        {ACCL:L4B:4720:SSA}
+        {ACCL:L4B:4730:SSA}
+        {ACCL:L4B:4740:SSA}
+        {ACCL:L4B:4750:SSA}
+        {ACCL:L4B:4760:SSA}
+        {ACCL:L4B:4770:SSA}
+        {ACCL:L4B:4780:SSA}
+        {ACCL:L4B:4810:SSA}
+        {ACCL:L4B:4820:SSA}
+        {ACCL:L4B:4830:SSA}
+        {ACCL:L4B:4840:SSA}
+        {ACCL:L4B:4850:SSA}
+        {ACCL:L4B:4860:SSA}
+        {ACCL:L4B:4870:SSA}
+        {ACCL:L4B:4880:SSA}
 }
 
 file archive_iocAdmin.archive {
