@@ -217,3 +217,8 @@ file "ssa_RK_CA1300_7kW_extras.template" {
 {}
 }
 
+file "power_eff_calc.template" {
+pattern
+{R, R1, R2, J}
+
+}
