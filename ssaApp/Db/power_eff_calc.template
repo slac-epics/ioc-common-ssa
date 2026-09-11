@@ -1,0 +1,16 @@
+record(calcout, "$(P):$(R)VCPowCalc")
+{
+  field(INPA, "$(P):$(R1)")
+  field(INPB, "$(P):$(R2)")
+  field(DESC, "$(R) Power Calc")
+  field(CALC, "A*B")
+  field(OUT, "$(P):$(R)VCEff")
+}
+
+record(calcout, "$(P):$(R)VCEff")
+{
+  field(INPA, "$(P):$(R)VCPowCalc")
+  field(INPB, "$(P):$(J)")
+  field(DESC, "Efficiency Calc")
+  field(CALC, "A/B")
+}
