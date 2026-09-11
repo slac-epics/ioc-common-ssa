@@ -61,35 +61,35 @@ iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5670,P=
 iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5680,P=ACCL:L4B:5680:SSA:,CM=56,CAV1=8,ASG=$(ASG),IP=ssa-l4b-5680")
 
 # SSA17: L4B:5710
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5710,P=ACCL:L4B:5710:SSA:,CM=57,CAV1=1,ASG=$(ASG),IP=ssa-l4b-5510")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5710,P=ACCL:L4B:5710:SSA:,CM=57,CAV1=1,ASG=$(ASG),IP=ssa-l4b-5710")
 
 # SSA18: L4B:5720
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5720,P=ACCL:L4B:5720:SSA:,CM=57,CAV1=2,ASG=$(ASG),IP=ssa-l4b-5520")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5720,P=ACCL:L4B:5720:SSA:,CM=57,CAV1=2,ASG=$(ASG),IP=ssa-l4b-5720")
 
 # SSA19: L4B:5730
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5730,P=ACCL:L4B:5730:SSA:,CM=57,CAV1=3,ASG=$(ASG),IP=ssa-l4b-5530")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5730,P=ACCL:L4B:5730:SSA:,CM=57,CAV1=3,ASG=$(ASG),IP=ssa-l4b-5730")
 
 # SSA20: L4B:5740
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5740,P=ACCL:L4B:5740:SSA:,CM=57,CAV1=4,ASG=$(ASG),IP=ssa-l4b-5540")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5740,P=ACCL:L4B:5740:SSA:,CM=57,CAV1=4,ASG=$(ASG),IP=ssa-l4b-5740")
 
 # SSA21: L4B:5750
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5750,P=ACCL:L4B:5750:SSA:,CM=57,CAV1=5,ASG=$(ASG),IP=ssa-l4b-5550")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5750,P=ACCL:L4B:5750:SSA:,CM=57,CAV1=5,ASG=$(ASG),IP=ssa-l4b-5750")
 
 # SSA22: L4B:5760
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5760,P=ACCL:L4B:5760:SSA:,CM=57,CAV1=6,ASG=$(ASG),IP=ssa-l4b-5560")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5760,P=ACCL:L4B:5760:SSA:,CM=57,CAV1=6,ASG=$(ASG),IP=ssa-l4b-5760")
 
 # SSA23: L4B:5770
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5770,P=ACCL:L4B:5770:SSA:,CM=57,CAV1=7,ASG=$(ASG),IP=ssa-l4b-5570")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5770,P=ACCL:L4B:5770:SSA:,CM=57,CAV1=7,ASG=$(ASG),IP=ssa-l4b-5770")
 
 # SSA24: L4B:5780
-iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5780,P=ACCL:L4B:5780:SSA:,CM=57,CAV1=8,ASG=$(ASG),IP=ssa-l4b-5580")
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_5780,P=ACCL:L4B:5780:SSA:,CM=57,CAV1=8,ASG=$(ASG),IP=ssa-l4b-5780")
 
 
 
 # Load common SSA databases
 dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L4B:,M=55,ASG=$(ASG)")
 dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L4B:,M=56,ASG=$(ASG)")
-dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L4B:,M=55,ASG=$(ASG)")
+dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L4B:,M=57,ASG=$(ASG)")
 
 
 iocInit()
