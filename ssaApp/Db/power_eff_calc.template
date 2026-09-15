@@ -1,7 +1,7 @@
 record(calcout, "$(P)$(R)VCPowCalc")
 {
-  field(INPA, "$(P)$(R1) PP")
-  field(INPB, "$(P)$(R2) PP")
+  field(INPA, "$(P)$(R1) CP")
+  field(INPB, "$(P)$(R2) CP")
   field(DESC, "$(R) Power Calc")
   field(CALC, "A*B")
   field(OUT, "$(P)$(R)EffCalc")
@@ -9,8 +9,8 @@ record(calcout, "$(P)$(R)VCPowCalc")
 
 record(calcout, "$(P)$(R)EffCalc")
 {
-  field(INPA, "$(P)$(R)VCPowCalc PP")
-  field(INPB, "$(P)$(J) PP")
+  field(INPA, "$(P)$(R)VCPowCalc CP")
+  field(INPB, "$(P)$(J) CP")
   field(DESC, "Efficiency Calc")
   field(CALC, "A/B")
 }
