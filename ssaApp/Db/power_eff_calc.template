@@ -4,7 +4,7 @@ record(calcout, "$(P)$(R)VCPowCalc")
   field(INPB, "$(P)$(R2) CP")
   field(DESC, "$(R) Power Calc")
   field(CALC, "A*B")
-  field(OUT, "$(P)$(R)EffCalc")
+  field(FLNK, "$(P)$(R)EffCalc")
 }
 
 record(calcout, "$(P)$(R)EffCalc")
