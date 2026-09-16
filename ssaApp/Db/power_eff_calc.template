@@ -1,7 +1,7 @@
-record(calcout, "$(P):$(R)PwrCalc")
+record(calcout, "$(P)$(R)PwrCalc")
 {
-  field(INPA, "$(P):$(R1) CP MS")
-  field(INPB, "$(P):$(R2) CP MS")
+  field(INPA, "$(P)$(R1) CP MS")
+  field(INPB, "$(P)$(R2) CP MS")
   field(DESC, "$(R) Power Calc")
   field(PREC, "2")
   field(EGU,  "Watts")
@@ -11,8 +11,8 @@ record(calcout, "$(P):$(R)PwrCalc")
 
 record(calcout, "$(P)$(R)EffCalc")
 {
-  field(INPA, "$(P):$(R)PwrCalc NPP MS")
-  field(INPB, "$(P):$(J) CP MS")
+  field(INPA, "$(P)$(R)PwrCalc NPP MS")
+  field(INPB, "$(P)$(J) CP MS")
   field(PREC, "2")
   field(EGU, "Percent")
   field(DESC, "Efficiency Calc")
