@@ -1,0 +1,20 @@
+record(calcout, "$(P)$(R)PwrCalc")
+{
+  field(INPA, "$(P)$(R1) CP MS")
+  field(INPB, "$(P)$(R2) CP MS")
+  field(DESC, "$(R) Power Calc")
+  field(PREC, "2")
+  field(EGU,  "W")
+  field(CALC, "A*B")
+  field(FLNK, "$(P)$(R)EffCalc")
+}
+
+record(calcout, "$(P)$(R)EffCalc")
+{
+  field(INPA, "$(P)$(R)PwrCalc NPP MS")
+  field(INPB, "$(P)$(J) CP MS")
+  field(PREC, "2")
+  field(EGU, "%")
+  field(DESC, "Efficiency Calc")
+  field(CALC, "A/B * 100")
+}

@@ -217,3 +217,29 @@ file "ssa_RK_CA1300_7kW_extras.template" {
 {}
 }
 
+file "power_eff_calc.template" {
+pattern
+{R, R1, R2, J}
+{DA1, DA_I1, DA_PS1_V, DA_FwdPwr}
+{DA2, DA_I2, DA_PS2_V, DA_RefPwr}
+{FA11, FA1_I1, FA1_PS1_V, FA1_FwdPwr1}
+{FA12, FA1_I2, FA1_PS2_V, FA1_RefPwr1}
+{FA13, FA1_I3, FA1_PS3_V, FA1_FwdPwr2}
+{FA14, FA1_I4, FA1_PS4_V, FA1_RefPwr2}
+{FA21, FA2_I1, FA2_PS1_V, FA2_FwdPwr1}
+{FA22, FA2_I2, FA2_PS2_V, FA2_RefPwr1}
+{FA23, FA2_I3, FA2_PS3_V, FA2_FwdPwr2}
+{FA24, FA2_I4, FA2_PS4_V, FA2_RefPwr2}
+{FA31, FA3_I1, FA3_PS1_V, FA3_FwdPwr1}
+{FA32, FA3_I2, FA3_PS2_V, FA3_RefPwr1}
+{FA33, FA3_I3, FA3_PS3_V, FA3_FwdPwr2}
+{FA34, FA3_I4, FA3_PS4_V, FA3_RefPwr2}
+{FA41, FA4_I1, FA4_PS1_V, FA4_FwdPwr1}
+{FA42, FA4_I2, FA4_PS2_V, FA4_RefPwr1}
+{FA43, FA4_I3, FA4_PS3_V, FA4_FwdPwr2}
+{FA44, FA4_I4, FA4_PS4_V, FA4_RefPwr2}
+{FA51, FA5_I1, FA5_PS1_V, FA5_FwdPwr1}
+{FA52, FA5_I2, FA5_PS2_V, FA5_RefPwr1}
+{FA53, FA5_I3, FA5_PS3_V, FA5_FwdPwr2}
+{FA54, FA5_I4, FA5_PS4_V, FA5_RefPwr2}
+}

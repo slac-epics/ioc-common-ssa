@@ -1,0 +1,35 @@
+# Archive list for sioc-l4b-ssa07
+
+file  ssa_CA1300_7kW.tpl-arch {
+pattern {P                }
+        {ACCL:L4B:5510:SSA}
+        {ACCL:L4B:5520:SSA}
+        {ACCL:L4B:5530:SSA}
+        {ACCL:L4B:5540:SSA}
+        {ACCL:L4B:5550:SSA}
+        {ACCL:L4B:5560:SSA}
+        {ACCL:L4B:5570:SSA}
+        {ACCL:L4B:5580:SSA}
+        {ACCL:L4B:5610:SSA}
+        {ACCL:L4B:5620:SSA}
+        {ACCL:L4B:5630:SSA}
+        {ACCL:L4B:5640:SSA}
+        {ACCL:L4B:5650:SSA}
+        {ACCL:L4B:5660:SSA}
+        {ACCL:L4B:5670:SSA}
+        {ACCL:L4B:5680:SSA}
+        {ACCL:L4B:5710:SSA}
+        {ACCL:L4B:5720:SSA}
+        {ACCL:L4B:5730:SSA}
+        {ACCL:L4B:5740:SSA}
+        {ACCL:L4B:5750:SSA}
+        {ACCL:L4B:5760:SSA}
+        {ACCL:L4B:5770:SSA}
+        {ACCL:L4B:5780:SSA}
+}
+
+file archive_iocAdmin.archive {
+pattern {IOC           }
+        {SIOC:L4B:SSA07}
+}
+

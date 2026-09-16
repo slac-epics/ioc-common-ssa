@@ -77,3 +77,25 @@ record(longin, "$(P)$(M)$(N=00:)SSA:NumFaulted"){
     field(HHSV, "$(HHSV=NO_ALARM)")
 }
 
+record(calc, "$(P)$(M)$(N=00:)SSA:NumOfflineCalc"){
+    field(DESC, "Number of SSAs Offline")
+    field(INPA, "$(P)$(M)$(C1=10):SSA:OfflineStatus CP")
+    field(INPB, "$(P)$(M)$(C2=20):SSA:OfflineStatus CP")
+    field(INPC, "$(P)$(M)$(C3=30):SSA:OfflineStatus CP")
+    field(INPD, "$(P)$(M)$(C4=40):SSA:OfflineStatus CP")
+    field(CALC, "A+B+C+D")
+    field(FLNK, "$(P)$(M)$(N=00:)SSA:NumOffline")
+}
+
+record(longin, "$(P)$(M)$(N=00:)SSA:NumOffline"){
+    field(DESC, "Number of SSAs Offline")
+    field(INP,  "$(P)$(M)$(N=00:)SSA:NumOfflineCalc")
+    field(LOLO, "$(LOLO="")")
+    field(LOW,  "$(LOW="")")
+    field(HIGH, "$(HIGH="")")
+    field(HIHI, "$(HIHI="")")
+    field(LLSV, "$(LLSV=NO_ALARM)")
+    field(LSV,  "$(LSV=NO_ALARM)")
+    field(HSV,  "$(HSV=NO_ALARM)")
+    field(HHSV, "$(HHSV=NO_ALARM)")
+}

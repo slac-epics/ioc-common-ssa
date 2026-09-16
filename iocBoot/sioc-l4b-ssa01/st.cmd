@@ -1,0 +1,211 @@
+#!../../bin/rhel9-x86_64/ssa
+
+< envPaths
+
+## Environment variables
+epicsEnvSet("LOCATION", "L4B CM 37-39")
+epicsEnvSet("IOC_NAME", "SIOC:L4B:SSA01")
+epicsEnvSet("ASG",      "MCC_SSA")
+
+< $(TOP)/iocBoot/common/st.cmd.soft
+
+
+## Run IOC shell script for each SSA
+#
+# SSA1: L4B:3710
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_3710,P=ACCL:L4B:3710:SSA:,CM=37,CAV1=1,ASG=$(ASG),IP=ssa-l4b-3710")
+
+# SSA2: L4B:3720
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_3720,P=ACCL:L4B:3720:SSA:,CM=37,CAV1=2,ASG=$(ASG),IP=ssa-l4b-3720")
+
+# SSA3: L4B:3730
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_3730,P=ACCL:L4B:3730:SSA:,CM=37,CAV1=3,ASG=$(ASG),IP=ssa-l4b-3730")
+
+# SSA4: L4B:3740
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_3740,P=ACCL:L4B:3740:SSA:,CM=37,CAV1=4,ASG=$(ASG),IP=ssa-l4b-3740")
+
+# SSA5: L4B:3750
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_3750,P=ACCL:L4B:3750:SSA:,CM=37,CAV1=5,ASG=$(ASG),IP=ssa-l4b-3750")
+
+# SSA6: L4B:3760
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_3760,P=ACCL:L4B:3760:SSA:,CM=37,CAV1=6,ASG=$(ASG),IP=ssa-l4b-3760")
+
+# SSA7: L4B:3770
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_3770,P=ACCL:L4B:3770:SSA:,CM=37,CAV1=7,ASG=$(ASG),IP=ssa-l4b-3770")
+
+# SSA8: L4B:3780
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_3780,P=ACCL:L4B:3780:SSA:,CM=37,CAV1=8,ASG=$(ASG),IP=ssa-l4b-3780")
+
+# SSA9: L4B:3810
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_3810,P=ACCL:L4B:3810:SSA:,CM=38,CAV1=1,ASG=$(ASG),IP=ssa-l4b-3810")
+
+# SSA10: L4B:3820
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_3820,P=ACCL:L4B:3820:SSA:,CM=38,CAV1=2,ASG=$(ASG),IP=ssa-l4b-3820")
+
+# SSA11: L4B:3830
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_3830,P=ACCL:L4B:3830:SSA:,CM=38,CAV1=3,ASG=$(ASG),IP=ssa-l4b-3830")
+
+# SSA12: L4B:3840
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_3840,P=ACCL:L4B:3840:SSA:,CM=38,CAV1=4,ASG=$(ASG),IP=ssa-l4b-3840")
+
+# SSA13: L4B:3850
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_3850,P=ACCL:L4B:3850:SSA:,CM=38,CAV1=5,ASG=$(ASG),IP=ssa-l4b-3850")
+
+# SSA14: L4B:3860
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_3860,P=ACCL:L4B:3860:SSA:,CM=38,CAV1=6,ASG=$(ASG),IP=ssa-l4b-3860")
+
+# SSA15: L4B:3870
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_3870,P=ACCL:L4B:3870:SSA:,CM=38,CAV1=7,ASG=$(ASG),IP=ssa-l4b-3870")
+
+# SSA16: L4B:3880
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_3880,P=ACCL:L4B:3880:SSA:,CM=38,CAV1=8,ASG=$(ASG),IP=ssa-l4b-3880")
+
+# SSA17: L4B:3910
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_3910,P=ACCL:L4B:3910:SSA:,CM=39,CAV1=1,ASG=$(ASG),IP=ssa-l4b-3910")
+
+# SSA18: L4B:3920
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_3920,P=ACCL:L4B:3920:SSA:,CM=39,CAV1=2,ASG=$(ASG),IP=ssa-l4b-3920")
+
+# SSA19: L4B:3930
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_3930,P=ACCL:L4B:3930:SSA:,CM=39,CAV1=3,ASG=$(ASG),IP=ssa-l4b-3930")
+
+# SSA20: L4B:3940
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_3940,P=ACCL:L4B:3940:SSA:,CM=39,CAV1=4,ASG=$(ASG),IP=ssa-l4b-3940")
+
+# SSA21: L4B:3950
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_3950,P=ACCL:L4B:3950:SSA:,CM=39,CAV1=5,ASG=$(ASG),IP=ssa-l4b-3950")
+
+# SSA22: L4B:3960
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_3960,P=ACCL:L4B:3960:SSA:,CM=39,CAV1=6,ASG=$(ASG),IP=ssa-l4b-3960")
+
+# SSA23: L4B:3970
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_3970,P=ACCL:L4B:3970:SSA:,CM=39,CAV1=7,ASG=$(ASG),IP=ssa-l4b-3970")
+
+# SSA24: L4B:3980
+iocshLoad("$(TOP)/iocBoot/common/startup.RK_CA1300_7kW.iocsh", "PORT=L4B_3980,P=ACCL:L4B:3980:SSA:,CM=39,CAV1=8,ASG=$(ASG),IP=ssa-l4b-3980")
+
+
+
+# Load common SSA databases
+dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L4B:,M=37,ASG=$(ASG)")
+dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L4B:,M=38,ASG=$(ASG)")
+dbLoadRecords("db/cryomoduleCommon.db", "P=ACCL:L4B:,M=39,ASG=$(ASG)")
+
+
+iocInit()
+
+# =====================================================
+# Turn on caPutLogging:
+# Log values only on change to the iocLogServer:
+caPutLogInit("${EPICS_CA_PUT_LOG_ADDR}")
+caPutLogShow(2)
+# =====================================================
+
+
+## Start sequence programs, one for each SSA
+# This must be done after iocInit
+#
+# SSA1: L4B:3710
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:3710:SSA:")
+epicsThreadSleep(0.25)
+
+# SSA2: L4B:3720
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:3720:SSA:")
+epicsThreadSleep(0.25)
+
+# SSA3: L4B:3730
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:3730:SSA:")
+epicsThreadSleep(0.25)
+
+# SSA4: L4B:3740
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:3740:SSA:")
+epicsThreadSleep(0.25)
+
+# SSA5: L4B:3750
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:3750:SSA:")
+epicsThreadSleep(0.25)
+
+# SSA6: L4B:3760
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:3760:SSA:")
+epicsThreadSleep(0.25)
+
+# SSA7: L4B:3770
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:3770:SSA:")
+epicsThreadSleep(0.25)
+
+# SSA8: L4B:3780
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:3780:SSA:")
+epicsThreadSleep(0.25)
+
+# SSA9: L4B:3810
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:3810:SSA:")
+epicsThreadSleep(0.25)
+
+# SSA10: L4B:3820
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:3820:SSA:")
+epicsThreadSleep(0.25)
+
+# SSA11: L4B:3830
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:3830:SSA:")
+epicsThreadSleep(0.25)
+
+# SSA12: L4B:3840
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:3840:SSA:")
+epicsThreadSleep(0.25)
+
+# SSA13: L4B:3850
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:3850:SSA:")
+epicsThreadSleep(0.25)
+
+# SSA14: L4B:3860
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:3860:SSA:")
+epicsThreadSleep(0.25)
+
+# SSA15: L4B:3870
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:3870:SSA:")
+epicsThreadSleep(0.25)
+
+# SSA16: L4B:3880
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:3880:SSA:")
+epicsThreadSleep(0.25)
+
+# SSA17: L4B:3910
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:3910:SSA:")
+epicsThreadSleep(0.25)
+
+# SSA18: L4B:3920
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:3920:SSA:")
+epicsThreadSleep(0.25)
+
+# SSA19: L4B:3930
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:3930:SSA:")
+epicsThreadSleep(0.25)
+
+# SSA20: L4B:3940
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:3940:SSA:")
+epicsThreadSleep(0.25)
+
+# SSA21: L4B:3950
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:3950:SSA:")
+epicsThreadSleep(0.25)
+
+# SSA22: L4B:3960
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:3960:SSA:")
+epicsThreadSleep(0.25)
+
+# SSA23: L4B:3970
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:3970:SSA:")
+epicsThreadSleep(0.25)
+
+# SSA24: L4B:3980
+seq(seq_ssa_RK_CA, "P=ACCL:L4B:3980:SSA:")
+epicsThreadSleep(0.25)
+
+
+# Autosave start
+< $(TOP)/iocBoot/common/autosave_start.cmd
+
+cd $(TOP)
+
+# End of file
+

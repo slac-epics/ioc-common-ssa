@@ -40,6 +40,30 @@ pattern
 {ACCL:L3B:, 33}
 {ACCL:L3B:, 34}
 {ACCL:L3B:, 35}
+#
+{ACCL:L4B:, 37}
+{ACCL:L4B:, 38}
+{ACCL:L4B:, 39}
+{ACCL:L4B:, 40}
+{ACCL:L4B:, 41}
+{ACCL:L4B:, 42}
+{ACCL:L4B:, 43}
+{ACCL:L4B:, 44}
+{ACCL:L4B:, 45}
+{ACCL:L4B:, 46}
+{ACCL:L4B:, 47}
+{ACCL:L4B:, 48}
+{ACCL:L4B:, 49}
+{ACCL:L4B:, 50}
+{ACCL:L4B:, 51}
+{ACCL:L4B:, 52}
+{ACCL:L4B:, 53}
+{ACCL:L4B:, 54}
+{ACCL:L4B:, 55}
+{ACCL:L4B:, 56}
+{ACCL:L4B:, 57}
+{ACCL:L4B:, 58}
+{ACCL:L4B:, 59}
 }
 
 file "ssa_stats_hl.template" {
@@ -56,6 +80,7 @@ pattern
 {  ACCL:L1B:1:}
 {  ACCL:L2B:1:}
 {  ACCL:L3B:1:}
+{  ACCL:L4B:1:}
 {ACCL:SYS0:SC:}
 }
 
@@ -81,6 +106,12 @@ file "ssa_stats_l3b.template" {
 pattern
 {        P}
 {ACCL:L3B:}
+}
+
+file "ssa_stats_l4b.template" {
+pattern
+{        P}
+{ACCL:L4B:}
 }
 
 file "ssa_stats_sys0.template" {
