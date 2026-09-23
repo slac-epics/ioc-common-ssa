@@ -5,7 +5,8 @@ record(calc, "$(P)SC:SSA:NumOnCalc"){
     field(INPB, "ACCL:L1B:1:SSA:NumOn CP")
     field(INPC, "ACCL:L2B:1:SSA:NumOn CP")
     field(INPD, "ACCL:L3B:1:SSA:NumOn CP")
-    field(CALC, "A+B+C+D")
+    field(INPE, "ACCL:L4B:1:SSA:NumOn CP")
+    field(CALC, "A+B+C+D+E")
     field(FLNK, "$(P)SC:SSA:NumOn")
 }
 
@@ -15,7 +16,8 @@ record(calc, "$(P)SC:SSA:NumOffCalc"){
     field(INPB, "ACCL:L1B:1:SSA:NumOff CP")
     field(INPC, "ACCL:L2B:1:SSA:NumOff CP")
     field(INPD, "ACCL:L3B:1:SSA:NumOff CP")
-    field(CALC, "A+B+C+D")
+    field(INPE, "ACCL:L4B:1:SSA:NumOff CP")
+    field(CALC, "A+B+C+D+E")
     field(FLNK, "$(P)SC:SSA:NumOff")
 }
 
@@ -25,7 +27,19 @@ record(calc, "$(P)SC:SSA:NumFaultedCalc"){
     field(INPB, "ACCL:L1B:1:SSA:NumFaulted CP")
     field(INPC, "ACCL:L2B:1:SSA:NumFaulted CP")
     field(INPD, "ACCL:L3B:1:SSA:NumFaulted CP")
-    field(CALC, "A+B+C+D")
+    field(INPE, "ACCL:L4B:1:SSA:NumFaulted CP")
+    field(CALC, "A+B+C+D+E")
     field(FLNK, "$(P)SC:SSA:NumFaulted")
 }
 
+record(calc, "$(P)SC:SSA:NumOfflineCalc")
+{
+    field(DESC, "Number of SSAs Offline")
+    field(INPA, "ACCL:L0B:1:SSA:NumOffline CP")
+    field(INPB, "ACCL:L1B:1:SSA:NumOffline CP")
+    field(INPC, "ACCL:L2B:1:SSA:NumOffline CP")
+    field(INPD, "ACCL:L3B:1:SSA:NumOffline CP")
+    field(INPE, "ACCL:L4B:1:SSA:NumOffline CP")
+    field(CALC, "A+B+C+D+E")
+    field(FLNK, "$(P)SC:SSA:NumOffline")
+}

@@ -97,7 +97,7 @@ record(bo, "$(P)SeqDebug"){
     field(PINI, "1")
 }
 
-# --- On/Off/Faulted status --------
+# --- On/Off/Faulted/Offline status --------
 record(calc, "$(P)PowerOnStatusCalc"){
     field(DESC, "Power On status calc")
     field(INPA, "$(P)StatusMsg CP")
@@ -138,6 +138,20 @@ record(bi, "$(P)FaultedStatus"){
     field(INP,  "$(P)FaultedStatusCalc")
     field(ZNAM, "Not Faulted")
     field(ONAM, "Faulted")
+}
+
+record(calc, "$(P)OfflineStatusCalc"){
+    field(DESC, "Offline status calc")
+    field(INPA, "$(P)StatusMsg CP")
+    field(CALC, "A=13")
+    field(FLNK, "$(P)OfflineStatus")
+}
+
+record(bi, "$(P)OfflineStatus"){
+    field(DESC, "Offline status")
+    field(INP,  "$(P)OfflineStatusCalc")
+    field(ZNAM, "Not Offline")
+    field(ONAM, "Offline")
 }
 
 # --- Other common records --------

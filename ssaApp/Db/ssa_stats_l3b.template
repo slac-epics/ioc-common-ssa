@@ -119,3 +119,43 @@ record(calc, "$(P)1:SSA:NumFaultedCalc"){
     field(FLNK, "$(P)1:SSA:NumFaulted")
 }
 
+record(calc, "$(P)1:SSA:NumOfflineCalc1"){
+    field(DESC, "Number of SSAs Offline")
+    field(INPA, "$(P)1600:SSA:NumOffline CP")
+    field(INPB, "$(P)1700:SSA:NumOffline CP")
+    field(INPC, "$(P)1800:SSA:NumOffline CP")
+    field(INPD, "$(P)1900:SSA:NumOffline CP")
+    field(INPE, "$(P)2000:SSA:NumOffline CP")
+    field(INPF, "$(P)2100:SSA:NumOffline CP")
+    field(INPG, "$(P)2200:SSA:NumOffline CP")
+    field(INPH, "$(P)2300:SSA:NumOffline CP")
+    field(INPI, "$(P)2400:SSA:NumOffline CP")
+    field(INPJ, "$(P)2500:SSA:NumOffline CP")
+    field(INPK, "$(P)2600:SSA:NumOffline CP")
+    field(INPL, "$(P)2700:SSA:NumOffline CP")
+    field(CALC, "A+B+C+D+E+F+G+H+I+J+K+L")
+    field(FLNK, "$(P)1:SSA:NumOfflineCalc")
+}
+
+record(calc, "$(P)1:SSA:NumOfflineCalc2"){
+    field(DESC, "Number of SSAs Offline")
+    field(INPA, "$(P)2800:SSA:NumOffline CP")
+    field(INPB, "$(P)2900:SSA:NumOffline CP")
+    field(INPC, "$(P)3000:SSA:NumOffline CP")
+    field(INPD, "$(P)3100:SSA:NumOffline CP")
+    field(INPE, "$(P)3200:SSA:NumOffline CP")
+    field(INPF, "$(P)3300:SSA:NumOffline CP")
+    field(INPG, "$(P)3400:SSA:NumOffline CP")
+    field(INPH, "$(P)3500:SSA:NumOffline CP")
+    field(CALC, "A+B+C+D+E+F+G+H")
+    field(FLNK, "$(P)1:SSA:NumOfflineCalc")
+}
+
+record(calc, "$(P)1:SSA:NumOfflineCalc"){
+    field(DESC, "Number of SSAs Offline")
+    field(INPA, "$(P)1:SSA:NumOfflineCalc1")
+    field(INPB, "$(P)1:SSA:NumOfflineCalc2")
+    field(CALC, "A+B")
+    field(FLNK, "$(P)1:SSA:NumOffline")
+}
+

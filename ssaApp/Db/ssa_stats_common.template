@@ -47,3 +47,15 @@ record(longin, "$(P)SSA:NumFaulted"){
     field(HHSV, "$(HHSV=NO_ALARM)")
 }
 
+record(longin, "$(P)SSA:NumOffline"){
+    field(DESC, "Number of SSAs Offline")
+    field(INP,  "$(P)SSA:NumOfflineCalc")
+    field(LOLO, "$(LOLO="")")
+    field(LOW,  "$(LOW="")")
+    field(HIGH, "$(HIGH="")")
+    field(HIHI, "$(HIHI="")")
+    field(LLSV, "$(LLSV=NO_ALARM)")
+    field(LSV,  "$(LSV=NO_ALARM)")
+    field(HSV,  "$(HSV=NO_ALARM)")
+    field(HHSV, "$(HHSV=NO_ALARM)")
+}
