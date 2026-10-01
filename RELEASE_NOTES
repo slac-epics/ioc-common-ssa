@@ -4,6 +4,8 @@
 #  Rem:  This file describes release notes for
 #        the ssa IOC Application.
 #--------------------------------------------------------------
+R1.2.20  01-Oct-2026  L. Ho-Koziol (lujko)
+    Add new l4b ssa siocs, sioc-l4b-ssa01 thru sioc-l4b-ssa08
 
 R1.2.19  30-Jun-2026  M. Dunning (mdunning)
     Change PV names of dev SSAs from CM02 to CM03 (requested by A. Benwell)
