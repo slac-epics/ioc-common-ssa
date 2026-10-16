@@ -1,4 +1,13 @@
 
+record(ao, "$(P)PwrRating") {
+    field(DESC, "SSA Power Rating")
+    field(DISP, "1")
+    field(EGU,  "kW")
+    field(PREC, "1")
+    field(VAL,  "3.8")
+    field(PINI, "1")
+}
+
 # This is a dummy PV so that all R&K SSAs can share the same sequencer routine.
 # Since this register doesn't exist in this SSA, it should be set to 0.
 record(longout, "$(P)RFCountdown"){

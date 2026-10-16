@@ -4,6 +4,11 @@
 #  Rem:  This file describes release notes for
 #        the ssa IOC Application.
 #--------------------------------------------------------------
+
+R1.2.21  15-Oct-2026  M. Dunning (mdunning)
+    Add PwrRating PV, requested by SRF group
+    Lukas: Update ssa07 and 08 ioc name
+
 R1.2.20  01-Oct-2026  L. Ho-Koziol (lujko)
     Add new l4b ssa siocs, sioc-l4b-ssa01 thru sioc-l4b-ssa08
 
