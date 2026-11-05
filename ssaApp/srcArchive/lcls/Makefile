@@ -16,6 +16,14 @@ ARCHIVE += sioc-l3b-ssa02.archive
 ARCHIVE += sioc-l3b-ssa03.archive
 ARCHIVE += sioc-l3b-ssa04.archive
 ARCHIVE += sioc-l3b-ssa05.archive
+ARCHIVE += sioc-l4b-ssa01.archive
+ARCHIVE += sioc-l4b-ssa02.archive
+ARCHIVE += sioc-l4b-ssa03.archive
+ARCHIVE += sioc-l4b-ssa04.archive
+ARCHIVE += sioc-l4b-ssa05.archive
+ARCHIVE += sioc-l4b-ssa06.archive
+ARCHIVE += sioc-l4b-ssa07.archive
+ARCHIVE += sioc-l4b-ssa08.archive
 ARCHIVE += sioc-dmp0-ssa01.archive
 
 include $(TOP)/configure/RULES
